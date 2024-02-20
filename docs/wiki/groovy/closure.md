@@ -1,3 +1,7 @@
+---
+title: Closures
+---
+
 # Closures
 
 Closures are like lambdas in java, but slightly different.
@@ -5,6 +9,7 @@ Closures are like lambdas in java, but slightly different.
 # For beginners
 
 You may know what a method is. A method is a set order of instructions you can call. For example:
+
 ```groovy
 def print_numbers(int n) {
     for (def i : 0..n) {
@@ -14,6 +19,7 @@ def print_numbers(int n) {
 ```
 
 This method prints numbers from 0 to a given number to the log.
+
 ```groovy
 print_numbers(5)
 ```
@@ -31,6 +37,7 @@ This will now output
 You can call that method as often as you want with any number input.
 
 Now closures are methods, but you can carry them around. Example:
+
 ```groovy
 def print_numbers = { int n -> /*(1)!*/
     for (def i : 0..n) {

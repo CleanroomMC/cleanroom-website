@@ -30,7 +30,7 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: "Forge Mod Development",
-      collapsed: false,
+      collapsed: true,
       base: "/wiki/forge-mod-development/",
       items: [
         {
@@ -111,6 +111,20 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
         { text: "Getting Started", link: "getting-started" },
         { text: "External compat", link: "external-compat" },
         { text: "Resource Location for Dummies", link: "rl" },
+      ],
+    },
+    {
+      text: "Groovy",
+      collapsed: true,
+      base: "/wiki/groovy/",
+      items: [
+        { text: "Introduction", link: "introduction" },
+        { text: "Strings", link: "strings" },
+        { text: "Lists", link: "lists" },
+        { text: "Maps", link: "maps" },
+        { text: "Loops", link: "loops" },
+        { text: "Builders", link: "builder" },
+        { text: "Closures", link: "closure" },
       ],
     },
     {
