@@ -1,6 +1,3 @@
----
-title: Resource Location for Dummies
----
 # Resource Location for Dummies
 
 Minecraft's resource location is often used as an identifier for items but also for locations of asset files like models
@@ -19,22 +16,19 @@ There are two ways to do that:
 2. Using the `resource()` game object handler (acts like a global method)
     - `resource("domain:path")`
     - `resource("domain", "path")`
-    - `resource("path")` (defaults to the pack id specified in the run config (see [here](./getting-started.md#run-config)))
+    - `resource("path")` (defaults to the pack id specified in the run config (see [here](../introduction/getting_started.md#run-config)))
 
 We can see that both methods are mostly the same except that the game object handler defaults to the pack id instead of
 minecraft. This way is the preferred way.
 
-::: info Example
-
-```groovy
-// the following 2 lines are equal
-def rl1 = resource("groovyscript", "path/to/file") // groovyscript:path/to/file
-def rl2 = resource("groovyscript:path/to/file") // groovyscript:path/to/file
-// the domain defaults to the pack id if not specified
-def rl3 = resource("furnace") // packid:furnace
-```
-
-:::
+???+ Example
+    ```groovy
+    // the following 2 lines are equal
+    def rl1 = resource("groovyscript", "path/to/file") // groovyscript:path/to/file
+    def rl2 = resource("groovyscript:path/to/file") // groovyscript:path/to/file
+    // the domain defaults to the pack id if not specified
+    def rl3 = resource("furnace") // packid:furnace
+    ```
 
 In GroovyScript there usually exist overrides where you can directly insert mod id and path without
 creating a `ResourceLocation`. <br>

@@ -1,16 +1,10 @@
----
-title: External compat
----
-
-# External compat
-
 Here you'll learn about adding external mod compat for GroovyScript.
 
-> [!NOTE]
-> You need at least version 0.7.0.
+!!! Note
+    You need at least version 0.7.0.
 
-> [!NOTE]
-> Please read the javadoc for the interface and methods.
+!!! Note
+    Please read the javadoc for the interface and methods.
 
 The plugin must implement `GroovyPlugin`. GroovyScript will automatically find the class and instantiate it. If the 
 instance field is non-null the class will not be instantiated by GroovyScript, but instead the value of the field will 

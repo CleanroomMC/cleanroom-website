@@ -1,4 +1,5 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
+import { generateSidebar } from "vitepress-sidebar";
 
 export const en = defineConfig({
   lang: "en",
@@ -7,6 +8,15 @@ export const en = defineConfig({
     nav: nav(),
     sidebar: {
       "/wiki/": wikiSidebar(),
+      "/groovy-script/": generateSidebar({
+        documentRootPath: "/docs/",
+        scanStartPath: "/groovy-script/",
+        resolvePath: "/groovy-script/",
+        hyphenToSpace: true,
+        useTitleFromFileHeading: true,
+        excludeFiles: ["!navigation.md"],
+        collapseDepth: 2,
+      }) as DefaultTheme.SidebarItem[],
     },
     outlineTitle: "Outline",
   },
@@ -101,16 +111,6 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
             { text: "Theme", link: "theme" },
           ],
         },
-      ],
-    },
-    {
-      text: "Groovy Script",
-      collapsed: true,
-      base: "/wiki/groovy-script/",
-      items: [
-        { text: "Getting Started", link: "getting-started" },
-        { text: "External compat", link: "external-compat" },
-        { text: "Resource Location for Dummies", link: "rl" },
       ],
     },
     {
