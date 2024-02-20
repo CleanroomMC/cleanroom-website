@@ -104,6 +104,16 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
+      text: "Groovy Script",
+      collapsed: true,
+      base: "/wiki/groovy-script/",
+      items: [
+        { text: "Getting Started", link: "getting-started" },
+        { text: "External compat", link: "external-compat" },
+        { text: "Resource Location for Dummies", link: "rl" },
+      ],
+    },
+    {
       text: "Proposal",
       collapsed: false,
       base: "/wiki/proposal/",
