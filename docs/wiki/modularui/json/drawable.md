@@ -2,7 +2,7 @@
 title: Drawable
 ---
 
-# {{ $frontmatter.title }}
+# Drawable
 
 This page is about defining drawables in json files. These are used in backgrounds on themes for example.
 

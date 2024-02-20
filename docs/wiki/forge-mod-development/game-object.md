@@ -2,7 +2,7 @@
 title: Game Object
 ---
 
-# {{ $frontmatter.title }}
+# Game Object
 
 ## Sound
 

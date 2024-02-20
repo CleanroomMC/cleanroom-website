@@ -2,7 +2,7 @@
 title: Shadow
 ---
 
-# {{ $frontmatter.title }}
+# Shadow
 
 `@Shadow` is used as placeholders for in a Mixin class. Where you would want to access fields and methods like how you would if you were working in the class you are Mixin'ing.
 

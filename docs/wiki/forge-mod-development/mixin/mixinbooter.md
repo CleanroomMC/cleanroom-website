@@ -2,7 +2,7 @@
 title: MixinBooter
 ---
 
-# {{ $frontmatter.title }}
+# MixinBooter
 
 ## Allows any mixins that work on mods to work effortlessly on 1.8 - 1.12.2
 

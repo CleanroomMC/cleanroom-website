@@ -2,7 +2,7 @@
 title: ModularUI
 ---
 
-# {{ $frontmatter.title }}
+# ModularUI
 
 ## What is ModularUI?
 

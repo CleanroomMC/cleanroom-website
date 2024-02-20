@@ -2,7 +2,7 @@
 title: Sizing and positioning
 ---
 
-# {{ $frontmatter.title }}
+# Sizing and positioning
 
 Each widget has several builder setter methods for position and size. They all come from the `IPositioned` interface.
 

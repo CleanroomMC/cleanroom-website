@@ -2,7 +2,7 @@
 title: Configuration
 ---
 
-# {{ $frontmatter.title }}
+# Configuration
 
 A typical mixin configuration file looks like this:
 

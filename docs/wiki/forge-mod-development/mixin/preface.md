@@ -2,7 +2,7 @@
 title: Preface
 ---
 
-# {{ $frontmatter.title }}
+# Preface
 
 > [!NOTE]
 > Only for advanced developers! Make sure you are adept with Java prior to this!

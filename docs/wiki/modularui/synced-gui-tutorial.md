@@ -2,7 +2,7 @@
 title: Synced gui tutorial
 ---
 
-# {{ $frontmatter.title }}
+# Synced gui tutorial
 
 First you need to decide how you want to open the GUI. Through a right click on a block or by right clicking an item?
 ModularUI has helpers for both of those cases, but you can also implement custom behaviour if that's needed.

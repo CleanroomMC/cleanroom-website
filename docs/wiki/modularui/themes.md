@@ -2,7 +2,7 @@
 title: Themes
 ---
 
-# {{ $frontmatter.title }}
+# Themes
 
 > [!IMPORTANT]
 > Themes can only be registered for GUIs made with ModularUI.

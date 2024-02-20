@@ -2,7 +2,7 @@
 title: Sidedness
 ---
 
-# {{ $frontmatter.title }}
+# Sidedness
 
 ## Introduction
 

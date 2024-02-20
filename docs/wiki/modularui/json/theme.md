@@ -2,7 +2,7 @@
 title: Theme
 ---
 
-# {{ $frontmatter.title }}
+# Theme
 
 Make sure to check out [how to register themes](../themes.md).
 

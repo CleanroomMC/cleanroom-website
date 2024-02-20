@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-# {{ $frontmatter.title }}
+# Getting Started
 
 ## Adding ModularUI to your mod
 

@@ -2,6 +2,6 @@
 title: Wiki
 ---
 
-# {{ $frontmatter.title }}
+# Wiki
 
 Here is the wiki, please navigate through the sidebar.

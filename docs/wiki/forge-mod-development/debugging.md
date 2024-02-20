@@ -2,7 +2,7 @@
 title: Debugging
 ---
 
-# {{ $frontmatter.title }}
+# Debugging
 
 ::: info
 When using either ForgeGradle 2.3 or RetroFuturaGradle. The steps are the same! Though, this may change once CleanroomGradle is released.

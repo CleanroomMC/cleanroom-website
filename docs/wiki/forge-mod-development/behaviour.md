@@ -1,10 +1,10 @@
 ---
-title: Behaviour
+title: Behavior
 ---
 
-# {{ $frontmatter.title }}
+# Behavior
 
-## Neighbours
+## Neighbors
 
 - A "neighbour" is a `IBlockState` in-world that is directly adjacent to another "neighbour".
 - It **_MUST_** be able to be queried via the 6 `EnumFacing` directions when calling `offset` on its `BlockPos`.

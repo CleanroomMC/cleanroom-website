@@ -2,7 +2,7 @@
 title: Color
 ---
 
-# {{ $frontmatter.title }}
+# Color
 
 There are many different way to define color in JSON
 

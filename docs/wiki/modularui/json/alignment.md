@@ -2,7 +2,7 @@
 title: Alignment
 ---
 
-# {{ $frontmatter.title }}
+# Alignment
 
 Alignment is an object with an x and y component. Where 0.0 means start and 1.0 means end.
 

@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-# {{ $frontmatter.title }}
+# Introduction
 
 ## Overview
 

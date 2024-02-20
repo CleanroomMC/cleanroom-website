@@ -2,7 +2,7 @@
 title: Client gui tutorial
 ---
 
-# {{ $frontmatter.title }}
+# Client gui tutorial
 
 Here we want to create a UI that only exist on the client side and doesn't sync any data.
 

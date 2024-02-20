@@ -2,7 +2,7 @@
 title: MTMS
 ---
 
-# {{ $frontmatter.title }}
+# MTMS
 
 Below is the full extract (with format modifications) taken from [**Gliese832's** `minecraft-technical-metric-system` repository](https://github.com/Gliese-832-c/minecraft-technical-metric-system/blob/version_1.2.0), with his consent:
 

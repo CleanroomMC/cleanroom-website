@@ -2,7 +2,7 @@
 title: Framework
 ---
 
-# {{ $frontmatter.title }}
+# Framework
 
 This page is about some core classes of a Modular GUI.
 

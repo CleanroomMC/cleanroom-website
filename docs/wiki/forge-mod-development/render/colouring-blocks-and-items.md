@@ -2,7 +2,7 @@
 title: Colouring Blocks and Items
 ---
 
-# {{ $frontmatter.title }}
+# Colouring Blocks and Items
 
 - Colouring a block or item statically or dynamically
 - When colouring a block `(IBlockColor)`, you have the following contexts:

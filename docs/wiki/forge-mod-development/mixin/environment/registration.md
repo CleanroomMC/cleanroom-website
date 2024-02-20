@@ -2,7 +2,7 @@
 title: Registration
 ---
 
-# {{ $frontmatter.title }}
+# Registration
 
 Before registering mixins via MixinBooter, you have to consider how your mixins affect the game.
 

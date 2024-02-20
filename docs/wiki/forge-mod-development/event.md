@@ -2,7 +2,7 @@
 title: Event
 ---
 
-# {{ $frontmatter.title }}
+# Event
 
 ## Overview
 
