@@ -19,7 +19,7 @@ export const shared = defineConfig({
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'CleanroomMC | Mods, features, and related toolchains' }],
     ['meta', { property: 'og:site_name', content: 'CleanroomMC' }],
-    ['meta', { property: 'og:image', content: 'https://cleanroommc.com/cleanroom-og.jpg' }],
+    ['meta', { property: 'og:image', content: 'https://cleanroommc.com/cleanroom-og.png' }],
     ['meta', { property: 'og:url', content: 'https://cleanroommc.com/' }],
     ],
   themeConfig: {
