@@ -18,7 +18,7 @@ A typical mixin configuration file looks like this:
 }
 ```
 
-> [!tip] Abstract
+> [!TIP] Template
 > Taken from MixinBooter's [`mixin.mixinbooter.init.json`](https://github.com/CleanroomMC/MixinBooter/blob/main/src/main/resources/mixin.mixinbooter.init.json)
 
 All the mixin configurations and the purposes of them is-as follows:
