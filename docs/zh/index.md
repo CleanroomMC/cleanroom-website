@@ -17,7 +17,7 @@ hero:
     alt: CleanroomMC Logo
 features:
   - title: Cleanroom Loader
-    details: 拥抱 1.12.2，迎接现代化模组体验。
+    details: 拥抱 1.12.2，畅享现代化模组。
     icon: 🏃🏻‍♀️
   - title: Template for 1.12.2
     details: 全新旅程，始于这里。

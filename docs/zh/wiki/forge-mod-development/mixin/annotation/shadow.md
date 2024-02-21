@@ -89,8 +89,8 @@ public class Target {
 public class Example {
     @Shadow public void method() { }
 
-    // 如果这一方法有返回值
-    // 那你可以将返回值直接设置为某一基本类型，或是直接为null
+    // 如果这一方法有返回值，
+    // 那你可以将返回值直接设置为某一基本类型，或是直接为null。
     // 但最好还是抛出一个异常，以免遇到某些极端情况。
     @Shadow public int fruitfulMethod() {
         throw new AssertionError();
