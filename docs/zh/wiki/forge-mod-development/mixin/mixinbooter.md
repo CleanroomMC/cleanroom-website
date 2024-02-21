@@ -4,15 +4,15 @@ title: MixinBooter
 
 # MixinBooter
 
-## Allows any mixins that work on mods to work effortlessly on 1.8 - 1.12.2
+## 跨 1.8 - 1.12.2 运行 Mixin，不再是难事
 
-- Current Mixin Version: [UniMix 0.12.2 forked by CleanroomMC, derived from 0.8.5 branch by LegacyModdingMC](https://github.com/CleanroomMC/UniMix)
+- 当前 Mixin 版本：[UniMix 0.12.2，由 CleanroomMC fork 而出，源分支为 LegacyModdingMC 的 0.8.5 分支](https://github.com/CleanroomMC/UniMix)
 
-- Current MixinExtra Version: [0.3.5](https://github.com/LlamaLad7/MixinExtras)
+- 当前 MixinExtra 版本：[0.3.5](https://github.com/LlamaLad7/MixinExtras)
 
-## For Developers
+## 开发者操作
 
-- Add CleanroomMC's repository and depend on MixinBooter's maven entry:
+- 添加 CleanroomMC 的仓库至 repositories 中，再将 MixinBooter 添加为依赖：
 
 ```groovy
 repositories {
@@ -23,12 +23,12 @@ repositories {
 
 dependencies {
 
-    // Common:
+    // 均需添加：
     annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
     annotationProcessor 'com.google.guava:guava:32.1.2-jre'
     annotationProcessor 'com.google.code.gson:gson:2.8.9'
 
-    // ForgeGradle:
+    // ForgeGradle：
     implementation ('zone.rong:mixinbooter:9.1') {
         transitive = false
     }
@@ -48,22 +48,22 @@ dependencies {
 }
 ```
 
-## Pseudo-Changelog
+## 历程摘要
 
-- As of 4.2, MixinBooter's API has changed and **_all mods_** that uses mixins are encouraged to depend on MixinBooter, even those that mixin into vanilla/forge/library classes. To avoid mixin version mismatches with mods crashing trying to implement modded mixins (looking at you VanillaFix). Thanks to [@embeddedt](https://github.com/embeddedt) recommending and helping me introduce this change!
+- 自 4.2，MixinBooter 的 API 有了改动，我们希望**任何**使用了 Mixin 的模组都将 MixinBooter 添加为依赖，哪怕这些模组的 Mixin 对象为原版/forge/库类。因为这可以避免因模组间混用不同版本 Mixin 而导致的崩溃问题（VanillaFix 就是个典型例子）。感谢[@embeddedt](https://github.com/embeddedt)在这一更改中所提出的建议！
 
-- As of 5.0, [MixinExtras by @LlamaLad7](https://github.com/LlamaLad7/MixinExtras) is shaded. Available for developers to use.
+- 自 5.0，[@LlamaLad7 编写的 MixinExtras](https://github.com/LlamaLad7/MixinExtras)内置于 2，MixinBooter 中，开发者可直接调用相关的内容。
 
-- As of 8.0, MixinBooter will now work from 1.8 - 1.12.2. One single build works with all these versions! (TODO: LiteLoader support?)
+- 自 8.0，MixinBooter 可跨版本运行于 1.8 - 1.12.2。一次构建，多版本通用！（TODO：支持 LiteLoader？）
 
-- As of 8.4, MixinBooter actively attempts to be compatible with [SpongeForge](https://github.com/SpongePowered/SpongeForge)
+- 自 8.4，MixinBooter 开始尝试与 [SpongeForge](https://github.com/SpongePowered/SpongeForge) 兼容。
 
-## Tidbits
+## 引子
 
-- Consult `IEarlyMixinLoader` for mixins that affects vanilla, forge, or any classes that is passed to the classloader extremely early (e.g. Guava).
-- Consult `ILateMixinLoader` for mixins that affects mods.
-- `@MixinLoader` annotation is, as of 4.2, deprecated. The functionality is akin to `ILateMixinLoader`.
+- 若你想 Mixin 那些原版、forge或是其他的一些在类加载器（classloader）运行极为早期便已传入的对象（例如 Guava），你可以查看 `IEarlyMixinLoader` 的相关内容。
+- 若你想 Mixin 模组对象，你可以查看 `ILateMixinLoader` 的相关内容。
+- `@MixinLoader` 注解自 4.2 开始废弃不用。相关功能已由 `ILateMixinLoader` 接手。
 
-::: tip
-Because of Mixin and Bytecode intricacies, MixinBooter tries to allow both the developers and the users to understand crashes and logs better, but it is still being improved on. Please direct any feedback [here](https://github.com/CleanroomMC/MixinBooter/issues)!
+::: info 关于日志可读性
+MixinBooter 虽致力于令崩溃以及日志相关的信息输出尽量可读，降低开发者以及用户的阅读成本，但由于 Mixin 以及字节码内部错综复杂，目前相关特性仍有较大的进步空间。若是你在使用过程中有相关的反馈以及意见建议，请将其发送到[MixinBooter 的问题追踪器上](https://github.com/CleanroomMC/MixinBooter/issues)。
 :::
