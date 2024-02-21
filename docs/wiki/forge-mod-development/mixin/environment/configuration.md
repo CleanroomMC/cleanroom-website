@@ -30,11 +30,17 @@ All the mixin configurations and the purposes of them is-as follows:
 - `refmap`: The file name of the refmap. `[Required: String]`
 - `plugin`: Path to an implementation of `IMixinConfigPlugin` to do various mixin-related tasks before, during and after mixin applications
 - `target`: Target environment. `[Optional: String]` - Default value: `@env(DEFAULT)` - Acceptable values: `@env(DEFAULT)` | `@env(PREINIT)` | `@env(INIT)`
-  ??? warning
-  `target` being set to `@env(DEFAULT)` and allowing MixinBooter to handle the target environments would result in the least problems.
+- 
+::: tip `target` Advise
+`target` being set to `@env(DEFAULT)` and allowing MixinBooter to handle the target environments would result in the least problems.
+:::
+
 - `minVersion`: Minimum compatible version of Mixin. `[Optional: String]`
-  ??? tip
-  `minVersion` set at `0.8.5` allows you to use all of MixinBooter's features and annotations without worry. However, setting it at `0.8` will allow for those without MixinBooter and running Mixin through other methods to have less chances of crashing.
+- 
+::: tip About different `minVersion`
+`minVersion` set at `0.8.5` allows you to use all of MixinBooter's features and annotations without worry. However, setting it at `0.8` will allow for those without MixinBooter and running Mixin through other methods to have less chances of crashing.
+:::
+
 - `compatibilityLevel`: Compatible Java version. `[Optional: String]`
   - Default value: `JAVA_6`
   - Acceptable values: any java version above 6, prefix the value with a `JAVA_` string
