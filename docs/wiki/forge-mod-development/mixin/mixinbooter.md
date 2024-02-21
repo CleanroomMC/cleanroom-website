@@ -64,6 +64,6 @@ dependencies {
 - Consult `ILateMixinLoader` for mixins that affects mods.
 - `@MixinLoader` annotation is, as of 4.2, deprecated. The functionality is akin to `ILateMixinLoader`.
 
-::: tip
+::: info About log readability
 Because of Mixin and Bytecode intricacies, MixinBooter tries to allow both the developers and the users to understand crashes and logs better, but it is still being improved on. Please direct any feedback [here](https://github.com/CleanroomMC/MixinBooter/issues)!
 :::
