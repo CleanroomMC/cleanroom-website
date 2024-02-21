@@ -2,14 +2,15 @@
 title: Preface
 ---
 
-# Preface
+# 前言
 
-> [!NOTE]
-> Only for advanced developers! Make sure you are adept with Java prior to this!
+::: danger 阅读前提示
+该章节仅适合进阶开发者阅读！阅读本章节需要有较为扎实的 Java 功底！
+:::
 
-Recommended concepts to be acquainted before venturing into mixins:
+你在阅读这一章节之前，应对以下的两个概念有充分的认知：
 
-- Annotations
-- Bytecode Structure
+- 注解
+- 字节码结构
 
-**Mixins are powerful and simplified tools modders use to manipulate existing code at runtime. This goes beyond the basic Reflection and MethodHandle concepts, and results directly in the bytecode of the modified class changing.**
+**Mixin 是一款功能强大而用法简约的工具，能够帮助开发者在运行期间操纵运行的代码。这与一般的反射以及方法句柄并不相同，它是直接对目标类的字节码进行操作。**
