@@ -4,30 +4,30 @@ title: ModularUI
 
 # ModularUI
 
-## What is ModularUI?
+## 什么是 ModularUI
 
-ModularUI is a library for Minecraft aiming to make GUI's much easier.
+ModularUI 是 Minecraft 的一个库，旨在帮助开发者以更简易的方式创建 GUI。
 
-## Why ModularUI?
+## 为何选用 ModularUI
 
-Minecrafts (and Forges) gui code is not very good and the code gets really messy really fast. With ModularUI you can build
-GUIs fast by adding Widgets to panels with layout widgets, so you don't have to calculate positions and sizes yourself.
-ModularUI is very dynamic and allows for very complicated client only or even client-server synced GUIs.
-A good example is fluid slots in GUIs. Minecraft and Forge don't offer anything to add fluid slots or tanks to a GUI.
-With ModularUI you simply call `.child(new FluidSlot().syncHandler(new FluidTank(16000)))` (along with some setters).
+Minecraft 的（Forge 也一样）的 GUI 代码质量堪忧，迭代速度快，内部逻辑也较难理清。ModularUI 可以帮助您快速创建空白面板，在面板中，您可以任意选用布局 widgets，搭建出自己想要的 GUI。相关的位置以及大小无需您耗费精力计算。
 
-## Key features
+ModularUI 使用起来颇为灵活，无论是复杂的客户端 GUI，还是需要客户端-服务端同步的 GUI，都能轻松搞定。
 
-- panel system similar to windows
+我们可以举一个例子：Minecraft 以及 Forge 均未提供在 GUI 中创建液体槽位的便捷方法。有了 ModularUI，您仅需使用 `.child(new FluidSlot().syncHandler(new FluidTank(16000)))` 这一行代码，便能轻松创造出液体槽位（当然，还有一些配置需要您自行调整）。
+
+## 核心特性
+
+- 与 Windows 类似的布局系统
 - widgets are placed in a tree like structure
-- widget rendering and interactions are automatically handled
-- easy and dynamic widget sizing and positioning
-- syncing widget values
-- good for client only GUIs and client-server synced GUIs
-- GUI themes are loaded via JSON and can be added and modified by resourcepacks
+- widget 的渲染以及交互均由模组内部自行安排
+- widget 的大小设置以及位置调整十分简易灵活
+- widget 的数值会自行同步
+- 尤为适合创建仅客户端以及客户端-服务端同步的 GUI
+- GUI 的主题由 Json 控制，且可通过资源包添加/修改
 - JEI compat for things like exclusion zones
 
-### History
+### 模组历史
 
 - First appearance of ModularUI in GTCE by Archengius
 - on 30th December 2021 GTCEu released with some improvements to its GUI library

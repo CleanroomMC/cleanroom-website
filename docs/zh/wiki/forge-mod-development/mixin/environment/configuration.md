@@ -57,7 +57,7 @@ title: Configuration
   - 可接受的值：从 `0` 至 `MAX_INTEGER`
 - `setSourceFile`：是否覆写目标类，向目标类中添加 Mixin 文件中的元数据？ `[可选，填入类型为 Boolean]`
   - 默认值：`false`
-- `refmapWrapper`：用于标记一个 `IReferenceMapper` 的实现类的路径，用于精细控制重映射期间的相关操作。 `[可选，填入类型为 String]`
+- `refmapWrapper`：用于标记一个 `IReferenceMapper` 的实现类的路径，此类可用于精细控制重映射期间的相关操作。 `[可选，填入类型为 String]`
 - `verbose`：是否使用 Verbose logging。 `[可选，填入类型为 Boolean]`
   - 默认值：`false`
 - `injectors`：注入器选项 `[可选，填入类型为 Json 对象]`

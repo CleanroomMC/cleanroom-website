@@ -19,7 +19,7 @@ features:
   - title: Cleanroom Loader
     details: 拥抱 1.12.2，畅享现代化模组。
     icon: 🏃🏻‍♀️
-  - title: Template for 1.12.2
+  - title: 1.12.2 模组开发模板
     details: 全新旅程，始于这里。
     icon: 📦
   - title: 先进的 API

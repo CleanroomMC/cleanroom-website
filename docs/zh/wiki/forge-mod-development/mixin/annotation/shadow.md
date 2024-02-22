@@ -4,17 +4,17 @@ title: Shadow
 
 # Shadow
 
-在 Mixin 类中，被 `@Shadow` 注解的对象相当于一个占位符。注解对象会“李代桃僵”，成为目标类中某一本就存在的对象的替身。你可以正常地在 Mixin 类中引用、调用，而不受目标类中对应真实对象的权限约束。
+在 Mixin 类中，被 `@Shadow` 注解的成员相当于一个占位符。注解成员会“李代桃僵”，成为目标类中某一本就存在的成员的替身。你可以正常地在 Mixin 类中引用、调用，而不受目标类中对应真实成员的权限约束。
 
 ## 参数
 
 `remap`: `[可选，参数类型为 Boolean，默认值为 true]`
 
-若此项值为 false，注解处理器（annotation processor）则会跳过该对象的 remap 处理。多数模组对象在使用 @Shadow 时无需 remap，但在处理原版 Minecraft 时则需要。
+若此项值为 false，注解处理器（annotation processor）则会跳过该成员的 remap 处理。在使用 @Shadow注解模组成员时，需要将 remap 设置为 false，但在处理原版 Minecraft 成员时则需要为 true。
 
 `aliases`: `[可选，参数类型为 String Array，默认值为 {}]`
 
-你可以在 Array 中填入此对象的别名（aliases），这一参数可用于某些合成成员（synthetic member），或是某些在运行时受其他来源影响而名称发生变化的成员。
+你可以在 Array 中填入此成员的别名（aliases），这一参数可用于某些合成成员（synthetic member），或是某些在运行时受其他来源影响而名称发生变化的成员。
 
 `prefix`: `[可选，参数类型为 String，默认值为 "shadow$"]`
 

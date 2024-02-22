@@ -22,7 +22,7 @@ title: Registration
 
 ```java
 /**
- * @return 需要被送入 Mixin 库中的 Mixin 配置，作为队列依次送入。
+ * @return 需要被传入 Mixin 库中的 Mixin 配置，作为队列依次传入。
  */
 List<String> getMixinConfigs();
 
