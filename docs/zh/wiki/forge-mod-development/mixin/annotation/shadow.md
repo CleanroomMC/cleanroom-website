@@ -51,6 +51,8 @@ public class Legal {
 
 ```java [Target.java]
 public class Target {
+    private static String privateStaticString = "Hello Static World";
+
     private String privateValue = "Hello World";
 
     protected int protectedValue = 42;
@@ -60,9 +62,33 @@ public class Target {
 ```java [Example.java]
 @Mixin(Target.class)
 public class Example {
+    @Shadow private static String privateStaticString = ""; // 不会影响目标类中的真实字段
+
     @Shadow private String privateValue = null; // 不会影响目标类中的真实字段
 
     @Shadow protected int protectedValue = 0; // 不会影响目标类中的真实字段
+}
+```
+
+:::
+
+### Shadowing a Method
+
+::: code-group
+
+```java [Target.java]
+public class Target {
+    public static void staticMethod() {
+        // ...
+    }
+
+    public void method() {
+        // ...
+    }
+
+    public int fruitfulMethod() {
+        // ...
+    }
 }
 ```
 
@@ -74,6 +100,10 @@ public class Example {
 
 ```java [Target.java]
 public class Target {
+    public static void staticMethod() {
+        // ...
+    }
+
     public void method() {
         // ...
     }
@@ -87,6 +117,8 @@ public class Target {
 ```java [Example.java]
 @Mixin(Target.class)
 public class Example {
+    @Shadow public static void staticMethod() { }
+
     @Shadow public void method() { }
 
     // 如果这一方法有返回值，
@@ -97,5 +129,24 @@ public class Example {
     }
 }
 ```
+
+```java [AbstractExample.java]
+@Mixin(Target.class)
+// 你也可以直接将使用了 @Shadow 注解的方法写为抽象方法，这样便无需关注此方法的具体实现了
+// 但你也得相对应地将 Mixin 类改为抽象类
+public abstract class AbstractExample {
+    // 静态方法不可为抽象，因为它们与“类”同级！
+    // 参照上面的 Example.java，
+    // 静态方法也可以写成如下这样，也是用于避免极端情况。
+    @Shadow public static void staticMethod() {
+        throw new AssertionError();
+    }
+
+    @Shadow public abstract void method();
+
+    @Shadow public abstract int fruitfulMethod();
+}
+```
+
 
 :::
