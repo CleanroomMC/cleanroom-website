@@ -111,7 +111,7 @@ public class Example {
 ```java [AbstractExample.java]
 @Mixin(Target.class)
 // If your class is abstract, your shadowed methods can be too!
-public abstract class Example {
+public abstract class AbstractExample {
     // But not your static methods, they're still class-level!
     // Same as Example.java, static methods
     // can also be written like this for some sanity checking
