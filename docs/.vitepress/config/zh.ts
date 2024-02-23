@@ -26,13 +26,13 @@ function nav(): DefaultTheme.NavItem[] {
 function wikiSidebar(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Cleanroom Mod Development",
+      text: "Cleanroom 模组开发",
       collapsed: false,
       base: "/zh/wiki/cleanroom-mod-development/",
-      items: [{ text: "Introduction", link: "introduction" }],
+      items: [{ text: "引言", link: "introduction" }],
     },
     {
-      text: "Forge Mod Development",
+      text: "Forge 模组开发",
       collapsed: false,
       base: "/zh/wiki/forge-mod-development/",
       items: [
@@ -66,16 +66,16 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
           base: "/zh/wiki/forge-mod-development/render/",
           items: [
             {
-              text: "Colouring Blocks and Items",
+              text: "为方块与物品上色",
               link: "colouring-blocks-and-items",
             },
           ],
         },
-        { text: "Behaviour", link: "behaviour" },
-        { text: "Debugging", link: "debugging" },
-        { text: "Event", link: "event" },
-        { text: "Game Object", link: "game-object" },
-        { text: "Sidedness", link: "sidedness" },
+        { text: "行为", link: "behaviour" },
+        { text: "调试", link: "debugging" },
+        { text: "事件", link: "event" },
+        { text: "游戏对象", link: "game-object" },
+        { text: "游戏端", link: "sidedness" },
       ],
     },
     {
@@ -84,35 +84,35 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
       base: "/zh/wiki/modularui/",
       items: [
         {
-          text: "Introduction",
+          text: "引言",
           link: "introduction",
         },
-        { text: "Getting started", link: "getting-started" },
-        { text: "Framework", link: "framework" },
-        { text: "Client gui tutorial", link: "client-gui-tutorial" },
-        { text: "Synced gui tutorial", link: "synced-gui-tutorial" },
-        { text: "Sizing and positioning", link: "sizing-and-positioning" },
-        { text: "Themes", link: "themes" },
+        { text: "第一步", link: "getting-started" },
+        { text: "框架", link: "framework" },
+        { text: "客户端 GUI 教程", link: "client-gui-tutorial" },
+        { text: "同步 GUI 教程", link: "synced-gui-tutorial" },
+        { text: "大小与位置", link: "sizing-and-positioning" },
+        { text: "主题", link: "themes" },
         {
           text: "Json",
           collapsed: true,
           base: "/zh/wiki/modularui/json/",
           items: [
-            { text: "Alignment", link: "alignment" },
-            { text: "Color", link: "color" },
+            { text: "对齐", link: "alignment" },
+            { text: "颜色", link: "color" },
             { text: "Drawable", link: "drawable" },
-            { text: "Theme", link: "theme" },
+            { text: "主题", link: "theme" },
           ],
         },
       ],
     },
     {
-      text: "Proposal",
+      text: "提议",
       collapsed: false,
       base: "/zh/wiki/proposal/",
       items: [
         {
-          text: "Standard",
+          text: "标准",
           collapsed: false,
           base: "/zh/wiki/proposal/standard/",
           items: [{ text: "MTMS", link: "mtms" }],

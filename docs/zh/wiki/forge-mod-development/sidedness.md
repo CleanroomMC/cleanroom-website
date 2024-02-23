@@ -2,16 +2,16 @@
 title: Sidedness
 ---
 
-# Sidedness
+# 游戏端
 
-## Introduction
+## 引言
 
-There are two **_sides_** in Minecraft, `client` and `server`. Not only are there two **_sides_**, each **_side_** has a `physical` and `logical` differentiation.
+在 Minecraft 中，游戏由两**端**构成——`client`（客户端）以及 `server`（服务端）。此两端还能进一步细分，根据其内差异，分为 `physical`（实体）以及 `logical`（逻辑）两个层面。
 
-- `Physical Client`: The program that runs whenever you launch Minecraft. All threads and processes that run during the game’s graphical, interact-able lifetime are part of it.
-- `Physical Server`: Also known as the `Dedicated Server`, it is the program that runs whenever you launch the server executable that does not bring up a playable GUI.
-- `Logical Client`: Anything that happens in the `Client Thread`. It accepts inputs from the player and sends them to the `Server Thread`, it also accepts information from the `Server Thread` so it can display information corresponding to the game logic graphically for the player.
-- `Logical Server`: Anything that happens in the `Server Thread`. This thread will spawn on both the `Physical Client` and `Physical Server`. This thread deals with the game logic: mob spawning, weather, inventories, health and more.
+- `实体客户端`：当你启动 Minecraft 时，该程序也会同步启动。游戏的视觉效果、交互逻辑，所有的线程与处理，皆涵括其中。
+- `实体服务端`：亦被称为 `完全服务端`（Dedicated Server），该程序会在可执行服务端启动时随之启动，所涵括的程序不会以可操作的 GUI 显示给玩家。
+- `逻辑客户端`：指的是任何发生于 `客户端线程`（Client Thread）内的事物。它的主要职责为接受外界的输入信息（例如玩家操作），再将信息发送给 `服务端线程`（Server Thread）。同时，它还会相对应地从 `服务端线程` 取回信息，将信息送回给客户端线程，以供客户端渲染。
+- `逻辑服务端`：指的是任何发生于 `服务端线程`内的事物。无论是 `实体客户端` 还是 `实体服务端`，内部都有服务端线程。这一线程主要司职管理怪物生成、天气、物品栏以及生命值等诸多要素。
 
 ## `@Mod`
 
