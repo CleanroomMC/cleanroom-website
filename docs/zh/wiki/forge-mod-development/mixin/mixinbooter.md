@@ -52,7 +52,7 @@ dependencies {
 
 - 自 4.2，MixinBooter 的 API 有了改动，我们希望**任何**使用了 Mixin 的模组都将 MixinBooter 添加为依赖，哪怕这些模组的 Mixin 对象为原版/forge/库类。因为这可以避免因模组间混用不同版本 Mixin 而导致的崩溃问题（VanillaFix 就是个典型例子）。感谢[@embeddedt](https://github.com/embeddedt)在这一更改中所提出的建议！
 
-- 自 5.0，[@LlamaLad7 编写的 MixinExtras](https://github.com/LlamaLad7/MixinExtras)内置于 2，MixinBooter 中，开发者可直接调用相关的内容。
+- 自 5.0，2，MixinBooter 内置了由 [@LlamaLad7 编写的 MixinExtras](https://github.com/LlamaLad7/MixinExtras)，开发者可直接调用相关的内容。
 
 - 自 8.0，MixinBooter 可跨版本运行于 1.8 - 1.12.2。一次构建，多版本通用！（TODO：支持 LiteLoader？）
 
