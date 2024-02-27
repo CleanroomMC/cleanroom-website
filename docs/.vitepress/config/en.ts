@@ -38,6 +38,8 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
           collapsed: true,
           base: "/wiki/forge-mod-development/mixin/",
           items: [
+            { text: "Preface", link: "preface" },
+            { text: "Mixin Booter", link: "mixinbooter" },
             {
               text: "Annotation",
               collapsed: true,
@@ -53,8 +55,6 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
                 { text: "Configuration", link: "configuration" },
               ],
             },
-            { text: "Mixin Booter", link: "mixinbooter" },
-            { text: "Preface", link: "preface" },
           ],
         },
         {

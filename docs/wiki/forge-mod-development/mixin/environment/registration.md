@@ -27,7 +27,7 @@ Both `IEarlyMixinLoader` and `ILateMixinLoader` have identical methods:
 List<String> getMixinConfigs();
 
 /**
- * Runs when a mixin config is successfully queued and sent to Mixin library.
+ * Whether the mixin config should be queued and sent to Mixin library.
  *
  * @param mixinConfig mixin config name, queried via {@link getMixinConfigs()}.
  * @return true if the mixinConfig should be queued, false if it should not.
