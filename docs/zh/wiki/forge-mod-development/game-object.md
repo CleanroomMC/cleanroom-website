@@ -2,57 +2,58 @@
 title: Game Object
 ---
 
-# Game Object
+# 游戏对象
 
-## Sound
+## 声音
 
-### Play
+### 播放
 
-- There are numerous of ways to play a sound within Minecraft.
-- The methods of doing so frequently get mixed up as the overload parameters are very alike.
-- They also differ depending on which logical side you are on, and how you want the sound to be perceived.
+- 在 Minecraft 中，播放声音的方式不止一种。
+- 同时，某些方法还有数种重载方法，混用乃是常态。
+- 这些方法还对逻辑端有不同的要求，并且播放出来的声音给玩家的体感也有差异。
 
-#### Server-Side
+#### 服务端
 
 1. `World#playSound(EntityPlayer, double, double, double, SoundEvent, SoundCategory, float, float)`
 
-- This is the most commonly used method of playing a sound.
-- It plays locational sound to anyone in-range (base 16 blocks radius, see: `ServerWorldEventHandler#playSoundToAllNearExcept(EntityPlayer, SoundEvent, SoundCategory, double, double, double, float, float)`). This sound can be amplified to further than 16 blocks radius by passing a `float volume` of anything larger than 1.0F. `(formula: 16 * volume when volume > 1.0F)`
-- `null` is normally passed to the `EntityPlayer` parameter. This isn't clear from the method itself nor are there any documentation. But this is basically the "except" argument, any one `EntityPlayer` passed through the argument will **_NOT_** hear the sound.
+- 这是播放声音最常用的方法。
+- 它会为所有在范围内的玩家播放声音（基础半径 16 格，参见`ServerWorldEventHandler#playSoundToAllNearExcept(EntityPlayer, SoundEvent, SoundCategory, double, double, double, float, float)`）。若给 `float volume` 参数传入的值大于 1.0F，则播放的半径会超出 16 格。`（公式： 若 volume 大于 1.0F， 则半径为 16 * volume）`
+- 一般来说，我们会将 `null` 传入到 `EntityPlayer` 参数中。该参数在方法上看不出太多的门道，文档里也避而不谈。但通过实践得知，该参数乃是起过滤作用，通过此种方式被传入的 `EntityPlayer` 对象，将**不会**听到由该方法播放出的声音。
 
 2. `World#playSound(EntityPlayer, BlockPos, SoundEvent, SoundCategory, float volume, float pitch)`
 
-- Just calls the first method with `BlockPos#getX`, `BlockPos#getY`, `BlockPos#getZ` as the overloaded double parameters.
+- 上一方法的重载，将三个 `double` 压缩为了一个 `BlockPos`。
 
 3. `Entity#playSound(SoundEvent, float, float)`
 
-- This method checks if the entity `isSilent` before calling the first method **_with_** the `EntityPlayer` being `null`.
+- 这一方法会先检查该实体 `isSilent`，然后再决定是否调用第一个方法。调用时传入的 **`EntityPlayer` 为 `null`**
 
 4. `EntityPlayer#playSound(SoundEvent, float, float)`
 
-- Overrides the 3rd method which is in `EntityPlayer`'s superclass `Entity`.
-- It also calls the first method but **_with_** the `EntityPlayer` callee. This means the callee will **_NOT_** hear any sounds, but everyone else in the range. Strange? Well... it'll clear up when we mention the client-side options.
+- 覆写了第三个方法，该方法位于 `EntityPlayer` 的父类 `Entity` 中。
+- 它同样也调用了第一个方法，但与第三个方法的不同之处在于，它在调用第一个方法时，会将调用者**传入**到第一个方法中的 `EntityPlayer` 中。这意味着调用了这一方法的实体**不会**听到由此方法发出来的声音。很古怪，对吧？我们会在下面的客户端一节中针对此方法再做进一步说明。
 
-#### Client-Side
+#### 客户端
 
 1. `WorldClient#playSound(double, double, double, SoundEvent, SoundCategory, float, float, boolean)`
 
 - Main method in `WorldClient`, sets up a `PositionedSoundRecord` on the client to make sure sounds played are positional.
+`WorldClient` 中的主要方法。它会在客户端中构建一个 `PositionedSoundRecord`，令玩家听到的声音有确实的方位感。
 
 2. `WorldClient#playSound(BlockPos, SoundEvent, SoundCategory, float, float, boolean)`
 
-- Calls the first method.
+- 会调用第一个方法。
 
 3. `WorldClient#playSound(EntityPlayer, SoundEvent, SoundCategory, float, float)`
 
-- Checks if `EntityPlayer` == `this.mc.player` to avoid any issues on LAN before calling first method.
+- 调用时会确认是否 `EntityPlayer` == `this.mc.player`，避免 LAN 中的问题，然后再调用第一个方法。
 
 4. `EntityPlayer#playSound(SoundEvent, float, float)`
 
-- Simply calls the first method.
+- 也是调用第一个方法。
 
 `(COMING SOON: SoundHandler methods)`
 
-The 4th option for both server and client-side does the complete opposite. Server-side's plays sounds to everyone else **_but_** the `EntityPlayer` themselves. While the client-side's version plays it **_only_** to the `EntityPlayer` themselves.
+这一方法比较特别，它在客户端与服务端的行为恰好相反。若是在服务端调用，播放出的声音**唯独** `EntityPlayer` 这一调用者本身**无法**听到；而在客户端，则**只有**调用者能听到。
 
-All-in-all, that method is basically a cheat for anyone that doesn't check which logical side they are on. If the context they're in gets called on both sides, the sound could play normally without the dev potentially knowing this caveat.
+总的来说，这一方法是专门设计出来给对游戏端不甚了解的开发者使用的。如果该方法在双端都被调用，则两者互补，恰好能够达到前面方法的效果。
