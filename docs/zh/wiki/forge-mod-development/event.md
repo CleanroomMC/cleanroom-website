@@ -2,26 +2,26 @@
 title: Event
 ---
 
-# Event
+# 事件
 
-## Overview
+## 总览
 
-- Events are the backbone of Forge's modding ecosystem, there are two major event types.
+- 在 Forge 模组生态中，事件犹如脊梁骨，撑起了整个生态的运作。我们可以将事件统共分为两类：
   - `FMLEvent`
   - `Event`
-- FMLEvents are events for different aspects of mod loading.
+- FMLEvents 与模组加载有关，刻画了模组加载的方方面面：
 
-  1.  `FMLFingerprintViolationEvent`: fires when the mod that is running has mismatched fingerprints.
-  2.  `FMLInterModComms$IMCEvent`: fires between `FMLInitializationEvent` and `FMLPostInitializationEvent`, for modders to receive their `InterModComms` messages.
-  3.  `FMLModDisabledEvent`: fires when your mod is disabled for any reason.
-  4.  `FMLModIdMappingEvent`: fires when ID mappings have changed when loading into a world.
+  1.  `FMLFingerprintViolationEvent`：若在模组运行时检测到签名（fingerprints）不一致，则会触发该事件。
+  2.  `FMLInterModComms$IMCEvent`：触发于 `FMLInitializationEvent` 与 `FMLPostInitializationEvent` 之间。对于模组作者来说，这一事件可用于接收 `InterModComms` 信息。
+  3.  `FMLModDisabledEvent`：当你的模组因任何原因而被禁用时，触发该事件。
+  4.  `FMLModIdMappingEvent`：在加入世界时，若检测到 ID 映射（ID mapping）发生了改变，则触发该事件。
 
-- FMLStateEvents (extends FMLEvent) specifically depicts different phases of the FML lifecycle.
+- FMLStateEvents（继承于 FMLEvent）重点刻画了 FML 生命周期内的不同阶段。
 
-- Initial Loading Stages:
+- 初始化加载阶段（Initial Loading Stages）：
 
-  1. `FMLConstructionEvent`: fires when Forge finishes constructing mods, annotations, mod lists are ready to be queried here.
-  2. `FMLPreInitializationEvent`: fires when Forge is ready to start initializing mods, you can again query annotations once again, and see where different files related to your mod would situate (e.g. config files).
+  1. `FMLConstructionEvent`：当模组构建完毕模组与注解时会触发该事件。在此时，模组列表已填充完毕，可正常访问。
+  2. `FMLPreInitializationEvent`：fires when Forge is ready to start initializing mods, you can again query annotations once again, and see where different files related to your mod would situate (e.g. config files).
   3. `FMLInitializationEvent`: fires after registry events are fired, game objects largely is available in this event. Hence a lot of OreDictionary activity is done here.
   4. `FMLPostInitializationEvent`: fires after `FMLInitializationEvent` is dispatched to all mods, to consolidate any manipulations the mods have made.
   5. `FMLLoadCompleteEvent`: fires straight before the main menu shows up, mods like JustEnoughItem does all their calculations here, it is the last event in the loading FML lifecycle.
