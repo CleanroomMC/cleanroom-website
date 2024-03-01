@@ -34,6 +34,7 @@ function nav(): DefaultTheme.NavItem[] {
     { text: "Home", link: "/" },
     { text: "Guide", link: "/guide/" },
     { text: "Wiki", link: "/wiki/" },
+    { text: "GroovyScript", link: "/groovy-script/rl" },
   ];
 }
 
