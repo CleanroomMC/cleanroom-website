@@ -12,6 +12,15 @@ export const zh = defineConfig({
       next: "下一篇",
       prev: "上一篇",
     },
+    outlineTitle: "大纲",
+    lastUpdated: {
+      text: "更新于",
+    },
+    editLink: {
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
+      text: "编辑此页",
+    },
   },
 });
 

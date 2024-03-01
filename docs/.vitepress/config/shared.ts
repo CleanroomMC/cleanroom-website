@@ -30,6 +30,16 @@ export const shared = defineConfig({
     footer: {
       message: "© 2024 CleanroomMC. All Rights Reserved.",
     },
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
+    editLink: {
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
+    },
     search: { provider: "local" },
     socialLinks: [
       {

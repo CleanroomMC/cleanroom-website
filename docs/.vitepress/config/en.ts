@@ -9,6 +9,14 @@ export const en = defineConfig({
       "/wiki/": wikiSidebar(),
     },
     outlineTitle: "Outline",
+    lastUpdated: {
+      text: "Updated at",
+    },
+    editLink: {
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
+      text: "Edit this page",
+    },
   },
 });
 
