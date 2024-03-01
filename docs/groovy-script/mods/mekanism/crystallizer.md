@@ -14,7 +14,7 @@ Converts an input gasstack into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.crystallizer/*(1)!*/
 mods.mekanism.Crystallizer
 ```
@@ -25,14 +25,16 @@ mods.mekanism.Crystallizer
 
 - Adds recipes in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crystallizer.add(GasStack, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.crystallizer.add(gas('cleanGold'), item('minecraft:gold_ingot'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crystallizer.add(gas('cleanGold'), item('minecraft:gold_ingot'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,63 +42,67 @@ Just like other recipe types, the Crystallizer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.crystallizer.recipeBuilder()"
-    - `#!groovy GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.crystallizer.recipeBuilder() {open}
+- `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasInput(GasStack)
-        gasInput(GasStack...)
-        gasInput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasInput(GasStack)
+    gasInput(GasStack...)
+    gasInput(Collection<GasStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.CrystallizerRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.CrystallizerRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.crystallizer.recipeBuilder()
-            .gasInput(gas('cleanGold'))
-            .output(item('minecraft:gold_ingot'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crystallizer.recipeBuilder()
+    .gasInput(gas('cleanGold'))
+    .output(item('minecraft:gold_ingot'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crystallizer.removeByInput(GasStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crystallizer.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.crystallizer.removeByInput(gas('cleanGold'))
-    mods.mekanism.crystallizer.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crystallizer.removeByInput(gas('cleanGold'))
+mods.mekanism.crystallizer.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crystallizer.streamRecipes()
     ```

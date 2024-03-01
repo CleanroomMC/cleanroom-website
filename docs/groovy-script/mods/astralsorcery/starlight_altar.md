@@ -14,11 +14,7 @@ Allows creation of shaped recipes in the Astral Sorcery Crafting Altar chain.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
-mods.astral_sorcery.starlight_altar
-mods.astral_sorcery.starlightaltar
-mods.astral_sorcery.starlightAltar
-mods.astral_sorcery.StarlightAltar
+```groovy:no-line-numbers {1}
 mods.astralsorcery.starlight_altar/*(1)!*/
 mods.astralsorcery.starlightaltar
 mods.astralsorcery.starlightAltar
@@ -27,10 +23,6 @@ mods.astral.starlight_altar
 mods.astral.starlightaltar
 mods.astral.starlightAltar
 mods.astral.StarlightAltar
-mods.as.starlight_altar
-mods.as.starlightaltar
-mods.as.starlightAltar
-mods.as.StarlightAltar
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -43,318 +35,332 @@ Just like other recipe types, the Starlight Altar also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()"
-    - `#!groovy String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
-
-        ```groovy
-        row(String)
-        shape(String[])
-        shape(String...)
-        matrix(String[])
-        matrix(String...)
-        ```
-
-    - `#!groovy List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
-
-        ```groovy
-        shape(List)
-        shape(List<List<IIngredient>>)
-        matrix(List)
-        matrix(List<List<IIngredient>>)
-        ```
+:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.discoveryRecipeBuilder() {open}
+- `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+
+    ```groovy:no-line-numbers
+    row(String)
+    shape(String[])
+    shape(String...)
+    matrix(String[])
+    matrix(String...)
+    ```
+
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-    - `#!groovy Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
-
-        ```groovy
-        key(char, IIngredient)
-        key(String, IIngredient)
-        key(Map<String, IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    shape(List)
+    shape(List<List<IIngredient>>)
+    matrix(List)
+    matrix(List<List<IIngredient>>)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item output. Requires not null.
+- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
 
-        ```groovy
-        output(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    key(char, IIngredient)
+    key(String, IIngredient)
+    key(Map<String, IIngredient>)
+    ```
 
-    - `#!groovy String`. Sets the name of the recipe, should be unique.
+- `ItemStack`. Sets the item output. Requires not null.
 
-        ```groovy
-        name(String)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-    - `#!groovy int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `String`. Sets the name of the recipe, should be unique.
 
-        ```groovy
-        craftTime(int)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-    - `#!groovy IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+    ```groovy:no-line-numbers
+    craftTime(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
-            .output(item('minecraft:water_bucket'))
-            .row('   ')
-            .row(' B ')
-            .row('   ')
-            .key('B', item('minecraft:bucket'))
-            .starlight(1)
-            .craftTime(10)
-            .register()
-        ```
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
 
-???+ Abstract "mods.astralsorcery.starlight_altar.attunementRecipeBuilder()"
-    - `#!groovy String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-        ```groovy
-        row(String)
-        shape(String[])
-        shape(String...)
-        matrix(String[])
-        matrix(String...)
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
+    .output(item('minecraft:water_bucket'))
+    .row('   ')
+    .row(' B ')
+    .row('   ')
+    .key('B', item('minecraft:bucket'))
+    .starlight(1)
+    .craftTime(10)
+    .register()
+```
 
-    - `#!groovy List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+::::::::::
 
-        ```groovy
-        shape(List)
-        shape(List<List<IIngredient>>)
-        matrix(List)
-        matrix(List<List<IIngredient>>)
-        ```
+::::::::::
 
-    - `#!groovy Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
+:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.attunementRecipeBuilder() {open}
+- `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-        ```groovy
-        key(char, IIngredient)
-        key(String, IIngredient)
-        key(Map<String, IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    row(String)
+    shape(String[])
+    shape(String...)
+    matrix(String[])
+    matrix(String...)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item output. Requires not null.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-        ```groovy
-        output(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    shape(List)
+    shape(List<List<IIngredient>>)
+    matrix(List)
+    matrix(List<List<IIngredient>>)
+    ```
 
-    - `#!groovy String`. Sets the name of the recipe, should be unique.
+- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
 
-        ```groovy
-        name(String)
-        ```
+    ```groovy:no-line-numbers
+    key(char, IIngredient)
+    key(String, IIngredient)
+    key(Map<String, IIngredient>)
+    ```
 
-    - `#!groovy int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `ItemStack`. Sets the item output. Requires not null.
 
-        ```groovy
-        craftTime(int)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-    - `#!groovy IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+- `String`. Sets the name of the recipe, should be unique.
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    craftTime(int)
+    ```
 
+- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
 
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
 
-???+ Abstract "mods.astralsorcery.starlight_altar.constellationRecipeBuilder()"
-    - `#!groovy String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
 
-        ```groovy
-        row(String)
-        shape(String[])
-        shape(String...)
-        matrix(String[])
-        matrix(String...)
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    - `#!groovy List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-        ```groovy
-        shape(List)
-        shape(List<List<IIngredient>>)
-        matrix(List)
-        matrix(List<List<IIngredient>>)
-        ```
 
-    - `#!groovy Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
+::::::::::
 
-        ```groovy
-        key(char, IIngredient)
-        key(String, IIngredient)
-        key(Map<String, IIngredient>)
-        ```
+:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.constellationRecipeBuilder() {open}
+- `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-    - `#!groovy ItemStack`. Sets the item output. Requires not null.
+    ```groovy:no-line-numbers
+    row(String)
+    shape(String[])
+    shape(String...)
+    matrix(String[])
+    matrix(String...)
+    ```
 
-        ```groovy
-        output(ItemStack)
-        ```
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-    - `#!groovy String`. Sets the name of the recipe, should be unique.
+    ```groovy:no-line-numbers
+    shape(List)
+    shape(List<List<IIngredient>>)
+    matrix(List)
+    matrix(List<List<IIngredient>>)
+    ```
 
-        ```groovy
-        name(String)
-        ```
+- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
 
-    - `#!groovy int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+    ```groovy:no-line-numbers
+    key(char, IIngredient)
+    key(String, IIngredient)
+    key(Map<String, IIngredient>)
+    ```
 
-        ```groovy
-        craftTime(int)
-        ```
+- `ItemStack`. Sets the item output. Requires not null.
 
-    - `#!groovy IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+- `String`. Sets the name of the recipe, should be unique.
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-        ```groovy
-        register()
-        ```
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
-            .output(item('minecraft:pumpkin'))
-            .matrix('ss ss',
-                    's   s',
-                    '  d  ',
-                    's   s',
-                    'ss ss')
-            .key('s', item('minecraft:pumpkin_seeds'))
-            .key('d', ore('dirt'))
-            .register()
-        ```
+    ```groovy:no-line-numbers
+    craftTime(int)
+    ```
 
-???+ Abstract "mods.astralsorcery.starlight_altar.traitRecipeBuilder()"
-    - `#!groovy String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
 
-        ```groovy
-        row(String)
-        shape(String[])
-        shape(String...)
-        matrix(String[])
-        matrix(String...)
-        ```
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
 
-    - `#!groovy List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
 
-        ```groovy
-        shape(List)
-        shape(List<List<IIngredient>>)
-        matrix(List)
-        matrix(List<List<IIngredient>>)
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    - `#!groovy Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
+    .output(item('minecraft:pumpkin'))
+    .matrix('ss ss',
+            's   s',
+            '  d  ',
+            's   s',
+            'ss ss')
+    .key('s', item('minecraft:pumpkin_seeds'))
+    .key('d', ore('dirt'))
+    .register()
+```
 
-        ```groovy
-        key(char, IIngredient)
-        key(String, IIngredient)
-        key(Map<String, IIngredient>)
-        ```
+::::::::::
 
-    - `#!groovy ItemStack`. Sets the item output. Requires not null.
+::::::::::
 
-        ```groovy
-        output(ItemStack)
-        ```
+:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.traitRecipeBuilder() {open}
+- `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-    - `#!groovy String`. Sets the name of the recipe, should be unique.
+    ```groovy:no-line-numbers
+    row(String)
+    shape(String[])
+    shape(String...)
+    matrix(String[])
+    matrix(String...)
+    ```
 
-        ```groovy
-        name(String)
-        ```
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
-    - `#!groovy int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+    ```groovy:no-line-numbers
+    shape(List)
+    shape(List<List<IIngredient>>)
+    matrix(List)
+    matrix(List<List<IIngredient>>)
+    ```
 
-        ```groovy
-        craftTime(int)
-        ```
+- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
 
-    - `#!groovy IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+    ```groovy:no-line-numbers
+    key(char, IIngredient)
+    key(String, IIngredient)
+    key(Map<String, IIngredient>)
+    ```
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+- `ItemStack`. Sets the item output. Requires not null.
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-        ```groovy
-        register()
-        ```
+- `String`. Sets the name of the recipe, should be unique.
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.starlight_altar.traitRecipeBuilder()
-            .output(item('astralsorcery:itemrockcrystalsimple').setSize(300).setPurity(50).setCutting(50))
-            .matrix('sssss',
-                    'sgggs',
-                    'sgdgs',
-                    'sgggs',
-                    'sssss')
-            .key('s', item('minecraft:pumpkin'))
-            .key('g', ore('treeLeaves'))
-            .key('d', item('minecraft:diamond_block'))
-            .outerInput(item('astralsorcery:blockmarble'))
-            .outerInput(ore('ingotAstralStarmetal'))
-            .outerInput(fluid('astralsorcery.liquidstarlight') * 1000)
-            .outerInput(ore('treeSapling'))
-            .constellation(constellation('discidia'))
-            .register()
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
 
+    ```groovy:no-line-numbers
+    craftTime(int)
+    ```
+
+- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
+
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+
+    ```groovy:no-line-numbers
+    register()
+    ```
+
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.starlight_altar.traitRecipeBuilder()
+    .output(item('astralsorcery:itemrockcrystalsimple').setSize(300).setPurity(50).setCutting(50))
+    .matrix('sssss',
+            'sgggs',
+            'sgdgs',
+            'sgggs',
+            'sssss')
+    .key('s', item('minecraft:pumpkin'))
+    .key('g', ore('treeLeaves'))
+    .key('d', item('minecraft:diamond_block'))
+    .outerInput(item('astralsorcery:blockmarble'))
+    .outerInput(ore('ingotAstralStarmetal'))
+    .outerInput(fluid('astralsorcery.liquidstarlight') * 1000)
+    .outerInput(ore('treeSapling'))
+    .constellation(constellation('discidia'))
+    .register()
+```
+
+::::::::::
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output in all Altar tiers:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.starlight_altar.removeByOutput(ItemStack)
     ```
 
 - Removes all recipes that match the given output in only the specified Altar tier, in the format `output`, `altarLevel`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.starlight_altar.removeByOutput(ItemStack, TileAltar.AltarLevel)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.starlight_altar.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.starlight_altar.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.starlight_altar.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.starlight_altar.streamRecipes()
     ```

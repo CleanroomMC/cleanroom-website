@@ -14,7 +14,7 @@ A weighted item, with a weight to obtain and a minimum and maximum amount. Obtai
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.aa.treasure_chest
 mods.aa.treasurechest
 mods.aa.treasureChest
@@ -35,75 +35,79 @@ Just like other recipe types, the Treasure Chest also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.treasure_chest.recipeBuilder()"
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.actuallyadditions.treasure_chest.recipeBuilder() {open}
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the maximum stack size given when rolled. Requires greater than or equal to 0 and greater than or equal to min. (Default `0`).
+- `int`. Sets the maximum stack size given when rolled. Requires greater than or equal to 0 and greater than or equal to min. (Default `0`).
 
-        ```groovy
-        max(int)
-        ```
+    ```groovy:no-line-numbers
+    max(int)
+    ```
 
-    - `#!groovy int`. Sets the minimum stack size given when rolled. Requires greater than or equal to 0 and less than or equal to max. (Default `0`).
+- `int`. Sets the minimum stack size given when rolled. Requires greater than or equal to 0 and less than or equal to max. (Default `0`).
 
-        ```groovy
-        min(int)
-        ```
+    ```groovy:no-line-numbers
+    min(int)
+    ```
 
-    - `#!groovy int`. Sets how likely this loot is to be rolled. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets how likely this loot is to be rolled. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        weight(int)
-        ```
+    ```groovy:no-line-numbers
+    weight(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.TreasureChestLoot`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.TreasureChestLoot`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.treasure_chest.recipeBuilder()
-            .output(item('minecraft:clay'))
-            .weight(50)
-            .min(16)
-            .max(32)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.treasure_chest.recipeBuilder()
+    .output(item('minecraft:clay'))
+    .weight(50)
+    .min(16)
+    .max(32)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.treasure_chest.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.treasure_chest.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.treasure_chest.removeByOutput(item('minecraft:iron_ingot'))
-    mods.actuallyadditions.treasure_chest.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.treasure_chest.removeByOutput(item('minecraft:iron_ingot'))
+mods.actuallyadditions.treasure_chest.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.treasure_chest.streamRecipes()
     ```

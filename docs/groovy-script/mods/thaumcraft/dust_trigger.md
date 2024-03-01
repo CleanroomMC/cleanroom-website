@@ -14,7 +14,7 @@ Converts a block in-world into an item, when interacting with it with Salis Mund
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.thaumcraft.dust_trigger/*(1)!*/
 mods.thaumcraft.dusttrigger
 mods.thaumcraft.dustTrigger
@@ -39,72 +39,76 @@ Just like other recipe types, the Dust Trigger also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.thaumcraft.dust_trigger.triggerBuilder()"
-    - `#!groovy String`. Sets the input as an ore. Requires either ore or target must be defined, but not both.
+:::::::::: details ABSTRACT mods.thaumcraft.dust_trigger.triggerBuilder() {open}
+- `String`. Sets the input as an ore. Requires either ore or target must be defined, but not both.
 
-        ```groovy
-        target(String)
-        target(OreDictIngredient)
-        ```
+    ```groovy:no-line-numbers
+    target(String)
+    target(OreDictIngredient)
+    ```
 
-    - `#!groovy ItemStack`. Sets the output item, which will be dropped on the ground.
+- `ItemStack`. Sets the output item, which will be dropped on the ground.
 
-        ```groovy
-        output(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-    - `#!groovy Block`. Sets the input as a block. Requires either ore or target must be defined, but not both.
+- `Block`. Sets the input as a block. Requires either ore or target must be defined, but not both.
 
-        ```groovy
-        target(Block)
-        ```
+    ```groovy:no-line-numbers
+    target(Block)
+    ```
 
-    - `#!groovy String`. Sets the research required to craft the recipe.
+- `String`. Sets the research required to craft the recipe.
 
-        ```groovy
-        researchKey(String)
-        ```
+    ```groovy:no-line-numbers
+    researchKey(String)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.thaumcraft.dust_trigger.triggerBuilder()
-            .researchKey('UNLOCKALCHEMY@3')
-            .target(block('minecraft:obsidian'))
-            .output(item('minecraft:enchanting_table'))
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.dust_trigger.triggerBuilder()
+    .researchKey('UNLOCKALCHEMY@3')
+    .target(block('minecraft:obsidian'))
+    .output(item('minecraft:enchanting_table'))
+    .register()
 
-        mods.thaumcraft.dust_trigger.triggerBuilder()
-            .researchKey('UNLOCKALCHEMY@3')
-            .target(ore('cropPumpkin'))
-            .output(item('minecraft:lit_pumpkin'))
-            .register()
-        ```
+mods.thaumcraft.dust_trigger.triggerBuilder()
+    .researchKey('UNLOCKALCHEMY@3')
+    .target(ore('cropPumpkin'))
+    .output(item('minecraft:lit_pumpkin'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.dust_trigger.removeByOutput(ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.dust_trigger.removeByOutput(item('thaumcraft:arcane_workbench'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.dust_trigger.removeByOutput(item('thaumcraft:arcane_workbench'))
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.dust_trigger.streamRecipes()
     ```

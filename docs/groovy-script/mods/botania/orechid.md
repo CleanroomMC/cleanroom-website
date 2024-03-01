@@ -14,7 +14,7 @@ Converts stone blocks into one of a few ore blocks at the cost of mana.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.orechid/*(1)!*/
 mods.botania.Orechid
 ```
@@ -25,54 +25,58 @@ mods.botania.Orechid
 
 - Adds recipes in the format `output`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.add(OreDictIngredient, int)
     ```
 
 - Adds recipes in the format `output`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.add(String, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.orechid.add(ore('oreEmerald'), 1350)
-    mods.botania.orechid.add(ore('blockGold'), 1800)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.orechid.add(ore('oreEmerald'), 1350)
+mods.botania.orechid.add(ore('blockGold'), 1800)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.removeByOutput(OreDictIngredient)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.removeByOutput(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.orechid.removeByOutput(ore('oreEmerald'))
-    mods.botania.orechid.removeByOutput(ore('oreQuartz'))
-    mods.botania.orechid.removeByOutput('oreCoal')
-    mods.botania.orechid.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.orechid.removeByOutput(ore('oreEmerald'))
+mods.botania.orechid.removeByOutput(ore('oreQuartz'))
+mods.botania.orechid.removeByOutput('oreCoal')
+mods.botania.orechid.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid.streamRecipes()
     ```

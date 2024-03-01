@@ -14,7 +14,7 @@ Converts an input itemstack into an output itemstack and an optional 'slag' item
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.ie.blast_furnace
 mods.ie.blastfurnace
 mods.ie.blastFurnace
@@ -31,7 +31,7 @@ mods.immersiveengineering.BlastFurnace
 
 - Adds recipes in the format `output`, `input`, `time`, `slag`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace.add(ItemStack, IIngredient, int, ItemStack)
     ```
 
@@ -42,84 +42,88 @@ Just like other recipe types, the Blast Furnace also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.blast_furnace.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.immersiveengineering.blast_furnace.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item output as slag.
+- `ItemStack`. Sets the item output as slag.
 
-        ```groovy
-        slag(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    slag(ItemStack)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BlastFurnaceRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BlastFurnaceRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.blast_furnace.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:clay'))
-            .time(100)
-            .slag(item('minecraft:gold_nugget'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.blast_furnace.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:clay'))
+    .time(100)
+    .slag(item('minecraft:gold_nugget'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.blast_furnace.removeByInput(item('minecraft:iron_block'))
-    mods.immersiveengineering.blast_furnace.removeByOutput(item('immersiveengineering:metal:8'))
-    mods.immersiveengineering.blast_furnace.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.blast_furnace.removeByInput(item('minecraft:iron_block'))
+mods.immersiveengineering.blast_furnace.removeByOutput(item('immersiveengineering:metal:8'))
+mods.immersiveengineering.blast_furnace.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace.streamRecipes()
     ```

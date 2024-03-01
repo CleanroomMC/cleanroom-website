@@ -14,7 +14,7 @@ Add a new Griding Ball for use in a Sag Mill with the given output multiplier, p
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.sag_mill_grinding/*(1)!*/
 mods.enderio.sagmillgrinding
 mods.enderio.sagMillGrinding
@@ -39,82 +39,86 @@ Just like other recipe types, the Sag Mill Grinding also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.enderio.sag_mill_grinding.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.enderio.sag_mill_grinding.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy float`. Sets the power multiplier to recipes processed with the grinding ball. Requires greater than 0. (Default `1`).
+- `float`. Sets the power multiplier to recipes processed with the grinding ball. Requires greater than 0. (Default `1`).
 
-        ```groovy
-        power(float)
-        ```
+    ```groovy:no-line-numbers
+    power(float)
+    ```
 
-    - `#!groovy float`. Sets the chance to double all outputs in recipes with an applicable bonusType. Requires greater than 0. (Default `1`).
+- `float`. Sets the chance to double all outputs in recipes with an applicable bonusType. Requires greater than 0. (Default `1`).
 
-        ```groovy
-        chance(float)
-        ```
+    ```groovy:no-line-numbers
+    chance(float)
+    ```
 
-    - `#!groovy int`. Sets the amount of power used in recipes before the grinding ball is consumed. Requires greater than 0. (Default `0`).
+- `int`. Sets the amount of power used in recipes before the grinding ball is consumed. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        duration(int)
-        ```
+    ```groovy:no-line-numbers
+    duration(int)
+    ```
 
-    - `#!groovy float`. Format error: Sets the chance to increase outputs up to 100% with an applicable bonusType. Requires greater than 0. (Default `1`).
+- `float`. Format error: Sets the chance to increase outputs up to 100% with an applicable bonusType. Requires greater than 0. (Default `1`).
 
-        ```groovy
-        grinding(float)
-        ```
+    ```groovy:no-line-numbers
+    grinding(float)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.sagmill.GrindingBall`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.sagmill.GrindingBall`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.enderio.sag_mill_grinding.recipeBuilder()
-            .input(item('minecraft:clay_ball'))
-            .chance(6.66)
-            .power(0.001)
-            .grinding(3.33)
-            .duration(10000)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.sag_mill_grinding.recipeBuilder()
+    .input(item('minecraft:clay_ball'))
+    .chance(6.66)
+    .power(0.001)
+    .grinding(3.33)
+    .duration(10000)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Grinding Ball item:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill_grinding.remove(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill_grinding.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.sag_mill_grinding.remove(item('minecraft:flint'))
-    mods.enderio.sag_mill_grinding.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.sag_mill_grinding.remove(item('minecraft:flint'))
+mods.enderio.sag_mill_grinding.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill_grinding.streamRecipes()
     ```

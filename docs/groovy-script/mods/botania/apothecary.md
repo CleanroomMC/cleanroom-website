@@ -14,7 +14,7 @@ Converts item inputs into an item output consuming water and a seed.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.apothecary/*(1)!*/
 mods.botania.Apothecary
 mods.botania.petal_apothecary
@@ -29,7 +29,7 @@ mods.botania.PetalApothecary
 
 - Adds recipes in the format `output`, `inputs`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.add(ItemStack, IIngredient...)
     ```
 
@@ -40,77 +40,81 @@ Just like other recipe types, the Petal Apothecary also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.botania.apothecary.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 20.
+:::::::::: details ABSTRACT mods.botania.apothecary.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 20.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `vazkii.botania.api.recipe.RecipePetals`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `vazkii.botania.api.recipe.RecipePetals`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.botania.apothecary.recipeBuilder()
-            .input(ore('blockGold'), ore('ingotIron'), item('minecraft:apple'))
-            .output(item('minecraft:golden_apple'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.apothecary.recipeBuilder()
+    .input(ore('blockGold'), ore('ingotIron'), item('minecraft:apple'))
+    .output(item('minecraft:golden_apple'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.removeByInput(IIngredient...)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.removeByInputs(IIngredient...)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.removeByOutput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.apothecary.removeByInput(ore('runeFireB'))
-    mods.botania.apothecary.removeByInputs(ore('petalYellow'), ore('petalBrown'))
-    mods.botania.apothecary.removeByOutput(item('botania:specialflower').withNbt(['type': 'puredaisy']))
-    mods.botania.apothecary.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.apothecary.removeByInput(ore('runeFireB'))
+mods.botania.apothecary.removeByInputs(ore('petalYellow'), ore('petalBrown'))
+mods.botania.apothecary.removeByOutput(item('botania:specialflower').withNbt(['type': 'puredaisy']))
+mods.botania.apothecary.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.apothecary.streamRecipes()
     ```

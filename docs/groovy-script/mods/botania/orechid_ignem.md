@@ -14,7 +14,7 @@ Converts netherrack blocks into one of a few ore blocks at the cost of mana.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.orechid_ignem/*(1)!*/
 mods.botania.orechidignem
 mods.botania.orechidIgnem
@@ -27,54 +27,58 @@ mods.botania.OrechidIgnem
 
 - Adds recipes in the format `output`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.add(OreDictIngredient, int)
     ```
 
 - Adds recipes in the format `output`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.add(String, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.orechid_ignem.add(ore('oreEmerald'), 1350)
-    mods.botania.orechid_ignem.add(ore('blockGold'), 1800)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.orechid_ignem.add(ore('oreEmerald'), 1350)
+mods.botania.orechid_ignem.add(ore('blockGold'), 1800)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.removeByOutput(OreDictIngredient)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.removeByOutput(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.orechid_ignem.removeByOutput(ore('oreEmerald'))
-    mods.botania.orechid_ignem.removeByOutput(ore('oreQuartz'))
-    mods.botania.orechid_ignem.removeByOutput('oreQuartz')
-    mods.botania.orechid_ignem.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.orechid_ignem.removeByOutput(ore('oreEmerald'))
+mods.botania.orechid_ignem.removeByOutput(ore('oreQuartz'))
+mods.botania.orechid_ignem.removeByOutput('oreQuartz')
+mods.botania.orechid_ignem.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.orechid_ignem.streamRecipes()
     ```

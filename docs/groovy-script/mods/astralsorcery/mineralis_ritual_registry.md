@@ -14,11 +14,7 @@ Using a mineralis ritual will convert nearby stone blocks into random ores.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
-mods.astral_sorcery.mineralis_ritual_registry
-mods.astral_sorcery.mineralisritualregistry
-mods.astral_sorcery.mineralisRitualRegistry
-mods.astral_sorcery.MineralisRitualRegistry
+```groovy:no-line-numbers {1}
 mods.astralsorcery.mineralis_ritual_registry/*(1)!*/
 mods.astralsorcery.mineralisritualregistry
 mods.astralsorcery.mineralisRitualRegistry
@@ -27,10 +23,6 @@ mods.astral.mineralis_ritual_registry
 mods.astral.mineralisritualregistry
 mods.astral.mineralisRitualRegistry
 mods.astral.MineralisRitualRegistry
-mods.as.mineralis_ritual_registry
-mods.as.mineralisritualregistry
-mods.as.mineralisRitualRegistry
-mods.as.MineralisRitualRegistry
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -39,45 +31,49 @@ mods.as.MineralisRitualRegistry
 
 - Adds entries in the format `ore`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.mineralis_ritual_registry.add(String, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.mineralis_ritual_registry.add(ore('blockDiamond'), 10000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.mineralis_ritual_registry.add(ore('blockDiamond'), 10000)
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes entries of the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.mineralis_ritual_registry.remove(OreDictIngredient)
     ```
 
 - Removes entries of the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.mineralis_ritual_registry.remove(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.mineralis_ritual_registry.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.mineralis_ritual_registry.remove(ore('oreDiamond'))
-    mods.astralsorcery.mineralis_ritual_registry.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.mineralis_ritual_registry.remove(ore('oreDiamond'))
+mods.astralsorcery.mineralis_ritual_registry.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.mineralis_ritual_registry.streamRecipes()
     ```

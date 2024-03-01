@@ -14,7 +14,7 @@ Converts 1 input itemstack with up to 4 additional inputs into an output itemsta
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.ie.arc_furnace
 mods.ie.arcfurnace
 mods.ie.arcFurnace
@@ -31,7 +31,7 @@ mods.immersiveengineering.ArcFurnace
 
 - Adds recipes in the format `output`, `input`, `additives`, `slag`, `time`, `energyPerTick`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.add(ItemStack, IIngredient, List<IIngredient>, ItemStack, int, int)
     ```
 
@@ -42,119 +42,123 @@ Just like other recipe types, the Arc Furnace also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.arc_furnace.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 5.
+:::::::::: details ABSTRACT mods.immersiveengineering.arc_furnace.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 5.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item output as slag. Requires not null.
+- `ItemStack`. Sets the item output as slag. Requires not null.
 
-        ```groovy
-        slag(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    slag(ItemStack)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. Requires greater than 0. (Default `0`).
+- `int`. Sets the time in ticks the recipe takes to process. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - `#!groovy IIngredient`. Sets the item input. Requires not null.
+- `IIngredient`. Sets the item input. Requires not null.
 
-        ```groovy
-        mainInput(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    mainInput(IIngredient)
+    ```
 
-    - `#!groovy int`. Sets the amount of power consumed per tick. Requires greater than 0. (Default `0`).
+- `int`. Sets the amount of power consumed per tick. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        energyPerTick(int)
-        ```
+    ```groovy:no-line-numbers
+    energyPerTick(int)
+    ```
 
-    - `#!groovy String`. Sets the special recipe type. Default options are `Alloying`, `Ores`, and `Recycling`.
+- `String`. Sets the special recipe type. Default options are `Alloying`, `Ores`, and `Recycling`.
 
-        ```groovy
-        ores()
-        alloying()
-        recycling()
-        specialRecipeType(String)
-        ```
+    ```groovy:no-line-numbers
+    ores()
+    alloying()
+    recycling()
+    specialRecipeType(String)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.arc_furnace.recipeBuilder()
-            .mainInput(item('minecraft:diamond'))
-            .input(item('minecraft:diamond'), ore('ingotGold'))
-            .output(item('minecraft:clay'))
-            .time(100)
-            .energyPerTick(100)
-            .slag(item('minecraft:gold_nugget'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.arc_furnace.recipeBuilder()
+    .mainInput(item('minecraft:diamond'))
+    .input(item('minecraft:diamond'), ore('ingotGold'))
+    .output(item('minecraft:clay'))
+    .time(100)
+    .energyPerTick(100)
+    .slag(item('minecraft:gold_nugget'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.removeByInput(IIngredient, List<IIngredient>)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.removeByInput(IIngredient...)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.removeByInput(List<IIngredient>)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.arc_furnace.removeByInput(item('immersiveengineering:metal:18'), item('immersiveengineering:material:17'))
-    mods.immersiveengineering.arc_furnace.removeByOutput(item('immersiveengineering:metal:7'))
-    mods.immersiveengineering.arc_furnace.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.arc_furnace.removeByInput(item('immersiveengineering:metal:18'), item('immersiveengineering:material:17'))
+mods.immersiveengineering.arc_furnace.removeByOutput(item('immersiveengineering:metal:7'))
+mods.immersiveengineering.arc_furnace.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.arc_furnace.streamRecipes()
     ```

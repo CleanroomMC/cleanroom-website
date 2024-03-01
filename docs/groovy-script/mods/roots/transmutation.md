@@ -14,7 +14,7 @@ When running the Transmutation, convert nearby blocks that match a set of condit
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.transmutation/*(1)!*/
 mods.roots.Transmutation
 ```
@@ -29,115 +29,119 @@ Just like other recipe types, the Transmutation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.transmutation.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.transmutation.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy BlockStatePredicate`. Sets the starting blockstate. Requires not null.
+- `BlockStatePredicate`. Sets the starting blockstate. Requires not null.
 
-        ```groovy
-        start(IBlockState)
-        start(BlockStatePredicate)
-        ```
+    ```groovy:no-line-numbers
+    start(IBlockState)
+    start(BlockStatePredicate)
+    ```
 
-    - `#!groovy IBlockState`. Sets the output iblockstate.
+- `IBlockState`. Sets the output iblockstate.
 
-        ```groovy
-        state(IBlockState)
-        output(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    state(IBlockState)
+    output(IBlockState)
+    ```
 
-    - `#!groovy WorldBlockStatePredicate`. Sets a condition for the input to be converted, typically indicating a specific block above or below. (Default `WorldBlockStatePredicate.TRUE`).
+- `WorldBlockStatePredicate`. Sets a condition for the input to be converted, typically indicating a specific block above or below. (Default `WorldBlockStatePredicate.TRUE`).
 
-        ```groovy
-        condition(WorldBlockStatePredicate)
-        ```
+    ```groovy:no-line-numbers
+    condition(WorldBlockStatePredicate)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.TransmutationRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.TransmutationRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.transmutation.recipeBuilder()
-            .name('clay_duping')
-            .start(blockstate('minecraft:clay'))
-            .output(item('minecraft:clay_ball') * 30)
-            .condition(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:gold_block')).below().register())
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.transmutation.recipeBuilder()
+    .name('clay_duping')
+    .start(blockstate('minecraft:clay'))
+    .output(item('minecraft:clay_ball') * 30)
+    .condition(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:gold_block')).below().register())
+    .register()
 
-        mods.roots.transmutation.recipeBuilder()
-            .start(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:yellow_flower:type=dandelion')).properties('type').register())
-            .state(blockstate('minecraft:gold_block'))
-            .condition(mods.roots.predicates.above(mods.roots.predicates.LEAVES))
-            .register()
+mods.roots.transmutation.recipeBuilder()
+    .start(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:yellow_flower:type=dandelion')).properties('type').register())
+    .state(blockstate('minecraft:gold_block'))
+    .condition(mods.roots.predicates.above(mods.roots.predicates.LEAVES))
+    .register()
 
-        mods.roots.transmutation.recipeBuilder()
-            .start(blockstate('minecraft:diamond_block'))
-            .state(blockstate('minecraft:gold_block'))
-            .register()
-        ```
+mods.roots.transmutation.recipeBuilder()
+    .start(blockstate('minecraft:diamond_block'))
+    .state(blockstate('minecraft:gold_block'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Transmutation recipe for the given input IBlockState:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.removeByInput(IBlockState)
     ```
 
 - Removes the Transmutation recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.removeByName(ResourceLocation)
     ```
 
 - Removes the Transmutation recipe for the given output IBlockState:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.removeByOutput(IBlockState)
     ```
 
 - Removes the Transmutation recipe for the given output itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.transmutation.removeByName(resource('roots:redstone_block_to_glowstone'))
-    mods.roots.transmutation.removeByOutput(blockstate('minecraft:log:variant=jungle'))
-    mods.roots.transmutation.removeByOutput(item('minecraft:dye:3'))
-    mods.roots.transmutation.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.transmutation.removeByName(resource('roots:redstone_block_to_glowstone'))
+mods.roots.transmutation.removeByOutput(blockstate('minecraft:log:variant=jungle'))
+mods.roots.transmutation.removeByOutput(item('minecraft:dye:3'))
+mods.roots.transmutation.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.transmutation.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Converts an input fluidstack, gasstack, and optional itemstack into an output ga
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.pressurized_reaction_chamber/*(1)!*/
 mods.mekanism.pressurizedreactionchamber
 mods.mekanism.pressurizedReactionChamber
@@ -33,105 +33,109 @@ Just like other recipe types, the Pressurized Reaction Chamber also uses a recip
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.pressurized_reaction_chamber.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
+:::::::::: details ABSTRACT mods.mekanism.pressurized_reaction_chamber.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidInput(FluidStack)
-        fluidInput(FluidStack...)
-        fluidInput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidInput(FluidStack)
+    fluidInput(FluidStack...)
+    fluidInput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
+- `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasInput(GasStack)
-        gasInput(GasStack...)
-        gasInput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasInput(GasStack)
+    gasInput(GasStack...)
+    gasInput(Collection<GasStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas outputs of the recipe. Requires exactly 1.
+- `GasStackList`. Sets the gas outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasOutput(GasStack)
-        gasOutput(GasStack...)
-        gasOutput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasOutput(GasStack)
+    gasOutput(GasStack...)
+    gasOutput(Collection<GasStack>)
+    ```
 
-    - `#!groovy double`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0.0d`).
+- `double`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0.0d`).
 
-        ```groovy
-        ```
+    ```groovy:no-line-numbers
+    ```
 
-    - `#!groovy int`. Sets the time in ticks for the recipe to process. Requires greater than 0. (Default `0`).
+- `int`. Sets the time in ticks for the recipe to process. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        ```
+    ```groovy:no-line-numbers
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.PressurizedRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.PressurizedRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
-            .fluidInput(fluid('water'))
-            .gasInput(gas('water'))
-            .input(item('minecraft:clay_ball'))
-            .gasOutput(gas('ethene'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
+    .fluidInput(fluid('water'))
+    .gasInput(gas('water'))
+    .input(item('minecraft:clay_ball'))
+    .gasOutput(gas('ethene'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Adds recipes in the format `inputSolid`, `inputFluid`, `inputGas`, `outputSolid`, `outputGas`, `energy`, `duration`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.pressurized_reaction_chamber.add(IIngredient, FluidStack, GasStack, ItemStack, GasStack, double, int)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.pressurized_reaction_chamber.removeByInput(IIngredient, FluidStack, GasStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.pressurized_reaction_chamber.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.pressurized_reaction_chamber.removeByInput(ore('logWood'), fluid('water'), gas('oxygen'))
-    mods.mekanism.pressurized_reaction_chamber.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.pressurized_reaction_chamber.removeByInput(ore('logWood'), fluid('water'), gas('oxygen'))
+mods.mekanism.pressurized_reaction_chamber.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.pressurized_reaction_chamber.streamRecipes()
     ```

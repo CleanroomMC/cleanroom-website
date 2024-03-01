@@ -14,15 +14,11 @@ Add custom Research Pages to the Astral Sorcery Book.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
-mods.astral_sorcery.research
-mods.astral_sorcery.Research
+```groovy:no-line-numbers {1}
 mods.astralsorcery.research/*(1)!*/
 mods.astralsorcery.Research
 mods.astral.research
 mods.astral.Research
-mods.as.research
-mods.as.Research
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -31,27 +27,29 @@ mods.as.Research
 
 - Adds a new node to the given category in the format `category`, `node`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.addNode(ResearchProgression, ResearchNode)
     ```
 
 - Adds a connection between two nodes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.connectNodes(String, String)
     ```
 
 - Moves the node with the given name to the x and y co-ords specified in the format `name`, `x`, `z`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.moveNode(String, int, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.research.connectNodes('MY_TEST_RESEARCH2', 'ENHANCED_COLLECTOR')
-    mods.astralsorcery.research.moveNode('SOOTYMARBLE', 5, 6)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.research.connectNodes('MY_TEST_RESEARCH2', 'ENHANCED_COLLECTOR')
+mods.astralsorcery.research.moveNode('SOOTYMARBLE', 5, 6)
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -59,103 +57,107 @@ Just like other recipe types, the Research Pages also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.astralsorcery.research.researchBuilder()"
-    - `#!groovy String`. Sets the unlocalized name of the node. Requires not null.
+:::::::::: details ABSTRACT mods.astralsorcery.research.researchBuilder() {open}
+- `String`. Sets the unlocalized name of the node. Requires not null.
 
-        ```groovy
-        name(String)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-    - `#!groovy ItemStack`. Sets the itemstack representing the node in the category. Requires not null.
+- `ItemStack`. Sets the itemstack representing the node in the category. Requires not null.
 
-        ```groovy
-        icon(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    icon(ItemStack)
+    ```
 
-    - `#!groovy ArrayList<IJournalPage>`. Sets the pages visible within the node.
+- `ArrayList<IJournalPage>`. Sets the pages visible within the node.
 
-        ```groovy
-        page(IJournalPage)
-        ```
+    ```groovy:no-line-numbers
+    page(IJournalPage)
+    ```
 
-    - `#!groovy ResearchProgression`. Sets the page the node is located on. Requires not null.
+- `ResearchProgression`. Sets the page the node is located on. Requires not null.
 
-        ```groovy
-        radiance()
-        discovery()
-        attunement()
-        brilliance()
-        exploration()
-        constellation()
-        ```
+    ```groovy:no-line-numbers
+    radiance()
+    discovery()
+    attunement()
+    brilliance()
+    exploration()
+    constellation()
+    ```
 
-    - `#!groovy Point`. Sets the location of the node. Requires not null.
+- `Point`. Sets the location of the node. Requires not null.
 
-        ```groovy
-        point(int, int)
-        ```
+    ```groovy:no-line-numbers
+    point(int, int)
+    ```
 
-    - `#!groovy ArrayList<ResearchNode>`. Sets what other nodes this node is connected to.
+- `ArrayList<ResearchNode>`. Sets what other nodes this node is connected to.
 
-        ```groovy
-        connectionFrom(String)
-        connectionFrom(ResearchNode)
-        ```
+    ```groovy:no-line-numbers
+    connectionFrom(String)
+    connectionFrom(ResearchNode)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.research.researchBuilder()
-            .name('MY_TEST_RESEARCH')
-            .point(5,5)
-            .icon(item('minecraft:pumpkin'))
-            .discovery()
-            .page(mods.astralsorcery.research.pageBuilder().textPage('GROOVYSCRIPT.RESEARCH.PAGE.TEST'))
-            .page(mods.astralsorcery.research.pageBuilder().emptyPage())
-            .connectionFrom('ALTAR1')
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.research.researchBuilder()
+    .name('MY_TEST_RESEARCH')
+    .point(5,5)
+    .icon(item('minecraft:pumpkin'))
+    .discovery()
+    .page(mods.astralsorcery.research.pageBuilder().textPage('GROOVYSCRIPT.RESEARCH.PAGE.TEST'))
+    .page(mods.astralsorcery.research.pageBuilder().emptyPage())
+    .connectionFrom('ALTAR1')
+    .register()
 
-        mods.astralsorcery.research.researchBuilder()
-            .name('MY_TEST_RESEARCH2')
-            .point(5,5)
-            .icon(item('minecraft:pumpkin'))
-            .constellation()
-            .page(mods.astralsorcery.research.pageBuilder().textPage('GROOVYSCRIPT.RESEARCH.PAGE.TEST2'))
-            .page(mods.astralsorcery.research.pageBuilder().constellationRecipePage(item('minecraft:pumpkin')))
-            .register()
-        ```
+mods.astralsorcery.research.researchBuilder()
+    .name('MY_TEST_RESEARCH2')
+    .point(5,5)
+    .icon(item('minecraft:pumpkin'))
+    .constellation()
+    .page(mods.astralsorcery.research.pageBuilder().textPage('GROOVYSCRIPT.RESEARCH.PAGE.TEST2'))
+    .page(mods.astralsorcery.research.pageBuilder().constellationRecipePage(item('minecraft:pumpkin')))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Entries
 
 - Removes a connection between two nodes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.disconnectNodes(String, String)
     ```
 
 - Removes the node with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.removeNode(String)
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.research.disconnectNodes('MY_TEST_RESEARCH', 'ALTAR1')
-    mods.astralsorcery.research.removeNode('CPAPER')
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.research.disconnectNodes('MY_TEST_RESEARCH', 'ALTAR1')
+mods.astralsorcery.research.removeNode('CPAPER')
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Returns the node with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.research.getNode(String)
     ```

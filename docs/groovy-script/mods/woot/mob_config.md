@@ -14,7 +14,7 @@ Control the default values or mob-specific values for a large number of effects,
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.woot.mob_config/*(1)!*/
 mods.woot.mobconfig
 mods.woot.mobConfig
@@ -27,93 +27,97 @@ mods.woot.MobConfig
 
 - Adds configuration to the default map:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(EnumConfigKey, int)
     ```
 
 - Adds configuration to the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(String, EnumConfigKey, int)
     ```
 
 - Adds configuration to the default map:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(String, int)
     ```
 
 - Adds configuration to the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(String, String, int)
     ```
 
 - Adds configuration to the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(WootMobName, EnumConfigKey, int)
     ```
 
 - Adds configuration to the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.add(WootMobName, String, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.woot.mob_config.add('spawn_ticks', 100)
-    mods.woot.mob_config.add('minecraft:zombie', 'spawn_ticks', 1)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.woot.mob_config.add('spawn_ticks', 100)
+mods.woot.mob_config.add('minecraft:zombie', 'spawn_ticks', 1)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes all configuration for the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(String)
     ```
 
 - Removes configuration from the given entity for the given config:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(String, EnumConfigKey)
     ```
 
 - Removes configuration from the given entity for the given config:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(String, String)
     ```
 
 - Removes all configuration for the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(WootMobName)
     ```
 
 - Removes configuration from the given entity for the given config:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(WootMobName, EnumConfigKey)
     ```
 
 - Removes configuration from the given entity for the given config:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.remove(WootMobName, String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.woot.mob_config.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.woot.mob_config.remove('minecraft:wither_skeleton', 'spawn_units')
-    mods.woot.mob_config.remove('minecraft:wither')
-    mods.woot.mob_config.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.woot.mob_config.remove('minecraft:wither_skeleton', 'spawn_units')
+mods.woot.mob_config.remove('minecraft:wither')
+mods.woot.mob_config.removeAll()
+```
+
+::::::::::

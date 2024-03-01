@@ -14,7 +14,7 @@ Pacifist is a list of entities which killing will give the player the advancemen
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.pacifist/*(1)!*/
 mods.roots.Pacifist
 ```
@@ -29,73 +29,77 @@ Just like other recipe types, the Pacifist also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.pacifist.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.pacifist.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy Class<? extends Entity>`. Sets the target entity. Requires not null.
+- `Class<? extends Entity>`. Sets the target entity. Requires not null.
 
-        ```groovy
-        entity(EntityEntry)
-        ```
+    ```groovy:no-line-numbers
+    entity(EntityEntry)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.PacifistEntry`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.PacifistEntry`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.pacifist.recipeBuilder()
-            .name('wither_skeleton_pacifist')
-            .entity(entity('minecraft:wither_skeleton'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.pacifist.recipeBuilder()
+    .name('wither_skeleton_pacifist')
+    .entity(entity('minecraft:wither_skeleton'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Entries
 
 - Removes the Pacifist entry with the given Entity class:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pacifist.removeByClass(Class<? extends Entity>)
     ```
 
 - Removes the Pacifist entry for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pacifist.removeByEntity(EntityEntry)
     ```
 
 - Removes the Pacifist entry with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pacifist.removeByName(ResourceLocation)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pacifist.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.pacifist.removeByEntity(entity('minecraft:cow'))
-    mods.roots.pacifist.removeByName(resource('minecraft:chicken'))
-    mods.roots.pacifist.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.pacifist.removeByEntity(entity('minecraft:cow'))
+mods.roots.pacifist.removeByName(resource('minecraft:chicken'))
+mods.roots.pacifist.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pacifist.streamRecipes()
     ```

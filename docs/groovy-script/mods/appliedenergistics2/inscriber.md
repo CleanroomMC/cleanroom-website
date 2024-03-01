@@ -14,7 +14,7 @@ Converts an item into another item, requiring either one or two additional items
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.ae2.inscriber
 mods.ae2.Inscriber
 mods.appliedenergistics2.inscriber/*(1)!*/
@@ -31,85 +31,89 @@ Just like other recipe types, the Inscriber also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.appliedenergistics2.inscriber.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.appliedenergistics2.inscriber.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy ItemStack`. Sets the top item of the inscriber recipe. Requires either top or bottom to be non-empty. (Default `ItemStack.EMPTY`).
+- `ItemStack`. Sets the top item of the inscriber recipe. Requires either top or bottom to be non-empty. (Default `ItemStack.EMPTY`).
 
-        ```groovy
-        top(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    top(ItemStack)
+    ```
 
-    - `#!groovy InscriberProcessType`. Sets the type of recipe, determining if the top/bottom items function as catalysts. Requires not null. (Default `InscriberProcessType.PRESS`).
+- `InscriberProcessType`. Sets the type of recipe, determining if the top/bottom items function as catalysts. Requires not null. (Default `InscriberProcessType.PRESS`).
 
-        ```groovy
-        type(String)
-        type(InscriberProcessType)
-        press()
-        inscribe()
-        ```
+    ```groovy:no-line-numbers
+    type(String)
+    type(InscriberProcessType)
+    press()
+    inscribe()
+    ```
 
-    - `#!groovy ItemStack`. Sets the bottom item of the inscriber recipe. Requires either top or bottom to be non-empty. (Default `ItemStack.EMPTY`).
+- `ItemStack`. Sets the bottom item of the inscriber recipe. Requires either top or bottom to be non-empty. (Default `ItemStack.EMPTY`).
 
-        ```groovy
-        bottom(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    bottom(ItemStack)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `appeng.api.features.IInscriberRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `appeng.api.features.IInscriberRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.appliedenergistics2.inscriber.recipeBuilder()
-            .input(ore('blockGlass'))
-            .output(item('minecraft:diamond'))
-            .top(item('minecraft:diamond'))
-            .bottom(item('minecraft:diamond'))
-            .inscribe()
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.inscriber.recipeBuilder()
+    .input(ore('blockGlass'))
+    .output(item('minecraft:diamond'))
+    .top(item('minecraft:diamond'))
+    .bottom(item('minecraft:diamond'))
+    .inscribe()
+    .register()
 
-        mods.appliedenergistics2.inscriber.recipeBuilder()
-            .input(item('minecraft:gold_ingot'))
-            .output(item('minecraft:diamond'))
-            .top(item('minecraft:diamond'))
-            .register()
-        ```
+mods.appliedenergistics2.inscriber.recipeBuilder()
+    .input(item('minecraft:gold_ingot'))
+    .output(item('minecraft:diamond'))
+    .top(item('minecraft:diamond'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.inscriber.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.inscriber.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.appliedenergistics2.inscriber.removeByOutput(item('appliedenergistics2:material:59'))
-    mods.appliedenergistics2.inscriber.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.inscriber.removeByOutput(item('appliedenergistics2:material:59'))
+mods.appliedenergistics2.inscriber.removeAll()
+```
+
+::::::::::

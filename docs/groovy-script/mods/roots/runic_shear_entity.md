@@ -14,7 +14,7 @@ Right clicking a Runic Shear on an entity. The entity will have a cooldown, prev
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.runic_shear_entity/*(1)!*/
 mods.roots.runicshearentity
 mods.roots.runicShearEntity
@@ -31,114 +31,118 @@ Just like other recipe types, the Runic Shear Entity also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.runic_shear_entity.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.runic_shear_entity.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy Class<? extends EntityLivingBase>`. Sets the target entity. Requires not null.
+- `Class<? extends EntityLivingBase>`. Sets the target entity. Requires not null.
 
-        ```groovy
-        entity(EntityEntry)
-        ```
+    ```groovy:no-line-numbers
+    entity(EntityEntry)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks before the entity can be sheared again. Requires not null. (Default `0`).
+- `int`. Sets the time in ticks before the entity can be sheared again. Requires not null. (Default `0`).
 
-        ```groovy
-        cooldown(int)
-        ```
+    ```groovy:no-line-numbers
+    cooldown(int)
+    ```
 
-    - `#!groovy Function<EntityLivingBase, ItemStack>`. Sets a function that takes an EntityLivingBase and returns an itemstack drop based on the entities properties.
+- `Function<EntityLivingBase, ItemStack>`. Sets a function that takes an EntityLivingBase and returns an itemstack drop based on the entities properties.
 
-        ```groovy
-        functionMap(Function<EntityLivingBase, ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    functionMap(Function<EntityLivingBase, ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.RunicShearEntityRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.RunicShearEntityRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.runic_shear_entity.recipeBuilder()
-            .name('clay_from_wither_skeletons')
-            .entity(entity('minecraft:wither_skeleton'))
-            .output(item('minecraft:clay'))
-            .cooldown(1000)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.runic_shear_entity.recipeBuilder()
+    .name('clay_from_wither_skeletons')
+    .entity(entity('minecraft:wither_skeleton'))
+    .output(item('minecraft:clay'))
+    .cooldown(1000)
+    .register()
 
-        mods.roots.runic_shear_entity.recipeBuilder()
-            .name('creeper_at_the_last_moment')
-            .entity(entity('minecraft:creeper'))
-            .output(item('minecraft:diamond'), item('minecraft:nether_star'))
-            .functionMap({ entityLivingBase -> entityLivingBase.hasIgnited() ? item('minecraft:nether_star') : item('minecraft:dirt') })
-            .register()
+mods.roots.runic_shear_entity.recipeBuilder()
+    .name('creeper_at_the_last_moment')
+    .entity(entity('minecraft:creeper'))
+    .output(item('minecraft:diamond'), item('minecraft:nether_star'))
+    .functionMap({ entityLivingBase -> entityLivingBase.hasIgnited() ? item('minecraft:nether_star') : item('minecraft:dirt') })
+    .register()
 
-        mods.roots.runic_shear_entity.recipeBuilder()
-            .entity(entity('minecraft:witch'))
-            .output(item('minecraft:clay'))
-            .register()
-        ```
+mods.roots.runic_shear_entity.recipeBuilder()
+    .entity(entity('minecraft:witch'))
+    .output(item('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Runic Shear Entity recipe for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.removeByEntity(Class<? extends EntityLivingBase>)
     ```
 
 - Removes the Runic Shear Entity recipe for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.removeByEntity(EntityEntry)
     ```
 
 - Removes the Runic Shear Entity recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.removeByName(ResourceLocation)
     ```
 
 - Removes the Runic Shear Entity recipe for the given output itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.runic_shear_entity.removeByEntity(entity('minecraft:chicken'))
-    mods.roots.runic_shear_entity.removeByName(resource('roots:slime_strange_ooze'))
-    mods.roots.runic_shear_entity.removeByOutput(item('roots:fey_leather'))
-    mods.roots.runic_shear_entity.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.runic_shear_entity.removeByEntity(entity('minecraft:chicken'))
+mods.roots.runic_shear_entity.removeByName(resource('roots:slime_strange_ooze'))
+mods.roots.runic_shear_entity.removeByOutput(item('roots:fey_leather'))
+mods.roots.runic_shear_entity.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_entity.streamRecipes()
     ```

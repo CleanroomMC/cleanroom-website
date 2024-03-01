@@ -14,7 +14,7 @@ Converts an input itemstack into an output itemstack, requiring one of several e
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.soul_binder/*(1)!*/
 mods.enderio.soulbinder
 mods.enderio.soulBinder
@@ -35,96 +35,100 @@ Just like other recipe types, the Soulbinder also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.enderio.soul_binder.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.enderio.soul_binder.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the experience levels required to start the recipe. Requires greater than 0. (Default `0`).
+- `int`. Sets the experience levels required to start the recipe. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        xp(int)
-        ```
+    ```groovy:no-line-numbers
+    xp(int)
+    ```
 
-    - `#!groovy String`. Sets the unique identifier of the recipe.
+- `String`. Sets the unique identifier of the recipe.
 
-        ```groovy
-        name(String)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-    - `#!groovy int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
+- `int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        energy(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    ```
 
-    - `#!groovy NNList<ResourceLocation>`. Sets the valid entities. Entities must be allowed in Soul Vials. Requires greater than or equal to 1.
+- `NNList<ResourceLocation>`. Sets the valid entities. Entities must be allowed in Soul Vials. Requires greater than or equal to 1.
 
-        ```groovy
-        entity(EntityEntry)
-        entity(EntityEntry...)
-        entity(Collection<EntityEntry>)
-        entitySoul(String)
-        entitySoul(String...)
-        entitySoul(Collection<String>)
-        ```
+    ```groovy:no-line-numbers
+    entity(EntityEntry)
+    entity(EntityEntry...)
+    entity(Collection<EntityEntry>)
+    entitySoul(String)
+    entitySoul(String...)
+    entitySoul(Collection<String>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.soul.BasicSoulBinderRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.soul.BasicSoulBinderRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.enderio.soul_binder.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:clay'))
-            .entity(entity('minecraft:zombie'), entity('minecraft:enderman'))
-            .name('groovy_example')
-            .energy(1000)
-            .xp(5)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.soul_binder.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:clay'))
+    .entity(entity('minecraft:zombie'), entity('minecraft:enderman'))
+    .name('groovy_example')
+    .energy(1000)
+    .xp(5)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.soul_binder.remove(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.soul_binder.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.soul_binder.remove(item('enderio:item_material:17'))
-    mods.enderio.soul_binder.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.soul_binder.remove(item('enderio:item_material:17'))
+mods.enderio.soul_binder.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.soul_binder.streamRecipes()
     ```

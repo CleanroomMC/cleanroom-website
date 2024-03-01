@@ -14,7 +14,7 @@ Consumes items and power from up to 54 pedestals of at least a given tier pointi
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.de.fusion
 mods.de.Fusion
 mods.draconicevolution.fusion/*(1)!*/
@@ -31,97 +31,101 @@ Just like other recipe types, the Fusion also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.draconicevolution.fusion.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 54.
+:::::::::: details ABSTRACT mods.draconicevolution.fusion.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 54.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the minimum tier of Fusion Crafting Injector. Requires greater than or equal to 0 and less than or equal to 3. (Default `0`).
+- `int`. Sets the minimum tier of Fusion Crafting Injector. Requires greater than or equal to 0 and less than or equal to 3. (Default `0`).
 
-        ```groovy
-        tier(int)
-        tierBasic()
-        tierNormal()
-        tierWyvern()
-        tierChaotic()
-        tierDraconic()
-        ```
+    ```groovy:no-line-numbers
+    tier(int)
+    tierBasic()
+    tierNormal()
+    tierWyvern()
+    tierChaotic()
+    tierDraconic()
+    ```
 
-    - `#!groovy long`. Sets the power required per item input. Requires greater than 0. (Default `1000000`).
+- `long`. Sets the power required per item input. Requires greater than 0. (Default `1000000`).
 
-        ```groovy
-        energy(long)
-        ```
+    ```groovy:no-line-numbers
+    energy(long)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item used in the center Fusion Crafting Controller block. Requires not null.
+- `ItemStack`. Sets the item used in the center Fusion Crafting Controller block. Requires not null.
 
-        ```groovy
-        catalyst(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    catalyst(ItemStack)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.brandon3055.draconicevolution.api.fusioncrafting.IFusionRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.brandon3055.draconicevolution.api.fusioncrafting.IFusionRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.draconicevolution.fusion.recipeBuilder()
-            .catalyst(item('minecraft:diamond'))
-            .input(ore('ingotIron'), ore('ingotIron'), item('minecraft:dirt'), item('minecraft:grass'), item('minecraft:grass'), item('minecraft:dirt'), ore('ingotGold'), ore('ingotGold'))
-            .output(item('minecraft:nether_star'))
-            .energy(10)
-            .tier(1)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.draconicevolution.fusion.recipeBuilder()
+    .catalyst(item('minecraft:diamond'))
+    .input(ore('ingotIron'), ore('ingotIron'), item('minecraft:dirt'), item('minecraft:grass'), item('minecraft:grass'), item('minecraft:dirt'), ore('ingotGold'), ore('ingotGold'))
+    .output(item('minecraft:nether_star'))
+    .energy(10)
+    .tier(1)
+    .register()
 
-        mods.draconicevolution.fusion.recipeBuilder()
-            .catalyst(item('minecraft:diamond'))
-            .input(item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'))
-            .output(item('minecraft:nether_star'))
-            .energy(100000)
-            .tierChaotic()
-            .register()
-        ```
+mods.draconicevolution.fusion.recipeBuilder()
+    .catalyst(item('minecraft:diamond'))
+    .input(item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'))
+    .output(item('minecraft:nether_star'))
+    .energy(100000)
+    .tierChaotic()
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given catalyst:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.draconicevolution.fusion.removeByCatalyst(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.draconicevolution.fusion.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.draconicevolution.fusion.removeByCatalyst(item('draconicevolution:chaos_shard'))
-    mods.draconicevolution.fusion.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.draconicevolution.fusion.removeByCatalyst(item('draconicevolution:chaos_shard'))
+mods.draconicevolution.fusion.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.draconicevolution.fusion.streamRecipes()
     ```

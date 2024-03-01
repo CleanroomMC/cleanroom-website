@@ -14,7 +14,7 @@ Converts an input itemstack into an output itemstack over time, producing a give
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.ie.coke_oven
 mods.ie.cokeoven
 mods.ie.cokeOven
@@ -31,7 +31,7 @@ mods.immersiveengineering.CokeOven
 
 - Adds recipes in the format `output`, `input`, `time`, `creosoteOutput`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.coke_oven.add(ItemStack, IIngredient, int, int)
     ```
 
@@ -42,84 +42,88 @@ Just like other recipe types, the Coke Oven also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.coke_oven.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.immersiveengineering.coke_oven.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - `#!groovy int`. Sets the amount of Creosote Oil output. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the amount of Creosote Oil output. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        creosote(int)
-        ```
+    ```groovy:no-line-numbers
+    creosote(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.CokeOvenRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.CokeOvenRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.coke_oven.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:clay'))
-            .time(100)
-            .creosote(50)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.coke_oven.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:clay'))
+    .time(100)
+    .creosote(50)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.coke_oven.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.coke_oven.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.coke_oven.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.coke_oven.removeByInput(item('minecraft:log'))
-    mods.immersiveengineering.coke_oven.removeByOutput(item('immersiveengineering:material:6'))
-    mods.immersiveengineering.coke_oven.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.coke_oven.removeByInput(item('minecraft:log'))
+mods.immersiveengineering.coke_oven.removeByOutput(item('immersiveengineering:material:6'))
+mods.immersiveengineering.coke_oven.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.coke_oven.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Converts an input itemstack and fluidstack into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="7"
+```groovy:no-line-numbers {7}
 mods.ie.bottling_machine
 mods.ie.bottlingmachine
 mods.ie.bottlingMachine
@@ -35,7 +35,7 @@ mods.immersiveengineering.Bottling
 
 - Adds recipes in the format `output`, `input`, `fluidInput`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.bottling_machine.add(ItemStack, IIngredient, FluidStack)
     ```
 
@@ -46,79 +46,83 @@ Just like other recipe types, the Bottling Machine also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.bottling_machine.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.immersiveengineering.bottling_machine.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidInput(FluidStack)
-        fluidInput(FluidStack...)
-        fluidInput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidInput(FluidStack)
+    fluidInput(FluidStack...)
+    fluidInput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BottlingMachineRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BottlingMachineRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.bottling_machine.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .fluidInput(fluid('water'))
-            .output(item('minecraft:clay'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.bottling_machine.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .fluidInput(fluid('water'))
+    .output(item('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.bottling_machine.removeByInput(ItemStack, FluidStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.bottling_machine.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.bottling_machine.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.bottling_machine.removeByInput(item('minecraft:sponge'), fluid('water') * 1000)
-    mods.immersiveengineering.bottling_machine.removeByOutput(item('minecraft:potion').withNbt([Potion:'minecraft:mundane']))
-    mods.immersiveengineering.bottling_machine.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.bottling_machine.removeByInput(item('minecraft:sponge'), fluid('water') * 1000)
+mods.immersiveengineering.bottling_machine.removeByOutput(item('minecraft:potion').withNbt([Potion:'minecraft:mundane']))
+mods.immersiveengineering.bottling_machine.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.bottling_machine.streamRecipes()
     ```

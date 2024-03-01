@@ -14,7 +14,7 @@ Converts an input itemstack and 200 of a gasstack into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.injection_chamber/*(1)!*/
 mods.mekanism.injectionchamber
 mods.mekanism.injectionChamber
@@ -29,14 +29,16 @@ mods.mekanism.Injector
 
 - Adds recipes in the format `ingredient`, `gasInput`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.injection_chamber.add(IIngredient, GasStack, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.injection_chamber.add(item('minecraft:diamond'), gas('water'), item('minecraft:nether_star'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.injection_chamber.add(item('minecraft:diamond'), gas('water'), item('minecraft:nether_star'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -44,74 +46,78 @@ Just like other recipe types, the Injection Chamber also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.injection_chamber.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.injection_chamber.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
+- `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasInput(GasStack)
-        gasInput(GasStack...)
-        gasInput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasInput(GasStack)
+    gasInput(GasStack...)
+    gasInput(Collection<GasStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.InjectionRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.InjectionRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.injection_chamber.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .gasInput(gas('water'))/*(1)!*/
-            .output(item('minecraft:nether_star'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.injection_chamber.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .gasInput(gas('water'))/*(1)!*/
+    .output(item('minecraft:nether_star'))
+    .register()
+```
 
-        1. Always uses 200 gas
+1. Always uses 200 gas
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.injection_chamber.removeByInput(IIngredient, GasStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.injection_chamber.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.injection_chamber.removeByInput(item('minecraft:hardened_clay'), gas('water'))
-    mods.mekanism.injection_chamber.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.injection_chamber.removeByInput(item('minecraft:hardened_clay'), gas('water'))
+mods.mekanism.injection_chamber.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.injection_chamber.streamRecipes()
     ```

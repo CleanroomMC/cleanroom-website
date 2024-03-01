@@ -14,7 +14,7 @@ Converts a Block or IBlockState into an IBlockState when an anvil falls on top o
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.inspirations.anvil_smashing/*(1)!*/
 mods.inspirations.anvilsmashing
 mods.inspirations.anvilSmashing
@@ -27,13 +27,13 @@ mods.inspirations.AnvilSmashing
 
 - Adds an Anvil Smashing recipe in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.add(Block, IBlockState)
     ```
 
 - Adds an Anvil Smashing recipe in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.add(IBlockState, IBlockState)
     ```
 
@@ -44,101 +44,105 @@ Just like other recipe types, the Anvil Smashing also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.inspirations.anvil_smashing.recipeBuilder()"
-    - `#!groovy IBlockState`. Sets the output IBlockState that replaces the input. Requires not null.
+:::::::::: details ABSTRACT mods.inspirations.anvil_smashing.recipeBuilder() {open}
+- `IBlockState`. Sets the output IBlockState that replaces the input. Requires not null.
 
-        ```groovy
-        output(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    output(IBlockState)
+    ```
 
-    - `#!groovy Block`. Sets the input Block. Requires either `inputBlock` or `inputBlockState` to be non-null.
+- `Block`. Sets the input Block. Requires either `inputBlock` or `inputBlockState` to be non-null.
 
-        ```groovy
-        input(Block)
-        ```
+    ```groovy:no-line-numbers
+    input(Block)
+    ```
 
-    - `#!groovy IBlockState`. Sets the input IBlockState. Requires either `inputBlock` or `inputBlockState` to be non-null.
+- `IBlockState`. Sets the input IBlockState. Requires either `inputBlock` or `inputBlockState` to be non-null.
 
-        ```groovy
-        input(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    input(IBlockState)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.inspirations.anvil_smashing.recipeBuilder()
-            .input(blockstate('minecraft:diamond_block'))
-            .output(blockstate('minecraft:clay'))
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.inspirations.anvil_smashing.recipeBuilder()
+    .input(blockstate('minecraft:diamond_block'))
+    .output(blockstate('minecraft:clay'))
+    .register()
 
-        mods.inspirations.anvil_smashing.recipeBuilder()
-            .input(blockstate('minecraft:clay'))
-            .output(blockstate('minecraft:air'))
-            .register()
-        ```
+mods.inspirations.anvil_smashing.recipeBuilder()
+    .input(blockstate('minecraft:clay'))
+    .output(blockstate('minecraft:air'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes an Anvil Smashing recipe in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.remove(Block, IBlockState)
     ```
 
 - Removes an Anvil Smashing recipe in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.remove(IBlockState, IBlockState)
     ```
 
 - Removes an Anvil Smashing recipe matching the given input material:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.remove(Material)
     ```
 
 - Removes an Anvil Smashing recipe with the given Block or IBlockState input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.removeByInput(Block)
     ```
 
 - Removes an Anvil Smashing recipe with the given Block or IBlockState input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.removeByInput(IBlockState)
     ```
 
 - Removes all Anvil Smashing recipes with the given IBlockState output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.removeByOutput(IBlockState)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.inspirations.anvil_smashing.removeByInput(blockstate('minecraft:packed_ice'))
-    mods.inspirations.anvil_smashing.removeByOutput(blockstate('minecraft:cobblestone'))
-    mods.inspirations.anvil_smashing.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.inspirations.anvil_smashing.removeByInput(blockstate('minecraft:packed_ice'))
+mods.inspirations.anvil_smashing.removeByOutput(blockstate('minecraft:cobblestone'))
+mods.inspirations.anvil_smashing.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.inspirations.anvil_smashing.streamRecipes()
     ```

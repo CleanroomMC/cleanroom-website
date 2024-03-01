@@ -14,7 +14,7 @@ Converts an input itemstack into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.enrichment_chamber/*(1)!*/
 mods.mekanism.enrichmentchamber
 mods.mekanism.enrichmentChamber
@@ -29,14 +29,16 @@ mods.mekanism.Enricher
 
 - Adds recipes in the format `ingredient`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.enrichment_chamber.add(IIngredient, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.enrichment_chamber.add(item('minecraft:clay_ball'), item('minecraft:nether_star'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.enrichment_chamber.add(item('minecraft:clay_ball'), item('minecraft:nether_star'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -44,63 +46,67 @@ Just like other recipe types, the Enrichment Chamber also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.enrichment_chamber.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.enrichment_chamber.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.EnrichmentRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.EnrichmentRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.enrichment_chamber.recipeBuilder()
-            .input(item('minecraft:clay_ball'))
-            .output(item('minecraft:nether_star'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.enrichment_chamber.recipeBuilder()
+    .input(item('minecraft:clay_ball'))
+    .output(item('minecraft:nether_star'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.enrichment_chamber.removeByInput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.enrichment_chamber.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.enrichment_chamber.removeByInput(item('minecraft:diamond'))
-    mods.mekanism.enrichment_chamber.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.enrichment_chamber.removeByInput(item('minecraft:diamond'))
+mods.mekanism.enrichment_chamber.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.enrichment_chamber.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Converts any number of input itemstacks and a fluidstack into an output fluidsta
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.ie.mixer
 mods.ie.Mixer
 mods.immersiveengineering.mixer/*(1)!*/
@@ -27,7 +27,7 @@ mods.immersiveengineering.Mixer
 
 - Adds recipes in the format `fluidOutput`, `fluidInput`, `energy`, `itemInput`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.add(FluidStack, FluidStack, int, List<IIngredient>)
     ```
 
@@ -38,101 +38,105 @@ Just like other recipe types, the Mixer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.mixer.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
+:::::::::: details ABSTRACT mods.immersiveengineering.mixer.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidInput(FluidStack)
-        fluidInput(FluidStack...)
-        fluidInput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidInput(FluidStack)
+    fluidInput(FluidStack...)
+    fluidInput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy FluidStackList`. Sets the fluid outputs of the recipe. Requires exactly 1.
+- `FluidStackList`. Sets the fluid outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidOutput(FluidStack)
-        fluidOutput(FluidStack...)
-        fluidOutput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidOutput(FluidStack)
+    fluidOutput(FluidStack...)
+    fluidOutput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy int`. Sets the amount of power consumed to complete the recipe. (Default `0`).
+- `int`. Sets the amount of power consumed to complete the recipe. (Default `0`).
 
-        ```groovy
-        energy(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.MixerRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.MixerRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.mixer.recipeBuilder()
-            .input(item('minecraft:diamond'), ore('ingotGold'), ore('ingotGold'), ore('ingotGold'))
-            .fluidInput(fluid('water'))
-            .fluidOutput(fluid('lava'))
-            .energy(100)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.mixer.recipeBuilder()
+    .input(item('minecraft:diamond'), ore('ingotGold'), ore('ingotGold'), ore('ingotGold'))
+    .fluidInput(fluid('water'))
+    .fluidOutput(fluid('lava'))
+    .energy(100)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.removeByInput(FluidStack, IIngredient...)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.removeByInput(IIngredient...)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.removeByOutput(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.mixer.removeByInput(fluid('water'), item('minecraft:speckled_melon'))
-    mods.immersiveengineering.mixer.removeByInput(item('minecraft:sand'), item('minecraft:sand'), item('minecraft:clay_ball'), item('minecraft:gravel'))
-    mods.immersiveengineering.mixer.removeByOutput(fluid('potion').withNbt([Potion:'minecraft:night_vision']))
-    mods.immersiveengineering.mixer.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.mixer.removeByInput(fluid('water'), item('minecraft:speckled_melon'))
+mods.immersiveengineering.mixer.removeByInput(item('minecraft:sand'), item('minecraft:sand'), item('minecraft:clay_ball'), item('minecraft:gravel'))
+mods.immersiveengineering.mixer.removeByOutput(fluid('potion').withNbt([Potion:'minecraft:night_vision']))
+mods.immersiveengineering.mixer.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.streamRecipes()
     ```

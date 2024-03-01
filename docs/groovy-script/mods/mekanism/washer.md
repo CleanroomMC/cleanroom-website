@@ -14,7 +14,7 @@ Converts an input gasstack into an output gasstack at the cost of 5mb of water.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.washer/*(1)!*/
 mods.mekanism.Washer
 mods.mekanism.chemical_washer
@@ -29,14 +29,16 @@ mods.mekanism.ChemicalWasher
 
 - Adds recipes in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.washer.add(GasStack, GasStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.washer.add(gas('water'), gas('hydrogen'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.washer.add(gas('water'), gas('hydrogen'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -44,63 +46,67 @@ Just like other recipe types, the Washer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.washer.recipeBuilder()"
-    - `#!groovy GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.washer.recipeBuilder() {open}
+- `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasInput(GasStack)
-        gasInput(GasStack...)
-        gasInput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasInput(GasStack)
+    gasInput(GasStack...)
+    gasInput(Collection<GasStack>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas outputs of the recipe. Requires exactly 1.
+- `GasStackList`. Sets the gas outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        gasOutput(GasStack)
-        gasOutput(GasStack...)
-        gasOutput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasOutput(GasStack)
+    gasOutput(GasStack...)
+    gasOutput(Collection<GasStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.WasherRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.WasherRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.washer.recipeBuilder()
-            .gasInput(gas('water') * 10)
-            .gasOutput(gas('hydrogen') * 20)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.washer.recipeBuilder()
+    .gasInput(gas('water') * 10)
+    .gasOutput(gas('hydrogen') * 20)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.washer.removeByInput(GasStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.washer.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.washer.removeByInput(gas('iron'))
-    mods.mekanism.washer.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.washer.removeByInput(gas('iron'))
+mods.mekanism.washer.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.washer.streamRecipes()
     ```

@@ -14,7 +14,7 @@ A weighted oredict for the block obtained via firing a Mining Lens at a block of
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.aa.stone_mining_lens
 mods.aa.stonemininglens
 mods.aa.stoneMiningLens
@@ -35,72 +35,76 @@ Just like other recipe types, the Stone Mining Lens also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.stone_mining_lens.recipeBuilder()"
-    - `#!groovy String`. Sets the ore given by the recipe. Requires not null.
+:::::::::: details ABSTRACT mods.actuallyadditions.stone_mining_lens.recipeBuilder() {open}
+- `String`. Sets the ore given by the recipe. Requires not null.
 
-        ```groovy
-        ore(String)
-        ore(OreDictIngredient)
-        ```
+    ```groovy:no-line-numbers
+    ore(String)
+    ore(OreDictIngredient)
+    ```
 
-    - `#!groovy int`. Sets how likely this ore is to be rolled. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets how likely this ore is to be rolled. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        weight(int)
-        ```
+    ```groovy:no-line-numbers
+    weight(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.WeightedOre`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.WeightedOre`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.stone_mining_lens.recipeBuilder()
-            .ore(ore('blockDiamond'))
-            .weight(100)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.stone_mining_lens.recipeBuilder()
+    .ore(ore('blockDiamond'))
+    .weight(100)
+    .register()
 
-        mods.actuallyadditions.stone_mining_lens.recipeBuilder()
-            .ore('blockGold')
-            .weight(100)
-            .register()
-        ```
+mods.actuallyadditions.stone_mining_lens.recipeBuilder()
+    .ore('blockGold')
+    .weight(100)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.stone_mining_lens.removeByOre(OreDictIngredient)
     ```
 
 - Removes all recipes that match the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.stone_mining_lens.removeByOre(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.stone_mining_lens.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.stone_mining_lens.removeByOre(ore('oreCoal'))
-    mods.actuallyadditions.stone_mining_lens.removeByOre('oreLapis')
-    mods.actuallyadditions.stone_mining_lens.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.stone_mining_lens.removeByOre(ore('oreCoal'))
+mods.actuallyadditions.stone_mining_lens.removeByOre('oreLapis')
+mods.actuallyadditions.stone_mining_lens.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.stone_mining_lens.streamRecipes()
     ```

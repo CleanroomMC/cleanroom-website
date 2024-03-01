@@ -14,7 +14,7 @@ Item and weight, where weight is a factor in how much damage is dealt.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="7"
+```groovy:no-line-numbers {7}
 mods.ae2.cannon_ammo
 mods.ae2.cannonammo
 mods.ae2.cannonAmmo
@@ -35,31 +35,35 @@ mods.appliedenergistics2.Cannon
 
 - Adds ammo in the format `item`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.cannon_ammo.add(ItemStack, double)
     ```
 
-???+ Example
-    ```groovy
-    mods.appliedenergistics2.cannon_ammo.add(item('minecraft:clay'), 10000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.cannon_ammo.add(item('minecraft:clay'), 10000)
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes the ammo entry for the given item:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.cannon_ammo.remove(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.cannon_ammo.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.appliedenergistics2.cannon_ammo.remove(item('minecraft:gold_nugget'))
-    mods.appliedenergistics2.cannon_ammo.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.cannon_ammo.remove(item('minecraft:gold_nugget'))
+mods.appliedenergistics2.cannon_ammo.removeAll()
+```
+
+::::::::::

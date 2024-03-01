@@ -14,7 +14,7 @@ Allows an item to be used in the Blast Furnace as a fuel for the given number of
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.ie.blast_furnace_fuel
 mods.ie.blastfurnacefuel
 mods.ie.blastFurnaceFuel
@@ -31,7 +31,7 @@ mods.immersiveengineering.BlastFurnaceFuel
 
 - Adds recipes in the format `input`, `time`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace_fuel.add(IIngredient, int)
     ```
 
@@ -42,61 +42,65 @@ Just like other recipe types, the Blast Furnace Fuel also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.immersiveengineering.blast_furnace_fuel.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BlastFurnaceRecipe$BlastFurnaceFuel`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.BlastFurnaceRecipe$BlastFurnaceFuel`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
-            .input(item('minecraft:clay'))
-            .time(100)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .time(100)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace_fuel.removeByInput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace_fuel.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.blast_furnace_fuel.removeByInput(item('immersiveengineering:material:6'))
-    mods.immersiveengineering.blast_furnace_fuel.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.blast_furnace_fuel.removeByInput(item('immersiveengineering:material:6'))
+mods.immersiveengineering.blast_furnace_fuel.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.blast_furnace_fuel.streamRecipes()
     ```

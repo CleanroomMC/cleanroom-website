@@ -14,7 +14,7 @@ Converts an input item into an output item after 150 seconds. Requires an input 
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.aa.compost
 mods.aa.Compost
 mods.actuallyadditions.compost/*(1)!*/
@@ -31,84 +31,88 @@ Just like other recipe types, the Compost also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.compost.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.actuallyadditions.compost.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy IBlockState`. Sets the texture rendering inside the Compost Bin in-world while the given recipe is being processed. Requires not null.
+- `IBlockState`. Sets the texture rendering inside the Compost Bin in-world while the given recipe is being processed. Requires not null.
 
-        ```groovy
-        inputDisplay(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    inputDisplay(IBlockState)
+    ```
 
-    - `#!groovy IBlockState`. Sets the texture rendering inside the Compost Bin in-world while the given recipe has been completed but has not yet been extracted. Requires not null.
+- `IBlockState`. Sets the texture rendering inside the Compost Bin in-world while the given recipe has been completed but has not yet been extracted. Requires not null.
 
-        ```groovy
-        outputDisplay(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    outputDisplay(IBlockState)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.CompostRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.CompostRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.compost.recipeBuilder()
-            .input(item('minecraft:clay'))
-            .output(item('minecraft:diamond'))
-            .inputDisplay(blockstate('minecraft:clay'))
-            .outputDisplay(blockstate('minecraft:diamond_block'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.compost.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .inputDisplay(blockstate('minecraft:clay'))
+    .outputDisplay(blockstate('minecraft:diamond_block'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.compost.removeByInput(IIngredient)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.compost.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.compost.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.compost.removeByInput(item('actuallyadditions:item_canola_seed'))
-    mods.actuallyadditions.compost.removeByOutput(item('actuallyadditions:item_fertilizer'))
-    mods.actuallyadditions.compost.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.compost.removeByInput(item('actuallyadditions:item_canola_seed'))
+mods.actuallyadditions.compost.removeByOutput(item('actuallyadditions:item_fertilizer'))
+mods.actuallyadditions.compost.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.compost.streamRecipes()
     ```

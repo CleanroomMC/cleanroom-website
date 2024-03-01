@@ -10,14 +10,15 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts an input itemstack into an output itemstack in a recipe exclusive to the Smelter. Overrides the default furnace recipe, if applicable.
 
-!!! Danger ""
-    Recipes exclusive to the Mekanism Smelter may not be displayed in JEI
+:::::::::: danger
+Recipes exclusive to the Mekanism Smelter may not be displayed in JEI
+::::::::::
 
 ## Identifier
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.smelting/*(1)!*/
 mods.mekanism.Smelting
 mods.mekanism.smelter
@@ -30,14 +31,16 @@ mods.mekanism.Smelter
 
 - Adds recipes in the format `ingredient`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.smelting.add(IIngredient, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.smelting.add(item('minecraft:diamond_block'), item('minecraft:clay'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.smelting.add(item('minecraft:diamond_block'), item('minecraft:clay'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -45,63 +48,67 @@ Just like other recipe types, the Smelting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.smelting.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.smelting.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SmeltingRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SmeltingRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.smelting.recipeBuilder()
-            .input(item('minecraft:clay_ball'))
-            .output(item('minecraft:clay'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.smelting.recipeBuilder()
+    .input(item('minecraft:clay_ball'))
+    .output(item('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.smelting.removeByInput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.smelting.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.smelting.removeByInput(item('minecraft:clay'))
-    mods.mekanism.smelting.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.smelting.removeByInput(item('minecraft:clay'))
+mods.mekanism.smelting.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.smelting.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Convert an input itemstack, player xp, and either a written book and lapis or a 
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.enchanter/*(1)!*/
 mods.enderio.Enchanter
 mods.eio.enchanter
@@ -27,7 +27,7 @@ mods.eio.Enchanter
 
 - Adds recipes in the format `enchantment`, `input`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.enchanter.add(Enchantment, IIngredient)
     ```
 
@@ -38,92 +38,96 @@ Just like other recipe types, the Enchanter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.enderio.enchanter.recipeBuilder()"
-    - `#!groovy IIngredient`. Sets the item used in the book slot. Requires not null. (Default `item('minecraft:writable_book')`).
+:::::::::: details ABSTRACT mods.enderio.enchanter.recipeBuilder() {open}
+- `IIngredient`. Sets the item used in the book slot. Requires not null. (Default `item('minecraft:writable_book')`).
 
-        ```groovy
-        customBook(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    customBook(IIngredient)
+    ```
 
-    - `#!groovy IIngredient`. Sets the key item to create the enchantment. Requires not null.
+- `IIngredient`. Sets the key item to create the enchantment. Requires not null.
 
-        ```groovy
-        input(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    ```
 
-    - `#!groovy IIngredient`. Sets the item used in the lapis slot. Requires not null. (Default `ore('gemLapis')`).
+- `IIngredient`. Sets the item used in the lapis slot. Requires not null. (Default `ore('gemLapis')`).
 
-        ```groovy
-        customLapis(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    customLapis(IIngredient)
+    ```
 
-    - `#!groovy int`. Sets the amount of the input item used to create a single level of enchantment. Requires greater than 0. (Default `0`).
+- `int`. Sets the amount of the input item used to create a single level of enchantment. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        amountPerLevel(int)
-        ```
+    ```groovy:no-line-numbers
+    amountPerLevel(int)
+    ```
 
-    - `#!groovy Enchantment`. Sets the enchantment applied to the output book. Requires not null.
+- `Enchantment`. Sets the enchantment applied to the output book. Requires not null.
 
-        ```groovy
-        enchantment(Enchantment)
-        ```
+    ```groovy:no-line-numbers
+    enchantment(Enchantment)
+    ```
 
-    - `#!groovy double`. Sets the experience cost multiplier per enchantment level created. (Default `1`).
+- `double`. Sets the experience cost multiplier per enchantment level created. (Default `1`).
 
-        ```groovy
-        xpCostMultiplier(double)
-        ```
+    ```groovy:no-line-numbers
+    xpCostMultiplier(double)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.enchanter.EnchanterRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.enchanter.EnchanterRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.enderio.enchanter.recipeBuilder()
-            .enchantment(enchantment('minecraft:unbreaking'))
-            .input(item('minecraft:diamond'))
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.enchanter.recipeBuilder()
+    .enchantment(enchantment('minecraft:unbreaking'))
+    .input(item('minecraft:diamond'))
+    .register()
 
-        mods.enderio.enchanter.recipeBuilder()
-            .enchantment(enchantment('minecraft:sharpness'))
-            .input(item('minecraft:clay'))
-            .amountPerLevel(3)
-            .xpCostMultiplier(2)
-            .customBook(item('minecraft:book'))
-            .customLapis(item('minecraft:diamond'))
-            .register()
-        ```
+mods.enderio.enchanter.recipeBuilder()
+    .enchantment(enchantment('minecraft:sharpness'))
+    .input(item('minecraft:clay'))
+    .amountPerLevel(3)
+    .xpCostMultiplier(2)
+    .customBook(item('minecraft:book'))
+    .customLapis(item('minecraft:diamond'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes entries by enchantment:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.enchanter.remove(Enchantment)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.enchanter.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.enchanter.remove(enchantment('minecraft:mending'))
-    mods.enderio.enchanter.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.enchanter.remove(enchantment('minecraft:mending'))
+mods.enderio.enchanter.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.enchanter.streamRecipes()
     ```

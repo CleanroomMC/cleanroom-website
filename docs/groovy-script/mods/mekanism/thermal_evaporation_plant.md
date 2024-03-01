@@ -14,7 +14,7 @@ Converts an input fluidstack into an output fluidstack over time based on multib
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.thermal_evaporation_plant/*(1)!*/
 mods.mekanism.thermalevaporationplant
 mods.mekanism.thermalEvaporationPlant
@@ -33,14 +33,16 @@ mods.mekanism.tep
 
 - Adds recipes in the format `input`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.thermal_evaporation_plant.add(FluidStack, FluidStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.thermal_evaporation_plant.add(fluid('water'), fluid('steam'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.thermal_evaporation_plant.add(fluid('water'), fluid('steam'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -48,63 +50,67 @@ Just like other recipe types, the Thermal Evaporation Plant also uses a recipe b
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.thermal_evaporation_plant.recipeBuilder()"
-    - `#!groovy FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.thermal_evaporation_plant.recipeBuilder() {open}
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidInput(FluidStack)
-        fluidInput(FluidStack...)
-        fluidInput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidInput(FluidStack)
+    fluidInput(FluidStack...)
+    fluidInput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy FluidStackList`. Sets the fluid outputs of the recipe. Requires exactly 1.
+- `FluidStackList`. Sets the fluid outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidOutput(FluidStack)
-        fluidOutput(FluidStack...)
-        fluidOutput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidOutput(FluidStack)
+    fluidOutput(FluidStack...)
+    fluidOutput(Collection<FluidStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.ThermalEvaporationRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.ThermalEvaporationRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.thermal_evaporation_plant.recipeBuilder()
-            .fluidInput(fluid('water'))
-            .fluidOutput(fluid('steam'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.thermal_evaporation_plant.recipeBuilder()
+    .fluidInput(fluid('water'))
+    .fluidOutput(fluid('steam'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.thermal_evaporation_plant.removeByInput(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.thermal_evaporation_plant.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.thermal_evaporation_plant.removeByInput(fluid('water'))
-    mods.mekanism.thermal_evaporation_plant.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.thermal_evaporation_plant.removeByInput(fluid('water'))
+mods.mekanism.thermal_evaporation_plant.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.thermal_evaporation_plant.streamRecipes()
     ```

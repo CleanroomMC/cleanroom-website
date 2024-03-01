@@ -14,7 +14,7 @@ Add or remove items from the magnet blacklist
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.magnet/*(1)!*/
 mods.botania.Magnet
 ```
@@ -25,44 +25,46 @@ mods.botania.Magnet
 
 - Adds the given Block, IBlockState, or IIngredient to the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.addToBlacklist(Block, int)
     ```
 
 - Adds the given Block, IBlockState, or IIngredient to the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.addToBlacklist(IBlockState)
     ```
 
 - Adds the given Block, IBlockState, or IIngredient to the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.addToBlacklist(IIngredient)
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.magnet.addToBlacklist(item('minecraft:diamond'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.magnet.addToBlacklist(item('minecraft:diamond'))
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes the given Block, IBlockState, or IIngredient from the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.removeFromBlacklist(Block, int)
     ```
 
 - Removes the given Block, IBlockState, or IIngredient from the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.removeFromBlacklist(IBlockState)
     ```
 
 - Removes the given Block, IBlockState, or IIngredient from the magnet blacklist:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.removeFromBlacklist(IIngredient)
     ```
 
@@ -71,18 +73,18 @@ mods.botania.Magnet
 
 - Checks if the given Block, IBlockState, or IIngredient is prevented from being interacted with by the magnet:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.isInBlacklist(Block, int)
     ```
 
 - Checks if the given Block, IBlockState, or IIngredient is prevented from being interacted with by the magnet:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.isInBlacklist(IBlockState)
     ```
 
 - Checks if the given Block, IBlockState, or IIngredient is prevented from being interacted with by the magnet:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.magnet.isInBlacklist(IIngredient)
     ```

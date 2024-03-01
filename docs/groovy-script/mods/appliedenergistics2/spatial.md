@@ -14,7 +14,7 @@ Either the class itself or its String name to add or remove from the Tile Entiti
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.ae2.spatial
 mods.ae2.Spatial
 mods.appliedenergistics2.spatial/*(1)!*/
@@ -27,43 +27,47 @@ mods.appliedenergistics2.Spatial
 
 - Adds the given class to the list of allowed TileEntities to be moved by Spatial Storage:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.spatial.add(Class<? extends TileEntity>)
     ```
 
 - Adds the given class to the list of allowed TileEntities to be moved by Spatial Storage:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.spatial.add(String)
     ```
 
-???+ Example
-    ```groovy
-    mods.appliedenergistics2.spatial.add('net.minecraft.tileentity.TileEntityStructure')
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.spatial.add('net.minecraft.tileentity.TileEntityStructure')
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes the given class from the list of allowed TileEntities to be moved by Spatial Storage:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.spatial.remove(Class<? extends TileEntity>)
     ```
 
 - Removes the given class from the list of allowed TileEntities to be moved by Spatial Storage:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.spatial.remove(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.appliedenergistics2.spatial.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.appliedenergistics2.spatial.remove('net.minecraft.tileentity.TileEntityChest')
-    mods.appliedenergistics2.spatial.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.appliedenergistics2.spatial.remove('net.minecraft.tileentity.TileEntityChest')
+mods.appliedenergistics2.spatial.removeAll()
+```
+
+::::::::::

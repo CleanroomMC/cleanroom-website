@@ -14,7 +14,7 @@ The Atomic Reconstructor is a block which uses energy to convert a block or item
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.aa.atomic_reconstructor
 mods.aa.atomicreconstructor
 mods.aa.atomicReconstructor
@@ -35,89 +35,93 @@ Just like other recipe types, the Atomic Reconstructor also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.atomic_reconstructor.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.actuallyadditions.atomic_reconstructor.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the amount of power consumed by the recipe. Requires greater than 0. (Default `1`).
+- `int`. Sets the amount of power consumed by the recipe. Requires greater than 0. (Default `1`).
 
-        ```groovy
-        energy(int)
-        energyUse(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    energyUse(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.LensConversionRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.LensConversionRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
-            .input(item('minecraft:clay'))
-            .output(item('minecraft:diamond'))
-            .energyUse(1000)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .energyUse(1000)
+    .register()
 
-        mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
-            .input(item('minecraft:clay'))
-            .output(item('minecraft:diamond'))
-            .energy(1000)
-            .register()
+mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .energy(1000)
+    .register()
 
-        mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
-            .input(item('minecraft:gold_ingot'))
-            .output(item('minecraft:clay') * 2)
-            .register()
-        ```
+mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
+    .input(item('minecraft:gold_ingot'))
+    .output(item('minecraft:clay') * 2)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.atomic_reconstructor.removeByInput(IIngredient)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.atomic_reconstructor.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.atomic_reconstructor.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.atomic_reconstructor.removeByInput(item('minecraft:diamond'))
-    mods.actuallyadditions.atomic_reconstructor.removeByOutput(item('actuallyadditions:block_crystal'))
-    mods.actuallyadditions.atomic_reconstructor.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.atomic_reconstructor.removeByInput(item('minecraft:diamond'))
+mods.actuallyadditions.atomic_reconstructor.removeByOutput(item('actuallyadditions:block_crystal'))
+mods.actuallyadditions.atomic_reconstructor.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.atomic_reconstructor.streamRecipes()
     ```

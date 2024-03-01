@@ -14,7 +14,7 @@ Blocks in the area around the Tranquility Altar provide tranquility up to the Al
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.bm.tranquility
 mods.bm.Tranquility
 mods.bloodmagic.tranquility/*(1)!*/
@@ -27,25 +27,25 @@ mods.bloodmagic.Tranquility
 
 - Adds recipes in the format `block`, `tranquility`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.add(Block, String, double)
     ```
 
 - Adds recipes in the format `block`, `tranquility`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.add(Block, TranquilityStack)
     ```
 
 - Adds recipes in the format `blockstate`, `tranquility`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.add(IBlockState, String, double)
     ```
 
 - Adds recipes in the format `blockstate`, `tranquility`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.add(IBlockState, TranquilityStack)
     ```
 
@@ -56,104 +56,108 @@ Just like other recipe types, the Tranquility also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.bloodmagic.tranquility.recipeBuilder()"
-    - `#!groovy Block`. Sets the target block.
+:::::::::: details ABSTRACT mods.bloodmagic.tranquility.recipeBuilder() {open}
+- `Block`. Sets the target block.
 
-        ```groovy
-        block(Block)
-        ```
+    ```groovy:no-line-numbers
+    block(Block)
+    ```
 
-    - `#!groovy double`. Sets the amount of Tranquility provided. Requires greater than or equal to 0. (Default `0.0d`).
+- `double`. Sets the amount of Tranquility provided. Requires greater than or equal to 0. (Default `0.0d`).
 
-        ```groovy
-        value(double)
-        ```
+    ```groovy:no-line-numbers
+    value(double)
+    ```
 
-    - `#!groovy IBlockState`. Sets the target blockstate.
+- `IBlockState`. Sets the target blockstate.
 
-        ```groovy
-        blockstate(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    blockstate(IBlockState)
+    ```
 
-    - `#!groovy EnumTranquilityType`. Sets the type of Tranquility being modified. Requires not null.
+- `EnumTranquilityType`. Sets the type of Tranquility being modified. Requires not null.
 
-        ```groovy
-        tranquility(String)
-        tranquility(EnumTranquilityType)
-        ```
+    ```groovy:no-line-numbers
+    tranquility(String)
+    tranquility(EnumTranquilityType)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.bloodmagic.tranquility.recipeBuilder()
-            .block(block('minecraft:obsidian'))
-            .tranquility('LAVA')
-            .value(10)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.bloodmagic.tranquility.recipeBuilder()
+    .block(block('minecraft:obsidian'))
+    .tranquility('LAVA')
+    .value(10)
+    .register()
 
-        mods.bloodmagic.tranquility.recipeBuilder()
-            .block(block('minecraft:obsidian'))
-            .tranquility('WATER')
-            .value(10)
-            .register()
+mods.bloodmagic.tranquility.recipeBuilder()
+    .block(block('minecraft:obsidian'))
+    .tranquility('WATER')
+    .value(10)
+    .register()
 
-        mods.bloodmagic.tranquility.recipeBuilder()
-            .blockstate(blockstate('minecraft:obsidian'))
-            .tranquility('LAVA')
-            .value(500)
-            .register()
-        ```
+mods.bloodmagic.tranquility.recipeBuilder()
+    .blockstate(blockstate('minecraft:obsidian'))
+    .tranquility('LAVA')
+    .value(500)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes any Tranquility entry that matches the given Block and EnumTranquilityType:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.remove(Block, EnumTranquilityType)
     ```
 
 - Removes any Tranquility entry that matches the given Block and Tranquility type as String:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.remove(Block, String)
     ```
 
 - Removes any Tranquility entry that matches the given IBlockState and EnumTranquilityType:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.remove(IBlockState, EnumTranquilityType)
     ```
 
 - Removes any Tranquility entry that matches the given IBlockState and Tranquility as String:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.remove(IBlockState, String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.bloodmagic.tranquility.remove(block('minecraft:dirt'), 'EARTHEN')
-    mods.bloodmagic.tranquility.remove(blockstate('minecraft:netherrack'), 'FIRE')
-    mods.bloodmagic.tranquility.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.bloodmagic.tranquility.remove(block('minecraft:dirt'), 'EARTHEN')
+mods.bloodmagic.tranquility.remove(blockstate('minecraft:netherrack'), 'FIRE')
+mods.bloodmagic.tranquility.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.tranquility.streamRecipes()
     ```

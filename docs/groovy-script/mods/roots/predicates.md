@@ -14,7 +14,7 @@ Predicates are used in Transmution and RunicShearBlock. They either match all bl
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.predicates/*(1)!*/
 mods.roots.Predicates
 ```
@@ -29,62 +29,66 @@ Just like other recipe types, the Predicates also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.predicates.stateBuilder()"
-    - `#!groovy boolean`. Sets if the predicate checks the block above for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).
+:::::::::: details ABSTRACT mods.roots.predicates.stateBuilder() {open}
+- `boolean`. Sets if the predicate checks the block above for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).
 
-        ```groovy
-        above()
-        ```
+    ```groovy:no-line-numbers
+    above()
+    ```
 
-    - `#!groovy boolean`. Sets if the predicate checks the block below for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).
+- `boolean`. Sets if the predicate checks the block below for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).
 
-        ```groovy
-        below()
-        ```
+    ```groovy:no-line-numbers
+    below()
+    ```
 
-    - `#!groovy IBlockState`. Sets the IBlockState compared against. Requires not null.
+- `IBlockState`. Sets the IBlockState compared against. Requires not null.
 
-        ```groovy
-        block(Block)
-        blockstate(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    block(Block)
+    blockstate(IBlockState)
+    ```
 
-    - `#!groovy Collection<String>`. Sets what properties of the blockstate are checked, where any properties not checked are. Requires that each property must be a valid property of the provided `blockstate`.
+- `Collection<String>`. Sets what properties of the blockstate are checked, where any properties not checked are. Requires that each property must be a valid property of the provided `blockstate`.
 
-        ```groovy
-        properties(String...)
-        properties(Collection<String>)
-        ```
+    ```groovy:no-line-numbers
+    properties(String...)
+    properties(Collection<String>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.transmutation.MatchingStates`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.transmutation.MatchingStates`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.predicates.stateBuilder()
-            .blockstate(blockstate('minecraft:red_flower'))
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.predicates.stateBuilder()
+    .blockstate(blockstate('minecraft:red_flower'))
+    .register()
 
-        mods.roots.predicates.stateBuilder()
-            .block(block('minecraft:red_flower'))
-            .register()
+mods.roots.predicates.stateBuilder()
+    .block(block('minecraft:red_flower'))
+    .register()
 
-        mods.roots.predicates.stateBuilder()
-            .blockstate(blockstate('minecraft:red_flower:type=poppy'))
-            .properties('type')
-            .register()
+mods.roots.predicates.stateBuilder()
+    .blockstate(blockstate('minecraft:red_flower:type=poppy'))
+    .properties('type')
+    .register()
 
-        mods.roots.predicates.stateBuilder()
-            .blockstate(blockstate('minecraft:log:axis=z:variant=oak'))
-            .properties('axis')
-            .above()
-            .register()
+mods.roots.predicates.stateBuilder()
+    .blockstate(blockstate('minecraft:log:axis=z:variant=oak'))
+    .properties('axis')
+    .above()
+    .register()
 
-        mods.roots.predicates.stateBuilder()
-            .blockstate(blockstate('minecraft:log'))
-            .below()
-            .register()
-        ```
+mods.roots.predicates.stateBuilder()
+    .blockstate(blockstate('minecraft:log'))
+    .below()
+    .register()
+```
+
+::::::::::
+
+::::::::::

@@ -14,7 +14,7 @@ Controls what spell modifiers are enabled and can be used.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.modifiers/*(1)!*/
 mods.roots.Modifiers
 ```
@@ -25,84 +25,88 @@ mods.roots.Modifiers
 
 - Enable the disabled modifier:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.enable(Modifier)
     ```
 
 - Enable any disabled modifiers with the given resource location:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.enable(ResourceLocation)
     ```
 
 - Enable all disabled modifiers for the given spell:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.enable(SpellBase)
     ```
 
 - Enable any disabled modifiers with the given string as a resource location, defaulting to a namespace of `roots` if not provided:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.enable(String)
     ```
 
 - Enable all disabled modifiers:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.enableAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.modifiers.enable(modifier('roots:weakened_response'))
-    mods.roots.modifiers.enable(resource('roots:animal_savior'))
-    mods.roots.modifiers.enable('extended_geas')
-    mods.roots.modifiers.enableAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.modifiers.enable(modifier('roots:weakened_response'))
+mods.roots.modifiers.enable(resource('roots:animal_savior'))
+mods.roots.modifiers.enable('extended_geas')
+mods.roots.modifiers.enableAll()
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Disable the enabled modifier:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.disable(Modifier)
     ```
 
 - Disable any enabled modifiers with the given resource location:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.disable(ResourceLocation)
     ```
 
 - Disable all enabled modifiers for the given spell:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.disable(SpellBase)
     ```
 
 - Disable any enabled modifiers with the given string as a resource location, defaulting to a namespace of `roots` if not provided:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.disable(String)
     ```
 
 - Disable all enabled modifiers:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.disableAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.modifiers.disable(spell('spell_geas'))
-    mods.roots.modifiers.disableAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.modifiers.disable(spell('spell_geas'))
+mods.roots.modifiers.disableAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.modifiers.streamRecipes()
     ```

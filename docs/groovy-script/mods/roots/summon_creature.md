@@ -14,7 +14,7 @@ When running a Summon Creature Ritual, the input items placed on Catalyst Plate 
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.summon_creature/*(1)!*/
 mods.roots.summoncreature
 mods.roots.summonCreature
@@ -31,82 +31,86 @@ Just like other recipe types, the Summon Creature also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.summon_creature.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.summon_creature.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 10.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 10.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy Class<? extends EntityLivingBase>`. Sets the target entity. Requires not null.
+- `Class<? extends EntityLivingBase>`. Sets the target entity. Requires not null.
 
-        ```groovy
-        entity(EntityEntry)
-        ```
+    ```groovy:no-line-numbers
+    entity(EntityEntry)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.SummonCreatureRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.SummonCreatureRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.summon_creature.recipeBuilder()
-            .name('wither_skeleton_from_clay')
-            .input(item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'))
-            .entity(entity('minecraft:wither_skeleton'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.summon_creature.recipeBuilder()
+    .name('wither_skeleton_from_clay')
+    .input(item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'))
+    .entity(entity('minecraft:wither_skeleton'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Summon Creature recipe for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.summon_creature.removeByEntity(Class<? extends EntityLivingBase>)
     ```
 
 - Removes the Summon Creature recipe for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.summon_creature.removeByEntity(EntityEntry)
     ```
 
 - Removes the Summon Creature recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.summon_creature.removeByName(ResourceLocation)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.summon_creature.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.summon_creature.removeByEntity(entity('minecraft:chicken'))
-    mods.roots.summon_creature.removeByName(resource('roots:cow'))
-    mods.roots.summon_creature.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.summon_creature.removeByEntity(entity('minecraft:chicken'))
+mods.roots.summon_creature.removeByName(resource('roots:cow'))
+mods.roots.summon_creature.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.summon_creature.streamRecipes()
     ```

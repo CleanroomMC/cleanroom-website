@@ -14,7 +14,7 @@ Takes either an item or fluid input and gives either an item or fluid output aft
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.id.mechanical_drying_basin
 mods.id.mechanicaldryingbasin
 mods.id.mechanicalDryingBasin
@@ -35,74 +35,78 @@ Just like other recipe types, the Mechanical Drying Basin also uses a recipe bui
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()"
-    - `#!groovy boolean`. Sets if the recipe is added to the basic (Drying Basin) machine. (Default `false`).
+:::::::::: details ABSTRACT mods.integrateddynamics.mechanical_drying_basin.recipeBuilder() {open}
+- `boolean`. Sets if the recipe is added to the basic (Drying Basin) machine. (Default `false`).
 
-        ```groovy
-        basic()
-        basic(boolean)
-        ```
+    ```groovy:no-line-numbers
+    basic()
+    basic(boolean)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. (Default `10`).
+- `int`. Sets the time in ticks the recipe takes to process. (Default `10`).
 
-        ```groovy
-        duration(int)
-        ```
+    ```groovy:no-line-numbers
+    duration(int)
+    ```
 
-    - `#!groovy boolean`. Sets if the recipe is added to the mechanical (Mechanical Drying Basin) machine. (Default `true`).
+- `boolean`. Sets if the recipe is added to the mechanical (Mechanical Drying Basin) machine. (Default `true`).
 
-        ```groovy
-        mechanical()
-        mechanical(boolean)
-        ```
+    ```groovy:no-line-numbers
+    mechanical()
+    mechanical(boolean)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.cyclops.cyclopscore.recipe.custom.api.IRecipe<org.cyclops.cyclopscore.recipe.custom.component.IngredientAndFluidStackRecipeComponent, org.cyclops.cyclopscore.recipe.custom.component.IngredientAndFluidStackRecipeComponent, org.cyclops.cyclopscore.recipe.custom.component.DurationRecipeProperties>`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.cyclops.cyclopscore.recipe.custom.api.IRecipe<org.cyclops.cyclopscore.recipe.custom.component.IngredientAndFluidStackRecipeComponent, org.cyclops.cyclopscore.recipe.custom.component.IngredientAndFluidStackRecipeComponent, org.cyclops.cyclopscore.recipe.custom.component.DurationRecipeProperties>`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .fluidInput(fluid('water') * 50)
-            .fluidOutput(fluid('lava') * 20000)
-            .duration(300)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .fluidInput(fluid('water') * 50)
+    .fluidOutput(fluid('lava') * 20000)
+    .duration(300)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.integrateddynamics.mechanical_drying_basin.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.integrateddynamics.mechanical_drying_basin.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.integrateddynamics.mechanical_drying_basin.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.integrateddynamics.mechanical_drying_basin.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.integrateddynamics.mechanical_drying_basin.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.integrateddynamics.mechanical_drying_basin.streamRecipes()
     ```

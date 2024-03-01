@@ -14,15 +14,11 @@ Create a custom Constellation.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
-mods.astral_sorcery.constellation
-mods.astral_sorcery.Constellation
+```groovy:no-line-numbers {1}
 mods.astralsorcery.constellation/*(1)!*/
 mods.astralsorcery.Constellation
 mods.astral.constellation
 mods.astral.Constellation
-mods.as.constellation
-mods.as.Constellation
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -31,19 +27,19 @@ mods.as.Constellation
 
 - Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, Collection<IIngredient>)
     ```
 
 - Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, IIngredient)
     ```
 
 - Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, IIngredient...)
     ```
 
@@ -54,193 +50,205 @@ Just like other recipe types, the Constellation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.astralsorcery.constellation.constellationBuilder()"
-    - `#!groovy String`. Sets the name of the Constellation. Requires not null.
+:::::::::: details ABSTRACT mods.astralsorcery.constellation.constellationBuilder() {open}
+- `String`. Sets the name of the Constellation. Requires not null.
 
-        ```groovy
-        name(String)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    ```
 
-    - `#!groovy Constellation.ConstellationBuilder.Type`. Sets the type of Constellation.
+- `Constellation.ConstellationBuilder.Type`. Sets the type of Constellation.
 
-        ```groovy
-        weak()
-        major()
-        minor()
-        ```
+    ```groovy:no-line-numbers
+    weak()
+    major()
+    minor()
+    ```
 
-    - `#!groovy Color`. Sets the color of the Constellation. (Default `Major: #2843CC, Weak: #432CB0, Minor: #5D197F`).
+- `Color`. Sets the color of the Constellation. (Default `Major: #2843CC, Weak: #432CB0, Minor: #5D197F`).
 
-        ```groovy
-        color(int)
-        ```
+    ```groovy:no-line-numbers
+    color(int)
+    ```
 
-    - `#!groovy ArrayList<MoonPhase>`. Sets what phase of the moon the Constellation appears in. Only applies if the Constellation type is Minor. Requires greater than or equal to 0.
+- `ArrayList<MoonPhase>`. Sets what phase of the moon the Constellation appears in. Only applies if the Constellation type is Minor. Requires greater than or equal to 0.
 
-        ```groovy
-        phase(MoonPhase)
-        phase(MoonPhase...)
-        phase(Collection<MoonPhase>)
-        ```
+    ```groovy:no-line-numbers
+    phase(MoonPhase)
+    phase(MoonPhase...)
+    phase(Collection<MoonPhase>)
+    ```
 
-    - `#!groovy ArrayList<Constellation.Point2PointConnection>`. Sets the stars and connections between stars that map the Constellation. Requires greater than or equal to 0.
+- `ArrayList<Constellation.Point2PointConnection>`. Sets the stars and connections between stars that map the Constellation. Requires greater than or equal to 0.
 
-        ```groovy
-        connection(int, int, int, int)
-        ```
+    ```groovy:no-line-numbers
+    connection(int, int, int, int)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.constellation.constellationBuilder()
-            .major()
-            .name('square')
-            .color(0xE01903)
-            .connection(12, 2, 2, 2)
-            .connection(12, 12, 12, 2)
-            .connection(2, 12, 12, 12)
-            .connection(2, 2, 2, 12)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.constellation.constellationBuilder()
+    .major()
+    .name('square')
+    .color(0xE01903)
+    .connection(12, 2, 2, 2)
+    .connection(12, 12, 12, 2)
+    .connection(2, 12, 12, 12)
+    .connection(2, 2, 2, 12)
+    .register()
 
-        mods.astralsorcery.constellation.constellationBuilder()
-            .minor()
-            .name('slow')
-            .connection(10, 5, 5, 5)
-            .connection(5, 10, 5, 5)
-            .connection(3, 3, 3, 3)
-            .phase(MoonPhase.FULL)
-            .register()
-        ```
+mods.astralsorcery.constellation.constellationBuilder()
+    .minor()
+    .name('slow')
+    .connection(10, 5, 5, 5)
+    .connection(5, 10, 5, 5)
+    .connection(3, 3, 3, 3)
+    .phase(MoonPhase.FULL)
+    .register()
+```
 
-???+ Abstract "mods.astralsorcery.constellation.constellationMapEffectBuilder()"
-    - `#!groovy List<ConstellationMapEffectRegistry.PotionMapEffect>`. Sets the potion effects and strength available via the Stellar Refraction Table. Requires greater than or equal to 0.
+::::::::::
 
-        ```groovy
-        potionEffect(Potion, int, int)
-        ```
+::::::::::
 
-    - `#!groovy IConstellation`. Sets the Constellation being modified. Requires not null.
+:::::::::: details ABSTRACT mods.astralsorcery.constellation.constellationMapEffectBuilder() {open}
+- `List<ConstellationMapEffectRegistry.PotionMapEffect>`. Sets the potion effects and strength available via the Stellar Refraction Table. Requires greater than or equal to 0.
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+    ```groovy:no-line-numbers
+    potionEffect(Potion, int, int)
+    ```
 
-    - `#!groovy List<ConstellationMapEffectRegistry.EnchantmentMapEffect>`. Sets the enchantments and enchantment levels available via the Stellar Refraction Table. Requires greater than or equal to 0.
+- `IConstellation`. Sets the Constellation being modified. Requires not null.
 
-        ```groovy
-        enchantmentEffect(Enchantment, int, int)
-        ```
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- `List<ConstellationMapEffectRegistry.EnchantmentMapEffect>`. Sets the enchantments and enchantment levels available via the Stellar Refraction Table. Requires greater than or equal to 0.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    enchantmentEffect(Enchantment, int, int)
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.constellation.constellationMapEffectBuilder()
-            .constellation(constellation('square'))
-            .enchantmentEffect(enchantment('minecraft:luck_of_the_sea'), 1, 3)
-            .potionEffect(potion('minecraft:luck'), 1, 2)
-            .register()
-        ```
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-???+ Abstract "mods.astralsorcery.constellation.signatureItems()"
-    - `#!groovy ArrayList<IIngredient>`. Sets the signature items of the Constellation.
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-        ```groovy
-        addItem(IIngredient)
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.constellation.constellationMapEffectBuilder()
+    .constellation(constellation('square'))
+    .enchantmentEffect(enchantment('minecraft:luck_of_the_sea'), 1, 3)
+    .potionEffect(potion('minecraft:luck'), 1, 2)
+    .register()
+```
 
-    - `#!groovy boolean`. Sets if the default signature items of the Constellation will be removed before adding new ones. (Default `false`).
+::::::::::
 
-        ```groovy
-        stripItems()
-        ```
+::::::::::
 
-    - `#!groovy IConstellation`. Sets the Constellation being modified. Requires not null.
+:::::::::: details ABSTRACT mods.astralsorcery.constellation.signatureItems() {open}
+- `ArrayList<IIngredient>`. Sets the signature items of the Constellation.
 
-        ```groovy
-        constellation(IConstellation)
-        ```
+    ```groovy:no-line-numbers
+    addItem(IIngredient)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- `boolean`. Sets if the default signature items of the Constellation will be removed before adding new ones. (Default `false`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    stripItems()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.constellation.signatureItems()
-            .constellation(constellation('square'))
-            .addItem(ore('gemDiamond'))
-            .addItem(item('minecraft:water_bucket'))
-            .addItem(item('minecraft:rabbit_foot'))
-            .addItem(item('minecraft:fish'))
-            .register()
-        ```
+- `IConstellation`. Sets the Constellation being modified. Requires not null.
 
+    ```groovy:no-line-numbers
+    constellation(IConstellation)
+    ```
 
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+
+    ```groovy:no-line-numbers
+    register()
+    ```
+
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.constellation.signatureItems()
+    .constellation(constellation('square'))
+    .addItem(ore('gemDiamond'))
+    .addItem(item('minecraft:water_bucket'))
+    .addItem(item('minecraft:rabbit_foot'))
+    .addItem(item('minecraft:fish'))
+    .register()
+```
+
+::::::::::
+
+::::::::::
 
 ## Removing Entries
 
 - Removes the given Constellation and all associated attributes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.remove(IConstellation)
     ```
 
 - Removes a Constellation's potion and enchantment effects applied via the Stellar Refraction Table:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeConstellationMapEffect(IConstellation)
     ```
 
 - Removes a Constellation's signature items, to be re-added via `addSignatureItem`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeSignatureItems(IConstellation)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeAll()
     ```
 
 - Removes all potion and enchantment effects applied via the Stellar Refraction Table for all Constellations:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeAllConstellationMapEffect()
     ```
 
 - Removes all signature items for all Constellations, to be re-added via `addSignatureItem`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeAllSignatureItems()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.constellation.remove(constellation('bootes'))
-    mods.astralsorcery.constellation.removeConstellationMapEffect(constellation('discidia'))
-    mods.astralsorcery.constellation.removeSignatureItems(constellation('discidia'))
-    mods.astralsorcery.constellation.removeAll()
-    mods.astralsorcery.constellation.removeAllConstellationMapEffect()
-    mods.astralsorcery.constellation.removeAllSignatureItems()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.constellation.remove(constellation('bootes'))
+mods.astralsorcery.constellation.removeConstellationMapEffect(constellation('discidia'))
+mods.astralsorcery.constellation.removeSignatureItems(constellation('discidia'))
+mods.astralsorcery.constellation.removeAll()
+mods.astralsorcery.constellation.removeAllConstellationMapEffect()
+mods.astralsorcery.constellation.removeAllSignatureItems()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every Constellation registered, with the ability to call remove on any element to remove it from the game:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.constellation.streamConstellations()
     ```

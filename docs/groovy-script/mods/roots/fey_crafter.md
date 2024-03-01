@@ -10,14 +10,15 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 The Fey Crafter is a crafting mechanism that requires an activated Grove Stone nearby to take 5 item inputs and return an item output.
 
-!!! Danger
-     When reloading recipes with the Fey Crafter, you may encounter a `ConcurrentModificationException`!
+:::::::::: danger
+ When reloading recipes with the Fey Crafter, you may encounter a `ConcurrentModificationException`!
+::::::::::
 
 ## Identifier
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.fey_crafter/*(1)!*/
 mods.roots.feycrafter
 mods.roots.feyCrafter
@@ -34,85 +35,89 @@ Just like other recipe types, the Fey Crafter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.fey_crafter.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.fey_crafter.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 5.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 5.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the amount of experience output when completing the recipe. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the amount of experience output when completing the recipe. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        xp(int)
-        ```
+    ```groovy:no-line-numbers
+    xp(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.FeyCraftingRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.FeyCraftingRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.fey_crafter.recipeBuilder()
-            .name('clay_craft')
-            .input(item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone')) // Must be exactly 5
-            .output(item('minecraft:clay'))
-            .xp(100)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.fey_crafter.recipeBuilder()
+    .name('clay_craft')
+    .input(item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone')) // Must be exactly 5
+    .output(item('minecraft:clay'))
+    .xp(100)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Fey Crafter recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.fey_crafter.removeByName(ResourceLocation)
     ```
 
 - Removes the Fey Crafter recipe with the given output itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.fey_crafter.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.fey_crafter.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.fey_crafter.removeByName(resource('roots:unending_bowl'))
-    mods.roots.fey_crafter.removeByOutput(item('minecraft:gravel'))
-    mods.roots.fey_crafter.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.fey_crafter.removeByName(resource('roots:unending_bowl'))
+mods.roots.fey_crafter.removeByOutput(item('minecraft:gravel'))
+mods.roots.fey_crafter.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.fey_crafter.streamRecipes()
     ```

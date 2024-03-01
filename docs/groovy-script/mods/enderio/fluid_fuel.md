@@ -14,7 +14,7 @@ Create a Fuel with a given power per tick and total burn time that produces powe
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.fluid_fuel/*(1)!*/
 mods.enderio.fluidfuel
 mods.enderio.fluidFuel
@@ -39,51 +39,55 @@ mods.eio.CombustionFuel
 
 - Adds recipes in the format `fluid`, `rfPerCycle`, `totalBurnTime`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.addFuel(Fluid, int, int)
     ```
 
 - Adds recipes in the format `fluid`, `rfPerCycle`, `totalBurnTime`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.addFuel(FluidStack, int, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.fluid_fuel.addFuel(fluid('lava'), 500, 1000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.fluid_fuel.addFuel(fluid('lava'), 500, 1000)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes recipes matching the target fluid:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.remove(Fluid)
     ```
 
 - Removes recipes matching the target fluid:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.remove(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.fluid_fuel.remove(fluid('fire_water'))
-    mods.enderio.fluid_fuel.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.fluid_fuel.remove(fluid('fire_water'))
+mods.enderio.fluid_fuel.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_fuel.streamRecipes()
     ```

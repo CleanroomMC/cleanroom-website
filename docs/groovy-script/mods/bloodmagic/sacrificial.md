@@ -14,7 +14,7 @@ How much Life Essence is gained when using the Sacrificial Dagger on a mob.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.bm.sacrificial
 mods.bm.Sacrificial
 mods.bloodmagic.sacrificial/*(1)!*/
@@ -27,19 +27,19 @@ mods.bloodmagic.Sacrificial
 
 - Adds recipes in the format `entity`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.add(Entity, int)
     ```
 
 - Adds recipes in the format `entity`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.add(ResourceLocation, int)
     ```
 
 - Adds recipes in the format `entity`, `value`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.add(String, int)
     ```
 
@@ -50,81 +50,85 @@ Just like other recipe types, the Sacrificial also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.bloodmagic.sacrificial.recipeBuilder()"
-    - `#!groovy int`. Sets how much Life Essence the entity gives. Requires greater than or equal to 0. (Default `0`).
+:::::::::: details ABSTRACT mods.bloodmagic.sacrificial.recipeBuilder() {open}
+- `int`. Sets how much Life Essence the entity gives. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        value(int)
-        ```
+    ```groovy:no-line-numbers
+    value(int)
+    ```
 
-    - `#!groovy ResourceLocation`. Sets the target entity. Requires not null.
+- `ResourceLocation`. Sets the target entity. Requires not null.
 
-        ```groovy
-        entity(Entity)
-        entity(String)
-        entity(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    entity(Entity)
+    entity(String)
+    entity(ResourceLocation)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.bloodmagic.sacrificial.recipeBuilder()
-            .entity('minecraft:enderman')
-            .value(1000)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.bloodmagic.sacrificial.recipeBuilder()
+    .entity('minecraft:enderman')
+    .value(1000)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes any Sacrificial values entry with the given Entity as a ResourceLocation:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.remove(Entity)
     ```
 
 - Removes any Sacrificial values entry with the given EntityEntry as a ResourceLocation:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.remove(EntityEntry)
     ```
 
 - Removes any Sacrificial values entry with the given ResourceLocation:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.remove(ResourceLocation)
     ```
 
 - Removes any Sacrificial values entry with the given String as a ResourceLocation:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.remove(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.bloodmagic.sacrificial.remove(entity('minecraft:villager'))
-    mods.bloodmagic.sacrificial.remove(resource('minecraft:villager'))
-    mods.bloodmagic.sacrificial.remove('minecraft:villager')
-    mods.bloodmagic.sacrificial.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.bloodmagic.sacrificial.remove(entity('minecraft:villager'))
+mods.bloodmagic.sacrificial.remove(resource('minecraft:villager'))
+mods.bloodmagic.sacrificial.remove('minecraft:villager')
+mods.bloodmagic.sacrificial.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.bloodmagic.sacrificial.streamRecipes()
     ```

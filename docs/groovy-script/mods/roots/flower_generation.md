@@ -14,7 +14,7 @@ When running the Flower Growth Ritual, allowed flowers will generate in the area
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.flower_generation/*(1)!*/
 mods.roots.flowergeneration
 mods.roots.flowerGeneration
@@ -31,89 +31,93 @@ Just like other recipe types, the Flower Generation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.flower_generation.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.flower_generation.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IBlockState`. Sets the flower blockstate. Requires not null.
+- `IBlockState`. Sets the flower blockstate. Requires not null.
 
-        ```groovy
-        flower(Block, int)
-        flower(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    flower(Block, int)
+    flower(IBlockState)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.FlowerRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.FlowerRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.flower_generation.recipeBuilder()
-            .name('clay_flower')
-            .flower(blockstate('minecraft:clay'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.flower_generation.recipeBuilder()
+    .name('clay_flower')
+    .flower(blockstate('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Entries
 
 - Removes all Flower Generation entries with the given Block:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeByFlower(Block)
     ```
 
 - Removes the Flower Generation entry with the given Block and int metadata:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeByFlower(Block, int)
     ```
 
 - Removes the Flower Generation entry with the given IBlockState:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeByFlower(IBlockState)
     ```
 
 - Removes the Flower Generation entry with the given ItemStack converted into an IBlockState:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeByFlower(ItemStack)
     ```
 
 - Removes the Flower Generation entry with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeByName(ResourceLocation)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'))
-    mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'), 1)
-    mods.roots.flower_generation.removeByFlower(blockstate('minecraft:red_flower:2'))
-    mods.roots.flower_generation.removeByFlower(item('minecraft:red_flower:3'))
-    mods.roots.flower_generation.removeByName(resource('roots:dandelion'))
-    mods.roots.flower_generation.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'))
+mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'), 1)
+mods.roots.flower_generation.removeByFlower(blockstate('minecraft:red_flower:2'))
+mods.roots.flower_generation.removeByFlower(item('minecraft:red_flower:3'))
+mods.roots.flower_generation.removeByName(resource('roots:dandelion'))
+mods.roots.flower_generation.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.flower_generation.streamRecipes()
     ```

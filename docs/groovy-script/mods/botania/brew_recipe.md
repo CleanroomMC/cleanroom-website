@@ -14,7 +14,7 @@ Converts a non-infused Managlass Vial, Alfglass Flask, Incense Stick, or Tainted
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.brew_recipe/*(1)!*/
 mods.botania.brewrecipe
 mods.botania.brewRecipe
@@ -31,82 +31,86 @@ Just like other recipe types, the Brew Recipe also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.botania.brew_recipe.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 6.
+:::::::::: details ABSTRACT mods.botania.brew_recipe.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 6.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy Brew`. Sets the brew the recipe is being created for. Requires not null.
+- `Brew`. Sets the brew the recipe is being created for. Requires not null.
 
-        ```groovy
-        brew(Brew)
-        output(Brew)
-        ```
+    ```groovy:no-line-numbers
+    brew(Brew)
+    output(Brew)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `vazkii.botania.api.recipe.RecipeBrew`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `vazkii.botania.api.recipe.RecipeBrew`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.botania.brew_recipe.recipeBuilder()
-            .input(item('minecraft:clay'), ore('ingotGold'), ore('gemDiamond'))
-            .brew(brew('absorption'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.brew_recipe.recipeBuilder()
+    .input(item('minecraft:clay'), ore('ingotGold'), ore('gemDiamond'))
+    .brew(brew('absorption'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.removeByInput(IIngredient...)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.removeByInputs(IIngredient...)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.removeByOutput(Brew)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.removeByOutput(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.brew_recipe.removeByInput(item('minecraft:iron_ingot'))
-    mods.botania.brew_recipe.removeByOutput(brew('allure'))
-    mods.botania.brew_recipe.removeByOutput('speed')
-    mods.botania.brew_recipe.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.brew_recipe.removeByInput(item('minecraft:iron_ingot'))
+mods.botania.brew_recipe.removeByOutput(brew('allure'))
+mods.botania.brew_recipe.removeByOutput('speed')
+mods.botania.brew_recipe.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.brew_recipe.streamRecipes()
     ```

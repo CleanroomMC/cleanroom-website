@@ -14,7 +14,7 @@ Create or modify existing research entries, which contain helpful information an
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.thaumcraft.research/*(1)!*/
 mods.thaumcraft.Research
 mods.tc.research
@@ -29,93 +29,95 @@ mods.thaum.Research
 
 - Adds Categories in the format `key`, `researchkey`, `formula`, `icon`, `background`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addCategory(String, String, AspectList, String, String)
     ```
 
 - Adds Categories in the format `key`, `researchkey`, `formula`, `icon`, `background`, `background2`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addCategory(String, String, AspectList, String, String, String)
     ```
 
 - Adds a new location to check for research:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addResearchLocation(ResourceLocation)
     ```
 
 - Adds a new location to check for research:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addResearchLocation(String)
     ```
 
 - Adds a new location to check for research:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addResearchLocation(String, String)
     ```
 
 - Adds a new scannable block:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(Block)
     ```
 
 - Adds a new scannable enchantment:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(Enchantment)
     ```
 
 - Adds a new scannable material:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(Material)
     ```
 
 - Adds a new scannable potion:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(Potion)
     ```
 
 - Adds a new scannable block in the format `researchKey`, `block`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(String, Block)
     ```
 
 - Adds a new scannable entity in the format `researchKey`, `entityClass`, `inheritedClasses`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(String, Class<?>, boolean)
     ```
 
 - Adds a new scannable entity in the format `researchKey`, `entityClass`, `inheritedClasses`, `tags`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(String, Class<?>, boolean, ThaumcraftApi.EntityTagsNBT)
     ```
 
 - Adds a new scannable item in the format `researchKey`, `item`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(String, ItemStack)
     ```
 
 - Adds a new scannable material in the format `researchKey`, `material`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.addScannable(String, Material)
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.research.addResearchLocation(resource('thaumcraft:research/new.json'))
-    mods.thaumcraft.research.addScannable('KNOWLEDGETYPEHUMOR', item('minecraft:pumpkin'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.research.addResearchLocation(resource('thaumcraft:research/new.json'))
+mods.thaumcraft.research.addScannable('KNOWLEDGETYPEHUMOR', item('minecraft:pumpkin'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -123,92 +125,96 @@ Just like other recipe types, the Research also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.thaumcraft.research.researchCategoryBuilder()"
-    - `#!groovy String`. Sets a unique research key.
+:::::::::: details ABSTRACT mods.thaumcraft.research.researchCategoryBuilder() {open}
+- `String`. Sets a unique research key.
 
-        ```groovy
-        key(String)
-        ```
+    ```groovy:no-line-numbers
+    key(String)
+    ```
 
-    - `#!groovy ResourceLocation`. Sets the icon to be used for the research category tab.
+- `ResourceLocation`. Sets the icon to be used for the research category tab.
 
-        ```groovy
-        icon(String)
-        icon(String, String)
-        icon(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    icon(String)
+    icon(String, String)
+    icon(ResourceLocation)
+    ```
 
-    - `#!groovy AspectList`. Sets the aspects required to gain knowledge in this category.
+- `AspectList`. Sets the aspects required to gain knowledge in this category.
 
-        ```groovy
-        formulaAspect(AspectStack)
-        formulaAspect(String, int)
-        ```
+    ```groovy:no-line-numbers
+    formulaAspect(AspectStack)
+    formulaAspect(String, int)
+    ```
 
-    - `#!groovy ResourceLocation`. Sets the resource location of the background image to use for this category.
+- `ResourceLocation`. Sets the resource location of the background image to use for this category.
 
-        ```groovy
-        background(String)
-        background(String, String)
-        background(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    background(String)
+    background(String, String)
+    background(ResourceLocation)
+    ```
 
-    - `#!groovy ResourceLocation`. Sets the resource location of the foreground image that lies between the background and icons.
+- `ResourceLocation`. Sets the resource location of the foreground image that lies between the background and icons.
 
-        ```groovy
-        background2(String)
-        background2(String, String)
-        background2(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    background2(String)
+    background2(String, String)
+    background2(ResourceLocation)
+    ```
 
-    - `#!groovy String`. Sets the research that the player needs to have completed before this category becomes visible. `null` causes it to always be visible.
+- `String`. Sets the research that the player needs to have completed before this category becomes visible. `null` causes it to always be visible.
 
-        ```groovy
-        researchKey(String)
-        ```
+    ```groovy:no-line-numbers
+    researchKey(String)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `thaumcraft.api.research.ResearchCategory`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `thaumcraft.api.research.ResearchCategory`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.thaumcraft.research.researchCategoryBuilder()
-            .key('BASICS2')
-            .researchKey('UNLOCKAUROMANCY')
-            .formulaAspect(aspect('herba') * 5)
-            .formulaAspect(aspect('ordo') * 5)
-            .formulaAspect(aspect('perditio') * 5)
-            .formulaAspect('aer', 5)
-            .formulaAspect('ignis', 5)
-            .formulaAspect(aspect('terra') * 5)
-            .formulaAspect('aqua', 5)
-            .icon(resource('thaumcraft:textures/aspects/humor.png'))
-            .background(resource('thaumcraft:textures/gui/gui_research_back_1.jpg'))
-            .background2(resource('thaumcraft:textures/gui/gui_research_back_over.png'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.research.researchCategoryBuilder()
+    .key('BASICS2')
+    .researchKey('UNLOCKAUROMANCY')
+    .formulaAspect(aspect('herba') * 5)
+    .formulaAspect(aspect('ordo') * 5)
+    .formulaAspect(aspect('perditio') * 5)
+    .formulaAspect('aer', 5)
+    .formulaAspect('ignis', 5)
+    .formulaAspect(aspect('terra') * 5)
+    .formulaAspect('aqua', 5)
+    .icon(resource('thaumcraft:textures/aspects/humor.png'))
+    .background(resource('thaumcraft:textures/gui/gui_research_back_1.jpg'))
+    .background2(resource('thaumcraft:textures/gui/gui_research_back_over.png'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes a Research Category by the name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.removeCategory(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.research.removeAllCategories()
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.research.removeCategory('BASICS')
-    mods.thaumcraft.research.removeAllCategories()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.research.removeCategory('BASICS')
+mods.thaumcraft.research.removeAllCategories()
+```
+
+::::::::::

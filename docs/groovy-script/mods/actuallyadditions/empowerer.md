@@ -14,7 +14,7 @@ Turns 5 input items into an output item at the cost of power and time. Has a con
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
+```groovy:no-line-numbers {3}
 mods.aa.empowerer
 mods.aa.Empowerer
 mods.actuallyadditions.empowerer/*(1)!*/
@@ -31,147 +31,151 @@ Just like other recipe types, the Empowerer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.empowerer.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 4 and less than or equal to 5.
+:::::::::: details ABSTRACT mods.actuallyadditions.empowerer.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 4 and less than or equal to 5.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy float`. Sets the red color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
+- `float`. Sets the red color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
 
-        ```groovy
-        red(float)
-        color(int)
-        color(float...)
-        particleColor(int)
-        particleColor(float...)
-        ```
+    ```groovy:no-line-numbers
+    red(float)
+    color(int)
+    color(float...)
+    particleColor(int)
+    particleColor(float...)
+    ```
 
-    - `#!groovy float`. Sets the blue color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
+- `float`. Sets the blue color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
 
-        ```groovy
-        blue(float)
-        color(int)
-        color(float...)
-        particleColor(int)
-        particleColor(float...)
-        ```
+    ```groovy:no-line-numbers
+    blue(float)
+    color(int)
+    color(float...)
+    particleColor(int)
+    particleColor(float...)
+    ```
 
-    - `#!groovy int`. Sets the amount of time the recipe takes to complete. Requires greater than 0. (Default `0`).
+- `int`. Sets the amount of time the recipe takes to complete. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - `#!groovy float`. Sets the green color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
+- `float`. Sets the green color. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
 
-        ```groovy
-        green(float)
-        color(int)
-        color(float...)
-        particleColor(int)
-        particleColor(float...)
-        ```
+    ```groovy:no-line-numbers
+    green(float)
+    color(int)
+    color(float...)
+    particleColor(int)
+    particleColor(float...)
+    ```
 
-    - `#!groovy IIngredient`. Sets the center IIngredient if the input only has 4 entries.
+- `IIngredient`. Sets the center IIngredient if the input only has 4 entries.
 
-        ```groovy
-        mainInput(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    mainInput(IIngredient)
+    ```
 
-    - `#!groovy int`. Sets the amount of energy each stand must consume to process the recipe. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the amount of energy each stand must consume to process the recipe. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        energy(int)
-        energyPerStand(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    energyPerStand(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.EmpowererRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.EmpowererRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.empowerer.recipeBuilder()
-            .mainInput(item('minecraft:clay'))
-            .input(item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
-            .output(item('minecraft:diamond'))
-            .time(50)
-            .energy(1000)
-            .red(0.5)
-            .green(0.3)
-            .blue(0.2)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.empowerer.recipeBuilder()
+    .mainInput(item('minecraft:clay'))
+    .input(item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .time(50)
+    .energy(1000)
+    .red(0.5)
+    .green(0.3)
+    .blue(0.2)
+    .register()
 
-        mods.actuallyadditions.empowerer.recipeBuilder()
-            .mainInput(item('minecraft:clay'))
-            .input(item('minecraft:diamond'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
-            .output(item('minecraft:diamond') * 2)
-            .time(50)
-            .color(0.5, 0.3, 0.2)
-            .register()
+mods.actuallyadditions.empowerer.recipeBuilder()
+    .mainInput(item('minecraft:clay'))
+    .input(item('minecraft:diamond'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
+    .output(item('minecraft:diamond') * 2)
+    .time(50)
+    .color(0.5, 0.3, 0.2)
+    .register()
 
-        mods.actuallyadditions.empowerer.recipeBuilder()
-            .mainInput(item('minecraft:diamond'))
-            .input(item('minecraft:diamond'),item('minecraft:gold_ingot'),item('minecraft:diamond'),item('minecraft:gold_ingot'))
-            .output(item('minecraft:dirt') * 8)
-            .time(50)
-            .particleColor(0x00FF88)
-            .register()
+mods.actuallyadditions.empowerer.recipeBuilder()
+    .mainInput(item('minecraft:diamond'))
+    .input(item('minecraft:diamond'),item('minecraft:gold_ingot'),item('minecraft:diamond'),item('minecraft:gold_ingot'))
+    .output(item('minecraft:dirt') * 8)
+    .time(50)
+    .particleColor(0x00FF88)
+    .register()
 
-        mods.actuallyadditions.empowerer.recipeBuilder()
-            .input(item('minecraft:gold_ingot'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
-            .output(item('minecraft:diamond'))
-            .time(50)
-            .register()
-        ```
+mods.actuallyadditions.empowerer.recipeBuilder()
+    .input(item('minecraft:gold_ingot'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .time(50)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.empowerer.removeByInput(IIngredient)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.empowerer.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.empowerer.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.empowerer.removeByInput(item('actuallyadditions:item_crystal'))
-    mods.actuallyadditions.empowerer.removeByOutput(item('actuallyadditions:item_misc:24'))
-    mods.actuallyadditions.empowerer.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.empowerer.removeByInput(item('actuallyadditions:item_crystal'))
+mods.actuallyadditions.empowerer.removeByOutput(item('actuallyadditions:item_misc:24'))
+mods.actuallyadditions.empowerer.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.empowerer.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Converts any number of a single item into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.avaritia.compressor/*(1)!*/
 mods.avaritia.Compressor
 ```
@@ -25,14 +25,16 @@ mods.avaritia.Compressor
 
 - Adds recipes in the format `output`, `input`, `cost`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.avaritia.compressor.add(ItemStack, IIngredient, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.avaritia.compressor.add(item('minecraft:nether_star'), item('minecraft:clay_ball'), 100)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.avaritia.compressor.add(item('minecraft:nether_star'), item('minecraft:clay_ball'), 100)
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,71 +42,75 @@ Just like other recipe types, the Compressor also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.avaritia.compressor.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.avaritia.compressor.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the amount of items required to convert. (Default `300`).
+- `int`. Sets the amount of items required to convert. (Default `300`).
 
-        ```groovy
-        input(IIngredient)
-        inputCount(int)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    inputCount(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `morph.avaritia.recipe.compressor.ICompressorRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `morph.avaritia.recipe.compressor.ICompressorRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.avaritia.compressor.recipeBuilder()
-            .input(item('minecraft:clay_ball') * 100)
-            .output(item('minecraft:nether_star'))
-            .inputCount(100)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.avaritia.compressor.recipeBuilder()
+    .input(item('minecraft:clay_ball') * 100)
+    .output(item('minecraft:nether_star'))
+    .inputCount(100)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.avaritia.compressor.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.avaritia.compressor.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.avaritia.compressor.removeByOutput(item('avaritia:singularity', 0))
-    mods.avaritia.compressor.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.avaritia.compressor.removeByOutput(item('avaritia:singularity', 0))
+mods.avaritia.compressor.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.avaritia.compressor.streamRecipes()
     ```

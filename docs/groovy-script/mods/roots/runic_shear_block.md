@@ -14,7 +14,7 @@ Right clicking a Runic Shear on a block to convert it into a replacement block a
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.runic_shear_block/*(1)!*/
 mods.roots.runicshearblock
 mods.roots.runicShearBlock
@@ -31,104 +31,108 @@ Just like other recipe types, the Runic Shear Block also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.runic_shear_block.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.runic_shear_block.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy BlockStatePredicate`. Sets the target input blockstate. Requires not null.
+- `BlockStatePredicate`. Sets the target input blockstate. Requires not null.
 
-        ```groovy
-        state(IBlockState)
-        state(BlockStatePredicate)
-        ```
+    ```groovy:no-line-numbers
+    state(IBlockState)
+    state(BlockStatePredicate)
+    ```
 
-    - `#!groovy ItemStack`. Sets the item representing the target input blockstate.
+- `ItemStack`. Sets the item representing the target input blockstate.
 
-        ```groovy
-        displayItem(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    displayItem(ItemStack)
+    ```
 
-    - `#!groovy IBlockState`. Sets the blockstate replacing the input block. Requires not null.
+- `IBlockState`. Sets the blockstate replacing the input block. Requires not null.
 
-        ```groovy
-        replacementState(IBlockState)
-        ```
+    ```groovy:no-line-numbers
+    replacementState(IBlockState)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.RunicShearRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.RunicShearRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.runic_shear_block.recipeBuilder()
-            .name('clay_from_runic_diamond')
-            .state(blockstate('minecraft:diamond_block'))
-            .replacementState(blockstate('minecraft:air'))
-            .output(item('minecraft:clay') * 64)
-            .displayItem(item('minecraft:diamond') * 9)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.runic_shear_block.recipeBuilder()
+    .name('clay_from_runic_diamond')
+    .state(blockstate('minecraft:diamond_block'))
+    .replacementState(blockstate('minecraft:air'))
+    .output(item('minecraft:clay') * 64)
+    .displayItem(item('minecraft:diamond') * 9)
+    .register()
 
-        mods.roots.runic_shear_block.recipeBuilder()
-            .state(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:yellow_flower:type=dandelion')).properties('type').register())
-            .replacementState(blockstate('minecraft:red_flower:type=poppy'))
-            .output(item('minecraft:gold_ingot'))
-            .register()
-        ```
+mods.roots.runic_shear_block.recipeBuilder()
+    .state(mods.roots.predicates.stateBuilder().blockstate(blockstate('minecraft:yellow_flower:type=dandelion')).properties('type').register())
+    .replacementState(blockstate('minecraft:red_flower:type=poppy'))
+    .output(item('minecraft:gold_ingot'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Runic Shear Block recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_block.removeByName(ResourceLocation)
     ```
 
 - Removes the Runic Shear Block recipe with the given output itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_block.removeByOutput(ItemStack)
     ```
 
 - Removes the Runic Shear Block recipe with the given output IBlockState:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_block.removeByState(IBlockState)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_block.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.runic_shear_block.removeByName(resource('roots:wildewheet'))
-    mods.roots.runic_shear_block.removeByOutput(item('roots:spirit_herb'))
-    mods.roots.runic_shear_block.removeByState(blockstate('minecraft:beetroots:age=3'))
-    mods.roots.runic_shear_block.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.runic_shear_block.removeByName(resource('roots:wildewheet'))
+mods.roots.runic_shear_block.removeByOutput(item('roots:spirit_herb'))
+mods.roots.runic_shear_block.removeByState(blockstate('minecraft:beetroots:age=3'))
+mods.roots.runic_shear_block.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.runic_shear_block.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Converts an input fluidstack into an output itemstack at a rate based on up 2 it
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.vat/*(1)!*/
 mods.enderio.Vat
 mods.eio.vat
@@ -31,133 +31,137 @@ Just like other recipe types, the Vat also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.enderio.vat.recipeBuilder()"
-    - `#!groovy FluidStack`. Sets the input fluid. Requires not null.
+:::::::::: details ABSTRACT mods.enderio.vat.recipeBuilder() {open}
+- `FluidStack`. Sets the input fluid. Requires not null.
 
-        ```groovy
-        input(FluidStack)
-        ```
+    ```groovy:no-line-numbers
+    input(FluidStack)
+    ```
 
-    - `#!groovy RecipeLevel`. Sets the minimum required machine tier of the recipe. (Default `RecipeLevel.IGNORE`).
+- `RecipeLevel`. Sets the minimum required machine tier of the recipe. (Default `RecipeLevel.IGNORE`).
 
-        ```groovy
-        tierAny()
-        tierNormal()
-        tierEnhanced()
-        ```
+    ```groovy:no-line-numbers
+    tierAny()
+    tierNormal()
+    tierEnhanced()
+    ```
 
-    - `#!groovy int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
+- `int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        energy(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    ```
 
-    - `#!groovy FluidStack`. Sets the output fluid. Requires not null.
+- `FluidStack`. Sets the output fluid. Requires not null.
 
-        ```groovy
-        output(FluidStack)
-        ```
+    ```groovy:no-line-numbers
+    output(FluidStack)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the valid input items for the left side.
+- `IngredientList<IIngredient>`. Sets the valid input items for the left side.
 
-        ```groovy
-        itemInputLeft(IIngredient, float)
-        ```
+    ```groovy:no-line-numbers
+    itemInputLeft(IIngredient, float)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the valid input items for the right side.
+- `IngredientList<IIngredient>`. Sets the valid input items for the right side.
 
-        ```groovy
-        itemInputRight(IIngredient, float)
-        ```
+    ```groovy:no-line-numbers
+    itemInputRight(IIngredient, float)
+    ```
 
-    - `#!groovy FloatList`. Sets the multiplier applied to the respective input item on the left side.
+- `FloatList`. Sets the multiplier applied to the respective input item on the left side.
 
-        ```groovy
-        itemInputLeft(IIngredient, float)
-        ```
+    ```groovy:no-line-numbers
+    itemInputLeft(IIngredient, float)
+    ```
 
-    - `#!groovy FloatList`. Sets the multiplier applied to the respective input item on the right side.
+- `FloatList`. Sets the multiplier applied to the respective input item on the right side.
 
-        ```groovy
-        itemInputRight(IIngredient, float)
-        ```
+    ```groovy:no-line-numbers
+    itemInputRight(IIngredient, float)
+    ```
 
-    - `#!groovy float`. Sets the base amount of fluid output. Requires greater than 0. (Default `1`).
+- `float`. Sets the base amount of fluid output. Requires greater than 0. (Default `1`).
 
-        ```groovy
-        baseMultiplier(float)
-        ```
+    ```groovy:no-line-numbers
+    baseMultiplier(float)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.Recipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.Recipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.enderio.vat.recipeBuilder()
-            .input(fluid('lava'))
-            .output(fluid('hootch'))
-            .baseMultiplier(2)
-            .itemInputLeft(item('minecraft:clay'), 2)
-            .itemInputLeft(item('minecraft:clay_ball'), 0.5)
-            .itemInputRight(item('minecraft:diamond'), 5)
-            .itemInputRight(item('minecraft:diamond_block'), 50)
-            .itemInputRight(item('minecraft:gold_block'), 10)
-            .itemInputRight(item('minecraft:gold_ingot'), 1)
-            .itemInputRight(item('minecraft:gold_nugget'), 0.1)
-            .energy(1000)
-            .tierEnhanced()
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.vat.recipeBuilder()
+    .input(fluid('lava'))
+    .output(fluid('hootch'))
+    .baseMultiplier(2)
+    .itemInputLeft(item('minecraft:clay'), 2)
+    .itemInputLeft(item('minecraft:clay_ball'), 0.5)
+    .itemInputRight(item('minecraft:diamond'), 5)
+    .itemInputRight(item('minecraft:diamond_block'), 50)
+    .itemInputRight(item('minecraft:gold_block'), 10)
+    .itemInputRight(item('minecraft:gold_ingot'), 1)
+    .itemInputRight(item('minecraft:gold_nugget'), 0.1)
+    .energy(1000)
+    .tierEnhanced()
+    .register()
 
-        mods.enderio.vat.recipeBuilder()
-            .input(fluid('hootch') * 100)
-            .output(fluid('water') * 50)
-            .itemInputLeft(item('minecraft:clay_ball'), 1)
-            .itemInputRight(item('minecraft:diamond'), 1)
-            .energy(1000)
-            .tierNormal()
-            .register()
+mods.enderio.vat.recipeBuilder()
+    .input(fluid('hootch') * 100)
+    .output(fluid('water') * 50)
+    .itemInputLeft(item('minecraft:clay_ball'), 1)
+    .itemInputRight(item('minecraft:diamond'), 1)
+    .energy(1000)
+    .tierNormal()
+    .register()
 
-        mods.enderio.vat.recipeBuilder()
-            .input(fluid('water'))
-            .output(fluid('hootch'))
-            .itemInputLeft(item('minecraft:clay'), 2)
-            .itemInputLeft(item('minecraft:clay_ball'), 0.5)
-            .itemInputRight(item('minecraft:diamond'), 5)
-            .itemInputRight(item('minecraft:gold_ingot'), 1)
-            .energy(1000)
-            .tierAny()
-            .register()
-        ```
+mods.enderio.vat.recipeBuilder()
+    .input(fluid('water'))
+    .output(fluid('hootch'))
+    .itemInputLeft(item('minecraft:clay'), 2)
+    .itemInputLeft(item('minecraft:clay_ball'), 0.5)
+    .itemInputRight(item('minecraft:diamond'), 5)
+    .itemInputRight(item('minecraft:gold_ingot'), 1)
+    .energy(1000)
+    .tierAny()
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.vat.remove(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.vat.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.vat.remove(fluid('nutrient_distillation'))
-    mods.enderio.vat.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.vat.remove(fluid('nutrient_distillation'))
+mods.enderio.vat.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.vat.streamRecipes()
     ```

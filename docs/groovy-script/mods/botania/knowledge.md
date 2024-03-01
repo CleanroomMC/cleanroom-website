@@ -14,7 +14,7 @@ Creates a new type of knowledge that Lexica Botania entries may be gated with. C
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.knowledge/*(1)!*/
 mods.botania.Knowledge
 ```
@@ -25,25 +25,27 @@ mods.botania.Knowledge
 
 - Adds entries in the format `id`, `formatting`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.knowledge.add(String, TextFormatting)
     ```
 
 - Adds entries in the format `id`, `formatting`, `autoUnlock`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.knowledge.add(String, TextFormatting, boolean)
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.knowledge.add('newType', TextFormatting.RED, true)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.knowledge.add('newType', TextFormatting.RED, true)
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.knowledge.streamKnowledgeTypes()
     ```

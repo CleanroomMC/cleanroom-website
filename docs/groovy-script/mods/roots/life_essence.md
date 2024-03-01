@@ -14,7 +14,7 @@ When shift right clicking a mob in the Life Essence Pool with Runic Shears, it w
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.life_essence/*(1)!*/
 mods.roots.lifeessence
 mods.roots.lifeEssence
@@ -27,63 +27,67 @@ mods.roots.LifeEssence
 
 - Adds entries in the format `entity`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.add(Class<? extends EntityLivingBase>)
     ```
 
 - Adds entries in the format `entity`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.add(EntityEntry)
     ```
 
 - Adds entries in the format `entity`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.add(EntityLivingBase)
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.life_essence.add(entity('minecraft:wither_skeleton'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.life_essence.add(entity('minecraft:wither_skeleton'))
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes the Life Essence entry for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.remove(Class<? extends EntityLivingBase>)
     ```
 
 - Removes the Life Essence entry for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.remove(EntityEntry)
     ```
 
 - Removes the Life Essence entry for the given Entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.remove(EntityLivingBase)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.life_essence.remove(entity('minecraft:sheep'))
-    mods.roots.life_essence.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.life_essence.remove(entity('minecraft:sheep'))
+mods.roots.life_essence.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.life_essence.streamRecipes()
     ```

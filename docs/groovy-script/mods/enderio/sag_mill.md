@@ -14,7 +14,7 @@ Convert an input itemstack into up to 4 output itemstacks with chances, using en
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.sag_mill/*(1)!*/
 mods.enderio.sagmill
 mods.enderio.sagMill
@@ -41,122 +41,126 @@ Just like other recipe types, the Sag Mill also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.enderio.sag_mill.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.enderio.sag_mill.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1 and less than or equal to 4.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1 and less than or equal to 4.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(ItemStack, float)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(ItemStack, float)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy RecipeLevel`. Sets the minimum required machine tier of the recipe. (Default `RecipeLevel.IGNORE`).
+- `RecipeLevel`. Sets the minimum required machine tier of the recipe. (Default `RecipeLevel.IGNORE`).
 
-        ```groovy
-        tierAny()
-        tierNormal()
-        tierSimple()
-        tierEnhanced()
-        ```
+    ```groovy:no-line-numbers
+    tierAny()
+    tierNormal()
+    tierSimple()
+    tierEnhanced()
+    ```
 
-    - `#!groovy int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
+- `int`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        energy(int)
-        ```
+    ```groovy:no-line-numbers
+    energy(int)
+    ```
 
-    - `#!groovy FloatList`. Sets the chance the given output of each output slot.
+- `FloatList`. Sets the chance the given output of each output slot.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack, float)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack, float)
+    ```
 
-    - `#!groovy RecipeBonusType`. Sets the type of bonus a Grinding Ball can apply. (Default `RecipeBonusType.NONE`).
+- `RecipeBonusType`. Sets the type of bonus a Grinding Ball can apply. (Default `RecipeBonusType.NONE`).
 
-        ```groovy
-        bonusTypeNone()
-        bonusTypeChance()
-        bonusTypeMultiply()
-        ```
+    ```groovy:no-line-numbers
+    bonusTypeNone()
+    bonusTypeChance()
+    bonusTypeMultiply()
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.Recipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `crazypants.enderio.base.recipe.Recipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.enderio.sag_mill.recipeBuilder()
-            .input(item('minecraft:diamond_block'))
-            .output(item('minecraft:diamond') * 4)
-            .output(item('minecraft:clay_ball') * 2, 0.7)
-            .output(item('minecraft:gold_ingot'), 0.1)
-            .output(item('minecraft:gold_ingot'), 0.1)
-            .bonusTypeMultiply()
-            .energy(1000)
-            .tierEnhanced()
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.sag_mill.recipeBuilder()
+    .input(item('minecraft:diamond_block'))
+    .output(item('minecraft:diamond') * 4)
+    .output(item('minecraft:clay_ball') * 2, 0.7)
+    .output(item('minecraft:gold_ingot'), 0.1)
+    .output(item('minecraft:gold_ingot'), 0.1)
+    .bonusTypeMultiply()
+    .energy(1000)
+    .tierEnhanced()
+    .register()
 
-        mods.enderio.sag_mill.recipeBuilder()
-            .input(item('minecraft:clay_ball'))
-            .output(item('minecraft:diamond') * 4)
-            .output(item('minecraft:gold_ingot'), 0.1)
-            .bonusTypeChance()
-            .tierNormal()
-            .register()
+mods.enderio.sag_mill.recipeBuilder()
+    .input(item('minecraft:clay_ball'))
+    .output(item('minecraft:diamond') * 4)
+    .output(item('minecraft:gold_ingot'), 0.1)
+    .bonusTypeChance()
+    .tierNormal()
+    .register()
 
-        mods.enderio.sag_mill.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:gold_ingot'), 0.1)
-            .bonusTypeNone()
-            .tierSimple()
-            .register()
+mods.enderio.sag_mill.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:gold_ingot'), 0.1)
+    .bonusTypeNone()
+    .tierSimple()
+    .register()
 
-        mods.enderio.sag_mill.recipeBuilder()
-            .input(item('minecraft:nether_star'))
-            .output(item('minecraft:clay_ball') * 2, 0.7)
-            .output(item('minecraft:gold_ingot'), 0.1)
-            .tierAny()
-            .register()
-        ```
+mods.enderio.sag_mill.recipeBuilder()
+    .input(item('minecraft:nether_star'))
+    .output(item('minecraft:clay_ball') * 2, 0.7)
+    .output(item('minecraft:gold_ingot'), 0.1)
+    .tierAny()
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill.removeByInput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.sag_mill.removeByInput(item('minecraft:wheat'))
-    mods.enderio.sag_mill.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.sag_mill.removeByInput(item('minecraft:wheat'))
+mods.enderio.sag_mill.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.sag_mill.streamRecipes()
     ```

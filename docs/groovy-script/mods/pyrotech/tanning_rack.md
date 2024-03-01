@@ -14,7 +14,7 @@ Converts an item over time into a new one
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.pyrotech.tanning_rack/*(1)!*/
 mods.pyrotech.tanningrack
 mods.pyrotech.tanningRack
@@ -27,14 +27,16 @@ mods.pyrotech.TanningRack
 
 - Adds recipes in the format `name`, `input`, `output`, `dryTime`, `failureItem`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.tanning_rack.add(String, IIngredient, ItemStack, int, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.tanning_rack.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1200, item('minecraft:clay_ball'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.tanning_rack.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1200, item('minecraft:clay_ball'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -42,90 +44,94 @@ Just like other recipe types, the Tanning Rack also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.pyrotech.tanning_rack.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.pyrotech.tanning_rack.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the time required for the recipe to complete. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the time required for the recipe to complete. Requires greater than or equal to 1. (Default `0`).
 
-        ```groovy
-        dryTime(int)
-        ```
+    ```groovy:no-line-numbers
+    dryTime(int)
+    ```
 
-    - `#!groovy ItemStack`. Sets the output when the recipe failed.
+- `ItemStack`. Sets the output when the recipe failed.
 
-        ```groovy
-        failureItem(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    failureItem(ItemStack)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.TanningRackRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.TanningRackRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.pyrotech.tanning_rack.recipeBuilder()
-            .input(item('minecraft:iron_ingot'))
-            .output(item('minecraft:gold_ingot'))
-            .dryTime(260)
-            .name('iron_to_gold_drying_rack')
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.tanning_rack.recipeBuilder()
+    .input(item('minecraft:iron_ingot'))
+    .output(item('minecraft:gold_ingot'))
+    .dryTime(260)
+    .name('iron_to_gold_drying_rack')
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.tanning_rack.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.tanning_rack.removeByOutput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.tanning_rack.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.tanning_rack.removeByInput(item('minecraft:wheat'))
-    mods.pyrotech.tanning_rack.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.tanning_rack.removeByInput(item('minecraft:wheat'))
+mods.pyrotech.tanning_rack.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.tanning_rack.streamRecipes()
     ```

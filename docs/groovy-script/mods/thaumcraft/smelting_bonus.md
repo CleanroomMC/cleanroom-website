@@ -14,7 +14,7 @@ Additional item output when smelting a given item in the Infernal Furnace Multib
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.thaumcraft.smelting_bonus/*(1)!*/
 mods.thaumcraft.smeltingbonus
 mods.thaumcraft.smeltingBonus
@@ -35,13 +35,13 @@ mods.thaum.SmeltingBonus
 
 - Adds recipes in the format `in`, `out`, with chance having a default value of `0.33F`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.smelting_bonus.add(IIngredient, ItemStack)
     ```
 
 - Adds recipes in the format `in`, `out`, `chance`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.smelting_bonus.add(IIngredient, ItemStack, float)
     ```
 
@@ -52,71 +52,75 @@ Just like other recipe types, the Smelting Bonus also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.thaumcraft.smelting_bonus.recipeBuilder()"
-    - `#!groovy IIngredient`. Sets the input of the smelting operation. Requires not null.
+:::::::::: details ABSTRACT mods.thaumcraft.smelting_bonus.recipeBuilder() {open}
+- `IIngredient`. Sets the input of the smelting operation. Requires not null.
 
-        ```groovy
-        input(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    ```
 
-    - `#!groovy ItemStack`. Sets the bonus item to be produced from the smelting operation. Requires not null.
+- `ItemStack`. Sets the bonus item to be produced from the smelting operation. Requires not null.
 
-        ```groovy
-        output(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    ```
 
-    - `#!groovy float`. Sets the chance of `out` being produced from the smelting operation per attached Arcane Bellows + 1. (Default `0.33F`).
+- `float`. Sets the chance of `out` being produced from the smelting operation per attached Arcane Bellows + 1. (Default `0.33F`).
 
-        ```groovy
-        chance(float)
-        ```
+    ```groovy:no-line-numbers
+    chance(float)
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.thaumcraft.smelting_bonus.recipeBuilder()
-            .input(item('minecraft:cobblestone'))
-            .output(item('minecraft:stone_button'))
-            .chance(0.2F)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.smelting_bonus.recipeBuilder()
+    .input(item('minecraft:cobblestone'))
+    .output(item('minecraft:stone_button'))
+    .chance(0.2F)
+    .register()
 
-        mods.thaumcraft.smelting_bonus.recipeBuilder()
-            .input(ore('stone'))
-            .output(item('minecraft:obsidian'))
-            .register()
-        ```
+mods.thaumcraft.smelting_bonus.recipeBuilder()
+    .input(ore('stone'))
+    .output(item('minecraft:obsidian'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.smelting_bonus.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.smelting_bonus.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.smelting_bonus.removeByOutput(item('minecraft:gold_nugget'))
-    mods.thaumcraft.smelting_bonus.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.smelting_bonus.removeByOutput(item('minecraft:gold_nugget'))
+mods.thaumcraft.smelting_bonus.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.smelting_bonus.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Determines if holding an item or equipping a piece of armor or a bauble gives wa
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.thaumcraft.warp/*(1)!*/
 mods.thaumcraft.Warp
 mods.tc.warp
@@ -29,31 +29,35 @@ mods.thaum.Warp
 
 - Adds Warp to the given item in the format `item`, `amount`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.warp.addWarp(ItemStack, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.warp.addWarp(item('minecraft:pumpkin'), 3)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.warp.addWarp(item('minecraft:pumpkin'), 3)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes Warp from the given item:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.warp.removeWarp(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.warp.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.thaumcraft.warp.removeWarp(item('thaumcraft:void_hoe'))
-    mods.thaumcraft.warp.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.warp.removeWarp(item('thaumcraft:void_hoe'))
+mods.thaumcraft.warp.removeAll()
+```
+
+::::::::::

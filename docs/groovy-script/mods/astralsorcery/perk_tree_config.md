@@ -14,11 +14,7 @@ Control the Perk level cap and XP formula.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
-mods.astral_sorcery.perk_tree_config
-mods.astral_sorcery.perktreeconfig
-mods.astral_sorcery.perkTreeConfig
-mods.astral_sorcery.PerkTreeConfig
+```groovy:no-line-numbers {1}
 mods.astralsorcery.perk_tree_config/*(1)!*/
 mods.astralsorcery.perktreeconfig
 mods.astralsorcery.perkTreeConfig
@@ -27,10 +23,6 @@ mods.astral.perk_tree_config
 mods.astral.perktreeconfig
 mods.astral.perkTreeConfig
 mods.astral.PerkTreeConfig
-mods.as.perk_tree_config
-mods.as.perktreeconfig
-mods.as.perkTreeConfig
-mods.as.PerkTreeConfig
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -39,18 +31,20 @@ mods.as.PerkTreeConfig
 
 - Sets the maximum level of Astral Sorcery's Perks, between 1 and 100:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.perk_tree_config.setLevelCap(int)
     ```
 
 - Sets the Experience cost to advance to the next level, with the Closure taking 2 parameters, `int levelNumber` and `long previousLevelCost` and returning a `long`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.perk_tree_config.setXpFunction(Closure<Long>)
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.perk_tree_config.setLevelCap(50)
-    mods.astralsorcery.perk_tree_config.setXpFunction({ int i, long prev -> prev + 1000L + MathHelper.lfloor(Math.pow(2.0, i / 2.0F + 3)) })
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.perk_tree_config.setLevelCap(50)
+mods.astralsorcery.perk_tree_config.setXpFunction({ int i, long prev -> prev + 1000L + MathHelper.lfloor(Math.pow(2.0, i / 2.0F + 3)) })
+```
+
+::::::::::

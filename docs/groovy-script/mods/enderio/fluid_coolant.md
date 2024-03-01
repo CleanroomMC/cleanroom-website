@@ -14,7 +14,7 @@ Create a Coolant with a given coolant rate that produces power with a Fuel while
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.enderio.fluid_coolant/*(1)!*/
 mods.enderio.fluidcoolant
 mods.enderio.fluidCoolant
@@ -39,51 +39,55 @@ mods.eio.CombustionCoolant
 
 - Adds recipes in the format `fluid`, `degreesPerMb`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.addCoolant(Fluid, float)
     ```
 
 - Adds recipes in the format `fluid`, `degreesPerMb`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.addCoolant(FluidStack, float)
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.fluid_coolant.addCoolant(fluid('xpjuice'), 1000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.fluid_coolant.addCoolant(fluid('xpjuice'), 1000)
+```
+
+::::::::::
 
 ## Removing Recipes
 
 - Removes recipes matching the target fluid:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.remove(Fluid)
     ```
 
 - Removes recipes matching the target fluid:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.remove(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.enderio.fluid_coolant.remove(fluid('water'))
-    mods.enderio.fluid_coolant.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.enderio.fluid_coolant.remove(fluid('water'))
+mods.enderio.fluid_coolant.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.enderio.fluid_coolant.streamRecipes()
     ```

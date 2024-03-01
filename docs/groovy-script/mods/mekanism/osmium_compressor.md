@@ -14,7 +14,7 @@ Converts an input itemstack and 200 of a gasstack into an output itemstack. By d
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.osmium_compressor/*(1)!*/
 mods.mekanism.osmiumcompressor
 mods.mekanism.osmiumCompressor
@@ -27,14 +27,16 @@ mods.mekanism.OsmiumCompressor
 
 - Adds recipes in the format `ingredient`, `gasInput`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.osmium_compressor.add(IIngredient, GasStack, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.osmium_compressor.add(item('minecraft:diamond'), gas('hydrogen'), item('minecraft:nether_star'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.osmium_compressor.add(item('minecraft:diamond'), gas('hydrogen'), item('minecraft:nether_star'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -42,74 +44,78 @@ Just like other recipe types, the Osmium Compressor also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.osmium_compressor.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.osmium_compressor.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1. (Default `MekanismFluids.LiquidOsmium`).
+- `GasStackList`. Sets the gas inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1. (Default `MekanismFluids.LiquidOsmium`).
 
-        ```groovy
-        gasInput(GasStack)
-        gasInput(GasStack...)
-        gasInput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasInput(GasStack)
+    gasInput(GasStack...)
+    gasInput(Collection<GasStack>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.OsmiumCompressorRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.OsmiumCompressorRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.osmium_compressor.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .gasInput(gas('hydrogen'))/*(1)!*/
-            .output(item('minecraft:nether_star'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.osmium_compressor.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .gasInput(gas('hydrogen'))/*(1)!*/
+    .output(item('minecraft:nether_star'))
+    .register()
+```
 
-        1. Always uses 200 gas
+1. Always uses 200 gas
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.osmium_compressor.removeByInput(IIngredient, GasStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.osmium_compressor.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.osmium_compressor.removeByInput(ore('dustRefinedObsidian'), gas('liquidosmium'))
-    mods.mekanism.osmium_compressor.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.osmium_compressor.removeByInput(ore('dustRefinedObsidian'), gas('liquidosmium'))
+mods.mekanism.osmium_compressor.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.osmium_compressor.streamRecipes()
     ```

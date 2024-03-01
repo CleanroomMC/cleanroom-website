@@ -14,7 +14,7 @@ Converts 5 input items into the ouput after a period of time when the Pyre is li
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.pyre/*(1)!*/
 mods.roots.Pyre
 ```
@@ -29,101 +29,105 @@ Just like other recipe types, the Pyre also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.pyre.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.pyre.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 5.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 5.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the XP given when the recipe finishes in levels. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the XP given when the recipe finishes in levels. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        xp(int)
-        levels(int)
-        ```
+    ```groovy:no-line-numbers
+    xp(int)
+    levels(int)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks for the recipe to process. (Default `200`).
+- `int`. Sets the time in ticks for the recipe to process. (Default `200`).
 
-        ```groovy
-        time(int)
-        burnTime(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    burnTime(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.PyreCraftingRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.PyreCraftingRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.pyre.recipeBuilder()
-            .name('clay_from_fire')
-            .input(item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'))
-            .output(item('minecraft:clay'))
-            .xp(5)
-            .time(1)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.pyre.recipeBuilder()
+    .name('clay_from_fire')
+    .input(item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'),item('minecraft:stone'))
+    .output(item('minecraft:clay'))
+    .xp(5)
+    .time(1)
+    .register()
 
-        mods.roots.pyre.recipeBuilder()
-            .input(item('minecraft:gold_ingot'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:stone'),item('minecraft:stone'))
-            .output(item('minecraft:diamond') * 32)
-            .levels(5)
-            .burnTime(1000)
-            .register()
-        ```
+mods.roots.pyre.recipeBuilder()
+    .input(item('minecraft:gold_ingot'),item('minecraft:clay'),item('minecraft:clay'),item('minecraft:stone'),item('minecraft:stone'))
+    .output(item('minecraft:diamond') * 32)
+    .levels(5)
+    .burnTime(1000)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Pyre recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pyre.removeByName(ResourceLocation)
     ```
 
 - Removes the Pyre recipe with the given output itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pyre.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pyre.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.pyre.removeByName(resource('roots:infernal_bulb'))
-    mods.roots.pyre.removeByOutput(item('minecraft:gravel'))
-    mods.roots.pyre.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.pyre.removeByName(resource('roots:infernal_bulb'))
+mods.roots.pyre.removeByOutput(item('minecraft:gravel'))
+mods.roots.pyre.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.pyre.streamRecipes()
     ```

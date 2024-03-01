@@ -14,7 +14,7 @@ When using a shovel it can convert items
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.pyrotech.compacting_bin/*(1)!*/
 mods.pyrotech.compactingbin
 mods.pyrotech.compactingBin
@@ -27,14 +27,16 @@ mods.pyrotech.CompactingBin
 
 - Adds recipes in the format `name`, `input`, `output`, `hits`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.compacting_bin.add(String, IIngredient, ItemStack, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.compacting_bin.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.compacting_bin.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9)
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -42,85 +44,89 @@ Just like other recipe types, the Compacting Bin also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.pyrotech.compacting_bin.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.pyrotech.compacting_bin.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets how often the item needs to be hit. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets how often the item needs to be hit. Requires greater than or equal to 1. (Default `0`).
 
-        ```groovy
-        toolUses(int)
-        ```
+    ```groovy:no-line-numbers
+    toolUses(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.CompactingBinRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.CompactingBinRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.pyrotech.compacting_bin.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:emerald'))
-            .toolUses(5)
-            .name('diamond_to_emerald_compacting_bin')
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.compacting_bin.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:emerald'))
+    .toolUses(5)
+    .name('diamond_to_emerald_compacting_bin')
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.compacting_bin.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.compacting_bin.removeByOutput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.compacting_bin.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.compacting_bin.removeByInput(item('minecraft:snowball'))
-    mods.pyrotech.compacting_bin.removeByOutput(item('minecraft:bone_block'))
-    mods.pyrotech.compacting_bin.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.compacting_bin.removeByInput(item('minecraft:snowball'))
+mods.pyrotech.compacting_bin.removeByOutput(item('minecraft:bone_block'))
+mods.pyrotech.compacting_bin.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.compacting_bin.streamRecipes()
     ```

@@ -14,15 +14,11 @@ Adds virtual aquifers that can be accessed via the Evershifting Fountain's Necro
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
-mods.astral_sorcery.fountain
-mods.astral_sorcery.Fountain
+```groovy:no-line-numbers {1}
 mods.astralsorcery.fountain/*(1)!*/
 mods.astralsorcery.Fountain
 mods.astral.fountain
 mods.astral.Fountain
-mods.as.fountain
-mods.as.Fountain
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -31,19 +27,19 @@ mods.as.Fountain
 
 - Adds recipes in the format `fluid`, `rarity`, `guaranteedAmt`, `addRand`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.add(Fluid, int, int, int)
     ```
 
 - Adds an existing `FluidRarityEntry` to the registry:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.add(FluidRarityRegistry.FluidRarityEntry)
     ```
 
 - Adds recipes in the format `fluid`, `rarity`, `guaranteedAmt`, `addRand`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.add(FluidStack, int, int, int)
     ```
 
@@ -54,86 +50,90 @@ Just like other recipe types, the Fountain also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.astralsorcery.fountain.chanceHelper()"
-    - `#!groovy Fluid`. Sets the fluid being generated. Requires not null.
+:::::::::: details ABSTRACT mods.astralsorcery.fountain.chanceHelper() {open}
+- `Fluid`. Sets the fluid being generated. Requires not null.
 
-        ```groovy
-        fluid(Fluid)
-        fluid(FluidStack)
-        ```
+    ```groovy:no-line-numbers
+    fluid(Fluid)
+    fluid(FluidStack)
+    ```
 
-    - `#!groovy int`. Sets the frequency the fluid generates in a chunk. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the frequency the fluid generates in a chunk. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        rarity(int)
-        ```
+    ```groovy:no-line-numbers
+    rarity(int)
+    ```
 
-    - `#!groovy int`. Sets the maximum amount of additional fluid that can be generated in a chunk. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the maximum amount of additional fluid that can be generated in a chunk. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        variance(int)
-        ```
+    ```groovy:no-line-numbers
+    variance(int)
+    ```
 
-    - `#!groovy int`. Sets the minimum amount of fluid in a chunk. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the minimum amount of fluid in a chunk. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        minimumAmount(int)
-        ```
+    ```groovy:no-line-numbers
+    minimumAmount(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.base.FluidRarityRegistry$FluidRarityEntry`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.base.FluidRarityRegistry$FluidRarityEntry`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.fountain.chanceHelper()
-            .fluid(fluid('astralsorcery.liquidstarlight'))
-            .rarity(10000000)
-            .minimumAmount(4000000)
-            .variance(1000000)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.fountain.chanceHelper()
+    .fluid(fluid('astralsorcery.liquidstarlight'))
+    .rarity(10000000)
+    .minimumAmount(4000000)
+    .variance(1000000)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes an entry matching the given `Fluid`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.remove(Fluid)
     ```
 
 - Removes an existing `FluidRarityEntry`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.remove(FluidRarityRegistry.FluidRarityEntry)
     ```
 
 - Removes an entry matching the given `FluidStack`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.remove(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.fountain.remove(fluid('lava'))
-    mods.astralsorcery.fountain.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.fountain.remove(fluid('lava'))
+mods.astralsorcery.fountain.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.fountain.streamRecipes()
     ```

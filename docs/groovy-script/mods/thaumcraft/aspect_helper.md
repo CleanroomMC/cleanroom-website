@@ -14,7 +14,7 @@ Controls what Aspects are attached to entities or items.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.thaumcraft.aspect_helper/*(1)!*/
 mods.thaumcraft.aspecthelper
 mods.thaumcraft.aspectHelper
@@ -35,19 +35,19 @@ mods.thaum.AspectHelper
 
 - Adds an Aspect to the given entity in the format `entity`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.add(EntityEntry, AspectStack)
     ```
 
 - Adds an Aspect to the given itemstack in the format `item`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.add(ItemStack, AspectStack)
     ```
 
 - Adds an Aspect to the given oredict in the format `oreDict`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.add(OreDictIngredient, AspectStack)
     ```
 
@@ -58,96 +58,98 @@ Just like other recipe types, the Entity/Block Aspects also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.thaumcraft.aspect_helper.aspectBuilder()"
-    - `#!groovy EntityEntry`. Sets the entity being modified. Requires either entity or object must be defined, but not both.
+:::::::::: details ABSTRACT mods.thaumcraft.aspect_helper.aspectBuilder() {open}
+- `EntityEntry`. Sets the entity being modified. Requires either entity or object must be defined, but not both.
 
-        ```groovy
-        entity(EntityEntry)
-        ```
+    ```groovy:no-line-numbers
+    entity(EntityEntry)
+    ```
 
-    - `#!groovy IIngredient`. Sets the item being modified. Requires either entity or object must be defined, but not both.
+- `IIngredient`. Sets the item being modified. Requires either entity or object must be defined, but not both.
 
-        ```groovy
-        object(IIngredient)
-        ```
+    ```groovy:no-line-numbers
+    object(IIngredient)
+    ```
 
-    - `#!groovy ArrayList<AspectStack>`. Sets the Aspects of the entity or item.
+- `ArrayList<AspectStack>`. Sets the Aspects of the entity or item.
 
-        ```groovy
-        aspect(AspectStack)
-        aspect(String, int)
-        ```
+    ```groovy:no-line-numbers
+    aspect(AspectStack)
+    aspect(String, int)
+    ```
 
-    - `#!groovy boolean`. Sets if all pre-existing Aspects should be removed from the entity or item before adding Aspects, if any are added. (Default `false`).
+- `boolean`. Sets if all pre-existing Aspects should be removed from the entity or item before adding Aspects, if any are added. (Default `false`).
 
-        ```groovy
-        stripAspects()
-        ```
+    ```groovy:no-line-numbers
+    stripAspects()
+    ```
 
-    - First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
+- First validates the builder, outputting errors to the log file if the validation failed, then registers the builder.
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.thaumcraft.aspect_helper.aspectBuilder()
-            .object(item('minecraft:stone'))
-            .stripAspects()
-            .aspect(aspect('ignis') * 20)
-            .aspect('ordo', 5)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.thaumcraft.aspect_helper.aspectBuilder()
+    .object(item('minecraft:stone'))
+    .stripAspects()
+    .aspect(aspect('ignis') * 20)
+    .aspect('ordo', 5)
+    .register()
 
-        mods.thaumcraft.aspect_helper.aspectBuilder()
-            .object(ore('cropPumpkin'))
-            .stripAspects()
-            .aspect(aspect('herba') * 20)
-            .register()
+mods.thaumcraft.aspect_helper.aspectBuilder()
+    .object(ore('cropPumpkin'))
+    .stripAspects()
+    .aspect(aspect('herba') * 20)
+    .register()
 
-        mods.thaumcraft.aspect_helper.aspectBuilder()
-            .entity(entity('minecraft:chicken'))
-            .stripAspects()
-            .aspect('bestia', 20)
-            .register()
-        ```
+mods.thaumcraft.aspect_helper.aspectBuilder()
+    .entity(entity('minecraft:chicken'))
+    .stripAspects()
+    .aspect('bestia', 20)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes an Aspect from the given entity in the format `entity`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.remove(EntityEntry, AspectStack)
     ```
 
 - Removes an Aspect from the given itemstack in the format `item`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.remove(ItemStack, AspectStack)
     ```
 
 - Removes an Aspect from the given oredict in the format `oreDict`, `aspect`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.remove(OreDictIngredient, AspectStack)
     ```
 
 - Removes all Aspects from the given entity:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.removeAll(EntityEntry)
     ```
 
 - Removes all Aspects from the given itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.removeAll(ItemStack)
     ```
 
 - Removes all Aspects from the given oredict:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.thaumcraft.aspect_helper.removeAll(OreDictIngredient)
     ```

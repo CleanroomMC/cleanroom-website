@@ -14,7 +14,7 @@ Animal Harvest Fish is another effect of the Animal Harvest ritual that applies 
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.animal_harvest_fish/*(1)!*/
 mods.roots.animalharvestfish
 mods.roots.animalHarvestFish
@@ -31,89 +31,93 @@ Just like other recipe types, the Animal Harvest Fish also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.animal_harvest_fish.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.roots.animal_harvest_fish.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fish(ItemStack)
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    fish(ItemStack)
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the weight of the recipe to generate. Requires greater than 0. (Default `0`).
+- `int`. Sets the weight of the recipe to generate. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        weight(int)
-        ```
+    ```groovy:no-line-numbers
+    weight(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.AnimalHarvestFishRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.AnimalHarvestFishRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.animal_harvest_fish.recipeBuilder()
-            .name('clay_fish')
-            .weight(50)
-            .output(item('minecraft:clay'))
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.animal_harvest_fish.recipeBuilder()
+    .name('clay_fish')
+    .weight(50)
+    .output(item('minecraft:clay'))
+    .register()
 
-        mods.roots.animal_harvest_fish.recipeBuilder()
-            .weight(13)
-            .fish(item('minecraft:gold_ingot'))
-            .register()
-        ```
+mods.roots.animal_harvest_fish.recipeBuilder()
+    .weight(13)
+    .fish(item('minecraft:gold_ingot'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes any Animal Harvest Fish recipe with the given fish output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.animal_harvest_fish.removeByFish(ItemStack)
     ```
 
 - Removes the Animal Harvest Fish recipe with the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.animal_harvest_fish.removeByName(ResourceLocation)
     ```
 
 - Removes any Animal Harvest Fish recipe with the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.animal_harvest_fish.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.animal_harvest_fish.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.animal_harvest_fish.removeByFish(item('minecraft:fish:2'))
-    mods.roots.animal_harvest_fish.removeByName(resource('roots:cod'))
-    mods.roots.animal_harvest_fish.removeByOutput(item('minecraft:fish:1'))
-    mods.roots.animal_harvest_fish.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.animal_harvest_fish.removeByFish(item('minecraft:fish:2'))
+mods.roots.animal_harvest_fish.removeByName(resource('roots:cod'))
+mods.roots.animal_harvest_fish.removeByOutput(item('minecraft:fish:1'))
+mods.roots.animal_harvest_fish.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.animal_harvest_fish.streamRecipes()
     ```

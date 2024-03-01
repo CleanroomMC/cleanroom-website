@@ -14,7 +14,7 @@ Converts an input fluid into two output gasstacks at the cost of power.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.electrolytic_separator/*(1)!*/
 mods.mekanism.electrolyticseparator
 mods.mekanism.electrolyticSeparator
@@ -29,14 +29,16 @@ mods.mekanism.Separator
 
 - Adds recipes in the format `input`, `leftOutput`, `rightOutput`, `energy`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.electrolytic_separator.add(FluidStack, GasStack, GasStack, double)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.electrolytic_separator.add(fluid('lava') * 10, gas('cleanGold') * 5, gas('cleanCopper') * 3, 3000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.electrolytic_separator.add(fluid('lava') * 10, gas('cleanGold') * 5, gas('cleanCopper') * 3, 3000)
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -44,69 +46,73 @@ Just like other recipe types, the Electrolytic Separator also uses a recipe buil
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.electrolytic_separator.recipeBuilder()"
-    - `#!groovy FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.electrolytic_separator.recipeBuilder() {open}
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        fluidInput(FluidStack)
-        fluidInput(FluidStack...)
-        fluidInput(Collection<FluidStack>)
-        ```
+    ```groovy:no-line-numbers
+    fluidInput(FluidStack)
+    fluidInput(FluidStack...)
+    fluidInput(Collection<FluidStack>)
+    ```
 
-    - `#!groovy GasStackList`. Sets the gas outputs of the recipe. Requires exactly 2.
+- `GasStackList`. Sets the gas outputs of the recipe. Requires exactly 2.
 
-        ```groovy
-        gasOutput(GasStack)
-        gasOutput(GasStack...)
-        gasOutput(Collection<GasStack>)
-        ```
+    ```groovy:no-line-numbers
+    gasOutput(GasStack)
+    gasOutput(GasStack...)
+    gasOutput(Collection<GasStack>)
+    ```
 
-    - `#!groovy double`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0.0d`).
+- `double`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0.0d`).
 
-        ```groovy
-        ```
+    ```groovy:no-line-numbers
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SeparatorRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SeparatorRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.electrolytic_separator.recipeBuilder()
-            .fluidInput(fluid('lava') * 10)
-            .gasOutput(gas('cleanGold') * 5, gas('cleanCopper') * 3)
-            .energy(3000)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.electrolytic_separator.recipeBuilder()
+    .fluidInput(fluid('lava') * 10)
+    .gasOutput(gas('cleanGold') * 5, gas('cleanCopper') * 3)
+    .energy(3000)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.electrolytic_separator.removeByInput(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.electrolytic_separator.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.electrolytic_separator.removeByInput(fluid('water'))
-    mods.mekanism.electrolytic_separator.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.electrolytic_separator.removeByInput(fluid('water'))
+mods.mekanism.electrolytic_separator.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.electrolytic_separator.streamRecipes()
     ```

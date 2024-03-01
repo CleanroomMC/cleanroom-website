@@ -14,7 +14,7 @@ Moss indicates a pair of items that can right click the input with a knife to tu
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.roots.moss/*(1)!*/
 mods.roots.Moss
 ```
@@ -25,14 +25,16 @@ mods.roots.Moss
 
 - Adds a new Moss conversion recipe in the format `in`, `out`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.moss.add(ItemStack, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.moss.add(item('minecraft:stained_glass:3'), item('minecraft:stained_glass:4'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.moss.add(item('minecraft:stained_glass:3'), item('minecraft:stained_glass:4'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,69 +42,73 @@ Just like other recipe types, the Moss also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.roots.moss.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.roots.moss.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.apache.commons.lang3.tuple.Pair<net.minecraft.item.ItemStack, net.minecraft.item.ItemStack>`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.apache.commons.lang3.tuple.Pair<net.minecraft.item.ItemStack, net.minecraft.item.ItemStack>`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.roots.moss.recipeBuilder()
-            .input(item('minecraft:gold_block'))
-            .output(item('minecraft:clay'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.moss.recipeBuilder()
+    .input(item('minecraft:gold_block'))
+    .output(item('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes the Moss conversion recipe for the given input itemstack:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.moss.remove(ItemStack)
     ```
 
 - Removes the Moss conversion recipe for the given input and output itemstacks, in the format `in`, `out`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.moss.remove(ItemStack, ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.moss.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.roots.moss.remove(item('minecraft:cobblestone'))
-    mods.roots.moss.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.roots.moss.remove(item('minecraft:cobblestone'))
+mods.roots.moss.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.roots.moss.streamRecipes()
     ```

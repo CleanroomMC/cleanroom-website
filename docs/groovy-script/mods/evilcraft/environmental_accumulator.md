@@ -14,7 +14,7 @@ Consumes an item to give an output, possibly changing the weather. Has a cooldow
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.evilcraft.environmental_accumulator/*(1)!*/
 mods.evilcraft.environmentalaccumulator
 mods.evilcraft.environmentalAccumulator
@@ -31,125 +31,129 @@ Just like other recipe types, the Environmental Accumulator also uses a recipe b
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.evilcraft.environmental_accumulator.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.evilcraft.environmental_accumulator.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the base time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultProcessItemTickCount`).
+- `int`. Sets the base time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultProcessItemTickCount`).
 
-        ```groovy
-        duration(int)
-        ```
+    ```groovy:no-line-numbers
+    duration(int)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks required before another recipe can be run in this Environmental Accumulator. Also controls the amount of `fluid('evilcraftblood')` consumed by the Sanguinary Environmental Accumulator. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultTickCooldown`).
+- `int`. Sets the time in ticks required before another recipe can be run in this Environmental Accumulator. Also controls the amount of `fluid('evilcraftblood')` consumed by the Sanguinary Environmental Accumulator. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultTickCooldown`).
 
-        ```groovy
-        cooldown(int)
-        cooldowntime(int)
-        ```
+    ```groovy:no-line-numbers
+    cooldown(int)
+    cooldowntime(int)
+    ```
 
-    - `#!groovy WeatherType`. Sets the weather type required to start the recipe. Requires not null.
+- `WeatherType`. Sets the weather type required to start the recipe. Requires not null.
 
-        ```groovy
-        inputWeather(String)
-        inputWeather(WeatherType)
-        ```
+    ```groovy:no-line-numbers
+    inputWeather(String)
+    inputWeather(WeatherType)
+    ```
 
-    - `#!groovy WeatherType`. Sets the weather type the world is changed to when the recipe is completed. Requires not null.
+- `WeatherType`. Sets the weather type the world is changed to when the recipe is completed. Requires not null.
 
-        ```groovy
-        outputWeather(String)
-        outputWeather(WeatherType)
-        ```
+    ```groovy:no-line-numbers
+    outputWeather(String)
+    outputWeather(WeatherType)
+    ```
 
-    - `#!groovy double`. Sets how fast the item visually rotates while crafting. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultProcessItemSpeed`).
+- `double`. Sets how fast the item visually rotates while crafting. Requires greater than or equal to 0. (Default `EnvironmentalAccumulatorConfig.defaultProcessItemSpeed`).
 
-        ```groovy
-        speed(double)
-        processingspeed(double)
-        ```
+    ```groovy:no-line-numbers
+    speed(double)
+    processingspeed(double)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.cyclops.cyclopscore.recipe.custom.api.IRecipe<org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeComponent, org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeComponent, org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeProperties>`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.cyclops.cyclopscore.recipe.custom.api.IRecipe<org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeComponent, org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeComponent, org.cyclops.evilcraft.core.recipe.custom.EnvironmentalAccumulatorRecipeProperties>`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.evilcraft.environmental_accumulator.recipeBuilder()
-            .input(item('minecraft:clay'))
-            .output(item('minecraft:clay') * 2)
-            .inputWeather(weather('clear'))
-            .outputWeather(weather('rain'))
-            .processingspeed(1)
-            .cooldowntime(1000)
-            .duration(10)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.evilcraft.environmental_accumulator.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:clay') * 2)
+    .inputWeather(weather('clear'))
+    .outputWeather(weather('rain'))
+    .processingspeed(1)
+    .cooldowntime(1000)
+    .duration(10)
+    .register()
 
-        mods.evilcraft.environmental_accumulator.recipeBuilder()
-            .input(item('minecraft:gold_ingot'))
-            .output(item('minecraft:diamond'))
-            .inputWeather(weather('rain'))
-            .outputWeather(weather('lightning'))
-            .speed(10)
-            .cooldown(1)
-            .register()
+mods.evilcraft.environmental_accumulator.recipeBuilder()
+    .input(item('minecraft:gold_ingot'))
+    .output(item('minecraft:diamond'))
+    .inputWeather(weather('rain'))
+    .outputWeather(weather('lightning'))
+    .speed(10)
+    .cooldown(1)
+    .register()
 
-        mods.evilcraft.environmental_accumulator.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:clay') * 16)
-            .inputWeather(weather('lightning'))
-            .outputWeather(weather('lightning'))
-            .register()
-        ```
+mods.evilcraft.environmental_accumulator.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:clay') * 16)
+    .inputWeather(weather('lightning'))
+    .outputWeather(weather('lightning'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.evilcraft.environmental_accumulator.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.evilcraft.environmental_accumulator.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.evilcraft.environmental_accumulator.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.evilcraft.environmental_accumulator.removeByInput(item('evilcraft:exalted_crafter:1'))
-    mods.evilcraft.environmental_accumulator.removeByOutput(item('evilcraft:exalted_crafter:2'))
-    mods.evilcraft.environmental_accumulator.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.evilcraft.environmental_accumulator.removeByInput(item('evilcraft:exalted_crafter:1'))
+mods.evilcraft.environmental_accumulator.removeByOutput(item('evilcraft:exalted_crafter:2'))
+mods.evilcraft.environmental_accumulator.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.evilcraft.environmental_accumulator.streamRecipes()
     ```

@@ -14,11 +14,7 @@ When the block in the middle of a Treasure Shrine structure is broken, a random 
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
-mods.astral_sorcery.treasure_shrine_registry
-mods.astral_sorcery.treasureshrineregistry
-mods.astral_sorcery.treasureShrineRegistry
-mods.astral_sorcery.TreasureShrineRegistry
+```groovy:no-line-numbers {1}
 mods.astralsorcery.treasure_shrine_registry/*(1)!*/
 mods.astralsorcery.treasureshrineregistry
 mods.astralsorcery.treasureShrineRegistry
@@ -27,10 +23,6 @@ mods.astral.treasure_shrine_registry
 mods.astral.treasureshrineregistry
 mods.astral.treasureShrineRegistry
 mods.astral.TreasureShrineRegistry
-mods.as.treasure_shrine_registry
-mods.as.treasureshrineregistry
-mods.as.treasureShrineRegistry
-mods.as.TreasureShrineRegistry
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -39,45 +31,49 @@ mods.as.TreasureShrineRegistry
 
 - Adds entries in the format `ore`, `weight`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.treasure_shrine_registry.add(String, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.treasure_shrine_registry.add(ore('blockDiamond'), 10000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.treasure_shrine_registry.add(ore('blockDiamond'), 10000)
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes entries of the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.treasure_shrine_registry.remove(OreDictIngredient)
     ```
 
 - Removes entries of the given ore:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.treasure_shrine_registry.remove(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.treasure_shrine_registry.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.treasure_shrine_registry.remove(ore('oreDiamond'))
-    mods.astralsorcery.treasure_shrine_registry.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.treasure_shrine_registry.remove(ore('oreDiamond'))
+mods.astralsorcery.treasure_shrine_registry.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.treasure_shrine_registry.streamRecipes()
     ```

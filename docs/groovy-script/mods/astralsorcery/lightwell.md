@@ -14,15 +14,11 @@ Converts an input item into fluid, with a chance at breaking every time fluid is
 
 Refer to this via any of the following:
 
-```groovy hl_lines="3"
-mods.astral_sorcery.lightwell
-mods.astral_sorcery.Lightwell
+```groovy:no-line-numbers {1}
 mods.astralsorcery.lightwell/*(1)!*/
 mods.astralsorcery.Lightwell
 mods.astral.lightwell
 mods.astral.Lightwell
-mods.as.lightwell
-mods.as.Lightwell
 ```
 
 1. This identifier will be used as the default for examples on this page
@@ -31,13 +27,13 @@ mods.as.Lightwell
 
 - Adds recipes in the format `catalyst`, `output`, `productionMultiplier`, `shatterMultiplier`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.add(ItemStack, Fluid, float, float)
     ```
 
 - Adds recipes in the format `catalyst`, `output`, `productionMultiplier`, `shatterMultiplier`, `color`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.add(ItemStack, Fluid, float, float, Color)
     ```
 
@@ -48,104 +44,108 @@ Just like other recipe types, the Lightwell also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.astralsorcery.lightwell.recipeBuilder()"
-    - `#!groovy Color`. Sets the color of the produced particles.
+:::::::::: details ABSTRACT mods.astralsorcery.lightwell.recipeBuilder() {open}
+- `Color`. Sets the color of the produced particles.
 
-        ```groovy
-        catalystColor(int)
-        catalystColor(Color)
-        catalystColor(int, int, int)
-        catalystColor(int, int, int, int)
-        ```
+    ```groovy:no-line-numbers
+    catalystColor(int)
+    catalystColor(Color)
+    catalystColor(int, int, int)
+    catalystColor(int, int, int, int)
+    ```
 
-    - `#!groovy Fluid`. Sets the output fluid. Requires not null.
+- `Fluid`. Sets the output fluid. Requires not null.
 
-        ```groovy
-        output(FluidStack)
-        ```
+    ```groovy:no-line-numbers
+    output(FluidStack)
+    ```
 
-    - `#!groovy ItemStack`. Sets the input item. Requires not null.
+- `ItemStack`. Sets the input item. Requires not null.
 
-        ```groovy
-        catalyst(ItemStack)
-        ```
+    ```groovy:no-line-numbers
+    catalyst(ItemStack)
+    ```
 
-    - `#!groovy float`. Sets how likely the catalyst is to shatter when producing fluid, with higher being less likely but never 0. Requires greater than or equal to 0. (Default `0.0f`).
+- `float`. Sets how likely the catalyst is to shatter when producing fluid, with higher being less likely but never 0. Requires greater than or equal to 0. (Default `0.0f`).
 
-        ```groovy
-        shatterMultiplier(float)
-        ```
+    ```groovy:no-line-numbers
+    shatterMultiplier(float)
+    ```
 
-    - `#!groovy float`. Sets the base amount of fluid produced per tick. Requires greater than or equal to 0. (Default `0.0f`).
+- `float`. Sets the base amount of fluid produced per tick. Requires greater than or equal to 0. (Default `0.0f`).
 
-        ```groovy
-        productionMultiplier(float)
-        ```
+    ```groovy:no-line-numbers
+    productionMultiplier(float)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.base.WellLiquefaction$LiquefactionEntry`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.base.WellLiquefaction$LiquefactionEntry`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.astralsorcery.lightwell.recipeBuilder()
-            .catalyst(item('minecraft:stone'))
-            .output(fluid('astralsorcery.liquidstarlight'))
-            .productionMultiplier(1.0F)
-            .shatterMultiplier(15.0F)
-            .catalystColor(16725260)
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.lightwell.recipeBuilder()
+    .catalyst(item('minecraft:stone'))
+    .output(fluid('astralsorcery.liquidstarlight'))
+    .productionMultiplier(1.0F)
+    .shatterMultiplier(15.0F)
+    .catalystColor(16725260)
+    .register()
 
-        mods.astralsorcery.lightwell.recipeBuilder()
-            .catalyst(item('minecraft:obsidian'))
-            .output(fluid('astralsorcery.liquidstarlight'))
-            .productionMultiplier(1.0F)
-            .shatterMultiplier(15.0F)
-            .register()
-        ```
+mods.astralsorcery.lightwell.recipeBuilder()
+    .catalyst(item('minecraft:obsidian'))
+    .output(fluid('astralsorcery.liquidstarlight'))
+    .productionMultiplier(1.0F)
+    .shatterMultiplier(15.0F)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given catalyst:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.removeByCatalyst(ItemStack)
     ```
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.removeByOutput(FluidStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.astralsorcery.lightwell.removeByCatalyst(item('minecraft:ice'))
-    mods.astralsorcery.lightwell.removeByInput(item('minecraft:packed_ice'))
-    mods.astralsorcery.lightwell.removeByOutput(fluid('lava'))
-    mods.astralsorcery.lightwell.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.astralsorcery.lightwell.removeByCatalyst(item('minecraft:ice'))
+mods.astralsorcery.lightwell.removeByInput(item('minecraft:packed_ice'))
+mods.astralsorcery.lightwell.removeByOutput(fluid('lava'))
+mods.astralsorcery.lightwell.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.astralsorcery.lightwell.streamRecipes()
     ```

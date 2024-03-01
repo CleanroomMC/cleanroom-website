@@ -14,7 +14,7 @@ Converts two input itemstacks into an output itemstack, consuming fuel (based on
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.ie.alloy_kiln
 mods.ie.alloykiln
 mods.ie.alloyKiln
@@ -31,7 +31,7 @@ mods.immersiveengineering.AlloyKiln
 
 - Adds recipes in the format `output`, `input0`, `input1`, `time`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.alloy_kiln.add(ItemStack, IIngredient, IIngredient, int)
     ```
 
@@ -42,76 +42,80 @@ Just like other recipe types, the Alloy Kiln also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.immersiveengineering.alloy_kiln.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 2.
+:::::::::: details ABSTRACT mods.immersiveengineering.alloy_kiln.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 2.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the time in ticks the recipe takes to process. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        time(int)
-        ```
+    ```groovy:no-line-numbers
+    time(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.AlloyRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.AlloyRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.immersiveengineering.alloy_kiln.recipeBuilder()
-            .input(item('minecraft:diamond'), ore('ingotGold'))
-            .output(item('minecraft:clay'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.alloy_kiln.recipeBuilder()
+    .input(item('minecraft:diamond'), ore('ingotGold'))
+    .output(item('minecraft:clay'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.alloy_kiln.removeByInput(ItemStack, ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.alloy_kiln.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.alloy_kiln.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.immersiveengineering.alloy_kiln.removeByInput(item('minecraft:gold_ingot'), item('immersiveengineering:metal:3'))
-    mods.immersiveengineering.alloy_kiln.removeByOutput(item('immersiveengineering:metal:6'))
-    mods.immersiveengineering.alloy_kiln.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.immersiveengineering.alloy_kiln.removeByInput(item('minecraft:gold_ingot'), item('immersiveengineering:metal:3'))
+mods.immersiveengineering.alloy_kiln.removeByOutput(item('immersiveengineering:metal:6'))
+mods.immersiveengineering.alloy_kiln.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.immersiveengineering.alloy_kiln.streamRecipes()
     ```

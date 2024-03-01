@@ -14,7 +14,7 @@ When using hammer or pickaxe it can convert items
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.pyrotech.anvil/*(1)!*/
 mods.pyrotech.Anvil
 ```
@@ -25,14 +25,16 @@ mods.pyrotech.Anvil
 
 - Adds recipes in the format `name`, `input`, `output`, `hits`, `tier`, `type`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.anvil.add(String, IIngredient, ItemStack, int, String, String)
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.anvil.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9, 'granite', 'hammer')
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.anvil.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9, 'granite', 'hammer')
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,115 +42,119 @@ Just like other recipe types, the Anvil also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.pyrotech.anvil.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.pyrotech.anvil.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets how often the item needs to be hit. Requires greater than 0. (Default `0`).
+- `int`. Sets how often the item needs to be hit. Requires greater than 0. (Default `0`).
 
-        ```groovy
-        hits(int)
-        ```
+    ```groovy:no-line-numbers
+    hits(int)
+    ```
 
-    - `#!groovy AnvilRecipe.EnumTier`. Sets the tier of the required anvil (Granite, Ironclad, Obsidian).
+- `AnvilRecipe.EnumTier`. Sets the tier of the required anvil (Granite, Ironclad, Obsidian).
 
-        ```groovy
-        tier(AnvilRecipe.EnumTier)
-        tierGranite()
-        tierIronclad()
-        tierObsidian()
-        ```
+    ```groovy:no-line-numbers
+    tier(AnvilRecipe.EnumTier)
+    tierGranite()
+    tierIronclad()
+    tierObsidian()
+    ```
 
-    - `#!groovy AnvilRecipe.EnumType`. Sets the type of tool required (Hammer, Pickaxe).
+- `AnvilRecipe.EnumType`. Sets the type of tool required (Hammer, Pickaxe).
 
-        ```groovy
-        type(AnvilRecipe.EnumType)
-        typeHammer()
-        typePickaxe()
-        ```
+    ```groovy:no-line-numbers
+    type(AnvilRecipe.EnumType)
+    typeHammer()
+    typePickaxe()
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.AnvilRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.AnvilRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.pyrotech.anvil.recipeBuilder()
-            .input(item('minecraft:diamond') * 4)
-            .output(item('minecraft:emerald') * 2)
-            .hits(5)
-            .typeHammer()
-            .tierGranite()
-            .name('diamond_to_emerald_granite_anvil')
-            .register()
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.anvil.recipeBuilder()
+    .input(item('minecraft:diamond') * 4)
+    .output(item('minecraft:emerald') * 2)
+    .hits(5)
+    .typeHammer()
+    .tierGranite()
+    .name('diamond_to_emerald_granite_anvil')
+    .register()
 
-        mods.pyrotech.anvil.recipeBuilder()
-            .input(item('minecraft:diamond') * 8)
-            .output(item('minecraft:nether_star') * 1)
-            .hits(10)
-            .typePickaxe()
-            .tierIronclad()
-            .name('diamond_to_nether_star_ironclad_anvil')
-            .register()
+mods.pyrotech.anvil.recipeBuilder()
+    .input(item('minecraft:diamond') * 8)
+    .output(item('minecraft:nether_star') * 1)
+    .hits(10)
+    .typePickaxe()
+    .tierIronclad()
+    .name('diamond_to_nether_star_ironclad_anvil')
+    .register()
 
-        mods.pyrotech.anvil.recipeBuilder()
-            .input(item('minecraft:diamond') * 4)
-            .output(item('minecraft:gold_ingot') * 16)
-            .hits(5)
-            .typePickaxe()
-            .tierObsidian()
-            .name('diamond_to_gold_obsidian_anvil')
-            .register()
-        ```
+mods.pyrotech.anvil.recipeBuilder()
+    .input(item('minecraft:diamond') * 4)
+    .output(item('minecraft:gold_ingot') * 16)
+    .hits(5)
+    .typePickaxe()
+    .tierObsidian()
+    .name('diamond_to_gold_obsidian_anvil')
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.anvil.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.anvil.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.anvil.removeByOutput(item('minecraft:stone_slab', 3))
-    mods.pyrotech.anvil.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.anvil.removeByOutput(item('minecraft:stone_slab', 3))
+mods.pyrotech.anvil.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.anvil.streamRecipes()
     ```

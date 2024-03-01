@@ -14,7 +14,7 @@ Category creates a new entry on the front page of the Lexica Botania.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.botania.category/*(1)!*/
 mods.botania.Category
 ```
@@ -25,53 +25,57 @@ mods.botania.Category
 
 - Adds a Category to the Lexica Botania in the format `name`, `icon` and a priority of 5:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.add(String, ResourceLocation)
     ```
 
 - Adds a Category to the Lexica Botania in the format `name`, `icon`, `priority`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.add(String, ResourceLocation, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.category.add('test', resource('minecraft:textures/items/apple.png'))
-    mods.botania.category.add('first', resource('minecraft:textures/items/clay_ball.png'), 100)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.category.add('test', resource('minecraft:textures/items/apple.png'))
+mods.botania.category.add('first', resource('minecraft:textures/items/clay_ball.png'), 100)
+```
+
+::::::::::
 
 ## Removing Entries
 
 - Removes a Category matching the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.remove(String)
     ```
 
 - Removes a Category matching the given name:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.removeCategory(String)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.botania.category.remove('botania.category.alfhomancy')
-    mods.botania.category.removeCategory('botania.category.misc')
-    mods.botania.category.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.botania.category.remove('botania.category.alfhomancy')
+mods.botania.category.removeCategory('botania.category.misc')
+mods.botania.category.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of entries
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.botania.category.streamCategories()
     ```

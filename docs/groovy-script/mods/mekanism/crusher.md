@@ -14,7 +14,7 @@ Converts an input itemstack into an output itemstack.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.mekanism.crusher/*(1)!*/
 mods.mekanism.Crusher
 ```
@@ -25,14 +25,16 @@ mods.mekanism.Crusher
 
 - Adds recipes in the format `ingredient`, `output`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crusher.add(IIngredient, ItemStack)
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.crusher.add(item('minecraft:clay_ball'), item('minecraft:gold_ingot'))
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crusher.add(item('minecraft:clay_ball'), item('minecraft:gold_ingot'))
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,63 +42,67 @@ Just like other recipe types, the Crusher also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.mekanism.crusher.recipeBuilder()"
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.mekanism.crusher.recipeBuilder() {open}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.CrusherRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.CrusherRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.mekanism.crusher.recipeBuilder()
-            .input(item('minecraft:clay_ball'))
-            .output(item('minecraft:gold_ingot'))
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crusher.recipeBuilder()
+    .input(item('minecraft:clay_ball'))
+    .output(item('minecraft:gold_ingot'))
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crusher.removeByInput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crusher.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.mekanism.crusher.removeByInput(ore('ingotTin'))
-    mods.mekanism.crusher.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.mekanism.crusher.removeByInput(ore('ingotTin'))
+mods.mekanism.crusher.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.mekanism.crusher.streamRecipes()
     ```

@@ -14,7 +14,7 @@ Can cook food
 
 Refer to this via any of the following:
 
-```groovy hl_lines="1"
+```groovy:no-line-numbers {1}
 mods.pyrotech.campfire/*(1)!*/
 mods.pyrotech.Campfire
 ```
@@ -25,14 +25,16 @@ mods.pyrotech.Campfire
 
 - Adds recipes in the format `name`, `input`, `output`, `duration`:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.campfire.add(String, IIngredient, ItemStack, int)
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.campfire.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1000)
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.campfire.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1000)
+```
+
+::::::::::
 
 ### Recipe Builder
 
@@ -40,85 +42,89 @@ Just like other recipe types, the Campfire also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.pyrotech.campfire.recipeBuilder()"
-    - `#!groovy ResourceLocation`. Sets the Resource Location of the recipe.
+:::::::::: details ABSTRACT mods.pyrotech.campfire.recipeBuilder() {open}
+- `ResourceLocation`. Sets the Resource Location of the recipe.
 
-        ```groovy
-        name(String)
-        name(ResourceLocation)
-        ```
+    ```groovy:no-line-numbers
+    name(String)
+    name(ResourceLocation)
+    ```
 
-    - `#!groovy IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        input(IIngredient)
-        input(IIngredient...)
-        input(Collection<IIngredient>)
-        ```
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
 
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets the time required for the recipe to complete. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the time required for the recipe to complete. Requires greater than or equal to 1. (Default `0`).
 
-        ```groovy
-        duration(int)
-        ```
+    ```groovy:no-line-numbers
+    duration(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.CampfireRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.CampfireRecipe`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.pyrotech.campfire.recipeBuilder()
-            .input(item('minecraft:diamond'))
-            .output(item('minecraft:emerald'))
-            .duration(400)
-            .name('diamond_campfire_to_emerald')
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.campfire.recipeBuilder()
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:emerald'))
+    .duration(400)
+    .name('diamond_campfire_to_emerald')
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given input:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.campfire.removeByInput(ItemStack)
     ```
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.campfire.removeByOutput(IIngredient)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.campfire.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.pyrotech.campfire.removeByInput(item('minecraft:porkchop'))
-    mods.pyrotech.campfire.removeByOutput(item('minecraft:cooked_porkchop'))
-    mods.pyrotech.campfire.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.pyrotech.campfire.removeByInput(item('minecraft:porkchop'))
+mods.pyrotech.campfire.removeByOutput(item('minecraft:cooked_porkchop'))
+mods.pyrotech.campfire.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.pyrotech.campfire.streamRecipes()
     ```

@@ -14,7 +14,7 @@ A weighted itemstack output for using a Ball of Fur, dropped by a cat.
 
 Refer to this via any of the following:
 
-```groovy hl_lines="5"
+```groovy:no-line-numbers {5}
 mods.aa.ball_of_fur
 mods.aa.balloffur
 mods.aa.ballOfFur
@@ -35,61 +35,65 @@ Just like other recipe types, the Ball of Fur also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-???+ Abstract "mods.actuallyadditions.ball_of_fur.recipeBuilder()"
-    - `#!groovy ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+:::::::::: details ABSTRACT mods.actuallyadditions.ball_of_fur.recipeBuilder() {open}
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
-        ```groovy
-        output(ItemStack)
-        output(ItemStack...)
-        output(Collection<ItemStack>)
-        ```
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
 
-    - `#!groovy int`. Sets how likely this entry is to be rolled. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets how likely this entry is to be rolled. Requires greater than or equal to 0. (Default `0`).
 
-        ```groovy
-        weight(int)
-        ```
+    ```groovy:no-line-numbers
+    weight(int)
+    ```
 
-    - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.BallOfFurReturn`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.BallOfFurReturn`).
 
-        ```groovy
-        register()
-        ```
+    ```groovy:no-line-numbers
+    register()
+    ```
 
-    ???+ Example
-        ```groovy
-        mods.actuallyadditions.ball_of_fur.recipeBuilder()
-            .output(item('minecraft:clay') * 32)
-            .weight(15)
-            .register()
-        ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.ball_of_fur.recipeBuilder()
+    .output(item('minecraft:clay') * 32)
+    .weight(15)
+    .register()
+```
 
+::::::::::
 
+::::::::::
 
 ## Removing Recipes
 
 - Removes all recipes that match the given output:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.ball_of_fur.removeByOutput(ItemStack)
     ```
 
 - Removes all registered recipes:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.ball_of_fur.removeAll()
     ```
 
-???+ Example
-    ```groovy
-    mods.actuallyadditions.ball_of_fur.removeByOutput(item('minecraft:feather'))
-    mods.actuallyadditions.ball_of_fur.removeAll()
-    ```
+:::::::::: details EXAMPLE {open}
+```groovy:no-line-numbers
+mods.actuallyadditions.ball_of_fur.removeByOutput(item('minecraft:feather'))
+mods.actuallyadditions.ball_of_fur.removeAll()
+```
+
+::::::::::
 
 ## Getting the value of recipes
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     mods.actuallyadditions.ball_of_fur.streamRecipes()
     ```
