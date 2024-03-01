@@ -26,6 +26,14 @@ export const en = defineConfig({
       }) as DefaultTheme.SidebarItem[],
     },
     outlineTitle: "Outline",
+    lastUpdated: {
+      text: "Updated at",
+    },
+    editLink: {
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
+      text: "Edit this page",
+    },
   },
 });
 
@@ -56,6 +64,8 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
           collapsed: true,
           base: "/wiki/forge-mod-development/mixin/",
           items: [
+            { text: "Preface", link: "preface" },
+            { text: "Mixin Booter", link: "mixinbooter" },
             {
               text: "Annotation",
               collapsed: true,
@@ -71,8 +81,6 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
                 { text: "Configuration", link: "configuration" },
               ],
             },
-            { text: "Mixin Booter", link: "mixinbooter" },
-            { text: "Preface", link: "preface" },
           ],
         },
         {

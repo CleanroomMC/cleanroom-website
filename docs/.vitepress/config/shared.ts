@@ -1,6 +1,22 @@
+import { fileURLToPath } from "url";
 import { defineConfig } from "vitepress";
 
 export const shared = defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL(
+              "../../../components/internal/CustomDocFooter.vue",
+              import.meta.url,
+            ),
+          ),
+        },
+      ],
+    },
+  },
   title: "CleanroomMC",
   cleanUrls: true,
   metaChunk: true,
@@ -29,6 +45,16 @@ export const shared = defineConfig({
     },
     footer: {
       message: "© 2024 CleanroomMC. All Rights Reserved.",
+    },
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
+    editLink: {
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
     },
     search: { provider: "local" },
     socialLinks: [

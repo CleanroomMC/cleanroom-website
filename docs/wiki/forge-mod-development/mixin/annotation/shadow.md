@@ -51,6 +51,8 @@ public class Legal {
 
 ```java [Target.java]
 public class Target {
+    private static String privateStaticString = "Hello Static World";
+
     private String privateValue = "Hello World";
 
     protected int protectedValue = 42;
@@ -60,6 +62,8 @@ public class Target {
 ```java [Example.java]
 @Mixin(Target.class)
 public class Example {
+    @Shadow private static String privateStaticString = ""; // Will not affect original field
+
     @Shadow private String privateValue = null; // Will not affect original field
 
     @Shadow protected int protectedValue = 0; // Will not affect original field
@@ -74,6 +78,10 @@ public class Example {
 
 ```java [Target.java]
 public class Target {
+    public static void staticMethod() {
+        // ...
+    }
+
     public void method() {
         // ...
     }
@@ -87,6 +95,8 @@ public class Target {
 ```java [Example.java]
 @Mixin(Target.class)
 public class Example {
+    @Shadow public static void staticMethod() { }
+
     @Shadow public void method() { }
 
     // If the method needs to return something
@@ -95,6 +105,25 @@ public class Example {
     @Shadow public int fruitfulMethod() {
         throw new AssertionError();
     }
+}
+```
+
+```java [AbstractExample.java]
+@Mixin(Target.class)
+// If your class is abstract, your shadowed methods can be too!
+public abstract class AbstractExample {
+    // But not your static methods, they're still class-level!
+    // Same as Example.java, static methods
+    // can also be written like this for some sanity checking
+    @Shadow public static void staticMethod() {
+        throw new AssertionError();
+    }
+
+    // Shadowed abstract methods look nicer...
+    @Shadow public abstract void method();
+
+    // Fruitful abstract methods are also fine!
+    @Shadow public abstract int fruitfulMethod();
 }
 ```
 

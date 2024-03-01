@@ -4,8 +4,9 @@ title: Preface
 
 # Preface
 
-> [!NOTE]
-> Only for advanced developers! Make sure you are adept with Java prior to this!
+::: danger Before reading
+Only for advanced developers! Make sure you are adept with Java prior to this!
+:::
 
 Recommended concepts to be acquainted before venturing into mixins:
 
