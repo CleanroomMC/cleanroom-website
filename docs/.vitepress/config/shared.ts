@@ -1,6 +1,22 @@
+import { fileURLToPath } from "url";
 import { defineConfig } from "vitepress";
 
 export const shared = defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL(
+              "../../../components/internal/CustomDocFooter.vue",
+              import.meta.url,
+            ),
+          ),
+        },
+      ],
+    },
+  },
   title: "CleanroomMC",
   cleanUrls: true,
   metaChunk: true,
