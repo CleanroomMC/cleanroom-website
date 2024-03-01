@@ -6,7 +6,7 @@ import BackToTop from "../../../components/internal/BackToTop.vue";
 import "./style.css";
 
 function addBackTotop() {
-  if (typeof window === undefined) return;
+  if (typeof window === "undefined") return;
   window.addEventListener("load", () => {
     const wrapper = document.createElement("div");
     document.body.appendChild(wrapper);
