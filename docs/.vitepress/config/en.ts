@@ -1,6 +1,6 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
 
-export const en = defineConfig({
+export const en = defineConfigWithTheme<CleanRoomConfig>({
   lang: "en",
   description: "CleanroomMC",
   themeConfig: {
@@ -17,6 +17,7 @@ export const en = defineConfig({
         "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
       text: "Edit this page",
     },
+    sourceCodeText: "View Source",
   },
 });
 
