@@ -10,7 +10,7 @@ hero:
       text: 介绍
       link: guide/
     - theme: alt
-      text: 快速开始
+      text: 即刻出发
       link: guide/
   image:
     src: /cleanroom.png

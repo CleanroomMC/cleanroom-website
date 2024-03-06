@@ -39,7 +39,7 @@ title: Event
 - Different event types have their own ways of being listened to and unique ways of being posted.
 
 - FMLEvents are listened to by having the `@EventHandler` annotation on methods within `@Mod` annotated classes. These must be member methods. **These listeners are called reflectively**
-  ??? abstract "Example"
+
 
   ````java title="ExampleClass.java"
   @Mod(modid = "modid", name = "Mod Name", version = "1.0")
@@ -53,7 +53,6 @@ title: Event
       }
       ```
 
-  ````
 
 - Other types of events are more flexible in how they're being registered. **These listeners are called natively**
 
@@ -62,7 +61,7 @@ title: Event
       - These classes must withhold from being loaded before annotations are processed.
       - If it is annotated with `@Mod`, the `modid` argument isn't needed, otherwise it is needed for recognition sake.
       - Any methods in here that wants to listen to an event **must** be static.
-        ??? abstract "Example"
+
 
         ````java title="ExampleClass.java"
         @EventBusSubscriber(modid = "modid")
@@ -75,7 +74,7 @@ title: Event
 
             }
             ```
-        ````
+
 
   2.       EVENT_BUS interaction:
 
@@ -85,7 +84,7 @@ title: Event
       - Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to.
 
         - **Class = static methods accepted only.**
-          ??? abstract "Example"
+
 
           ````java title="StaticExample.java"
           public class StaticExample {
@@ -112,10 +111,10 @@ title: Event
               }
               ```
 
-          ````
+
 
         - **Object = member methods accepted only.**
-          ??? abstract "Example"
+
 
           ````java title="MemberExample.java"
           public class MemberExample {
@@ -141,7 +140,7 @@ title: Event
 
               }
               ```
-          ````
+
 
 ## PlayerDestroyItemEvent
 

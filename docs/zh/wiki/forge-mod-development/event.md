@@ -18,7 +18,7 @@ title: Event
 
 - FMLStateEvents（继承于 FMLEvent）重点刻画了 FML 生命周期内的不同阶段。
 
-- 初始化加载阶段（Initial Loading Stages）：
+- 初始化加载阶段：
 
   1. `FMLConstructionEvent`：当模组构建模组与注解完毕时会触发该事件。在此时，模组列表已填充完毕，可正常访问。
   2. `FMLPreInitializationEvent`：当 Forge 准备初始化模组时会触发该事件。在此事件中，你可以再次查询注解信息，查看与你模组相关的文件的位置（例如配置文件）。
@@ -30,118 +30,115 @@ title: Event
   1. `FMLServerAboutToStartEvent`：当所有的设置以及属性都初始化完毕后，触发该事件。
   2. `FMLServerStartingEvent`：当世界加载完毕后该事件便会被触发。这一阶段主要是用于处理自定义指令等内容。
   3. `FMLServerStartedEvent`：当服务器可以正常接受玩家登入时，触发该事件。
-- Server Stopping Stages:
+- 服务端关闭阶段:
   1. `FMLServerStoppingEvent`：当服务器关闭时，触发该事件。
   2. `FMLServerStoppedEvent`：当服务器关闭的最后 1 刻运行之前触发该事件。在此之后，集成服务端会开始加载主界面。
 
 #### 监听事件
 
-- 事件依照种类的不同，有着不同的监听以及发布方式。Different event types have their own ways of being listened to and unique ways of being posted.
+- 事件依照种类的不同，有着不同的监听以及发布方式。
 
-- 只有在标注了 `@Mod` 注解的类中，且标注了 `@EventHandler` 的成员方法才能正常监听到 FMLEvents。**这些监听方法会以反射的方式被调用。**
-  ??? 抽象“例子”
+- 只有在标注了 `@Mod` 注解的类中，且标注了 `@EventHandler` 的成员方法才能正常监听到 FMLEvents。**这些监听方法会以反射这种间接方式被调用。**
 
-  ````java title="ExampleClass.java"
-  @Mod(modid = "modid", name = "Mod Name", version = "1.0")
-  public class ExampleClass {
+::: code-group
 
-      	@EventHandler
-      	public void runOnPreInit(FMLPreInitializationEvent event) {
-      		// 此处的代码块会加入到 FMLPreInitializationEvent 当中，随该事件触发而起效。
-      	}
+```java [Example.java]
+@Mod(modid = "modid", name = "Mod Name", version = "1.0")
+public class ExampleClass {
 
-      }
-      ```
+  @EventHandler
+  public void runOnPreInit(FMLPreInitializationEvent event) {
+      	// 此处的代码块会加入到 FMLPreInitializationEvent 当中，随该事件触发而起效。
+    }
+}
 
-  ````
+```
 
-- Other types of events are more flexible in how they're being registered. **These listeners are called natively**
+:::
 
-  1. Annotation Magic: `@EventBusSubscriber` class level annotation
+- 其余事件的监听方式则方便得多。**这些监听方法会直接被调用。**
 
-      - These classes must withhold from being loaded before annotations are processed.
-      - If it is annotated with `@Mod`, the `modid` argument isn't needed, otherwise it is needed for recognition sake.
-      - Any methods in here that wants to listen to an event **must** be static.
-        ??? abstract "Example"
+  1. 通过注解：在对应的类上使用注解 `@EventBusSubscriber`。
 
-        ````java title="ExampleClass.java"
-        @EventBusSubscriber(modid = "modid")
-        public class ExampleClass {
+     - 这些类必须先被加载，这一注解才能生效。These classes must withhold from being loaded before annotations are processed.
+     - 如果该类同时带有 `@Mod` 注解，那么 `modid` 参数并非必要。但是如果仅有 `@Mod`，那该参数还是需要填写的。If it is annotated with `@Mod`, the `modid` argument isn't needed, otherwise it is needed for recognition sake.
+     - 此类内任何监听了事件的方法，都**必须**为静态方法。Any methods in here that wants to listen to an event **must** be static.
+    ::: code-group
+    ```java [ExampleClass.java]
+    @EventBusSubscriber(modid = "modid")
+    public class ExampleClass {
+        @SubscribeEvent
+        public static void thisIsAEventListener(Event event) {
+           		// 参数的对应事件触发时，这里的代码块会与之一同运行。
+        }
+    }
+    ```
+    :::
 
-            	@SubscribeEvent
-            	public static void thisIsAEventListener(Event event) {
-            		// This block of code will run when whichever Event is denoted in the argument
-            	}
+  2. EVENT_BUS 交互：
 
-            }
-            ```
-        ````
+     - Events are ran on different event buses, Forge originally wanted to differentiate events properly, then realised that EventBuses are really confusing.
+     - All the EventBuses can be found in `MinecraftForge.class`, those being `EVENT_BUS`, `TERRAIN_GEN_BUS` and `ORE_GEN_BUS`.
+     - Technically a mod can implement their own buses, but there doesn't seem to be any in the wild.
+     - Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to.
 
-  2. EVENT_BUS interaction:
+       - **Class = static methods accepted only.**
+        ::: code-group
+        ```java [StaticExample.java]
+         public class StaticExample {
 
-      - Events are ran on different event buses, Forge originally wanted to differentiate events properly, then realised that EventBuses are really confusing.
-      - All the EventBuses can be found in `MinecraftForge.class`, those being `EVENT_BUS`, `TERRAIN_GEN_BUS` and `ORE_GEN_BUS`.
-      - Technically a mod can implement their own buses, but there doesn't seem to be any in the wild.
-      - Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to.
+             	public static void register() {
+             		MinecraftForge.EVENT_BUS.register(EventListener.class);
+             	}
 
-        - **Class = static methods accepted only.**
-          ??? abstract "Example"
+             	public static class EventListener {
 
-          ````java title="StaticExample.java"
-          public class StaticExample {
+             		@SubscribeEvent
+             		public static void thisListenerWillRun(Event event) {
+             			// 必须为静态方法
+             			// 参数的对应事件触发时，这里的代码块会与之一同运行。
+             		}
 
-              	public static void register() {
-              		MinecraftForge.EVENT_BUS.register(EventListener.class);
-              	}
+             		@SubscribeEvent
+             		public void thisListenerWillNeverRun(Event event) {
+             			// 必须为静态方法
+             		}
 
-              	public static class EventListener {
+             	}
 
-              		@SubscribeEvent
-              		public static void thisListenerWillRun(Event event) {
-              			// This method is static
-              			// This block of code will run when whichever Event is denoted in the argument
-              		}
+             }
+        ```
 
-              		@SubscribeEvent
-              		public void thisListenerWillNeverRun(Event event) {
-              			// This method is not static
-              		}
+        :::
 
-              	}
+       - **Object = member methods accepted only.**
+         ??? abstract "Example"
 
-              }
-              ```
+         ````java title="MemberExample.java"
+         public class MemberExample {
 
-          ````
+             	public static void register() {
+             		MinecraftForge.EVENT_BUS.register(new EventListener());
+             	}
 
-        - **Object = member methods accepted only.**
-          ??? abstract "Example"
+             	public static class EventListener {
 
-          ````java title="MemberExample.java"
-          public class MemberExample {
+             		@SubscribeEvent
+             		public void thisListenerWillRun(Event event) {
+             			// This method is not static
+             			// This block of code will run when whichever Event is denoted in the argument
+             		}
 
-              	public static void register() {
-              		MinecraftForge.EVENT_BUS.register(new EventListener());
-              	}
+             		@SubscribeEvent
+             		public static void thisListenerWillNeverRun(Event event) {
+             			// This method is static
+             		}
 
-              	public static class EventListener {
+             	}
 
-              		@SubscribeEvent
-              		public void thisListenerWillRun(Event event) {
-              			// This method is not static
-              			// This block of code will run when whichever Event is denoted in the argument
-              		}
-
-              		@SubscribeEvent
-              		public static void thisListenerWillNeverRun(Event event) {
-              			// This method is static
-              		}
-
-              	}
-
-              }
-              ```
-          ````
+             }
+             ```
+         ````
 
 ## PlayerDestroyItemEvent
 
@@ -173,3 +170,7 @@ title: Event
 
 - This event is never fired correctly for the context of the 7th hook's listed above: `ForgeHooks#getContainerItem(ItemStack)`. Forge's logic when trying to determine if the retrieved container item is destroyed is all wrong. This bug was introduced in [MinecraftForge's PR#3388](https://github.com/MinecraftForge/MinecraftForge/pull/3388). Which meant that the event never fires for when the container item was actually destroyed. This was introduced when Forge was correcting all null-checks on `ItemStacks` to `ItemStack#isEmpty` calls instead. In most contexts, checking `ItemStack#isEmpty` would be enough, but in this particular context, the semantics was misunderstood. Any `ItemStack` that are destroyed will canonically be `ItemStack#isEmpty() == true && ItemStack != ItemStack.EMPTY`, meaning the logic of `if (!stack.isEmpty() && stack.isItemStackDamageable() && stack.getMetadata() > stack.getMaxDamage())` in `ForgeHooks#getContainerItem(ItemStack)` is indeed wrong and should have been `if (stack.isEmpty() && (stack.isItemStackDamageable() || stack.getDamage() >= stack.getMaxDamage())`.
 - To circumvent this oddity, one would have to make sure they handle all the logic they would have done in a `PlayerDestroyItemEvent` listener in their item's respective class's `getContainerItem` method instead.
+
+```
+
+```
