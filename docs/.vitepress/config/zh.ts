@@ -1,5 +1,4 @@
-import { defineConfigWithTheme } from "vitepress";
-import { DefaultTheme } from "vitepress";
+import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
 import { CleanRoomConfig } from "./customConfig";
 
 export const zh = defineConfigWithTheme<CleanRoomConfig>({

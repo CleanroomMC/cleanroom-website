@@ -1,4 +1,5 @@
-import { type DefaultTheme, defineConfig } from "vitepress";
+import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { CleanRoomConfig } from "./customConfig";
 
 export const en = defineConfigWithTheme<CleanRoomConfig>({
   lang: "en",
