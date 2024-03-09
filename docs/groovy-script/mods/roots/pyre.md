@@ -29,7 +29,7 @@ Just like other recipe types, the Pyre also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.pyre.recipeBuilder() {open}
+:::::::::: details mods.roots.pyre.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -73,7 +73,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.pyre.recipeBuilder()
     .name('clay_from_fire')
@@ -91,7 +91,7 @@ mods.roots.pyre.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -115,7 +115,7 @@ mods.roots.pyre.recipeBuilder()
     mods.roots.pyre.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.pyre.removeByName(resource('roots:infernal_bulb'))
 mods.roots.pyre.removeByOutput(item('minecraft:gravel'))

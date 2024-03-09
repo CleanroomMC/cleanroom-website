@@ -31,7 +31,7 @@ Just like other recipe types, the Vat also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.vat.recipeBuilder() {open}
+:::::::::: details mods.enderio.vat.recipeBuilder() {open id="abstract"}
 - `FluidStack`. Sets the input fluid. Requires not null.
 
     ```groovy:no-line-numbers
@@ -94,7 +94,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.vat.recipeBuilder()
     .input(fluid('lava'))
@@ -132,7 +132,7 @@ mods.enderio.vat.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -150,7 +150,7 @@ mods.enderio.vat.recipeBuilder()
     mods.enderio.vat.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.vat.remove(fluid('nutrient_distillation'))
 mods.enderio.vat.removeAll()

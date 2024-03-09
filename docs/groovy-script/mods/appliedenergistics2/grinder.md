@@ -31,7 +31,7 @@ Just like other recipe types, the Grinder also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.appliedenergistics2.grinder.recipeBuilder() {open}
+:::::::::: details mods.appliedenergistics2.grinder.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -74,7 +74,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.grinder.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -91,7 +91,7 @@ mods.appliedenergistics2.grinder.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -115,7 +115,7 @@ mods.appliedenergistics2.grinder.recipeBuilder()
     mods.appliedenergistics2.grinder.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.grinder.removeByInput(item('minecraft:gold_ingot'))
 mods.appliedenergistics2.grinder.removeByOutput(item('minecraft:quartz'))

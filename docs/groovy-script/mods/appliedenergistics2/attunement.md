@@ -43,7 +43,7 @@ mods.appliedenergistics2.Attunement
     mods.appliedenergistics2.attunement.add(String, TunnelType)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.attunement.add(Capabilities.FORGE_ENERGY, tunnel('item'))
 mods.appliedenergistics2.attunement.add(item('minecraft:clay'), tunnel('item'))
@@ -102,7 +102,7 @@ mods.appliedenergistics2.attunement.add('thermaldynamics', tunnel('redstone'))
     mods.appliedenergistics2.attunement.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.attunement.remove(Capabilities.FORGE_ENERGY, tunnel('fe_power'))
 mods.appliedenergistics2.attunement.remove(item('minecraft:lever'), tunnel('redstone'))

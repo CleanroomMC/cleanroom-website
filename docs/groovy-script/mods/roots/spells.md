@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Controls the recipe for the given spell, the sound, all properties, the base cost, and each modifier's cost.
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 This compat is not fully documented. Some or all of its features are not present on the wiki. View the source code to gain an accurate understanding of the compat.
 ::::::::::
 
@@ -33,7 +33,7 @@ Just like other recipe types, the Spells also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.spells.costBuilder() {open}
+:::::::::: details mods.roots.spells.costBuilder() {open id="abstract"}
 - `List<IModifierCost>`. Sets a list of all cost types used to construct a complex Cost object.
 
     ```groovy:no-line-numbers
@@ -50,7 +50,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.spells.costBuilder()
     .register()
@@ -65,11 +65,11 @@ mods.roots.spells.costBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.roots.spells.recipeBuilder() {open}
+:::::::::: details mods.roots.spells.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -97,7 +97,7 @@ mods.roots.spells.costBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.spells.recipeBuilder()
     .spell(spell('spell_fey_light'))
@@ -105,6 +105,6 @@ mods.roots.spells.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::

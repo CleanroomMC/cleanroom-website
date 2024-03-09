@@ -29,7 +29,7 @@ mods.mekanism.Crusher
     mods.mekanism.crusher.add(IIngredient, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crusher.add(item('minecraft:clay_ball'), item('minecraft:gold_ingot'))
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Crusher also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.crusher.recipeBuilder() {open}
+:::::::::: details mods.mekanism.crusher.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crusher.recipeBuilder()
     .input(item('minecraft:clay_ball'))
@@ -73,7 +73,7 @@ mods.mekanism.crusher.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -91,7 +91,7 @@ mods.mekanism.crusher.recipeBuilder()
     mods.mekanism.crusher.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crusher.removeByInput(ore('ingotTin'))
 mods.mekanism.crusher.removeAll()

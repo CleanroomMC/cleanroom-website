@@ -35,7 +35,7 @@ Just like other recipe types, the Oil Gen also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.oil_gen.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.oil_gen.recipeBuilder() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -63,7 +63,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.oil_gen.recipeBuilder()
     .fluidInput(fluid('water'))
@@ -77,7 +77,7 @@ mods.actuallyadditions.oil_gen.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -107,7 +107,7 @@ mods.actuallyadditions.oil_gen.recipeBuilder()
     mods.actuallyadditions.oil_gen.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.oil_gen.removeByInput(fluid('canolaoil').getFluid())
 mods.actuallyadditions.oil_gen.removeByInput(fluid('canolaoil'))

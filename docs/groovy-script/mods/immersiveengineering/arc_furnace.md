@@ -42,7 +42,7 @@ Just like other recipe types, the Arc Furnace also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.arc_furnace.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.arc_furnace.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 5.
 
     ```groovy:no-line-numbers
@@ -98,7 +98,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.arc_furnace.recipeBuilder()
     .mainInput(item('minecraft:diamond'))
@@ -110,7 +110,7 @@ mods.immersiveengineering.arc_furnace.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -146,7 +146,7 @@ mods.immersiveengineering.arc_furnace.recipeBuilder()
     mods.immersiveengineering.arc_furnace.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.arc_furnace.removeByInput(item('immersiveengineering:metal:18'), item('immersiveengineering:material:17'))
 mods.immersiveengineering.arc_furnace.removeByOutput(item('immersiveengineering:metal:7'))

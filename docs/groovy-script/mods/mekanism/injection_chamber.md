@@ -33,7 +33,7 @@ mods.mekanism.Injector
     mods.mekanism.injection_chamber.add(IIngredient, GasStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.injection_chamber.add(item('minecraft:diamond'), gas('water'), item('minecraft:nether_star'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Injection Chamber also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.injection_chamber.recipeBuilder() {open}
+:::::::::: details mods.mekanism.injection_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.injection_chamber.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -88,7 +88,7 @@ mods.mekanism.injection_chamber.recipeBuilder()
 
 1. Always uses 200 gas
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -106,7 +106,7 @@ mods.mekanism.injection_chamber.recipeBuilder()
     mods.mekanism.injection_chamber.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.injection_chamber.removeByInput(item('minecraft:hardened_clay'), gas('water'))
 mods.mekanism.injection_chamber.removeAll()

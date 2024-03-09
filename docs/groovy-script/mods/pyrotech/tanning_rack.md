@@ -31,7 +31,7 @@ mods.pyrotech.TanningRack
     mods.pyrotech.tanning_rack.add(String, IIngredient, ItemStack, int, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.tanning_rack.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1200, item('minecraft:clay_ball'))
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Tanning Rack also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.tanning_rack.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.tanning_rack.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -86,7 +86,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.tanning_rack.recipeBuilder()
     .input(item('minecraft:iron_ingot'))
@@ -96,7 +96,7 @@ mods.pyrotech.tanning_rack.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -120,7 +120,7 @@ mods.pyrotech.tanning_rack.recipeBuilder()
     mods.pyrotech.tanning_rack.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.tanning_rack.removeByInput(item('minecraft:wheat'))
 mods.pyrotech.tanning_rack.removeAll()

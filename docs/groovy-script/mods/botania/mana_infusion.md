@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Toss an item into a mana pool with an optional catalyst blockstate below the pool.
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 A mana cost greater than 10,000 cannot be converted in a Diluted Mana Pools and a mana cost greater than 1,000,000 cannot be converted in a normal Mana Pool. Both the Fabulous Mana Pool and The Everlasting Guilty Pool have the same capacity as a normal Mana Pool.
 ::::::::::
 
@@ -42,7 +42,7 @@ Just like other recipe types, the Mana Infusion also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.mana_infusion.recipeBuilder() {open}
+:::::::::: details mods.botania.mana_infusion.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -79,7 +79,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.mana_infusion.recipeBuilder()
     .input(ore('ingotGold'))
@@ -89,7 +89,7 @@ mods.botania.mana_infusion.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -119,7 +119,7 @@ mods.botania.mana_infusion.recipeBuilder()
     mods.botania.mana_infusion.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.mana_infusion.removeByCatalyst(blockstate('botania:alchemycatalyst'))
 mods.botania.mana_infusion.removeByInput(item('minecraft:ender_pearl'))

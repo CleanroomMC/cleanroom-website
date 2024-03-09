@@ -10,11 +10,11 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Sets a group of items any item can be converted between freely, in world and in a GUI
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 This compat is not fully documented. Some or all of its features are not present on the wiki. View the source code to gain an accurate understanding of the compat.
 ::::::::::
 
-:::::::::: danger
+:::::::::: info Danger {id="danger"}
 You cannot addVariation/removeVariation to chisel groups based on the oredict, you have to modify the oredict directly.
 ::::::::::
 
@@ -43,7 +43,7 @@ mods.chisel.Carving
     mods.chisel.carving.setSound(String, SoundEvent)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.chisel.carving.setSound('demo', sound('minecraft:block.glass.break'))
 ```
@@ -64,7 +64,7 @@ mods.chisel.carving.setSound('demo', sound('minecraft:block.glass.break'))
     mods.chisel.carving.addVariation(String, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.chisel.carving.addGroup('demo')
 mods.chisel.carving.addVariation('demo', item('minecraft:diamond_block'))
@@ -94,7 +94,7 @@ mods.chisel.carving.addVariation('demo', item('minecraft:sea_lantern'))
     mods.chisel.carving.removeVariation(String, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.chisel.carving.removeAll()
 mods.chisel.carving.removeGroup('blockDiamond')

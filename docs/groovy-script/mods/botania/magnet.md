@@ -41,7 +41,7 @@ mods.botania.Magnet
     mods.botania.magnet.addToBlacklist(IIngredient)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.magnet.addToBlacklist(item('minecraft:diamond'))
 ```

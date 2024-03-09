@@ -39,7 +39,7 @@ Just like other recipe types, the Alloy Smelter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.alloy_smelter.recipeBuilder() {open}
+:::::::::: details mods.enderio.alloy_smelter.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 3.
 
     ```groovy:no-line-numbers
@@ -83,7 +83,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.alloy_smelter.recipeBuilder()
     .input(item('minecraft:diamond') * 4, item('minecraft:clay') * 32)
@@ -112,7 +112,7 @@ mods.enderio.alloy_smelter.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -130,7 +130,7 @@ mods.enderio.alloy_smelter.recipeBuilder()
     mods.enderio.alloy_smelter.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.alloy_smelter.remove(item('enderio:item_material:70'))
 mods.enderio.alloy_smelter.removeAll()

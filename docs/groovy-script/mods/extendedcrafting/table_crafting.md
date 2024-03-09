@@ -56,7 +56,7 @@ Just like other recipe types, the Table Crafting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.extendedcrafting.table_crafting.shapedBuilder() {open}
+:::::::::: details mods.extendedcrafting.table_crafting.shapedBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -135,7 +135,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.table_crafting.shapedBuilder()
     .output(item('minecraft:stone') * 64)
@@ -189,11 +189,11 @@ mods.extendedcrafting.table_crafting.shapedBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.extendedcrafting.table_crafting.shapelessBuilder() {open}
+:::::::::: details mods.extendedcrafting.table_crafting.shapelessBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -250,7 +250,7 @@ mods.extendedcrafting.table_crafting.shapedBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.table_crafting.shapelessBuilder()
     .output(item('minecraft:stone') * 64)
@@ -258,7 +258,7 @@ mods.extendedcrafting.table_crafting.shapelessBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -276,7 +276,7 @@ mods.extendedcrafting.table_crafting.shapelessBuilder()
     mods.extendedcrafting.table_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.table_crafting.removeByOutput(item('extendedcrafting:singularity_ultimate'))
 mods.extendedcrafting.table_crafting.removeAll()

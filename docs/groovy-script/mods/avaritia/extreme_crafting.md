@@ -44,7 +44,7 @@ Just like other recipe types, the Extreme Crafting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.avaritia.extreme_crafting.shapedBuilder() {open}
+:::::::::: details mods.avaritia.extreme_crafting.shapedBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -110,7 +110,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.extreme_crafting.shapedBuilder()
     .matrix([[item('minecraft:gold_ingot'),item('minecraft:gold_ingot'),item('minecraft:gold_ingot'),item('minecraft:gold_ingot'),item('minecraft:gold_ingot'),item('minecraft:gold_ingot'),item('minecraft:gold_ingot')],
@@ -137,11 +137,11 @@ mods.avaritia.extreme_crafting.shapedBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.avaritia.extreme_crafting.shapelessBuilder() {open}
+:::::::::: details mods.avaritia.extreme_crafting.shapelessBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -187,7 +187,7 @@ mods.avaritia.extreme_crafting.shapedBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.extreme_crafting.shapelessBuilder()
     .output(item('minecraft:stone') * 64)
@@ -195,7 +195,7 @@ mods.avaritia.extreme_crafting.shapelessBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -213,7 +213,7 @@ mods.avaritia.extreme_crafting.shapelessBuilder()
     mods.avaritia.extreme_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.extreme_crafting.removeByOutput(item('avaritia:resource', 6))
 mods.avaritia.extreme_crafting.removeAll()

@@ -44,7 +44,7 @@ Just like other recipe types, the Pure Daisy also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.pure_daisy.recipeBuilder() {open}
+:::::::::: details mods.botania.pure_daisy.recipeBuilder() {open id="abstract"}
 - `int`. Sets the duration the recipe takes to complete. Requires greater than or equal to 0. (Default `RecipePureDaisy.DEFAULT_TIME (150)`).
 
     ```groovy:no-line-numbers
@@ -72,7 +72,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.pure_daisy.recipeBuilder()
     .input(ore('plankWood'))
@@ -81,7 +81,7 @@ mods.botania.pure_daisy.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -123,7 +123,7 @@ mods.botania.pure_daisy.recipeBuilder()
     mods.botania.pure_daisy.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.pure_daisy.removeByInput(blockstate('minecraft:water'))
 mods.botania.pure_daisy.removeByInput(ore('logWood'))

@@ -54,7 +54,7 @@ Just like other recipe types, the Alchemy Array also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.alchemy_array.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.alchemy_array.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -90,7 +90,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.alchemy_array.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -106,7 +106,7 @@ mods.bloodmagic.alchemy_array.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -142,7 +142,7 @@ mods.bloodmagic.alchemy_array.recipeBuilder()
     mods.bloodmagic.alchemy_array.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.alchemy_array.removeByCatalyst(item('bloodmagic:slate:2'))
 mods.bloodmagic.alchemy_array.removeByInput(item('bloodmagic:component:13'))

@@ -31,7 +31,7 @@ Just like other recipe types, the Blood Infuser also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.evilcraft.blood_infuser.recipeBuilder() {open}
+:::::::::: details mods.evilcraft.blood_infuser.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -82,7 +82,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.evilcraft.blood_infuser.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -107,7 +107,7 @@ mods.evilcraft.blood_infuser.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -131,7 +131,7 @@ mods.evilcraft.blood_infuser.recipeBuilder()
     mods.evilcraft.blood_infuser.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.evilcraft.blood_infuser.removeByInput(item('evilcraft:dark_gem'))
 mods.evilcraft.blood_infuser.removeByOutput(item('minecraft:leather'))

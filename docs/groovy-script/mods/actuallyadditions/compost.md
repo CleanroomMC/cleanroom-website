@@ -31,7 +31,7 @@ Just like other recipe types, the Compost also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.compost.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.compost.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -66,7 +66,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.compost.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -76,7 +76,7 @@ mods.actuallyadditions.compost.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -100,7 +100,7 @@ mods.actuallyadditions.compost.recipeBuilder()
     mods.actuallyadditions.compost.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.compost.removeByInput(item('actuallyadditions:item_canola_seed'))
 mods.actuallyadditions.compost.removeByOutput(item('actuallyadditions:item_fertilizer'))

@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts up to 1 itemstack and up to 1 fluid into up to 1 itemstack or up to 1 fluid, with a boiling boolean and variable amount of fluid consumed or produced.
 
-:::::::::: details NOTE {open}
+:::::::::: details Note {open id="note"}
 Cauldrons have a cap of either 3 or 4 levels, depending on the config.
 ::::::::::
 
@@ -33,7 +33,7 @@ Just like other recipe types, the Cauldron also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilder() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -125,7 +125,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilder()
     .standard()
@@ -138,11 +138,11 @@ mods.inspirations.cauldron.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderBrewing() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderBrewing() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -169,7 +169,7 @@ mods.inspirations.cauldron.recipeBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderBrewing()
     .input(item('minecraft:diamond_block'))
@@ -178,11 +178,11 @@ mods.inspirations.cauldron.recipeBuilderBrewing()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderDye() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderDye() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -218,7 +218,7 @@ mods.inspirations.cauldron.recipeBuilderBrewing()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderDye()
     .input(item('minecraft:gold_block'))
@@ -228,11 +228,11 @@ mods.inspirations.cauldron.recipeBuilderDye()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderFill() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderFill() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -277,7 +277,7 @@ mods.inspirations.cauldron.recipeBuilderDye()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderFill()
     .input(item('minecraft:gold_ingot'))
@@ -287,11 +287,11 @@ mods.inspirations.cauldron.recipeBuilderFill()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderMix() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderMix() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 2.
 
     ```groovy:no-line-numbers
@@ -314,7 +314,7 @@ mods.inspirations.cauldron.recipeBuilderFill()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderMix()
     .output(item('minecraft:clay'))
@@ -322,11 +322,11 @@ mods.inspirations.cauldron.recipeBuilderMix()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderPotion() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderPotion() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -368,7 +368,7 @@ mods.inspirations.cauldron.recipeBuilderMix()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderPotion()
     .input(item('minecraft:gold_block'))
@@ -378,11 +378,11 @@ mods.inspirations.cauldron.recipeBuilderPotion()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderStandard() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderStandard() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -433,7 +433,7 @@ mods.inspirations.cauldron.recipeBuilderPotion()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderStandard()
     .input(item('minecraft:diamond'))
@@ -444,11 +444,11 @@ mods.inspirations.cauldron.recipeBuilderStandard()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.inspirations.cauldron.recipeBuilderTransform() {open}
+:::::::::: details mods.inspirations.cauldron.recipeBuilderTransform() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -499,7 +499,7 @@ mods.inspirations.cauldron.recipeBuilderStandard()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.recipeBuilderTransform()
     .input(item('minecraft:stone:3'))
@@ -509,7 +509,7 @@ mods.inspirations.cauldron.recipeBuilderTransform()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -557,7 +557,7 @@ mods.inspirations.cauldron.recipeBuilderTransform()
     mods.inspirations.cauldron.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.cauldron.removeByFluidInput(fluid('mushroom_stew'))
 mods.inspirations.cauldron.removeByFluidOutput(fluid('beetroot_soup'))

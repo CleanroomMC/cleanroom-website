@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts an input itemstack into an output itemstack in a recipe exclusive to the Smelter. Overrides the default furnace recipe, if applicable.
 
-:::::::::: danger
+:::::::::: info Danger {id="danger"}
 Recipes exclusive to the Mekanism Smelter may not be displayed in JEI
 ::::::::::
 
@@ -35,7 +35,7 @@ mods.mekanism.Smelter
     mods.mekanism.smelting.add(IIngredient, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.smelting.add(item('minecraft:diamond_block'), item('minecraft:clay'))
 ```
@@ -48,7 +48,7 @@ Just like other recipe types, the Smelting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.smelting.recipeBuilder() {open}
+:::::::::: details mods.mekanism.smelting.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.smelting.recipeBuilder()
     .input(item('minecraft:clay_ball'))
@@ -79,7 +79,7 @@ mods.mekanism.smelting.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -97,7 +97,7 @@ mods.mekanism.smelting.recipeBuilder()
     mods.mekanism.smelting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.smelting.removeByInput(item('minecraft:clay'))
 mods.mekanism.smelting.removeAll()

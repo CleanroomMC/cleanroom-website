@@ -29,7 +29,7 @@ Just like other recipe types, the Pacifist also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.pacifist.recipeBuilder() {open}
+:::::::::: details mods.roots.pacifist.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -49,7 +49,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.pacifist.recipeBuilder()
     .name('wither_skeleton_pacifist')
@@ -57,7 +57,7 @@ mods.roots.pacifist.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -87,7 +87,7 @@ mods.roots.pacifist.recipeBuilder()
     mods.roots.pacifist.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.pacifist.removeByEntity(entity('minecraft:cow'))
 mods.roots.pacifist.removeByName(resource('minecraft:chicken'))

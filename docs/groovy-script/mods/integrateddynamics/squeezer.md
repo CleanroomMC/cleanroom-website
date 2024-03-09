@@ -31,7 +31,7 @@ Just like other recipe types, the Squeezer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.integrateddynamics.squeezer.recipeBuilder() {open}
+:::::::::: details mods.integrateddynamics.squeezer.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -81,7 +81,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.squeezer.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -104,7 +104,7 @@ mods.integrateddynamics.squeezer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -122,7 +122,7 @@ mods.integrateddynamics.squeezer.recipeBuilder()
     mods.integrateddynamics.squeezer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.squeezer.removeAll()
 ```

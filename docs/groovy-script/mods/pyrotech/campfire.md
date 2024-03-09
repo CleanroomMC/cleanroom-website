@@ -29,7 +29,7 @@ mods.pyrotech.Campfire
     mods.pyrotech.campfire.add(String, IIngredient, ItemStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.campfire.add('apple_to_dirt', item('minecraft:apple'), item('minecraft:dirt'), 1000)
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Campfire also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.campfire.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.campfire.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.campfire.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -88,7 +88,7 @@ mods.pyrotech.campfire.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -112,7 +112,7 @@ mods.pyrotech.campfire.recipeBuilder()
     mods.pyrotech.campfire.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.campfire.removeByInput(item('minecraft:porkchop'))
 mods.pyrotech.campfire.removeByOutput(item('minecraft:cooked_porkchop'))

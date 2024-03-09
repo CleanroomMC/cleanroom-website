@@ -39,7 +39,7 @@ Just like other recipe types, the Sag Mill Grinding also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.sag_mill_grinding.recipeBuilder() {open}
+:::::::::: details mods.enderio.sag_mill_grinding.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.sag_mill_grinding.recipeBuilder()
     .input(item('minecraft:clay_ball'))
@@ -89,7 +89,7 @@ mods.enderio.sag_mill_grinding.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -107,7 +107,7 @@ mods.enderio.sag_mill_grinding.recipeBuilder()
     mods.enderio.sag_mill_grinding.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.sag_mill_grinding.remove(item('minecraft:flint'))
 mods.enderio.sag_mill_grinding.removeAll()

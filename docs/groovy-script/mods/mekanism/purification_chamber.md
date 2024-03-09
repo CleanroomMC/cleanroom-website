@@ -33,7 +33,7 @@ mods.mekanism.Purifier
     mods.mekanism.purification_chamber.add(IIngredient, GasStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.purification_chamber.add(item('minecraft:diamond'), gas('oxygen'), item('minecraft:nether_star'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Purification Chamber also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.purification_chamber.recipeBuilder() {open}
+:::::::::: details mods.mekanism.purification_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.purification_chamber.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -86,7 +86,7 @@ mods.mekanism.purification_chamber.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -104,7 +104,7 @@ mods.mekanism.purification_chamber.recipeBuilder()
     mods.mekanism.purification_chamber.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.purification_chamber.removeByInput(item('mekanism:oreblock:0'), gas('oxygen'))
 mods.mekanism.purification_chamber.removeAll()

@@ -31,7 +31,7 @@ mods.mekanism.OsmiumCompressor
     mods.mekanism.osmium_compressor.add(IIngredient, GasStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.osmium_compressor.add(item('minecraft:diamond'), gas('hydrogen'), item('minecraft:nether_star'))
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Osmium Compressor also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.osmium_compressor.recipeBuilder() {open}
+:::::::::: details mods.mekanism.osmium_compressor.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -75,7 +75,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.osmium_compressor.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -86,7 +86,7 @@ mods.mekanism.osmium_compressor.recipeBuilder()
 
 1. Always uses 200 gas
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -104,7 +104,7 @@ mods.mekanism.osmium_compressor.recipeBuilder()
     mods.mekanism.osmium_compressor.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.osmium_compressor.removeByInput(ore('dustRefinedObsidian'), gas('liquidosmium'))
 mods.mekanism.osmium_compressor.removeAll()

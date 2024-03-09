@@ -31,7 +31,7 @@ mods.pyrotech.CompactingBin
     mods.pyrotech.compacting_bin.add(String, IIngredient, ItemStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compacting_bin.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9)
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Compacting Bin also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.compacting_bin.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.compacting_bin.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -80,7 +80,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compacting_bin.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -90,7 +90,7 @@ mods.pyrotech.compacting_bin.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.pyrotech.compacting_bin.recipeBuilder()
     mods.pyrotech.compacting_bin.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compacting_bin.removeByInput(item('minecraft:snowball'))
 mods.pyrotech.compacting_bin.removeByOutput(item('minecraft:bone_block'))

@@ -50,7 +50,7 @@ Just like other recipe types, the Slice N Splice also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.slice_n_splice.recipeBuilder() {open}
+:::::::::: details mods.enderio.slice_n_splice.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 6.
 
     ```groovy:no-line-numbers
@@ -85,7 +85,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.slice_n_splice.recipeBuilder()
     .input(item('minecraft:clay'), null, item('minecraft:clay'))
@@ -96,7 +96,7 @@ mods.enderio.slice_n_splice.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -120,7 +120,7 @@ mods.enderio.slice_n_splice.recipeBuilder()
     mods.enderio.slice_n_splice.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.slice_n_splice.remove(item('enderio:item_material:40'))
 mods.enderio.slice_n_splice.removeByInput([item('enderio:item_alloy_ingot:7'), item('enderio:block_enderman_skull'), item('enderio:item_alloy_ingot:7'), item('minecraft:potion').withNbt(['Potion': 'minecraft:water']), item('enderio:item_basic_capacitor'), item('minecraft:potion').withNbt(['Potion': 'minecraft:water'])])

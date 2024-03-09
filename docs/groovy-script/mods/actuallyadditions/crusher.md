@@ -31,7 +31,7 @@ Just like other recipe types, the Crusher also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.crusher.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.crusher.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -60,7 +60,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.crusher.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -74,7 +74,7 @@ mods.actuallyadditions.crusher.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -98,7 +98,7 @@ mods.actuallyadditions.crusher.recipeBuilder()
     mods.actuallyadditions.crusher.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.crusher.removeByInput(item('minecraft:bone'))
 mods.actuallyadditions.crusher.removeByOutput(item('minecraft:sugar'))

@@ -56,7 +56,7 @@ Just like other recipe types, the Tranquility also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.tranquility.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.tranquility.recipeBuilder() {open id="abstract"}
 - `Block`. Sets the target block.
 
     ```groovy:no-line-numbers
@@ -88,7 +88,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.tranquility.recipeBuilder()
     .block(block('minecraft:obsidian'))
@@ -109,7 +109,7 @@ mods.bloodmagic.tranquility.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -145,7 +145,7 @@ mods.bloodmagic.tranquility.recipeBuilder()
     mods.bloodmagic.tranquility.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.tranquility.remove(block('minecraft:dirt'), 'EARTHEN')
 mods.bloodmagic.tranquility.remove(blockstate('minecraft:netherrack'), 'FIRE')

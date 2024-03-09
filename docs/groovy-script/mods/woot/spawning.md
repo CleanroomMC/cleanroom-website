@@ -42,7 +42,7 @@ Just like other recipe types, the Spawning also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.woot.spawning.recipeBuilder() {open}
+:::::::::: details mods.woot.spawning.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 6.
 
     ```groovy:no-line-numbers
@@ -80,7 +80,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.spawning.recipeBuilder()
     .name('minecraft:zombie')
@@ -94,7 +94,7 @@ mods.woot.spawning.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -136,7 +136,7 @@ mods.woot.spawning.recipeBuilder()
     mods.woot.spawning.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.spawning.remove(new WootMobName('minecraft:ender_dragon'))
 mods.woot.spawning.removeByEntity(entity('minecraft:ender_dragon'))

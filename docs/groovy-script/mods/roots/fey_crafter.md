@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 The Fey Crafter is a crafting mechanism that requires an activated Grove Stone nearby to take 5 item inputs and return an item output.
 
-:::::::::: danger
+:::::::::: info Danger {id="danger"}
  When reloading recipes with the Fey Crafter, you may encounter a `ConcurrentModificationException`!
 ::::::::::
 
@@ -35,7 +35,7 @@ Just like other recipe types, the Fey Crafter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.fey_crafter.recipeBuilder() {open}
+:::::::::: details mods.roots.fey_crafter.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.fey_crafter.recipeBuilder()
     .name('clay_craft')
@@ -81,7 +81,7 @@ mods.roots.fey_crafter.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -105,7 +105,7 @@ mods.roots.fey_crafter.recipeBuilder()
     mods.roots.fey_crafter.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.fey_crafter.removeByName(resource('roots:unending_bowl'))
 mods.roots.fey_crafter.removeByOutput(item('minecraft:gravel'))

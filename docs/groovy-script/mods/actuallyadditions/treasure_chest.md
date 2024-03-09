@@ -35,7 +35,7 @@ Just like other recipe types, the Treasure Chest also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.treasure_chest.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.treasure_chest.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -68,7 +68,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.treasure_chest.recipeBuilder()
     .output(item('minecraft:clay'))
@@ -78,7 +78,7 @@ mods.actuallyadditions.treasure_chest.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -96,7 +96,7 @@ mods.actuallyadditions.treasure_chest.recipeBuilder()
     mods.actuallyadditions.treasure_chest.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.treasure_chest.removeByOutput(item('minecraft:iron_ingot'))
 mods.actuallyadditions.treasure_chest.removeAll()

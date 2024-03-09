@@ -33,7 +33,7 @@ mods.mekanism.Dissolver
     mods.mekanism.dissolution_chamber.add(IIngredient, GasStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.dissolution_chamber.add(item('minecraft:packed_ice'), gas('water'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Dissolution Chamber also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.dissolution_chamber.recipeBuilder() {open}
+:::::::::: details mods.mekanism.dissolution_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.dissolution_chamber.recipeBuilder()
     .input(item('minecraft:packed_ice'))
@@ -77,7 +77,7 @@ mods.mekanism.dissolution_chamber.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -95,7 +95,7 @@ mods.mekanism.dissolution_chamber.recipeBuilder()
     mods.mekanism.dissolution_chamber.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.dissolution_chamber.removeByInput(item('mekanism:oreblock:0'))
 mods.mekanism.dissolution_chamber.removeAll()

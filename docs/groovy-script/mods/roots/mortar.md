@@ -33,7 +33,7 @@ Just like other recipe types, the Mortar And Pestle also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.mortar.recipeBuilder() {open}
+:::::::::: details mods.roots.mortar.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -130,7 +130,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.mortar.recipeBuilder()
     .name('clay_mortar')
@@ -155,7 +155,7 @@ mods.roots.mortar.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -179,7 +179,7 @@ mods.roots.mortar.recipeBuilder()
     mods.roots.mortar.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.mortar.removeByName(resource('roots:wheat_flour'))
 mods.roots.mortar.removeByOutput(item('minecraft:string'))

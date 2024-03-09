@@ -42,7 +42,7 @@ Just like other recipe types, the Blast Furnace also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.blast_furnace.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.blast_furnace.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blast_furnace.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -87,7 +87,7 @@ mods.immersiveengineering.blast_furnace.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -111,7 +111,7 @@ mods.immersiveengineering.blast_furnace.recipeBuilder()
     mods.immersiveengineering.blast_furnace.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blast_furnace.removeByInput(item('minecraft:iron_block'))
 mods.immersiveengineering.blast_furnace.removeByOutput(item('immersiveengineering:metal:8'))

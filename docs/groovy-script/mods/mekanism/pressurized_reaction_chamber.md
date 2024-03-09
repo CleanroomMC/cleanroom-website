@@ -33,7 +33,7 @@ Just like other recipe types, the Pressurized Reaction Chamber also uses a recip
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.pressurized_reaction_chamber.recipeBuilder() {open}
+:::::::::: details mods.mekanism.pressurized_reaction_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.
 
     ```groovy:no-line-numbers
@@ -90,7 +90,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
     .fluidInput(fluid('water'))
@@ -100,7 +100,7 @@ mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -124,7 +124,7 @@ mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
     mods.mekanism.pressurized_reaction_chamber.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.pressurized_reaction_chamber.removeByInput(ore('logWood'), fluid('water'), gas('oxygen'))
 mods.mekanism.pressurized_reaction_chamber.removeAll()

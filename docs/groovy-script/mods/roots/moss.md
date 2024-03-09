@@ -29,7 +29,7 @@ mods.roots.Moss
     mods.roots.moss.add(ItemStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.moss.add(item('minecraft:stained_glass:3'), item('minecraft:stained_glass:4'))
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Moss also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.moss.recipeBuilder() {open}
+:::::::::: details mods.roots.moss.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.moss.recipeBuilder()
     .input(item('minecraft:gold_block'))
@@ -73,7 +73,7 @@ mods.roots.moss.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -97,7 +97,7 @@ mods.roots.moss.recipeBuilder()
     mods.roots.moss.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.moss.remove(item('minecraft:cobblestone'))
 mods.roots.moss.removeAll()

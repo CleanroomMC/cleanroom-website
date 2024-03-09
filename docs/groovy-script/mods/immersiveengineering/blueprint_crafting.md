@@ -46,7 +46,7 @@ Just like other recipe types, the Blueprint Crafting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.blueprint_crafting.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.blueprint_crafting.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
 
     ```groovy:no-line-numbers
@@ -75,7 +75,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blueprint_crafting.recipeBuilder()
     .input(item('minecraft:diamond'), ore('ingotGold'))
@@ -84,7 +84,7 @@ mods.immersiveengineering.blueprint_crafting.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.immersiveengineering.blueprint_crafting.recipeBuilder()
     mods.immersiveengineering.blueprint_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blueprint_crafting.removeByCategory('electrode')
 mods.immersiveengineering.blueprint_crafting.removeByInput('components', item('immersiveengineering:metal:38'), item('immersiveengineering:metal:38'), item('immersiveengineering:metal'))

@@ -31,7 +31,7 @@ mods.pyrotech.CompostBin
     mods.pyrotech.compost_bin.add(String, IIngredient, ItemStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compost_bin.add('iron_to_clay2', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 2)
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Compost Bin also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.compost_bin.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.compost_bin.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -80,7 +80,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compost_bin.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -90,7 +90,7 @@ mods.pyrotech.compost_bin.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.pyrotech.compost_bin.recipeBuilder()
     mods.pyrotech.compost_bin.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.compost_bin.removeByInput(item('minecraft:golden_carrot'))
 mods.pyrotech.compost_bin.removeAll()

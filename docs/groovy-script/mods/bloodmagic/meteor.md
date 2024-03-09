@@ -38,7 +38,7 @@ Just like other recipe types, the Meteor also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.meteor.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.meteor.recipeBuilder() {open id="abstract"}
 - `int`. Sets the amount of Life Essence drained from the Blood Network to spawn the meteor. Requires greater than or equal to 0. (Default `1000000`).
 
     ```groovy:no-line-numbers
@@ -79,7 +79,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.meteor.recipeBuilder()
     .catalyst(item('minecraft:gold_ingot'))
@@ -99,7 +99,7 @@ mods.bloodmagic.meteor.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -129,7 +129,7 @@ mods.bloodmagic.meteor.recipeBuilder()
     mods.bloodmagic.meteor.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.meteor.remove(item('minecraft:diamond_block'))
 mods.bloodmagic.meteor.removeByCatalyst(item('minecraft:iron_block'))

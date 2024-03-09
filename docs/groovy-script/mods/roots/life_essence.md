@@ -43,7 +43,7 @@ mods.roots.LifeEssence
     mods.roots.life_essence.add(EntityLivingBase)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.life_essence.add(entity('minecraft:wither_skeleton'))
 ```
@@ -76,7 +76,7 @@ mods.roots.life_essence.add(entity('minecraft:wither_skeleton'))
     mods.roots.life_essence.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.life_essence.remove(entity('minecraft:sheep'))
 mods.roots.life_essence.removeAll()

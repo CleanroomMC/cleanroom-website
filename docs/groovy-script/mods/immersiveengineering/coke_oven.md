@@ -42,7 +42,7 @@ Just like other recipe types, the Coke Oven also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.coke_oven.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.coke_oven.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.coke_oven.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -87,7 +87,7 @@ mods.immersiveengineering.coke_oven.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -111,7 +111,7 @@ mods.immersiveengineering.coke_oven.recipeBuilder()
     mods.immersiveengineering.coke_oven.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.coke_oven.removeByInput(item('minecraft:log'))
 mods.immersiveengineering.coke_oven.removeByOutput(item('immersiveengineering:material:6'))

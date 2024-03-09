@@ -10,11 +10,11 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts an input item into an output itemstack, draining life essence from the altar at a base rate and requiring at least a specific tier.
 
-:::::::::: details NOTE {open}
+:::::::::: details Note {open id="note"}
 The Blood Altar consumes Life Essence from its internal tank to convert the input item into the output item. Each tier requires a larger multiblock, which may contain Runes that modify the Blood Altar's functionality.
 ::::::::::
 
-:::::::::: danger
+:::::::::: info Danger {id="danger"}
 Tier 6 must be enabled in the config to use a Blood Altar of that tier.
 ::::::::::
 
@@ -50,7 +50,7 @@ Just like other recipe types, the Blood Altar also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.blood_altar.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.blood_altar.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -98,7 +98,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.blood_altar.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -119,7 +119,7 @@ mods.bloodmagic.blood_altar.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -143,7 +143,7 @@ mods.bloodmagic.blood_altar.recipeBuilder()
     mods.bloodmagic.blood_altar.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.blood_altar.removeByInput(item('minecraft:ender_pearl'))
 mods.bloodmagic.blood_altar.removeByOutput(item('bloodmagic:slate:4'))

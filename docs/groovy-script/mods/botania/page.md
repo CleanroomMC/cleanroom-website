@@ -95,7 +95,7 @@ mods.botania.Page
     mods.botania.page.createTextPage(String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.page.createBrewingPage('groovy.exampleBrewingPage', 'bottomText', 'bottomText', mods.botania.brewrecipe.recipeBuilder().input(item('minecraft:clay'), ore('ingotGold'), ore('gemDiamond')).brew(brew('absorption')).register())
 mods.botania.page.createCraftingPage('groovy.exampleCraftingPage', 'minecraft:clay')
@@ -138,7 +138,7 @@ mods.botania.page.createTextPage('groovy.exampleTextPage')
     mods.botania.page.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.page.removeByEntry('botania.entry.runeAltar')
 mods.botania.page.removeAll()

@@ -31,7 +31,7 @@ Just like other recipe types, the Runic Shear Block also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.runic_shear_block.recipeBuilder() {open}
+:::::::::: details mods.roots.runic_shear_block.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -72,7 +72,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.runic_shear_block.recipeBuilder()
     .name('clay_from_runic_diamond')
@@ -89,7 +89,7 @@ mods.roots.runic_shear_block.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -119,7 +119,7 @@ mods.roots.runic_shear_block.recipeBuilder()
     mods.roots.runic_shear_block.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.runic_shear_block.removeByName(resource('roots:wildewheet'))
 mods.roots.runic_shear_block.removeByOutput(item('roots:spirit_herb'))

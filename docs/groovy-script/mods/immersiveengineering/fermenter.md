@@ -38,7 +38,7 @@ Just like other recipe types, the Fermenter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.fermenter.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.fermenter.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -75,7 +75,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.fermenter.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -85,7 +85,7 @@ mods.immersiveengineering.fermenter.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -109,7 +109,7 @@ mods.immersiveengineering.fermenter.recipeBuilder()
     mods.immersiveengineering.fermenter.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.fermenter.removeByInput(item('minecraft:reeds'))
 mods.immersiveengineering.fermenter.removeByOutput(fluid('ethanol'))

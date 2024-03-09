@@ -31,7 +31,7 @@ Just like other recipe types, the Animal Harvest also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.animal_harvest.recipeBuilder() {open}
+:::::::::: details mods.roots.animal_harvest.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -51,7 +51,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.animal_harvest.recipeBuilder()
     .name('wither_skeleton_harvest')
@@ -63,7 +63,7 @@ mods.roots.animal_harvest.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -87,7 +87,7 @@ mods.roots.animal_harvest.recipeBuilder()
     mods.roots.animal_harvest.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.animal_harvest.removeByEntity(entity('minecraft:pig'))
 mods.roots.animal_harvest.removeByName(resource('roots:chicken'))

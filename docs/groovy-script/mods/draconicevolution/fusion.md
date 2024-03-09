@@ -31,7 +31,7 @@ Just like other recipe types, the Fusion also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.draconicevolution.fusion.recipeBuilder() {open}
+:::::::::: details mods.draconicevolution.fusion.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 54.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.draconicevolution.fusion.recipeBuilder()
     .catalyst(item('minecraft:diamond'))
@@ -96,7 +96,7 @@ mods.draconicevolution.fusion.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.draconicevolution.fusion.recipeBuilder()
     mods.draconicevolution.fusion.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.draconicevolution.fusion.removeByCatalyst(item('draconicevolution:chaos_shard'))
 mods.draconicevolution.fusion.removeAll()

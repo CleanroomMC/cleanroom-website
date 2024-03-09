@@ -40,7 +40,7 @@ Just like other recipe types, the Crucible also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.crucible.recipeBuilder() {open}
+:::::::::: details mods.thaumcraft.crucible.recipeBuilder() {open id="abstract"}
 - `AspectList`. Sets the Aspects and amounts required to convert. Requires greater than 0.
 
     ```groovy:no-line-numbers
@@ -66,7 +66,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.crucible.recipeBuilder()
     .researchKey('UNLOCKALCHEMY@3')
@@ -76,7 +76,7 @@ mods.thaumcraft.crucible.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -94,7 +94,7 @@ mods.thaumcraft.crucible.recipeBuilder()
     mods.thaumcraft.crucible.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.crucible.removeByOutput(item('minecraft:gunpowder'))
 mods.thaumcraft.crucible.removeAll()

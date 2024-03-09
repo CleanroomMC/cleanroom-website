@@ -39,7 +39,7 @@ Just like other recipe types, the Dust Trigger also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.dust_trigger.triggerBuilder() {open}
+:::::::::: details mods.thaumcraft.dust_trigger.triggerBuilder() {open id="abstract"}
 - `String`. Sets the input as an ore. Requires either ore or target must be defined, but not both.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.dust_trigger.triggerBuilder()
     .researchKey('UNLOCKALCHEMY@3')
@@ -86,7 +86,7 @@ mods.thaumcraft.dust_trigger.triggerBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -98,7 +98,7 @@ mods.thaumcraft.dust_trigger.triggerBuilder()
     mods.thaumcraft.dust_trigger.removeByOutput(ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.dust_trigger.removeByOutput(item('thaumcraft:arcane_workbench'))
 ```

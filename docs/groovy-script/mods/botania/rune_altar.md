@@ -38,7 +38,7 @@ Just like other recipe types, the Rune Altar also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.rune_altar.recipeBuilder() {open}
+:::::::::: details mods.botania.rune_altar.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1. Requires that `input` IIngredients cannot contain Botania's Livingrock Item.
 
     ```groovy:no-line-numbers
@@ -67,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.rune_altar.recipeBuilder()
     .input(ore('gemEmerald'), item('minecraft:apple'))
@@ -76,7 +76,7 @@ mods.botania.rune_altar.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -106,7 +106,7 @@ mods.botania.rune_altar.recipeBuilder()
     mods.botania.rune_altar.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.rune_altar.removeByInput(ore('runeEarthB'))
 mods.botania.rune_altar.removeByInputs(ore('feather'), ore('string'))

@@ -39,7 +39,7 @@ mods.appliedenergistics2.Cannon
     mods.appliedenergistics2.cannon_ammo.add(ItemStack, double)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.cannon_ammo.add(item('minecraft:clay'), 10000)
 ```
@@ -60,7 +60,7 @@ mods.appliedenergistics2.cannon_ammo.add(item('minecraft:clay'), 10000)
     mods.appliedenergistics2.cannon_ammo.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.cannon_ammo.remove(item('minecraft:gold_nugget'))
 mods.appliedenergistics2.cannon_ammo.removeAll()

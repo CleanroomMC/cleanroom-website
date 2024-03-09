@@ -29,7 +29,7 @@ Just like other recipe types, the Predicates also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.predicates.stateBuilder() {open}
+:::::::::: details mods.roots.predicates.stateBuilder() {open id="abstract"}
 - `boolean`. Sets if the predicate checks the block above for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).
 
     ```groovy:no-line-numbers
@@ -62,7 +62,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.predicates.stateBuilder()
     .blockstate(blockstate('minecraft:red_flower'))
@@ -89,6 +89,6 @@ mods.roots.predicates.stateBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::

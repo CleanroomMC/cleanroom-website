@@ -35,7 +35,7 @@ mods.astral.MineralisRitualRegistry
     mods.astralsorcery.mineralis_ritual_registry.add(String, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.mineralis_ritual_registry.add(ore('blockDiamond'), 10000)
 ```
@@ -62,7 +62,7 @@ mods.astralsorcery.mineralis_ritual_registry.add(ore('blockDiamond'), 10000)
     mods.astralsorcery.mineralis_ritual_registry.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.mineralis_ritual_registry.remove(ore('oreDiamond'))
 mods.astralsorcery.mineralis_ritual_registry.removeAll()

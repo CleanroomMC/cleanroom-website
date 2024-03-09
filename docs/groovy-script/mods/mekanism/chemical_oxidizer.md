@@ -33,7 +33,7 @@ mods.mekanism.Oxidizer
     mods.mekanism.chemical_oxidizer.add(IIngredient, GasStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_oxidizer.add(ore('dustGold'), gas('gold'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Chemical Oxidizer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.chemical_oxidizer.recipeBuilder() {open}
+:::::::::: details mods.mekanism.chemical_oxidizer.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_oxidizer.recipeBuilder()
     .input(ore('dustGold'))
@@ -77,7 +77,7 @@ mods.mekanism.chemical_oxidizer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -95,7 +95,7 @@ mods.mekanism.chemical_oxidizer.recipeBuilder()
     mods.mekanism.chemical_oxidizer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_oxidizer.removeByInput(ore('dustSulfur'))
 mods.mekanism.chemical_oxidizer.removeAll()

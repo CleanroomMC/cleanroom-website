@@ -57,7 +57,7 @@ Just like other recipe types, the Lexicon Entry also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.entry.entryBuilder() {open}
+:::::::::: details mods.botania.entry.entryBuilder() {open id="abstract"}
 - `ItemStack`. Sets the default icon of the Entry. (Default `ItemStack.EMPTY`).
 
     ```groovy:no-line-numbers
@@ -109,7 +109,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.entry.entryBuilder()
     .name('test_entry')
@@ -120,7 +120,7 @@ mods.botania.entry.entryBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -156,7 +156,7 @@ mods.botania.entry.entryBuilder()
     mods.botania.entry.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.entry.remove('botania.entry.flowers')
 mods.botania.entry.removeEntry('botania.entry.apothecary')

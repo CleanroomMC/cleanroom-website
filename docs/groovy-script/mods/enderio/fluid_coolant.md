@@ -49,7 +49,7 @@ mods.eio.CombustionCoolant
     mods.enderio.fluid_coolant.addCoolant(FluidStack, float)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.fluid_coolant.addCoolant(fluid('xpjuice'), 1000)
 ```
@@ -76,7 +76,7 @@ mods.enderio.fluid_coolant.addCoolant(fluid('xpjuice'), 1000)
     mods.enderio.fluid_coolant.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.fluid_coolant.remove(fluid('water'))
 mods.enderio.fluid_coolant.removeAll()

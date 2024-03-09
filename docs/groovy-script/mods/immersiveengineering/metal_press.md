@@ -42,7 +42,7 @@ Just like other recipe types, the Metal Press also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.metal_press.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.metal_press.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.metal_press.recipeBuilder()
     .mold(item('minecraft:diamond'))
@@ -87,7 +87,7 @@ mods.immersiveengineering.metal_press.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -129,7 +129,7 @@ mods.immersiveengineering.metal_press.recipeBuilder()
     mods.immersiveengineering.metal_press.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.metal_press.removeByInput(item('minecraft:iron_ingot'))
 mods.immersiveengineering.metal_press.removeByInput(item('immersiveengineering:mold'), item('immersiveengineering:metal:8'))

@@ -41,7 +41,7 @@ mods.astral.PerkTreeConfig
     mods.astralsorcery.perk_tree_config.setXpFunction(Closure<Long>)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.perk_tree_config.setLevelCap(50)
 mods.astralsorcery.perk_tree_config.setXpFunction({ int i, long prev -> prev + 1000L + MathHelper.lfloor(Math.pow(2.0, i / 2.0F + 3)) })

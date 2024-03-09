@@ -31,7 +31,7 @@ mods.mekanism.MetallurgicInfuser
     mods.mekanism.metallurgic_infuser.add(IIngredient, InfuseType, int, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.metallurgic_infuser.add(item('minecraft:nether_star'), infusion('groovy_example'), 50, item('minecraft:clay'))
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Metallurgic Infuser also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.metallurgic_infuser.recipeBuilder() {open}
+:::::::::: details mods.mekanism.metallurgic_infuser.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.metallurgic_infuser.recipeBuilder()
     .input(item('minecraft:nether_star'))
@@ -87,7 +87,7 @@ mods.mekanism.metallurgic_infuser.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -111,7 +111,7 @@ mods.mekanism.metallurgic_infuser.recipeBuilder()
     mods.mekanism.metallurgic_infuser.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.metallurgic_infuser.removeByInput(ore('dustObsidian'), 'DIAMOND')
 mods.mekanism.metallurgic_infuser.removeAll()

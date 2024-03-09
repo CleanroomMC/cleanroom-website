@@ -29,7 +29,7 @@ Just like other recipe types, the Transmutation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.transmutation.recipeBuilder() {open}
+:::::::::: details mods.roots.transmutation.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.transmutation.recipeBuilder()
     .name('clay_duping')
@@ -92,7 +92,7 @@ mods.roots.transmutation.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -128,7 +128,7 @@ mods.roots.transmutation.recipeBuilder()
     mods.roots.transmutation.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.transmutation.removeByName(resource('roots:redstone_block_to_glowstone'))
 mods.roots.transmutation.removeByOutput(blockstate('minecraft:log:variant=jungle'))

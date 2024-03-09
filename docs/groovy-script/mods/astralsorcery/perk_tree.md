@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Create a custom perk with a custom effect, at a given location.
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 This compat is not fully documented. Some or all of its features are not present on the wiki. View the source code to gain an accurate understanding of the compat.
 ::::::::::
 
@@ -51,7 +51,7 @@ mods.astral.PerkTree
     mods.astralsorcery.perk_tree.movePerk(AbstractPerk, int, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.perk_tree.movePerk(mods.astralsorcery.perktree.getPerk('astralsorcery:magnet_ats_reach'), 30, 30)
 ```
@@ -72,7 +72,7 @@ mods.astralsorcery.perk_tree.movePerk(mods.astralsorcery.perktree.getPerk('astra
     mods.astralsorcery.perk_tree.removeConnection(String, String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.perk_tree.remove('astralsorcery:mec_inc_ms_2')
 ```

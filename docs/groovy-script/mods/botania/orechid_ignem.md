@@ -37,7 +37,7 @@ mods.botania.OrechidIgnem
     mods.botania.orechid_ignem.add(String, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.orechid_ignem.add(ore('oreEmerald'), 1350)
 mods.botania.orechid_ignem.add(ore('blockGold'), 1800)
@@ -65,7 +65,7 @@ mods.botania.orechid_ignem.add(ore('blockGold'), 1800)
     mods.botania.orechid_ignem.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.orechid_ignem.removeByOutput(ore('oreEmerald'))
 mods.botania.orechid_ignem.removeByOutput(ore('oreQuartz'))

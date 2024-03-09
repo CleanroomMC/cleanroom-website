@@ -31,7 +31,7 @@ Just like other recipe types, the Animal Harvest Fish also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.animal_harvest_fish.recipeBuilder() {open}
+:::::::::: details mods.roots.animal_harvest_fish.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -60,7 +60,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.animal_harvest_fish.recipeBuilder()
     .name('clay_fish')
@@ -74,7 +74,7 @@ mods.roots.animal_harvest_fish.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -104,7 +104,7 @@ mods.roots.animal_harvest_fish.recipeBuilder()
     mods.roots.animal_harvest_fish.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.animal_harvest_fish.removeByFish(item('minecraft:fish:2'))
 mods.roots.animal_harvest_fish.removeByName(resource('roots:cod'))

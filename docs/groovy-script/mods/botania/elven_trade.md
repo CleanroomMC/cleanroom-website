@@ -44,7 +44,7 @@ Just like other recipe types, the Elven Trade also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.elven_trade.recipeBuilder() {open}
+:::::::::: details mods.botania.elven_trade.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 99.
 
     ```groovy:no-line-numbers
@@ -67,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.elven_trade.recipeBuilder()
     .input(ore('ingotGold'), ore('ingotIron'))
@@ -75,7 +75,7 @@ mods.botania.elven_trade.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -99,7 +99,7 @@ mods.botania.elven_trade.recipeBuilder()
     mods.botania.elven_trade.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.elven_trade.removeByInputs(ore('ingotManasteel'))
 mods.botania.elven_trade.removeByOutputs(item('botania:dreamwood'))

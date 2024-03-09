@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts one main item and any number of additional items into an output itemstack, with a configurable rf cost and consumption per tick amount.
 
-:::::::::: info
+:::::::::: info Info {id="info"}
 By default, there are no Combination recipes
 ::::::::::
 
@@ -50,7 +50,7 @@ Just like other recipe types, the Combination Crafting also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.extendedcrafting.combination_crafting.recipeBuilder() {open}
+:::::::::: details mods.extendedcrafting.combination_crafting.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -95,7 +95,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.combination_crafting.recipeBuilder()
     .input(item('minecraft:pumpkin'))
@@ -113,7 +113,7 @@ mods.extendedcrafting.combination_crafting.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -143,7 +143,7 @@ mods.extendedcrafting.combination_crafting.recipeBuilder()
     mods.extendedcrafting.combination_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.combination_crafting.removeByInput(item('minecraft:pumpkin'))
 mods.extendedcrafting.combination_crafting.removeByOutput(item('minecraft:gold_ingot'))

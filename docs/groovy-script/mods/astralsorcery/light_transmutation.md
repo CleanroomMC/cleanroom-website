@@ -35,7 +35,7 @@ Just like other recipe types, the Light Transmutation also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.light_transmutation.recipeBuilder() {open}
+:::::::::: details mods.astralsorcery.light_transmutation.recipeBuilder() {open id="abstract"}
 - `double`. Sets the amount of starlight required to complete the craft. Requires greater than or equal to 0. (Default `0.0d`).
 
     ```groovy:no-line-numbers
@@ -85,7 +85,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.light_transmutation.recipeBuilder()
     .input(block('minecraft:stone'))
@@ -103,7 +103,7 @@ mods.astralsorcery.light_transmutation.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -139,7 +139,7 @@ mods.astralsorcery.light_transmutation.recipeBuilder()
     mods.astralsorcery.light_transmutation.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.light_transmutation.removeByInput(block('minecraft:netherrack'))
 mods.astralsorcery.light_transmutation.removeByInput(blockstate('minecraft:sandstone'))

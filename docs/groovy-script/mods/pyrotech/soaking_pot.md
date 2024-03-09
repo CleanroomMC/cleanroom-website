@@ -31,7 +31,7 @@ mods.pyrotech.SoakingPot
     mods.pyrotech.soaking_pot.add(String, IIngredient, FluidStack, ItemStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.soaking_pot.add('dirt_to_apple', item('minecraft:dirt'), fluid('water'), item('minecraft:apple'), 1200)
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Soaking Pot also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.soaking_pot.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.soaking_pot.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -88,7 +88,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     campfireRequired(boolean)
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.soaking_pot.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -99,7 +99,7 @@ mods.pyrotech.soaking_pot.recipeBuilder()
     .name('diamond_to_emerald_with_amongium_soaking_pot')
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -123,7 +123,7 @@ mods.pyrotech.soaking_pot.recipeBuilder()
     mods.pyrotech.soaking_pot.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.soaking_pot.removeByOutput(item('pyrotech:material', 54))
 mods.pyrotech.soaking_pot.removeAll()

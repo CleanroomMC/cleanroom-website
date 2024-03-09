@@ -49,7 +49,7 @@ mods.eio.CombustionFuel
     mods.enderio.fluid_fuel.addFuel(FluidStack, int, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.fluid_fuel.addFuel(fluid('lava'), 500, 1000)
 ```
@@ -76,7 +76,7 @@ mods.enderio.fluid_fuel.addFuel(fluid('lava'), 500, 1000)
     mods.enderio.fluid_fuel.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.fluid_fuel.remove(fluid('fire_water'))
 mods.enderio.fluid_fuel.removeAll()

@@ -35,7 +35,7 @@ mods.astral.AevitasPerkRegistry
     mods.astralsorcery.aevitas_perk_registry.add(String, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.aevitas_perk_registry.add(ore('blockDiamond'), 10000)
 ```
@@ -62,7 +62,7 @@ mods.astralsorcery.aevitas_perk_registry.add(ore('blockDiamond'), 10000)
     mods.astralsorcery.aevitas_perk_registry.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.aevitas_perk_registry.remove(ore('oreDiamond'))
 mods.astralsorcery.aevitas_perk_registry.removeAll()

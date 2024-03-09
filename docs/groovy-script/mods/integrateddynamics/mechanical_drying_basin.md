@@ -35,7 +35,7 @@ Just like other recipe types, the Mechanical Drying Basin also uses a recipe bui
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.integrateddynamics.mechanical_drying_basin.recipeBuilder() {open}
+:::::::::: details mods.integrateddynamics.mechanical_drying_basin.recipeBuilder() {open id="abstract"}
 - `boolean`. Sets if the recipe is added to the basic (Drying Basin) machine. (Default `false`).
 
     ```groovy:no-line-numbers
@@ -62,7 +62,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -72,7 +72,7 @@ mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -96,7 +96,7 @@ mods.integrateddynamics.mechanical_drying_basin.recipeBuilder()
     mods.integrateddynamics.mechanical_drying_basin.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.mechanical_drying_basin.removeAll()
 ```

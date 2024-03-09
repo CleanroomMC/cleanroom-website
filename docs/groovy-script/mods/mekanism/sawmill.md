@@ -29,7 +29,7 @@ mods.mekanism.Sawmill
     mods.mekanism.sawmill.add(IIngredient, ItemStack, ItemStack, double)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.sawmill.add(item('minecraft:diamond_block'), item('minecraft:diamond') * 9, item('minecraft:clay_ball'), 0.7)
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Sawmill also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.sawmill.recipeBuilder() {open}
+:::::::::: details mods.mekanism.sawmill.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -75,7 +75,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.sawmill.recipeBuilder()
     .input(item('minecraft:diamond_block'))
@@ -84,7 +84,7 @@ mods.mekanism.sawmill.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.mekanism.sawmill.recipeBuilder()
     mods.mekanism.sawmill.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.sawmill.removeByInput(item('minecraft:ladder'))
 mods.mekanism.sawmill.removeAll()

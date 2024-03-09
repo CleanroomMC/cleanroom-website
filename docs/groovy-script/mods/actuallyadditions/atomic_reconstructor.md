@@ -35,7 +35,7 @@ Just like other recipe types, the Atomic Reconstructor also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.atomic_reconstructor.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.atomic_reconstructor.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -85,7 +85,7 @@ mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -109,7 +109,7 @@ mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
     mods.actuallyadditions.atomic_reconstructor.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.atomic_reconstructor.removeByInput(item('minecraft:diamond'))
 mods.actuallyadditions.atomic_reconstructor.removeByOutput(item('actuallyadditions:block_crystal'))

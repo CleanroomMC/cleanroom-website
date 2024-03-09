@@ -38,7 +38,7 @@ Just like other recipe types, the Crusher also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.crusher.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.crusher.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -67,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.crusher.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -76,7 +76,7 @@ mods.immersiveengineering.crusher.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -100,7 +100,7 @@ mods.immersiveengineering.crusher.recipeBuilder()
     mods.immersiveengineering.crusher.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.crusher.removeByInput(item('immersiveengineering:material:7'))
 mods.immersiveengineering.crusher.removeByOutput(item('minecraft:sand'))

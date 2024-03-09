@@ -42,7 +42,7 @@ Just like other recipe types, the Tartaric Forge also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.tartaric_forge.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.tartaric_forge.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 4.
 
     ```groovy:no-line-numbers
@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.tartaric_forge.recipeBuilder()
     .input(item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'), item('minecraft:clay'))
@@ -95,7 +95,7 @@ mods.bloodmagic.tartaric_forge.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -125,7 +125,7 @@ mods.bloodmagic.tartaric_forge.recipeBuilder()
     mods.bloodmagic.tartaric_forge.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.tartaric_forge.removeByInput(item('minecraft:cauldron'), item('minecraft:stone'), item('minecraft:dye:4'), item('minecraft:diamond'))
 mods.bloodmagic.tartaric_forge.removeByInput(item('minecraft:gunpowder'), item('minecraft:redstone'))

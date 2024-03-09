@@ -53,7 +53,7 @@ mods.roots.Modifiers
     mods.roots.modifiers.enableAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.modifiers.enable(modifier('roots:weakened_response'))
 mods.roots.modifiers.enable(resource('roots:animal_savior'))
@@ -95,7 +95,7 @@ mods.roots.modifiers.enableAll()
     mods.roots.modifiers.disableAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.modifiers.disable(spell('spell_geas'))
 mods.roots.modifiers.disableAll()

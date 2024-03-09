@@ -39,7 +39,7 @@ Just like other recipe types, the Arcane Workbench also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.arcane_workbench.shapedBuilder() {open}
+:::::::::: details mods.thaumcraft.arcane_workbench.shapedBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -127,7 +127,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.arcane_workbench.shapedBuilder()
     .researchKey('UNLOCKALCHEMY@3')
@@ -152,11 +152,11 @@ mods.thaumcraft.arcane_workbench.shapedBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.thaumcraft.arcane_workbench.shapelessBuilder() {open}
+:::::::::: details mods.thaumcraft.arcane_workbench.shapelessBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -222,7 +222,7 @@ mods.thaumcraft.arcane_workbench.shapedBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.arcane_workbench.shapelessBuilder()
     .researchKey('UNLOCKALCHEMY@3')
@@ -234,7 +234,7 @@ mods.thaumcraft.arcane_workbench.shapelessBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -258,7 +258,7 @@ mods.thaumcraft.arcane_workbench.shapelessBuilder()
     mods.thaumcraft.arcane_workbench.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.arcane_workbench.removeByOutput(item('thaumcraft:mechanism_simple'))
 mods.thaumcraft.arcane_workbench.removeAll()

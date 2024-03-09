@@ -29,7 +29,7 @@ mods.pyrotech.Barrel
     mods.pyrotech.barrel.add(String, IIngredient, IIngredient, IIngredient, IIngredient, FluidStack, FluidStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.barrel.add('iron_dirt_water_to_lava', ore('ingotIron'), ore('ingotIron'), item('minecraft:dirt'), item('minecraft:dirt'), fluid('water'), fluid('lava'), 1000)
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Barrel also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.barrel.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.barrel.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -86,7 +86,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.barrel.recipeBuilder()
     .input(item('minecraft:diamond'), item('minecraft:diamond'), item('minecraft:diamond'), item('minecraft:emerald'))
@@ -97,7 +97,7 @@ mods.pyrotech.barrel.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -115,7 +115,7 @@ mods.pyrotech.barrel.recipeBuilder()
     mods.pyrotech.barrel.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.barrel.removeByOutput(fluid('freckleberry_wine') * 1000)
 mods.pyrotech.barrel.removeAll()

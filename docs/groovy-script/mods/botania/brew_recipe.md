@@ -31,7 +31,7 @@ Just like other recipe types, the Brew Recipe also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.brew_recipe.recipeBuilder() {open}
+:::::::::: details mods.botania.brew_recipe.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 6.
 
     ```groovy:no-line-numbers
@@ -53,7 +53,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.brew_recipe.recipeBuilder()
     .input(item('minecraft:clay'), ore('ingotGold'), ore('gemDiamond'))
@@ -61,7 +61,7 @@ mods.botania.brew_recipe.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -97,7 +97,7 @@ mods.botania.brew_recipe.recipeBuilder()
     mods.botania.brew_recipe.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.brew_recipe.removeByInput(item('minecraft:iron_ingot'))
 mods.botania.brew_recipe.removeByOutput(brew('allure'))

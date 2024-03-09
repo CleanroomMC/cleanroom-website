@@ -35,7 +35,7 @@ Just like other recipe types, the Soulbinder also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.soul_binder.recipeBuilder() {open}
+:::::::::: details mods.enderio.soul_binder.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -87,7 +87,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.soul_binder.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -99,7 +99,7 @@ mods.enderio.soul_binder.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -117,7 +117,7 @@ mods.enderio.soul_binder.recipeBuilder()
     mods.enderio.soul_binder.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.soul_binder.remove(item('enderio:item_material:17'))
 mods.enderio.soul_binder.removeAll()

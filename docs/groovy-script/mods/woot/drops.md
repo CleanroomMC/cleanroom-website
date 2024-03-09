@@ -36,7 +36,7 @@ Just like other recipe types, the Drops also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.woot.drops.recipeBuilder() {open}
+:::::::::: details mods.woot.drops.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -76,7 +76,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.drops.recipeBuilder()
     .name('minecraft:zombie')
@@ -86,7 +86,7 @@ mods.woot.drops.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -128,7 +128,7 @@ mods.woot.drops.recipeBuilder()
     mods.woot.drops.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.drops.removeByEntity(entity('minecraft:ender_dragon'))
 mods.woot.drops.removeByEntity('minecraft:ender_dragon')

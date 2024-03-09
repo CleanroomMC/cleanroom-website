@@ -46,7 +46,7 @@ Just like other recipe types, the Infusion Crafting also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.infusion_crafting.recipeBuilder() {open}
+:::::::::: details mods.thaumcraft.infusion_crafting.recipeBuilder() {open id="abstract"}
 - `AspectList`. Sets the Aspects and amounts required to complete the craft.
 
     ```groovy:no-line-numbers
@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.infusion_crafting.recipeBuilder()
     .researchKey('UNLOCKALCHEMY@3')
@@ -95,7 +95,7 @@ mods.thaumcraft.infusion_crafting.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -113,7 +113,7 @@ mods.thaumcraft.infusion_crafting.recipeBuilder()
     mods.thaumcraft.infusion_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.infusion_crafting.removeByOutput(item('thaumcraft:crystal_terra'))
 mods.thaumcraft.infusion_crafting.removeAll()

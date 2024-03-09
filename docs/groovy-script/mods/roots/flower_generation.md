@@ -31,7 +31,7 @@ Just like other recipe types, the Flower Generation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.flower_generation.recipeBuilder() {open}
+:::::::::: details mods.roots.flower_generation.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -52,7 +52,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.flower_generation.recipeBuilder()
     .name('clay_flower')
@@ -60,7 +60,7 @@ mods.roots.flower_generation.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -102,7 +102,7 @@ mods.roots.flower_generation.recipeBuilder()
     mods.roots.flower_generation.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'))
 mods.roots.flower_generation.removeByFlower(block('minecraft:red_flower'), 1)

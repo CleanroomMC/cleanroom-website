@@ -10,11 +10,11 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Has a catalyst (which may or may not be consumed) placed on the anvil, with the input items thrown atop the base.
 
-:::::::::: details NOTE {open}
+:::::::::: details Note {open id="note"}
 The anvil must be above a Magma Block and then right clicked with a Hammer, converting the input items into the output item.
 ::::::::::
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 While more than 6 items can function as the input of a Stygian Iron Anvil recipe, only the first 6 are shown in JEI.
 ::::::::::
 
@@ -41,7 +41,7 @@ Just like other recipe types, the Stygian Iron Anvil also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.woot.stygian_iron_anvil.recipeBuilder() {open}
+:::::::::: details mods.woot.stygian_iron_anvil.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.stygian_iron_anvil.recipeBuilder()
     .input(item('minecraft:diamond'),item('minecraft:diamond'),item('minecraft:diamond'))
@@ -94,7 +94,7 @@ mods.woot.stygian_iron_anvil.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -118,7 +118,7 @@ mods.woot.stygian_iron_anvil.recipeBuilder()
     mods.woot.stygian_iron_anvil.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.stygian_iron_anvil.removeByBase(item('minecraft:iron_bars'))
 mods.woot.stygian_iron_anvil.removeByOutput(item('woot:stygianironplate'))

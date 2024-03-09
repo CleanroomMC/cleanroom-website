@@ -33,7 +33,7 @@ mods.mekanism.sna
     mods.mekanism.solar_neutron_activator.add(GasStack, GasStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.solar_neutron_activator.add(gas('water'), gas('hydrogen'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Solar Neutron Activator also uses a recipe bui
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.solar_neutron_activator.recipeBuilder() {open}
+:::::::::: details mods.mekanism.solar_neutron_activator.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.solar_neutron_activator.recipeBuilder()
     .gasInput(gas('water'))
@@ -77,7 +77,7 @@ mods.mekanism.solar_neutron_activator.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -95,7 +95,7 @@ mods.mekanism.solar_neutron_activator.recipeBuilder()
     mods.mekanism.solar_neutron_activator.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.solar_neutron_activator.removeByInput(gas('lithium'))
 mods.mekanism.solar_neutron_activator.removeAll()

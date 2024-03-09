@@ -35,7 +35,7 @@ mods.botania.Knowledge
     mods.botania.knowledge.add(String, TextFormatting, boolean)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.knowledge.add('newType', TextFormatting.RED, true)
 ```

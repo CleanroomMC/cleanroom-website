@@ -42,7 +42,7 @@ Just like other recipe types, the Alloy Kiln also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.alloy_kiln.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.alloy_kiln.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 2.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.alloy_kiln.recipeBuilder()
     .input(item('minecraft:diamond'), ore('ingotGold'))
@@ -79,7 +79,7 @@ mods.immersiveengineering.alloy_kiln.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -103,7 +103,7 @@ mods.immersiveengineering.alloy_kiln.recipeBuilder()
     mods.immersiveengineering.alloy_kiln.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.alloy_kiln.removeByInput(item('minecraft:gold_ingot'), item('immersiveengineering:metal:3'))
 mods.immersiveengineering.alloy_kiln.removeByOutput(item('immersiveengineering:metal:6'))

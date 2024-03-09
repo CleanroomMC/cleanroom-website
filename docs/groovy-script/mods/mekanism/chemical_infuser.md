@@ -31,7 +31,7 @@ mods.mekanism.ChemicalInfuser
     mods.mekanism.chemical_infuser.add(GasStack, GasStack, GasStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_infuser.add(gas('copper') * 10, gas('iron'), gas('gold') * 15)
 ```
@@ -44,7 +44,7 @@ Just like other recipe types, the Chemical Infuser also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.chemical_infuser.recipeBuilder() {open}
+:::::::::: details mods.mekanism.chemical_infuser.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 2.
 
     ```groovy:no-line-numbers
@@ -67,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_infuser.recipeBuilder()
     .gasInput(gas('copper') * 10, gas('iron'))
@@ -75,7 +75,7 @@ mods.mekanism.chemical_infuser.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -93,7 +93,7 @@ mods.mekanism.chemical_infuser.recipeBuilder()
     mods.mekanism.chemical_infuser.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.chemical_infuser.removeByInput(gas('hydrogen'), gas('chlorine'))
 mods.mekanism.chemical_infuser.removeAll()

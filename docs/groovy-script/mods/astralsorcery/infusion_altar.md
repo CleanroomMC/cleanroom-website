@@ -35,7 +35,7 @@ Just like other recipe types, the Infusion Altar also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.infusion_altar.recipeBuilder() {open}
+:::::::::: details mods.astralsorcery.infusion_altar.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -84,7 +84,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.infusion_altar.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -101,7 +101,7 @@ mods.astralsorcery.infusion_altar.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -125,7 +125,7 @@ mods.astralsorcery.infusion_altar.recipeBuilder()
     mods.astralsorcery.infusion_altar.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.infusion_altar.removeByInput(item('minecraft:diamond_ore'))
 mods.astralsorcery.infusion_altar.removeByOutput(item('minecraft:iron_ingot'))

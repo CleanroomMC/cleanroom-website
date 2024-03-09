@@ -29,7 +29,7 @@ mods.pyrotech.Kiln
     mods.pyrotech.kiln.add(String, IIngredient, ItemStack, int, float, Iterable<ItemStack>)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.kiln.add('clay_to_iron', item('minecraft:clay_ball') * 5, item('minecraft:iron_ingot'), 1200, 0.5f, [item('minecraft:dirt'), item('minecraft:cobblestone')])
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Kiln also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.kiln.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.kiln.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -92,7 +92,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.kiln.recipeBuilder()
     .input(item('minecraft:iron_ingot'))
@@ -104,7 +104,7 @@ mods.pyrotech.kiln.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -128,7 +128,7 @@ mods.pyrotech.kiln.recipeBuilder()
     mods.pyrotech.kiln.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.kiln.removeByOutput(item('pyrotech:bucket_clay'))
 mods.pyrotech.kiln.removeAll()

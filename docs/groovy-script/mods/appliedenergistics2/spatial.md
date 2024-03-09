@@ -37,7 +37,7 @@ mods.appliedenergistics2.Spatial
     mods.appliedenergistics2.spatial.add(String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.spatial.add('net.minecraft.tileentity.TileEntityStructure')
 ```
@@ -64,7 +64,7 @@ mods.appliedenergistics2.spatial.add('net.minecraft.tileentity.TileEntityStructu
     mods.appliedenergistics2.spatial.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.appliedenergistics2.spatial.remove('net.minecraft.tileentity.TileEntityChest')
 mods.appliedenergistics2.spatial.removeAll()

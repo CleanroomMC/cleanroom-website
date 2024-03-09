@@ -50,7 +50,7 @@ Just like other recipe types, the Fountain also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.fountain.chanceHelper() {open}
+:::::::::: details mods.astralsorcery.fountain.chanceHelper() {open id="abstract"}
 - `Fluid`. Sets the fluid being generated. Requires not null.
 
     ```groovy:no-line-numbers
@@ -82,7 +82,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.fountain.chanceHelper()
     .fluid(fluid('astralsorcery.liquidstarlight'))
@@ -92,7 +92,7 @@ mods.astralsorcery.fountain.chanceHelper()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -122,7 +122,7 @@ mods.astralsorcery.fountain.chanceHelper()
     mods.astralsorcery.fountain.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.fountain.remove(fluid('lava'))
 mods.astralsorcery.fountain.removeAll()

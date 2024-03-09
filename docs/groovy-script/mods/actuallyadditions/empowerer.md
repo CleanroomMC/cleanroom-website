@@ -31,7 +31,7 @@ Just like other recipe types, the Empowerer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.empowerer.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.empowerer.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 4 and less than or equal to 5.
 
     ```groovy:no-line-numbers
@@ -103,7 +103,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.empowerer.recipeBuilder()
     .mainInput(item('minecraft:clay'))
@@ -139,7 +139,7 @@ mods.actuallyadditions.empowerer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -163,7 +163,7 @@ mods.actuallyadditions.empowerer.recipeBuilder()
     mods.actuallyadditions.empowerer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.empowerer.removeByInput(item('actuallyadditions:item_crystal'))
 mods.actuallyadditions.empowerer.removeByOutput(item('actuallyadditions:item_misc:24'))

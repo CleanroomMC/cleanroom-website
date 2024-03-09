@@ -29,7 +29,7 @@ mods.avaritia.Compressor
     mods.avaritia.compressor.add(ItemStack, IIngredient, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.compressor.add(item('minecraft:nether_star'), item('minecraft:clay_ball'), 100)
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Compressor also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.avaritia.compressor.recipeBuilder() {open}
+:::::::::: details mods.avaritia.compressor.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -72,7 +72,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.compressor.recipeBuilder()
     .input(item('minecraft:clay_ball') * 100)
@@ -81,7 +81,7 @@ mods.avaritia.compressor.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -99,7 +99,7 @@ mods.avaritia.compressor.recipeBuilder()
     mods.avaritia.compressor.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.avaritia.compressor.removeByOutput(item('avaritia:singularity', 0))
 mods.avaritia.compressor.removeAll()

@@ -29,7 +29,7 @@ mods.mekanism.Crystallizer
     mods.mekanism.crystallizer.add(GasStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crystallizer.add(gas('cleanGold'), item('minecraft:gold_ingot'))
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Crystallizer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.crystallizer.recipeBuilder() {open}
+:::::::::: details mods.mekanism.crystallizer.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crystallizer.recipeBuilder()
     .gasInput(gas('cleanGold'))
@@ -73,7 +73,7 @@ mods.mekanism.crystallizer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -91,7 +91,7 @@ mods.mekanism.crystallizer.recipeBuilder()
     mods.mekanism.crystallizer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.crystallizer.removeByInput(gas('cleanGold'))
 mods.mekanism.crystallizer.removeAll()

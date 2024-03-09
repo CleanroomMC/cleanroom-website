@@ -35,7 +35,7 @@ mods.botania.Category
     mods.botania.category.add(String, ResourceLocation, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.category.add('test', resource('minecraft:textures/items/apple.png'))
 mods.botania.category.add('first', resource('minecraft:textures/items/clay_ball.png'), 100)
@@ -63,7 +63,7 @@ mods.botania.category.add('first', resource('minecraft:textures/items/clay_ball.
     mods.botania.category.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.category.remove('botania.category.alfhomancy')
 mods.botania.category.removeCategory('botania.category.misc')

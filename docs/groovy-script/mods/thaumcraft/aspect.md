@@ -33,7 +33,7 @@ Just like other recipe types, the Aspect Creator also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.aspect.aspectBuilder() {open}
+:::::::::: details mods.thaumcraft.aspect.aspectBuilder() {open id="abstract"}
 - `String`. Sets the name of the new Aspect. Requires not null. Requires the name must be a unique string.
 
     ```groovy:no-line-numbers
@@ -74,7 +74,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.aspect.aspectBuilder()
     .tag('humor')
@@ -85,7 +85,7 @@ mods.thaumcraft.aspect.aspectBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -97,7 +97,7 @@ mods.thaumcraft.aspect.aspectBuilder()
     mods.thaumcraft.aspect.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.aspect.removeAll()
 ```

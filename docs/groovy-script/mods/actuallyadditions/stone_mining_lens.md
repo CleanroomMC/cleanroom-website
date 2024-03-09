@@ -35,7 +35,7 @@ Just like other recipe types, the Stone Mining Lens also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.stone_mining_lens.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.stone_mining_lens.recipeBuilder() {open id="abstract"}
 - `String`. Sets the ore given by the recipe. Requires not null.
 
     ```groovy:no-line-numbers
@@ -55,7 +55,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.stone_mining_lens.recipeBuilder()
     .ore(ore('blockDiamond'))
@@ -68,7 +68,7 @@ mods.actuallyadditions.stone_mining_lens.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -92,7 +92,7 @@ mods.actuallyadditions.stone_mining_lens.recipeBuilder()
     mods.actuallyadditions.stone_mining_lens.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.stone_mining_lens.removeByOre(ore('oreCoal'))
 mods.actuallyadditions.stone_mining_lens.removeByOre('oreLapis')

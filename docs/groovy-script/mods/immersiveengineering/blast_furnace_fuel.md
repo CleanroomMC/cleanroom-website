@@ -42,7 +42,7 @@ Just like other recipe types, the Blast Furnace Fuel also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.blast_furnace_fuel.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.blast_furnace_fuel.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -63,7 +63,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -71,7 +71,7 @@ mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -89,7 +89,7 @@ mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
     mods.immersiveengineering.blast_furnace_fuel.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.blast_furnace_fuel.removeByInput(item('immersiveengineering:material:6'))
 mods.immersiveengineering.blast_furnace_fuel.removeAll()

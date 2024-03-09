@@ -52,7 +52,7 @@ Just like other recipe types, the Smelting Bonus also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.smelting_bonus.recipeBuilder() {open}
+:::::::::: details mods.thaumcraft.smelting_bonus.recipeBuilder() {open id="abstract"}
 - `IIngredient`. Sets the input of the smelting operation. Requires not null.
 
     ```groovy:no-line-numbers
@@ -77,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.smelting_bonus.recipeBuilder()
     .input(item('minecraft:cobblestone'))
@@ -91,7 +91,7 @@ mods.thaumcraft.smelting_bonus.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -109,7 +109,7 @@ mods.thaumcraft.smelting_bonus.recipeBuilder()
     mods.thaumcraft.smelting_bonus.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.smelting_bonus.removeByOutput(item('minecraft:gold_nugget'))
 mods.thaumcraft.smelting_bonus.removeAll()

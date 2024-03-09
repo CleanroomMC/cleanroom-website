@@ -35,7 +35,7 @@ Just like other recipe types, the Starlight Altar also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.discoveryRecipeBuilder() {open}
+:::::::::: details mods.astralsorcery.starlight_altar.discoveryRecipeBuilder() {open id="abstract"}
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
@@ -93,7 +93,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     .output(item('minecraft:water_bucket'))
@@ -106,11 +106,11 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.attunementRecipeBuilder() {open}
+:::::::::: details mods.astralsorcery.starlight_altar.attunementRecipeBuilder() {open id="abstract"}
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
@@ -172,7 +172,7 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.constellationRecipeBuilder() {open}
+:::::::::: details mods.astralsorcery.starlight_altar.constellationRecipeBuilder() {open id="abstract"}
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
@@ -230,7 +230,7 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     .output(item('minecraft:pumpkin'))
@@ -244,11 +244,11 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.astralsorcery.starlight_altar.traitRecipeBuilder() {open}
+:::::::::: details mods.astralsorcery.starlight_altar.traitRecipeBuilder() {open id="abstract"}
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
@@ -306,7 +306,7 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.starlight_altar.traitRecipeBuilder()
     .output(item('astralsorcery:itemrockcrystalsimple').setSize(300).setPurity(50).setCutting(50))
@@ -326,7 +326,7 @@ mods.astralsorcery.starlight_altar.traitRecipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -350,7 +350,7 @@ mods.astralsorcery.starlight_altar.traitRecipeBuilder()
     mods.astralsorcery.starlight_altar.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.starlight_altar.removeAll()
 ```

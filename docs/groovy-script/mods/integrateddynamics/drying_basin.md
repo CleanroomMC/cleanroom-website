@@ -35,7 +35,7 @@ Just like other recipe types, the Drying Basin also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.integrateddynamics.drying_basin.recipeBuilder() {open}
+:::::::::: details mods.integrateddynamics.drying_basin.recipeBuilder() {open id="abstract"}
 - `boolean`. Sets if the recipe is added to the basic (Drying Basin) machine. (Default `true`).
 
     ```groovy:no-line-numbers
@@ -62,7 +62,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.drying_basin.recipeBuilder()
     .input(item('minecraft:gold_ingot'))
@@ -79,7 +79,7 @@ mods.integrateddynamics.drying_basin.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -103,7 +103,7 @@ mods.integrateddynamics.drying_basin.recipeBuilder()
     mods.integrateddynamics.drying_basin.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.integrateddynamics.drying_basin.removeAll()
 ```

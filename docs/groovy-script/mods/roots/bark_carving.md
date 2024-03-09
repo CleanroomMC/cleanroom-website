@@ -33,7 +33,7 @@ Just like other recipe types, the Bark Carving also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.bark_carving.recipeBuilder() {open}
+:::::::::: details mods.roots.bark_carving.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.bark_carving.recipeBuilder()
     .name('gold_bark')
@@ -84,7 +84,7 @@ mods.roots.bark_carving.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -120,7 +120,7 @@ mods.roots.bark_carving.recipeBuilder()
     mods.roots.bark_carving.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.bark_carving.removeByBlock(item('minecraft:log:1'))
 mods.roots.bark_carving.removeByInput(item('minecraft:log'))

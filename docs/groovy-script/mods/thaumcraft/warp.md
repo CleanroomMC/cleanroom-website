@@ -33,7 +33,7 @@ mods.thaum.Warp
     mods.thaumcraft.warp.addWarp(ItemStack, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.warp.addWarp(item('minecraft:pumpkin'), 3)
 ```
@@ -54,7 +54,7 @@ mods.thaumcraft.warp.addWarp(item('minecraft:pumpkin'), 3)
     mods.thaumcraft.warp.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.warp.removeWarp(item('thaumcraft:void_hoe'))
 mods.thaumcraft.warp.removeAll()

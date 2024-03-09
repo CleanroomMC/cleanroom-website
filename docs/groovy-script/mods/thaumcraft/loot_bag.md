@@ -10,11 +10,11 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Control what the different rarities of lootbag drop when opened.
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 This compat is not fully documented. Some or all of its features are not present on the wiki. View the source code to gain an accurate understanding of the compat.
 ::::::::::
 
-:::::::::: bug
+:::::::::: info Bug {id="bug"}
 Armor chances are hard coded into randomized loot function, and are not currently removable.
 ::::::::::
 
@@ -47,7 +47,7 @@ mods.thaum.LootBag
     mods.thaumcraft.loot_bag.add(ItemStack, int, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.loot_bag.add(item('minecraft:diamond_block'), 100, 2)
 mods.thaumcraft.loot_bag.add(item('minecraft:dirt'), 100, 0)
@@ -69,7 +69,7 @@ mods.thaumcraft.loot_bag.add(item('minecraft:dirt'), 100, 0)
     mods.thaumcraft.loot_bag.removeAll(int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.loot_bag.remove(item('minecraft:ender_pearl'), 0)
 mods.thaumcraft.loot_bag.removeAll(2)

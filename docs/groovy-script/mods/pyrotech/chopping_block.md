@@ -31,7 +31,7 @@ Just like other recipe types, the Chopping Block also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.chopping_block.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.chopping_block.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -66,7 +66,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.chopping_block.recipeBuilder()
     .input(item('minecraft:diamond'))
@@ -79,7 +79,7 @@ mods.pyrotech.chopping_block.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -103,7 +103,7 @@ mods.pyrotech.chopping_block.recipeBuilder()
     mods.pyrotech.chopping_block.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.chopping_block.removeByInput(item('minecraft:log2'))
 mods.pyrotech.chopping_block.removeByOutput(item('minecraft:planks', 4))

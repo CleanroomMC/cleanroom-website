@@ -38,7 +38,7 @@ Just like other recipe types, the Enchanter also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.enderio.enchanter.recipeBuilder() {open}
+:::::::::: details mods.enderio.enchanter.recipeBuilder() {open id="abstract"}
 - `IIngredient`. Sets the item used in the book slot. Requires not null. (Default `item('minecraft:writable_book')`).
 
     ```groovy:no-line-numbers
@@ -81,7 +81,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.enchanter.recipeBuilder()
     .enchantment(enchantment('minecraft:unbreaking'))
@@ -98,7 +98,7 @@ mods.enderio.enchanter.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -116,7 +116,7 @@ mods.enderio.enchanter.recipeBuilder()
     mods.enderio.enchanter.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.enderio.enchanter.remove(enchantment('minecraft:mending'))
 mods.enderio.enchanter.removeAll()

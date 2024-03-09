@@ -111,7 +111,7 @@ mods.thaum.Research
     mods.thaumcraft.research.addScannable(String, Material)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.research.addResearchLocation(resource('thaumcraft:research/new.json'))
 mods.thaumcraft.research.addScannable('KNOWLEDGETYPEHUMOR', item('minecraft:pumpkin'))
@@ -125,7 +125,7 @@ Just like other recipe types, the Research also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.research.researchCategoryBuilder() {open}
+:::::::::: details mods.thaumcraft.research.researchCategoryBuilder() {open id="abstract"}
 - `String`. Sets a unique research key.
 
     ```groovy:no-line-numbers
@@ -175,7 +175,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.research.researchCategoryBuilder()
     .key('BASICS2')
@@ -193,7 +193,7 @@ mods.thaumcraft.research.researchCategoryBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -211,7 +211,7 @@ mods.thaumcraft.research.researchCategoryBuilder()
     mods.thaumcraft.research.removeAllCategories()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.research.removeCategory('BASICS')
 mods.thaumcraft.research.removeAllCategories()

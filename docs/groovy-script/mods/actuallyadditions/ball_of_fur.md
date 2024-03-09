@@ -35,7 +35,7 @@ Just like other recipe types, the Ball of Fur also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.actuallyadditions.ball_of_fur.recipeBuilder() {open}
+:::::::::: details mods.actuallyadditions.ball_of_fur.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -56,7 +56,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.ball_of_fur.recipeBuilder()
     .output(item('minecraft:clay') * 32)
@@ -64,7 +64,7 @@ mods.actuallyadditions.ball_of_fur.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -82,7 +82,7 @@ mods.actuallyadditions.ball_of_fur.recipeBuilder()
     mods.actuallyadditions.ball_of_fur.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.actuallyadditions.ball_of_fur.removeByOutput(item('minecraft:feather'))
 mods.actuallyadditions.ball_of_fur.removeAll()

@@ -29,7 +29,7 @@ Just like other recipe types, the Chrysopoeia also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.chrysopoeia.recipeBuilder() {open}
+:::::::::: details mods.roots.chrysopoeia.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -59,7 +59,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.chrysopoeia.recipeBuilder()
     .name('clay_transmute')
@@ -73,7 +73,7 @@ mods.roots.chrysopoeia.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -103,7 +103,7 @@ mods.roots.chrysopoeia.recipeBuilder()
     mods.roots.chrysopoeia.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.chrysopoeia.removeByInput(item('minecraft:rotten_flesh'))
 mods.roots.chrysopoeia.removeByName(resource('roots:gold_from_silver'))

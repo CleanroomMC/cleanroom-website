@@ -29,7 +29,7 @@ mods.pyrotech.Anvil
     mods.pyrotech.anvil.add(String, IIngredient, ItemStack, int, String, String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.anvil.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9, 'granite', 'hammer')
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Anvil also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.pyrotech.anvil.recipeBuilder() {open}
+:::::::::: details mods.pyrotech.anvil.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -95,7 +95,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.anvil.recipeBuilder()
     .input(item('minecraft:diamond') * 4)
@@ -125,7 +125,7 @@ mods.pyrotech.anvil.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -143,7 +143,7 @@ mods.pyrotech.anvil.recipeBuilder()
     mods.pyrotech.anvil.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.anvil.removeByOutput(item('minecraft:stone_slab', 3))
 mods.pyrotech.anvil.removeAll()

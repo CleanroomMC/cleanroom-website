@@ -31,7 +31,7 @@ Just like other recipe types, the Environmental Accumulator also uses a recipe b
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.evilcraft.environmental_accumulator.recipeBuilder() {open}
+:::::::::: details mods.evilcraft.environmental_accumulator.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -88,7 +88,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.evilcraft.environmental_accumulator.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -117,7 +117,7 @@ mods.evilcraft.environmental_accumulator.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -141,7 +141,7 @@ mods.evilcraft.environmental_accumulator.recipeBuilder()
     mods.evilcraft.environmental_accumulator.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.evilcraft.environmental_accumulator.removeByInput(item('evilcraft:exalted_crafter:1'))
 mods.evilcraft.environmental_accumulator.removeByOutput(item('evilcraft:exalted_crafter:2'))

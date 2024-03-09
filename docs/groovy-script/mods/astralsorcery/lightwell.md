@@ -44,7 +44,7 @@ Just like other recipe types, the Lightwell also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.lightwell.recipeBuilder() {open}
+:::::::::: details mods.astralsorcery.lightwell.recipeBuilder() {open id="abstract"}
 - `Color`. Sets the color of the produced particles.
 
     ```groovy:no-line-numbers
@@ -84,7 +84,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.lightwell.recipeBuilder()
     .catalyst(item('minecraft:stone'))
@@ -102,7 +102,7 @@ mods.astralsorcery.lightwell.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -132,7 +132,7 @@ mods.astralsorcery.lightwell.recipeBuilder()
     mods.astralsorcery.lightwell.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.lightwell.removeByCatalyst(item('minecraft:ice'))
 mods.astralsorcery.lightwell.removeByInput(item('minecraft:packed_ice'))

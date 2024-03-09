@@ -61,7 +61,7 @@ mods.woot.MobConfig
     mods.woot.mob_config.add(WootMobName, String, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.mob_config.add('spawn_ticks', 100)
 mods.woot.mob_config.add('minecraft:zombie', 'spawn_ticks', 1)
@@ -113,7 +113,7 @@ mods.woot.mob_config.add('minecraft:zombie', 'spawn_ticks', 1)
     mods.woot.mob_config.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.mob_config.remove('minecraft:wither_skeleton', 'spawn_units')
 mods.woot.mob_config.remove('minecraft:wither')

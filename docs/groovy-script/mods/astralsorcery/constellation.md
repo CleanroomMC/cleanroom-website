@@ -50,7 +50,7 @@ Just like other recipe types, the Constellation also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.constellation.constellationBuilder() {open}
+:::::::::: details mods.astralsorcery.constellation.constellationBuilder() {open id="abstract"}
 - `String`. Sets the name of the Constellation. Requires not null.
 
     ```groovy:no-line-numbers
@@ -91,7 +91,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.constellation.constellationBuilder()
     .major()
@@ -113,11 +113,11 @@ mods.astralsorcery.constellation.constellationBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.astralsorcery.constellation.constellationMapEffectBuilder() {open}
+:::::::::: details mods.astralsorcery.constellation.constellationMapEffectBuilder() {open id="abstract"}
 - `List<ConstellationMapEffectRegistry.PotionMapEffect>`. Sets the potion effects and strength available via the Stellar Refraction Table. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
@@ -142,7 +142,7 @@ mods.astralsorcery.constellation.constellationBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.constellation.constellationMapEffectBuilder()
     .constellation(constellation('square'))
@@ -151,11 +151,11 @@ mods.astralsorcery.constellation.constellationMapEffectBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
-:::::::::: details ABSTRACT mods.astralsorcery.constellation.signatureItems() {open}
+:::::::::: details mods.astralsorcery.constellation.signatureItems() {open id="abstract"}
 - `ArrayList<IIngredient>`. Sets the signature items of the Constellation.
 
     ```groovy:no-line-numbers
@@ -180,7 +180,7 @@ mods.astralsorcery.constellation.constellationMapEffectBuilder()
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.constellation.signatureItems()
     .constellation(constellation('square'))
@@ -191,7 +191,7 @@ mods.astralsorcery.constellation.signatureItems()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -233,7 +233,7 @@ mods.astralsorcery.constellation.signatureItems()
     mods.astralsorcery.constellation.removeAllSignatureItems()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.constellation.remove(constellation('bootes'))
 mods.astralsorcery.constellation.removeConstellationMapEffect(constellation('discidia'))

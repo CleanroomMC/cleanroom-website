@@ -43,7 +43,7 @@ mods.astral.Research
     mods.astralsorcery.research.moveNode(String, int, int)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.research.connectNodes('MY_TEST_RESEARCH2', 'ENHANCED_COLLECTOR')
 mods.astralsorcery.research.moveNode('SOOTYMARBLE', 5, 6)
@@ -57,7 +57,7 @@ Just like other recipe types, the Research Pages also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.research.researchBuilder() {open}
+:::::::::: details mods.astralsorcery.research.researchBuilder() {open id="abstract"}
 - `String`. Sets the unlocalized name of the node. Requires not null.
 
     ```groovy:no-line-numbers
@@ -106,7 +106,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.research.researchBuilder()
     .name('MY_TEST_RESEARCH')
@@ -128,7 +128,7 @@ mods.astralsorcery.research.researchBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -146,7 +146,7 @@ mods.astralsorcery.research.researchBuilder()
     mods.astralsorcery.research.removeNode(String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.research.disconnectNodes('MY_TEST_RESEARCH', 'ALTAR1')
 mods.astralsorcery.research.removeNode('CPAPER')

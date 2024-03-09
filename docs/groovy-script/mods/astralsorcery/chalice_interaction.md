@@ -42,7 +42,7 @@ Just like other recipe types, the Chalice Interaction also uses a recipe builder
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.astralsorcery.chalice_interaction.recipeBuilder() {open}
+:::::::::: details mods.astralsorcery.chalice_interaction.recipeBuilder() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 2.
 
     ```groovy:no-line-numbers
@@ -89,7 +89,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.chalice_interaction.recipeBuilder()
     .output(item('astralsorcery:blockmarble'))
@@ -98,7 +98,7 @@ mods.astralsorcery.chalice_interaction.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -140,7 +140,7 @@ mods.astralsorcery.chalice_interaction.recipeBuilder()
     mods.astralsorcery.chalice_interaction.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.astralsorcery.chalice_interaction.removeByInput(fluid('astralsorcery.liquidstarlight'))
 mods.astralsorcery.chalice_interaction.removeByInput(fluid('water'), fluid('lava'))

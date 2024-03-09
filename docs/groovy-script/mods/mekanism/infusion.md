@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Add new infusion types and itemstacks to those types.
 
-:::::::::: danger
+:::::::::: info Danger {id="danger"}
 To register a texture to be used by an Infusion Type, you have to add the following event listener to a PreInit file. `event_manager.listen { TextureStitchEvent.Pre event -> event.getMap().registerSprite(resource('placeholdername:blocks/example')) }`, where 'assets/placeholdername/textures/blocks/example.png' is the location of the desired texture.
 ::::::::::
 
@@ -69,7 +69,7 @@ mods.mekanism.Infusion
     mods.mekanism.infusion.add(String, int, IIngredient...)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.infusion.addType('groovy_example', resource('placeholdername:blocks/example'))
 mods.mekanism.infusion.add(infusion('diamond'), 100, item('minecraft:clay'))
@@ -124,7 +124,7 @@ mods.mekanism.infusion.add('groovy_example', 20, item('minecraft:packed_ice'))
     mods.mekanism.infusion.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.infusion.remove(ore('dustDiamond'))
 mods.mekanism.infusion.removeByType(infusion('carbon'))

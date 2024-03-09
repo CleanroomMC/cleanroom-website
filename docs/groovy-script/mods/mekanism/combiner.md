@@ -29,7 +29,7 @@ mods.mekanism.Combiner
     mods.mekanism.combiner.add(IIngredient, ItemStack, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.combiner.add(ore('gemQuartz') * 8, item('minecraft:netherrack'), item('minecraft:quartz_ore'))
 ```
@@ -42,7 +42,7 @@ Just like other recipe types, the Combiner also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.combiner.recipeBuilder() {open}
+:::::::::: details mods.mekanism.combiner.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -70,7 +70,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.combiner.recipeBuilder()
     .input(ore('gemQuartz') * 8)
@@ -79,7 +79,7 @@ mods.mekanism.combiner.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -97,7 +97,7 @@ mods.mekanism.combiner.recipeBuilder()
     mods.mekanism.combiner.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.combiner.removeByInput(item('minecraft:flint'), item('minecraft:cobblestone'))
 mods.mekanism.combiner.removeAll()

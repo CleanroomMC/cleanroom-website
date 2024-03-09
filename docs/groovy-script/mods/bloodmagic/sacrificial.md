@@ -50,7 +50,7 @@ Just like other recipe types, the Sacrificial also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.bloodmagic.sacrificial.recipeBuilder() {open}
+:::::::::: details mods.bloodmagic.sacrificial.recipeBuilder() {open id="abstract"}
 - `int`. Sets how much Life Essence the entity gives. Requires greater than or equal to 0. (Default `0`).
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.sacrificial.recipeBuilder()
     .entity('minecraft:enderman')
@@ -79,7 +79,7 @@ mods.bloodmagic.sacrificial.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -115,7 +115,7 @@ mods.bloodmagic.sacrificial.recipeBuilder()
     mods.bloodmagic.sacrificial.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.bloodmagic.sacrificial.remove(entity('minecraft:villager'))
 mods.bloodmagic.sacrificial.remove(resource('minecraft:villager'))

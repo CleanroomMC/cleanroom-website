@@ -44,7 +44,7 @@ Just like other recipe types, the Anvil Smashing also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.inspirations.anvil_smashing.recipeBuilder() {open}
+:::::::::: details mods.inspirations.anvil_smashing.recipeBuilder() {open id="abstract"}
 - `IBlockState`. Sets the output IBlockState that replaces the input. Requires not null.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.anvil_smashing.recipeBuilder()
     .input(blockstate('minecraft:diamond_block'))
@@ -82,7 +82,7 @@ mods.inspirations.anvil_smashing.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -130,7 +130,7 @@ mods.inspirations.anvil_smashing.recipeBuilder()
     mods.inspirations.anvil_smashing.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.inspirations.anvil_smashing.removeByInput(blockstate('minecraft:packed_ice'))
 mods.inspirations.anvil_smashing.removeByOutput(blockstate('minecraft:cobblestone'))

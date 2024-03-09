@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Controls what entities can be farmed for what items via an entity blacklist, mod blacklist, item output blacklist, item output mod blacklist, and a mob whitelist.
 
-:::::::::: details WARNING {open}
+:::::::::: details Warning {open id="warning"}
 If the whitelist contains any entities, any entities not in the whitelist are banned (rendering EntityModBlacklist and EntityBlacklist superflous). GenerateOnlyList contains all entities which cannot be captured via shard, meaning the controller would need to be obtained a different way.
 ::::::::::
 
@@ -81,7 +81,7 @@ mods.woot.Policy
     mods.woot.policy.addToItemModBlacklist(String)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.policy.addToEntityBlacklist('minecraft:witch')
 mods.woot.policy.addToEntityModBlacklist('minecraft')
@@ -191,7 +191,7 @@ mods.woot.policy.addToItemModBlacklist('woot')
     mods.woot.policy.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.woot.policy.removeFromEntityBlacklist('twilightforest:naga')
 mods.woot.policy.removeFromEntityModBlacklist('botania')

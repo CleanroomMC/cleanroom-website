@@ -38,7 +38,7 @@ Just like other recipe types, the Mixer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.mixer.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.mixer.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
 
     ```groovy:no-line-numbers
@@ -83,7 +83,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.mixer.recipeBuilder()
     .input(item('minecraft:diamond'), ore('ingotGold'), ore('ingotGold'), ore('ingotGold'))
@@ -93,7 +93,7 @@ mods.immersiveengineering.mixer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -123,7 +123,7 @@ mods.immersiveengineering.mixer.recipeBuilder()
     mods.immersiveengineering.mixer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.mixer.removeByInput(fluid('water'), item('minecraft:speckled_melon'))
 mods.immersiveengineering.mixer.removeByInput(item('minecraft:sand'), item('minecraft:sand'), item('minecraft:clay_ball'), item('minecraft:gravel'))

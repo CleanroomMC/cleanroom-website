@@ -29,7 +29,7 @@ Just like other recipe types, the Brew Effect also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.botania.brew.brewBuilder() {open}
+:::::::::: details mods.botania.brew.brewBuilder() {open id="abstract"}
 - `String`. Sets a unique key for the effect. Requires not null.
 
     ```groovy:no-line-numbers
@@ -83,7 +83,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.brew.brewBuilder()
     .key('groovy_example_brew')
@@ -96,7 +96,7 @@ mods.botania.brew.brewBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -114,7 +114,7 @@ mods.botania.brew.brewBuilder()
     mods.botania.brew.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.botania.brew.removeAll()
 ```

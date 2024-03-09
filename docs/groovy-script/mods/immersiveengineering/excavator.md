@@ -10,7 +10,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Adds a Mineral Mix with the given name, weight, fail chance, ores, and allowed dimensions. A Mineral Mix can be mined by an Excavator Multiblock and scanned via a Core Sample Drill.
 
-:::::::::: warning
+:::::::::: info Warning {id="warning"}
 Reloading will not change chunks already 'discovered'
 ::::::::::
 
@@ -42,7 +42,7 @@ Just like other recipe types, the Excavator also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.excavator.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.excavator.recipeBuilder() {open id="abstract"}
 - `float`. Sets the chance that a given mining attempt with output nothing instead of an ore. Requires greater than or equal to 0 and less than or equal to 1. (Default `0.0f`).
 
     ```groovy:no-line-numbers
@@ -96,7 +96,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.excavator.recipeBuilder()
     .name('demo')
@@ -117,7 +117,7 @@ mods.immersiveengineering.excavator.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -147,7 +147,7 @@ mods.immersiveengineering.excavator.recipeBuilder()
     mods.immersiveengineering.excavator.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.excavator.removeByMineral('silt')
 mods.immersiveengineering.excavator.removeByOres(ore('oreAluminum'))

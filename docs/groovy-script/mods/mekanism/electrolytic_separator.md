@@ -33,7 +33,7 @@ mods.mekanism.Separator
     mods.mekanism.electrolytic_separator.add(FluidStack, GasStack, GasStack, double)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.electrolytic_separator.add(fluid('lava') * 10, gas('cleanGold') * 5, gas('cleanCopper') * 3, 3000)
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Electrolytic Separator also uses a recipe buil
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.electrolytic_separator.recipeBuilder() {open}
+:::::::::: details mods.mekanism.electrolytic_separator.recipeBuilder() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -74,7 +74,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.electrolytic_separator.recipeBuilder()
     .fluidInput(fluid('lava') * 10)
@@ -83,7 +83,7 @@ mods.mekanism.electrolytic_separator.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -101,7 +101,7 @@ mods.mekanism.electrolytic_separator.recipeBuilder()
     mods.mekanism.electrolytic_separator.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.electrolytic_separator.removeByInput(fluid('water'))
 mods.mekanism.electrolytic_separator.removeAll()

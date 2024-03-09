@@ -58,7 +58,7 @@ Just like other recipe types, the Entity/Block Aspects also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.thaumcraft.aspect_helper.aspectBuilder() {open}
+:::::::::: details mods.thaumcraft.aspect_helper.aspectBuilder() {open id="abstract"}
 - `EntityEntry`. Sets the entity being modified. Requires either entity or object must be defined, but not both.
 
     ```groovy:no-line-numbers
@@ -90,7 +90,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.aspect_helper.aspectBuilder()
     .object(item('minecraft:stone'))
@@ -112,7 +112,7 @@ mods.thaumcraft.aspect_helper.aspectBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 

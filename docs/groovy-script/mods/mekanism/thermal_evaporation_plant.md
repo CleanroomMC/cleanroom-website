@@ -37,7 +37,7 @@ mods.mekanism.tep
     mods.mekanism.thermal_evaporation_plant.add(FluidStack, FluidStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.thermal_evaporation_plant.add(fluid('water'), fluid('steam'))
 ```
@@ -50,7 +50,7 @@ Just like other recipe types, the Thermal Evaporation Plant also uses a recipe b
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.thermal_evaporation_plant.recipeBuilder() {open}
+:::::::::: details mods.mekanism.thermal_evaporation_plant.recipeBuilder() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -73,7 +73,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.thermal_evaporation_plant.recipeBuilder()
     .fluidInput(fluid('water'))
@@ -81,7 +81,7 @@ mods.mekanism.thermal_evaporation_plant.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -99,7 +99,7 @@ mods.mekanism.thermal_evaporation_plant.recipeBuilder()
     mods.mekanism.thermal_evaporation_plant.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.thermal_evaporation_plant.removeByInput(fluid('water'))
 mods.mekanism.thermal_evaporation_plant.removeAll()

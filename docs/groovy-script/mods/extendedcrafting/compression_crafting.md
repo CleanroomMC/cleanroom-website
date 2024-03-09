@@ -46,7 +46,7 @@ Just like other recipe types, the Compression Crafting also uses a recipe builde
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.extendedcrafting.compression_crafting.recipeBuilder() {open}
+:::::::::: details mods.extendedcrafting.compression_crafting.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires not null.
 
     ```groovy:no-line-numbers
@@ -99,7 +99,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.compression_crafting.recipeBuilder()
     .input(item('minecraft:clay'))
@@ -118,7 +118,7 @@ mods.extendedcrafting.compression_crafting.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -148,7 +148,7 @@ mods.extendedcrafting.compression_crafting.recipeBuilder()
     mods.extendedcrafting.compression_crafting.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.extendedcrafting.compression_crafting.removeByCatalyst(item('extendedcrafting:material:11'))
 mods.extendedcrafting.compression_crafting.removeByInput(item('minecraft:gold_ingot'))

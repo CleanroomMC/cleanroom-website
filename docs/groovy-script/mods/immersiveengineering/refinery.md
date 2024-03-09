@@ -38,7 +38,7 @@ Just like other recipe types, the Refinery also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.immersiveengineering.refinery.recipeBuilder() {open}
+:::::::::: details mods.immersiveengineering.refinery.recipeBuilder() {open id="abstract"}
 - `FluidStackList`. Sets the fluid inputs of the recipe. Requires exactly 2.
 
     ```groovy:no-line-numbers
@@ -67,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.refinery.recipeBuilder()
     .fluidInput(fluid('water'), fluid('water'))
@@ -76,7 +76,7 @@ mods.immersiveengineering.refinery.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -100,7 +100,7 @@ mods.immersiveengineering.refinery.recipeBuilder()
     mods.immersiveengineering.refinery.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.immersiveengineering.refinery.removeByInput(fluid('plantoil'), fluid('ethanol'))
 mods.immersiveengineering.refinery.removeByOutput(fluid('biodiesel'))

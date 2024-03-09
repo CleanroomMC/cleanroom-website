@@ -33,7 +33,7 @@ mods.mekanism.Enricher
     mods.mekanism.enrichment_chamber.add(IIngredient, ItemStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.enrichment_chamber.add(item('minecraft:clay_ball'), item('minecraft:nether_star'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Enrichment Chamber also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.enrichment_chamber.recipeBuilder() {open}
+:::::::::: details mods.mekanism.enrichment_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.enrichment_chamber.recipeBuilder()
     .input(item('minecraft:clay_ball'))
@@ -77,7 +77,7 @@ mods.mekanism.enrichment_chamber.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -95,7 +95,7 @@ mods.mekanism.enrichment_chamber.recipeBuilder()
     mods.mekanism.enrichment_chamber.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.enrichment_chamber.removeByInput(item('minecraft:diamond'))
 mods.mekanism.enrichment_chamber.removeAll()

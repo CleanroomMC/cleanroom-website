@@ -31,7 +31,7 @@ Just like other recipe types, the Runic Shear Entity also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.roots.runic_shear_entity.recipeBuilder() {open}
+:::::::::: details mods.roots.runic_shear_entity.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.
 
     ```groovy:no-line-numbers
@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.runic_shear_entity.recipeBuilder()
     .name('clay_from_wither_skeletons')
@@ -93,7 +93,7 @@ mods.roots.runic_shear_entity.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -129,7 +129,7 @@ mods.roots.runic_shear_entity.recipeBuilder()
     mods.roots.runic_shear_entity.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.roots.runic_shear_entity.removeByEntity(entity('minecraft:chicken'))
 mods.roots.runic_shear_entity.removeByName(resource('roots:slime_strange_ooze'))

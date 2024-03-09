@@ -33,7 +33,7 @@ mods.mekanism.ChemicalWasher
     mods.mekanism.washer.add(GasStack, GasStack)
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.washer.add(gas('water'), gas('hydrogen'))
 ```
@@ -46,7 +46,7 @@ Just like other recipe types, the Washer also uses a recipe builder.
 
 Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
 
-:::::::::: details ABSTRACT mods.mekanism.washer.recipeBuilder() {open}
+:::::::::: details mods.mekanism.washer.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
 
     ```groovy:no-line-numbers
@@ -69,7 +69,7 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
     register()
     ```
 
-:::::::::: details EXAMPLE {open}
+::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.washer.recipeBuilder()
     .gasInput(gas('water') * 10)
@@ -77,7 +77,7 @@ mods.mekanism.washer.recipeBuilder()
     .register()
 ```
 
-::::::::::
+:::::::::
 
 ::::::::::
 
@@ -95,7 +95,7 @@ mods.mekanism.washer.recipeBuilder()
     mods.mekanism.washer.removeAll()
     ```
 
-:::::::::: details EXAMPLE {open}
+:::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.washer.removeByInput(gas('iron'))
 mods.mekanism.washer.removeAll()
