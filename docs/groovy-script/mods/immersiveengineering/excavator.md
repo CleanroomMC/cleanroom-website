@@ -1,5 +1,6 @@
 ---
 title: "Excavator"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Adds a Mineral Mix with the given name, weight, fail chance, ores, and allowed dimensions. A Mineral Mix can be mined by an Excavator Multiblock and scanned via a Core Sample Drill."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/Excavator.java"
 ---

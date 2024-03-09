@@ -1,5 +1,6 @@
 ---
 title: "Kiln"
+titleTemplate: "Pyrotech | CleanroomMC"
 description: "Converts an item into a new one by burning it. Has a chance to fail"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/Kiln.java"
 ---

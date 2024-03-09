@@ -1,5 +1,6 @@
 ---
 title: "Spawning"
+titleTemplate: "Woot | CleanroomMC"
 description: "Controls item/fluid costs of a given mob or the default cost."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/woot/Spawning.java"
 ---

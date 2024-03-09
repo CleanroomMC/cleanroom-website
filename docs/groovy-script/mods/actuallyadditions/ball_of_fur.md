@@ -1,5 +1,6 @@
 ---
 title: "Ball of Fur"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "A weighted itemstack output for using a Ball of Fur, dropped by a cat."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/BallOfFur.java"
 ---

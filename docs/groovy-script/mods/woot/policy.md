@@ -1,5 +1,6 @@
 ---
 title: "Policy"
+titleTemplate: "Woot | CleanroomMC"
 description: "Controls what entities can be farmed for what items via an entity blacklist, mod blacklist, item output blacklist, item output mod blacklist, and a mob whitelist."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/woot/Policy.java"
 ---

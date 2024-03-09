@@ -1,5 +1,6 @@
 ---
 title: "Lightwell"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Converts an input item into fluid, with a chance at breaking every time fluid is produced. The amount of fluid produced per interval can be increased via starlight."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/Lightwell.java"
 ---

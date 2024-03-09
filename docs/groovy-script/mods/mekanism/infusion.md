@@ -1,5 +1,6 @@
 ---
 title: "Infusion"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Add new infusion types and itemstacks to those types."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/Infusion.java"
 ---

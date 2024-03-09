@@ -1,5 +1,6 @@
 ---
 title: "Squeezer"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts an input itemstack into either an output itemstack, fluidstack, or both, using energy."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/Squeezer.java"
 ---

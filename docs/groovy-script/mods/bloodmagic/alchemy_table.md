@@ -1,5 +1,6 @@
 ---
 title: "Alchemy Table"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Converts up to 6 input items into an output itemstack, with configurable time, minimum tier of Blood Orb required, and Life Essence drained from the Orb network."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/AlchemyTable.java"
 ---

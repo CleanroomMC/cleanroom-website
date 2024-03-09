@@ -1,5 +1,6 @@
 ---
 title: "Nether Mining Lens"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "A weighted oredict for the block obtained via firing a Mining Lens at a block of Netherrack. The oredict must have a block, or the world will hang."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/NetherMiningLens.java"
 ---

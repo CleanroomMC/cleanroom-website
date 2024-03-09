@@ -1,5 +1,6 @@
 ---
 title: "Purification Chamber"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input itemstack and gasstack into an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/PurificationChamber.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Grinder"
+titleTemplate: "Applied Energistics 2 | CleanroomMC"
 description: "Converts an item into one item, with up to two additional items as chance byproducts after a number of turns."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/appliedenergistics2/Grinder.java"
 ---

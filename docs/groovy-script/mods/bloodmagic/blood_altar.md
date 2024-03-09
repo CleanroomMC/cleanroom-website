@@ -1,5 +1,6 @@
 ---
 title: "Blood Altar"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Converts an input item into an output itemstack, draining life essence from the altar at a base rate and requiring at least a specific tier."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/BloodAltar.java"
 ---

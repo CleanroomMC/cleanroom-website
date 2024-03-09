@@ -1,5 +1,6 @@
 ---
 title: "Crucible"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Combines an item with any number of Aspects to drop an output itemstack, potentially requiring a specific research to be completed."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/Crucible.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Elven Trade"
+titleTemplate: "Botania | CleanroomMC"
 description: "Convert in any number of item inputs into an item output."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/ElvenTrade.java"
 ---

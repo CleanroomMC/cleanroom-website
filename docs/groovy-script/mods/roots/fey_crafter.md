@@ -1,5 +1,6 @@
 ---
 title: "Fey Crafter"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "The Fey Crafter is a crafting mechanism that requires an activated Grove Stone nearby to take 5 item inputs and return an item output."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/FeyCrafter.java"
 ---

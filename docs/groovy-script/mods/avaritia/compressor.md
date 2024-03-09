@@ -1,5 +1,6 @@
 ---
 title: "Compressor"
+titleTemplate: "Avaritia | CleanroomMC"
 description: "Converts any number of a single item into an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/avaritia/Compressor.java"
 ---

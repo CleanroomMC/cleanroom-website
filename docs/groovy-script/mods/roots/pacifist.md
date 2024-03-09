@@ -1,5 +1,6 @@
 ---
 title: "Pacifist"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Pacifist is a list of entities which killing will give the player the advancement 'Untrue Pacifist'."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Pacifist.java"
 ---

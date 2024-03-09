@@ -1,5 +1,6 @@
 ---
 title: "Blood Infuser"
+titleTemplate: "EvilCraft | CleanroomMC"
 description: "Consumes an item, some fluid, and requires a given tier of Promise of Tenacity to produce the output and some experience after a duration."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/evilcraft/BloodInfuser.java"
 ---

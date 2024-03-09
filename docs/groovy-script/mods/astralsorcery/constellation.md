@@ -1,5 +1,6 @@
 ---
 title: "Constellation"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Create a custom Constellation."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/Constellation.java"
 ---

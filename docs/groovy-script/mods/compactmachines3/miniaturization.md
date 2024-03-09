@@ -1,5 +1,6 @@
 ---
 title: "Miniaturization"
+titleTemplate: "Compact Machines 3 | CleanroomMC"
 description: "Consumes a 3d structure in-world based on keys when an item is thrown into the field."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/compactmachines/Miniaturization.java"
 ---

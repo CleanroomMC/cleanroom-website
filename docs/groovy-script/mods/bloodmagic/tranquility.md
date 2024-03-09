@@ -1,5 +1,6 @@
 ---
 title: "Tranquility"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Blocks in the area around the Tranquility Altar provide tranquility up to the Altar's cap, with reduced effect the more of a particular type of Tranquility is provided."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/Tranquility.java"
 ---

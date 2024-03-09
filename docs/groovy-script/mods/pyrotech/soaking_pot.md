@@ -1,5 +1,6 @@
 ---
 title: "Soaking Pot"
+titleTemplate: "Pyrotech | CleanroomMC"
 description: "Converts an item into a new one by soaking it in a liquid. Can require a campfire"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/SoakingPot.java"
 ---

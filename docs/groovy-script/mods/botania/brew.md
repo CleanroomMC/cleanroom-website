@@ -1,5 +1,6 @@
 ---
 title: "Brew Effect"
+titleTemplate: "Botania | CleanroomMC"
 description: "Creates a custom brew, but not a recipe for the brew."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Brew.java"
 ---

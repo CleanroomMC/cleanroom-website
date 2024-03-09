@@ -1,5 +1,6 @@
 ---
 title: "Research"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Create or modify existing research entries, which contain helpful information and unlock recipes, and can be gated behind specific items or events."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/Research.java"
 ---

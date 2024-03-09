@@ -1,5 +1,6 @@
 ---
 title: "Mechanical Drying Basin"
+titleTemplate: "Integrated Dynamics | CleanroomMC"
 description: "Takes either an item or fluid input and gives either an item or fluid output after a duration."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/integrateddynamics/MechanicalDryingBasin.java"
 ---

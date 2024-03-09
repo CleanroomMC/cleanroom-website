@@ -1,5 +1,6 @@
 ---
 title: "Aevitas Perk Registry"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Having the Stone Enrichment perk will convert nearby stone blocks into random ores."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/OreChance.java"
 ---

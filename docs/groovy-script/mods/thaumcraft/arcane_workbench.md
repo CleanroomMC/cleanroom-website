@@ -1,5 +1,6 @@
 ---
 title: "Arcane Workbench"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "A special crafting table, allowing additional requirements in the form of Vis Crystals, Vis, and having a specific research."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/arcane/ArcaneWorkbench.java"
 ---

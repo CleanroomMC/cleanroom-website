@@ -1,5 +1,6 @@
 ---
 title: "Metallurgic Infuser"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts and input itemstack and a varible amount of an infusion type into an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/MetallurgicInfuser.java"
 ---

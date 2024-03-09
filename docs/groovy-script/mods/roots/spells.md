@@ -1,5 +1,6 @@
 ---
 title: "Spells"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Controls the recipe for the given spell, the sound, all properties, the base cost, and each modifier's cost."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Spells.java"
 ---

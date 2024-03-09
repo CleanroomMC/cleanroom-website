@@ -1,5 +1,6 @@
 ---
 title: "Inscriber"
+titleTemplate: "Applied Energistics 2 | CleanroomMC"
 description: "Converts an item into another item, requiring either one or two additional items as either catalysts or ingredients."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/appliedenergistics2/Inscriber.java"
 ---

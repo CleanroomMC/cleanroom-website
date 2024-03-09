@@ -1,5 +1,6 @@
 ---
 title: "Brew Recipe"
+titleTemplate: "Botania | CleanroomMC"
 description: "Converts a non-infused Managlass Vial, Alfglass Flask, Incense Stick, or Tainted Blood Pendant into one infused to hold the given brew at the cost of item inputs and mana."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/BrewRecipe.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Fusion"
+titleTemplate: "Draconic Evolution | CleanroomMC"
 description: "Consumes items and power from up to 54 pedestals of at least a given tier pointing towards a Fusion Crafting Core containing a catalyst to produce an output item."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/draconicevolution/Fusion.java"
 ---

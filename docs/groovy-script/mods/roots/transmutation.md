@@ -1,5 +1,6 @@
 ---
 title: "Transmutation"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "When running the Transmutation, convert nearby blocks that match a set of conditions into either a block or items."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Transmutation.java"
 ---

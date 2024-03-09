@@ -1,5 +1,6 @@
 ---
 title: "Cannon Ammo"
+titleTemplate: "Applied Energistics 2 | CleanroomMC"
 description: "Item and weight, where weight is a factor in how much damage is dealt."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/appliedenergistics2/CannonAmmo.java"
 ---

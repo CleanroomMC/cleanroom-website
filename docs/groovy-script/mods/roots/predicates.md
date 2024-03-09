@@ -1,5 +1,6 @@
 ---
 title: "Predicates"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Predicates are used in Transmution and RunicShearBlock. They either match all blockstates of a block, or all blockstates that have the given properties that match the input blockstate."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Predicates.java"
 ---

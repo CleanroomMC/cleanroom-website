@@ -1,5 +1,6 @@
 ---
 title: "Crystallizer"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input gasstack into an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/Crystallizer.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Extreme Crafting"
+titleTemplate: "Avaritia | CleanroomMC"
 description: "A normal crafting table, by 9x9 instead."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/avaritia/ExtremeCrafting.java"
 ---

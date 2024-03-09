@@ -1,5 +1,6 @@
 ---
 title: "Mana Infusion"
+titleTemplate: "Botania | CleanroomMC"
 description: "Toss an item into a mana pool with an optional catalyst blockstate below the pool."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/ManaInfusion.java"
 ---

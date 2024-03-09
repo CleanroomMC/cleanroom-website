@@ -1,5 +1,6 @@
 ---
 title: "Sag Mill Grinding"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Add a new Griding Ball for use in a Sag Mill with the given output multiplier, power multiplier, chance multiplier, and duration (in base power used)."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/SagMillGrinding.java"
 ---

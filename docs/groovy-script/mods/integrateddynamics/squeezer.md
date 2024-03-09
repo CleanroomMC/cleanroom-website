@@ -1,5 +1,6 @@
 ---
 title: "Squeezer"
+titleTemplate: "Integrated Dynamics | CleanroomMC"
 description: "Takes an item and can give up to 3 chanced item outputs and a fluid."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/integrateddynamics/Squeezer.java"
 ---

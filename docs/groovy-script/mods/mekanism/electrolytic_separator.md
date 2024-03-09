@@ -1,5 +1,6 @@
 ---
 title: "Electrolytic Separator"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input fluid into two output gasstacks at the cost of power."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/ElectrolyticSeparator.java"
 ---

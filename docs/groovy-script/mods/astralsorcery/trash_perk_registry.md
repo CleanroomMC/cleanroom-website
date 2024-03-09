@@ -1,5 +1,6 @@
 ---
 title: "Trash Perk Registry"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Having the Trash to Treasure perk turns items the player drops in the list defined in the config at 'perks/key_void_trash/DropList' into a chance at random ores."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/OreChance.java"
 ---

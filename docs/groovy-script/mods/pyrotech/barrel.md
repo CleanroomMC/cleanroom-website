@@ -1,5 +1,6 @@
 ---
 title: "Barrel"
+titleTemplate: "Pyrotech | CleanroomMC"
 description: "Over time converts a fluid with four items into a new fluid"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/Barrel.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Starlight Altar"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Allows creation of shaped recipes in the Astral Sorcery Crafting Altar chain."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/starlightaltar/StarlightAltar.java"
 ---

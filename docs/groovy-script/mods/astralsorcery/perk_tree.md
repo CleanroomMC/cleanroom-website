@@ -1,5 +1,6 @@
 ---
 title: "Perk Tree"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Create a custom perk with a custom effect, at a given location."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/perktree/GroovyPerkTree.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Carving"
+titleTemplate: "Chisel | CleanroomMC"
 description: "Sets a group of items any item can be converted between freely, in world and in a GUI"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/chisel/Carving.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Compression Crafting"
+titleTemplate: "Extended Crafting | CleanroomMC"
 description: "Converts any number of a single item into an output itemstack, with a configurable rf cost, consumption per tick amount, catalyst, and if the catalyst is consumed."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/extendedcrafting/CompressionCrafting.java"
 ---

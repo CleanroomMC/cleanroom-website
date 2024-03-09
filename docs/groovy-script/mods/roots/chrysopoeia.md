@@ -1,5 +1,6 @@
 ---
 title: "Chrysopoeia"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Chrysopoeia is a spell that transmutes items held in the main hand."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Chrysopoeia.java"
 ---

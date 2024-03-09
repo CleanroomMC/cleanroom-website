@@ -1,5 +1,6 @@
 ---
 title: "Blast Furnace"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts an input itemstack into an output itemstack and an optional 'slag' itemstack, taking time and consuming fuel (based on Blast Furnace Fuels)."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/BlastFurnace.java"
 ---

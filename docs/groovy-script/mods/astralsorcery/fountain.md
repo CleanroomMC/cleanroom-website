@@ -1,5 +1,6 @@
 ---
 title: "Fountain"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Adds virtual aquifers that can be accessed via the Evershifting Fountain's Necromantic Prime."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/Fountain.java"
 ---

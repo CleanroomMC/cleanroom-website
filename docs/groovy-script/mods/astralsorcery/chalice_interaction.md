@@ -1,5 +1,6 @@
 ---
 title: "Chalice Interaction"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "When two chalices containing different fluids are placed nearby, fluid may be consumed to produce an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/ChaliceInteraction.java"
 ---

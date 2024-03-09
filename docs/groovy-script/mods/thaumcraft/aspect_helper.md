@@ -1,5 +1,6 @@
 ---
 title: "Entity/Block Aspects"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Controls what Aspects are attached to entities or items."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/aspect/AspectHelper.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Treasure Chest"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "A weighted item, with a weight to obtain and a minimum and maximum amount. Obtained via right-clicking a Treasure Chest spawning randomly on the sea floor."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/TreasureChest.java"
 ---

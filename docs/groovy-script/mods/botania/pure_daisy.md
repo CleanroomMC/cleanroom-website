@@ -1,5 +1,6 @@
 ---
 title: "Pure Daisy"
+titleTemplate: "Botania | CleanroomMC"
 description: "Convert a given block to another blockstate after a period of time."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/PureDaisy.java"
 ---

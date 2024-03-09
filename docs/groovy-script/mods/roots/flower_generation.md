@@ -1,5 +1,6 @@
 ---
 title: "Flower Generation"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "When running the Flower Growth Ritual, allowed flowers will generate in the area. Additionally, using the spell Growth Infusion's Floral Reproduction modifier will duplicate the flower."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/FlowerGeneration.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Atomic Reconstructor"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "The Atomic Reconstructor is a block which uses energy to convert a block or item in front of it into other items."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/AtomicReconstructor.java"
 ---

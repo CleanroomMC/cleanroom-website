@@ -1,5 +1,6 @@
 ---
 title: "Life Essence"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "When shift right clicking a mob in the Life Essence Pool with Runic Shears, it will drop a Life-Essence, which allows that mob to be spawned via the Creature Summoning ritual."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/LifeEssence.java"
 ---

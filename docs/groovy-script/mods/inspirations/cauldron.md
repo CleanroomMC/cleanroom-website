@@ -1,5 +1,6 @@
 ---
 title: "Cauldron"
+titleTemplate: "Inspirations | CleanroomMC"
 description: "Converts up to 1 itemstack and up to 1 fluid into up to 1 itemstack or up to 1 fluid, with a boiling boolean and variable amount of fluid consumed or produced."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/inspirations/Cauldron.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Summon Creature"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "When running a Summon Creature Ritual, the input items placed on Catalyst Plate will summon the target entity."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/SummonCreature.java"
 ---

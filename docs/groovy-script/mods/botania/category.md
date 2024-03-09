@@ -1,5 +1,6 @@
 ---
 title: "Lexicon Category"
+titleTemplate: "Botania | CleanroomMC"
 description: "Category creates a new entry on the front page of the Lexica Botania."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Lexicon.java"
 ---

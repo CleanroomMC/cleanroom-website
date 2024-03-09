@@ -1,5 +1,6 @@
 ---
 title: "Lexicon Page"
+titleTemplate: "Botania | CleanroomMC"
 description: "Page creates a new page to be used in entries."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Lexicon.java"
 ---

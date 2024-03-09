@@ -1,5 +1,6 @@
 ---
 title: "Lexicon Entry"
+titleTemplate: "Botania | CleanroomMC"
 description: "Entry creates a new entry in a given category."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Lexicon.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Tartaric Forge"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Converts up to 4 input items into an output itemstack, requiring a Tartaric gem with a minimum amount of souls, and consuming some."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/TartaricForge.java"
 ---

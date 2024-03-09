@@ -1,5 +1,6 @@
 ---
 title: "Empowerer"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "Turns 5 input items into an output item at the cost of power and time. Has a configurable color."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/Empowerer.java"
 ---

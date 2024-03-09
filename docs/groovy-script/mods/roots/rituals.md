@@ -1,5 +1,6 @@
 ---
 title: "Rituals"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Set the Pyre Ritual recipe and control all stats. Dump the modifiable stats into `roots.log` by running `/roots rituals`."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Rituals.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Soulbinder"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Converts an input itemstack into an output itemstack, requiring one of several entities in soul vials, using energy and giving XP. Must have a unique name. To function properly, the input entities must be allowed in Soul Vials."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/SoulBinder.java"
 ---

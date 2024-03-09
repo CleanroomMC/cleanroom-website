@@ -1,5 +1,6 @@
 ---
 title: "Treasure Shrine Registry"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "When the block in the middle of a Treasure Shrine structure is broken, a random ore from this list will replace it until the Treasure Shrine is exhausted."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/OreChance.java"
 ---

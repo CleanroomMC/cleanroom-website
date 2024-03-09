@@ -1,5 +1,6 @@
 ---
 title: "Stygian Iron Anvil"
+titleTemplate: "Woot | CleanroomMC"
 description: "Has a catalyst (which may or may not be consumed) placed on the anvil, with the input items thrown atop the base."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/woot/StygianIronAnvil.java"
 ---

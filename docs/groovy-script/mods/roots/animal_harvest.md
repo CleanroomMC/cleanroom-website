@@ -1,5 +1,6 @@
 ---
 title: "Animal Harvest"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Animal Harvest is a ritual that drops items from nearby mob's based on that mobs loottable without harming the mob. Only applies to allowed mobs."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/AnimalHarvest.java"
 ---

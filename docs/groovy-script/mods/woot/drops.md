@@ -1,5 +1,6 @@
 ---
 title: "Drops"
+titleTemplate: "Woot | CleanroomMC"
 description: "Controls extra drops given by mobs. Chance and Size are both arrays 4 long, containing the values for levels 0/1/2/3 levels of Looting."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/woot/Drops.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Fermenter"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts an input itemstack into an output fluidstack with an optional output itemstack, consuming power."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/Fermenter.java"
 ---

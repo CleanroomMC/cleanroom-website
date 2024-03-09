@@ -1,5 +1,6 @@
 ---
 title: "Compost"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "Converts an input item into an output item after 150 seconds. Requires an input and output display blockstate."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/Compost.java"
 ---

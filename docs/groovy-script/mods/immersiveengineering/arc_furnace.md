@@ -1,5 +1,6 @@
 ---
 title: "Arc Furnace"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts 1 input itemstack with up to 4 additional inputs into an output itemstack and an optional 'slag' itemstack, taking time and using rf power."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/ArcFurnace.java"
 ---

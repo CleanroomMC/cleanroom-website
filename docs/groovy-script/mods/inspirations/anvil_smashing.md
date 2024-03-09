@@ -1,5 +1,6 @@
 ---
 title: "Anvil Smashing"
+titleTemplate: "Inspirations | CleanroomMC"
 description: "Converts a Block or IBlockState into an IBlockState when an anvil falls on top of it (from any height)."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/inspirations/AnvilSmashing.java"
 ---

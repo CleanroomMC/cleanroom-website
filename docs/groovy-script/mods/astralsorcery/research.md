@@ -1,5 +1,6 @@
 ---
 title: "Research Pages"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Add custom Research Pages to the Astral Sorcery Book."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/Research.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Perk Tree Config"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Control the Perk level cap and XP formula."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/perktree/PerkTreeConfig.java"
 ---

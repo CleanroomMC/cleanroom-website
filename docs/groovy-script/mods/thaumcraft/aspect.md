@@ -1,5 +1,6 @@
 ---
 title: "Aspect Creator"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Creates a custom Aspect."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/aspect/Aspect.java"
 ---

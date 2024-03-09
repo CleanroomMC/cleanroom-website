@@ -1,5 +1,6 @@
 ---
 title: "Animal Harvest Fish"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Animal Harvest Fish is another effect of the Animal Harvest ritual that applies if there are water source blocks within the ritual range."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/AnimalHarvestFish.java"
 ---

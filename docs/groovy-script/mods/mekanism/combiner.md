@@ -1,5 +1,6 @@
 ---
 title: "Combiner"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Combines an input itemstack with an extra itemstack to create an output itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/Combiner.java"
 ---

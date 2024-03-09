@@ -1,5 +1,6 @@
 ---
 title: "Mortar"
+titleTemplate: "Advanced Mortars | CleanroomMC"
 description: "Uses any number of specific types of Mortars to convert multiple items into a single output with a possible chance output after a number of player interactions."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/advancedmortars/Mortar.java"
 ---

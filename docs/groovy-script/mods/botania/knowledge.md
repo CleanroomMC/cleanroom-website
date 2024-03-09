@@ -1,5 +1,6 @@
 ---
 title: "Lexicon Knowledge"
+titleTemplate: "Botania | CleanroomMC"
 description: "Creates a new type of knowledge that Lexica Botania entries may be gated with. Can only be created."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Knowledge.java"
 ---

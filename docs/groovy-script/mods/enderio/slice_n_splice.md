@@ -1,5 +1,6 @@
 ---
 title: "Slice N Splice"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Convert up to 6 input itemstacks into an output itemstack, using energy and giving XP."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/SliceNSplice.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Runic Shear Entity"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Right clicking a Runic Shear on an entity. The entity will have a cooldown, preventing spamming."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/RunicShearEntity.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Grindstone"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Converts an item into an itemstack with a chance of getting twice the amount after right clicking the grindstone based on weight."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/Grindstone.java"
 ---

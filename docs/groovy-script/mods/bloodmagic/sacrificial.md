@@ -1,5 +1,6 @@
 ---
 title: "Sacrificial"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "How much Life Essence is gained when using the Sacrificial Dagger on a mob."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/Sacrificial.java"
 ---

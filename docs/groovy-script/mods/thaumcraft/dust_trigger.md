@@ -1,5 +1,6 @@
 ---
 title: "Dust Trigger"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Converts a block in-world into an item, when interacting with it with Salis Mundus, potentially requiring a specific research to be completed."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/DustTrigger.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Mortar And Pestle"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "When right clicking a mortar containing the input items with a pestle, it will display a few colored sparkles, consume the inputs, and drop the item output."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Mortar.java"
 ---

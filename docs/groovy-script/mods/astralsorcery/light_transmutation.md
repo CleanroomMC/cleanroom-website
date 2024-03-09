@@ -1,5 +1,6 @@
 ---
 title: "Light Transmutation"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Converts an input Block or IBlockState into an output IBlockState after being sent a given amount of starlight, with the ability to require a specific constellation of starlight."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/LightTransmutation.java"
 ---

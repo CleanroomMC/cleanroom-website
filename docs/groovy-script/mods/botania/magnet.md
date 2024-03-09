@@ -1,5 +1,6 @@
 ---
 title: "Magnet"
+titleTemplate: "Botania | CleanroomMC"
 description: "Add or remove items from the magnet blacklist"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Magnet.java"
 ---

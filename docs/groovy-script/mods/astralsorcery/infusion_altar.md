@@ -1,5 +1,6 @@
 ---
 title: "Infusion Altar"
+titleTemplate: "Astral Sorcery | CleanroomMC"
 description: "Consumes buckets of Liquid Starlight when interacted with by a Resonating Wand to convert input items into output itemstacks after a time."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/astralsorcery/InfusionAltar.java"
 ---

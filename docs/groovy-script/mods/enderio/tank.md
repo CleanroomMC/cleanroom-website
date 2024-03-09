@@ -1,5 +1,6 @@
 ---
 title: "Tank"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Converts an input itemstack into an output fluidstack with an optional output itemstack in drain mode, or converts an input itemstack and fluidstack into an output itemstack in fill mode."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/Tank.java"
 ---

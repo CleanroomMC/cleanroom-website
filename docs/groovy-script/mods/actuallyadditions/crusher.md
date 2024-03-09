@@ -1,5 +1,6 @@
 ---
 title: "Crusher"
+titleTemplate: "Actually Additions | CleanroomMC"
 description: "Converts an input itemstack into an output itemstack with a chance of a second itemstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/actuallyadditions/Crusher.java"
 ---

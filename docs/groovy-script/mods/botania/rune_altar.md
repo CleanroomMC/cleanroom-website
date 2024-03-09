@@ -1,5 +1,6 @@
 ---
 title: "Rune Altar"
+titleTemplate: "Botania | CleanroomMC"
 description: "Converts a items inputs into an item ouput at the cost of mana when a Livingrock item is thrown atop the altar and right clicked with a Wand of the Forest."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/RuneAltar.java"
 ---

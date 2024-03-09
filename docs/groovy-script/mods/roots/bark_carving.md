@@ -1,5 +1,6 @@
 ---
 title: "Bark Carving"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Bark Carving is a special set of alternate drops for blocks when broken with an item containing the tool type 'knife'. Amount dropped is up to 2 + fortune/looting level higher than the set amount."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/BarkCarving.java"
 ---

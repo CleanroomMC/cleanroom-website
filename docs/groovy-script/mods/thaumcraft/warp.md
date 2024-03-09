@@ -1,5 +1,6 @@
 ---
 title: "Warp"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Determines if holding an item or equipping a piece of armor or a bauble gives warp, and how much warp it gives"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/warp/Warp.java"
 ---

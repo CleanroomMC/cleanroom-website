@@ -1,5 +1,6 @@
 ---
 title: "Dissolution Chamber"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input itemstack into an output gasstack at the cost of 100mb of Sulfuric Acid."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/DissolutionChamber.java"
 ---

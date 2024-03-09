@@ -1,5 +1,6 @@
 ---
 title: "Osmium Compressor"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input itemstack and 200 of a gasstack into an output itemstack. By default, will use Liquid Osmium as the gasstack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/OsmiumCompressor.java"
 ---

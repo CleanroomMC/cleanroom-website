@@ -1,5 +1,6 @@
 ---
 title: "Moss"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Moss indicates a pair of items that can right click the input with a knife to turn it into the output and give a Terra Moss and right click the output with moss spores to turn it into the input."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Moss.java"
 ---

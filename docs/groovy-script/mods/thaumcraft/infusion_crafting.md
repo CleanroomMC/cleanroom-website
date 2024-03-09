@@ -1,5 +1,6 @@
 ---
 title: "Infusion Crafting"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Combines any number of items and aspects together in the Infusion Altar, potentially requiring a specific research to be completed."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/InfusionCrafting.java"
 ---

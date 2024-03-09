@@ -1,5 +1,6 @@
 ---
 title: "Enchanter"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Convert an input itemstack, player xp, and either a written book and lapis or a custom alternative into an enchanted book."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/Enchanter.java"
 ---

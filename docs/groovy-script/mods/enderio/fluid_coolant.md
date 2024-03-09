@@ -1,5 +1,6 @@
 ---
 title: "Fluid Coolant"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Create a Coolant with a given coolant rate that produces power with a Fuel while in a Combustion Generator."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/FluidCoolant.java"
 ---

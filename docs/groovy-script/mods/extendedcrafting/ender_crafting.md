@@ -1,5 +1,6 @@
 ---
 title: "Ender Crafting"
+titleTemplate: "Extended Crafting | CleanroomMC"
 description: "A normal crafting recipe, with the recipe being slowly crafted based on nearby Ender Alternators."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/extendedcrafting/EnderCrafting.java"
 ---

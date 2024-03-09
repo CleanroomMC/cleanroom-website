@@ -1,5 +1,6 @@
 ---
 title: "Solar Neutron Activator"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input gasstack into an output gasstack while exposed to the sun."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/SolarNeutronActivator.java"
 ---

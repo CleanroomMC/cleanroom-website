@@ -1,5 +1,6 @@
 ---
 title: "Runic Shear Block"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Right clicking a Runic Shear on a block to convert it into a replacement block and drop items."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/RunicShearBlock.java"
 ---

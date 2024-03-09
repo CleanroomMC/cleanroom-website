@@ -1,5 +1,6 @@
 ---
 title: "Mixer"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts any number of input itemstacks and a fluidstack into an output fluidstack, consuming power."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/Mixer.java"
 ---

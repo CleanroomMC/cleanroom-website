@@ -1,5 +1,6 @@
 ---
 title: "Environmental Accumulator"
+titleTemplate: "EvilCraft | CleanroomMC"
 description: "Consumes an item to give an output, possibly changing the weather. Has a cooldown time or a blood cost."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/evilcraft/EnvironmentalAccumulator.java"
 ---

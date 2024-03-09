@@ -1,5 +1,6 @@
 ---
 title: "Petal Apothecary"
+titleTemplate: "Botania | CleanroomMC"
 description: "Converts item inputs into an item output consuming water and a seed."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/Apothecary.java"
 ---

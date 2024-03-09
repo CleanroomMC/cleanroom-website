@@ -1,5 +1,6 @@
 ---
 title: "Alloy Smelter"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Convert up to 3 itemstack inputs into an itemstack output, using energy and giving XP. Can be restricted to require a given tier of machine. Can be set to require at least SIMPLE, NORMAL, or ENHANCED tiers, or to IGNORE the tier. SIMPLE and IGNORE are effectively the same."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/AlloySmelter.java"
 ---

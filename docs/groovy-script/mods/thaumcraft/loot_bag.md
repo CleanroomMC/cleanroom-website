@@ -1,5 +1,6 @@
 ---
 title: "Lootbag"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Control what the different rarities of lootbag drop when opened."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/LootBag.java"
 ---

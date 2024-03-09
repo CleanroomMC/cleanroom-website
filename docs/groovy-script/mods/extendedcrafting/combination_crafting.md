@@ -1,5 +1,6 @@
 ---
 title: "Combination Crafting"
+titleTemplate: "Extended Crafting | CleanroomMC"
 description: "Converts one main item and any number of additional items into an output itemstack, with a configurable rf cost and consumption per tick amount."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/extendedcrafting/CombinationCrafting.java"
 ---

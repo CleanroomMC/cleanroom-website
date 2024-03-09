@@ -1,5 +1,6 @@
 ---
 title: "Campfire"
+titleTemplate: "Pyrotech | CleanroomMC"
 description: "Can cook food"
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/Campfire.java"
 ---

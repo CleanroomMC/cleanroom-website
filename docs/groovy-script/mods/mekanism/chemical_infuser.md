@@ -1,5 +1,6 @@
 ---
 title: "Chemical Infuser"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Combines two input gas stacks into a output gas stack."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/ChemicalInfuser.java"
 ---

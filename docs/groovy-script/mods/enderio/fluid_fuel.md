@@ -1,5 +1,6 @@
 ---
 title: "Fluid Fuel"
+titleTemplate: "Ender IO | CleanroomMC"
 description: "Create a Fuel with a given power per tick and total burn time that produces power with a Coolant while in a Combustion Generator."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/enderio/FluidFuel.java"
 ---

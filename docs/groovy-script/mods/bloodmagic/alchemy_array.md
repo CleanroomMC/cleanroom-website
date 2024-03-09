@@ -1,5 +1,6 @@
 ---
 title: "Alchemy Array"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Converts two items into an output itemstack by using Arcane Ashes in-world. Has a configurable texture for the animation."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/AlchemyArray.java"
 ---

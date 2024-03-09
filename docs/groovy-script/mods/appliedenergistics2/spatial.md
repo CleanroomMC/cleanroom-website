@@ -1,5 +1,6 @@
 ---
 title: "Spatial Storage Allowed Tile Entities"
+titleTemplate: "Applied Energistics 2 | CleanroomMC"
 description: "Either the class itself or its String name to add or remove from the Tile Entities allowed in Spatial Storage."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/appliedenergistics2/Spatial.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Blueprint Crafting"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Converts any number of input itemstacks into an output itemstack, using a blueprint with the category nbt tag as a catalyst."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/BlueprintCrafting.java"
 ---

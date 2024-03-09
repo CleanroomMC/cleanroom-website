@@ -1,5 +1,6 @@
 ---
 title: "Table Crafting"
+titleTemplate: "Extended Crafting | CleanroomMC"
 description: "A normal crafting recipe, but requiring either a specific tier, or at least a given tier, from 3x3 to 9x9."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/extendedcrafting/TableCrafting.java"
 ---

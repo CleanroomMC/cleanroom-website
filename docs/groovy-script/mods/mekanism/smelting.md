@@ -1,5 +1,6 @@
 ---
 title: "Smelting"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input itemstack into an output itemstack in a recipe exclusive to the Smelter. Overrides the default furnace recipe, if applicable."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/Smelting.java"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Thermal Evaporation Plant"
+titleTemplate: "Mekanism | CleanroomMC"
 description: "Converts an input fluidstack into an output fluidstack over time based on multiblock temperature."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/mekanism/ThermalEvaporationPlant.java"
 ---

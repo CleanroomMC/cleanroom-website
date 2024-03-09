@@ -1,5 +1,6 @@
 ---
 title: "P2P Attunement"
+titleTemplate: "Applied Energistics 2 | CleanroomMC"
 description: "Controls using specific items, any items from a mod, or any items with a Capability to convert a P2P into a specific tunnel type."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/appliedenergistics2/Attunement.java"
 ---

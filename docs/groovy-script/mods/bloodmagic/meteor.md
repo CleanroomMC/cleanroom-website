@@ -1,5 +1,6 @@
 ---
 title: "Meteor"
+titleTemplate: "Blood Magic: Alchemical Wizardry | CleanroomMC"
 description: "Throwing an input catalyst atop an activated Mark of the Falling Tower Ritual will spawn a meteor made of the given components, size, explosion strength, and Life Essence cost."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/bloodmagic/Meteor.java"
 ---

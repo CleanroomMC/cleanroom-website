@@ -1,5 +1,6 @@
 ---
 title: "Orechid Ignem"
+titleTemplate: "Botania | CleanroomMC"
 description: "Converts netherrack blocks into one of a few ore blocks at the cost of mana."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/botania/OrechidIgnem.java"
 ---

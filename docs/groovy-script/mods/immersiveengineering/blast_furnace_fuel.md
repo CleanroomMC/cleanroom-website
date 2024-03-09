@@ -1,5 +1,6 @@
 ---
 title: "Blast Furnace Fuel"
+titleTemplate: "Immersive Engineering | CleanroomMC"
 description: "Allows an item to be used in the Blast Furnace as a fuel for the given number of ticks."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/BlastFurnaceFuel.java"
 ---

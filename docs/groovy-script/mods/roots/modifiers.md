@@ -1,5 +1,6 @@
 ---
 title: "Modifiers"
+titleTemplate: "Roots 3 | CleanroomMC"
 description: "Controls what spell modifiers are enabled and can be used."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Modifiers.java"
 ---

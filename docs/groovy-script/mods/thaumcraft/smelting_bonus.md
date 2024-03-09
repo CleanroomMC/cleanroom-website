@@ -1,5 +1,6 @@
 ---
 title: "Smelting Bonus"
+titleTemplate: "Thaumcraft | CleanroomMC"
 description: "Additional item output when smelting a given item in the Infernal Furnace Multiblock."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/thaumcraft/SmeltingBonus.java"
 ---
