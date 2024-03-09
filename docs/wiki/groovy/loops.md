@@ -17,7 +17,7 @@ while (condition) {
 ```
 
 The condition is a boolean. As long as that condition evaluates to true, the operation will be executed.
-!!! example:
+::: info Example {id="example"}
 This will print `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`.
 
 ```groovy
@@ -35,6 +35,8 @@ do {
 } while (condition)
 ```
 
+:::
+
 ## For loop
 
 For loops are similar to while loops.
@@ -47,13 +49,15 @@ for(init; condition; incrementor) {
 
 `init` is called before the loop. `condition` is checked before each run and `incrementor` is called after each run.
 
-!!! example
+::: info Example {id="example"}
 This will print `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`.
-`groovy
-    for(int i = 0; i < 10; i++) {
-        print("${i++}, ")
-    }
-    `
+```groovy
+for(int i = 0; i < 10; i++) {
+    print("${i++}, ")
+}
+```
+
+:::
 
 ## Enhanced for loop
 

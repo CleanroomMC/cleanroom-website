@@ -3,18 +3,21 @@
 GroovyScript allows you to listen to any event which uses the forge event system.
 Here are listed all minecraft and forge events there are.
 
-!!! Note
-    Events can be reloaded if they are registered in `postInit`
+:::info {id="info"}
+  Events can be reloaded if they are registered in `postInit`
+:::
 
-!!! example "Let's see an example:"
+::: info Let's see an example: {id="example"}
 
-    ```groovy
-    import net.minecraftforge.event.world.BlockEvent.BreakEvent
+```groovy
+import net.minecraftforge.event.world.BlockEvent.BreakEvent
 
-    event_manager.listen { BreakEvent event ->
-        log.info('Block broken: {}', event.getState())
-    }
-    ```
+event_manager.listen { BreakEvent event ->
+    log.info('Block broken: {}', event.getState())
+}
+```
+
+:::
 
 What is happening?
 
@@ -52,7 +55,7 @@ event_manager.listen(EventPriority eventPriority, Closure<?> eventListener)
 
 Normally you don't need to chane any of those values. <br>
 
-!!! example "Let's see an example using `EventPriority`:"
+::: info Let's see an example using `EventPriority`: {id="example"}
 
     ```groovy
     import net.minecraftforge.event.world.BlockEvent.BreakEvent

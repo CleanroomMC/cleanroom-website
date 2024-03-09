@@ -37,17 +37,21 @@ item('minecraft:iron_ingot').withNbt([Name: 'Epic Ingot'])
 ## Match Conditions
 
 This allows for dynamic item checking in recipes.
-!!! Note
-    At this moment (ver. 0.3.1) only crafting and Draconic Evolution fusion crafting is supported.
+
+:::info Note {id="note"}
+At this moment (ver. 0.3.1) only crafting and Draconic Evolution fusion crafting is supported.
+:::
+
 
 ```groovy
 itemStack.when(Closure<Boolean> condition)
 ```
 
-!!! Example
-    ```groovy
-    item('minecraft:iron_axe:*').when({stack -> stack.getDamage() < 50})
-    ```
+::: info Example {id="example"}
+```groovy
+item('minecraft:iron_axe:*').when({stack -> stack.getDamage() < 50})
+```
+:::
 
 Let's see what this does. First `item('minecraft:iron_axe:*')` matches an iron axe with any damage.
 Then `.when({stack -> stack.getDamage() < 50})` only validates items that have taken less than 50 damage.
@@ -56,18 +60,21 @@ Then `.when({stack -> stack.getDamage() < 50})` only validates items that have t
 
 This transforms an item ingredient to a new item on craft. For example a water bucket returns an empty bucket after crafting.
 
-!!! Note
-    This only works for crafting.
+::: info Warning {id="warning"}
+This only works for crafting.
+:::
 
 ```groovy
 itemStack.transform(Closure<ItemStack> transformer)
 ```
 
-!!! Example
-    ```groovy
-    def transformer = { stack -> stack.copyWithMeta(stack.getItemDamage() + 1)}
-    item('minecraft:iron_axe:*').transform(transformer)
-    ```
+::: info Example {id="example"}
+```groovy
+def transformer = { stack -> stack.copyWithMeta(stack.getItemDamage() + 1)}
+item('minecraft:iron_axe:*').transform(transformer)
+```
+
+:::
 
 First we create a transformer closure, so we can easier see what's going on. It simply creates a new item with one more damage.
 In the second line that transformer is applied to the item. So at the end when you craft a recipe with that iron axe it will get damaged by 1.
@@ -81,31 +88,37 @@ In the second line that transformer is applied to the item. So at the end when y
 Sometimes you want to check if items are equal to each other. This is more complicated than it sounds.
 Using `==` will almost always fail. Instead, you can use `in` operator. It compares the item, meta and nbt data.
 The count is ignored.
-???+ Example
-    ```groovy
-    def wool0 = item('minecraft:wool', 0)
-    def wool1 = item('minecraft:wool', 1)
-    println wool0 in wool1                          // false, since different meta
-    println item('minecraft:wool', 0) in wool0      // true, since same item and meta
-    println item('minecraft:wool', 0) * 5 in wool0  // true, amount is ignored
-    ```
+
+::: details Example {open id="example"}
+```groovy
+def wool0 = item('minecraft:wool', 0)
+def wool1 = item('minecraft:wool', 1)
+println wool0 in wool1                          // false, since different meta
+println item('minecraft:wool', 0) in wool0      // true, since same item and meta
+println item('minecraft:wool', 0) * 5 in wool0  // true, amount is ignored
+```
+:::
 
 If you want to check if two items are exactly equal with count you need to use `ItemStack.areItemsEqual(ItemStack, ItemStack)`.
-???+ Example
-    ```groovy
-    def wool0 = item('minecraft:wool', 0)
-    def wool1 = item('minecraft:wool', 1)
-    println ItemStack.areItemsEqual(wool0, wool1)                       // false
-    println ItemStack.areItemsEqual(item('minecraft:wool', 0), wool1)   // true
-    println ItemStack.areItemsEqual(item('minecraft:wool', 0) * 5, wool1)   // false
-    ```
+
+::: details Example {open id="example"}
+```groovy
+def wool0 = item('minecraft:wool', 0)
+def wool1 = item('minecraft:wool', 1)
+println ItemStack.areItemsEqual(wool0, wool1)                       // false
+println ItemStack.areItemsEqual(item('minecraft:wool', 0), wool1)   // true
+println ItemStack.areItemsEqual(item('minecraft:wool', 0) * 5, wool1)   // false
+```
+:::
 
 You can also use the `in` operator if it matches any `IIngredient`.
-???+ Example
-    ```groovy
-    println item('minecraft:iron_ingot') in ore('ingotIron') // true
-    println ore('ingotIron') in item('minecraft:iron_ingot') // false, the iron ingot is in the ore dict and not vice versa.
-    ```
+
+::: details Example {open id="example"}
+```groovy
+println item('minecraft:iron_ingot') in ore('ingotIron') // true
+println ore('ingotIron') in item('minecraft:iron_ingot') // false, the iron ingot is in the ore dict and not vice versa.
+```
+:::
 
 To elevate the level of cursedness you can use `<<` and `>>` to further compare items.
 `<<` is exactly like the `in` operator, but the count of the ingredient must also be greater or equal to the item on the left side.

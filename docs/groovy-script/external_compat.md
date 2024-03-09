@@ -1,18 +1,23 @@
+
+# External Compat
+
 Here you'll learn about adding external mod compat for GroovyScript.
 
-!!! Note
-    You need at least version 0.7.0.
+::: info {id="info"}
+You need at least version 0.7.0.
+:::
 
-!!! Note
-    Please read the javadoc for the interface and methods.
+::: info {id="info"}
+Please read the javadoc for the interface and methods.
+:::
 
-The plugin must implement `GroovyPlugin`. GroovyScript will automatically find the class and instantiate it. If the 
-instance field is non-null the class will not be instantiated by GroovyScript, but instead the value of the field will 
+The plugin must implement `GroovyPlugin`. GroovyScript will automatically find the class and instantiate it. If the
+instance field is non-null the class will not be instantiated by GroovyScript, but instead the value of the field will
 be used.
 
 The field `TestReg test` represents a machine that can have recipes.
 
-In `onCompatLoaded()` the compat can be initialised. `container.getVirtualizedRegistrar().addFieldsOf(this)` 
+In `onCompatLoaded()` the compat can be initialised. `container.getVirtualizedRegistrar().addFieldsOf(this)`
 automatically register fields of this class which are `VirtualRegistries` including the `TestReg test` field.
 
 ````java

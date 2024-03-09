@@ -1,4 +1,5 @@
-# Resource Location for Dummies
+
+# Resource Location
 
 Minecraft's resource location is often used as an identifier for items but also for locations of asset files like models
 and textures. It consists of two strings: a domain and a path. The domain is usually a mod id. The path is a name
@@ -21,14 +22,17 @@ There are two ways to do that:
 We can see that both methods are mostly the same except that the game object handler defaults to the pack id instead of
 minecraft. This way is the preferred way.
 
-???+ Example
-    ```groovy
-    // the following 2 lines are equal
-    def rl1 = resource("groovyscript", "path/to/file") // groovyscript:path/to/file
-    def rl2 = resource("groovyscript:path/to/file") // groovyscript:path/to/file
-    // the domain defaults to the pack id if not specified
-    def rl3 = resource("furnace") // packid:furnace
-    ```
+::: details Example {open id="example"}
+
+```groovy
+// the following 2 lines are equal
+def rl1 = resource("groovyscript", "path/to/file") // groovyscript:path/to/file
+def rl2 = resource("groovyscript:path/to/file") // groovyscript:path/to/file
+// the domain defaults to the pack id if not specified
+def rl3 = resource("furnace") // packid:furnace
+```
+
+:::
 
 In GroovyScript there usually exist overrides where you can directly insert mod id and path without
 creating a `ResourceLocation`. <br>
@@ -84,5 +88,6 @@ Resource locations are also used as identifiers for game registry entries for ex
 When you use the item bracket handler you do something like `item('minecraft:iron_ingot')`. Yes `'minecraft:iron_ingot'` is a resource location, except it doesn't point to a resource.
 For game objects like items the resource location is also referred to as the registry name.
 
-!!! Note
-    Note that you can't use `item('iron_ingot')`. This is disabled by GroovyScript. You must always input the full registry name.
+::: info Warning {id="warning"}
+Note that you can't use `item('iron_ingot')`. This is disabled by GroovyScript. You must always input the full registry name.
+:::

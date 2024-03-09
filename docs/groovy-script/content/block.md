@@ -37,20 +37,21 @@ at `.minecraft/groovy/assets/[pack id]/textures/blocks/[block name].png`.
 By default, the items name will show up as `tile.[pack id].[block name].name`. To change that you need add an entry to
 the lang file. GroovyScript generates a default lang file at `.minecraft/groovy/assets/[pack id]/lang/en_us.lang`.
 
-!!! example
+::: info Example {id="example"}
 
-    First create a block
+First create a block
 
-    ```groovy
-    content.createBlock('dust_block')
-    ```
+```groovy
+content.createBlock('dust_block')
+```
 
-    Let's assume that the pack id is `nomifactory` so that the item and block id will be `nomifactory:dust_block`.
-    Insert this line into the lang file.
+Let's assume that the pack id is `nomifactory` so that the item and block id will be `nomifactory:dust_block`.
+Insert this line into the lang file.
 
-    ```mclang
-    tile.nomifactory.dust_block.name=Heart of the universe
-    ```
+```mclang
+tile.nomifactory.dust_block.name=Heart of the universe
+```
 
-    (`tile.nomifactory.dust_block.name` is the default generated translation key. You can change to anything you want.) <br>
-    Finally, put a texture at `.minecraft/groovy/assets/nomifactory/textures/items/dust_block.png`
+(`tile.nomifactory.dust_block.name` is the default generated translation key. You can change to anything you want.) <br>
+Finally, put a texture at `.minecraft/groovy/assets/nomifactory/textures/items/dust_block.png`
+:::

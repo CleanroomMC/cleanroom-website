@@ -103,56 +103,67 @@ Registering the recipe (required):
 register()
 ```
 
-!!! example
+Reading the above makes this seem quite complicated. We promise it's not!
 
-    Reading the above makes this seem quite complicated. We promise it's not!
+### Shaped
 
-    === "Shaped"
+::: info Example {id="example"}
 
-        ```groovy
-        // Shaped Recipes
-        crafting.shapedBuilder()                    // create a new shaped recipe
-                .name('balanced_clay')              // name the recipe 'balanced_clay'
-                .output(item('minecraft:clay') * 32)      // output 32 clay
-                .matrix('NIN',                      // create the layout for the recipe
-                        'DSD',                      // each character represents a slot
-                        'NIN')
-                .key('N', item('minecraft:nether_star'))  // everywhere there is an 'N' in the layout, use a nether star
-                .key('I', ore('ingotIron'))               // all 'I' characters are iron ingots
-                .key('D', item('minecraft:diamond'))      // all 'D' characters are diamonds
-                .key('S', ore('stone'))                   // all 'I' characters are stone
-                .register()                         // register the recipe
-        ```
+```groovy
+// Shaped Recipes
+crafting.shapedBuilder()                    // create a new shaped recipe
+        .name('balanced_clay')              // name the recipe 'balanced_clay'
+        .output(item('minecraft:clay') * 32)      // output 32 clay
+        .matrix('NIN',                      // create the layout for the recipe
+                'DSD',                      // each character represents a slot
+                'NIN')
+        .key('N', item('minecraft:nether_star'))  // everywhere there is an 'N' in the layout, use a nether star
+        .key('I', ore('ingotIron'))               // all 'I' characters are iron ingots
+        .key('D', item('minecraft:diamond'))      // all 'D' characters are diamonds
+        .key('S', ore('stone'))                   // all 'I' characters are stone
+        .register()                         // register the recipe
+```
 
-    === "Shapeless"
+:::
 
-        ```groovy
-        // Shapeless Recipes
-        crafting.shapelessBuilder()                                     // add a new shapeless recipe
-                .name('balanced_clay_v3')                               // name the recipe 'balanced_clay_v3'
-                .output('minecraft:clay' * 2)                           // output 2 clay
-                .input('minecraft:iron_ingot')                          // add an iron ingot to the inputs
-                .input('minecraft:iron_ingot')                          // add a second iron ingot to the inputs
-                .input('minecraft:gold_nugget', 'minecraft:diamond')    // add a gold nugget and a diamond to the inputs
-                .register()
-        ```
+### Shapeless
 
-!!! note
-    If you want the slot to be empty, don't use a key and null, but instead just use a space!
+::: info Example {id="example"}
 
-    !!! example
+```groovy
+// Shapeless Recipes
+crafting.shapelessBuilder()                                     // add a new shapeless recipe
+        .name('balanced_clay_v3')                               // name the recipe 'balanced_clay_v3'
+        .output('minecraft:clay' * 2)                           // output 2 clay
+        .input('minecraft:iron_ingot')                          // add an iron ingot to the inputs
+        .input('minecraft:iron_ingot')                          // add a second iron ingot to the inputs
+        .input('minecraft:gold_nugget', 'minecraft:diamond')    // add a gold nugget and a diamond to the inputs
+        .register()
+```
+:::
 
-        The matrix should look like this:
 
-        ```groovy
-        crafting.shapedBuilder()
-                .name('balanced_clay_v2')
-                .output(item('minecraft:clay') * 64)
-                .matrix(' B ',                      // use a space for an empty slot
-                        'X X')                      // (1)!
-                .key('B', item('minecraft:glass_bottle'))
-                .key('X', item('minecraft:gold_nugget'))
-                .register()
-        ```
+## Empty Spaces
 
-        1. You can omit rows and columns for smaller recipes - this one's 3x2. Just make sure it's not jagged (different lengths for each row/col).
+:::: info {id="info"}
+If you want the slot to be empty, don't use a key and null, but instead just use a space!
+
+::: info Example {id="example"}
+
+The matrix should look like this:
+
+```groovy
+crafting.shapedBuilder()
+        .name('balanced_clay_v2')
+        .output(item('minecraft:clay') * 64)
+        .matrix(' B ',                      // use a space for an empty slot
+                'X X')                      // (1)!
+        .key('B', item('minecraft:glass_bottle'))
+        .key('X', item('minecraft:gold_nugget'))
+        .register()
+```
+
+1. You can omit rows and columns for smaller recipes - this one's 3x2. Just make sure it's not jagged (different lengths for each row/col).
+
+:::
+::::

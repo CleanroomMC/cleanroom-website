@@ -1,8 +1,8 @@
 # Creating fluids
 
-!!! Note
-    This requires at least version 0.7.0 of GroovyScript.
-
+::: info Warning {id="warning"}
+This requires at least version 0.7.0 of GroovyScript.
+:::
 ## The simplest way
 
 ```groovy
@@ -40,18 +40,19 @@ This will create a bucket item and a fluid block with a white water texture.
 - `setLavaMaterial()` sets the fluid material to lava. This makes the fluid blocks to behave like lava. (No custom materials currently)
 - `noBlock()` disables the fluid block from generating. Buckets will not be able to place the fluid in the world.
 
-??? Example
-    ````groovy
-    content.createFluid('molten_iron')
-        .setMetalTexture()
-        .setColor(0xFF0000)
-        .setLuminosity(4)
-        .setDensity(1700)
-        .setTemperature(1300)
-        .setViscosity(1500)
-        .setLavaMaterial()
-        .register()
-    ````
+::: details Example {open id="example"}
+````groovy
+content.createFluid('molten_iron')
+    .setMetalTexture()
+    .setColor(0xFF0000)
+    .setLuminosity(4)
+    .setDensity(1700)
+    .setTemperature(1300)
+    .setViscosity(1500)
+    .setLavaMaterial()
+    .register()
+````
+:::
 
 ## Registering a fluid
 
@@ -62,8 +63,9 @@ Use the following methods to register custom fluids.
 content.registerFluid(Fluis)
 ```
 
-!!! Warning
-    This is not recommended since using `createFluid(name).register()` does a lot of work for you.
+::: info Warning {id="warning"}
+This is not recommended since using `createFluid(name).register()` does a lot of work for you.
+:::
 
 ## Texture
 

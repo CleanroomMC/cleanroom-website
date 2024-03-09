@@ -40,18 +40,20 @@ Register recipe: (returns `cofh.thermalexpansion.util.managers.machine.Pulverize
 .register()
 ```
 
-!!! example
+::: info Example {id="example"}
 
-    This creates a recipe where bookshelf turns into a diamond with an extra 1% chance for an extra diamond.
+This creates a recipe where bookshelf turns into a diamond with an extra 1% chance for an extra diamond.
 
-    ```groovy
-    mods.thermalexpansion.Pulverizer.recipeBuilder()
-            .input(item('minecraft:bookshelf'))
-            .output(item('minecraft:diamond'))
-            .secondaryOutput(item('minecraft:diamond'), 1)
-            .energy(2000)
-            .register()
-    ```
+```groovy
+mods.thermalexpansion.Pulverizer.recipeBuilder()
+        .input(item('minecraft:bookshelf'))
+        .output(item('minecraft:diamond'))
+        .secondaryOutput(item('minecraft:diamond'), 1)
+        .energy(2000)
+        .register()
+```
+
+:::
 
 ## Removing Recipes
 
@@ -61,9 +63,11 @@ This removes a recipe that match the given input:
 mods.thermalexpansion.Pulverizer.removeByInput(ItemStack input)
 ```
 
-!!! example
+::: info Example {id="example"}
 
-    ```groovy
-    // removes recipe with Iron Ingot as input from Pulverizer
-    mods.thermalexpansion.Pulverizer.removeByInput(item('minecraft:iron_ingot'))
-    ```
+```groovy
+// removes recipe with Iron Ingot as input from Pulverizer
+mods.thermalexpansion.Pulverizer.removeByInput(item('minecraft:iron_ingot'))
+```
+
+:::

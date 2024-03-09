@@ -4,11 +4,12 @@
 content.createCreativeTab(String name, ItemStack icon) // returns the creative tab
 ```
 
-!!! example
+::: info Example {id="example"}
 
-    ```groovy
-    def creativeTab = content.createCreativeTab("nomifactory.creative_tab", item("nomifactory:heart_of_the_universe"))
-    ```
+```groovy
+def creativeTab = content.createCreativeTab("nomifactory.creative_tab", item("nomifactory:heart_of_the_universe"))
+```
+:::
 
 ## Other
 

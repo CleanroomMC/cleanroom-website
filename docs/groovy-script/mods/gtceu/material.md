@@ -3,8 +3,9 @@
 First of all, the best docs is the source
 itself: [Source](https://github.com/GregTechCEu/GregTech/blob/master/src/main/java/gregtech/api/unification/material/Material.java)
 
-!!! Note
-    This docs goes of GroovyScript version 0.4.0 and GTCEu 2.5.4
+::: info {id="info"}
+This docs goes of GroovyScript version 0.4.0 and GTCEu 2.5.4
+:::
 
 ## Introduction
 
@@ -358,27 +359,29 @@ Set the stats for tools which are made from this Material.
 * `durability` - Durability of the tools.
 * `harvestLevel` - Harvest Level of the tools.
 
-!!! example
+::: info Example {id="example"}
 
-    This is example of a material using everything mentioned so far.
+This is example of a material using everything mentioned so far.
 
-    ```groovy
-    import gregtech.api.GregTechAPI.MaterialEvent
-    import gregtech.api.unification.material.Material
+```groovy
+import gregtech.api.GregTechAPI.MaterialEvent
+import gregtech.api.unification.material.Material
 
-    event_manager.listen { MaterialEvent event ->
-        def specialSteel = new Material.Builder(32002, "special_steel") // name
-                .fluid("gas", false) // gas without block
-                .ingot() // has ingot (and therefore dust)
-                .color(0x0000FF) // pure blue
-                .toolStats(10, 3, 256, 21) // tool stats
-                .blastTemp(2900) // EBF temperature
-                .ore() // has ore blocks
-                .addOreByproducts(material('gold'), material('copper')) // add byproducts
-                .cableProperties(128, 2, 4, false) // add cables
-                .build() // build the actual material
-    }
-    ```
+event_manager.listen { MaterialEvent event ->
+    def specialSteel = new Material.Builder(32002, "special_steel") // name
+            .fluid("gas", false) // gas without block
+            .ingot() // has ingot (and therefore dust)
+            .color(0x0000FF) // pure blue
+            .toolStats(10, 3, 256, 21) // tool stats
+            .blastTemp(2900) // EBF temperature
+            .ore() // has ore blocks
+            .addOreByproducts(material('gold'), material('copper')) // add byproducts
+            .cableProperties(128, 2, 4, false) // add cables
+            .build() // build the actual material
+}
+```
+
+:::
 
 ### Changing Material Appearances
 
@@ -431,7 +434,7 @@ Sets the `MaterialIconSet` of this Material. Defaults vary depending on if the M
 
 The default will be determined by the property found first in this order.
 
-!!! example "Example with a MaterialIconSet"
+::: info Example with a MaterialIconSet {id="example"}
 
     ```groovy
     import gregtech.api.GregTechAPI.MaterialEvent
@@ -479,20 +482,22 @@ Sets the components of the material.
 
 * `components` - an array of `MaterialStacks` representing the components of this Material.
 
-!!! example
+::: info Example {id="example"}
 
-    ```groovy
-    import gregtech.api.GregTechAPI.MaterialEvent
-    import gregtech.api.unification.material.Material
+```groovy
+import gregtech.api.GregTechAPI.MaterialEvent
+import gregtech.api.unification.material.Material
 
-    event_manager.listen { MaterialEvent event ->
-        def cursed_chemistry_material = new Material.Builder(32004, "cursed_chemistry_material")
-                .fluid()
-                .color(0x00FF00) // pure red
-                .components(material('silver') * 3, material('nitrogen') * 6, material('carbon') * 2) // set the components
-                .build() // build the actual material
-    }
-    ```
+event_manager.listen { MaterialEvent event ->
+    def cursed_chemistry_material = new Material.Builder(32004, "cursed_chemistry_material")
+            .fluid()
+            .color(0x00FF00) // pure red
+            .components(material('silver') * 3, material('nitrogen') * 6, material('carbon') * 2) // set the components
+            .build() // build the actual material
+}
+```
+
+:::
 
 ### Material Flags
 
@@ -565,27 +570,29 @@ Add MaterialFlags to this Material.
 
 * `names` - a string array of the names of specific MaterialFlags.
 
-!!! example
+::: info Example {id="example"}
 
-    ```groovy
-    import gregtech.api.GregTechAPI.MaterialEvent
-    import gregtech.api.unification.material.Material
+```groovy
+import gregtech.api.GregTechAPI.MaterialEvent
+import gregtech.api.unification.material.Material
 
-    event_manager.listen { MaterialEvent event ->
-        def specialSteelFlagged = new Material.Builder(32004, "special_steel_flagged") // name
-                .fluid("gas", false) // gas without block
-                .ingot() // has ingot (and therefore dust)
-                .color(0x0000FF) // pure blue
-                .iconSet("shiny") // iconset to the shiny type
-                .flags("generate_plate", "generate_foil") // add flags
-                .toolStats(10, 3, 256, 21) // tool stats
-                .blastTemp(2900) // EBF temperature
-                .ore() // has ore blocks
-                .addOreByproducts(material('gold'), material('copper')) // add byproducts
-                .cableProperties(128, 2, 4, false) // add cables
-                .build() // build the actual material
-    }
-    ```
+event_manager.listen { MaterialEvent event ->
+    def specialSteelFlagged = new Material.Builder(32004, "special_steel_flagged") // name
+            .fluid("gas", false) // gas without block
+            .ingot() // has ingot (and therefore dust)
+            .color(0x0000FF) // pure blue
+            .iconSet("shiny") // iconset to the shiny type
+            .flags("generate_plate", "generate_foil") // add flags
+            .toolStats(10, 3, 256, 21) // tool stats
+            .blastTemp(2900) // EBF temperature
+            .ore() // has ore blocks
+            .addOreByproducts(material('gold'), material('copper')) // add byproducts
+            .cableProperties(128, 2, 4, false) // add cables
+            .build() // build the actual material
+}
+```
+
+:::
 
 ### Elements
 
@@ -745,7 +752,7 @@ Add a new element.
  850     | 900     | -1              | null    | "Vibranium"        | "Vb"     | false
  550     | 670     | -1              | null    | "Taranium"         | "Tn"     | false
 
-!!! example "Elemental Material Example"
+::: info Elemental Material Example {id="example"}
 
     ```groovy
     import gregtech.api.GregTechAPI.MaterialEvent
@@ -766,7 +773,7 @@ Add a new element.
 
 ***
 
-!!! example "Material Creation Full Examples"
+::: info Material Creation Full Examples {id="example"}
 
     ```groovy
     import gregtech.api.GregTechAPI.MaterialEvent
@@ -916,17 +923,19 @@ Sets the color of this Material.
 
 * `materialRGB` - the int color to set. Accepts the raw int value or values in the `0x` format.
 
-!!! example
+::: info Example {id="example"}
 
-    ```groovy
-    import gregtech.api.GregTechAPI.PostMaterialEvent
+```groovy
+import gregtech.api.GregTechAPI.PostMaterialEvent
 
-    event_manager.listen { PostMaterialEvent event ->
-        def gold = material('gold')
-        def name = gold.toString() // "gold"
-        def color = gold.getMaterialRGB() // 0xFFE650
-        gold.setFormula("(Au)2Au", true) // set formula
-        def formula = gold.getChemicalFormula() // "(Au)2Au"
-        gold.addFlags("generate_long_rod", "generate_gear") // add gold long rod, add gold gear
-    }
-    ```
+event_manager.listen { PostMaterialEvent event ->
+    def gold = material('gold')
+    def name = gold.toString() // "gold"
+    def color = gold.getMaterialRGB() // 0xFFE650
+    gold.setFormula("(Au)2Au", true) // set formula
+    def formula = gold.getChemicalFormula() // "(Au)2Au"
+    gold.addFlags("generate_long_rod", "generate_gear") // add gold long rod, add gold gear
+}
+```
+
+:::
