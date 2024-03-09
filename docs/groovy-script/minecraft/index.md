@@ -7,7 +7,7 @@ aside: false
 
 You can use GroovyScript to modify a number of vanilla recipes and values.
 
-* GroovyScript uses [Ingredients](./ingredient.md) to refer to an item, fluid, ore dictionary, other Ingredients, or list of any of the above.
+* GroovyScript uses [IIngredients](./ingredient.md) to refer to an item, fluid, ore dictionary, other Ingredients, or list of any of the above.
 
 * See how to access [Items](./item.md) for use in other compat, and modify their publicly available values.
 

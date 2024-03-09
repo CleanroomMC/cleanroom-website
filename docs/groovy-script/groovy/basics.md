@@ -2,15 +2,7 @@
 title: Groovy
 ---
 
-# Groovy
-
-Groovy is a powerful scripting language based on java.
-
-In this tab you can find some information about the scripting language itself.
-For GroovyScript specific stuff refer to the GroovyScript tab.
-
-The syntax is very similar to java, but with some conveniences from other scripting languages.
-The most noticeable is that you don't need `;` at the end of a line.
+# Groovy Basics
 
 ## Comments
 

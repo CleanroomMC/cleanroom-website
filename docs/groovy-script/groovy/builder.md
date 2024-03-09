@@ -10,7 +10,7 @@ Each method, except the `build()` method, should return the same builder instanc
 
 The Recipe Builders in GroovyScript and with a `.register()` call, because the recipe is registered rather than just build and `.buildAndRegister()` is too long.
 
-::: info Builder class example
+::: info Builder class {id="example"}
 Let's see what a simple Builder class can look like:
 
 ```groovy
@@ -40,7 +40,7 @@ class RecipeBuilder {
 
 :::
 
-::: info Usage example
+::: info Usage {id="example"}
 Now let's create a new recipe using the builder
 
 ```groovy

@@ -3,7 +3,7 @@
 
 Here you'll learn about adding external mod compat for GroovyScript.
 
-::: info {id="info"}
+::: info Warning {id="warning"}
 You need at least version 0.7.0.
 :::
 

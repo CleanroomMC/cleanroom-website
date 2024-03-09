@@ -42,7 +42,7 @@ function nav(): DefaultTheme.NavItem[] {
     { text: "Home", link: "/" },
     { text: "Guide", link: "/guide/" },
     { text: "Wiki", link: "/wiki/" },
-    { text: "GroovyScript", link: "/groovy-script/rl" },
+    { text: "GroovyScript", link: "/groovy-script/" },
   ];
 }
 
@@ -127,20 +127,6 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
             { text: "Theme", link: "theme" },
           ],
         },
-      ],
-    },
-    {
-      text: "Groovy",
-      collapsed: true,
-      base: "/wiki/groovy/",
-      items: [
-        { text: "Introduction", link: "introduction" },
-        { text: "Strings", link: "strings" },
-        { text: "Lists", link: "lists" },
-        { text: "Maps", link: "maps" },
-        { text: "Loops", link: "loops" },
-        { text: "Builders", link: "builder" },
-        { text: "Closures", link: "closure" },
       ],
     },
     {
