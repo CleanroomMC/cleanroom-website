@@ -19,7 +19,6 @@ export const en = defineConfig({
         useTitleFromFrontmatter: true,
         useTitleFromFileHeading: true,
         sortMenusByName: true,
-        excludeFiles: ["!navigation.md"],
         collapseDepth: 2,
         folderLinkNotIncludesFileName: true,
         useFolderLinkFromIndexFile: true,
