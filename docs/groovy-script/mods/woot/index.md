@@ -1,5 +1,5 @@
 ---
-hide: toc
+aside: false
 ---
 
 
