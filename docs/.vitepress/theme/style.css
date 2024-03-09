@@ -292,7 +292,7 @@ summary::after {
   mask-position: center;
   mask-size: contain;
   position: absolute;
-  background-color: var(--custom-block-color);
+  background-color: var(--custom-block-color, var(--vp-c-text-1));
   transform: rotate(180deg);
   transition: transform .25s;
   right: 0;
