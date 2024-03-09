@@ -102,47 +102,47 @@ This is a `block` of `Custom Title`
 This is a `block` of type `info`
 :::
 
-:::info {id="note"}
-This is a `block` of type `note`
+:::info Note {id="note"}
+This is a `block` of type `note`.
 :::
 
-:::details {id="tip"}
+:::details tip-but-details {id="tip"}
 This is a `block` of type `tip`
 :::
 
-:::details {open id="success"}
+:::details success-but-details {open id="success"}
 This is a `block` of type `success`
 :::
 
-:::details {open id="question"}
+:::details question-but-details {open id="question"}
 This is a `block` of type `question`
 :::
 
-:::details {open id="warning"}
+:::details warning-but-details {open id="warning"}
 This is a `block` of type `warning`
 :::
 
-:::details {id="failure"}
+:::details failure-but-details {id="failure"}
 This is a `block` of type `failure`
 :::
 
-:::info {id="danger"}
+:::info Danger {id="danger"}
 This is a `block` of type `danger`
 :::
 
-:::info {id="bug"}
+:::info Bug {id="bug"}
 This is a `block` of type `bug`
 :::
 
-:::info {id="abstract"}
+:::info Abstract {id="abstract"}
 This is a `block` of type `abstract`
 :::
 
-:::info {id="example"}
+:::info Example {id="example"}
 This is a `block` of type `example`
 :::
 
-:::info {id="quote"}
+:::info Quote {id="quote"}
 This is a `block` of type `quote`
 :::
 ```
@@ -185,47 +185,47 @@ This is a `block` of `Custom Title`
 This is a `block` of type `info`
 :::
 
-:::info {id="note"}
-This is a `block` of type `note`
+:::info Note {id="note"}
+This is a `block` of type `note`.
 :::
 
-:::details {id="tip"}
+:::details tip-but-details {id="tip"}
 This is a `block` of type `tip`
 :::
 
-:::details {open id="success"}
+:::details success-but-details {open id="success"}
 This is a `block` of type `success`
 :::
 
-:::details {open id="question"}
+:::details question-but-details {open id="question"}
 This is a `block` of type `question`
 :::
 
-:::details {open id="warning"}
+:::details warning-but-details {open id="warning"}
 This is a `block` of type `warning`
 :::
 
-:::details {id="failure"}
+:::details failure-but-details {id="failure"}
 This is a `block` of type `failure`
 :::
 
-:::info {id="danger"}
+:::info Danger {id="danger"}
 This is a `block` of type `danger`
 :::
 
-:::info {id="bug"}
+:::info Bug {id="bug"}
 This is a `block` of type `bug`
 :::
 
-:::info {id="abstract"}
+:::info Abstract {id="abstract"}
 This is a `block` of type `abstract`
 :::
 
-:::info {id="example"}
+:::info Example {id="example"}
 This is a `block` of type `example`
 :::
 
-:::info {id="quote"}
+:::info Quote {id="quote"}
 This is a `block` of type `quote`
 :::
 
