@@ -16,7 +16,7 @@ Converts an input itemstack into an output itemstack, requiring one of several e
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.soul_binder/*(1)!*/
+mods.enderio.soul_binder/* Used as page default */ // [!code focus]
 mods.enderio.soulbinder
 mods.enderio.soulBinder
 mods.enderio.SoulBinder
@@ -26,7 +26,6 @@ mods.eio.soulBinder
 mods.eio.SoulBinder
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

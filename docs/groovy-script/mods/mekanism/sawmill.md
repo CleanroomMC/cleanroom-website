@@ -16,11 +16,10 @@ Converts an input itemstack into an output itemstack, with an optional additiona
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.sawmill/*(1)!*/
+mods.mekanism.sawmill/* Used as page default */ // [!code focus]
 mods.mekanism.Sawmill
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

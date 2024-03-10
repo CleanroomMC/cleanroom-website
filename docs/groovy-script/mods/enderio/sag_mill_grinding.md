@@ -16,7 +16,7 @@ Add a new Griding Ball for use in a Sag Mill with the given output multiplier, p
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.sag_mill_grinding/*(1)!*/
+mods.enderio.sag_mill_grinding/* Used as page default */ // [!code focus]
 mods.enderio.sagmillgrinding
 mods.enderio.sagMillGrinding
 mods.enderio.SagMillGrinding
@@ -30,7 +30,6 @@ mods.eio.grinding
 mods.eio.Grinding
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

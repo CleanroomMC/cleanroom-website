@@ -22,7 +22,7 @@ mods.ae2.cannonAmmo
 mods.ae2.CannonAmmo
 mods.ae2.cannon
 mods.ae2.Cannon
-mods.appliedenergistics2.cannon_ammo/*(1)!*/
+mods.appliedenergistics2.cannon_ammo/* Used as page default */ // [!code focus]
 mods.appliedenergistics2.cannonammo
 mods.appliedenergistics2.cannonAmmo
 mods.appliedenergistics2.CannonAmmo
@@ -30,7 +30,6 @@ mods.appliedenergistics2.cannon
 mods.appliedenergistics2.Cannon
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

@@ -20,13 +20,12 @@ mods.ie.coke_oven
 mods.ie.cokeoven
 mods.ie.cokeOven
 mods.ie.CokeOven
-mods.immersiveengineering.coke_oven/*(1)!*/
+mods.immersiveengineering.coke_oven/* Used as page default */ // [!code focus]
 mods.immersiveengineering.cokeoven
 mods.immersiveengineering.cokeOven
 mods.immersiveengineering.CokeOven
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

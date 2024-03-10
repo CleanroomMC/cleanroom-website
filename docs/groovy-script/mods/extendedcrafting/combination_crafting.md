@@ -20,7 +20,7 @@ By default, there are no Combination recipes
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.extendedcrafting.combination_crafting/*(1)!*/
+mods.extendedcrafting.combination_crafting/* Used as page default */ // [!code focus]
 mods.extendedcrafting.combinationcrafting
 mods.extendedcrafting.combinationCrafting
 mods.extendedcrafting.CombinationCrafting
@@ -28,7 +28,6 @@ mods.extendedcrafting.combination
 mods.extendedcrafting.Combination
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

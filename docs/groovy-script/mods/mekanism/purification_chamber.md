@@ -16,7 +16,7 @@ Converts an input itemstack and gasstack into an output itemstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.purification_chamber/*(1)!*/
+mods.mekanism.purification_chamber/* Used as page default */ // [!code focus]
 mods.mekanism.purificationchamber
 mods.mekanism.purificationChamber
 mods.mekanism.PurificationChamber
@@ -24,7 +24,6 @@ mods.mekanism.purifier
 mods.mekanism.Purifier
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

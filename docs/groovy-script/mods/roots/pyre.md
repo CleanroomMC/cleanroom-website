@@ -16,11 +16,10 @@ Converts 5 input items into the ouput after a period of time when the Pyre is li
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.pyre/*(1)!*/
+mods.roots.pyre/* Used as page default */ // [!code focus]
 mods.roots.Pyre
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

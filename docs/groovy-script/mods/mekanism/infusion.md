@@ -20,11 +20,10 @@ To register a texture to be used by an Infusion Type, you have to add the follow
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.infusion/*(1)!*/
+mods.mekanism.infusion/* Used as page default */ // [!code focus]
 mods.mekanism.Infusion
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

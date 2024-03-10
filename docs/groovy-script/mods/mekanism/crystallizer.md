@@ -16,11 +16,10 @@ Converts an input gasstack into an output itemstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.crystallizer/*(1)!*/
+mods.mekanism.crystallizer/* Used as page default */ // [!code focus]
 mods.mekanism.Crystallizer
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

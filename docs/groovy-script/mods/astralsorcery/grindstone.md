@@ -16,13 +16,12 @@ Converts an item into an itemstack with a chance of getting twice the amount aft
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.grindstone/*(1)!*/
+mods.astralsorcery.grindstone/* Used as page default */ // [!code focus]
 mods.astralsorcery.Grindstone
 mods.astral.grindstone
 mods.astral.Grindstone
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

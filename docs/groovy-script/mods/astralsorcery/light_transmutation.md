@@ -16,7 +16,7 @@ Converts an input Block or IBlockState into an output IBlockState after being se
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.light_transmutation/*(1)!*/
+mods.astralsorcery.light_transmutation/* Used as page default */ // [!code focus]
 mods.astralsorcery.lighttransmutation
 mods.astralsorcery.lightTransmutation
 mods.astralsorcery.LightTransmutation
@@ -26,7 +26,6 @@ mods.astral.lightTransmutation
 mods.astral.LightTransmutation
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -20,13 +20,12 @@ The Fey Crafter is a crafting mechanism that requires an activated Grove Stone n
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.fey_crafter/*(1)!*/
+mods.roots.fey_crafter/* Used as page default */ // [!code focus]
 mods.roots.feycrafter
 mods.roots.feyCrafter
 mods.roots.FeyCrafter
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

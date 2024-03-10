@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.bm.tranquility
 mods.bm.Tranquility
-mods.bloodmagic.tranquility/*(1)!*/
+mods.bloodmagic.tranquility/* Used as page default */ // [!code focus]
 mods.bloodmagic.Tranquility
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

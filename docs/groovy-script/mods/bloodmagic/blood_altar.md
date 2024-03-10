@@ -28,13 +28,12 @@ mods.bm.blood_altar
 mods.bm.bloodaltar
 mods.bm.bloodAltar
 mods.bm.BloodAltar
-mods.bloodmagic.blood_altar/*(1)!*/
+mods.bloodmagic.blood_altar/* Used as page default */ // [!code focus]
 mods.bloodmagic.bloodaltar
 mods.bloodmagic.bloodAltar
 mods.bloodmagic.BloodAltar
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

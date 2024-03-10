@@ -16,11 +16,10 @@ Controls what spell modifiers are enabled and can be used.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.modifiers/*(1)!*/
+mods.roots.modifiers/* Used as page default */ // [!code focus]
 mods.roots.Modifiers
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

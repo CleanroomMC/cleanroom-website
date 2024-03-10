@@ -16,13 +16,12 @@ Convert in any number of item inputs into an item output.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.elven_trade/*(1)!*/
+mods.botania.elven_trade/* Used as page default */ // [!code focus]
 mods.botania.elventrade
 mods.botania.elvenTrade
 mods.botania.ElvenTrade
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

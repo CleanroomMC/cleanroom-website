@@ -16,11 +16,10 @@ Can cook food
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.campfire/*(1)!*/
+mods.pyrotech.campfire/* Used as page default */ // [!code focus]
 mods.pyrotech.Campfire
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

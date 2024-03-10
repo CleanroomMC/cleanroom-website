@@ -16,7 +16,7 @@ Convert an input itemstack into up to 4 output itemstacks with chances, using en
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.sag_mill/*(1)!*/
+mods.enderio.sag_mill/* Used as page default */ // [!code focus]
 mods.enderio.sagmill
 mods.enderio.sagMill
 mods.enderio.SagMill
@@ -32,7 +32,6 @@ mods.eio.Sag
 mods.eio.SAGMill
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

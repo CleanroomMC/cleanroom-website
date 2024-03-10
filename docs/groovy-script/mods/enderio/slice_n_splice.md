@@ -16,7 +16,7 @@ Convert up to 6 input itemstacks into an output itemstack, using energy and givi
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.slice_n_splice/*(1)!*/
+mods.enderio.slice_n_splice/* Used as page default */ // [!code focus]
 mods.enderio.slicensplice
 mods.enderio.sliceNSplice
 mods.enderio.SliceNSplice
@@ -34,7 +34,6 @@ mods.eio.sliceAndSplice
 mods.eio.SliceAndSplice
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

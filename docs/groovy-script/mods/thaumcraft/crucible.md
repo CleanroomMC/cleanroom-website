@@ -16,7 +16,7 @@ Combines an item with any number of Aspects to drop an output itemstack, potenti
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.crucible/*(1)!*/
+mods.thaumcraft.crucible/* Used as page default */ // [!code focus]
 mods.thaumcraft.Crucible
 mods.tc.crucible
 mods.tc.Crucible
@@ -24,7 +24,6 @@ mods.thaum.crucible
 mods.thaum.Crucible
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

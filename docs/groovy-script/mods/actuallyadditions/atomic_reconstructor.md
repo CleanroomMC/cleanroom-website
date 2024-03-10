@@ -20,13 +20,12 @@ mods.aa.atomic_reconstructor
 mods.aa.atomicreconstructor
 mods.aa.atomicReconstructor
 mods.aa.AtomicReconstructor
-mods.actuallyadditions.atomic_reconstructor/*(1)!*/
+mods.actuallyadditions.atomic_reconstructor/* Used as page default */ // [!code focus]
 mods.actuallyadditions.atomicreconstructor
 mods.actuallyadditions.atomicReconstructor
 mods.actuallyadditions.AtomicReconstructor
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

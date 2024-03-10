@@ -16,11 +16,10 @@ Category creates a new entry on the front page of the Lexica Botania.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.category/*(1)!*/
+mods.botania.category/* Used as page default */ // [!code focus]
 mods.botania.Category
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

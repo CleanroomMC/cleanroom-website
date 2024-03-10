@@ -20,13 +20,12 @@ mods.ie.arc_furnace
 mods.ie.arcfurnace
 mods.ie.arcFurnace
 mods.ie.ArcFurnace
-mods.immersiveengineering.arc_furnace/*(1)!*/
+mods.immersiveengineering.arc_furnace/* Used as page default */ // [!code focus]
 mods.immersiveengineering.arcfurnace
 mods.immersiveengineering.arcFurnace
 mods.immersiveengineering.ArcFurnace
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

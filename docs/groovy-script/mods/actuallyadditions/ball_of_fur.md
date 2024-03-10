@@ -20,13 +20,12 @@ mods.aa.ball_of_fur
 mods.aa.balloffur
 mods.aa.ballOfFur
 mods.aa.BallOfFur
-mods.actuallyadditions.ball_of_fur/*(1)!*/
+mods.actuallyadditions.ball_of_fur/* Used as page default */ // [!code focus]
 mods.actuallyadditions.balloffur
 mods.actuallyadditions.ballOfFur
 mods.actuallyadditions.BallOfFur
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

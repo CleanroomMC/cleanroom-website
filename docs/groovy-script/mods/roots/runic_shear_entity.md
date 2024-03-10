@@ -16,13 +16,12 @@ Right clicking a Runic Shear on an entity. The entity will have a cooldown, prev
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.runic_shear_entity/*(1)!*/
+mods.roots.runic_shear_entity/* Used as page default */ // [!code focus]
 mods.roots.runicshearentity
 mods.roots.runicShearEntity
 mods.roots.RunicShearEntity
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

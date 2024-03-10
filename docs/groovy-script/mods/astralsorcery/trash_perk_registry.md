@@ -16,7 +16,7 @@ Having the Trash to Treasure perk turns items the player drops in the list defin
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.trash_perk_registry/*(1)!*/
+mods.astralsorcery.trash_perk_registry/* Used as page default */ // [!code focus]
 mods.astralsorcery.trashperkregistry
 mods.astralsorcery.trashPerkRegistry
 mods.astralsorcery.TrashPerkRegistry
@@ -26,7 +26,6 @@ mods.astral.trashPerkRegistry
 mods.astral.TrashPerkRegistry
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

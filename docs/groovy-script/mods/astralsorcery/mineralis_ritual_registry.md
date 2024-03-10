@@ -16,7 +16,7 @@ Using a mineralis ritual will convert nearby stone blocks into random ores.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.mineralis_ritual_registry/*(1)!*/
+mods.astralsorcery.mineralis_ritual_registry/* Used as page default */ // [!code focus]
 mods.astralsorcery.mineralisritualregistry
 mods.astralsorcery.mineralisRitualRegistry
 mods.astralsorcery.MineralisRitualRegistry
@@ -26,7 +26,6 @@ mods.astral.mineralisRitualRegistry
 mods.astral.MineralisRitualRegistry
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

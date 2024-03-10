@@ -16,11 +16,10 @@ Over time converts a fluid with four items into a new fluid
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.barrel/*(1)!*/
+mods.pyrotech.barrel/* Used as page default */ // [!code focus]
 mods.pyrotech.Barrel
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

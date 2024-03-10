@@ -16,11 +16,10 @@ Converts any number of a single item into an output itemstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.avaritia.compressor/*(1)!*/
+mods.avaritia.compressor/* Used as page default */ // [!code focus]
 mods.avaritia.Compressor
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -20,13 +20,12 @@ mods.bm.alchemy_array
 mods.bm.alchemyarray
 mods.bm.alchemyArray
 mods.bm.AlchemyArray
-mods.bloodmagic.alchemy_array/*(1)!*/
+mods.bloodmagic.alchemy_array/* Used as page default */ // [!code focus]
 mods.bloodmagic.alchemyarray
 mods.bloodmagic.alchemyArray
 mods.bloodmagic.AlchemyArray
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

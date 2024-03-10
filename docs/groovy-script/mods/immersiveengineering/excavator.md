@@ -22,11 +22,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.ie.excavator
 mods.ie.Excavator
-mods.immersiveengineering.excavator/*(1)!*/
+mods.immersiveengineering.excavator/* Used as page default */ // [!code focus]
 mods.immersiveengineering.Excavator
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

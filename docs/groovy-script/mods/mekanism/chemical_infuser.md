@@ -16,13 +16,12 @@ Combines two input gas stacks into a output gas stack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.chemical_infuser/*(1)!*/
+mods.mekanism.chemical_infuser/* Used as page default */ // [!code focus]
 mods.mekanism.chemicalinfuser
 mods.mekanism.chemicalInfuser
 mods.mekanism.ChemicalInfuser
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

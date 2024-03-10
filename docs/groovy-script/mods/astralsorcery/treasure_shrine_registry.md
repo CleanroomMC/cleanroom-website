@@ -16,7 +16,7 @@ When the block in the middle of a Treasure Shrine structure is broken, a random 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.treasure_shrine_registry/*(1)!*/
+mods.astralsorcery.treasure_shrine_registry/* Used as page default */ // [!code focus]
 mods.astralsorcery.treasureshrineregistry
 mods.astralsorcery.treasureShrineRegistry
 mods.astralsorcery.TreasureShrineRegistry
@@ -26,7 +26,6 @@ mods.astral.treasureShrineRegistry
 mods.astral.TreasureShrineRegistry
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

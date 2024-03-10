@@ -20,13 +20,12 @@ mods.ie.metal_press
 mods.ie.metalpress
 mods.ie.metalPress
 mods.ie.MetalPress
-mods.immersiveengineering.metal_press/*(1)!*/
+mods.immersiveengineering.metal_press/* Used as page default */ // [!code focus]
 mods.immersiveengineering.metalpress
 mods.immersiveengineering.metalPress
 mods.immersiveengineering.MetalPress
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,7 +16,7 @@ Converts an input fluidstack, gasstack, and optional itemstack into an output ga
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.pressurized_reaction_chamber/*(1)!*/
+mods.mekanism.pressurized_reaction_chamber/* Used as page default */ // [!code focus]
 mods.mekanism.pressurizedreactionchamber
 mods.mekanism.pressurizedReactionChamber
 mods.mekanism.PressurizedReactionChamber
@@ -24,7 +24,6 @@ mods.mekanism.PRC
 mods.mekanism.prc
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

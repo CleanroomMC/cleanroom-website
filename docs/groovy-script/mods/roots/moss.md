@@ -16,11 +16,10 @@ Moss indicates a pair of items that can right click the input with a knife to tu
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.moss/*(1)!*/
+mods.roots.moss/* Used as page default */ // [!code focus]
 mods.roots.Moss
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

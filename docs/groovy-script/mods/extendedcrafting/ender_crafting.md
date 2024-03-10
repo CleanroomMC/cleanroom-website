@@ -16,13 +16,12 @@ A normal crafting recipe, with the recipe being slowly crafted based on nearby E
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.extendedcrafting.ender_crafting/*(1)!*/
+mods.extendedcrafting.ender_crafting/* Used as page default */ // [!code focus]
 mods.extendedcrafting.endercrafting
 mods.extendedcrafting.enderCrafting
 mods.extendedcrafting.EnderCrafting
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

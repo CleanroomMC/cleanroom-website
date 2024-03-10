@@ -20,13 +20,12 @@ mods.ie.alloy_kiln
 mods.ie.alloykiln
 mods.ie.alloyKiln
 mods.ie.AlloyKiln
-mods.immersiveengineering.alloy_kiln/*(1)!*/
+mods.immersiveengineering.alloy_kiln/* Used as page default */ // [!code focus]
 mods.immersiveengineering.alloykiln
 mods.immersiveengineering.alloyKiln
 mods.immersiveengineering.AlloyKiln
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

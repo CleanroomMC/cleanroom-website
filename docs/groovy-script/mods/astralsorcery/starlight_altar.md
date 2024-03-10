@@ -16,7 +16,7 @@ Allows creation of shaped recipes in the Astral Sorcery Crafting Altar chain.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.starlight_altar/*(1)!*/
+mods.astralsorcery.starlight_altar/* Used as page default */ // [!code focus]
 mods.astralsorcery.starlightaltar
 mods.astralsorcery.starlightAltar
 mods.astralsorcery.StarlightAltar
@@ -26,7 +26,6 @@ mods.astral.starlightAltar
 mods.astral.StarlightAltar
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

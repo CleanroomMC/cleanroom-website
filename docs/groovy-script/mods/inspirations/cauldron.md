@@ -20,11 +20,10 @@ Cauldrons have a cap of either 3 or 4 levels, depending on the config.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.inspirations.cauldron/*(1)!*/
+mods.inspirations.cauldron/* Used as page default */ // [!code focus]
 mods.inspirations.Cauldron
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

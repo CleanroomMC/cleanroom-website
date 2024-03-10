@@ -16,13 +16,12 @@ When shift right clicking a mob in the Life Essence Pool with Runic Shears, it w
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.life_essence/*(1)!*/
+mods.roots.life_essence/* Used as page default */ // [!code focus]
 mods.roots.lifeessence
 mods.roots.lifeEssence
 mods.roots.LifeEssence
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

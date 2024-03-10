@@ -22,7 +22,7 @@ mods.ie.bottlingMachine
 mods.ie.BottlingMachine
 mods.ie.bottling
 mods.ie.Bottling
-mods.immersiveengineering.bottling_machine/*(1)!*/
+mods.immersiveengineering.bottling_machine/* Used as page default */ // [!code focus]
 mods.immersiveengineering.bottlingmachine
 mods.immersiveengineering.bottlingMachine
 mods.immersiveengineering.BottlingMachine
@@ -30,7 +30,6 @@ mods.immersiveengineering.bottling
 mods.immersiveengineering.Bottling
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

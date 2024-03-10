@@ -20,13 +20,12 @@ mods.id.drying_basin
 mods.id.dryingbasin
 mods.id.dryingBasin
 mods.id.DryingBasin
-mods.integrateddynamics.drying_basin/*(1)!*/
+mods.integrateddynamics.drying_basin/* Used as page default */ // [!code focus]
 mods.integrateddynamics.dryingbasin
 mods.integrateddynamics.dryingBasin
 mods.integrateddynamics.DryingBasin
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,13 +16,12 @@ Converts and input itemstack and a varible amount of an infusion type into an ou
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.metallurgic_infuser/*(1)!*/
+mods.mekanism.metallurgic_infuser/* Used as page default */ // [!code focus]
 mods.mekanism.metallurgicinfuser
 mods.mekanism.metallurgicInfuser
 mods.mekanism.MetallurgicInfuser
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

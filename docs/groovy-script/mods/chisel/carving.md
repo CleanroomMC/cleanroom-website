@@ -24,11 +24,10 @@ You cannot addVariation/removeVariation to chisel groups based on the oredict, y
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.chisel.carving/*(1)!*/
+mods.chisel.carving/* Used as page default */ // [!code focus]
 mods.chisel.Carving
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Editing Values
 

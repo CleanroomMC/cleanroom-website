@@ -16,13 +16,12 @@ Consumes an item to give an output, possibly changing the weather. Has a cooldow
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.evilcraft.environmental_accumulator/*(1)!*/
+mods.evilcraft.environmental_accumulator/* Used as page default */ // [!code focus]
 mods.evilcraft.environmentalaccumulator
 mods.evilcraft.environmentalAccumulator
 mods.evilcraft.EnvironmentalAccumulator
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

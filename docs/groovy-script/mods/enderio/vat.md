@@ -16,13 +16,12 @@ Converts an input fluidstack into an output itemstack at a rate based on up 2 it
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.vat/*(1)!*/
+mods.enderio.vat/* Used as page default */ // [!code focus]
 mods.enderio.Vat
 mods.eio.vat
 mods.eio.Vat
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

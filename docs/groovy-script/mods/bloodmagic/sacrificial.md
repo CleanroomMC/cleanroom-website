@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.bm.sacrificial
 mods.bm.Sacrificial
-mods.bloodmagic.sacrificial/*(1)!*/
+mods.bloodmagic.sacrificial/* Used as page default */ // [!code focus]
 mods.bloodmagic.Sacrificial
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,13 +16,12 @@ Adds virtual aquifers that can be accessed via the Evershifting Fountain's Necro
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.fountain/*(1)!*/
+mods.astralsorcery.fountain/* Used as page default */ // [!code focus]
 mods.astralsorcery.Fountain
 mods.astral.fountain
 mods.astral.Fountain
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

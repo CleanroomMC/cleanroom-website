@@ -16,7 +16,7 @@ Converts an input itemstack into an output gasstack at the cost of 100mb of Sulf
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.dissolution_chamber/*(1)!*/
+mods.mekanism.dissolution_chamber/* Used as page default */ // [!code focus]
 mods.mekanism.dissolutionchamber
 mods.mekanism.dissolutionChamber
 mods.mekanism.DissolutionChamber
@@ -24,7 +24,6 @@ mods.mekanism.dissolver
 mods.mekanism.Dissolver
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

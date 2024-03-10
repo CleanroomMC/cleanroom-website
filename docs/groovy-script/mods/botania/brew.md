@@ -16,11 +16,10 @@ Creates a custom brew, but not a recipe for the brew.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.brew/*(1)!*/
+mods.botania.brew/* Used as page default */ // [!code focus]
 mods.botania.Brew
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

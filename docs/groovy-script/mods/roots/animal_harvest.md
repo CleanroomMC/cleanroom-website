@@ -16,13 +16,12 @@ Animal Harvest is a ritual that drops items from nearby mob's based on that mobs
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.animal_harvest/*(1)!*/
+mods.roots.animal_harvest/* Used as page default */ // [!code focus]
 mods.roots.animalharvest
 mods.roots.animalHarvest
 mods.roots.AnimalHarvest
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

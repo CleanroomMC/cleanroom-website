@@ -16,13 +16,12 @@ When using a axe it can convert items
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.chopping_block/*(1)!*/
+mods.pyrotech.chopping_block/* Used as page default */ // [!code focus]
 mods.pyrotech.choppingblock
 mods.pyrotech.choppingBlock
 mods.pyrotech.ChoppingBlock
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

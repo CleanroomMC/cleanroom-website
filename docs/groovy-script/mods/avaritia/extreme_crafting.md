@@ -16,13 +16,12 @@ A normal crafting table, by 9x9 instead.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.avaritia.extreme_crafting/*(1)!*/
+mods.avaritia.extreme_crafting/* Used as page default */ // [!code focus]
 mods.avaritia.extremecrafting
 mods.avaritia.extremeCrafting
 mods.avaritia.ExtremeCrafting
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

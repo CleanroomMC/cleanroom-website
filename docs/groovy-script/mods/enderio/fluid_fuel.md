@@ -16,7 +16,7 @@ Create a Fuel with a given power per tick and total burn time that produces powe
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.fluid_fuel/*(1)!*/
+mods.enderio.fluid_fuel/* Used as page default */ // [!code focus]
 mods.enderio.fluidfuel
 mods.enderio.fluidFuel
 mods.enderio.FluidFuel
@@ -34,7 +34,6 @@ mods.eio.combustionFuel
 mods.eio.CombustionFuel
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

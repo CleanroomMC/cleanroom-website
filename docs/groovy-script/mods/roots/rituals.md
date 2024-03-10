@@ -20,11 +20,10 @@ This compat is not fully documented. Some or all of its features are not present
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.rituals/*(1)!*/
+mods.roots.rituals/* Used as page default */ // [!code focus]
 mods.roots.Rituals
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

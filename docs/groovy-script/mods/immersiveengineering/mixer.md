@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.ie.mixer
 mods.ie.Mixer
-mods.immersiveengineering.mixer/*(1)!*/
+mods.immersiveengineering.mixer/* Used as page default */ // [!code focus]
 mods.immersiveengineering.Mixer
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

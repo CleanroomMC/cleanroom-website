@@ -16,7 +16,7 @@ Converts a block in-world into an item, when interacting with it with Salis Mund
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.dust_trigger/*(1)!*/
+mods.thaumcraft.dust_trigger/* Used as page default */ // [!code focus]
 mods.thaumcraft.dusttrigger
 mods.thaumcraft.dustTrigger
 mods.thaumcraft.DustTrigger
@@ -30,7 +30,6 @@ mods.thaum.dustTrigger
 mods.thaum.DustTrigger
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

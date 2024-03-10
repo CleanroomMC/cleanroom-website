@@ -20,13 +20,12 @@ mods.aa.treasure_chest
 mods.aa.treasurechest
 mods.aa.treasureChest
 mods.aa.TreasureChest
-mods.actuallyadditions.treasure_chest/*(1)!*/
+mods.actuallyadditions.treasure_chest/* Used as page default */ // [!code focus]
 mods.actuallyadditions.treasurechest
 mods.actuallyadditions.treasureChest
 mods.actuallyadditions.TreasureChest
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

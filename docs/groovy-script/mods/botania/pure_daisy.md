@@ -16,13 +16,12 @@ Convert a given block to another blockstate after a period of time.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.pure_daisy/*(1)!*/
+mods.botania.pure_daisy/* Used as page default */ // [!code focus]
 mods.botania.puredaisy
 mods.botania.pureDaisy
 mods.botania.PureDaisy
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

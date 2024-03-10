@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.ae2.attunement
 mods.ae2.Attunement
-mods.appliedenergistics2.attunement/*(1)!*/
+mods.appliedenergistics2.attunement/* Used as page default */ // [!code focus]
 mods.appliedenergistics2.Attunement
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

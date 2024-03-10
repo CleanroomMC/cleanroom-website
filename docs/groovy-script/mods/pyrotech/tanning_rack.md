@@ -16,13 +16,12 @@ Converts an item over time into a new one
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.tanning_rack/*(1)!*/
+mods.pyrotech.tanning_rack/* Used as page default */ // [!code focus]
 mods.pyrotech.tanningrack
 mods.pyrotech.tanningRack
 mods.pyrotech.TanningRack
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

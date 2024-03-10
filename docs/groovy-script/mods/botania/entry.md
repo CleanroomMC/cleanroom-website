@@ -16,11 +16,10 @@ Entry creates a new entry in a given category.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.entry/*(1)!*/
+mods.botania.entry/* Used as page default */ // [!code focus]
 mods.botania.Entry
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Editing Values
 

@@ -16,11 +16,10 @@ Converts an input itemstack into an output itemstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.crusher/*(1)!*/
+mods.mekanism.crusher/* Used as page default */ // [!code focus]
 mods.mekanism.Crusher
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,13 +16,12 @@ Create a custom Constellation.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.constellation/*(1)!*/
+mods.astralsorcery.constellation/* Used as page default */ // [!code focus]
 mods.astralsorcery.Constellation
 mods.astral.constellation
 mods.astral.Constellation
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

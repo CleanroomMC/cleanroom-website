@@ -20,13 +20,12 @@ mods.ie.blast_furnace
 mods.ie.blastfurnace
 mods.ie.blastFurnace
 mods.ie.BlastFurnace
-mods.immersiveengineering.blast_furnace/*(1)!*/
+mods.immersiveengineering.blast_furnace/* Used as page default */ // [!code focus]
 mods.immersiveengineering.blastfurnace
 mods.immersiveengineering.blastFurnace
 mods.immersiveengineering.BlastFurnace
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

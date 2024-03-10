@@ -16,13 +16,12 @@ Converts a items inputs into an item ouput at the cost of mana when a Livingrock
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.rune_altar/*(1)!*/
+mods.botania.rune_altar/* Used as page default */ // [!code focus]
 mods.botania.runealtar
 mods.botania.runeAltar
 mods.botania.RuneAltar
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

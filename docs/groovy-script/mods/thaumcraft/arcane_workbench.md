@@ -16,7 +16,7 @@ A special crafting table, allowing additional requirements in the form of Vis Cr
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.arcane_workbench/*(1)!*/
+mods.thaumcraft.arcane_workbench/* Used as page default */ // [!code focus]
 mods.thaumcraft.arcaneworkbench
 mods.thaumcraft.arcaneWorkbench
 mods.thaumcraft.ArcaneWorkbench
@@ -30,7 +30,6 @@ mods.thaum.arcaneWorkbench
 mods.thaum.ArcaneWorkbench
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

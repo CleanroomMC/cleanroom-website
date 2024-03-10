@@ -16,11 +16,10 @@ Add or remove items from the magnet blacklist
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.magnet/*(1)!*/
+mods.botania.magnet/* Used as page default */ // [!code focus]
 mods.botania.Magnet
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

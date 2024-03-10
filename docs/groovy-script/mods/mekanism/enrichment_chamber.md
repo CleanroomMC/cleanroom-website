@@ -16,7 +16,7 @@ Converts an input itemstack into an output itemstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.enrichment_chamber/*(1)!*/
+mods.mekanism.enrichment_chamber/* Used as page default */ // [!code focus]
 mods.mekanism.enrichmentchamber
 mods.mekanism.enrichmentChamber
 mods.mekanism.EnrichmentChamber
@@ -24,7 +24,6 @@ mods.mekanism.enricher
 mods.mekanism.Enricher
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

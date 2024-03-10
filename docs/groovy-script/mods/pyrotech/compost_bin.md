@@ -16,13 +16,12 @@ Can convert multiple items into a new one when its full
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.compost_bin/*(1)!*/
+mods.pyrotech.compost_bin/* Used as page default */ // [!code focus]
 mods.pyrotech.compostbin
 mods.pyrotech.compostBin
 mods.pyrotech.CompostBin
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

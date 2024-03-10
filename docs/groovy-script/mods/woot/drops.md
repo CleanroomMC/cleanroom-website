@@ -16,11 +16,10 @@ Controls extra drops given by mobs. Chance and Size are both arrays 4 long, cont
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.woot.drops/*(1)!*/
+mods.woot.drops/* Used as page default */ // [!code focus]
 mods.woot.Drops
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

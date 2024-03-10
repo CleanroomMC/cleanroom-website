@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.aa.empowerer
 mods.aa.Empowerer
-mods.actuallyadditions.empowerer/*(1)!*/
+mods.actuallyadditions.empowerer/* Used as page default */ // [!code focus]
 mods.actuallyadditions.Empowerer
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

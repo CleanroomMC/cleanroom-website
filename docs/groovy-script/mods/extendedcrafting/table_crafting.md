@@ -16,13 +16,12 @@ A normal crafting recipe, but requiring either a specific tier, or at least a gi
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.extendedcrafting.table_crafting/*(1)!*/
+mods.extendedcrafting.table_crafting/* Used as page default */ // [!code focus]
 mods.extendedcrafting.tablecrafting
 mods.extendedcrafting.tableCrafting
 mods.extendedcrafting.TableCrafting
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,7 +16,7 @@ When two chalices containing different fluids are placed nearby, fluid may be co
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.chalice_interaction/*(1)!*/
+mods.astralsorcery.chalice_interaction/* Used as page default */ // [!code focus]
 mods.astralsorcery.chaliceinteraction
 mods.astralsorcery.chaliceInteraction
 mods.astralsorcery.ChaliceInteraction
@@ -26,7 +26,6 @@ mods.astral.chaliceInteraction
 mods.astral.ChaliceInteraction
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

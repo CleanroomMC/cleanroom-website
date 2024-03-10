@@ -16,11 +16,10 @@ Creates a new type of knowledge that Lexica Botania entries may be gated with. C
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.knowledge/*(1)!*/
+mods.botania.knowledge/* Used as page default */ // [!code focus]
 mods.botania.Knowledge
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

@@ -16,13 +16,12 @@ Consumes an item, some fluid, and requires a given tier of Promise of Tenacity t
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.evilcraft.blood_infuser/*(1)!*/
+mods.evilcraft.blood_infuser/* Used as page default */ // [!code focus]
 mods.evilcraft.bloodinfuser
 mods.evilcraft.bloodInfuser
 mods.evilcraft.BloodInfuser
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

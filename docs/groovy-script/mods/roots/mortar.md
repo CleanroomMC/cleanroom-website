@@ -16,7 +16,7 @@ When right clicking a mortar containing the input items with a pestle, it will d
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.mortar/*(1)!*/
+mods.roots.mortar/* Used as page default */ // [!code focus]
 mods.roots.Mortar
 mods.roots.mortar_and_pestle
 mods.roots.mortarandpestle
@@ -24,7 +24,6 @@ mods.roots.mortarAndPestle
 mods.roots.MortarAndPestle
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,13 +16,12 @@ Consumes a 3d structure in-world based on keys when an item is thrown into the f
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.compactmachines3.miniaturization/*(1)!*/
+mods.compactmachines3.miniaturization/* Used as page default */ // [!code focus]
 mods.compactmachines3.Miniaturization
 mods.compactmachines.miniaturization
 mods.compactmachines.Miniaturization
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

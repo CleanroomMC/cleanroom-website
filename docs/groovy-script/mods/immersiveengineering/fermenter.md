@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.ie.fermenter
 mods.ie.Fermenter
-mods.immersiveengineering.fermenter/*(1)!*/
+mods.immersiveengineering.fermenter/* Used as page default */ // [!code focus]
 mods.immersiveengineering.Fermenter
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

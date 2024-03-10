@@ -16,7 +16,7 @@ Control the Perk level cap and XP formula.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.perk_tree_config/*(1)!*/
+mods.astralsorcery.perk_tree_config/* Used as page default */ // [!code focus]
 mods.astralsorcery.perktreeconfig
 mods.astralsorcery.perkTreeConfig
 mods.astralsorcery.PerkTreeConfig
@@ -26,7 +26,6 @@ mods.astral.perkTreeConfig
 mods.astral.PerkTreeConfig
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Editing Values
 

@@ -16,7 +16,7 @@ Additional item output when smelting a given item in the Infernal Furnace Multib
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.smelting_bonus/*(1)!*/
+mods.thaumcraft.smelting_bonus/* Used as page default */ // [!code focus]
 mods.thaumcraft.smeltingbonus
 mods.thaumcraft.smeltingBonus
 mods.thaumcraft.SmeltingBonus
@@ -30,7 +30,6 @@ mods.thaum.smeltingBonus
 mods.thaum.SmeltingBonus
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

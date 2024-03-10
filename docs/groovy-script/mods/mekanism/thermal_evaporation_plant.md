@@ -16,7 +16,7 @@ Converts an input fluidstack into an output fluidstack over time based on multib
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.thermal_evaporation_plant/*(1)!*/
+mods.mekanism.thermal_evaporation_plant/* Used as page default */ // [!code focus]
 mods.mekanism.thermalevaporationplant
 mods.mekanism.thermalEvaporationPlant
 mods.mekanism.ThermalEvaporationPlant
@@ -28,7 +28,6 @@ mods.mekanism.TEP
 mods.mekanism.tep
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

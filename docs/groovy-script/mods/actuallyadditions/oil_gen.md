@@ -20,13 +20,12 @@ mods.aa.oil_gen
 mods.aa.oilgen
 mods.aa.oilGen
 mods.aa.OilGen
-mods.actuallyadditions.oil_gen/*(1)!*/
+mods.actuallyadditions.oil_gen/* Used as page default */ // [!code focus]
 mods.actuallyadditions.oilgen
 mods.actuallyadditions.oilGen
 mods.actuallyadditions.OilGen
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

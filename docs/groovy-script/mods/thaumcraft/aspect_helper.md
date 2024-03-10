@@ -16,7 +16,7 @@ Controls what Aspects are attached to entities or items.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.aspect_helper/*(1)!*/
+mods.thaumcraft.aspect_helper/* Used as page default */ // [!code focus]
 mods.thaumcraft.aspecthelper
 mods.thaumcraft.aspectHelper
 mods.thaumcraft.AspectHelper
@@ -30,7 +30,6 @@ mods.thaum.aspectHelper
 mods.thaum.AspectHelper
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

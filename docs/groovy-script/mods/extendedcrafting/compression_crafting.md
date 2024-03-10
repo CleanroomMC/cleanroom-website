@@ -16,7 +16,7 @@ Converts any number of a single item into an output itemstack, with a configurab
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.extendedcrafting.compression_crafting/*(1)!*/
+mods.extendedcrafting.compression_crafting/* Used as page default */ // [!code focus]
 mods.extendedcrafting.compressioncrafting
 mods.extendedcrafting.compressionCrafting
 mods.extendedcrafting.CompressionCrafting
@@ -24,7 +24,6 @@ mods.extendedcrafting.compression
 mods.extendedcrafting.Compression
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

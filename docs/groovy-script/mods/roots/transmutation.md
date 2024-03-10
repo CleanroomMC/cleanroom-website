@@ -16,11 +16,10 @@ When running the Transmutation, convert nearby blocks that match a set of condit
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.transmutation/*(1)!*/
+mods.roots.transmutation/* Used as page default */ // [!code focus]
 mods.roots.Transmutation
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

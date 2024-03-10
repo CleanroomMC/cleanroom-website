@@ -16,13 +16,12 @@ Converts an input itemstack and 200 of a gasstack into an output itemstack. By d
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.osmium_compressor/*(1)!*/
+mods.mekanism.osmium_compressor/* Used as page default */ // [!code focus]
 mods.mekanism.osmiumcompressor
 mods.mekanism.osmiumCompressor
 mods.mekanism.OsmiumCompressor
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 
@@ -80,12 +79,11 @@ Don't know what a builder is? Check [the builder info page](../../../groovy/buil
 ```groovy:no-line-numbers
 mods.mekanism.osmium_compressor.recipeBuilder()
     .input(item('minecraft:diamond'))
-    .gasInput(gas('hydrogen'))/*(1)!*/
+    .gasInput(gas('hydrogen'))/* Always uses 200 gas */
     .output(item('minecraft:nether_star'))
     .register()
 ```
 
-1. Always uses 200 gas
 
 :::::::::
 

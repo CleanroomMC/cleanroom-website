@@ -16,13 +16,12 @@ When using a shovel it can convert items
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.compacting_bin/*(1)!*/
+mods.pyrotech.compacting_bin/* Used as page default */ // [!code focus]
 mods.pyrotech.compactingbin
 mods.pyrotech.compactingBin
 mods.pyrotech.CompactingBin
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

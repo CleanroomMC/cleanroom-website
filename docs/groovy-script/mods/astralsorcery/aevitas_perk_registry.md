@@ -16,7 +16,7 @@ Having the Stone Enrichment perk will convert nearby stone blocks into random or
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.aevitas_perk_registry/*(1)!*/
+mods.astralsorcery.aevitas_perk_registry/* Used as page default */ // [!code focus]
 mods.astralsorcery.aevitasperkregistry
 mods.astralsorcery.aevitasPerkRegistry
 mods.astralsorcery.AevitasPerkRegistry
@@ -26,7 +26,6 @@ mods.astral.aevitasPerkRegistry
 mods.astral.AevitasPerkRegistry
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

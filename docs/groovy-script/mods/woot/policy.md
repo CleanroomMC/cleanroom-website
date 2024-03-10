@@ -20,11 +20,10 @@ If the whitelist contains any entities, any entities not in the whitelist are ba
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.woot.policy/*(1)!*/
+mods.woot.policy/* Used as page default */ // [!code focus]
 mods.woot.Policy
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

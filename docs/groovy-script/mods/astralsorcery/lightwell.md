@@ -16,13 +16,12 @@ Converts an input item into fluid, with a chance at breaking every time fluid is
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.lightwell/*(1)!*/
+mods.astralsorcery.lightwell/* Used as page default */ // [!code focus]
 mods.astralsorcery.Lightwell
 mods.astral.lightwell
 mods.astral.Lightwell
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

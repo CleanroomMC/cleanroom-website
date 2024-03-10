@@ -20,7 +20,7 @@ This compat is not fully documented. Some or all of its features are not present
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.perk_tree/*(1)!*/
+mods.astralsorcery.perk_tree/* Used as page default */ // [!code focus]
 mods.astralsorcery.perktree
 mods.astralsorcery.perkTree
 mods.astralsorcery.PerkTree
@@ -30,7 +30,6 @@ mods.astral.perkTree
 mods.astral.PerkTree
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Entries
 

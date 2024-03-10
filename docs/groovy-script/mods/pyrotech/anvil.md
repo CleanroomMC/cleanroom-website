@@ -16,11 +16,10 @@ When using hammer or pickaxe it can convert items
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.anvil/*(1)!*/
+mods.pyrotech.anvil/* Used as page default */ // [!code focus]
 mods.pyrotech.Anvil
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,11 +16,10 @@ Chrysopoeia is a spell that transmutes items held in the main hand.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.chrysopoeia/*(1)!*/
+mods.roots.chrysopoeia/* Used as page default */ // [!code focus]
 mods.roots.Chrysopoeia
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

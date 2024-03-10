@@ -16,13 +16,12 @@ Control the default values or mob-specific values for a large number of effects,
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.woot.mob_config/*(1)!*/
+mods.woot.mob_config/* Used as page default */ // [!code focus]
 mods.woot.mobconfig
 mods.woot.mobConfig
 mods.woot.MobConfig
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

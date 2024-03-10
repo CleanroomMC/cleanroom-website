@@ -16,13 +16,12 @@ Animal Harvest Fish is another effect of the Animal Harvest ritual that applies 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.animal_harvest_fish/*(1)!*/
+mods.roots.animal_harvest_fish/* Used as page default */ // [!code focus]
 mods.roots.animalharvestfish
 mods.roots.animalHarvestFish
 mods.roots.AnimalHarvestFish
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

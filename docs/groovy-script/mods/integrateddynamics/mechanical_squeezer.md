@@ -20,13 +20,12 @@ mods.id.mechanical_squeezer
 mods.id.mechanicalsqueezer
 mods.id.mechanicalSqueezer
 mods.id.MechanicalSqueezer
-mods.integrateddynamics.mechanical_squeezer/*(1)!*/
+mods.integrateddynamics.mechanical_squeezer/* Used as page default */ // [!code focus]
 mods.integrateddynamics.mechanicalsqueezer
 mods.integrateddynamics.mechanicalSqueezer
 mods.integrateddynamics.MechanicalSqueezer
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

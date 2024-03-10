@@ -16,13 +16,12 @@ Converts an input itemstack into an output fluidstack with an optional output it
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.tank/*(1)!*/
+mods.enderio.tank/* Used as page default */ // [!code focus]
 mods.enderio.Tank
 mods.eio.tank
 mods.eio.Tank
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

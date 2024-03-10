@@ -16,13 +16,12 @@ Converts a Block or IBlockState into an IBlockState when an anvil falls on top o
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.inspirations.anvil_smashing/*(1)!*/
+mods.inspirations.anvil_smashing/* Used as page default */ // [!code focus]
 mods.inspirations.anvilsmashing
 mods.inspirations.anvilSmashing
 mods.inspirations.AnvilSmashing
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

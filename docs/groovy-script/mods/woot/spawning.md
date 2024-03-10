@@ -16,11 +16,10 @@ Controls item/fluid costs of a given mob or the default cost.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.woot.spawning/*(1)!*/
+mods.woot.spawning/* Used as page default */ // [!code focus]
 mods.woot.Spawning
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

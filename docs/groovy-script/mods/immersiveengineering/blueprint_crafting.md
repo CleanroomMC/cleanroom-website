@@ -22,7 +22,7 @@ mods.ie.blueprintCrafting
 mods.ie.BlueprintCrafting
 mods.ie.blueprint
 mods.ie.Blueprint
-mods.immersiveengineering.blueprint_crafting/*(1)!*/
+mods.immersiveengineering.blueprint_crafting/* Used as page default */ // [!code focus]
 mods.immersiveengineering.blueprintcrafting
 mods.immersiveengineering.blueprintCrafting
 mods.immersiveengineering.BlueprintCrafting
@@ -30,7 +30,6 @@ mods.immersiveengineering.blueprint
 mods.immersiveengineering.Blueprint
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,7 +16,7 @@ Creates a custom Aspect.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.aspect/*(1)!*/
+mods.thaumcraft.aspect/* Used as page default */ // [!code focus]
 mods.thaumcraft.Aspect
 mods.tc.aspect
 mods.tc.Aspect
@@ -24,7 +24,6 @@ mods.thaum.aspect
 mods.thaum.Aspect
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

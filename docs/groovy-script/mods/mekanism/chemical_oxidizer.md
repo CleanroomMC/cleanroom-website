@@ -16,7 +16,7 @@ Converts an input itemstack into an output gasstack.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.chemical_oxidizer/*(1)!*/
+mods.mekanism.chemical_oxidizer/* Used as page default */ // [!code focus]
 mods.mekanism.chemicaloxidizer
 mods.mekanism.chemicalOxidizer
 mods.mekanism.ChemicalOxidizer
@@ -24,7 +24,6 @@ mods.mekanism.oxidizer
 mods.mekanism.Oxidizer
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

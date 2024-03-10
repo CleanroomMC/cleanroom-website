@@ -16,13 +16,12 @@ When running a Summon Creature Ritual, the input items placed on Catalyst Plate 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.summon_creature/*(1)!*/
+mods.roots.summon_creature/* Used as page default */ // [!code focus]
 mods.roots.summoncreature
 mods.roots.summonCreature
 mods.roots.SummonCreature
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

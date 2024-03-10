@@ -16,7 +16,7 @@ Converts item inputs into an item output consuming water and a seed.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.apothecary/*(1)!*/
+mods.botania.apothecary/* Used as page default */ // [!code focus]
 mods.botania.Apothecary
 mods.botania.petal_apothecary
 mods.botania.petalapothecary
@@ -24,7 +24,6 @@ mods.botania.petalApothecary
 mods.botania.PetalApothecary
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

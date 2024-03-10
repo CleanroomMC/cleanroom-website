@@ -20,13 +20,12 @@ A mana cost greater than 10,000 cannot be converted in a Diluted Mana Pools and 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.mana_infusion/*(1)!*/
+mods.botania.mana_infusion/* Used as page default */ // [!code focus]
 mods.botania.manainfusion
 mods.botania.manaInfusion
 mods.botania.ManaInfusion
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

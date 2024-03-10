@@ -16,7 +16,7 @@ Combines any number of items and aspects together in the Infusion Altar, potenti
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.infusion_crafting/*(1)!*/
+mods.thaumcraft.infusion_crafting/* Used as page default */ // [!code focus]
 mods.thaumcraft.infusioncrafting
 mods.thaumcraft.infusionCrafting
 mods.thaumcraft.InfusionCrafting
@@ -30,7 +30,6 @@ mods.thaum.infusionCrafting
 mods.thaum.InfusionCrafting
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

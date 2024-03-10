@@ -16,13 +16,12 @@ Converts an item into a new one by soaking it in a liquid. Can require a campfir
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.soaking_pot/*(1)!*/
+mods.pyrotech.soaking_pot/* Used as page default */ // [!code focus]
 mods.pyrotech.soakingpot
 mods.pyrotech.soakingPot
 mods.pyrotech.SoakingPot
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

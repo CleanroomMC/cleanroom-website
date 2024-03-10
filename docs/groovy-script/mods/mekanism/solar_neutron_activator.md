@@ -16,7 +16,7 @@ Converts an input gasstack into an output gasstack while exposed to the sun.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.mekanism.solar_neutron_activator/*(1)!*/
+mods.mekanism.solar_neutron_activator/* Used as page default */ // [!code focus]
 mods.mekanism.solarneutronactivator
 mods.mekanism.solarNeutronActivator
 mods.mekanism.SolarNeutronActivator
@@ -24,7 +24,6 @@ mods.mekanism.SNA
 mods.mekanism.sna
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

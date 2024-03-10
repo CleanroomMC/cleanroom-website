@@ -20,13 +20,12 @@ mods.bm.tartaric_forge
 mods.bm.tartaricforge
 mods.bm.tartaricForge
 mods.bm.TartaricForge
-mods.bloodmagic.tartaric_forge/*(1)!*/
+mods.bloodmagic.tartaric_forge/* Used as page default */ // [!code focus]
 mods.bloodmagic.tartaricforge
 mods.bloodmagic.tartaricForge
 mods.bloodmagic.TartaricForge
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

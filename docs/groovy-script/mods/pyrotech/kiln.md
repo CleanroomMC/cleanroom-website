@@ -16,11 +16,10 @@ Converts an item into a new one by burning it. Has a chance to fail
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.pyrotech.kiln/*(1)!*/
+mods.pyrotech.kiln/* Used as page default */ // [!code focus]
 mods.pyrotech.Kiln
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

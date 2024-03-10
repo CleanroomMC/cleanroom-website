@@ -24,7 +24,7 @@ Armor chances are hard coded into randomized loot function, and are not currentl
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.loot_bag/*(1)!*/
+mods.thaumcraft.loot_bag/* Used as page default */ // [!code focus]
 mods.thaumcraft.lootbag
 mods.thaumcraft.lootBag
 mods.thaumcraft.LootBag
@@ -38,7 +38,6 @@ mods.thaum.lootBag
 mods.thaum.LootBag
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

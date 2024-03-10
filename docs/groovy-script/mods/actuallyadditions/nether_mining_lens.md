@@ -20,13 +20,12 @@ mods.aa.nether_mining_lens
 mods.aa.nethermininglens
 mods.aa.netherMiningLens
 mods.aa.NetherMiningLens
-mods.actuallyadditions.nether_mining_lens/*(1)!*/
+mods.actuallyadditions.nether_mining_lens/* Used as page default */ // [!code focus]
 mods.actuallyadditions.nethermininglens
 mods.actuallyadditions.netherMiningLens
 mods.actuallyadditions.NetherMiningLens
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

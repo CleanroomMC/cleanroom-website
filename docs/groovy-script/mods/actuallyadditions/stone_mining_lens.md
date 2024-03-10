@@ -20,13 +20,12 @@ mods.aa.stone_mining_lens
 mods.aa.stonemininglens
 mods.aa.stoneMiningLens
 mods.aa.StoneMiningLens
-mods.actuallyadditions.stone_mining_lens/*(1)!*/
+mods.actuallyadditions.stone_mining_lens/* Used as page default */ // [!code focus]
 mods.actuallyadditions.stonemininglens
 mods.actuallyadditions.stoneMiningLens
 mods.actuallyadditions.StoneMiningLens
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

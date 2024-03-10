@@ -16,7 +16,7 @@ Consumes buckets of Liquid Starlight when interacted with by a Resonating Wand t
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.astralsorcery.infusion_altar/*(1)!*/
+mods.astralsorcery.infusion_altar/* Used as page default */ // [!code focus]
 mods.astralsorcery.infusionaltar
 mods.astralsorcery.infusionAltar
 mods.astralsorcery.InfusionAltar
@@ -26,7 +26,6 @@ mods.astral.infusionAltar
 mods.astral.InfusionAltar
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

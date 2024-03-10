@@ -16,13 +16,12 @@ Right clicking a Runic Shear on a block to convert it into a replacement block a
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.runic_shear_block/*(1)!*/
+mods.roots.runic_shear_block/* Used as page default */ // [!code focus]
 mods.roots.runicshearblock
 mods.roots.runicShearBlock
 mods.roots.RunicShearBlock
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

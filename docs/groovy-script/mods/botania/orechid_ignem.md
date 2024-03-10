@@ -16,13 +16,12 @@ Converts netherrack blocks into one of a few ore blocks at the cost of mana.
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.botania.orechid_ignem/*(1)!*/
+mods.botania.orechid_ignem/* Used as page default */ // [!code focus]
 mods.botania.orechidignem
 mods.botania.orechidIgnem
 mods.botania.OrechidIgnem
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

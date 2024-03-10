@@ -18,11 +18,10 @@ Refer to this via any of the following:
 ```groovy:no-line-numbers {3}
 mods.ie.refinery
 mods.ie.Refinery
-mods.immersiveengineering.refinery/*(1)!*/
+mods.immersiveengineering.refinery/* Used as page default */ // [!code focus]
 mods.immersiveengineering.Refinery
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

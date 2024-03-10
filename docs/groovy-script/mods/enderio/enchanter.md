@@ -16,13 +16,12 @@ Convert an input itemstack, player xp, and either a written book and lapis or a 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.enderio.enchanter/*(1)!*/
+mods.enderio.enchanter/* Used as page default */ // [!code focus]
 mods.enderio.Enchanter
 mods.eio.enchanter
 mods.eio.Enchanter
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -16,7 +16,7 @@ Bark Carving is a special set of alternate drops for blocks when broken with an 
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.roots.bark_carving/*(1)!*/
+mods.roots.bark_carving/* Used as page default */ // [!code focus]
 mods.roots.barkcarving
 mods.roots.barkCarving
 mods.roots.BarkCarving
@@ -24,7 +24,6 @@ mods.roots.bark
 mods.roots.Bark
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

@@ -24,13 +24,12 @@ mods.bm.alchemy_table
 mods.bm.alchemytable
 mods.bm.alchemyTable
 mods.bm.AlchemyTable
-mods.bloodmagic.alchemy_table/*(1)!*/
+mods.bloodmagic.alchemy_table/* Used as page default */ // [!code focus]
 mods.bloodmagic.alchemytable
 mods.bloodmagic.alchemyTable
 mods.bloodmagic.AlchemyTable
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 

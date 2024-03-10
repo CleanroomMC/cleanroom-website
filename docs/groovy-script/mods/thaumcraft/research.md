@@ -16,7 +16,7 @@ Create or modify existing research entries, which contain helpful information an
 Refer to this via any of the following:
 
 ```groovy:no-line-numbers {1}
-mods.thaumcraft.research/*(1)!*/
+mods.thaumcraft.research/* Used as page default */ // [!code focus]
 mods.thaumcraft.Research
 mods.tc.research
 mods.tc.Research
@@ -24,7 +24,6 @@ mods.thaum.research
 mods.thaum.Research
 ```
 
-1. This identifier will be used as the default for examples on this page
 
 ## Adding Recipes
 
