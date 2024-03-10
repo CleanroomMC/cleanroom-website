@@ -13,14 +13,23 @@ const editLink = useEditLink();
 const control = usePrevNext();
 const router = useRouter();
 
+// Don't run keybinds if the focused element already takes keypresses.
+// Prevents changing tab while in the search menu.
+function shouldOperateChangeTabKeybind() {
+    var tagName = document.activeElement?.tagName;
+    return tagName === null || !(tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA')
+}
+
 // add keydown event listener
 onKeyStroke([",", "ArrowLeft"], (e) => {
+    if (!shouldOperateChangeTabKeybind()) return;
     e.preventDefault();
     if (control.value.prev?.link)
         router.go(control.value.prev.link);
 });
 
 onKeyStroke([".", "ArrowRight"], (e) => {
+    if (!shouldOperateChangeTabKeybind()) return;
     e.preventDefault();
     if (control.value.next?.link)
         router.go(control.value.next?.link);
