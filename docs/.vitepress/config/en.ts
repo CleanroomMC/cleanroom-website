@@ -1,29 +1,32 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
 import { generateSidebar } from "vitepress-sidebar";
 
+const sidebar = generateSidebar([
+  { // GroovyScript:
+    documentRootPath: "docs",
+    scanStartPath: "groovy-script",
+    resolvePath: "/groovy-script/",
+    hyphenToSpace: true,
+    underscoreToSpace: true,
+    useFolderTitleFromIndexFile: true,
+    keepMarkdownSyntaxFromTitle: true,
+    useTitleFromFrontmatter: true,
+    useTitleFromFileHeading: true,
+    sortMenusByName: true,
+    collapseDepth: 2,
+    folderLinkNotIncludesFileName: true,
+    useFolderLinkFromIndexFile: true,
+  }
+]);
+
+sidebar["/wiki/"] = wikiSidebar();
+
 export const en = defineConfig({
   lang: "en",
   description: "CleanroomMC",
   themeConfig: {
     nav: nav(),
-    sidebar: {
-      "/wiki/": wikiSidebar(),
-      "/groovy-script/": generateSidebar({
-        documentRootPath: "/docs/",
-        scanStartPath: "/groovy-script/",
-        resolvePath: "/groovy-script/",
-        hyphenToSpace: true,
-        underscoreToSpace: true,
-        useFolderTitleFromIndexFile: true,
-        keepMarkdownSyntaxFromTitle: true,
-        useTitleFromFrontmatter: true,
-        useTitleFromFileHeading: true,
-        sortMenusByName: true,
-        collapseDepth: 2,
-        folderLinkNotIncludesFileName: true,
-        useFolderLinkFromIndexFile: true,
-      }) as DefaultTheme.SidebarItem[],
-    },
+    sidebar,
     outlineTitle: "Outline",
     lastUpdated: {
       text: "Updated at",
