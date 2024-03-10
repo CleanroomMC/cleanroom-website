@@ -77,12 +77,12 @@ public class ExampleClass {
 
   2. EVENT_BUS 交互：
 
-     - Events are ran on different event buses, Forge originally wanted to differentiate events properly, then realised that EventBuses are really confusing.
-     - All the EventBuses can be found in `MinecraftForge.class`, those being `EVENT_BUS`, `TERRAIN_GEN_BUS` and `ORE_GEN_BUS`.
-     - Technically a mod can implement their own buses, but there doesn't seem to be any in the wild.
-     - Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to.
+     - 事件依附于事件总线（Event Bus）之上。总线的存在意义是用于区分不同的事件（至少 Forge 在设计之初是抱着这一目的），但目前整体的总线设计令人相当困惑不解。
+     - 你可以在 `MinecraftForge.class` 中找到所有的事件总线。共有 `EVENT_BUS`、`TERRAIN_GEN_BUS`以及`ORE_GEN_BUS` 三条。
+     - 从技术层面上来看，模组作者可以实现独属于自己的事件总线，但是似乎没人乐意干这种费力不讨好的事情。Technically a mod can implement their own buses, but there doesn't seem to be any in the wild.
+     - 你可以在任意的总线中调用 `register` 方法，再向该方法传入你想用于监听事件的类或是对象。如此你便能在该类或是对象中正常监听事件了。 on any EventBuses and pass through either a class or an object that you want the buses to fire events to.
 
-       - **Class = static methods accepted only.**
+       - **传入类的例子，注意，此时订阅事件的方法只能是静态方法！**
         ::: code-group
         ```java [StaticExample.java]
          public class StaticExample {
@@ -111,10 +111,9 @@ public class ExampleClass {
 
         :::
 
-       - **Object = member methods accepted only.**
-         ??? abstract "Example"
-
-         ````java title="MemberExample.java"
+       - **传入对象的例子，注意，此时订阅事件的方法只能是对象的成员方法！**
+         ::: code-group
+         ```java [MemberExample.java]
          public class MemberExample {
 
              	public static void register() {
@@ -125,20 +124,20 @@ public class ExampleClass {
 
              		@SubscribeEvent
              		public void thisListenerWillRun(Event event) {
-             			// This method is not static
-             			// This block of code will run when whichever Event is denoted in the argument
+             			// 注意，此时可以不是静态方法
+             			// 参数的对应事件触发时，这里的代码块会与之一同运行。
              		}
 
              		@SubscribeEvent
              		public static void thisListenerWillNeverRun(Event event) {
-             			// This method is static
+             			// 必须为静态方法
              		}
 
              	}
 
              }
-             ```
-         ````
+          ```
+         :::
 
 ## PlayerDestroyItemEvent
 
