@@ -16,13 +16,13 @@ const router = useRouter();
 // add keydown event listener
 onKeyStroke([",", "ArrowLeft"], (e) => {
     e.preventDefault();
-    if (control.value.prev)
+    if (control.value.prev?.link)
         router.go(control.value.prev.link);
 });
 
 onKeyStroke([".", "ArrowRight"], (e) => {
     e.preventDefault();
-    if (control.value.next)
+    if (control.value.next?.link)
         router.go(control.value.next?.link);
 });
 
