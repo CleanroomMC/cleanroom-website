@@ -29,7 +29,7 @@ mods.actuallyadditions.Empowerer
 
 Just like other recipe types, the Empowerer also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.actuallyadditions.empowerer.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 4 and less than or equal to 5.

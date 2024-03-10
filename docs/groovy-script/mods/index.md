@@ -18,7 +18,7 @@ search:
 * [EnderIO](./enderio/)
 * [EvilCraft](./evilcraft/)
 * [Extended Crafting](./extendedcrafting/)
-* [Forestry](./forestry/forestry.md)
+* [Forestry](./forestry/)
 * [GregTech](./gtceu/)
 * [Immersive Engineering](./immersiveengineering/)
 * [Inspirations](./inspirations/)

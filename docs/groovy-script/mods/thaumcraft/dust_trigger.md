@@ -37,7 +37,7 @@ mods.thaum.DustTrigger
 
 Just like other recipe types, the Dust Trigger also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.thaumcraft.dust_trigger.triggerBuilder() {open id="abstract"}
 - `String`. Sets the input as an ore. Requires either ore or target must be defined, but not both.

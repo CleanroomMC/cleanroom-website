@@ -29,7 +29,7 @@ mods.roots.RunicShearBlock
 
 Just like other recipe types, the Runic Shear Block also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.roots.runic_shear_block.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.

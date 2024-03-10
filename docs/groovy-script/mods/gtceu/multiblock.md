@@ -104,7 +104,7 @@ If the domain of the resource location is not `gregtech`, but for example `nomif
 metaitem("nomifactory:vacuum_freezer")
 ```
 
-See [resource location](../../rl.md)
+See [resource location](../../minecraft/resource_location.md)
 
 ## More examples
 

@@ -29,7 +29,7 @@ mods.roots.FlowerGeneration
 
 Just like other recipe types, the Flower Generation also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.roots.flower_generation.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.

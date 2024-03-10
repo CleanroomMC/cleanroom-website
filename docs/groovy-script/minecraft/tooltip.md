@@ -23,7 +23,7 @@ event_manager.listen { ItemTooltipEvent event ->
 
 :::
 
-If you are familiar with [lists](../../groovy/lists.md), you can modify the tooltip lines as you like
+If you are familiar with [lists](../groovy/lists.md), you can modify the tooltip lines as you like
 since `event.getToolTip()` returns a `List<String>`.
 
 ## Writing your own addTooltip method

@@ -31,7 +31,7 @@ mods.inspirations.Cauldron
 
 Just like other recipe types, the Cauldron also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.inspirations.cauldron.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

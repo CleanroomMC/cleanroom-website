@@ -31,7 +31,7 @@ mods.thaum.Aspect
 
 Just like other recipe types, the Aspect Creator also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.thaumcraft.aspect.aspectBuilder() {open id="abstract"}
 - `String`. Sets the name of the new Aspect. Requires not null. Requires the name must be a unique string.

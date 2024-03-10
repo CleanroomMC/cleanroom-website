@@ -44,7 +44,7 @@ mods.mekanism.dissolution_chamber.add(item('minecraft:packed_ice'), gas('water')
 
 Just like other recipe types, the Dissolution Chamber also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.mekanism.dissolution_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

@@ -42,7 +42,7 @@ mods.pyrotech.compost_bin.add('iron_to_clay2', ore('ingotIron') * 5, item('minec
 
 Just like other recipe types, the Compost Bin also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.pyrotech.compost_bin.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.

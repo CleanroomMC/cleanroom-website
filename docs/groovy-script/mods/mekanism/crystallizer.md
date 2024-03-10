@@ -40,7 +40,7 @@ mods.mekanism.crystallizer.add(gas('cleanGold'), item('minecraft:gold_ingot'))
 
 Just like other recipe types, the Crystallizer also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.mekanism.crystallizer.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.

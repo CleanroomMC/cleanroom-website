@@ -33,7 +33,7 @@ mods.actuallyadditions.AtomicReconstructor
 
 Just like other recipe types, the Atomic Reconstructor also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.actuallyadditions.atomic_reconstructor.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

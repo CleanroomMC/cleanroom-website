@@ -33,7 +33,7 @@ mods.astral.StarlightAltar
 
 Just like other recipe types, the Starlight Altar also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
 
 :::::::::: details mods.astralsorcery.starlight_altar.discoveryRecipeBuilder() {open id="abstract"}
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.

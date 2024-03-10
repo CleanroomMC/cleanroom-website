@@ -42,7 +42,11 @@ Set the recipe action (optional):
 recipeFunction(Closure<Void> recipeAction) // (1)!
 ```
 
-1. See the [Recipe Function and Action page](TODO) for more details.
+1. See the [Recipe Function and Action page] for more details.
+    ::: info TODO {id="danger"}
+    This page is not yet created!
+    :::
+
 
 Set the recipe to replace others (optional):
 
