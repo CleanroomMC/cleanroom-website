@@ -14,15 +14,9 @@ export const zh = defineConfigWithTheme<CleanRoomConfig>({
       prev: "上一篇",
     },
     outlineTitle: "大纲",
-    lastUpdated: {
-      text: "更新于",
-    },
-    editLink: {
-      pattern:
-        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
-      text: "编辑此页",
-    },
-    sourceCodeText: "查看源码",
+    lastUpdatedText: "更新于",
+    editLinkText: "编辑此页",
+    sourceLinkText: "查看源码",
   },
 });
 

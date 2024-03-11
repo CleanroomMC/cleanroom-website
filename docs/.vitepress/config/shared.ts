@@ -54,8 +54,24 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       },
     },
     editLink: {
-      pattern:
-        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
+      pattern: "https://github.com/CleanroomMC/cleanroom-website/blob/main/docs/:path",
+    },
+    viewLink: true,
+    sourceLink: true,
+    editLinkText: "Edit Page Source",
+    viewLinkText: "View Page Source",
+    sourceLinkText: "View Source Code",
+    timeDict: {
+      today: "today",
+      ago: "ago",
+      day: "a day",
+      days: "%d days",
+      week: "about a week",
+      weeks: "%d weeks",
+      month: "about a month",
+      months: "%d months",
+      year: "about a year",
+      years: "%d years"
     },
     search: { provider: "local" },
     socialLinks: [

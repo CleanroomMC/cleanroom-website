@@ -1,4 +1,5 @@
 import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { generateSidebar } from "vitepress-sidebar";
 import { CleanRoomConfig } from "./customConfig";
 
 const sidebar = generateSidebar([
@@ -28,15 +29,22 @@ export const en = defineConfigWithTheme<CleanRoomConfig>({
     nav: nav(),
     sidebar,
     outlineTitle: "Outline",
-    lastUpdated: {
-      text: "Updated at",
+    lastUpdatedText: "Last updated",
+    editLinkText: "Edit Page Source",
+    viewLinkText: "View Page Source",
+    sourceLinkText: "View Source Code",
+    timeDict: {
+      today: "today",
+      ago: "ago",
+      day: "a day",
+      days: "%d days",
+      week: "about a week",
+      weeks: "%d weeks",
+      month: "about a month",
+      months: "%d months",
+      year: "about a year",
+      years: "%d years"
     },
-    editLink: {
-      pattern:
-        "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
-      text: "Edit this page",
-    },
-    sourceCodeText: "View Source",
   },
 });
 
