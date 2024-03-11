@@ -1,71 +1,45 @@
 <script setup lang="ts">
-import { useData, useRouter } from "vitepress";
-import { useEditLink } from "vitepress/dist/client/theme-default/composables/edit-link";
-import { usePrevNext } from "vitepress/dist/client/theme-default/composables/prev-next";
-import { computed } from "vue";
-import { onKeyStroke } from "@vueuse/core";
-import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue";
-import VPDocFooterLastUpdated from "vitepress/dist/client/theme-default/components/VPDocFooterLastUpdated.vue";
+import { useData, useRouter } from "vitepress"
+import { usePrevNext } from "vitepress/dist/client/theme-default/composables/prev-next"
+import { onKeyStroke } from "@vueuse/core"
+import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue"
+import CodeLinks from "./CodeLinks.vue"
+import FooterGitTimestamps from "./FooterGitTimestamps.vue"
 
-const { theme, page, frontmatter } = useData();
+const { theme } = useData()
 
-const editLink = useEditLink();
-const control = usePrevNext();
-const router = useRouter();
+const control = usePrevNext()
+const router = useRouter()
+
+// Don't run keybinds if the focused element already takes keypresses.
+// Prevents changing tab while in the search menu.
+function shouldOperateChangeTabKeybind() {
+    var tagName = document.activeElement?.tagName;
+    return tagName === null || !(tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA')
+}
 
 // add keydown event listener
 onKeyStroke([",", "ArrowLeft"], (e) => {
-    e.preventDefault();
-    if (control.value.prev) router.go(control.value.prev.link);
+    if (!shouldOperateChangeTabKeybind()) return
+    e.preventDefault()
+    if (control.value.prev?.link) router.go(control.value.prev.link)
 });
 
 onKeyStroke([".", "ArrowRight"], (e) => {
-    e.preventDefault();
-    if (control.value.next) router.go(control.value.next?.link);
+    if (!shouldOperateChangeTabKeybind()) return
+    e.preventDefault()
+    if (control.value.next?.link) router.go(control.value.next?.link)
 });
 
-const hasEditLink = computed(() => {
-    return theme.value.editLink && frontmatter.value.editLink !== false;
-});
-const hasLastUpdated = computed(() => {
-    return page.value.lastUpdated && frontmatter.value.lastUpdated !== false;
-});
-const hasSourceCodeLink = computed(() => {
-    return frontmatter.value.source_code_link;
-});
-
-const showFooter = computed(() => {
-    return (
-        hasEditLink.value ||
-        hasLastUpdated.value ||
-        control.value.prev ||
-        control.value.next
-    );
-});
 </script>
 
 <template>
-    <footer v-if="showFooter" class="VPDocFooter">
+    <footer class="VPDocFooter">
         <slot name="doc-footer-before" />
 
-        <div v-if="hasEditLink || hasLastUpdated" class="edit-info">
-            <div v-if="hasEditLink" class="edit-link">
-                <VPLink class="edit-link-button" :href="editLink.url" :no-icon="true">
-                    <span class="vpi-square-pen edit-link-icon" />
-                    {{ editLink.text }}
-                </VPLink>
-            </div>
-
-                <div v-if="hasSourceCodeLink" class="edit-link">
-                    <VPLink class="edit-link-button" :href="frontmatter.source_code_link" :no-icon="true">
-                        <span class="vpi-square-pen edit-link-icon" />
-                        {{ theme.sourceCodeText }}
-                    </VPLink>
-                </div>
-
-            <div v-if="hasLastUpdated" class="last-updated">
-                <VPDocFooterLastUpdated />
-            </div>
+        <div class="edit-info">
+            <FooterGitTimestamps />
+            <CodeLinks />
         </div>
 
         <nav v-if="control.prev?.link || control.next?.link" class="prev-next">
@@ -101,25 +75,6 @@ const showFooter = computed(() => {
         align-items: center;
         padding-bottom: 14px;
     }
-}
-
-.edit-link-button {
-    display: flex;
-    align-items: center;
-    border: 0;
-    line-height: 32px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--vp-c-brand-1);
-    transition: color 0.25s;
-}
-
-.edit-link-button:hover {
-    color: var(--vp-c-brand-2);
-}
-
-.edit-link-icon {
-    margin-right: 8px;
 }
 
 .prev-next {
