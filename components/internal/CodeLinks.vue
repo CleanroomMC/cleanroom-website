@@ -66,7 +66,7 @@ const sourceLinkText = computed(() => theme.value.sourceLinkText)
     margin-right: 0.6rem;
 }
 
-.edit-link-button:hover {
+.link-button:hover {
     color: var(--vp-c-brand-2);
 }
 
