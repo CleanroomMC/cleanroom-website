@@ -24,15 +24,13 @@ function shouldOperateChangeTabKeybind() {
 onKeyStroke([",", "ArrowLeft"], (e) => {
     if (!shouldOperateChangeTabKeybind()) return;
     e.preventDefault();
-    if (control.value.prev?.link)
-        router.go(control.value.prev.link);
+    if (control.value.prev?.link) router.go(control.value.prev.link);
 });
 
 onKeyStroke([".", "ArrowRight"], (e) => {
     if (!shouldOperateChangeTabKeybind()) return;
     e.preventDefault();
-    if (control.value.next?.link)
-        router.go(control.value.next?.link);
+    if (control.value.next?.link) router.go(control.value.next?.link);
 });
 
 const hasEditLink = computed(() => {
@@ -41,6 +39,10 @@ const hasEditLink = computed(() => {
 const hasLastUpdated = computed(() => {
     return page.value.lastUpdated && frontmatter.value.lastUpdated !== false;
 });
+const hasSourceCodeLink = computed(() => {
+    return frontmatter.value.source_code_link;
+});
+
 const showFooter = computed(() => {
     return (
         hasEditLink.value ||
@@ -62,6 +64,13 @@ const showFooter = computed(() => {
                     {{ editLink.text }}
                 </VPLink>
             </div>
+
+                <div v-if="hasSourceCodeLink" class="edit-link">
+                    <VPLink class="edit-link-button" :href="frontmatter.source_code_link" :no-icon="true">
+                        <span class="vpi-square-pen edit-link-icon" />
+                        {{ theme.sourceCodeText }}
+                    </VPLink>
+                </div>
 
             <div v-if="hasLastUpdated" class="last-updated">
                 <VPDocFooterLastUpdated />

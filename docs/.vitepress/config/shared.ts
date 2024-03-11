@@ -1,7 +1,8 @@
 import { fileURLToPath } from "url";
-import { defineConfig } from "vitepress";
+import { defineConfigWithTheme } from "vitepress";
+import { CleanRoomConfig } from "./customConfig";
 
-export const shared = defineConfig({
+export const shared = defineConfigWithTheme<CleanRoomConfig>({
   vite: {
     resolve: {
       alias: [

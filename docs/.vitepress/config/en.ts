@@ -1,5 +1,5 @@
-import { type DefaultTheme, defineConfig } from "vitepress";
-import { generateSidebar } from "vitepress-sidebar";
+import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { CleanRoomConfig } from "./customConfig";
 
 const sidebar = generateSidebar([
   { // GroovyScript:
@@ -21,7 +21,7 @@ const sidebar = generateSidebar([
 
 sidebar["/wiki/"] = wikiSidebar();
 
-export const en = defineConfig({
+export const en = defineConfigWithTheme<CleanRoomConfig>({
   lang: "en",
   description: "CleanroomMC",
   themeConfig: {
@@ -36,6 +36,7 @@ export const en = defineConfig({
         "https://github.com/CleanroomMC/cleanroom-website/edit/main/docs/:path",
       text: "Edit this page",
     },
+    sourceCodeText: "View Source",
   },
 });
 
