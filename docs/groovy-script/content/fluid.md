@@ -5,7 +5,7 @@ This requires at least version 0.7.0 of GroovyScript.
 :::
 ## The simplest way
 
-```groovy
+```groovy:no-line-numbers
 content.createFluid(String name).register()
 ```
 
@@ -59,7 +59,7 @@ content.createFluid('molten_iron')
 The example above creates a simple fluid for you, but you can also create fluids yourself.
 Use the following methods to register custom fluids.
 
-```groovy
+```groovy:no-line-numbers
 content.registerFluid(Fluis)
 ```
 
@@ -77,6 +77,6 @@ If a fluid has a block the block state json is automatically generated,
 Add `fluid.[pack id].[fluid name]=Fluid Name` to your lang file
 
 Example for molten iron:
-```mclang
+```mclang:no-line-numbers
 fluid.placeholdername.molten_iron=Molten Iron
 ```

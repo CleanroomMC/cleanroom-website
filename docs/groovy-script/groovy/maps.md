@@ -32,7 +32,7 @@ def elements = [
 
 We are using the map we created above here.
 
-```groovy
+```groovy:no-line-numbers
 println(elements['Pb']) // Lead
 println(elements['Ag']) // Silver
 println(elements['B']) // null since there is no key 'B'
@@ -42,7 +42,7 @@ println(elements['B']) // null since there is no key 'B'
 
 We are using the map we created above here.
 
-```groovy
+```groovy:no-line-numbers
 elements['Au'] = 'Copper' // Au is know mapped to copper
 elements.remove('H') // removes H: Hydrogen
 ```

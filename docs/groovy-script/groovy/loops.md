@@ -10,7 +10,7 @@ Loops are useful if you want to do the operation multiple times or if you want t
 
 A simple while loop looks like this:
 
-```groovy
+```groovy:no-line-numbers
 while (condition) {
     operation
 }
@@ -20,7 +20,7 @@ The condition is a boolean. As long as that condition evaluates to true, the ope
 ::: info Example {id="example"}
 This will print `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`.
 
-```groovy
+```groovy:no-line-numbers
 int i = 0;
 while (i < 10) {
     print("${i++}, ")
@@ -29,7 +29,7 @@ while (i < 10) {
 
 There is also a `do while` loop which ignores the condition on its first run.
 
-```groovy
+```groovy:no-line-numbers
 do {
     operation
 } while (condition)
@@ -41,7 +41,7 @@ do {
 
 For loops are similar to while loops.
 
-```groovy
+```groovy:no-line-numbers
 for(init; condition; incrementor) {
     operation
 }
@@ -50,8 +50,9 @@ for(init; condition; incrementor) {
 `init` is called before the loop. `condition` is checked before each run and `incrementor` is called after each run.
 
 ::: info Example {id="example"}
+
 This will print `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`.
-```groovy
+```groovy:no-line-numbers
 for(int i = 0; i < 10; i++) {
     print("${i++}, ")
 }
@@ -64,7 +65,7 @@ for(int i = 0; i < 10; i++) {
 Those are very useful for lists and maps.
 This will print `Hello world!`
 
-```groovy
+```groovy:no-line-numbers
 def list = ['He', 'llo', ' w', 'or', 'ld!']
 for(part in list) {
     print(part)

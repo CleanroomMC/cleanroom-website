@@ -10,7 +10,7 @@ Each method, except the `build()` method, should return the same builder instanc
 
 The Recipe Builders in GroovyScript and with a `.register()` call, because the recipe is registered rather than just build and `.buildAndRegister()` is too long.
 
-::: info Builder class {id="example"}
+## Builder class
 Let's see what a simple Builder class can look like:
 
 ```groovy
@@ -38,12 +38,10 @@ class RecipeBuilder {
 2. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
 3. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
 
-:::
-
 ::: info Usage {id="example"}
 Now let's create a new recipe using the builder
 
-```groovy
+```groovy:no-line-numbers
 def recipe = new RecipeBuilder()                // first create a recipe builder instance
         .input(item('minecraft:iron_ingot'))    // add a input
         .input(item('minecraft:clay_ball') * 3) // add another input
@@ -55,7 +53,7 @@ Notice how each method call is chained together. This is because `input()` and `
 Since the `build()` method returns a `Recipe` instance, the `recipe` variable will also be of type `Recipe`.<br>
 The same code as above can also be put in a single line:
 
-```groovy
+```groovy:no-line-numbers
 def recipe = new RecipeBuilder().input(item('minecraft:iron_ingot')).input(ite('minecraft:clay_ball') * 3).output(item('minecraft:nether_star')).build()
 ```
 
@@ -63,7 +61,7 @@ This does exactly the same thing, but as you can see it is uglier and harder to 
 
 Now lets see what the recipe could look like without a builder:
 
-```groovy
+```groovy:no-line-numbers
 def recipe = new Recipe([item('minecraft:iron_ingot'), item('minecraft:clay_ball') * 3], [ite('minecraft:nether_star')])
 ```
 

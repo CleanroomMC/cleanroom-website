@@ -5,37 +5,37 @@ There are 6 similar methods to add shaped and shapeless recipes.
 
 - Adds a shaped recipe in the format `output`, `input`. (Name is generated). The input is an up to 3x3 matrix of ingredients.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShaped(ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shaped recipe in the format `name`, `output`, `input`
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShaped(String, ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shaped recipe in the format `name`, `output`, `input`
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShaped(ResourceLocation, ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shapeless recipe in the format `output`, `input` (Name is generated). The input is a list of up to 9 ingredients.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShapeless(ItemStack, List<IIngredient>)
     ```
 
 - Adds a shapeless recipe in the format `name`, `output`, `input`
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShapeless(String, ItemStack, List<IIngredient>)
     ```
 
 - Adds a shapeless recipe in the format `name`, `output`, `input`
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.addShapeless(ResourceLocation, ItemStack, List<IIngredient>)
     ```
 
@@ -66,37 +66,37 @@ You can view recipe names in JEI/HEI by hovering over the output with `F3+h` mod
 
 - Adds a shaped recipe in the format `output`, `input` and removes any existing recipe that matches the output (Name is generated). The input is an up to 3x3 matrix of ingredients.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShaped(ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shaped recipe in the format `name`, `output`, `input` and removes any existing recipe that matches the name.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShaped(String, ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shaped recipe in the format `name`, `output`, `input` and removes any existing recipe that matches the name.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShaped(ResourceLocation, ItemStack, List<List<IIngredient>>)
     ```
 
 - Adds a shapeless recipe in the format `output`, `input` and removes any existing recipe that matches the output (Name is generated). The input is a list of up to 9 ingredients.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShapeless(ItemStack, List<IIngredient>)
     ```
 
 - Adds a shapeless recipe in the format `name`, `output`, `input` and removes any existing recipe that matches the name.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShapeless(String, ItemStack, List<IIngredient>)
     ```
 
 - Adds a shapeless recipe in the format `name`, `output`, `input` and removes any existing recipe that matches the name.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.replaceShapeless(ResourceLocation, ItemStack, List<IIngredient>)
     ```
 
@@ -110,50 +110,51 @@ You can view recipe names in JEI/HEI by hovering over the output with `F3+h` mod
 
 - Removes recipes in the format `mod:name`.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.remove(String)
     ```
 
 - Removes recipes in the format `name`.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.remove(ResourceLocation)
     ```
 
 - Removes recipes in the format `output`. Any recipe that matches the output will be removed.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.removeByOutput(IIngredient)
     ```
 
 - Removes recipes in the format `output`, `doLogFailure`. Any recipe that matches the output will be removed. If
   `doLogFailure` is true, errors will not be logged. Only use this method if you know what you are doing.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.removeByOutput(IIngredient, boolean)
     ```
 
 - Removes recipes in the format `input`. Any recipe that matches any of its inputs with the given input gets removed
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.removeByInput(IIngredient)
     ```
 
 - Removes recipes in the format `input`, `doLogFailure`. Any recipe that matches any of its inputs with the given input gets removed.
   If `doLogFailure` is true, errors will not be logged. Only use this method if you know what you are doing.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.removeByInput(IIngredient, boolean)
     ```
 
 - Removes all existing crafting recipes.
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.removeAll()
     ```
 
 ::: details Example {open id="example"}
-```groovy
+
+```groovy:no-line-numbers
 crafting.remove('minecraft:tnt')
 crafting.removeByOutput(item('minecraft:tnt'))
 ```
@@ -163,6 +164,6 @@ crafting.removeByOutput(item('minecraft:tnt'))
 
 - Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
 
-    ```groovy
+    ```groovy:no-line-numbers
     crafting.streamRecipes()
     ```

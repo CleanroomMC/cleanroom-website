@@ -1,12 +1,12 @@
 # Creating creative tabs
 
-```groovy
+```groovy:no-line-numbers
 content.createCreativeTab(String name, ItemStack icon) // returns the creative tab
 ```
 
 ::: info Example {id="example"}
 
-```groovy
+```groovy:no-line-numbers
 def creativeTab = content.createCreativeTab("nomifactory.creative_tab", item("nomifactory:heart_of_the_universe"))
 ```
 :::
@@ -15,7 +15,7 @@ def creativeTab = content.createCreativeTab("nomifactory.creative_tab", item("no
 
 You can get a creative tab by using
 
-```groovy
+```groovy:no-line-numbers
 creativeTab(String tabName)
 ```
 

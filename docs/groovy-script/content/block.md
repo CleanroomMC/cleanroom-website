@@ -2,7 +2,7 @@
 
 ## The simplest way
 
-```groovy
+```groovy:no-line-numbers
 content.createBlock(String name).register()
 ```
 
@@ -19,7 +19,7 @@ Let's break it up:
 The example above creates a simple block for you, but you can also create blocks yourself (to create custom behaviour).
 Use the following methods to register custom blocks.
 
-```groovy
+```groovy:no-line-numbers
 content.registerBlock(String name, Block block)
 content.registerBlock(String name, Block block, ItemBlock block)
 ```
@@ -41,14 +41,14 @@ the lang file. GroovyScript generates a default lang file at `.minecraft/groovy/
 
 First create a block
 
-```groovy
+```groovy:no-line-numbers
 content.createBlock('dust_block')
 ```
 
 Let's assume that the pack id is `nomifactory` so that the item and block id will be `nomifactory:dust_block`.
 Insert this line into the lang file.
 
-```mclang
+```mclang:no-line-numbers
 tile.nomifactory.dust_block.name=Heart of the universe
 ```
 

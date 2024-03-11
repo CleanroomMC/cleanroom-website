@@ -49,6 +49,6 @@ def addTooltip(ItemStack itemStack, String line) {
 ```
 
 Now you can simply call `addTooltip` to add tooltips.
-```groovy
+```groovy:no-line-numbers
 addTooltip(item('minecraft:apple'), 'Hey, I am an apple.')
 ```

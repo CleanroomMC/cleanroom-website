@@ -10,7 +10,7 @@ Closures are like lambdas in java, but slightly different.
 
 You may know what a method is. A method is a set order of instructions you can call. For example:
 
-```groovy
+```groovy:no-line-numbers
 def print_numbers(int n) {
     for (def i : 0..n) {
         log.info(i)
@@ -20,13 +20,13 @@ def print_numbers(int n) {
 
 This method prints numbers from 0 to a given number to the log.
 
-```groovy
+```groovy:no-line-numbers
 print_numbers(5)
 ```
 
 This will now output
 
-```
+```:no-line-numbers
 0
 1
 2
@@ -38,7 +38,7 @@ You can call that method as often as you want with any number input.
 
 Now closures are methods, but you can carry them around. Example:
 
-```groovy
+```groovy:no-line-numbers
 def print_numbers = { int n -> /*(1)!*/
     for (def i : 0..n) {
         log.info(i)
@@ -52,6 +52,6 @@ This closure does the same thing as the method above, but it's a variable instea
 variable you can pass it to other methods. (See [Events](../minecraft/events/index.md)).
 You can invoke this closure the same way you do with a method:
 
-```groovy
+```groovy:no-line-numbers
 print_numbers(3)
 ```

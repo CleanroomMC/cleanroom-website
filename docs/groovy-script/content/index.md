@@ -23,14 +23,14 @@ Coming in the future:
 
 ## Creative tabs
 You can set a default creative tab which registered items and blocks will use if not specified otherwise
-```groovy
+```groovy:no-line-numbers
 content.setDefaultCreativeTab(CreativeTabs tab)
 ```
 
 ::: info Example {id="example"}
 
 With [that](creative_tab.md) we can do this
-```groovy
+```groovy:no-line-numbers
 def creativeTab = content.createCreativeTab("nomifactory.creative_tab", item("nomifactory:heart_of_the_universe"))
 content.setDefaultCreativeTab(creativeTab)
 ```

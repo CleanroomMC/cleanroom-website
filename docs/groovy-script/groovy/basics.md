@@ -8,7 +8,7 @@ title: Groovy
 
 Comments can be made inside scripts that will be ignored by the compiler like this:
 
-```groovy
+```groovy:no-line-numbers
 // single line comment
 
 /*
@@ -22,7 +22,7 @@ Variables can hold data with a specific type. They can be created with the keywo
 After that comes the name. It usually starts with a lower case letter.
 At the end is the value. If you used `def` then the value will define the type.
 
-```groovy
+```groovy:no-line-numbers
 def num = 10   // dynamically typed
 int num2 = 100 // strongly typed
 ```
@@ -44,7 +44,7 @@ I highly recommend to use the `d` or `f` suffix for `double` or `float`.<br>
 `double` a decimal number stored in 64 bits<br>
 `boolean` true or false (nothing else)
 
-```groovy
+```groovy:no-line-numbers
 def num1 = 10 // int
 def num2 = 10l // long
 def num3 = 10 as byte // byte
@@ -89,7 +89,7 @@ def sum2(int x, int y) {
 
 We'll take the functions from above.
 
-```groovy
+```groovy:no-line-numbers
 f(10) // calls the function with the parameter 10
 f(sum(4, 16)) // calls f with the result of sum
 ```
@@ -99,7 +99,7 @@ f(sum(4, 16)) // calls f with the result of sum
 If you want to use any classes short name you need to import the full class name.
 Most of javas classes are imported by default.
 
-```groovy
+```groovy:no-line-numbers
 import my.package.MyClass // import a single class
 import my.other.package.* // import all classes from a package
 
