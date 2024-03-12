@@ -21,16 +21,16 @@ export function handleDetails(details: HTMLDetailsElement) {
   function handleDetailsOpen(summary: HTMLElement) {
     const startHeight = details.offsetHeight
     const endHeight = summary.offsetHeight + getElementButtomHeiht(summary)
-    handleSartAnimation(startHeight, startHeight - endHeight, false)
+    handleStartAnimation(startHeight, startHeight - endHeight, false)
   }
 
   function handleDetailsClose(summary: HTMLElement) {
     const startHeight = details.offsetHeight;
     const endHeight = summary.offsetHeight + getElementButtomHeiht(details) + otherElements.reduce((a, b) => a + b.offsetHeight, 0);
-    handleSartAnimation(startHeight, endHeight, true)
+    handleStartAnimation(startHeight, endHeight, true)
   }
 
-  function handleSartAnimation(startHeight: number, endHeight: number, open: boolean) {
+  function handleStartAnimation(startHeight: number, endHeight: number, open: boolean) {
     if (animation) {
       animation.cancel()
     }
