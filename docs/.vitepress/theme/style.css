@@ -301,25 +301,3 @@ summary::after {
 details[open] > summary::after {
   transform: rotate(90deg);
 }
-
-/* Transition for details */
-details {
-  --base-details-padding: 16px;
-  --base-details-magin-bottom: 8px;
-
-  padding-bottom: calc(var(--base-details-padding) + var(--base-details-magin-bottom)) !important;
-}
-
-details[open] {
-  padding-bottom: var(--base-details-padding) !important;
-}
-
-details summary {
-  cursor: pointer;
-  transition: margin 150ms ease-in;
-  margin-bottom: calc(0px - var(--base-details-magin-bottom)) !important;
-}
-
-details[open] summary {
-  margin-bottom: var(--base-details-magin-bottom) !important;
-}

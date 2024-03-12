@@ -5,19 +5,21 @@ import DefaultTheme from "vitepress/theme";
 import BackToTop from "../../../components/internal/BackToTop.vue";
 import "./style.css";
 
+import { handleDetails } from "./composables/details";
+
 function addBackTotop() {
-  if (typeof window === "undefined") return;
-  window.addEventListener("load", () => {
-    const wrapper = document.createElement("div");
-    document.body.appendChild(wrapper);
-    render(
-      h(BackToTop, {
-        threshold: 300,
-      }),
-      wrapper,
-    );
-  });
+  render(
+    h(BackToTop, {
+      threshold: 300,
+    }),
+    document.body,
+  );
 }
+
+function addDetailsAnimation() {
+  document.querySelectorAll('details').forEach((details) => handleDetails(details))
+}
+
 
 export default {
   extends: DefaultTheme,
@@ -27,7 +29,11 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
-    addBackTotop();
+    if (typeof window !== "undefined") {
+      window.addEventListener("load", () => {
+        addBackTotop();
+        addDetailsAnimation();
+      })
+    }
   },
 } satisfies Theme;
