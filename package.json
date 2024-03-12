@@ -12,6 +12,7 @@
   "license": "All right reserved.",
   "devDependencies": {
     "@typescript-eslint/parser": "^7.0.2",
+    "@vue/tsconfig": "^0.5.1",
     "markdown-it-mathjax3": "^4.3.2",
     "prettier": "3.2.5",
     "vitepress": "1.0.0-rc.44",
