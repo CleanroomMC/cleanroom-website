@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useData } from "vitepress"
 import { computed } from "vue"
+import { useData } from "vitepress"
 import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue"
 
 const { theme, page, frontmatter } = useData()
@@ -10,40 +10,35 @@ function getPageLink() {
     return typeof pattern === 'function' ? pattern(page.value) : pattern.replace(/:path/g, page.value.filePath)
 }
 
-// use the github.dev site for editing
-const editLink = computed(() => getPageLink().replace("com", "dev"))
-// attach "?plain=1" to the link to cause GitHub to display the source code *with* formatting
-const viewLink = computed(() => getPageLink() + "?plain=1")
-const sourceLink = computed(() => frontmatter.value.source_code_link)
+const sourceLinkOptions = computed(() => ({
+    url: frontmatter.value.source_code_link, // use the github.dev site for editing
+    show: theme.value.sourceLink && frontmatter.value.source_code_link,
+    title: theme.value.sourceLinkText,
+}))
 
-const hasEditLink = computed(() => {
-    return theme.value.editLink && frontmatter.value.editLink !== false
-})
+const editLinkOptions = computed(() => ({
+    url: getPageLink().replace("com", "dev"), // attach "?plain=1" to the link to cause GitHub to display the source code *with* formatting
+    show: theme.value.editLink && frontmatter.value.editLink !== false,
+    title: theme.value.viewLinkText,
+}))
 
-const hasViewLink = computed(() => {
-    return theme.value.viewLink && frontmatter.value.viewLink !== false
-})
-
-const hasSourceLink = computed(() => {
-    return theme.value.sourceLink && frontmatter.value.source_code_link
-})
-
-const editLinkText = computed(() => theme.value.editLinkText)
-const viewLinkText = computed(() => theme.value.viewLinkText)
-const sourceLinkText = computed(() => theme.value.sourceLinkText)
-
+const viewLinkOptions = computed(() => ({
+    url: getPageLink() + "?plain=1",
+    show: theme.value.viewLink && frontmatter.value.viewLink !== false,
+    title: theme.value.viewLinkText,
+}))
 </script>
 
 
 <template>
     <div class="link-box">
-        <VPLink v-if="hasSourceLink" class="link-button" :href="sourceLink" :no-icon="true" :title="sourceLinkText">
+        <VPLink v-if="sourceLinkOptions.show" class="link-button" :href="sourceLinkOptions.url" :no-icon="true" :title="sourceLinkOptions.title">
             <span class="vpi-icon custom-source-link-icon" />
         </VPLink>
-        <VPLink v-if="hasViewLink" class="link-button" :href="viewLink" :no-icon="true" :title="viewLinkText">
+        <VPLink v-if="viewLinkOptions.show" class="link-button" :href="viewLinkOptions.url" :no-icon="true" :title="viewLinkOptions.title">
             <span class="vpi-icon custom-view-link-icon" />
         </VPLink>
-        <VPLink v-if="hasEditLink" class="link-button" :href="editLink" :no-icon="true" :title="editLinkText">
+        <VPLink v-if="editLinkOptions.show" class="link-button" :href="editLinkOptions.url" :no-icon="true" :title="editLinkOptions.title">
             <span class="vpi-icon custom-edit-link-icon" />
         </VPLink>
     </div>
