@@ -11,19 +11,19 @@ function getPageLink() {
 }
 
 const sourceLinkOptions = computed(() => ({
-    url: frontmatter.value.source_code_link, // use the github.dev site for editing
+    url: frontmatter.value.source_code_link,
     show: theme.value.sourceLink && frontmatter.value.source_code_link,
     title: theme.value.sourceLinkText,
 }))
 
 const editLinkOptions = computed(() => ({
-    url: getPageLink().replace("com", "dev"), // attach "?plain=1" to the link to cause GitHub to display the source code *with* formatting
+    url: getPageLink().replace("com", "dev"), // use the github.dev site for editing
     show: theme.value.editLink && frontmatter.value.editLink !== false,
     title: theme.value.viewLinkText,
 }))
 
 const viewLinkOptions = computed(() => ({
-    url: getPageLink() + "?plain=1",
+    url: getPageLink() + "?plain=1", // attach "?plain=1" to the link to cause GitHub to display the source code *with* formatting
     show: theme.value.viewLink && frontmatter.value.viewLink !== false,
     title: theme.value.viewLinkText,
 }))
