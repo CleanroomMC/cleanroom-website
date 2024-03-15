@@ -1,6 +1,6 @@
 const EXPAND_DETAILS_ANIMATION_DURATION = 250
 
-export function handleDetails(details: HTMLDetailsElement) {
+export function handleDetailsAnimation(details: HTMLDetailsElement) {
   let animation: Animation | undefined
   const summary = details.querySelector('summary')
   const otherElements = Array.from(details.children).filter(item => item.tagName !== 'summary') as HTMLElement[]

@@ -5,7 +5,7 @@ import DefaultTheme from "vitepress/theme";
 import BackToTop from "../../../components/internal/BackToTop.vue";
 import "./style.css";
 
-import { handleDetails } from "./composables/details";
+import { handleDetailsAnimation } from "./composables/details";
 
 function addBackTotop() {
   render(
@@ -17,9 +17,8 @@ function addBackTotop() {
 }
 
 function addDetailsAnimation() {
-  document.querySelectorAll('details').forEach((details) => handleDetails(details))
+  document.querySelectorAll('details').forEach((details) => handleDetailsAnimation(details))
 }
-
 
 export default {
   extends: DefaultTheme,
@@ -32,8 +31,13 @@ export default {
     if (typeof window !== "undefined") {
       window.addEventListener("load", () => {
         addBackTotop();
-        addDetailsAnimation();
       })
+
+      router.onAfterRouteChanged = () => {
+        setTimeout(() => {
+          addDetailsAnimation();
+        }, 0);
+      }
     }
   },
 } satisfies Theme;
