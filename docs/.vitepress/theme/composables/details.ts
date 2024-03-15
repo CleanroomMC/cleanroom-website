@@ -20,13 +20,13 @@ export function handleDetailsAnimation(details: HTMLDetailsElement) {
 
   function handleDetailsOpen(summary: HTMLElement) {
     const startHeight = details.offsetHeight
-    const endHeight = summary.offsetHeight + getElementButtomHeiht(summary)
+    const endHeight = summary.offsetHeight + getElementButtomHeight(summary)
     handleStartAnimation(startHeight, startHeight - endHeight, false)
   }
 
   function handleDetailsClose(summary: HTMLElement) {
     const startHeight = details.offsetHeight;
-    const endHeight = summary.offsetHeight + getElementButtomHeiht(details) + otherElements.reduce((a, b) => a + b.offsetHeight, 0);
+    const endHeight = summary.offsetHeight + getElementButtomHeight(details) + otherElements.reduce((a, b) => a + b.offsetHeight, 0);
     handleStartAnimation(startHeight, endHeight, true)
   }
 
@@ -51,7 +51,7 @@ export function handleDetailsAnimation(details: HTMLDetailsElement) {
     details.style.height = details.style.overflow = ''
   }
 
-  function getElementButtomHeiht(el: HTMLElement) {
+  function getElementButtomHeight(el: HTMLElement) {
     return parseFloat(getComputedStyle(el).marginBottom) + parseFloat(getComputedStyle(details).borderBottomWidth)
   }
 }
