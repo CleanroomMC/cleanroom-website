@@ -13,9 +13,16 @@
 import { computed } from 'vue';
 import { useScroll } from '@vueuse/core';
 
+const props = withDefaults(
+    defineProps<{
+        threshold: number
+    }>(),
+    { threshold: 300 }
+)
+
 const { y } = useScroll(window, { throttle: 200 });
 
-const show = computed(() => y.value > 200);
+const show = computed(() => y.value > props.threshold);
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
