@@ -5,16 +5,15 @@ aside: false
 
 # Just Enough Items
 
-::: info Warning {id="warning"}
-Requires GroovyScript 0.3.1+
-:::
-
-In all methods you can replace `jei` with `hei`.
-
 ## Categories
 
-::: info Warning {id="warning"}
-This compat is not yet fully documented!
-:::
+Has 4 subcategories.
 
-* [Hiding](./hiding.md)
+* [Category Catalysts](./catalyst.md)
+
+* [Categories](./category.md)
+
+* [Description Category](./description.md)
+
+* [Ingredient Sidebar](./ingredient.md)
+
