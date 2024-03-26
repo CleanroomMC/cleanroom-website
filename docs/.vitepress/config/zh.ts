@@ -1,5 +1,27 @@
 import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { generateSidebar } from "vitepress-sidebar";
 import { CleanRoomConfig } from "./customConfig";
+
+const sidebar = generateSidebar([
+  {
+    // GroovyScript:
+    documentRootPath: "docs",
+    scanStartPath: "groovy-script",
+    resolvePath: "/groovy-script/",
+    hyphenToSpace: true,
+    underscoreToSpace: true,
+    useFolderTitleFromIndexFile: true,
+    keepMarkdownSyntaxFromTitle: true,
+    useTitleFromFrontmatter: true,
+    useTitleFromFileHeading: true,
+    sortMenusByName: true,
+    collapseDepth: 2,
+    folderLinkNotIncludesFileName: true,
+    useFolderLinkFromIndexFile: true,
+  },
+]);
+
+sidebar["/wiki/"] = wikiSidebar();
 
 export const zh = defineConfigWithTheme<CleanRoomConfig>({
   lang: "zh",
@@ -17,6 +39,18 @@ export const zh = defineConfigWithTheme<CleanRoomConfig>({
     lastUpdatedText: "更新于",
     editLinkText: "编辑此页",
     sourceLinkText: "查看源码",
+    timeDict: {
+      today: "今天",
+      ago: "前",
+      day: "一天",
+      days: "%d 天",
+      week: "大约一周",
+      weeks: "%d 周",
+      month: "大约一个月",
+      months: "%d 个月",
+      year: "大约一年",
+      years: "%d 年",
+    },
   },
 });
 
@@ -25,6 +59,7 @@ function nav(): DefaultTheme.NavItem[] {
     { text: "主页", link: "/zh/" },
     { text: "指南", link: "/zh/guide/" },
     { text: "维基", link: "/zh/wiki/" },
+    { text: "GroovyScript", link: "/zh/groovy-script/" },
   ];
 }
 
