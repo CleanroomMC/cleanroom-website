@@ -10,7 +10,7 @@ hero:
       text: 介绍
       link: guide/
     - theme: alt
-      text: 即刻出发
+      text: 即刻启程
       link: guide/
   image:
     src: /cleanroom.png
@@ -27,19 +27,18 @@ features:
     icon: 🔥
 ---
 
-## <div class="center">Sponsors</div>
+## <div class="center">赞助者</div>
 
-<div class="center">We thank our sponsors for providing us with free licenses for their tools and services.</div>
+<div class="center">感谢赞助者们提供的免费授权工具以及服务！</div>
 
 ### YourKit
 
-***For providing the organization with free licenses for the YourKit Java Profiler for our JVM-based projects.***
+***专为免费授权的 Java 项目提供 YourKit Java Profiler。***
 
 [![YourKit Logo](/yourkit.png)](https://www.yourkit.com/)
 
-YourKit supports open source projects with innovative and intelligent tools
-for monitoring and profiling Java and .NET applications.
-YourKit is the creator of [*YourKit Java Profiler*](https://www.yourkit.com/java/profiler/), [*YourKit .NET Profiler*](https://www.yourkit.com/dotnet-profiler/) and [*YourKit YouMonitor*](https://www.yourkit.com/youmonitor/).
+YourKit 专为各类开源项目提供新颖便捷的工具，帮助它们更好地分析监控 Java 以及 .NET 应用。
+YourKit 是 [*YourKit Java Profiler*](https://www.yourkit.com/java/profiler/), [*YourKit .NET Profiler*](https://www.yourkit.com/dotnet-profiler/) 以及 [*YourKit YouMonitor*](https://www.yourkit.com/youmonitor/) 的作者。
 
 <style>
 .feat-center {
