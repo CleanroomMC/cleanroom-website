@@ -16,7 +16,7 @@ alternative in the future)
 
 ## Groovy 日志
 
-在Everything groovy related has its own log, and it generates its own file. If you run into issues with your script you
+Everything groovy related has its own log, and it generates its own file. If you run into issues with your script you
 should look here first.
 
 The files directory is always `[Minecraft instance path]/groovy.log`
