@@ -7,7 +7,7 @@ const sidebar = generateSidebar([
     // GroovyScript:
     documentRootPath: "docs",
     scanStartPath: "groovy-script",
-    resolvePath: "/groovy-script/",
+    resolvePath: "/zh/groovy-script/",
     hyphenToSpace: true,
     underscoreToSpace: true,
     useFolderTitleFromIndexFile: true,
@@ -21,20 +21,14 @@ const sidebar = generateSidebar([
   },
 ]);
 
-sidebar["/wiki/"] = wikiSidebar();
+sidebar["/zh/wiki/"] = wikiSidebar();
 
 export const zh = defineConfigWithTheme<CleanRoomConfig>({
   lang: "zh",
   description: "CleanroomMC",
   themeConfig: {
     nav: nav(),
-    sidebar: {
-      "/zh/wiki/": wikiSidebar(),
-    },
-    docFooter: {
-      next: "下一篇",
-      prev: "上一篇",
-    },
+    sidebar,
     outlineTitle: "大纲",
     lastUpdatedText: "更新于",
     editLinkText: "编辑此页",
