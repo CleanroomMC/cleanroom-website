@@ -130,7 +130,7 @@ public class ExampleClass {
 
              		@SubscribeEvent
              		public static void thisListenerWillNeverRun(Event event) {
-             			// 必须为静态方法
+             			// 必须为静态方法，注意，该方法不会正常监听到事件。
              		}
 
              	}
