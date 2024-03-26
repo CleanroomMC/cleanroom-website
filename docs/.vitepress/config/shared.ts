@@ -1,6 +1,23 @@
-import { defineConfig } from "vitepress";
+import { fileURLToPath } from "url";
+import { defineConfigWithTheme } from "vitepress";
+import { CleanRoomConfig } from "./customConfig";
 
-export const shared = defineConfig({
+export const shared = defineConfigWithTheme<CleanRoomConfig>({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL(
+              "../../../components/internal/CustomDocFooter.vue",
+              import.meta.url,
+            ),
+          ),
+        },
+      ],
+    },
+  },
   title: "CleanroomMC",
   cleanUrls: true,
   metaChunk: true,
@@ -29,6 +46,32 @@ export const shared = defineConfig({
     },
     footer: {
       message: "© 2024 CleanroomMC. All Rights Reserved.",
+    },
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
+    editLink: {
+      pattern: "https://github.com/CleanroomMC/cleanroom-website/blob/main/docs/:path",
+    },
+    viewLink: true,
+    sourceLink: true,
+    editLinkText: "Edit Page Source",
+    viewLinkText: "View Page Source",
+    sourceLinkText: "View Source Code",
+    timeDict: {
+      today: "today",
+      ago: "ago",
+      day: "a day",
+      days: "%d days",
+      week: "about a week",
+      weeks: "%d weeks",
+      month: "about a month",
+      months: "%d months",
+      year: "about a year",
+      years: "%d years"
     },
     search: { provider: "local" },
     socialLinks: [

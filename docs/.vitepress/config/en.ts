@@ -1,14 +1,50 @@
-import { type DefaultTheme, defineConfig } from "vitepress";
+import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { generateSidebar } from "vitepress-sidebar";
+import { CleanRoomConfig } from "./customConfig";
 
-export const en = defineConfig({
+const sidebar = generateSidebar([
+  { // GroovyScript:
+    documentRootPath: "docs",
+    scanStartPath: "groovy-script",
+    resolvePath: "/groovy-script/",
+    hyphenToSpace: true,
+    underscoreToSpace: true,
+    useFolderTitleFromIndexFile: true,
+    keepMarkdownSyntaxFromTitle: true,
+    useTitleFromFrontmatter: true,
+    useTitleFromFileHeading: true,
+    sortMenusByName: true,
+    collapseDepth: 2,
+    folderLinkNotIncludesFileName: true,
+    useFolderLinkFromIndexFile: true,
+  }
+]);
+
+sidebar["/wiki/"] = wikiSidebar();
+
+export const en = defineConfigWithTheme<CleanRoomConfig>({
   lang: "en",
   description: "CleanroomMC",
   themeConfig: {
     nav: nav(),
-    sidebar: {
-      "/wiki/": wikiSidebar(),
-    },
+    sidebar,
     outlineTitle: "Outline",
+    lastUpdatedText: "Last updated",
+    editLinkText: "Edit Page Source",
+    viewLinkText: "View Page Source",
+    sourceLinkText: "View Source Code",
+    timeDict: {
+      today: "today",
+      ago: "ago",
+      day: "a day",
+      days: "%d days",
+      week: "about a week",
+      weeks: "%d weeks",
+      month: "about a month",
+      months: "%d months",
+      year: "about a year",
+      years: "%d years"
+    },
   },
 });
 
@@ -17,6 +53,7 @@ function nav(): DefaultTheme.NavItem[] {
     { text: "Home", link: "/" },
     { text: "Guide", link: "/guide/" },
     { text: "Wiki", link: "/wiki/" },
+    { text: "GroovyScript", link: "/groovy-script/" },
   ];
 }
 
@@ -30,7 +67,7 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: "Forge Mod Development",
-      collapsed: false,
+      collapsed: true,
       base: "/wiki/forge-mod-development/",
       items: [
         {

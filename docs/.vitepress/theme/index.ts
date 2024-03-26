@@ -1,17 +1,43 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
-import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import './style.css'
+import { render, h } from "vue";
+import type { Theme } from "vitepress";
+import DefaultTheme from "vitepress/theme";
+import BackToTop from "../../../components/internal/BackToTop.vue";
+import "./style.css";
+
+import { handleDetailsAnimation } from "./composables/details";
+
+function addBackTotop() {
+  render(
+    h(BackToTop, {
+      threshold: 300,
+    }),
+    document.body,
+  );
+}
+
+function addDetailsAnimation() {
+  document.querySelectorAll('details').forEach((details) => handleDetailsAnimation(details))
+}
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    })
+    });
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
-  }
-} satisfies Theme
+    if (typeof window !== "undefined") {
+      window.addEventListener("load", () => {
+        addBackTotop();
+      })
+
+      router.onAfterRouteChanged = () => {
+        setTimeout(() => {
+          addDetailsAnimation();
+        }, 0);
+      }
+    }
+  },
+} satisfies Theme;

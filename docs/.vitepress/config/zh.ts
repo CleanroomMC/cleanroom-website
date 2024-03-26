@@ -1,6 +1,7 @@
-import { DefaultTheme, defineConfig } from "vitepress";
+import { type DefaultTheme, defineConfigWithTheme } from "vitepress";
+import { CleanRoomConfig } from "./customConfig";
 
-export const zh = defineConfig({
+export const zh = defineConfigWithTheme<CleanRoomConfig>({
   lang: "zh",
   description: "CleanroomMC",
   themeConfig: {
@@ -12,6 +13,10 @@ export const zh = defineConfig({
       next: "下一篇",
       prev: "上一篇",
     },
+    outlineTitle: "大纲",
+    lastUpdatedText: "更新于",
+    editLinkText: "编辑此页",
+    sourceLinkText: "查看源码",
   },
 });
 

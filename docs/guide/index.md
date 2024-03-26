@@ -53,68 +53,180 @@ The previously defined properties will be passed to the component as `frontmatte
 
 ## Custom Container
 
-You can use the `:::` syntax to create custom containers and support custom titles. For example:
+You can use the `:::` syntax to create custom containers and support custom titles.
+Any amount of whitespace may separate the starting `:::` block from the type declaration.
+Any number of colons `:` greater than three may be used for the purpose of nesting.
+
+The logic of custom containers has been partly overriden via ids, and
+so they mainly function as aliases, with the `id` setting the actual color any symbol.
+This is so the same logic can apply to expandable containers, created via `details`, which is not possible without it.
+
+For example:
 
 **Input:**
 
 ```markdown
-:::tip
+:::tip {id="tip"}
 This is a `block` of type `tip`
 :::
 
-:::info
+:::info {id="info"}
 This is a `block` of type `info`
 :::
 
-:::warning
+:::warning {id="warning"}
 This is a `block` of type `warning`
 :::
 
-:::danger
+:::danger {id="danger"}
 This is a `block` of type `danger`
 :::
 
-::: details
+:::   details
 This is a `block` of type `details`
 :::
 
-:::tip Custom Title
-This is a `block` of `Custom Title`
+::: details {open}
+This is a `block` of type `details`, expanded by default
 :::
 
-:::tip{title="Custom Title"}
+::::tip Custom Title
 This is a `block` of `Custom Title`
+
+:::tip {title="Custom Title but Nested!"}
+This is a `block` of `Custom Title`
+:::
+::::
+
+:::info {id="info"}
+This is a `block` of type `info`
+:::
+
+:::info Note {id="note"}
+This is a `block` of type `note`.
+:::
+
+:::details tip-but-details {id="tip"}
+This is a `block` of type `tip`
+:::
+
+:::details success-but-details {open id="success"}
+This is a `block` of type `success`
+:::
+
+:::details question-but-details {open id="question"}
+This is a `block` of type `question`
+:::
+
+:::details warning-but-details {open id="warning"}
+This is a `block` of type `warning`
+:::
+
+:::details failure-but-details {id="failure"}
+This is a `block` of type `failure`
+:::
+
+:::info Danger {id="danger"}
+This is a `block` of type `danger`
+:::
+
+:::info Bug {id="bug"}
+This is a `block` of type `bug`
+:::
+
+:::info Abstract {id="abstract"}
+This is a `block` of type `abstract`
+:::
+
+:::info Example {id="example"}
+This is a `block` of type `example`
+:::
+
+:::info Quote {id="quote"}
+This is a `block` of type `quote`
 :::
 ```
 
 **Output:**
 
-:::tip
+:::tip {id="tip"}
 This is a `block` of type `tip`
 :::
 
-:::info
+:::info {id="info"}
 This is a `block` of type `info`
 :::
 
-:::warning
+:::warning {id="warning"}
 This is a `block` of type `warning`
 :::
 
-:::danger
+:::danger {id="danger"}
 This is a `block` of type `danger`
 :::
 
-::: details
+:::   details
 This is a `block` of type `details`
 :::
 
-:::tip Custom Title
-This is a `block` of `Custom Title`
+::: details {open}
+This is a `block` of type `details`, expanded by default
 :::
 
-:::tip{title="Custom Title"}
+::::tip Custom Title
 This is a `block` of `Custom Title`
+
+:::tip {title="Custom Title but Nested!"}
+This is a `block` of `Custom Title`
+:::
+::::
+
+:::info {id="info"}
+This is a `block` of type `info`
+:::
+
+:::info Note {id="note"}
+This is a `block` of type `note`.
+:::
+
+:::details tip-but-details {id="tip"}
+This is a `block` of type `tip`
+:::
+
+:::details success-but-details {open id="success"}
+This is a `block` of type `success`
+:::
+
+:::details question-but-details {open id="question"}
+This is a `block` of type `question`
+:::
+
+:::details warning-but-details {open id="warning"}
+This is a `block` of type `warning`
+:::
+
+:::details failure-but-details {id="failure"}
+This is a `block` of type `failure`
+:::
+
+:::info Danger {id="danger"}
+This is a `block` of type `danger`
+:::
+
+:::info Bug {id="bug"}
+This is a `block` of type `bug`
+:::
+
+:::info Abstract {id="abstract"}
+This is a `block` of type `abstract`
+:::
+
+:::info Example {id="example"}
+This is a `block` of type `example`
+:::
+
+:::info Quote {id="quote"}
+This is a `block` of type `quote`
 :::
 
 ## Code Block
