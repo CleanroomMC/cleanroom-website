@@ -7,7 +7,7 @@ const sidebar = generateSidebar([
     // GroovyScript:
     documentRootPath: "docs",
     scanStartPath: "groovy-script",
-    resolvePath: "/zh/groovy-script/",
+    resolvePath: "/groovy-script/",
     hyphenToSpace: true,
     underscoreToSpace: true,
     useFolderTitleFromIndexFile: true,
@@ -53,7 +53,7 @@ function nav(): DefaultTheme.NavItem[] {
     { text: "主页", link: "/zh/" },
     { text: "指南", link: "/zh/guide/" },
     { text: "维基", link: "/zh/wiki/" },
-    { text: "GroovyScript", link: "/zh/groovy-script/" },
+    { text: "GroovyScript", link: "/groovy-script/" },
   ];
 }
 
