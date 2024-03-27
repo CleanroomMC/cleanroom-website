@@ -7,7 +7,9 @@ aside: false
 
 ## Categories
 
-Has 1 subcategories.
+Has 2 subcategories.
+
+* [Energy Core](./energy_core.md)
 
 * [Fusion](./fusion.md)
 

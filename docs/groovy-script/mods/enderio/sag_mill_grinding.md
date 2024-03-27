@@ -66,7 +66,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     duration(int)
     ```
 
-- `float`. Format error: Sets the chance to increase outputs up to 100% with an applicable bonusType. Requires greater than 0. (Default `1`).
+- `float`. Sets the chance to increase outputs up to 100% with an applicable bonusType. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers
     grinding(float)
