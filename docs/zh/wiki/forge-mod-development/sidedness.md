@@ -15,27 +15,28 @@ title: Sidedness
 
 ## `@Mod`
 
-The parameters for `@Mod`: `clientSideOnly` and `serverSideOnly` - does exactly what it says on the tin.
+`@Mod` 注解的参数有 `clientSideOnly`（仅客户端） 以及 `serverSideOnly`（仅服务端），具体区别不言自明。
 
-This is by far the best way to control your mod from only loading on a specific **physical side**. As it does this at the very beginning of mod loading process.
+如果你想将自己的模组设计为**单实体端**模组，使用这两个参数乃是最优选择。因为它们在模组加载的极早期便已生效。
 
-However, the mod will not show up on the mod list, if that is less than desired, you will have to check out the annotations below.
+但是，通过这种方法实现的单端模组不会显示在魔族列表中，如果你不能接受这一点，那你可以尝试一下下方介绍的另一种方法。
 
 ## `@SideOnly`
 
-Annotation a class, field, method or constructor will tell Forge that this particular member should be **stripped** out of the loading process on the specified **physical side** (see: `net.minecraftforge.fml.common.asm.transformers.SideTransformer`).
+该注解可以作用于类、字段、方法以及构造函数上，Forge 会在加载加载模组时，在特定的**实体端**上**剔除**这些成员（参见 `net.minecraftforge.fml.common.asm.transformers.SideTransformer`）。
 
-Usually only Minecraft and Forge code utilizes this. For Minecraft, Forge uses it to mark the members that Mojang's obfuscator had stripped out.
+这一方法一般只有 Minecraft 以及 Forge 会用。Forge 会将 Mojang 混淆器剔除掉的成员用该注解标注出来。
 
-You should only annotate `@SideOnly` when you are **100% sure** that the member isn't needed for a particular **physical side**.
-Misusing this annotation may bring up crashes that are extremely hard to read (especially during class transformation).
+使用这一方法前还请三思，如果你不能**100% 地确定**被注解成员只在某一端有效，那你最好不要鲁莽地使用该注解。
+
+如果错误地使用了该注解，那么游戏实例崩溃是必然，而且崩溃报告通常让人不知所云（尤其是类转换）。
 
 ## `@NetworkCheckHandler`
 
-A somewhat obscure annotation that helps when you are creating a mod that needs to query **physical side** information.
+虽然字面上看起来让人有些摸不着头脑，但实际上，这一注解能够帮助你访问**另一实体端**的信息。
 
-- Syntax: In your `@Mod` class, create a method of any name that takes in the parameters `(Map<String, String>, net.minecraftforge.fml.relauncher.Side)` and allow it to return a `boolean`.
+- 语法：在你注解了 `@Mod` 的类中创建一个方法，方法名不重要，重要的是这个方法需要接受两个参数，为 `(Map<String, String>, net.minecraftforge.fml.relauncher.Side)`，并且返回值必须为 `boolean`。
 
-During handshaking, when the `Physical Client` loads into a `Physical Server`, two things happen. On the `Physical Server`, it calls the `@NetworkCheckHandler` annotated method (if present) to see if the player should be stopped from joining, and vice-versa on the `Physical Client`.
+在握手期间，当`实体客户端`尝试加入到`实体服务端`时，首先服务端会尝试调用注解了 `@NetworkCheckHandler` 的方法（如果有的话），并依照返回值确认是否应该放行该客户端，让其加入到服务端中，而客户端同理，也会判断自己是否应该加入到服务端中。
 
-Thanks to [Forge Community Wiki](https://forge.gemwire.uk/wiki/Sides) for a fleshed out description.
+感谢 [Forge 社区维基](https://forge.gemwire.uk/wiki/Sides) 提供的详实信息。
