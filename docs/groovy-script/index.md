@@ -5,7 +5,6 @@
 ## Welcome
 
 A comprehensive scripting sandbox for Minecraft 1.12.2.
-[Join our Discord](https://discord.com/invite/m53yxTjjKM).
 
 Are you not seeing what other see on this wiki? Try reloading it.
 

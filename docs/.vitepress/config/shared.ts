@@ -81,7 +81,7 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
         },
         link: "https://repo.cleanroommc.com/",
       },
-      { icon: "discord", link: "https://discord.gg/f2K4aSpG4F/" },
+      { icon: "discord", link: "https://discord.gg/sgQxDJdrnY" },
       { icon: "github", link: "https://github.com/CleanroomMC/" },
     ],
   },
