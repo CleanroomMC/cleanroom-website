@@ -2,6 +2,6 @@
 title: Wiki
 ---
 
-# Wiki
+# 维基
 
-Here is the wiki, please navigate through the sidebar.
+欢迎来到维基页面，请查看侧边栏，点击对应项目即可跳转到对应页面。

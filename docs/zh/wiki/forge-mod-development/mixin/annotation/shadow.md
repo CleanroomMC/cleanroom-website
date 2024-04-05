@@ -136,7 +136,7 @@ public class Example {
 // 但你也得相对应地将 Mixin 类改为抽象类
 public abstract class AbstractExample {
     // 静态方法不可为抽象，因为它们与“类”同级！
-    // 参照上面的 Example.java，
+    // 参照 Example.java，
     // 静态方法也可以写成如下这样，也是用于避免极端情况。
     @Shadow public static void staticMethod() {
         throw new AssertionError();
