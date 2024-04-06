@@ -20,7 +20,7 @@ features:
     details: Embrace the modernized Minecraft 1.12.2, enjoy the cutting-edge toolchain.
     icon: 🏃🏻‍♀️
   - title: Template for 1.12.2
-    details: Blazing new and improved development templates.
+    details: Blazing new trail for your development.
     icon: 📦
   - title: Advanced API
     details: Through modification of the Forge 1.12.2, we have implemented a number of useful and reliable APIs.
