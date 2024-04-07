@@ -1,80 +1,29 @@
-# Materials
+---
+title: Creating Materials
+---
+
+# Creating Materials
 
 First of all, the best docs is the source
 itself: [Source](https://github.com/GregTechCEu/GregTech/blob/master/src/main/java/gregtech/api/unification/material/Material.java)
 
+
 ::: info {id="info"}
-This docs goes of GroovyScript version 0.4.0 and GTCEu 2.5.4
+This docs goes of GroovyScript version 1.0.1 and GTCEu 2.9.0
 :::
-
-## Introduction
-
-### Firstly, you should know what a **Material** actually is
-
-Material is the basis of CEu. It defines a substance and its properties. It usually takes the form of an **element** (
-i.e. Oxygen) or a **compound** (i.e. Water), but it can also take the form of something weird like the **Eye of Ender**.
-
-### Which Properties are defined?
-
-The **Material** specifies whether it has a **Fluid** property, **plasma** property, **dust** property, **gem** property
-or **ingot** property. When it has a specific property, GTCEu will register the corresponding item or fluid
-automatically. Some properties will require others, like **Ingot** requiring **Dust**.
-
-### What else does it define?
-
-You can additionally define **Colors**, **Flags** (indicators for specific attributes), **MaterialIconSet** (textures),
-**CableProperties**, **Element**, **Formula** (tooltips), **Components** and more. Don't worry, they are not
-complicated, and will be introduced in detail below.
-
-***
-
-### Retrieving Existing Materials
-
-There are two good ways to do this: the simple way and the not simple way.
-
-#### The Simple Way
-
-This method requires the Material to first exist. This method goes off of the material's **Unlocalized Name**, which is
-the name used before it is translated in a lang file. You can use the `/gs hand` command to retrieve the material of
-items.
-
-```groovy
-// assigns the variable my_material to a Material called Steel.
-def my_material = material('steel')
-```
-
-#### The Not Simple Way
-
-This method also works exactly the same as before, but the former is much easier and more convenient. It is **strongly**
-recommended to use the **Simple Way**.
-
-```groovy
-// import the Material class to use Materials
-import gregtech.api.unification.material.Materials
-
-// assigns the variable my_material to a Material called Steel.
-var my_material = Materials.Steel
-```
-
-***
-
-## Creating a New Material
 
 GregTech materials must be created in the `preInit` loader. Additionaly they need to be registered (or modified) inside
 an event.
 
 ```groovy
-// import the material event
-import gregtech.api.GregTechAPI.MaterialEvent
-
-// register an event listener
-event_manager.listen { MaterialEvent event ->
+// listen to gregtech material event
+mods.gregtech.materialEvent {
     // create materials here
 }
 ```
 
 Note that when the event runs GregTech materials are already created, but addon materials might not. To modify addon
-materials (but don't register) use `PostMaterialEvent` instead of `MaterialEvent`.
+materials (but don't register) use `lateMaterialEvent` instead of `materialEvent`.
 
 Materials are created using a system called `MaterialBuilder`. If you've used GregTech CE and CEu's system for adding
 machine recipes, this will feel very similar.
@@ -85,109 +34,175 @@ materials is more than all of CEu uses by itself too! The `name` must be all low
 special characters (@, %, etc).
 
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-
-// import the Material class for making new materials
-
-event_manager.listen { MaterialEvent event ->
-    /*
-     * This does not do much on its own.
-     * It assigns a variable to a new MaterialBuilder, with an id of 32000, and a name of "my_material".
-     */
-    def my_material_builder = new Material.Builder(32000, "my_material")
-}
-```
-
-```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-
-event_manager.listen { MaterialEvent event ->
+// listen to gregtech material event
+mods.gregtech.materialEvent {
     /*
      * This will not work quite yet. Read on to learn what else this needs!
-     * It would assign a variable to a new Material, with an id of 32001, and a name of "my_real_material".
+     * It would assign a variable to a new Material, with an id of 32000, and a name of "my_material".
      *
      * Use .build() to finish building a material. This is what actually creates it.
      */
-    def my_material = new Material.Builder(32001, "my_real_material").build()
+    def my_material = materialBuilder(32000, "my_material")
+        // add properties here
+        .build()
 }
 ```
 
-### Adding Material Properties
+The `materialBuilder()` method is only available inside this event. The second parameter is actually a `ResourceLocation`.
+If only a string is supplied, then the namespace defaults to the pack id configured in the run config. 
+
+
+## Adding Material Properties
 
 This is where materials really start to take shape. All of the following methods are called on
-a `new Material.Builder()`.
+a `materialBuilder()`.
 Scroll down to the first example to see how to do this. Each method can be chained together, one after the other, until
 the desired material is all specified. It is then built and the end and returns a finished Material.
 
-**fluid**: _`fluid(@Optional String type, @Optional boolean hasBlock)`_
+### Fluid
+```groovy:no-line-numbers
+liquid()
+liquid(FluidBuilder builder)
+```
 
-Adds a `FluidProperty` to this Material, which generates a fluid.
-The following two parameters are optional. If you want to modify a later optional parameter, you must specify a value
-for every preceding one. Note that you do not need to specify anything when using `fluid()`.
+Generates a fluid for this material.
 
-* `@Optional type` - The Material.FluidType of this Material, either `"fluid"` or `"gas"`.
-* `@Optional hasBlock` - If `true`, create a Fluid Block for this Material, which can be placed in the world.
+* `builder` - The fluid configuration. See [Fluid builder](#fluid-builder)
 
-**plasma**: _`plasma()`_
+### Plasma
 
-Adds a `PlasmaProperty` to this Material, which generates a plasma.
-It does not require a `FluidProperty`, but can be used in conjunction with it.
+```groovy:no-line-numbers
+plasma()
+plasma(FluidBuilder builder)
+```
 
-**dust**: _`dust(@Optional int harvestLevel, @Optional int burnTime)`_
+Generates a plasma fluid for this material.
+
+* `builder` - The fluid configuration. See [Fluid builder](#fluid-builder)
+
+### Gas
+```groovy:no-line-numbers
+gas()
+gas(FluidBuilder builder)
+```
+
+Generates a gaseous fluid for this material.
+
+* `builder` - The fluid configuration. See [Fluid builder](#fluid-builder)
+
+### Dust
+```groovy:no-line-numbers
+dust()
+dust(int harvestLevel)
+dust(int harvestLevel, int burnTime)
+```
 
 Adds a `DustProperty` to this Material, which generates a Dust, Small Dust, and Tiny Dust.
 **Is automatically applied by `IngotProperty` and `GemProperty`**.
 
-* `@Optional harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
+* `harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
   a `ToolProperty`, this value will also be used to determine the tool's Mining Level.
-* `@Optional burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
+* `burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
   _cannot_* be used as a furnace fuel.
 
-**ingot**: _`ingot(@Optional int harvestLevel, @Optional int burnTime)`_
+### Ingot
+```groovy:no-line-numbers
+ingot()
+ingot(int harvestLevel)
+ingot(int harvestLevel, int burnTime)
+```
 
 Adds an `IngotProperty` to this Material, which generates an Ingot. It automatically adds a `DustProperty`. **This is
 INCOMPATIBLE with `GemProperty`.**
 
-* `@Optional harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
+* `harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
   a `ToolProperty`, this value will also be used to determine the tool's Mining Level. If this Material already had a
   Harvest Level defined, it will be overridden.
-* `@Optional burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
+* `burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
   _cannot_* be used as a furnace fuel. If this Material already had a Burn Time defined, it will be overridden.
 
-**gem**: _`gem(@Optional int harvestLevel, @Optional int burnTime)`_
+### Gem
+```groovy:no-line-numbers
+gem()
+gem(int harvestLevel)
+gem(int harvestLevel, int burnTime)
+```
 
 Adds a `GemProperty` to this Material, which generates all types of GregTech Gems. It automatically adds
 a `DustProperty`. **This is INCOMPATIBLE with `IngotProperty`.**
 
-* `@Optional harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
+* `harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
   a `ToolProperty`, this value will also be used to determine the tool's Mining Level. If this Material already had a
   Harvest Level defined, it will be overridden.
-* `@Optional burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
+* `burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
   _cannot_* be used as a furnace fuel. If this Material already had a Burn Time defined, it will be overridden.
 
-**polymer**: _`polymer(@Optional int harvestLevel)`_
+### Ore
+```groovy:no-line-numbers
+ore()
+ore(boolean emissive)
+ore(int oreMultiplier, int byproductMultiplier)
+ore(int oreMultiplier, int byproductMultiplier, boolean emissive)
+```
+
+Adds Ore Blocks, Crushed, Crushed Purified, Crushed Centrifuged, Impure Dust, and Purified Dust for this Material.
+
+* `oreMultiplier` - Crushed Ore output amount multiplier for Ore -> Crushed Ore Maceration. Default: 1 (no
+  multiplier).
+* `byproductMultiplier` - Byproduct output amount multiplier for Crushed Ore processing of any kind. Default:
+  1 (no multiplier).
+* `emissive` - Should ore block use emissive texturing (see below image). Default: false.
+
+![](https://user-images.githubusercontent.com/18493855/143446969-80de6354-ad12-4170-81f5-071d6c0bb7cd.png)
+
+### Polymer
+```groovy:no-line-numbers
+polymer()
+polymer(int harvestLevel)
+```
 
 Adds a `PolymerProperty` to this material, which determines if special lang entries should be used for its items: such
 as "Sheet" instead of "Plate." This requires a `FluidProperty`.
 
-* `@Optional harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
+* `harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
   a `ToolProperty`, this value will also be used to determine the tool's Mining Level. If this Material already had a
   Harvest Level defined, it will be overridden.
 
-**color**: _`color(int color)`_
+### Wood
+```groovy:no-line-numbers
+wood()
+wood(int harvestLevel)
+wood(int harvestLevel, int burnTime)
+```
+
+Adds a `WoodProperty` to this Material, which makes the material flammable and removes a few fluid pipe sizes if it has the fluid pipe property. It automatically adds a `DustProperty`.
+
+* `harvestLevel` - The Harvest Level of the Material's block when mining it. If the Material also has
+  a `ToolProperty`, this value will also be used to determine the tool's Mining Level.
+* `burnTime` - The Burn Time (in ticks) of this Material as a Furnace Fuel. If not specified, the material *
+  _cannot_* be used as a furnace fuel.
+
+### Color
+```groovy:no-line-numbers
+color(int color)
+```
 
 Set the Color of this Material. Defaults to 0xFFFFFF unless `colorAverage()` is used. Colors can be supplied in either
 of the following formats: the integer value, such as `16777215` or as `0xFFFFFF`. This is RGB, with no alpha channel.
+You can use a [Color picker](https://g.co/kgs/Q6x5Jzq) to find the desired color value. Note that the resulting color might look slightly different since its applied on top of textures.
 
 * `color` - The RGB color to use for the Material.
 
-**colorAverage**: _`colorAverage()`_
+```groovy:no-line-numbers
+colorAverage()
+```
 
 The Material's Color will be a weighted average of all of the Components' colors in the Material.
 
-**rotorStats**: _`rotorStats(float speed, float damage, int durability)`_
+### Rotor stats
+```groovy:no-line-numbers
+rotorStats(float speed, float damage, int durability)
+```
 
 Set the stats for turbine rotors which are made from this Material. Speed and Damage are used according to a formula,
 and do not reflect those two user-facing properties directly.
@@ -196,8 +211,14 @@ and do not reflect those two user-facing properties directly.
 * `damage` - Damage of the rotor.
 * `durability` - Durability of the rotor.
 
-**blastTemp**:
-_`blastTemp(int temp, @Optional String gasTier, @Optional int eutOverride, @Optional int durationOverride)`_
+### Blast temperature
+```groovy:no-line-numbers
+blastTemp(int temp)
+blastTemp(int temp, String gasTier)
+blastTemp(int temp, String gasTier, int eutOverride)
+blastTemp(int temp, String gasTier, int eutOverride, int durationOverride)
+blastTemp(int temp, String gasTier, int eutOverride, int durationOverride, int vacuumEUtOverride, int vacuumDurationOverride)
+```
 
 Sets the Blast Furnace Temperature of this Material. If below 1000 Kelvin, Primitive Blast Furnace recipes will be also
 added. If above 1750 Kelvin, a Hot Ingot and its appropriate Vacuum Freezer recipe will be also added. If a Material
@@ -206,33 +227,31 @@ temperature.
 
 * `temp` - Blast Furnace Temperature in Kelvin required to heat up the material. Just like in real life, this value *
   _cannot_* be less than `0`.
-* `@Optional gasTier` - The tier of gas used to smelt in the Electric Blast Furnace. Available options
+* `gasTier` - The tier of gas used to smelt in the Electric Blast Furnace. Available options
   are: `"LOW"`, `"MID"`, `"HIGH"`, `"HIGHER"`, `"HIGHEST`.
-* `@Optional eutOverride` - Sets the EU/t of autogenerated Electric Blast Furnace recipes to the specified value.
-* `@Optional durationOverride` - Sets the base duration in ticks of autogenerated Electric Blast Furnace recipes to the
+* `eutOverride` - Sets the EU/t of autogenerated Electric Blast Furnace recipes to the specified value.
+* `durationOverride` - Sets the base duration in ticks of autogenerated Electric Blast Furnace recipes to the
+  specified value.
+* `vacuumEUtOverride` - Sets the EU/t of autogenerated Vacuum Freezer recipes to the specified value.
+* `vacuumDurationOverride` - Sets the base duration in ticks of autogenerated Vacuum Freezer recipes to the
   specified value.
 
-**ore**: _`ore(@Optional int oreMultiplier, @Optional int byproductMultiplier, @Optional boolean emissive)`_
-
-Adds Ore Blocks, Crushed, Crushed Purified, Crushed Centrifuged, Impure Dust, and Purified Dust for this Material.
-
-* `@Optional oreMultiplier` - Crushed Ore output amount multiplier for Ore -> Crushed Ore Maceration. Default: 1 (no
-  multiplier).
-* `@Optional byproductMultiplier` - Byproduct output amount multiplier for Crushed Ore processing of any kind. Default:
-  1 (no multiplier).
-* `@Optional emissive` - Should ore block use emissive texturing (see below image). Default: false.
-
-![](https://user-images.githubusercontent.com/18493855/143446969-80de6354-ad12-4170-81f5-071d6c0bb7cd.png)
-
-**washedIn**: _`washedIn(Material material, @Optional int washedAmount)`_
+### Washed in material
+```groovy:no-line-numbers
+washedIn(Material material)
+washedIn(Material material, int washedAmount)
+```
 
 Sets what the material's crushed ore is washed in using the Chemical Bath. Requires `OreProperty` to be set.
 
 * `material` - The Material in which this material is to be washed. The parameter's Material requires `FluidProperty` to
   be set.
-* `@Optional washedAmount` - The amount of fluid the crushed ore will be washed in. Default: 100mB.
+* `washedAmount` - The amount of fluid the crushed ore will be washed in. Default: 100mB.
 
-**separatedInto**: _`separatedInto(Material... materials)`_
+### Separates into materials
+```groovy:no-line-numbers
+separatedInto(Material... materials)
+```
 
 Sets the products of processing this Material's Purified Dust in an Electromagnetic Separator. Requires `OreProperty` to
 be set.
@@ -240,44 +259,58 @@ be set.
 * `materials` - An array of materials which is output in the magnetic separator. This already includes the Material
   itself automatically.
 
-**addOreByproducts**: _`addOreByproducts(Material... materials)`_
+### Ore Byproducts
+```groovy:no-line-numbers
+addOreByproducts(Material... materials)
+```
 
 Sets the Ore Byproducts of this Material. Requires `OreProperty` to be set.
 
 * `materials` - An array of materials which are used for various ore processing byproduct outputs.
 
-**oreSmeltInto**: _`oreSmeltInto(Material material)`_
+### Smelts into material
+```groovy:no-line-numbers
+oreSmeltInto(Material material)
+```
 
 Sets the Direct Smelting product in a vanilla furnace of this Material's ore related forms. Requires `OreProperty` to be
 set.
 
 * `material` - The material to output in the furnace. Can have `IngotProperty`, `GemProperty`, or `DustProperty`.
 
-**polarizesInto**: _`polarizesInto(Material material)`_
+### Polarizes into material
+```groovy:no-line-numbers
+polarizesInto(Material material)
+```
 
 Sets the Polarizer product of this Material. Requires `IngotProperty` to be set.
 
 * `material` - The material to output when polarized.
 
-**arcSmeltInto**: _`arcSmeltInto(Material material)`_
+### Arc smelts into material
+```groovy:no-line-numbers
+arcSmeltInto(Material material)
+```
 
 Sets the Arc Furnace product of this Material. Requires `IngotProperty` to be set.
 
 * `material` - The material to output when arc furnaced. By default, the material will output itself.
 
-**macerateInto**: _`macerateInto(Material material)`_
+### Macerates into material
+```groovy:no-line-numbers
+macerateInto(Material material)
+```
 
 Sets the Macerator product of this Material. Requires `IngotProperty` to be set.
 
 * `material` - The material to output when macerated. By default, the material will output itself.
 
-**fluidTemp**: _`fluidTemp(int temp)`_
-
-Sets the temperature of the fluid of this Material. Requires `FluidProperty` to be set.
-
-* `temp` - The temperature in Kelvin to set. Like in real life, this value **cannot** be less than `0`.
-
-**cableProperties**: _`cableProperties(long voltage, int amperage, int loss, @Optional boolean isSuperCon)`_
+### Cable properties
+```groovy:no-line-numbers
+cableProperties(long voltage, int amperage, int loss)
+cableProperties(long voltage, int amperage, int loss, boolean isSuperCon)
+cableProperties(long voltage, int amperage, int loss, boolean isSuperCon, int criticalTemperature)
+```
 
 Adds cables and wires of this Material. Requires `IngotProperty` to be set.
 
@@ -285,20 +318,15 @@ Adds cables and wires of this Material. Requires `IngotProperty` to be set.
 * `amperage` - The amperage amount a 1x wire/cable can handle.
 * `loss` - The loss per block a 1x **wire** will have. Cables have this value divided by 2, but will never be lossless
   unless set to `0`.
-* `@Optional isSuperCon` - Whether this is a superconductor. This will prevent cables from generating, and have a loss
+* `isSuperCon` - Whether this is a superconductor. This will prevent cables from generating, and have a loss
   of `0`.
+* `criticalTemperature` - The temperature of the superconductive phase transition. Cable needs to be a super conductor. (Effect unclear)
 
-**fluidPipeProperties**: _`fluidPipeProperties(int maxTemp, int throughput, boolean gasProof)`_
-
-Adds Fluid Pipes of this Material. Requires `IngotProperty` to be set.
-
-* `maxTemp` - Sets the maximum allowed fluid temperature in the pipe. Pipes burn/vanish when fluid is too hot.
-* `throughput` - Sets the maximum flowrate through the pipes. This value multiplied by `20` is the maximum rate for the
-  Tiny Pipe. Each subsequent pipe is further multiplied by `2` over the previous.
-* `gasProof` - If `true`, the pipe is able to transfer fluids with the Gas state. Else, they will vaporize.
-
-**fluidPipeProperties**:
-_`fluidPipeProperties(int maxTemp, int throughput, boolean gasProof, boolean acidProof, boolean cryoProof, boolean plasmaProof)`_
+### Fluid pipe properties
+```groovy:no-line-numbers
+fluidPipeProperties(int maxTemp, int throughput, boolean gasProof)
+fluidPipeProperties(int maxTemp, int throughput, boolean gasProof, boolean acidProof, boolean cryoProof, boolean plasmaProof)
+```
 
 Adds Fluid Pipes of this Material. Requires `IngotProperty` to be set.
 
@@ -308,11 +336,14 @@ Adds Fluid Pipes of this Material. Requires `IngotProperty` to be set.
 * `gasProof` - If `true`, the pipe is able to transfer fluids with the Gas state. Else, they will vaporize.
 * `acidProof` - If `true`, the pipe is able to transfer fluids with the Acidic attribute. Else, they will destroy the
   pipe.
-* `cryoProof` - If `true`, the pipe is able to transfer fluids with the Cryogenic attribute. Else, they will vaporize.
+* `cryoProof` - If `true`, the pipe is able to transfer fluids with a temperature below 120. Else, they will vaporize.
 * `plasmaProof` - If `true`, the pipe is able to transfer fluids with the Plasma state, regardless of the fluid pipe's
   maximum temperature. Else, they will destroy the pipe.
 
-**itemPipeProperties**: _`itemPipeProperties(int priority, float stacksPerSec)`_
+### Item pipe properties
+```groovy:no-line-numbers
+itemPipeProperties(int priority, float stacksPerSec)
+```
 
 Adds item pipes of this Material. Requires `IngotProperty` to be set.
 
@@ -322,35 +353,13 @@ Adds item pipes of this Material. Requires `IngotProperty` to be set.
 * `stacksPerSec` - Sets the maximum transfer rate in stacks of 64 items per second. This value is used for the Normal
   Pipe. Small Pipes have this value multiplied by `0.5`. Large Pipes have this value multiplied by `2`.
 
-#### Tool stats
-
+### Tool stats
 Tool stats are slightly more complicated than in CT, but also more configurable. <br>
-**toolStats**: _`toolStats(ToolProperty property)`_ <br>
-As you can see there is only one method which accepts a ToolProperty. You can create it like this:
-
-```groovy
-import gregtech.api.unification.material.properties.ToolProperty
-
-ToolProperty property = ToolProperty.Builder.of(float speed, float damage, int durability, int harvestLevel).build()
+```groovy:no-line-numbers
+toolStats(float harvestSpeed, float attackDamage, int durability, int harvestLevel)
+toolStats(ToolProperty toolProperty)
+toolStats(ToolProperty.Builder toolPropertyBuilder)
 ```
-
-Before calling `build()` at the end you can call several other methods to further customize your tool stats
-
-```groovy
-ToolProperty property = ToolProperty.Builder.of(float speed, float damage, int durability, int harvestLevel)
-        .attackSpeed(float attackSpeed) // self explanatory
-        .ignoreCraftingTools() /*(1)!*/
-        .unbreakable() // self explanatory
-        .enchantment(Enchantment enchantment, int level) /*(2)!*/
-        .magnetic() /*(3)!*/
-        .durabilityMultiplier(int multiplier) /*(4)!*/
-        .build()
-```
-
-1. There won't be any crafting tools like hammer, saw and wrench
-2. Default enchantment that every tool with this material has. `Enchantment` can be obtained with the `enchantment(String name)` method.
-3. All mined block will go straight to the players inventory.
-4. A multiplier for the property durability.
 
 Set the stats for tools which are made from this Material.
 
@@ -359,20 +368,90 @@ Set the stats for tools which are made from this Material.
 * `durability` - Durability of the tools.
 * `harvestLevel` - Harvest Level of the tools.
 
-::: info Example {id="example"}
-
-This is example of a material using everything mentioned so far.
-
+The first method is fairly self explanatory. For higher configurability use the second or third method like this.
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
+mods.gregtech.materialEvent {
+    materialBuilder(32000, 'my_material')
+        .toolStats(toolBuilder(float harvestSpeed, float attackDamage, int durability, int harvestLevel)
+            .attackSpeed(float attackSpeed) // default 0
+            .ignoreCraftingTools() // removes crafting tools like hammer, saw and wrench (default false)
+            .unbreakable() // makes the tools unbreakable (default false)
+            .enchantment(Enchantment enchantment, int level) // Default enchantment every tool of this material has (default none)
+            .magnetic() // Blocks mined with a tool of this materials go straight into the player inventory (default false)
+            .durabilityMultiplier(int multiplier) // multiplier for the base durability (default 1)
+        )
+        .build()
+}
+```
 
-event_manager.listen { MaterialEvent event ->
-    def specialSteel = new Material.Builder(32002, "special_steel") // name
-            .fluid("gas", false) // gas without block
+The `toolBuilder()` method is only available inside the event. All method calls on the tool builder (`attackSpeed()`, `ignoreCraftingTools()`, etc) are optional. In a java environment you would also have to call `.build()` on the tool builder, but this is not required with groovy.
+
+## Fluid builder
+To create a fluid builder call `fluidBuilder()` inside the material event.
+::: info Example {id="example"}
+```groovy
+mods.gregtech.materialEvent {
+    materialBuilder(32000, 'my_material')
+        .liquid(fluidBuilder())
+        .build()
+}
+```
+:::
+Here are available methods to call on a fluid builder. All of them are optional.
+* `name(String)` sets the registry name for the fluid. If a fluid with the name already exists, that fluid will be modified.
+  In some cases this leads to an error. By default the name will be generated of the materials name. This is useful when oder mods
+  already register the fluid, but with a different registry name.
+* `translation(String)` sets the translation key for the fluid. Set the localized name in a lang file.
+* `temperature(int)` sets the fluid temperature in Kelvin. By default a temperature is determined based on its properties.
+* `color(int color)` sets the color of the fluid texture. This is only used if the fluid doesn't use a custom texture. 
+  By default the material color is used.
+* `disableColor()` disables the colored texture overlay
+* `density(int)` sets the fluids density in Minecraft's units (default depends on the fluid state)
+* `density(double)` sets the fluids density in g/cm^3 (default depends on the fluid state)
+* `luminosity(int)` sets the luminosity of the fluid. This must be a value from 0 to 15. It's the light value the fluid block will emit.
+* `viscosity(int)` sets the fluids viscosity in Minecraft's units (default depends on the fluid state)
+* `viscosity(double)` sets the fluids viscosity in Poise (default depends on the fluid state)
+* `attribute(FluidAttribute)` adds the fluid attribute (currently only acid attribute exists)
+* `attributes(FluidAttribute...)` adds the fluid attributes (currently only acid attribute exists)
+* `acidic()` adds the acidic attribute
+* `alternativeName(String)` specifies an alternative name for when no fluid with the name was found. (No default)
+* `customStill()` marks this fluid as having a custom still texture. Also disables color texture overlay.
+* `customFlow()` marks this fluid as having a custom flowing texture. Also disables color texture overlay.
+* `textures(boolean hasCustomStill, boolean hasCustomFlowing)` marks this fluid as having custom textures depending on the parameters. Also disables color texture overlay.
+* `block()` marks this fluid to generate a fluid block which can be placed with a bucket.
+* `disableBucket()` disables the auto generation of the forge fluid bucket
+
+::: info Example {id="example"}
+This an example what the helium material in groovy would look like as a helper on how to use the fluid builder.
+```groovy
+mods.gregtech.materialEvent {
+    materialBuilder(46, resource('gregtech', 'helium'))
+        .gas(fluidBuilder().customStill())
+        .plasma(fluidBuilder().customStill())
+        .liquid(fluidBuilder()
+            .temperature(4)
+            .color(0xFCFF90)
+            .name('liquid_helium')
+            .translation('gregtech.fluid.liquid_generic'))
+        .color(0xFCFC94)
+        .element()
+        .build()
+}
+```
+:::
+
+<br>
+<br>
+
+::: info Example {id="example"}
+This is example of a material using everything mentioned so far.
+```groovy
+mods.gregtech.materialEvent {
+    def specialSteel = materialBuilder(32002, "special_steel") // name
+            .gas() // gas
             .ingot() // has ingot (and therefore dust)
             .color(0x0000FF) // pure blue
-            .toolStats(10, 3, 256, 21) // tool stats
+            .toolStats(toolBuilder(10, 3, 256, 21)) // tool stats
             .blastTemp(2900) // EBF temperature
             .ore() // has ore blocks
             .addOreByproducts(material('gold'), material('copper')) // add byproducts
@@ -380,10 +459,10 @@ event_manager.listen { MaterialEvent event ->
             .build() // build the actual material
 }
 ```
-
 :::
 
-### Changing Material Appearances
+
+## Changing Material Appearances
 
 You may have noticed from testing the above example that the material's textures looks like the same style as many
 others. This is called the `MaterialIconSet`. This entire next section is dedicated to explaining this system and how to
@@ -418,7 +497,6 @@ Available **MaterialIconsets** and existing material examples which use them.
 | `"CERTUS"`         | Certus Quartz   |
 | `"LAPIS"`          | Lazurite        |
 | `"FLUID"`          | Nitric Acid     |
-| `"GAS"`            | Argon           |
 
 :::
 
@@ -426,8 +504,9 @@ For example, the following image shows the appearance of ores with different Mat
 ![](https://user-images.githubusercontent.com/18493855/143435701-058dcfea-ea35-4976-a7ba-7901fa791e36.png)
 
 The MaterialIconSet of a material, which determines all of its textures, is set with a single method.
-
-`iconSet`: _`iconSet(String iconSet)`_
+```groovy:no-line-numbers
+iconSet(String iconSet)
+```
 
 Sets the `MaterialIconSet` of this Material. Defaults vary depending on if the Material has:
 
@@ -439,18 +518,15 @@ Sets the `MaterialIconSet` of this Material. Defaults vary depending on if the M
 The default will be determined by the property found first in this order.
 
 ::: info Example with a MaterialIconSet {id="example"}
-
+This is example of a material using everything mentioned so far.
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-
-event_manager.listen { MaterialEvent event ->
-    def specialSteelTextured = new Material.Builder(32003, "special_steel_textured") // name
-            .fluid("gas", false) // gas without block
+mods.gregtech.materialEvent {
+    def specialSteel = materialBuilder(32003, "special_steel_textured") // name
+            .gas() // gas
             .ingot() // has ingot (and therefore dust)
             .color(0x0000FF) // pure blue
             .iconSet("shiny") // iconset to the shiny type
-            .toolStats(10, 3, 256, 21) // tool stats
+            .toolStats(toolBuilder(10, 3, 256, 21)) // tool stats
             .blastTemp(2900) // EBF temperature
             .ore() // has ore blocks
             .addOreByproducts(material('gold'), material('copper')) // add byproducts
@@ -458,54 +534,50 @@ event_manager.listen { MaterialEvent event ->
             .build() // build the actual material
 }
 ```
-
 :::
 
-### Components
+## Components
 
 **Components** refers to composition of the Material.
 
 For example, the components of TungstenSteel is `1 Tungsten (W)` and `1 Steel (Fe)`. That makes its chemical formula:
 ![Screenshot_20211213_191326](https://user-images.githubusercontent.com/37029404/145909670-cfd0e024-ed32-4f4d-9c72-aee5c2e3b064.png)
 
-#### MaterialStack
+### MaterialStack
 
 Components are determined using something called a `MaterialStack`. This is the Material version of an ItemStack which
 is an Item with a Count. In our case, MaterialStack is a Material with a Count.
 
-```groovy
+```groovy:no-line-numbers
 // creates a MaterialStack of Material Tin with a Count of 3.
 def my_material_stack = material('tin') * 3
 ```
 
-Simple, isn't it?
+### Setting the Components
 
-#### Setting the Components
-
-**components**: _`components(MaterialStack... components)`_
+```groovy:no-line-numbers
+components(Object... components)
+```
 
 Sets the components of the material.
 
-* `components` - an array of `MaterialStacks` representing the components of this Material.
+* `components` - an array of `Objects` where each element must be a `Material` (for amount 1) or a `MaterialStack` (with any amount). These represent the components of the material.
 
 ::: info Example {id="example"}
-
+Material with the components 3x Silver, 6x Nitrogen and 1x Carbon
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-
-event_manager.listen { MaterialEvent event ->
-    def cursed_chemistry_material = new Material.Builder(32004, "cursed_chemistry_material")
+mods.gregtech.materialEvent {
+    def specialSteel = materialBuilder(32004, "cursed_chemistry_material") // name
             .fluid()
             .color(0x00FF00) // pure red
-            .components(material('silver') * 3, material('nitrogen') * 6, material('carbon') * 2) // set the components
+            .components(material('silver') * 3, material('nitrogen') * 6, material('carbon')) // set the components
             .build() // build the actual material
 }
 ```
-
 :::
 
-### Material Flags
+
+## Material Flags
 
 `MaterialFlags` refers to additional mini-attributes about the material. There are a ton of them.
 
@@ -569,9 +641,12 @@ Available MaterialFlags for Materials with `OreProperty`:
 
 * `"high_sifter_output"`: If this material has a higher output when the Crushed Purified Ore is processed in the Sifter.
 
-#### Adding Flags to a Material
+### Adding Flags to a Material
 
-`flags`: _`flags(String... names)`_
+```groovy:no-line-numbers
+flags(String... names)
+```
+
 Add MaterialFlags to this Material.
 
 * `names` - a string array of the names of specific MaterialFlags.
@@ -579,17 +654,14 @@ Add MaterialFlags to this Material.
 ::: info Example {id="example"}
 
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-
-event_manager.listen { MaterialEvent event ->
-    def specialSteelFlagged = new Material.Builder(32004, "special_steel_flagged") // name
-            .fluid("gas", false) // gas without block
+mods.gregtech.materialEvent {
+    def specialSteel = materialBuilder(32004, "special_steel_flagged") // name
+            .gas() // gas
             .ingot() // has ingot (and therefore dust)
             .color(0x0000FF) // pure blue
             .iconSet("shiny") // iconset to the shiny type
             .flags("generate_plate", "generate_foil") // add flags
-            .toolStats(10, 3, 256, 21) // tool stats
+            .toolStats(toolBuilder(10, 3, 256, 21)) // tool stats
             .blastTemp(2900) // EBF temperature
             .ore() // has ore blocks
             .addOreByproducts(material('gold'), material('copper')) // add byproducts
@@ -597,16 +669,19 @@ event_manager.listen { MaterialEvent event ->
             .build() // build the actual material
 }
 ```
-
 :::
 
-### Elements
+
+## Elements
 
 `Element` is used to specify a material as element. CEu has the periodic table, so you probably won't need it much.
 
-`Elements.add`:
-_`Elements.add(long protons, long neutrons, long halfLifeSeconds, String decayTo, String name, String symbol, boolean isIsotope)`_
-Add a new element.
+### Creating an Element
+
+```groovy:no-line-numbers
+addElement(long protons, long neutrons, long halfLifeSeconds, String decayTo, String name, String symbol, boolean isIsotope)
+```
+This method can only by called inside the material event. Otherwise use 
 
 * `protons` - Amount of Protons
 * `neutrons` - Amount of Neutrons
@@ -615,10 +690,12 @@ Add a new element.
 * `name` - Name of the Element
 * `symbol` - Symbol of the Element
 
-`Elements.get`: _`Elements.get(String name)`_
+### Obtaining an element
+```groovy:no-line-numbers
+`element(String nameOrSymbol)`
+```
 
-* `name` - the name of the element
-  Get the element by name.
+This is a global function whichs parameter can be either an elements name or symbol.
 
 ::: details Elements {id="tip"}
 
@@ -765,188 +842,68 @@ Add a new element.
 ::: details Elemental Material Example {open id="example"}
 
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
-import gregtech.api.unification.Elements
+mods.gregtech.materialEvent {
+    // elements can be created outside the event
+    def CEu = addElement(999, 999, -1, null, "GTCEu", "CEu", false) // create a new element.
+    def element_material = materialBuilder(32006, "element_material").element("GTCEu").build()
 
-// elements can be created outside the event
-def CEu = Elements.add(999, 999, -1, null, "GTCEu", "CEu", false) // create a new element.
+    def Au = element("Gold") // get an existing element.
 
-event_manager.listen { MaterialEvent event ->
-    def element_material = new Material.Builder(32006, "element_material").element("GTCEu").build()
-
-    def Au = Elements.get("Gold") // get an existing element.
-
-    def element_material = new Material.Builder(32007, "element_material").element("Gold").build()
+    def element_material = materialBuilder(32007, "element_material").element("Gold").build()
 }
 ```
-
 :::
 
+<br>
+
+## Examples
 ::: details Material Creation Full Examples {open id="example"}
-
 ```groovy
-import gregtech.api.GregTechAPI.MaterialEvent
-import gregtech.api.unification.material.Material
+mods.gregtech.materialEvent {
 
-event_manager.listen { MaterialEvent event ->
-
-    new Material.Builder(32000, "red_iron")
-            .ingot().fluid()
+    materialBuilder(32000, "red_iron")
+            .ingot().liquid()
             .color(0xF7B29B)
             .flags("generate_plate", "generate_rod", "generate_gear", "decomposition_by_centrifuging")
             .components(material('iron') * 1, material('redstone') * 1)
             .cableProperties(32, 2, 1)
             .build()
 
-    new Material.Builder(32001, "glowing_redstone")
+    materialBuilder(32001, "glowing_redstone")
             .dust()
             .color(0x774D05).iconSet("bright")
             .flags(["decomposition_by_centrifuging"])
             .components([material('glowstone') * 1, material('redstone') * 1])
             .build()
 
-    new Material.Builder(32002, "rare_iron")
-            .ingot().fluid()
+    materialBuilder(32002, "rare_iron")
+            .ingot().liquid()
             .color(0x6AE26E).iconSet("bright")
             .flags("generate_plate", "generate_rod", "generate_gear", "disable_decomposition")
             .components(material('iron') * 1, material('rare_earth') * 1)
             .cableProperties(8, 2, 1)
             .build()
 
-    new Material.Builder(32003, "obsidian_steel")
-            .ingot().fluid()
+    materialBuilder(32003, "obsidian_steel")
+            .ingot().liquid()
             .color(0x414751).iconSet("metallic")
             .flags("generate_plate", "generate_rod", "disable_decomposition")
             .components(material('steel') * 1, material('obsidian') * 1)
             .build()
 
-    new Material.Builder(32004, "silicon_steel")
-            .ingot().fluid()
+    materialBuilder(32004, "silicon_steel")
+            .ingot().liquid()
             .color(0xB2C0C1).iconSet("shiny")
             .flags("generate_plate", "generate_rod", "generate_gear", "decomposition_by_centrifuging")
             .components(material('steel') * 1, material('silicon') * 1)
             .build()
 
-    new Material.Builder(32005, "rare_gold")
-            .ingot().fluid()
+    materialBuilder(32005, "rare_gold")
+            .ingot().liquid()
             .color(0x755C40)
             .flags("generate_plate", "disable_decomposition")
             .components(material('gold') * 1, material('rare_earth') * 1)
             .build()
-}
-```
-
-:::
-
-## Modifying existing Materials
-
-See the **Retrieving Existing Materials** section for information on retrieving existing materials.
-
-The material registry can do more than just get materials.
-
-_`MaterialRegistry.get(String materialName)`_
-
-* `materialName` - get a `Material` by its unlocalized name.
-
-_`MaterialRegistry.getAllMaterials()`_ get
-
-* get a list of every material registered
-
-Materials also have more methods and fields.
-
-**Getters:**
-
-_`getChemicalFormula()`_
-
-* returns a string representation of the internal chemical formula (i.e. "H2O")
-
-_`materialRGB`_ get default materialRGB.
-
-* returns the in color of the material
-
-_`radioactive`_
-
-* returns whether the material is radioactive
-
-_`protons`_
-
-* returns the number of protons in the material
-
-_`neutrons`_
-
-* returns the number of neutrons in the material
-
-_`mass`_
-
-* returns the total amount of mass in the material
-
-_`averageProtons`_
-
-* returns the amount of protons divided by total amount of components in the material
-
-_`averageNeutrons`_
-
-* returns the amount of neutrons divided by total amount of components in the material
-
-_`averageMass`_
-
-* returns the amount of mass divided by total amount of components in the material
-
-_`blastTemperature`_
-
-* returns the material's blast furnace temperature
-
-_`camelCaseName`_ get default camelCaseName.
-
-* returns the string camelCase form of the material's unlocalized name. I.e. a name of "my_material" returns "
-  myMaterial"
-
-_`unlocalizedName`_
-
-* returns the string of the material's unlocalized name
-
-_`localizedName`_
-
-* returns the string of the material's localized (translated) name
-
-_`name`_
-
-* returns toString() used on the material internally
-
-**Setters:**
-
-_`setFormula(String formula, @Optional boolean withFormatting)`_
-
-Sets the internal formula and thus tooltip of this Material.
-
-* `formula` - the string to set the formula to
-* `@Optional withFormatting` - whether to apply number formatting (subscripts, etc) to the formula and tooltip
-
-_`addFlags(String... names)`_
-
-Adds additional flags to this Material.
-
-* `names` - a string array of flags to add
-
-_`setMaterialRGB(int materialRGB)`_
-
-Sets the color of this Material.
-
-* `materialRGB` - the int color to set. Accepts the raw int value or values in the `0x` format.
-
-::: info Example {id="example"}
-
-```groovy
-import gregtech.api.GregTechAPI.PostMaterialEvent
-
-event_manager.listen { PostMaterialEvent event ->
-    def gold = material('gold')
-    def name = gold.toString() // "gold"
-    def color = gold.getMaterialRGB() // 0xFFE650
-    gold.setFormula("(Au)2Au", true) // set formula
-    def formula = gold.getChemicalFormula() // "(Au)2Au"
-    gold.addFlags("generate_long_rod", "generate_gear") // add gold long rod, add gold gear
 }
 ```
 

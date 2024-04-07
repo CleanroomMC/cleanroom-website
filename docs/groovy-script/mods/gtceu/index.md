@@ -7,14 +7,12 @@ aside: false
 
 ## Categories
 
-Has 5 subcategories.
+Has 4 subcategories.
 
 * [Heating Coils](./heating_coils.md)
 
-* [Material](./material.md)
+* [Material](./material/)
 
 * [Multiblock](./multiblock.md)
 
 * [Recipes](./recipes.md)
-
-* [Terminal](./terminal.md)
