@@ -166,6 +166,16 @@ Adds Ore Blocks, Crushed, Crushed Purified, Crushed Centrifuged, Impure Dust, an
 
 ![](https://user-images.githubusercontent.com/18493855/143446969-80de6354-ad12-4170-81f5-071d6c0bb7cd.png)
 
+## Wood
+```groovy:no-line-numbers
+addWood()
+```
+
+Adds wood property to the material.
+
+## Polymer
+There is currently no helper to add the polymer property.
+
 ## Blast
 ```groovy:no-line-numbers
 addBlastProperty(int temp)
