@@ -39,14 +39,12 @@ You can call that method as often as you want with any number input.
 Now closures are methods, but you can carry them around. Example:
 
 ```groovy:no-line-numbers
-def print_numbers = { int n -> /*(1)!*/
+def print_numbers = { int n -> // Most of the time the type is optional, so here it would become `{ n -> ...`
     for (def i : 0..n) {
         log.info(i)
     }
 }
 ```
-
-1. Most of the time the type is optional, so here it would become `{ n -> ...`
 
 This closure does the same thing as the method above, but it's a variable instead of a method. Just like any other
 variable you can pass it to other methods. (See [Events](../minecraft/events/index.md)).
@@ -76,8 +74,11 @@ You can then use any property of that object in the closure directly.
 
 ::: info For example {id="example"}
 ```groovy
+def some_var = 1
+
 def closure = { output, input ->
     addShaped(output, input) // normally this wouldn't work, but since we add 'crafting' as a variable environment we can use all it's methods
+    log.info(some_var) // some_var is a owner variable
 }
 
 closure.delegate = crafting // crafting is a global variable in GroovyScript
@@ -86,5 +87,9 @@ closure.resolveStrategy = Closure.DELEGATE_FIRST // find variables in the delega
 closure(item('minecraft:diamond'), [[item('minecraft:gold_ingot')]])
 ```
 :::
+
+Valid resolve strategies are `OWNER_FIRST`, `DELEGATE_FIRST`, `OWNER_ONLY`, `DELEGATE_ONLY` and `TO_SELF`.
+Owner refers to the object the closure is defined in. In the example above `some_var` is an owner variable and `addShaped()` is a delegate method.
+`TO_SELF` will only use the variables and methods which are defined in the closure itself. The other strategies are self-explanatory. The default is `OWNER_FIRST`.
 
 Sometimes this feature is used in GroovyScript to make scripts look simpler.

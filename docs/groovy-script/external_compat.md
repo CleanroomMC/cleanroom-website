@@ -2,7 +2,7 @@
 # External Compat
 
 Here you'll learn about adding external mod compat for GroovyScript.
-An example of a mod using this is GTCEu, Mekanism-CE and Modular Machinery Community Edition (WIP).
+An example of a mod using this is [GTCEu](https://github.com/GregTechCEu/GregTech/blob/master/src/main/java/gregtech/integration/groovy/GroovyScriptModule.java), [Mekanism-CE](https://github.com/sddsd2332/Mekanism-CE-Unofficial-1.12.2/blob/RFG/src/main/java/mekanism/common/integration/groovyscript/GrSMekanismAdd.java) and Modular Machinery Community Edition (WIP).
 
 ::: info {id="info"}
 Please read the javadoc for the interface and methods.

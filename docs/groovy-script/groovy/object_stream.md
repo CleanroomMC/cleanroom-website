@@ -72,7 +72,7 @@ It has methods similar to the java `Stream` class.
   This removes the first recipe from the stream.
   :::
 
-Additionally methods like `size()`, `isEmpty()` and `get(int index)` are available similar to `List`.
+Additionally methods like `size()`, `isEmpty()` and `get(int index)` are available, similar to `List`.
 
 As you can see in the `removeAll()` example you can chain method calls like a [builder](builder.md).
 You can chain the following methods in any order and as often as you want:
