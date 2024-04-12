@@ -24,7 +24,7 @@ title: Introduction
 
 部分模组将 AppClassLoader 转换为了 URLClassLoader，以期获取 URL，例如：`((URLClassLoader) Launch.classLoader.getClass().getClassLoader()).getURLs()`
 
-然而这一转换自 Java 9 后不再可行，相关转换会直接抛出错误。我们编写了一套`URLClassLoaderTransformer`，用于修补此类转换行为，但你仍然需要做出一些改动，详情请参看[此处](https://github.com/CleanroomMC/Cleanroom/blob/cf59ba1080dc2bf7eb3f60e4ae5cff82639cb042/src/main/java/net/minecraftforge/fml/relauncher/CoreModManager.java#L459).
+然而这一转换自 Java 9 后不再可行，相关转换会直接抛出错误。我们编写了一套[`URLClassLoaderTransformer`](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/net/minecraftforge/fml/common/asm/transformers/URLClassLoaderTransformer.java)，用于修补此类转换行为，但你仍然需要做出一些改动，详情请参看[此处](https://github.com/CleanroomMC/Cleanroom/blob/cf59ba1080dc2bf7eb3f60e4ae5cff82639cb042/src/main/java/net/minecraftforge/fml/relauncher/CoreModManager.java#L459).
 
 ### javax 更名为 jakarta
 
@@ -39,105 +39,105 @@ title: Introduction
 
 并且，大多数 JDK 供应商在各自提供的新版本 Java 并未内置这一更改。
 
-我们在 Cleanroom 中内置了一套 `JavaxTransformer`，用于将 `javax` 的引用重新映射为 `jakarta`，并内置了一套新版本的 Jakarta EE 依赖。
+我们在 Cleanroom 中内置了一套 [`JavaxTransformer`](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/net/minecraftforge/fml/common/asm/transformers/JavaxTransformer.java)，用于将 `javax` 的引用重新映射为 `jakarta`，并内置了一套新版本的 Jakarta EE 依赖。
 
 ### ScriptEngineManager
 
-Java removed the default Nashorn JS engine since Java 15, but we have included its standalone version back.
+自 Java 15 以来，默认的`Nashorn JS`引擎就被移除了，但我们已内置了一套独立版本。
+唯一的问题是调用`new ScriptEngineManager(null)`可能会产生错误，它将在错误的类加载器中搜索脚本引擎。 请将其替换为`new CleanroomScriptEngineManager()`。
 
-The only problem is calling `new ScriptEngineManager(null)` may yield errors since it will search script engine in a wrong classloader. Please replace it with `new CleanroomScriptEngineManager()`.
+我们编写了一套[`ScriptEngineTransformer`](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/net/minecraftforge/fml/common/asm/transformers/ScriptEngineTransformer.java) 用于修补此类问题。
 
-We also have a `ScriptEngineTransformer` to patch that.
+### 无效的 UUID
 
-### Malformed UUID
+Java 8 将某些无效的 UUID 视为有效，这在较新的 Java 版本中已修复。 现在 Cleanroom已经升级至 Java 21，那些曾今有效的 UUID 将使游戏崩溃。
 
-Java 8 considers some invalid UUID as valid, which was fixed in newer Java versions. Now, those previous valid UUIDs will crash the game.
-
-We wrote a `MalformedUUIDTransformer` to patch this, but please verify your UUID and make sure to use a valid one.
+我们编写了一套[`MalformedUUIDTransformer`](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/net/minecraftforge/fml/common/asm/transformers/MalformedUUIDTransformer.java) 用于修补此类问题，但请验证您的 UUID 并确保使用有效的 UUID。
 
 ### `sun.reflect.Reflection`
 
-This class is now moved to JDK internal, and we don't encourage filtering other mods' reflection call for any reason. If you want to get caller class, use the new Java 9 `StackWalker` instead.
+该类现已移至 JDK 内部，我们不鼓励以任何理由过滤其他 mod 的反射调用。 如果您想获取调用者类，请使用 Java 9 带来的新API `StackWalker`。
 
-Currently, we remap every reference of `sun.reflect.Reflection` to a dummy class that NO-OP's most calls in here except `getCallerClass()` and `getCallerClass(int)`.
+目前，我们将 `sun.reflect.Reflection` 的每个引用重新映射到一个[仿制类](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/com/cleanroommc/hackery/Reflection.java)。除了 `getCallerClass()` 和 `getCallerClass(int)` 之外，非操作指令在这里最多调用这个仿制类。
 
-### ASM API version
+### ASM API 版本
 
-Many coremods that use ASM's visitor API may extend `ClassVisitor`, `MethodVisitor` or `FieldVisitor` and include ASM5 as the API version.
+许多使用ASM`visitor` API 的 Coremod 可能继承 `ClassVisitor`， `MethodVisitor` 或 `FieldVisitor` 及以 ASM5 作为 API 版本。
 
-Such visitors can't handle newer class versions, and crashes explicitly when visiting a nest class. For this, we wrote a `ASMVersionUpper` in Bouncepad (our fork of launchwrapper).
+这样的 `visitor` 无法处理新版本的类, 在处理高版本的类时会崩溃。 为此，我们在 `Bouncepad` （我们维护的 `LauncherWapper`分支）提供了 `ASMVersionUpper`。
 
-You should update it to at least ASM9 to read most if not all classes.
+你应该将其至少更新到 ASM9 才能处理大多类（如果不是全部）。
 
-### Getting or setting field with reflection
+### 通过反射获取或设置字段
 
-Newer Java now has more strict access control around final field, even the access is made by reflection or any other tradition way.
+新的 Java 较 Java 8 对 final 字段有更严格的访问控制，即使访问是通过反射或任何其他传统方式进行的。
 
-`Unsafe` is the official way to set final fields now, but is very volatile.
+`Unsafe` 是现在一种可用的官方方法，但极具有破坏性。
 
-We also made a `ReflectionFieldTransformer` to redirect every `set()` or `get()` of fields to `Unsafe`, but this may be removed once the community is ready.
+我们还提供了一个[`ReflectionFieldTransformer`](https://github.com/CleanroomMC/Cleanroom/blob/main/src/main/java/net/minecraftforge/fml/common/asm/transformers/ReflectionFieldTransformer.java)，将字段的每个`set()`或`get()`重定向到`Unsafe`，但一旦社区完善，这可能会被删除。
 
-### `itf` of `MethodInsnNode`
+### `MethodInsnNode` 的 `itf`
 
-Java 8 doesn't care if an interface status in method calling is true or not. Some older version of ASM5 doesn't set it correctly too. All these made some ASM-involved mods crashing on CLeanroom.
+Java 8 不关心方法调用中的接口状态。某些旧版本的 ASM5 也无法正确设置。这导致一些涉及 ASM 的 mod 在 Cleanroom 上崩溃。
 
-We have located and fixed two mods crash by this change (Lag Goggles and ZenScript), but you should check your ASM code when porting.
+我们通过此更改找到并修复了两个 mod 崩溃问题（Lag Goggles 和 ZenScript），但您应该在移植时检查您的 ASM 代码。
 
-### `private` methods calls shouldn't use `INVOKESPECIAL` now
+### 现在 `private` 方法的调用不使用 `INVOKESPECIAL`
 
-It was a [JDK change made for nest-based access control](https://openjdk.org/jeps/181).
+这是[JDK针对基于嵌套的访问控制所做的更改](https://openjdk.org/jeps/181)。
 
-Some mods' ASM code rely on counting amount of `INVOKESPECIAL` or `INVOKEVIRTUAL`, and they may encounter crash in Cleanroom. Currently only Advanced Rocketry is affected by this and has been patched.
+某些模组的 ASM 代码依赖于计算 `INVOKESPECIAL` 或 `INVOKEVIRTUAL`的数量，并且它们可能会在 Cleanroom 中遇到崩溃。
+目前只有 Advanced Rocketry 受此影响并已修复。
 
-### Mixin's `@Accessor` may crash your game
+### Mixin 的 `@Accessor` 也许使游戏崩溃
 
-Since newer JVM restricted its access control, it will refuse to set `final` field even through Mixin accessor. Adding a `@Mutable` on same accessor method could remove target's `final` modifier and fix this.
+由于较新的 JVM 限制了其访问控制，即使通过 Mixin 访问器，对 `final` 的设置也会被拒绝。在同一访问器方法上添加`@Mutable`可以删除目标的“final”修饰符并修复此问题。
 
-Adding AT(Access Transformer) works too, but on vanilla fields. We have added some of them manually in _Fugue_ to fix a few dead mods.
+添加 AT（Access Transformer）也有效，但适用于普通字段。 我们在 _Fugue_ 中手动添加了其中一些，以修复一些失效的模组。
 
-## New Version of Libraries
+## 新版本的库
 
-### New Mixin and ModifyArgs
+### 新的 Mixin 和 ModifyArgs
 
-- You do not need to bootstrap Mixin anymore, and should not do this.
-- Use `IEarlyMixinLoader` and `ILateMixinLoader` for better compatibility, don't add config manually unless you know what you are doing.
-- `@ModifyArgs` is broken in run time, but should be fixed in our Bouncepad refactor. If your mod have to use it, please open an issue in [Fugue](https://github.com/CleanroomMC/Fugue), we will patch it manually.
-- Our Mixin is based on latest Fabric fork and have everything you want.
+- 你不再需要引导 Mixin，也不应该这样做。
+- 使用 `IEarlyMixinLoader` 和 `ILateMixinLoader` 以获得更好的兼容性，除非您知道自己在做什么，否则不要手动添加配置。
+- `@ModifyArgs` 会在运行时被破坏，但应该在我们的 Bouncepad 重构中修复。如果您的 mod 必须使用它，请在 [Fugue](https://github.com/CleanroomMC/Fugue) 中打开新的 `issue`，我们将手动修补它。
+- 我们的 Mixin 基于最新的 Fabric fork，拥有您想要的一切。
 
 ### LWJGL3
 
-We use our fork of LWJGL with path `org.lwjgl3`. The lwjglx compat layer is in `org.lwjgl`. If you can't find a method in lwjglx, that's normal, and you should always find it in lwjgl3.
+我们使用的 LWJGL 分支路径为`org.lwjgl3`。lwjglx 兼容层位于“org.lwjgl”中。在 lwjglx 中找不到方法，是正常情况。你可用在lwjgl3 中找到。
 
-All mods calling LWJGL should switch to LWJGL3, we will switch to official version once the community is ready.
+所有调用LWJGL的mod都应该切换到LWJGL3，一旦社区完善，我们将切换到正式版本。
 
 ### Guava
 
-It's always latest(currently 33.0) now. Some mods will need to add `Runnable::run` in some `Futures` methods, some mods will find the method they are using now return an `Optional`. All cases we found have been patched in _Fugue_, but you have better update it yourself.
+现在它总是最新的（当前为 33.0）。 一些 mods 需要在一些 `Futures` 方法中添加 `Runnable::run`，一些 mod 会发现他们现在使用的方法返回一个 `Optional`。 我们发现的所有案例都已在_Fugue_中进行了修补，但您最好自己更新。
 
 ### Fastutil
 
-Fastutil doesn't allow setting certain hash set's load factor to `1.0` anymore, always check the latest javadoc when crashed!
+Fastutil 不再允许将某些`hash set`的`load factor`设置为`1.0`，崩溃时请务必检查最新的 javadoc！
 
 ### ICU4J
 
-We use upstream version of ICU4J for a working line breaking engine, mods should use `net.minecraft.client.gui.FontRenderer#BREAK_ITERATOR` too for better internationalization.
+我们使用 ICU4J 的上游版本作为工作换行引擎，模组也应该使用`com.cleanroommc.client.BreakIteratorHolder#BREAK_ITERATOR`以获得更好的国际化。
 
 ### OSHI
 
-This library is updated too, some debug screen mod should update their way to get CPU info.
+这个库也更新了，一些调试屏幕 mod 应该更新他们获取 CPU 信息的方式。
 
 ## Scala and Kotlin
 
 ### Scala
 
-Old Forge was shipped with Scala for some reason, but they never updated it. The problem is, Scala 2.11 is no longer compilable under Java 21, 2.12.18 is the minimum version to do this.
+由于某种原因，尽管 Scala 随旧的 Forge 一起提供，但从未更新。Scala 2.11 不再可以在 Java 21 下编译，编译最低要求 2.12.18。
 
-But if we ship Scala 2.12, none of current mods will launch. We are planning to strip Scala libraries to a standalone mod, make two mods shipping Scala 3 and 2.11, then try to port everything to Scala 3.
+但如果我们发布 Scala 2.12，那么当前的任何 mod 都不会成功启动。 我们计划将 Scala 库剥离为[一个独立的 mod](https://github.com/CleanroomMC/Scalar/)，制作两个包含 Scala 3 和 2.11 的 mod，然后尝试将所有内容移植到 Scala 3。
 
-For now, Scala mods can only develop under Forge with Java 8.
+目前，Scala mods 只能在 Forge 下使用 Java 8 进行开发。
 
 ### Kotlin
 
-Kotlin is easier compare to Scala - it was solely shipped by Forgelin in whole 1.12 life era. We have made a Forgelin shipping 21-compatible Kotlin 1.9.21, but some older mods are having problem running on newer Kotlin.
+相比Scala，Kotlin 更容易 —— 它在整个 1.12 生命周期中仅由 `Forgelin` 提供。 我们已经制作了一个兼容 21 的 Forgelin Kotlin 1.9.21，但一些旧的 mod 在较新的 Kotlin 上运行时出现问题。
 
-Mod porting is not begin yet, so old Forgelin is still necessary for old modpacks.
+Mod 移植尚未开始，因此旧的 Modpack 仍然需要旧的 Forgelin。
