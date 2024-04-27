@@ -2,10 +2,7 @@
 # External Compat
 
 Here you'll learn about adding external mod compat for GroovyScript.
-
-::: info Warning {id="warning"}
-You need at least version 0.7.0.
-:::
+An example of a mod using this is [GTCEu](https://github.com/GregTechCEu/GregTech/blob/master/src/main/java/gregtech/integration/groovy/GroovyScriptModule.java), [Mekanism-CE](https://github.com/sddsd2332/Mekanism-CE-Unofficial-1.12.2/blob/RFG/src/main/java/mekanism/common/integration/groovyscript/GrSMekanismAdd.java) and Modular Machinery Community Edition (WIP).
 
 ::: info {id="info"}
 Please read the javadoc for the interface and methods.
@@ -17,10 +14,13 @@ be used.
 
 The field `TestReg test` represents a machine that can have recipes.
 
-In `onCompatLoaded()` the compat can be initialised. `container.getVirtualizedRegistrar().addFieldsOf(this)`
+In `onCompatLoaded()` the compat can be initialised. `container.getRegistrar().addFieldsOf(this)`
 automatically register fields of this class which are `VirtualRegistries` including the `TestReg test` field.
 
-````java
+With `createModPropertyContainer()` you can create your own property container.
+This is the class groovy scripts have access to via `mods.example_id`. The `container.getRegistrar()`function will add registries to the existing property container.
+
+```java
 public class ExampleModGroovyPlugin implements GroovyPlugin {
 
     public final TestReg test = new TestReg();
@@ -31,15 +31,21 @@ public class ExampleModGroovyPlugin implements GroovyPlugin {
     }
 
     @Override
-    public @NotNull String getModName() {
-        return "example_name";
+    public @NotNull String getContainerName() {
+        return "Example Name";
     }
 
     @Override
     public void onCompatLoaded(GroovyContainer<?> container) {
         GroovyScript.LOGGER.info("ExampleMod container loaded");
-        container.getVirtualizedRegistrar().addRegistry(VanillaModule.furnace);
-        container.getVirtualizedRegistrar().addFieldsOf(this);
+        container.getRegistrar().addRegistry(VanillaModule.furnace);
+        container.getRegistrar().addFieldsOf(this);
+    }
+
+    // optional
+    @Override
+    public @Nullable ModPropertyContainer createModPropertyContainer() {
+        return null;
     }
 }
-````
+```

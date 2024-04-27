@@ -3,8 +3,7 @@
 
 Programming knowledge is not necessarily required, but it will help you a lot.
 
-As text editor you can use [Notepad++](https://notepad-plus-plus.org/downloads/) just fine. (We will work on a better
-alternative in the future)
+You will need a text editor. Any will do, but we recommend [VSC](https://code.visualstudio.com/), since we created an [extension](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview) for it. The extension provides auto completion and more for all installed mods. You can find installation instructions on the extension page.
 
 1. Download Minecraft Forge 1.12.2 and install it
 2. Download the latest version of GroovyScript [here](https://www.curseforge.com/minecraft/mc-mods/groovyscript/files)
@@ -60,15 +59,27 @@ Let's go through it bit by bit:
 - `packName` is the name of the pack (See [pack name and id](#pack-name-and-id)). Important
   for [content](./content/index.md).
 
-- `packId` (0.4.0+) is the id of the pack (See [pack name and id](#pack-name-and-id)). Important
+- `packId` is the id of the pack (See [pack name and id](#pack-name-and-id)). Important
   for [content](./content/index.md).
 
 - `version` is the version of the pack. It currently doesn't do anything special.
 
 - `debug`: If this is false all messages that logged to debug will not be logged. Great for debugging.
 
-- `classes`: (0.3.0+) Files that contain a single class should be specified here. It makes sure classes are loaded when
-  scripts try to access them.
+- `classes`: Files that contain a single class should be specified here. It makes sure classes are loaded when
+  scripts try to access them. You can specify classes to only load in certain loaders. This works exactly like the `loaders` property.
+  ::: info For example {id="example"}
+  ```json
+  "classes": {
+    "all": [  
+      // runs in all loaders
+    ],
+    "preInit": [
+      // runs only in preInit loader
+    ]
+  }
+  ```
+  :::
 
 - `loaders`: This defines at what stage what files should be loaded. By default, there are two stages: `preInit`
   and `postInit`.
@@ -118,6 +129,8 @@ executed. After that only `late_stuff.groovy` will be executed.
 The pack name can be anything. It's the name that will show up in JEI in tooltips on items you created.
 
 The pack id is very important. It must only consist of lower case letters and `_`.
+
+If some mod tries to use the pack id internally and the pack id is not specified a fatal message will logged.
 
 ::: info Warning {id="warning"}
 Changing the pack id will result in created items being lost in existing worlds!
