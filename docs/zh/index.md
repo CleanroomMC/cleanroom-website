@@ -5,13 +5,6 @@ hero:
   name: CleanroomMC
   text: 模组、特性及相关工具链
   tagline: 现代、快速、高性能
-  actions:
-    - theme: brand
-      text: 介绍
-      link: guide/
-    - theme: alt
-      text: 即刻启程
-      link: guide/
   image:
     src: /cleanroom.png
     alt: CleanroomMC Logo

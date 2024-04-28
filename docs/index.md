@@ -5,13 +5,6 @@ hero:
   name: CleanroomMC
   text: Mods, features, and related toolchains
   tagline: Modern, Fast and High performance
-  actions:
-    - theme: brand
-      text: Introduction
-      link: /guide/overview
-    - theme: alt
-      text: Quick Start
-      link: /guide/quick-start
   image:
     src: /cleanroom.png
     alt: CleanroomMC Logo
