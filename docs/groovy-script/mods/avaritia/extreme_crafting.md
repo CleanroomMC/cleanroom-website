@@ -70,19 +70,15 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
 
     ```groovy:no-line-numbers
+    key(char, IIngredient)
     key(String, IIngredient)
+    key(Map<String, IIngredient>)
     ```
 
 - `ItemStack`. Sets the item output. Requires not null.
 
     ```groovy:no-line-numbers
     output(ItemStack)
-    ```
-
-- `byte`. Sets if the recipe is removed. A value of 1 removes by the output, and a value of 2 removes by the resource location. (Default `0`).
-
-    ```groovy:no-line-numbers
-    replace()
     ```
 
 - `boolean`. Sets if the recipe is horizontally mirrored. (Default `false`).
@@ -161,12 +157,6 @@ mods.avaritia.extreme_crafting.shapedBuilder()
 
     ```groovy:no-line-numbers
     output(ItemStack)
-    ```
-
-- `byte`. Sets if the recipe is removed. A value of 1 removes by the output, and a value of 2 removes by the resource location. (Default `0`).
-
-    ```groovy:no-line-numbers
-    replace()
     ```
 
 - `Closure<ItemStack>`. Sets an operation that modifies the input items or output item.

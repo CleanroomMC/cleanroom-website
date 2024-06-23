@@ -62,6 +62,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `ItemStack`. Sets the extra input item, defaults to Cobblestone. (Default `new ItemStack(Blocks.COBBLESTONE)`).
 
     ```groovy:no-line-numbers
+    extra(ItemStack)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.CombinerRecipe`).

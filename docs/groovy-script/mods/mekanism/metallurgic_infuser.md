@@ -33,7 +33,7 @@ mods.mekanism.MetallurgicInfuser
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.mekanism.metallurgic_infuser.add(item('minecraft:nether_star'), infusion('groovy_example'), 50, item('minecraft:clay'))
+mods.mekanism.metallurgic_infuser.add(item('minecraft:nether_star'), infusionType('groovy_example'), 50, item('minecraft:clay'))
 ```
 
 ::::::::::
@@ -64,11 +64,14 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `int`. Sets the amount of the provided Infusion type consumed. Requires greater than 0. (Default `0`).
 
     ```groovy:no-line-numbers
+    amount(int)
     ```
 
 - `InfuseType`. Sets the Infusion type the recipe uses. Requires not null.
 
     ```groovy:no-line-numbers
+    infuse(String)
+    infuse(InfuseType)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.MetallurgicInfuserRecipe`).
@@ -81,7 +84,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 ```groovy:no-line-numbers
 mods.mekanism.metallurgic_infuser.recipeBuilder()
     .input(item('minecraft:nether_star'))
-    .infuse(infusion('groovy_example'))
+    .infuse(infusionType('groovy_example'))
     .amount(50)
     .output(item('minecraft:clay'))
     .register()

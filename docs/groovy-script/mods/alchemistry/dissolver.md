@@ -61,7 +61,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     reversible(boolean)
     ```
 
-- `ArrayList<ProbabilityGroup>`. Sets the probability sets rolled to produce output. Requires greater than or equal to 1.
+- `List<ProbabilityGroup>`. Sets the probability sets rolled to produce output. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     output(Collection)

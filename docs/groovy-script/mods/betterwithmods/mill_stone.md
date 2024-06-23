@@ -53,6 +53,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `int`. Sets the time in ticks the recipe takes to complete. Requires greater than or equal to 1. (Default `1`).
 
     ```groovy:no-line-numbers
+    time(int)
     ticks(int)
     ```
 

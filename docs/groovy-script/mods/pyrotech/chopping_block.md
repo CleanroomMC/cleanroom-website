@@ -58,6 +58,13 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `IntList`. Sets how often the item needs to be hit with output amount. Call it 4 times for 4 different tiers (Crude, Stone, Iron, Diamond).
 
     ```groovy:no-line-numbers
+    chops(int, int)
+    ```
+
+- `IntList`. Sets the amount of items output for a given tier. Call it 4 times for 4 different tiers (Crude, Stone, Iron, Diamond).
+
+    ```groovy:no-line-numbers
+    chops(int, int)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.ChoppingBlockRecipe`).

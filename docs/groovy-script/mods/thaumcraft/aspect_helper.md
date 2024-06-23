@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     object(IIngredient)
     ```
 
-- `ArrayList<AspectStack>`. Sets the Aspects of the entity or item.
+- `List<AspectStack>`. Sets the Aspects of the entity or item.
 
     ```groovy:no-line-numbers
     aspect(AspectStack)

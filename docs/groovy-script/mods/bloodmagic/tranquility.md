@@ -82,7 +82,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     tranquility(EnumTranquilityType)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `java.lang.Object`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `org.apache.commons.lang3.tuple.Pair<?, WayofTime.bloodmagic.incense.TranquilityStack>`).
 
     ```groovy:no-line-numbers
     register()

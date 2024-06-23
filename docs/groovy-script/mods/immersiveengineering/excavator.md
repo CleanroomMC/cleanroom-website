@@ -68,7 +68,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     weight(int)
     ```
 
-- `List<Float>`. Sets the chance a given block output will contain the corresponding entry in ores. Requires exactly ores.
+- `FloatArrayList`. Sets the chance a given block output will contain the corresponding entry in ores. Requires exactly ores.
 
     ```groovy:no-line-numbers
     ore(String, float)

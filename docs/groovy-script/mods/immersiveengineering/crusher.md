@@ -1,7 +1,7 @@
 ---
 title: "Crusher"
 titleTemplate: "Immersive Engineering | CleanroomMC"
-description: "Converts an input itemstack into an output itemstack, consuming energy."
+description: "Converts an input itemstack into an output itemstack with optional additional chanced item outputs, consuming energy."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/immersiveengineering/Crusher.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Converts an input itemstack into an output itemstack, consuming energy.
+Converts an input itemstack into an output itemstack with optional additional chanced item outputs, consuming energy.
 
 ## Identifier
 
@@ -61,6 +61,20 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     energy(int)
     ```
 
+- `List<ItemStack>`. Sets the additional items output by the recipe, if any. Requires exactly secondaryOutputChances.
+
+    ```groovy:no-line-numbers
+    secondaryOutput(ItemStack)
+    secondaryOutput(ItemStack, float)
+    ```
+
+- `FloatArrayList`. Sets the chance of the respective additional items output by the recipe. Requires exactly secondaryOutputItems.
+
+    ```groovy:no-line-numbers
+    secondaryOutput(ItemStack)
+    secondaryOutput(ItemStack, float)
+    ```
+
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `blusunrize.immersiveengineering.api.crafting.CrusherRecipe`).
 
     ```groovy:no-line-numbers
@@ -72,6 +86,14 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 mods.immersiveengineering.crusher.recipeBuilder()
     .input(item('minecraft:diamond'))
     .output(item('minecraft:clay'))
+    .energy(100)
+    .register()
+
+mods.immersiveengineering.crusher.recipeBuilder()
+    .input(item('minecraft:diamond_block'))
+    .output(item('minecraft:diamond'))
+    .secondaryOutput(item('minecraft:gold_ingot'))
+    .secondaryOutput(item('minecraft:gold_ingot'), 0.3)
     .energy(100)
     .register()
 ```

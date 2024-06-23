@@ -71,7 +71,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     color(int)
     ```
 
-- `ArrayList<MoonPhase>`. Sets what phase of the moon the Constellation appears in. Only applies if the Constellation type is Minor. Requires greater than or equal to 0.
+- `List<MoonPhase>`. Sets what phase of the moon the Constellation appears in. Only applies if the Constellation type is Minor. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
     phase(MoonPhase)
@@ -79,7 +79,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     phase(Collection<MoonPhase>)
     ```
 
-- `ArrayList<Constellation.Point2PointConnection>`. Sets the stars and connections between stars that map the Constellation. Requires greater than or equal to 0.
+- `List<Constellation.Point2PointConnection>`. Sets the stars and connections between stars that map the Constellation. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
     connection(int, int, int, int)
@@ -156,7 +156,7 @@ mods.astralsorcery.constellation.constellationMapEffectBuilder()
 ::::::::::
 
 :::::::::: details mods.astralsorcery.constellation.signatureItems() {open id="abstract"}
-- `ArrayList<IIngredient>`. Sets the signature items of the Constellation.
+- `List<IIngredient>`. Sets the signature items of the Constellation.
 
     ```groovy:no-line-numbers
     addItem(IIngredient)
@@ -215,7 +215,7 @@ mods.astralsorcery.constellation.signatureItems()
     mods.astralsorcery.constellation.removeSignatureItems(IConstellation)
     ```
 
-- Removes all registered recipes:
+- Removes all Constellations:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.constellation.removeAll()

@@ -88,6 +88,12 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     campfireRequired(boolean)
     ```
 
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.codetaylor.mc.pyrotech.modules.tech.basic.recipe.SoakingPotRecipe`).
+
+    ```groovy:no-line-numbers
+    register()
+    ```
+
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pyrotech.soaking_pot.recipeBuilder()
@@ -97,6 +103,7 @@ mods.pyrotech.soaking_pot.recipeBuilder()
     .time(400)
     .campfireRequired(true)
     .name('diamond_to_emerald_with_amongium_soaking_pot')
+    .register()
 ```
 
 :::::::::
