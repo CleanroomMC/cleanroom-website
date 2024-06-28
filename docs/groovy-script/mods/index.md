@@ -39,5 +39,5 @@ search:
 * [Rustic](./rustic/)
 * [Thaumcraft](./thaumcraft/)
 * [Thermal Expansion](./thermalexpansion/)
-* [Tinker's Construct](./tconstruct/)
+* [Tinkers' Construct](./tconstruct/)
 * [Woot](./woot/)
