@@ -62,11 +62,13 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `ItemStack`. Sets the extra itemstack produced by the recipe. (Default `ItemStack.EMPTY`).
 
     ```groovy:no-line-numbers
+    extra(ItemStack)
     ```
 
 - `double`. Sets the chance the extra itemstack has to be produced. Requires greater than or equal to 0 and less than or equal to 1. (Default `1.0`).
 
     ```groovy:no-line-numbers
+    chance(double)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SawmillRecipe`).

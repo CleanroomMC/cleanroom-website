@@ -99,7 +99,7 @@ mods.immersiveengineering.mixer.recipeBuilder()
 
 ## Removing Recipes
 
-- Removes all recipes that match the given output:
+- Removes all recipes that match the given input:
 
     ```groovy:no-line-numbers
     mods.immersiveengineering.mixer.removeByInput(FluidStack, IIngredient...)

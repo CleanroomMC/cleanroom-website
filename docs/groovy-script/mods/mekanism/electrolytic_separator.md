@@ -66,6 +66,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 - `double`. Sets the energy cost of the recipe. Requires greater than 0. (Default `0.0d`).
 
     ```groovy:no-line-numbers
+    energy(double)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `mekanism.common.recipe.machines.SeparatorRecipe`).

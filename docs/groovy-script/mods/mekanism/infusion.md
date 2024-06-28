@@ -71,9 +71,9 @@ mods.mekanism.Infusion
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.mekanism.infusion.addType('groovy_example', resource('placeholdername:blocks/example'))
-mods.mekanism.infusion.add(infusion('diamond'), 100, item('minecraft:clay'))
-mods.mekanism.infusion.add(infusion('carbon'), 100, item('minecraft:gold_ingot'))
+mods.mekanism.infusion.addType('groovy_example', resource('placeholdername:blocks/mekanism_infusion_texture'))
+mods.mekanism.infusion.add(infusionType('diamond'), 100, item('minecraft:clay'))
+mods.mekanism.infusion.add(infusionType('carbon'), 100, item('minecraft:gold_ingot'))
 mods.mekanism.infusion.add('groovy_example', 10, item('minecraft:ice'))
 mods.mekanism.infusion.add('groovy_example', 20, item('minecraft:packed_ice'))
 ```
@@ -127,8 +127,8 @@ mods.mekanism.infusion.add('groovy_example', 20, item('minecraft:packed_ice'))
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.infusion.remove(ore('dustDiamond'))
-mods.mekanism.infusion.removeByType(infusion('carbon'))
-mods.mekanism.infusion.removeByType(infusion('diamond'))
+mods.mekanism.infusion.removeByType(infusionType('carbon'))
+mods.mekanism.infusion.removeByType(infusionType('diamond'))
 mods.mekanism.infusion.removeAll()
 ```
 

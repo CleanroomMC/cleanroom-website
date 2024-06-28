@@ -94,6 +94,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 
     ```groovy:no-line-numbers
     replace()
+    replaceByName()
     ```
 
 - `boolean`. Sets if the recipe is horizontally mirrored. (Default `false`).
@@ -196,6 +197,7 @@ mods.thaumcraft.arcane_workbench.shapedBuilder()
 
     ```groovy:no-line-numbers
     replace()
+    replaceByName()
     ```
 
 - `String`. Sets the research required to craft the recipe.

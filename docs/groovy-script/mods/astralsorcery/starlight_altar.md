@@ -40,18 +40,14 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
 
     ```groovy:no-line-numbers
     row(String)
-    shape(String[])
     shape(String...)
-    matrix(String[])
     matrix(String...)
     ```
 
 - `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
-    shape(List)
     shape(List<List<IIngredient>>)
-    matrix(List)
     matrix(List<List<IIngredient>>)
     ```
 
@@ -75,19 +71,19 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     name(String)
     ```
 
-- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers
     craftTime(int)
     ```
 
-- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+- `int`. Sets the amount of starlight the recipe requires. Has a cap based on the table tier, of 1000, 2000, 4000, 8000 for Luminous, Starlight, Celestial, and Iridescent respectively. Requires greater than or equal to 1 and less than or equal to 1000. (Default `1`).
 
     ```groovy:no-line-numbers
-    constellation(IConstellation)
+    starlight(int)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.crafting.altar.AbstractAltarRecipe`).
 
     ```groovy:no-line-numbers
     register()
@@ -101,7 +97,7 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     .row(' B ')
     .row('   ')
     .key('B', item('minecraft:bucket'))
-    .starlight(1)
+    .starlight(500)
     .craftTime(10)
     .register()
 ```
@@ -115,18 +111,14 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
 
     ```groovy:no-line-numbers
     row(String)
-    shape(String[])
     shape(String...)
-    matrix(String[])
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 13. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
-    shape(List)
     shape(List<List<IIngredient>>)
-    matrix(List)
     matrix(List<List<IIngredient>>)
     ```
 
@@ -150,19 +142,19 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     name(String)
     ```
 
-- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers
     craftTime(int)
     ```
 
-- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+- `int`. Sets the amount of starlight the recipe requires. Has a cap based on the table tier, of 1000, 2000, 4000, 8000 for Luminous, Starlight, Celestial, and Iridescent respectively. Requires greater than or equal to 1 and less than or equal to 2000. (Default `1`).
 
     ```groovy:no-line-numbers
-    constellation(IConstellation)
+    starlight(int)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.crafting.altar.AbstractAltarRecipe`).
 
     ```groovy:no-line-numbers
     register()
@@ -177,18 +169,14 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
 
     ```groovy:no-line-numbers
     row(String)
-    shape(String[])
     shape(String...)
-    matrix(String[])
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 21. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
-    shape(List)
     shape(List<List<IIngredient>>)
-    matrix(List)
     matrix(List<List<IIngredient>>)
     ```
 
@@ -212,19 +200,19 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     name(String)
     ```
 
-- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers
     craftTime(int)
     ```
 
-- `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
+- `int`. Sets the amount of starlight the recipe requires. Has a cap based on the table tier, of 1000, 2000, 4000, 8000 for Luminous, Starlight, Celestial, and Iridescent respectively. Requires greater than or equal to 1 and less than or equal to 4000. (Default `1`).
 
     ```groovy:no-line-numbers
-    constellation(IConstellation)
+    starlight(int)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.crafting.altar.AbstractAltarRecipe`).
 
     ```groovy:no-line-numbers
     register()
@@ -253,18 +241,14 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
 
     ```groovy:no-line-numbers
     row(String)
-    shape(String[])
     shape(String...)
-    matrix(String[])
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 25. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
-    shape(List)
     shape(List<List<IIngredient>>)
-    matrix(List)
     matrix(List<List<IIngredient>>)
     ```
 
@@ -288,10 +272,24 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     name(String)
     ```
 
-- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `0`).
+- `int`. Sets how long the craft will take to complete in ticks. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers
     craftTime(int)
+    ```
+
+- `List<IIngredient>`. Sets items placed on nearby relays once the recipe starts. Must be placed manually. Requires greater than or equal to 0 and less than or equal to 24.
+
+    ```groovy:no-line-numbers
+    outerInput(IIngredient)
+    outerInput(IIngredient...)
+    outerInput(Collection<IIngredient>)
+    ```
+
+- `int`. Sets the amount of starlight the recipe requires. Has a cap based on the table tier, of 1000, 2000, 4000, 8000 for Luminous, Starlight, Celestial, and Iridescent respectively. Requires greater than or equal to 1 and less than or equal to 8000. (Default `1`).
+
+    ```groovy:no-line-numbers
+    starlight(int)
     ```
 
 - `IConstellation`. Sets the required Constellation for the Rock Crystal to be attuned to. Only applies to Iridescent Altars.
@@ -300,7 +298,7 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     constellation(IConstellation)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `hellfirepvp.astralsorcery.common.crafting.altar.AbstractAltarRecipe`).
 
     ```groovy:no-line-numbers
     register()

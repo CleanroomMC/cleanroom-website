@@ -46,7 +46,7 @@ mods.extendedcrafting.TableCrafting
 - Adds a shapeless crafting recipe in the format `output`, `input`:
 
     ```groovy:no-line-numbers
-    mods.extendedcrafting.table_crafting.addShapeless(ItemStack, List<List<IIngredient>>)
+    mods.extendedcrafting.table_crafting.addShapeless(ItemStack, List<IIngredient>)
     ```
 
 
@@ -64,14 +64,6 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     name(ResourceLocation)
     ```
 
-- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
-
-    ```groovy:no-line-numbers
-    key(char, IIngredient)
-    key(String, IIngredient)
-    key(Map<String, IIngredient>)
-    ```
-
 - `String[]`. Sets the items required in each slot of the grid as char. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
@@ -85,6 +77,14 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)
     matrix(List<List<IIngredient>>)
+    ```
+
+- `Char2ObjectOpenHashMap<IIngredient>`. Sets the item the given char corresponds to. (Default `' ' = IIngredient.EMPTY`).
+
+    ```groovy:no-line-numbers
+    key(char, IIngredient)
+    key(String, IIngredient)
+    key(Map<String, IIngredient>)
     ```
 
 - `ItemStack`. Sets the item output. Requires not null.
@@ -102,12 +102,6 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     tierElite()
     tierAdvanced()
     tierUltimate()
-    ```
-
-- `byte`. Sets if the recipe is removed. A value of 1 removes by the output, and a value of 2 removes by the resource location. (Default `0`).
-
-    ```groovy:no-line-numbers
-    replace()
     ```
 
 - `boolean`. Sets if the recipe is horizontally mirrored. (Default `false`).
@@ -129,7 +123,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     recipeAction(Closure<Void>)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.blakebr0.extendedcrafting.crafting.table.ITieredRecipe`).
 
     ```groovy:no-line-numbers
     register()
@@ -226,12 +220,6 @@ mods.extendedcrafting.table_crafting.shapedBuilder()
     tierUltimate()
     ```
 
-- `byte`. Sets if the recipe is removed. A value of 1 removes by the output, and a value of 2 removes by the resource location. (Default `0`).
-
-    ```groovy:no-line-numbers
-    replace()
-    ```
-
 - `Closure<ItemStack>`. Sets an operation that modifies the input items or output item.
 
     ```groovy:no-line-numbers
@@ -244,7 +232,7 @@ mods.extendedcrafting.table_crafting.shapedBuilder()
     recipeAction(Closure<Void>)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `net.minecraft.item.crafting.IRecipe`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.blakebr0.extendedcrafting.crafting.table.ITieredRecipe`).
 
     ```groovy:no-line-numbers
     register()

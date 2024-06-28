@@ -70,7 +70,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     icon(ItemStack)
     ```
 
-- `ArrayList<IJournalPage>`. Sets the pages visible within the node.
+- `List<IJournalPage>`. Sets the pages visible within the node.
 
     ```groovy:no-line-numbers
     page(IJournalPage)
@@ -93,7 +93,7 @@ Don't know what a builder is? Check [the builder info page](../../groovy/builder
     point(int, int)
     ```
 
-- `ArrayList<ResearchNode>`. Sets what other nodes this node is connected to.
+- `List<ResearchNode>`. Sets what other nodes this node is connected to.
 
     ```groovy:no-line-numbers
     connectionFrom(String)
