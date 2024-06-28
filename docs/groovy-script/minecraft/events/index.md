@@ -57,13 +57,13 @@ Normally you don't need to chane any of those values. <br>
 
 ::: info Let's see an example using `EventPriority`: {id="example"}
 
-    ```groovy
-    import net.minecraftforge.event.world.BlockEvent.BreakEvent
+  ```groovy
+  import net.minecraftforge.event.world.BlockEvent.BreakEvent
 
-    event_manager.listen(EventPriority.HIGHEST) { BreakEvent event ->
-        log.info('Block broken: {}', event.getState())
-    }
-    ```
+  event_manager.listen(EventPriority.HIGHEST) { BreakEvent event ->
+      log.info('Block broken: {}', event.getState())
+  }
+  ```
 
 Now it is very likely that our listener is executed before all other (not guaranteed).
 Note that we don't need to import `EventPriority`. It is auto imported.
