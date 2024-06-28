@@ -16,8 +16,12 @@ const sidebar = generateSidebar([
     sortMenusByFrontmatterOrder: true,
     sortMenusOrderByDescending: true,
     collapsed: true,
+    collapseDepth: 2,
     folderLinkNotIncludesFileName: true,
     useFolderLinkFromIndexFile: true,
+    rootGroupText: 'GroovyScript',
+    rootGroupLink: '.',
+    rootGroupCollapsed: false,
   }
 ]);
 
