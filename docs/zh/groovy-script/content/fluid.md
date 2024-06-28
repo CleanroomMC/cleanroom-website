@@ -77,6 +77,6 @@ If a fluid has a block the block state json is automatically generated,
 Add `fluid.[pack id].[fluid name]=Fluid Name` to your lang file
 
 Example for molten iron:
-```mclang:no-line-numbers
+```ini:no-line-numbers
 fluid.placeholdername.molten_iron=Molten Iron
 ```
