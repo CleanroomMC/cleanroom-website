@@ -14,7 +14,7 @@ const sidebar = generateSidebar([
     useTitleFromFrontmatter: true,
     useTitleFromFileHeading: true,
     sortMenusByName: true,
-    collapseDepth: 2,
+    collapsed: true,
     folderLinkNotIncludesFileName: true,
     useFolderLinkFromIndexFile: true,
   }
