@@ -1,4 +1,4 @@
-const EXPAND_DETAILS_ANIMATION_DURATION = 250
+const EXPAND_DETAILS_ANIMATION_DURATION = 50
 
 export function handleDetailsAnimation(details: HTMLDetailsElement) {
   let animation: Animation | undefined
