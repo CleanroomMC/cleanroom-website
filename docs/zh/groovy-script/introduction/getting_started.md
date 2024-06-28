@@ -1,22 +1,20 @@
+# 前置知识
 
-# Getting Started
+在学习本模组的内容时，编程知识并非必须，但它确实能让你的 GroovyScript 学习之旅更为顺畅。
 
-Programming knowledge is not necessarily required, but it will help you a lot.
+As text editor you can use [Notepad++](https://notepad-plus-plus.org/downloads/) just fine. (We will work on a better
+alternative in the future)
 
-You will need a text editor. Any will do, but we recommend [VSC](https://code.visualstudio.com/), since we created an [extension](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview) for it. The extension provides auto completion and more for all installed mods. You can find installation instructions on the extension page.
+1. 下载 Minecraft Forge 1.12.2 并安装
+2. 下载最新版本的 GroovyScript，点击[此处](https://www.curseforge.com/minecraft/mc-mods/groovyscript/files)即可跳转。然后将下载到的模组放入到 mods 文件夹内。
+3. 安装 [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter/files)，该模组为 GroovyScript 的前置模组。
+4. 启动游戏
+5. GroovyScript 会在启动时创建出一些文件：
+   - groovy.log( ()参见 [Groovy 日志](#groovy-log))
+   - groovy/runConfig.json（参见 [Groovy 日志](#run-config)）
+   - groovy/postInit/main.groovy（默认的脚本文件）
 
-1. Download Minecraft Forge 1.12.2 and install it
-2. Download the latest version of GroovyScript [here](https://www.curseforge.com/minecraft/mc-mods/groovyscript/files)
-   and drop it into the mods folder
-3. Also install [MixinBooter](https://www.curseforge.com/minecraft/mc-mods/mixin-booter/files) since GroovyScript
-   depends on it
-4. Launch minecraft without adding any files
-5. GroovyScript will create several files
-    - groovy.log (refer to [Groovy Log](#groovy-log))
-    - groovy/runConfig.json (refer to [Groovy Log](#run-config))
-    - groovy/postInit/main.groovy (default script file)
-
-## Groovy log
+## Groovy 日志
 
 Everything groovy related has its own log, and it generates its own file. If you run into issues with your script you
 should look here first.
@@ -39,47 +37,28 @@ Let's see what the file can look like.
   "packId": "",
   "version": "1.0.0",
   "debug": false,
-  "classes": [
-    "classes/"
-  ],
+  "classes": ["classes/"],
   "loaders": {
-    "preInit": [
-      "preInit/"
-    ],
-    "postInit": [
-      "postInit2/"
-    ]
+    "preInit": ["preInit/"],
+    "postInit": ["postInit2/"]
   }
 }
 ```
 
 Let's go through it bit by bit:
 
-
 - `packName` is the name of the pack (See [pack name and id](#pack-name-and-id)). Important
-  for [content](./content/index.md).
+  for [content](../content/index.md).
 
-- `packId` is the id of the pack (See [pack name and id](#pack-name-and-id)). Important
-  for [content](./content/index.md).
+- `packId` (0.4.0+) is the id of the pack (See [pack name and id](#pack-name-and-id)). Important
+  for [content](../content/index.md).
 
 - `version` is the version of the pack. It currently doesn't do anything special.
 
 - `debug`: If this is false all messages that logged to debug will not be logged. Great for debugging.
 
-- `classes`: Files that contain a single class should be specified here. It makes sure classes are loaded when
-  scripts try to access them. You can specify classes to only load in certain loaders. This works exactly like the `loaders` property.
-  ::: info For example {id="example"}
-  ```json
-  "classes": {
-    "all": [  
-      // runs in all loaders
-    ],
-    "preInit": [
-      // runs only in preInit loader
-    ]
-  }
-  ```
-  :::
+- `classes`: (0.3.0+) Files that contain a single class should be specified here. It makes sure classes are loaded when
+  scripts try to access them.
 
 - `loaders`: This defines at what stage what files should be loaded. By default, there are two stages: `preInit`
   and `postInit`.
@@ -95,14 +74,10 @@ Let's go through it bit by bit:
   Elements higher in the list will be run first. Files can be put multiple times, but they will only get executed
   once.
 
-
 ::: info For example {id="example"}
 
 ```json
-[
-"postInit/ore_dict.groovy",
-"postInit/"
-]
+["postInit/ore_dict.groovy", "postInit/"]
 ```
 
 Here first `ore_dict.groovy` will be executed and then all files of `postInit/`, but since `ore_dict.groovy` was already
@@ -113,10 +88,7 @@ executed, it will not run now.
 ::: info Another example {id="example"}
 
 ```json
-[
-"postInit/",
-"postInit/late_stuff.groovy"
-]
+["postInit/", "postInit/late_stuff.groovy"]
 ```
 
 :::
@@ -129,8 +101,6 @@ executed. After that only `late_stuff.groovy` will be executed.
 The pack name can be anything. It's the name that will show up in JEI in tooltips on items you created.
 
 The pack id is very important. It must only consist of lower case letters and `_`.
-
-If some mod tries to use the pack id internally and the pack id is not specified a fatal message will logged.
 
 ::: info Warning {id="warning"}
 Changing the pack id will result in created items being lost in existing worlds!

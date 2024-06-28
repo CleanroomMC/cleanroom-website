@@ -17,7 +17,7 @@ The field `TestReg test` represents a machine that can have recipes.
 In `onCompatLoaded()` the compat can be initialised. `container.getRegistrar().addFieldsOf(this)`
 automatically register fields of this class which are `VirtualRegistries` including the `TestReg test` field.
 
-With `createModPropertyContainer()` you can create your own property container.
+With `createGroovyPropertyContainer()` you can create your own property container.
 This is the class groovy scripts have access to via `mods.example_id`. The `container.getRegistrar()`function will add registries to the existing property container.
 
 ```java
@@ -44,7 +44,7 @@ public class ExampleModGroovyPlugin implements GroovyPlugin {
 
     // optional
     @Override
-    public @Nullable ModPropertyContainer createModPropertyContainer() {
+    public @Nullable GroovyPropertyContainer createGroovyPropertyContainer() {
         return null;
     }
 }
