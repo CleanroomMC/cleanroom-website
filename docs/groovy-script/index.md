@@ -44,9 +44,9 @@ We would appreciate any help to improve this place.
 :::
 
 
-- Get started with [Getting Started](./getting_started.md)
+- Get started with [Getting Started](./introduction/getting_started.md)
 - Read about the basics of the [Groovy](./groovy/index.md) coding language.
 - Learn how to interact with [Vanilla Registries](./minecraft/index.md).
 - Create your own custom items, blocks, and fluids via the [Content](./content/index.md) compat.
 - Read the documentation for over 25 [Mods](./mods/index.md)
-- Create your own [External Compat](./external_compat.md) for GroovyScript!
+- Create your own [External Compat](./introduction/external_compat.md) for GroovyScript!

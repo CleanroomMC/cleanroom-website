@@ -41,9 +41,9 @@ _同时，感谢你使用 GroovyScript!_
 
 :::
 
-- 千里之行，始于[前置知识](./getting_started.md)
+- 千里之行，始于[前置知识](./introduction/getting_started.md)
 - 学习 [Groovy 的基础知识](./groovy/index.md)
 - 学习如何与[原版注册系统](./minecraft/index.md)交互
 - 使用 [Content](./content/index.md) 系统创造你的第一个物品，方块或是流体
 - 超过 25 个[模组](./mods/index.md)的兼容文档待你查阅
-- 为你的模组编写[与 GroovyScript 的兼容](./external_compat.md)！
+- 为你的模组编写[与 GroovyScript 的兼容](./introduction/external_compat.md)！
