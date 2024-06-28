@@ -60,7 +60,7 @@ The example above creates a simple fluid for you, but you can also create fluids
 Use the following methods to register custom fluids.
 
 ```groovy:no-line-numbers
-content.registerFluid(Fluis)
+content.registerFluid(Fluid)
 ```
 
 ::: info Warning {id="warning"}
