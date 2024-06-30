@@ -16,9 +16,9 @@ While any will do, we recommend using one of the ones listed in [editors](./edit
    depends on it
 4. Launch minecraft without adding any files
 5. GroovyScript will create several files
-    - groovy.log (refer to [Groovy Log](#groovy-log))
-    - groovy/runConfig.json (refer to [Groovy Log](#run-config))
-    - groovy/postInit/main.groovy (default script file)
+    - [`groovy.log`](#groovy-log)
+    - [`groovy/runConfig.json`](./run_config.md)
+    - `groovy/postInit/main.groovy` (default script file)
 
 ## Groovy log
 
