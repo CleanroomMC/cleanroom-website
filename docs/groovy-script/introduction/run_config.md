@@ -26,6 +26,14 @@ Let's see what the file can look like.
     "postInit": [
       "postInit/"
     ]
+  },
+  "packmode": {
+    "values": [
+      "normal",
+      "hard"
+    ],
+    "default": "normal",
+    "integratePackmodeMod": false
   }
 }
 ```
@@ -103,3 +111,15 @@ First all files in `postInit/` except for `late_stuff.groovy` will be run, and t
 
 First everything in `postInit/` will be executed, but since `late_stuff.groovy` is specifically put later it will not be
 executed. After that only `late_stuff.groovy` will be executed.
+
+- `packmode`: This contains various instructions for controls for the "packmode" feature.
+
+  - `values`: This is a list of strings which represent the names of each packmode
+
+  - `default`: This is the default packmode the config is set to when starting the game for the first time.
+    The name given should be one of the entries inside `values`.
+
+  - `integratePackmodeMod`: If the [PackMode](https://www.curseforge.com/minecraft/mc-mods/packmode) mod has integration with GroovyScript's packmode feature.
+    This should only be enabled if the PackMode mod is installed.
+    This replaces GroovyScript's packmode settings with those from [PackMode](https://www.curseforge.com/minecraft/mc-mods/packmode).
+    This will also disable the ability to reload packmodes on the fly.
