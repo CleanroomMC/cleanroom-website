@@ -3,6 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "types": ["vitepress/client"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
   },
   "include": ["env.d.ts", "components/**/*.vue"],
 }
