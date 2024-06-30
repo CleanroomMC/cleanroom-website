@@ -3,7 +3,8 @@
 
 Programming knowledge is not necessarily required, but it will help you a lot.
 
-You will need a text editor. Any will do, but we recommend [VSC](https://code.visualstudio.com/), since we created an [extension](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview) for it. The extension provides auto completion and more for all installed mods. You can find installation instructions on the extension page.
+You will need a text editor.
+While any will do, we recommend using one of the ones listed in [editors](./editors.md), as those have integrated support.
 
 1. Download Minecraft Forge 1.12.2 and install it
 2. Download the latest version of GroovyScript [here](https://www.curseforge.com/minecraft/mc-mods/groovyscript/files)
