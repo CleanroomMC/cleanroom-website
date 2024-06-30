@@ -72,11 +72,14 @@ Let's go through it bit by bit:
 - `loaders`: This defines at what stage what files should be loaded.
   By default, there are three stages: `preInit`, `init`, and `postInit`.
 
-- `preInit` will run at an early stage.
+  - `preInit` will run at an early stage.
   Do not register recipes here.
   Use it to register game objects like items and blocks.
 
-- `postInit` will run right before JEI loads.
+  - `init` will run at a late stage, during the post-initialization phase.
+    This is **not** reloadable.
+
+  - `postInit` will run right before JEI loads.
   Use it to register recipes for example.
   When GroovyScript gets reloaded only this loader will run.
   Inside the square brackets of the loader we define the files or path that will be run.
@@ -85,32 +88,32 @@ Let's go through it bit by bit:
   Files can be put multiple times, but they will only get executed once.
 
 
-::: info For example {id="example"}
+  ::: info For example {id="example"}
 
-Here first `ore_dict.groovy` will be executed and then all files of `postInit/`, but since `ore_dict.groovy` was already
-executed, it will not run now.
+  Here first `ore_dict.groovy` will be executed and then all files of `postInit/`, but since `ore_dict.groovy` was already
+  executed, it will not run now.
 
-```json
-[
-  "postInit/ore_dict.groovy",
-  "postInit/"
-]
-```
+  ```json
+  [
+    "postInit/ore_dict.groovy",
+    "postInit/"
+  ]
+  ```
 
-First all files in `postInit/` except for `late_stuff.groovy` will be run, and then `late_stuff.groovy` will be run.
+  First all files in `postInit/` except for `late_stuff.groovy` will be run, and then `late_stuff.groovy` will be run.
 
 
-```json
-[
-  "postInit/",
-  "postInit/late_stuff.groovy"
-]
-```
+  ```json
+  [
+    "postInit/",
+    "postInit/late_stuff.groovy"
+  ]
+  ```
 
-:::
+  :::
 
-First everything in `postInit/` will be executed, but since `late_stuff.groovy` is specifically put later it will not be
-executed. After that only `late_stuff.groovy` will be executed.
+    First everything in `postInit/` will be executed, but since `late_stuff.groovy` is specifically put later it will not be
+    executed. After that only `late_stuff.groovy` will be executed.
 
 - `packmode`: This contains various instructions for controls for the "packmode" feature.
 
