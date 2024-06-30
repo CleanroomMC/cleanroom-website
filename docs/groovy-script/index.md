@@ -1,6 +1,16 @@
 
 # GroovyScript
 
+::: info Work In Progress {id="warning"}
+
+This Wiki is WIP.
+Not all information is on it or located properly.
+We would appreciate any help to improve the wiki.
+
+*Thank you for using GroovyScript!*
+
+:::
+
 
 ## Welcome
 
@@ -32,17 +42,6 @@ GroovyScript can be downloaded on
 8. API: Great catalogue of code for other mod authors to make their mods compatible with GroovyScript such as package/class/method/field blacklists
 
 ## Wiki
-
-::: info Work In Progress {id="warning"}
-
-This Wiki is WIP.
-There is still a lot of info missing.
-We would appreciate any help to improve this place.
-
-*Thank you for using GroovyScript!*
-
-:::
-
 
 - Get started with [Getting Started](./introduction/getting_started.md)
 - Read about the basics of the [Groovy](./groovy/index.md) coding language.
