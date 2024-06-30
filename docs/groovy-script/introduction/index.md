@@ -142,7 +142,7 @@ Changing the pack id will result in created items being lost in existing worlds!
 
 ## Important infos
 
-1. Groovy scripts must end in `.groovy`
+1. Groovy scripts must end in `.groovy`, `.gy`, `.gvy`, or `.gsh`.
 2. Groovy scripts must be defined somehow in the [run config](#run-config) to be executed
 3. The scripts and folders can have any name
 4. All scripts and the [run config](#run-config) must be located in `[Minecraft instance path]/groovy/`
