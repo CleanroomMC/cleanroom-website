@@ -1,0 +1,105 @@
+
+# Run Config
+
+This file defines how each script file should be executed. It can also store some general info about the mod pack. The
+file will be generated if it doesn't exist.
+If you don't understand what this is or how it works you can skip this. All you need to know is that you put your
+scripts with recipes in `groovy/postInit`.
+Scripts with stuff like Item Creation go in `groovy/preInit`.
+
+Let's see what the file can look like.
+
+::: info Example {id="example"}
+```json
+{
+  "packName": "",
+  "packId": "",
+  "version": "1.0.0",
+  "debug": false,
+  "classes": [
+    "classes/"
+  ],
+  "loaders": {
+    "preInit": [
+      "preInit/"
+    ],
+    "postInit": [
+      "postInit/"
+    ]
+  }
+}
+```
+:::
+
+Let's go through it bit by bit:
+
+
+- `packName` is the name of the pack (See [pack name and id](./index.md#pack-name-and-id)). Important
+  for [content](../content/index.md).
+
+- `packId` is the id of the pack (See [pack name and id](./index.md#pack-name-and-id)). Important
+  for [content](../content/index.md).
+
+- `version` is the version of the pack. It currently doesn't do anything special.
+
+- `debug`: If this is false all messages that logged to debug will not be logged. Great for debugging.
+
+- `classes`: Files that contain a single class should be specified here.
+  It makes sure classes are loaded when scripts try to access them.
+  You can specify classes to only load in certain loaders.
+  This works exactly like the `loaders` property.
+  ::: info For example {id="example"}
+  ```json
+  "classes": {
+    "all": [
+      // runs in all loaders
+    ],
+    "preInit": [
+      // runs only in preInit loader
+    ]
+  }
+  ```
+  :::
+
+- `loaders`: This defines at what stage what files should be loaded.
+  By default, there are three stages: `preInit`, `init`, and `postInit`.
+
+- `preInit` will run at an early stage.
+  Do not register recipes here.
+  Use it to register game objects like items and blocks.
+
+- `postInit` will run right before JEI loads.
+  Use it to register recipes for example.
+  When GroovyScript gets reloaded only this loader will run.
+  Inside the square brackets of the loader we define the files or path that will be run.
+  You can NOT run a file in multiple loaders.
+  Elements higher in the list will be run first.
+  Files can be put multiple times, but they will only get executed once.
+
+
+::: info For example {id="example"}
+
+Here first `ore_dict.groovy` will be executed and then all files of `postInit/`, but since `ore_dict.groovy` was already
+executed, it will not run now.
+
+```json
+[
+  "postInit/ore_dict.groovy",
+  "postInit/"
+]
+```
+
+First all files in `postInit/` except for `late_stuff.groovy` will be run, and then `late_stuff.groovy` will be run.
+
+
+```json
+[
+  "postInit/",
+  "postInit/late_stuff.groovy"
+]
+```
+
+:::
+
+First everything in `postInit/` will be executed, but since `late_stuff.groovy` is specifically put later it will not be
+executed. After that only `late_stuff.groovy` will be executed.
