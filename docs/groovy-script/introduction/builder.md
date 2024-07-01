@@ -13,7 +13,7 @@ Let's see what a simple Builder class can look like:
 ```groovy
 class RecipeBuilder {
     private final List<IIngredient> inputs = new ArrayList()
-    private final List<ItemStack> outputs = new ArrayList() // (1)
+    private final List<ItemStack> outputs = new ArrayList() // We need to store our inputs and outputs somewhere
 
     RecipeBuilder input(IIngredient ingredient) {
         this.inputs.add(ingredient)
@@ -31,9 +31,12 @@ class RecipeBuilder {
 }
 ```
 
-1. We need to store our inputs and outputs somewhere
-2. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
-3. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
+::: info Note {id="note"}
+
+Usually the return keyword is not needed in Groovy, but in this case it helps to understand the concept.
+
+:::
+
 
 ::: info Usage {id="example"}
 Now let's create a new recipe using the builder
