@@ -44,21 +44,37 @@ Let's go through it bit by bit:
 
 ## `packName`
 
-The name of the pack (See [pack name and id](./index.md#pack-name-and-id)).
+The name of the pack.
+The pack name can be anything. It's the name that will show up in JEI in tooltips on items you created.
 Important for [content](../content/index.md).
+- Can be accessed in a script via `getPackName()`.
 
 ## `packId`
 
-The id of the pack (See [pack name and id](./index.md#pack-name-and-id)).
+The id of the pack.
+- Can be accessed in a script via `getPackId()`.
+The pack id is very important. It must only consist of lower case letters and `_`.
 Important for [content](../content/index.md).
+
+::: info Failure {id="failure"}
+If some mod tries to use the pack id internally and the pack id is not specified a fatal message will logged.
+:::
+
+::: info Danger {id="danger"}
+Changing the pack id will result in created items being lost in existing worlds!
+:::
 
 ## `version`
 
-This is the version of the pack. It currently doesn't do anything special.
+This is the version of the pack.
+It currently doesn't do anything special.
+- It can be accessed in a script via `getPackVersion()`.
 
 ## `debug`
 
-If this is false all messages that logged to debug will not be logged. Great for debugging.
+If this is false all messages that logged to debug will not be logged.
+Great for debugging.
+- Can be accessed in a script via `isDebug()`.
 
 ## `classes`
 
@@ -137,10 +153,11 @@ executed. After that only `late_stuff.groovy` will be executed.
 ## `packmode`
 
 This contains various instructions for controls for the "packmode" feature.
+- The current packmode can be gotten via `getPackmode()`, and you can check if the given packmode is enabled via `isPackmode(String)`
 
 ### `values`
 
-This is a list of strings which represent the names of each packmode
+This is a list of strings which represent the names of each packmode.
 
 ### `default`
 

@@ -31,18 +31,6 @@ The files directory is always `[Minecraft instance path]/groovy.log`
 
 The [Run Config](./run_config.md) controls some settings and the load order of scripts.
 
-### Pack name and id
-
-The pack name can be anything. It's the name that will show up in JEI in tooltips on items you created.
-
-The pack id is very important. It must only consist of lower case letters and `_`.
-
-If some mod tries to use the pack id internally and the pack id is not specified a fatal message will logged.
-
-::: info Warning {id="warning"}
-Changing the pack id will result in created items being lost in existing worlds!
-:::
-
 ## Important infos
 
 1. Groovy scripts must end in `.groovy`, `.gy`, `.gvy`, or `.gsh`.
