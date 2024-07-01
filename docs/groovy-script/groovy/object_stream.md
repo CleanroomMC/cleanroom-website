@@ -1,7 +1,3 @@
----
-title: Object Stream
----
-
 
 # Object Stream
 

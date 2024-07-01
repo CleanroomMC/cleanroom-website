@@ -1,8 +1,5 @@
----
-title: Modifying Materials
----
 
-# Modifying existing Materials
+# Modifying Materials
 Sometimes you don't want to create new materials. You just want to modify some properties of an existing material.
 Similar to creating materials you use an event. But for modifying materials you use the `PostMaterialEvent`. 
 
