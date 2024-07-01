@@ -36,10 +36,9 @@ GroovyScript can be downloaded on
     - Most if not all Forge Registry objects can be reloaded on the fly
     - Most mod registries are supported natively
 4. Events: Easily listen to Forge's EventBuses with Groovy Closures
-5. Familiarity: Bracket handlers for those that are familiar with CraftTweaker (currently implemented, may be removed in the near future)
-6. Informational: commands to display rich information for the item in your hand and more
-7. Optimized: Making sure no compromises are being made while delivering features with efficient code
-8. API: Great catalogue of code for other mod authors to make their mods compatible with GroovyScript such as package/class/method/field blacklists
+5. Informational: commands to display rich information for the item in your hand and more
+6. Optimized: Making sure no compromises are being made while delivering features with efficient code
+7. API: Great catalogue of code for other mod authors to make their mods compatible with GroovyScript such as package/class/method/field blacklists
 
 ## Wiki
 
