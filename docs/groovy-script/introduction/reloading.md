@@ -11,6 +11,7 @@ Some compat may not properly implement reloading, and will not be reloaded prope
 
 :::
 
+To reload GroovyScript, either:
 
 - Run the `/gs reload` command
 - Use the keybind, by default bound to `CTRL+R`
