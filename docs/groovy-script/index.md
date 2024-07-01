@@ -43,7 +43,7 @@ GroovyScript can be downloaded on
 
 ## Wiki
 
-- Get started with [Getting Started](./introduction/getting_started.md)
+- Get started with [Getting Started](./introduction/index.md)
 - Read about the basics of the [Groovy](./groovy/index.md) coding language.
 - Learn how to interact with [Vanilla Registries](./minecraft/index.md).
 - Create your own custom items, blocks, and fluids via the [Content](./content/index.md) compat.

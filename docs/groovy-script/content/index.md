@@ -6,7 +6,7 @@ for CraftTweaker, but for GroovyScript it doesn't require another mod.
 ::: info Warning {id="warning"}
 Requires version 0.4.0+. <br>
 Before you start adding content make sure to specify the pack name and id in
-your [runConfig](../introduction/getting_started.md#run-config). <br>
+your [runConfig](../introduction/index.md#run-config). <br>
 Also make sure to read [pack name](../introduction/run_config.md#packname) and [id](../introduction/run_config.md#packid)
 :::
 
