@@ -18,7 +18,7 @@ With the recipe map you can create a recipe builder.
 mods.gregtech.alloy_smelter.recipeBuilder()
 ```
 
-You don't know what a builder is? Check [this](../../groovy/builder.md) out.
+You don't know what a builder is? Check [this](../../introduction/builder.md) out.
 
 ## Builder functions
 

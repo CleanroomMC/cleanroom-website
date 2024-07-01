@@ -37,7 +37,7 @@ mods.ticon.EntityMelting
 
 Just like other recipe types, the Entity Melting also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.tconstruct.entity_melting.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. The entity to melt. Requires not null.

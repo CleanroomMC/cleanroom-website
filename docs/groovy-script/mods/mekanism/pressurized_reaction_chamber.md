@@ -31,7 +31,7 @@ mods.mekanism.prc
 
 Just like other recipe types, the Pressurized Reaction Chamber also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.mekanism.pressurized_reaction_chamber.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 1.

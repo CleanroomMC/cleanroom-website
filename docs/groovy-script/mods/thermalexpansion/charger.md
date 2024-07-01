@@ -42,7 +42,7 @@ mods.thermalexpansion.charger.add(1000, item('minecraft:obsidian'), item('minecr
 
 Just like other recipe types, the Energetic Infuser also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.thermalexpansion.charger.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

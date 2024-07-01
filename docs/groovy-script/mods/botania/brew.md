@@ -27,7 +27,7 @@ mods.botania.Brew
 
 Just like other recipe types, the Brew Effect also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.botania.brew.brewBuilder() {open id="abstract"}
 - `String`. Sets a unique key for the effect. Requires not null.

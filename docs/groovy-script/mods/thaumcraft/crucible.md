@@ -38,7 +38,7 @@ mods.thaum.Crucible
 
 Just like other recipe types, the Crucible also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.thaumcraft.crucible.recipeBuilder() {open id="abstract"}
 - `AspectList`. Sets the Aspects and amounts required to convert. Requires greater than 0.

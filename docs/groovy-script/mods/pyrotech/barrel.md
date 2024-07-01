@@ -40,7 +40,7 @@ mods.pyrotech.barrel.add('iron_dirt_water_to_lava', ore('ingotIron'), ore('ingot
 
 Just like other recipe types, the Barrel also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.pyrotech.barrel.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.

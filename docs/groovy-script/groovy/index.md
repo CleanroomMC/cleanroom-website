@@ -34,4 +34,3 @@ That being said, we do explain some fundamentals, such as
 * How to interact with [Maps](./maps.md)
 * How to use [Loops](./loops.md) in your code
 * The basics of [Closures](./closure.md)
-* An extremely frequently used design format for GroovyScript' mod compat in the [Builder](./builder.md)

@@ -42,7 +42,7 @@ mods.inspirations.AnvilSmashing
 
 Just like other recipe types, the Anvil Smashing also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.inspirations.anvil_smashing.recipeBuilder() {open id="abstract"}
 - `IBlockState`. Sets the output IBlockState that replaces the input. Requires not null.

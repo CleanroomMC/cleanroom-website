@@ -48,7 +48,7 @@ mods.extendedcrafting.Combination
 
 Just like other recipe types, the Combination Crafting also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.extendedcrafting.combination_crafting.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

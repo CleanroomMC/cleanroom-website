@@ -27,7 +27,7 @@ mods.roots.Predicates
 
 Just like other recipe types, the Predicates also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.roots.predicates.stateBuilder() {open id="abstract"}
 - `boolean`. Sets if the predicate checks the block above for validation. Requires that only at most one of either `above` or `below` may be true. (Default `false`).

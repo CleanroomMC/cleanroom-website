@@ -48,7 +48,7 @@ mods.astral.Fountain
 
 Just like other recipe types, the Fountain also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.astralsorcery.fountain.chanceHelper() {open id="abstract"}
 - `Fluid`. Sets the fluid being generated. Requires not null.

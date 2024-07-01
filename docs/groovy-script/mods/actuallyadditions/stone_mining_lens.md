@@ -33,7 +33,7 @@ mods.actuallyadditions.StoneMiningLens
 
 Just like other recipe types, the Stone Mining Lens also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.actuallyadditions.stone_mining_lens.recipeBuilder() {open id="abstract"}
 - `String`. Sets the ore given by the recipe. Requires not null.

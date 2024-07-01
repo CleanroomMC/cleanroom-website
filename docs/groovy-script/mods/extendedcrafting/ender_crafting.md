@@ -54,7 +54,7 @@ mods.extendedcrafting.EnderCrafting
 
 Just like other recipe types, the Ender Crafting also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.extendedcrafting.ender_crafting.shapedBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the Resource Location of the recipe.

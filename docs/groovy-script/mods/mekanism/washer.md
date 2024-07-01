@@ -44,7 +44,7 @@ mods.mekanism.washer.add(gas('water'), gas('hydrogen'))
 
 Just like other recipe types, the Washer also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
 
 :::::::::: details mods.mekanism.washer.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.
