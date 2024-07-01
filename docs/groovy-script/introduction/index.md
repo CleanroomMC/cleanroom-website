@@ -29,7 +29,7 @@ The files directory is always `[Minecraft instance path]/groovy.log`
 
 ## Run Config
 
-<!-- @include: ./run_config.md{3,} -->
+The [Run Config](./run_config.md) controls some settings and the load order of scripts.
 
 ### Pack name and id
 
@@ -46,6 +46,6 @@ Changing the pack id will result in created items being lost in existing worlds!
 ## Important infos
 
 1. Groovy scripts must end in `.groovy`, `.gy`, `.gvy`, or `.gsh`.
-2. Groovy scripts must be defined somehow in the [run config](#run-config) to be executed
+2. Groovy scripts must be defined somehow in the [run config](./run_config.md) to be executed
 3. The scripts and folders can have any name
-4. All scripts and the [run config](#run-config) must be located in `[Minecraft instance path]/groovy/`
+4. All scripts and the [run config](./run_config.md) must be located in `[Minecraft instance path]/groovy/`

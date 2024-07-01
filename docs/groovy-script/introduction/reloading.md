@@ -58,7 +58,7 @@ class DemoRegistry extends VirtualizedRegistry<DemoRecipe> {
 ```
 :::
 
-Then, make a file and set it to have a high priority via the [`runConfig.json`](./run_config.md)'s `postInit` setting.
+Then, make a file and set it to have a high priority via the [`runConfig.json`](./run_config.md#postinit)'s `postInit` setting.
 Inside that file, import any classes you are adding custom reloading for, and place the `onReload` call after checking `isReloading` is true.
 
 ```groovy
