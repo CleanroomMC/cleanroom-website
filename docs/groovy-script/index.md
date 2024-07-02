@@ -1,3 +1,9 @@
+---
+# Required because otherwise it points to itself as the next page.
+next:
+  text: 'Getting Started'
+  link: '/groovy-script/introduction/'
+---
 
 # GroovyScript
 
