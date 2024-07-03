@@ -90,6 +90,15 @@ This works exactly like the `loaders` property.
 ::: info For example {id="example"}
 ```json
 "classes": {
+  // if there is no subcategory, implicitly added to the "all" category
+  // and runs in all loaders
+}
+```
+
+<br>
+
+```json
+"classes": {
   "all": [
     // runs in all loaders
   ],
