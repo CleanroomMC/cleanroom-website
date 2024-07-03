@@ -4,62 +4,82 @@ order: 1000
 
 # Groovy Basics
 
+This will introduce you to the basics of Groovy.
+Afterwards, either use the sidebar to navigate to additional pages on this wiki,
+or use the external links in [Further Reading](#further-reading).
+
 ## Comments
 
-Comments can be made inside scripts that will be ignored by the compiler like this:
+Comments are lines which provide information to the reader, but are not run and will be ignored by the compiler.
+They can be created in two different ways.
+
+### Single Line Comment
+
+Single Line Comments comment out everything placed after them on the line they are on.
 
 ```groovy:no-line-numbers
-// single line comment
-
-/*
-Multi line comment
- */
+// Two forward slashes
+Code.run() // and the entire line afterwards will be commented
 ```
+
+### Multi-Line Comment
+
+Multi-Line Comments comment out everything between the start an end points.
+
+
+```groovy:no-line-numbers
+/* a single forward slash followed by an asterisk, closed via an asterisk followed by a forward slash */
+/*Comment out everything between the start and end,
+
+have any amount of empty space inside, and can stop in the middle of a line */ Code.run()
+Code.run(a, b, /* can even go in the middle of a line */ c, d)
+```
+
+::: info Danger {id="danger"}
+
+Multiline Comments must be closed prior to the end of the file, or the file will not be parsed correctly.
+
+:::
 
 ## Variables
 
-Variables can hold data with a specific type. They can be created with the keyword `def` or by using the desired type directly.
-After that comes the name. It usually starts with a lower case letter.
-At the end is the value. If you used `def` then the value will define the type.
+Variables can hold data with a specific type.
+They can be created with the keyword `def` or by using the desired type directly.
+After that comes the name.
+A variable will usually start with a lower case letter.
+At the end is the value.
+If you used `def` then the value will define the type.
 
 ```groovy:no-line-numbers
-def num = 10   // dynamically typed
+def num  = 10  // dynamically typed
 int num2 = 100 // strongly typed
+```
+
+If you want to reassign an already declared variable, simply remove the `def` or other keyword.
+
+```groovy
+def num = 5
+num = 10
 ```
 
 ## Datatypes
 
-There are differnt kinds of datatypes: primitive and complex.
+There are two different kinds of datatypes: primitive and complex.
 
 ### Primitive types
 
-Primitive types can never be null. They always have a value. A whole number is by default a `int`<br>
-Decimals like `1.5` have by default the type `BigDecimal`. Which is most likely not what you want.
-I highly recommend to use the `d` or `f` suffix for `double` or `float`.<br>
-`int`: any whole number from -2^31 to 2^31 - 1<br>
-`long`: any whole number from -2^63 to 2^63 - 1 <br>
-`byte`: any whole number from -2^7 to 2^7 - 1 (-256 - 255)<br>
-`short`: any whole number from -2^15 to 2^15 - 1 (-32768 - 32767)<br>
-`float` a decimal number stored in 32 bits<br>
-`double` a decimal number stored in 64 bits<br>
-`boolean` true or false (nothing else)
+Primitive types can never be `null`.
+They always have a value.
+Primitive types are: `int`, `long`, `byte`, `short`, `float`, `double`, `char`, and `boolean`.
 
-```groovy:no-line-numbers
-def num1 = 10 // int
-def num2 = 10l // long
-def num3 = 10 as byte // byte
-def num4 = 10 as short // byte
-def num5 = 1.0f // float
-def num6 = 1.0d // double
-def bool = true // boolean
-```
+A boolean can be `true` or `false`, but nothing else.
+You can read more about what values a number can be on the specific [Number](./numbers.md) page.
 
 ### Complex types
 
-Complex types are all types that are not primitive. Every object falls under this category.
+Complex types are all types that are not primitive.
+Every object falls under this category.
 Primitive types also have boxed complex types.
-As said before `def num = 1.5` will create a `BigDecimal` which is complex.<br>
-`def num = 10G` will create a `BigInteger` which has almost no value limit, but it can take a lot of memory, so try to not use to often.
 
 ## Functions
 
@@ -82,6 +102,13 @@ def sum(x, y) {
 // if used, it will error if passed invalid types
 def sum2(int x, int y) {
     return x + y
+}
+
+// return can be omitted from the final line
+def sum3(x, y) {
+    println(x)
+    println(y)
+    x + y
 }
 ```
 

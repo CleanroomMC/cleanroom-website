@@ -3,12 +3,11 @@
 
 Maps are similar to lists, but they assign each value to a key.
 Meaning instead of accessing the value by the index, you can get it by using the key.
-Each key can only have one value, but multiple values can have the same key.
+There can only be one value for a given key, but multiple keys can have the same value.
 
-There different types of maps. Javas default map is `HashMap`.
+There different types of maps.
+Java's default map is `HashMap`.
 It doesn't keep the elements order causing the elements to be seemingly random.
-
-Groovy uses `Object2ObjectLinkedOpenHashMap` by default. It is slightly more memory efficient and keeps the element order.
 
 The key and value can be of different types. If the key is a string you can leave out the `'` or `"`.
 

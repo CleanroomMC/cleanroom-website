@@ -18,8 +18,11 @@ def anotherList = ['He', 'llo', ' w', 'or', 'ld!'] // we can put values into the
 
 ## Getting values
 
-Elements of a list can bee accessed via `get` or the `[]` operator.
+Elements of a list can be accessed via `get` or the `[]` operator.
+You can also use the safe index operator `?[]` to try to get the value while avoiding a `NullPointerException`.
+
 Lists index start at 0.
+
 
 ```groovy:no-line-numbers
 def list = [9, 8, 7, 6, 5, 4, 3, 2, 1]
@@ -58,4 +61,36 @@ list[1] = 5 // same thing as above
 // [1, 5, 9]
 list.remove(0) // removes the first element
 // [5, 9]
+```
+
+## Spread Operator
+
+Using the [Spread Operator](./operators.md#spread) you can call methods or access fields on a all objects inside a list.
+
+```groovy
+class Demo {
+    def value
+}
+def list = [new Demo(value: 1), new Demo(value: 2), new Demo(value: 4), new Demo(value: 8)]
+def values = list*.value // gets the value field of each Demo object in the list
+// [1, 2, 4, 8]
+```
+
+A similar mechanism can be used to spread the elements of a list across multiple parameters of a function.
+
+```groovy
+def f(a, b, c, d) {
+    (a + b) * (c + d)
+}
+def list = [1, 2, 4, 8]
+def value = f(*list) // spread the list into the valid arguments
+// 36
+```
+
+Or to spread the elements of a list across another list.
+
+```groovy
+def list = [1, 2, 4, 8]
+def newList = [0, *list, 16]
+// [0, 1, 2, 4, 8, 16]
 ```
