@@ -40,7 +40,7 @@ mods.mekanism.crusher.add(item('minecraft:clay_ball'), item('minecraft:gold_ingo
 
 Just like other recipe types, the Crusher also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.mekanism.crusher.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

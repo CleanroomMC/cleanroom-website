@@ -27,7 +27,7 @@ mods.betterwithmods.Kiln
 
 Just like other recipe types, the Kiln also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.betterwithmods.kiln.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1 and less than or equal to 3.

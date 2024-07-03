@@ -2,7 +2,7 @@
 # Required because otherwise it points to itself as the next page.
 next:
   text: 'Getting Started'
-  link: '/groovy-script/introduction/'
+  link: '/groovy-script/getting_started/'
 ---
 
 # GroovyScript
@@ -48,9 +48,9 @@ GroovyScript can be downloaded on
 
 ## Wiki
 
-- Get started with [Getting Started](./introduction/index.md)
+- Get started with [Getting Started](./getting_started/index.md)
 - Read about the basics of the [Groovy](./groovy/index.md) coding language.
 - Learn how to interact with [Vanilla Registries](./minecraft/index.md).
 - Create your own custom items, blocks, and fluids via the [Content](./content/index.md) compat.
 - Read the documentation for over 25 [Mods](./mods/index.md)
-- Create your own [External Compat](./introduction/external_compat.md) for GroovyScript!
+- Create your own [External Compat](./getting_started/external_compat.md) for GroovyScript!

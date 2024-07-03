@@ -56,7 +56,7 @@ mods.thaum.AspectHelper
 
 Just like other recipe types, the Entity/Block Aspects also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thaumcraft.aspect_helper.aspectBuilder() {open id="abstract"}
 - `EntityEntry`. Sets the entity being modified. Requires either entity or object must be defined, but not both.

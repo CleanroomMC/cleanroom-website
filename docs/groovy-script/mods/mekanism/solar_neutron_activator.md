@@ -44,7 +44,7 @@ mods.mekanism.solar_neutron_activator.add(gas('water'), gas('hydrogen'))
 
 Just like other recipe types, the Solar Neutron Activator also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.mekanism.solar_neutron_activator.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 1.

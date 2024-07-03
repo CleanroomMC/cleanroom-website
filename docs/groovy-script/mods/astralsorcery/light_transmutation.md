@@ -33,7 +33,7 @@ mods.astral.LightTransmutation
 
 Just like other recipe types, the Light Transmutation also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.astralsorcery.light_transmutation.recipeBuilder() {open id="abstract"}
 - `double`. Sets the amount of starlight required to complete the craft. Requires greater than or equal to 0. (Default `0.0d`).

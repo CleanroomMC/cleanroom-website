@@ -42,7 +42,7 @@ mods.thermalexpansion.precipitator.add(1000, item('minecraft:obsidian'), 100)
 
 Just like other recipe types, the Glacial Precipitator also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thermalexpansion.precipitator.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.

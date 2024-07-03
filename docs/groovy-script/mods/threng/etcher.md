@@ -29,7 +29,7 @@ mods.lazyae2.Etcher
 
 Just like other recipe types, the ME Circuit Etching also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.threng.etcher.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

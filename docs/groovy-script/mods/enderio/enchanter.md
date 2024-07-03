@@ -36,7 +36,7 @@ mods.eio.Enchanter
 
 Just like other recipe types, the Enchanter also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.enderio.enchanter.recipeBuilder() {open id="abstract"}
 - `IIngredient`. Sets the item used in the book slot. Requires not null. (Default `item('minecraft:writable_book')`).

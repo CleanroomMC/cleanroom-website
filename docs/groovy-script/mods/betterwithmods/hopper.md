@@ -27,7 +27,7 @@ mods.betterwithmods.Hopper
 
 Just like other recipe types, the Filtered Hopper also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.betterwithmods.hopper.recipeBuilder() {open id="abstract"}
 - `ResourceLocation`. Sets the name of the filter used for the recipe, the input item must be capable of passing through the filter to be processed. Requires not null.

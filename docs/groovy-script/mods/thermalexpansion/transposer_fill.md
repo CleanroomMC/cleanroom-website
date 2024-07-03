@@ -50,7 +50,7 @@ mods.thermalexpansion.transposer_fill.add(1000, item('minecraft:obsidian'), flui
 
 Just like other recipe types, the Fluid Transposer - Fill also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thermalexpansion.transposer_fill.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

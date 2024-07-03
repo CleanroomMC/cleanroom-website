@@ -31,7 +31,7 @@ mods.roots.Spells
 
 Just like other recipe types, the Spells also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.roots.spells.costBuilder() {open id="abstract"}
 - `List<IModifierCost>`. Sets a list of all cost types used to construct a complex Cost object.

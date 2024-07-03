@@ -36,7 +36,7 @@ mods.bloodmagic.Meteor
 
 Just like other recipe types, the Meteor also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../introduction/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.bloodmagic.meteor.recipeBuilder() {open id="abstract"}
 - `int`. Sets the amount of Life Essence drained from the Blood Network to spawn the meteor. Requires greater than or equal to 0. (Default `1000000`).
