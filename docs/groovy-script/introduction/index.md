@@ -20,12 +20,18 @@ While any will do, we recommend using one of the ones listed in [editors](./edit
     - [`groovy/runConfig.json`](./run_config.md)
     - `groovy/postInit/main.groovy` (default script file)
 
-## Groovy log
+## Groovy Log
 
-Everything groovy related has its own log, and it generates its own file. If you run into issues with your script you
-should look here first.
+Everything groovy related has its own log, and it generates its own file.
+If you run into issues with your script you should look here first.
 
-The files directory is always `[Minecraft instance path]/groovy.log`
+You can use the `log.info` and `println` to add custom messages to the log file.
+You can also use `log.warn` and `log.error` to indicate something has gone wrong.
+
+The files directory is always `[Minecraft instance path]/groovy.log` for clients
+and `[Minecraft instance path]/groovy_server.log` for servers.
+
+When sharing the Groovy Log, you should share the entire text of the log and that of the relevant class file as text.
 
 ## Run Config
 
