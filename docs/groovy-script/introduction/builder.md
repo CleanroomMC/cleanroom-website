@@ -17,12 +17,12 @@ class RecipeBuilder {
 
     RecipeBuilder input(IIngredient ingredient) {
         this.inputs.add(ingredient)
-        return this     // the method returns this builder (2)
+        return this     // the method returns this builder
     }
 
     RecipeBuilder output(ItemStack itemStack) {
         this.outputs.add(itemStack)
-        return this     // the method returns this builder (3)
+        return this     // the method returns this builder
     }
 
     Recipe build() {    // the build method usually returns the object that will be build
@@ -57,7 +57,7 @@ The same code as above can also be put in a single line:
 def recipe = new RecipeBuilder().input(item('minecraft:iron_ingot')).input(ite('minecraft:clay_ball') * 3).output(item('minecraft:nether_star')).build()
 ```
 
-This does exactly the same thing, but as you can see it is uglier and harder to read. Theline breaks are purely aesthetically, but are highly recommended.
+This does exactly the same thing, but as you can see it is uglier and harder to read. The line breaks are purely aesthetically, but are highly recommended.
 
 Now lets see what the recipe could look like without a builder:
 
