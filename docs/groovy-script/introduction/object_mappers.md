@@ -6,7 +6,7 @@ These are always available by default in every file.
 
 :::: info Danger {id="danger"}
 
-If the file name is the the same as the name of an Object Mapper the Object Mapper will not function properly.
+If the file name is the same as the name of an Object Mapper the Object Mapper will not function properly.
 
 ::: info Example {id="example"}
 
@@ -49,7 +49,7 @@ sound('minecraft:block.glass.break')
 
 ::: info Note {id="note"}
 
-In all cases, it must be the full resource location of the item/sound/enchantment - you cannot ommit `minecraft`.
+In all cases, it must be the full resource location of the item/sound/enchantment - you cannot omit `minecraft`.
 
 :::
 

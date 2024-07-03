@@ -31,7 +31,7 @@ The files directory is always `[Minecraft instance path]/groovy.log`
 
 The [Run Config](./run_config.md) controls some settings and the load order of scripts.
 
-## Important infos
+## Important Information
 
 1. Groovy scripts must end in `.groovy`, `.gy`, `.gvy`, or `.gsh`.
 2. Groovy scripts must be defined somehow in the [run config](./run_config.md) to be executed

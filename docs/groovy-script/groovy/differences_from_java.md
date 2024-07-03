@@ -1,7 +1,7 @@
 
 # Differences from Java
 
-Groovy language grammar is derived from Java grammer,
+Groovy language grammar is derived from Java grammar,
 with various enhancements in the form of specific constructs and allowing additional simplifications.
 
 In most cases, the difference is optional, and writing the code in the way one would write Java would have no issues.
@@ -53,7 +53,7 @@ println 'hello'
 Prior to Java 10, you had to declare a variable using the variable type.
 After Java 10, using the keyword `var`, you could declare a variable using `var` without having to specify the type ahead of time.
 
-In Groovy, you can use `def` to accompish the same thing.
+In Groovy, you can use `def` to accomplish the same thing.
 
 ::: code-group
 

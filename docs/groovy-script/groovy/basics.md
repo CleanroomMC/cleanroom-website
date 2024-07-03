@@ -5,7 +5,7 @@ order: 1000
 # Groovy Basics
 
 This will introduce you to the basics of Groovy.
-Afterwards, either use the sidebar to navigate to additional pages on this wiki,
+Afterward, either use the sidebar to navigate to additional pages on this wiki,
 or use the external links in [Further Reading](#further-reading).
 
 ## Comments
@@ -62,9 +62,9 @@ def num = 5
 num = 10
 ```
 
-## Datatypes
+## Types
 
-There are two different kinds of datatypes: primitive and complex.
+There are two different kinds of types: primitive and complex.
 
 ### Primitive types
 
@@ -124,7 +124,7 @@ f(sum(4, 16)) // calls f with the result of sum
 ## Imports
 
 If you want to use any classes short name you need to import the full class name.
-Most of javas classes are imported by default.
+Most of the Java classes are imported by default.
 
 ```groovy:no-line-numbers
 import my.package.MyClass // import a single class

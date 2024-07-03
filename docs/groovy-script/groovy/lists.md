@@ -5,7 +5,7 @@ Lists are data types that can hold multiple values of a certain type.
 
 Lists are dynamically sized. So that means if we create a list of 0 length, we can still add elements to it.
 
-There are multiple ways to create lists. The elements of a list are ordered, so the order wont change randomly.
+There are multiple ways to create lists. The elements of a list are ordered, so the order won't change randomly.
 
 ```groovy:no-line-numbers
 // most simple list, size = 0
@@ -46,7 +46,7 @@ def subList3 = list[2..-1] // [7, 6, 5, 4, 3, 2, 1]
 
 ## Modifying lists
 
-Lists can modified by using `set()`, `add()` and `remove()`.
+Lists can be modified by using `set()`, `add()` and `remove()`.
 We can also use the `[]` and `<<` operators
 
 ```groovy:no-line-numbers
@@ -65,7 +65,7 @@ list.remove(0) // removes the first element
 
 ## Spread Operator
 
-Using the [Spread Operator](./operators.md#spread) you can call methods or access fields on a all objects inside a list.
+Using the [Spread Operator](./operators.md#spread) you can call methods or access fields on an all objects inside a list.
 
 ```groovy
 class Demo {

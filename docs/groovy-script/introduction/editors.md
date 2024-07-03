@@ -26,7 +26,7 @@ By default, the language server is started with a port of `25564`. This is confi
 This extension will work with any fork of VS Code, but will presume you are using VS Code.
 
 GroovyScript has created an extension, called [`GroovyScript`](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview), distributed by `CleanroomMC`.
-This extension adds syntax validation, auto-completion for all installed mods, and hover infomation.
+This extension adds syntax validation, auto-completion for all installed mods, and hover information.
 
 
 ### Installation
@@ -46,7 +46,7 @@ This language support will work with any variation of Emacs, but will presume yo
 
 ### Installation
 
-1. Open Emacs and install [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/installation/), and follow futher installation instructions for lsp-mode.
+1. Open Emacs and install [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/installation/), and follow further installation instructions for lsp-mode.
 2. Install the GroovyScript LSP file here:
 ::: details GroovyScript LSP {id="example"}
 ```lisp title="lsp-groovyscript.el"

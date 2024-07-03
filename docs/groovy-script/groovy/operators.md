@@ -12,13 +12,13 @@ You can read more about operators on the [official documentation](https://docs.g
 ## Types of Operators
 
 
-### Arithmatic
+### Arithmetic
 
 
 The basic math operators are the same as they always are.
 
 | Symbol   | Name           | Operation                                |
-| -------- | -------------- | ---------------------------------------- |
+|----------|----------------|------------------------------------------|
 | `a + b`  | Addition       | add `a` and `b`                          |
 | `a - b`  | Subtraction    | subtract `b` from `a`                    |
 | `a / b`  | Division       | divide `a` by `b`                        |
@@ -30,13 +30,13 @@ The basic math operators are the same as they always are.
 ### Compound Assignment
 
 
-You can use several different operators in conjuction with an equal sign to update a variable.
+You can use several different operators in conjunction with an equal sign to update a variable.
 This will also implicitly cast the output into the same type as `a`.
 
 `a [op]= b` is equivalent to `a = a [op] b`.
 
 | Symbol     | Name                 | Operation     |
-| ---------- | -------------------- | ------------- |
+|------------|----------------------|---------------|
 | `a = b`    | Assignment           | `a = b`       |
 | `a =+ b`   | Addition             | `a = a + b`   |
 | `a =- b`   | Subtraction          | `a = a - b`   |
@@ -61,7 +61,7 @@ There are two shorthand ways to write `a = a + 1` and two to write `a = a - 1`.
 
 The two ways differ in what value they return - `a++` returns the value of `a` *before* being increased,
 while `++a` returns the value of `a` *after* being increased.
-When interacting with these operators, to avoid confusion, you should use them as a standalone statment -
+When interacting with these operators, to avoid confusion, you should use them as a standalone statement -
 
 ```groovy
 def x = 5
@@ -73,7 +73,7 @@ Code.run(x++) // don't do this // [!code warning]
 :::
 
 | Symbol | Name              | Operation             |
-| ------ | ----------------- | --------------------- |
+|--------|-------------------|-----------------------|
 | `a++`  | Postfix Increment | `return a; a = a + 1` |
 | `a--`  | Postfix Decrement | `return a; a = a - 1` |
 | `++a`  | Prefix Increment  | `a = a + 1; return a` |
@@ -86,7 +86,7 @@ Code.run(x++) // don't do this // [!code warning]
 Compare two values with each other.
 
 | Symbol    | Name                     | Operation                                   |
-| --------- | ------------------------ | ------------------------------------------- |
+|-----------|--------------------------|---------------------------------------------|
 | `a == b`  | Equals                   | true if `a` is the same as `b`              |
 | `a != b`  | Not Equals               | true if `a` is not the same as `b`          |
 | `a < b`   | Less Than                | true if `a` is less than `b`                |
@@ -105,7 +105,7 @@ The AND and OR operators will short-circuit, and not run the right hand side if 
 This means you can do things like `bool && run()`, and `run()` will only be called if `bool` is true.
 
 | Symbol     | Name        | Operation                          |
-| ---------- | ----------- | ---------------------------------- |
+|------------|-------------|------------------------------------|
 | `a && b`   | Logical And | true if both `a` and `b` are true  |
 | `a \|\| b` | Logical Or  | true if either `a` or `b` are true |
 | `!a`       | Logic Not   | true if `a` is false               |
@@ -118,7 +118,7 @@ Bitwise operations are named as such because they directly manipulate bits.
 Note that bitwise operators do *not* short-circuit, and will always check both sides of the equation.
 
 | Symbol    | Name                 |
-| --------- | -------------------- |
+|-----------|----------------------|
 | `a & b`   | Bitwise AND          |
 | `a \| b`  | Bitwise OR           |
 | `a ^ b`   | Bitwise XOR          |
@@ -134,7 +134,7 @@ Note that bitwise operators do *not* short-circuit, and will always check both s
 There are some operators to help with handling `null`, and avoid `NullPointerException`s.
 
 | Symbol      | Name            | Operation                                                                            |
-| ----------- | --------------- | ------------------------------------------------------------------------------------ |
+|-------------|-----------------|--------------------------------------------------------------------------------------|
 | `a ? b : c` | Ternary         | returns `b` if `a` is true and c if `a` is false                                     |
 | `a ?: b`    | Elvis           | returns `b` if `a` is false, otherwise returns `a`                                   |
 | `a?.b`      | Safe Navigation | used on an object, will return `null` if `a` is `null`, otherwise will return `b`    |
@@ -145,7 +145,7 @@ There are some operators to help with handling `null`, and avoid `NullPointerExc
 
 
 | Symbol | Name                | Operation                                                            |
-| ------ | ------------------- | -------------------------------------------------------------------- |
+|--------|---------------------|----------------------------------------------------------------------|
 | `a.b`  | Field access        | returns `getB` if the method exists, otherwise returns the field `b` |
 | `a.@b` | Direct field access | returns the field `b` instead of the method `getB()`                 |
 
@@ -154,7 +154,7 @@ There are some operators to help with handling `null`, and avoid `NullPointerExc
 
 
 | Symbol | Name             | Operation                                                   |
-| ------ | ---------------- | ----------------------------------------------------------- |
+|--------|------------------|-------------------------------------------------------------|
 | `a.&b` | Method pointer   | returns a reference to the method `b` instead of calling it |
 | `a::b` | Method reference | functionally an alias of `a.&b`                             |
 
@@ -163,7 +163,7 @@ There are some operators to help with handling `null`, and avoid `NullPointerExc
 
 
 | Symbol    | Name    | Operation                                                   |
-| --------- | ------- | ----------------------------------------------------------- |
+|-----------|---------|-------------------------------------------------------------|
 | `~a`      | Pattern | parses String `a` into a Regex Pattern                      |
 | `a =~ b`  | Find    | runs `~b`, then creates a Matcher against String `a`        |
 | `a ==~ b` | Match   | runs ` a =~ b`, then returns true if there were any matches |
@@ -175,7 +175,7 @@ There are some operators to help with handling `null`, and avoid `NullPointerExc
 You can manipulate an array of objects
 
 | Symbol | Name      | Operation                                                            |
-| ------ | --------- | -------------------------------------------------------------------- |
+|--------|-----------|----------------------------------------------------------------------|
 | `a*.b` | Spread    | calls `b` on all items in array `a`                                  |
 | `*a`   | Arguments | expands the array `a` into individual elements when calling a method |
 
@@ -187,7 +187,7 @@ You can create a range, typically a range of numbers, in a shorthand way.
 This is typically used as part of a loop or getting a subset of a list.
 
 | Symbol   | Name  | Operation                                                                            |
-| -------- | ----- | ------------------------------------------------------------------------------------ |
+|----------|-------|--------------------------------------------------------------------------------------|
 | `a..b`   | Range | Range from `a` to `b`, inclusive on both bounds                                      |
 | `a<..b`  | Range | Range from `a` to `b`, exclusive on the lower bound and inclusive on the upper bound |
 | `a..<b`  | Range | Range from `a` to `b`, inclusive on the lower bound and exclusive on the upper bound |
@@ -198,7 +198,7 @@ This is typically used as part of a loop or getting a subset of a list.
 
 
 | Symbol | Name    | Operation                              |
-| ------ | ------- | -------------------------------------- |
+|--------|---------|----------------------------------------|
 | `<>`   | Diamond | syntax sugar relating to generic types |
 
 
@@ -208,7 +208,7 @@ Groovy has a mechanism where a symbol can be transformed into calling a method o
 This is a full table of these Operators, and what method they call.
 
 | Symbol     | Method Called             |
-| ---------- | ------------------------- |
+|------------|---------------------------|
 | `a + b`    | `a.plus(b)`               |
 | `a - b`    | `a.minus(b)`              |
 | `a * b`    | `a.multiply(b)`           |

@@ -17,7 +17,7 @@ If you declare the variable via `def`, the type will be communicated based on th
 ### Whole numbers
 
 |     Type     | Suffix  | Limits                                   |
-| :----------: | :-----: | ---------------------------------------- |
+|:------------:|:-------:|------------------------------------------|
 |    `byte`    |         | from -2^7 to 2^7 - 1 (-256 - 255)        |
 |   `short`    |         | from -2^15 to 2^15 - 1 (-32768 - 32767)  |
 |    `int`     | `i`/`I` | from -2^31 to 2^31 - 1                   |
@@ -27,7 +27,7 @@ If you declare the variable via `def`, the type will be communicated based on th
 ### Decimal numbers
 
 |     Type     | Suffix  | Limits                                   |
-| :----------: | :-----: | ---------------------------------------- |
+|:------------:|:-------:|------------------------------------------|
 |   `float`    | `f`/`F` | stored in 32 bits                        |
 |   `double`   | `d`/`D` | stored in 64 bits                        |
 | `BigDecimal` | `g`/`G` | has no limit, but increasing memory cost |
@@ -98,7 +98,7 @@ When declaring a number, do not use `0`s as padding on the front, as it may caus
 
 #### Underscores
 
-For readability you can use underscores in any position besides the first to act as readability enhancers.
+For readability, you can use underscores in any position besides the first to act as readability enhancers.
 
 ```groovy:no-line-numbers
 def million1 = 1000000
@@ -136,7 +136,7 @@ def num2 = 0xffffff // 16,777,215
 ```
 
 
-## Arithmatic
+## Arithmetic
 
 
 ### Basics

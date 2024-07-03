@@ -64,8 +64,8 @@ We use `.minecraft/resources` as the root here.
 
 ## Model files
 
-In model or blockstate json files you may also find resource locations. Lets
-take `assets/minecraft/models/block/andesite.json` for example (`assets` being the root folder). In there you will find
+In model or blockstate json files you may also find resource locations.
+If we take `assets/minecraft/models/block/andesite.json` for example (`assets` being the root folder), in there you will find
 
 ```json
 {

@@ -72,7 +72,7 @@ Defines the type of class created.
 
 `record`: Creates a record class, which is used to store data and cannot extend another class.
 
-`trait`: Creates a trait, which is a custom type for Groory that has the features of an interface and has a state that can be referenced.
+`trait`: Creates a trait, which is a custom type for Groovy that has the features of an interface and has a state that can be referenced.
 
 
 ## Inheritance
@@ -85,7 +85,7 @@ Defines the type of class created.
 
 `implements`: Indicates that the given class implements an interface, requiring specific methods to exist.
 
-`sealed`: Indicates that the class can only be extended or implemented by specificly allowed classes.
+`sealed`: Indicates that the class can only be extended or implemented by specifically allowed classes.
 
 `non-sealed`: Indicates that the class can be extended by any class, even if a parent class or interface is `sealed` and would otherwise prevent this.
 
@@ -126,8 +126,8 @@ or that the given method must be overridden by any inheriting classes.
 
 `var`: Creates a variable or defines a method, typically functionally the same as `def`.
 
-`final`: When creating a class preceeding it with `final` will cause the class to not be able to be extended.
-When preceeding declaring a variable or field, it will prevent re-assignment.
+`final`: When creating a class preceding it with `final` will cause the class to not be able to be extended.
+When preceding declaring a variable or field, it will prevent re-assignment.
 
 
 ## Logic
@@ -147,10 +147,10 @@ When preceeding declaring a variable or field, it will prevent re-assignment.
 
 
 `if`: Runs the code inside the if block provided the code inside the if statement evaluates to true.
-If it is false, checks for an `if else` block or an `else` block afterwards.
+If it is false, checks for an `if else` block or an `else` block afterward.
 
 `else`: Attached to an `if` statement, runs the code inside the else block provided the if statement
-and all preceeding else if statements evaluated to false.
+and all preceding else if statements evaluated to false.
 
 
 ### Loops

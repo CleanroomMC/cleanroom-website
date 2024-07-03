@@ -3,7 +3,7 @@
 
 This file defines how each script file should be executed.
 It can also store some general info about the mod pack.
-Thefile will be generated if it doesn't exist.
+The file will be generated if it doesn't exist.
 If you don't understand what this is or how it works you can skip this.
 All you need to know is that you put your scripts with recipes in `groovy/postInit`.
 Scripts with stuff like Item Creation go in `groovy/preInit`.

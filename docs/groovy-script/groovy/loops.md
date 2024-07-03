@@ -1,7 +1,7 @@
 
 # Loops
 
-Loops are useful if you want to do the operation multiple times or if you want to do a operation for each element in a list.
+Loops are useful if you want to do the operation multiple times or if you want to do an operation for each element in a list.
 
 ## While loop
 

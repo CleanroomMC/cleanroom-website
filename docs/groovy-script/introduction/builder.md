@@ -65,7 +65,7 @@ Now lets see what the recipe could look like without a builder:
 def recipe = new Recipe([item('minecraft:iron_ingot'), item('minecraft:clay_ball') * 3], [ite('minecraft:nether_star')])
 ```
 
-That doesn't look too bad right? Now imagine the recipe requires 5 inputs. Or 10. Or 20. Andyou need to specify energy requirement, duration and maybe fluids.<br>
+That doesn't look too bad right? Now imagine the recipe requires 5 inputs. Or 10. Or 20. And you need to specify energy requirement, duration and maybe fluids.<br>
 This is where Builders shine.
 
 :::
