@@ -19,7 +19,6 @@ const sidebar = generateSidebar([
     collapseDepth: 2,
     folderLinkNotIncludesFileName: true,
     useFolderLinkFromIndexFile: true,
-    includeRootIndexFile: true,
     rootGroupText: 'GroovyScript',
     rootGroupLink: '.',
     rootGroupCollapsed: false,
