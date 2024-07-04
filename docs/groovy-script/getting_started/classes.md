@@ -9,9 +9,10 @@ this refers specifically to files interacting with the [`runConfig.json`](./run_
 ## Class Declaration
 
 
-::: info Warning {id="warning"}
+::: info Bug {id="bug"}
 
-In some versions of GroovyScript, class files need a package declaration
+Starting from version `1.0.0` and getting fixed in version `1.1.0`
+there was a bug which caused class files require a package declaration
 in the form of `package classes` at the top of the script to be functional.
 
 :::
