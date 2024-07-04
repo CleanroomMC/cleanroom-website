@@ -39,24 +39,31 @@ It should have an instance created inside it for access purposes.
 
 ::: info DemoRegistry {id="example"}
 ```groovy
-class DemoRegistry extends VirtualizedRegistry<DemoRecipe> {
+import example.DemoHolder
+import example.DemoRecipe
 
-    DemoRegistry instance = new DemoRegistry()
+class DemoRegistry {
 
-    @Override
+    static def instance = new DemoRegistry()
+
+    def scripted = []
+    def backup = []
+
     void onReload() {
-        DemoHolder.DemoRecipeList.removeAll(removeScripted());
-        DemoHolder.DemoRecipeList.addAll(restoreFromBackup());
+        scripted.each { DemoHolder.demoRecipeList.remove(it) }
+        scripted.clear()
+        backup.each { DemoHolder.demoRecipeList.add(it) }
+        backup.clear()
     }
 
     void add(DemoRecipe recipe) {
-        addScripted(recipe);
-        DemoHolder.DemoRecipeList.add(recipe);
+        scripted << recipe
+        DemoHolder.demoRecipeList.add(recipe)
     }
 
     void remove(DemoRecipe recipe) {
-        addBackup(recipe);
-        DemoHolder.DemoRecipeList.remove(recipe);
+        backup << recipe
+        DemoHolder.demoRecipeList.remove(recipe)
     }
 }
 ```
