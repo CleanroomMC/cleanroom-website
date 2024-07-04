@@ -78,7 +78,7 @@ It currently doesn't do anything special.
 ## `debug`
 
 If this is false all messages that logged to debug will not be logged.
-This setting is great for debugging, as it adds additional information to the [`groovy.log`](./index.md#groovy-log)
+This setting is great for debugging, as it adds additional information to the [`groovy.log`](./groovy_log.md)
 and logs the line numbers in errors.
 - Can be accessed in a script via `isDebug()`.
 
