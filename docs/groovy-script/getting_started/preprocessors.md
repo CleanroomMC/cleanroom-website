@@ -17,10 +17,10 @@ Currently, there are 6 preprocessors, which can be combined in any way.
 
 ```groovy
 // debug_only
-// mods_loaded chisel
-// mods_loaded gregtech
-// side client
-// packmode easy
+// mods_loaded: chisel
+// mods_loaded: gregtech
+// side: client
+// packmode: easy
 println '''
 this will only run if debug is true,
 both chisel and gregtech are loaded,
@@ -83,22 +83,23 @@ println 'will only run once'
 
 
 Accepts any number of words indicating required modids.
-Words should be separated by spaces, with no other characters included.
+After the preprocessor is declared, there should be a colon `:` followed by the required modids.
+Words should be separated by commas `,` and allow any amount of whitespace between them, but no other characters can be included.
 
 Allows the script file to be run if and only if the currently loaded mods include all listed mods.
 
 ::: info Example {id="example"}
 
 ```groovy
-// mods_loaded chisel
+// mods_loaded: chisel
 println 'a mod with the modid of chisel is loaded'
 ```
 
 <br>
 
 ```groovy
-// mods_loaded chisel botania
-println 'both chisel and botania are loaded'
+// mods_loaded: chisel,botania , gregtech
+println 'all three mods, chisel, botania, and gregtech are loaded'
 ```
 
 :::
@@ -108,6 +109,7 @@ println 'both chisel and botania are loaded'
 
 
 Accepts a single word indicating the side, either `CLIENT` or `SERVER`, case insensitive.
+After the preprocessor is declared, there should be a colon `:` followed by desired side.
 
 Allows the script file to be run if and only if the game is being loaded by the current side.
 Dedicated Servers are considered Server-side.
@@ -116,7 +118,7 @@ Typically used for rendering, which is client-only.
 ::: info Example {id="example"}
 
 ```groovy
-// side client
+// side: client
 println 'will only run on the client'
 ```
 
@@ -127,14 +129,15 @@ println 'will only run on the client'
 
 
 Accepts any number of words indicating valid packmodes.
-Words should be separated by spaces, with no other characters included.
+After the preprocessor is declared, there should be a colon `:` followed by the required packmodes.
+Words should be separated by commas `,` and allow any amount of whitespace between them, but no other characters can be included.
 
 Allows the script file to be run if and only if the current packmode is set to one of the packmodes listed.
 
 ::: info Example {id="example"}
 
 ```groovy
-// packmode easy normal
+// packmode: easy, normal
 println 'packmode is either easy or normal, but not hard'
 ```
 
