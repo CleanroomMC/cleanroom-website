@@ -15,12 +15,19 @@ Read [here](./differences_from_java.md#strings) to see a direct comparison.
 
 :::
 
+## Single-Quoted String
+
 The most simple way is by using `''`.
 This creates a `String`, and nothing else.
 In most cases this is what you want.
 
+
+## Double-Quoted String
+
 A more advanced way is by using `""`.
 This creates a `GString` instead of a `String`, which allows you to use variables inside the literal via the dollar sign `$`.
+
+You can read more about `GString`s on the [official documentation](https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#_double_quoted_string)
 
 ::: info Tip {id="tip"}
 
@@ -29,7 +36,13 @@ you should use single quotes `''` unless you explicitly desire the features of a
 
 :::
 
+
+## Slashy String
+
 The last way is by using `\\`. This is perfect for regex, because you don't need to escape any `\`.
+
+
+## Examples
 
 ```groovy
 def s = 'hello' // String
