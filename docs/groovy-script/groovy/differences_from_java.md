@@ -17,7 +17,7 @@ You can read more about the differences on the [official documentation](https://
 
 ## Semicolons
 
-Semicolons are the end of a line are optional.
+Semicolons at the end of a line are optional.
 
 ::: code-group
 
@@ -76,18 +76,42 @@ def num = 5
 
 In Java, arrays are declared via curly braces `{}` surrounding the variable.
 
-In Groovy, unless using the explicit array creation syntax, you need to use square braces `[]` instead.
+In Groovy, you can use the explicit array creation syntax as normal,
+and can also declare an array via using square braces `[]` and explicitly declaring it as an array.
+If you do not explicitly declare it as an array, using square braces `[]` will create a [list](#lists) instead.
 
 ::: code-group
 
 ```java
-int[] array = {1, 2, 3};
-int[] array2 = new int[] {1, 2, 3};
+int[] array0 = new int[] {1, 2, 3};
+int[] array1 = {1, 2, 3};
 ```
 
 ```groovy
-def array = [1, 2, 3]
-def array2 = new int[] {1, 2, 3}
+def array0 = new int[] {1, 2, 3}
+def array1 = [1, 2, 3] as int[]
+int[] array2 = [1, 2, 3]
+def list = [1, 2, 3] // this creates a list, not an array! // [!code warning]
+```
+
+:::
+
+## Lists
+
+In Java, there is no shorthand way to create a list.
+
+In Groovy, you can easily create a list using square braces `[]`, using commas `,` to separate the values.
+
+::: code-group
+
+```java
+List<Integer> list = new ArrayList<>();
+list.add("example");
+list.add("demo");
+```
+
+```groovy
+def list = ["example", "demo"]
 ```
 
 :::
@@ -96,7 +120,7 @@ def array2 = new int[] {1, 2, 3}
 
 In Java, there is no shorthand way to create a map.
 
-In Groovy, you can easily combine the same square braces `[]` used to create arrays with colons `:` to delineate a key-value entry.
+In Groovy, you can easily combine the same square braces `[]` used to create lists with colons `:` to delineate a key-value entry.
 
 ::: code-group
 
@@ -339,7 +363,7 @@ DemoClass obj = new DemoClass().with {
     clay = 'clay'
     current = 5
     sayGoodbye()
-    it // returns 'it'
+    it // returns 'it', with 'it' being declared via the creation of the closure
 }
 ```
 
