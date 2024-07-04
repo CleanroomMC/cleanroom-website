@@ -223,8 +223,6 @@ This is a full table of these Operators, and what method they call.
 | `a ^ b`    | `a.xor(b)`                |
 | `<=>`      | `a.compareTo(b)`          |
 | `a == b`   | `a.equals(b)`             |
-| `a[b]`     | `a.getAt(b)`              |
-| `a[b] = c` | `a.putAt(b, c)`           |
 | `a as b`   | `a.asType(b)`             |
 | `a()`      | `a.call()`                |
 | `a[b]`     | `a.getAt(b)`              |
