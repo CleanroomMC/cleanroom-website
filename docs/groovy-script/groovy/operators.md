@@ -41,12 +41,12 @@ This will also implicitly cast the output into the same type as `a`.
 | Symbol     | Name                 | Operation     |
 |------------|----------------------|---------------|
 | `a = b`    | Assignment           | `a = b`       |
-| `a =+ b`   | Addition             | `a = a + b`   |
-| `a =- b`   | Subtraction          | `a = a - b`   |
-| `a =/ b`   | Division             | `a = a / b`   |
-| `a =* b`   | Multiplication       | `a = a * b`   |
-| `a =% b`   | Remainder            | `a = a % b`   |
-| `a =** b`  | Power                | `a = a ** b`  |
+| `a += b`   | Addition             | `a = a + b`   |
+| `a -= b`   | Subtraction          | `a = a - b`   |
+| `a /= b`   | Division             | `a = a / b`   |
+| `a *= b`   | Multiplication       | `a = a * b`   |
+| `a %= b`   | Remainder            | `a = a % b`   |
+| `a **= b`  | Power                | `a = a ** b`  |
 | `a ?= b`   | Elvis                | `a = a ?: b`  |
 | `a &= b`   | Bitwise And          | `a = a & b`   |
 | `a \|= b`  | Bitwise OR           | `a = a \| b`  |
