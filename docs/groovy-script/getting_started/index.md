@@ -16,22 +16,18 @@ While any will do, we recommend using one of the ones listed in [editors](./edit
    depends on it
 4. Launch minecraft without adding any files
 5. GroovyScript will create several files
-    - [`logs/groovy.log`](#groovy-log)
+    - [`logs/groovy.log`](./groovy_log.md)
     - [`groovy/runConfig.json`](./run_config.md)
     - `groovy/postInit/main.groovy` (default script file)
 
 ## Groovy Log
 
-Everything groovy related has its own log, and it generates its own file.
-If you run into issues with your script you should look here first.
 
-You can use the `log.info` and `println` to add custom messages to the log file.
-You can also use `log.warn` and `log.error` to indicate something has gone wrong.
+The [Groovy Log](./groovy_log.md) is where GroovyScript logs all of its information for separate use.
 
-The files directory is always `[Minecraft instance path]/logs/groovy.log` for clients
+It is always located at `[Minecraft instance path]/logs/groovy.log` for clients
 and `[Minecraft instance path]/logs/groovy_server.log` for servers.
 
-When sharing the Groovy Log, you should share the entire text of the log and that of the relevant class file as text.
 
 ## Run Config
 
