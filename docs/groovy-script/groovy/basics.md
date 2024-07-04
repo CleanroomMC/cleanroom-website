@@ -51,8 +51,8 @@ At the end is the value.
 If you used `def` then the value will define the type.
 
 ```groovy:no-line-numbers
-def num  = 10  // dynamically typed
-int num2 = 100 // strongly typed
+def num0 = 10   // dynamically typed
+int num1 = 100 // strongly typed
 ```
 
 If you want to reassign an already declared variable, simply remove the `def` or other keyword.
