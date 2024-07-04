@@ -20,12 +20,6 @@ in the form of `package classes` at the top of the script to be functional.
 Classes must be declared in the locations specified in the [`runConfig.json`](./run_config.md#classes) by the classes element.
 
 
-## Compiling
-
-
-Classes are [Cached](./reloading.md#class-caching) to improve the performance of reloading.
-
-
 ## Importing
 
 
