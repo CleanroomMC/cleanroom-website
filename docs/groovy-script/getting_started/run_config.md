@@ -57,8 +57,9 @@ Important for [content](../content/index.md).
 
 The id of the pack.
 - Can be accessed in a script via `getPackId()`.
-The pack id is very important. It must only consist of lower case letters and `_`.
-Important for [content](../content/index.md).
+The pack id is very important.
+It must only consist of lower case letters and `_`.
+It is required for most forms of adding recipes and all forms of creating new [content](../content/index.md).
 
 ::: info Failure {id="failure"}
 If some mod tries to use the pack id internally and the pack id is not specified a fatal message will logged.
@@ -77,7 +78,8 @@ It currently doesn't do anything special.
 ## `debug`
 
 If this is false all messages that logged to debug will not be logged.
-Great for debugging.
+This setting is great for debugging, as it adds additional information to the [`groovy.log`](./index.md#groovy-log)
+and logs the line numbers in errors.
 - Can be accessed in a script via `isDebug()`.
 
 ## `classes`
@@ -89,10 +91,10 @@ This works exactly like the `loaders` property.
 
 ::: info For example {id="example"}
 ```json
-"classes": {
+"classes": [
   // if there is no subcategory, implicitly added to the "all" category
   // and runs in all loaders
-}
+]
 ```
 
 <br>
@@ -112,7 +114,7 @@ This works exactly like the `loaders` property.
 ## `loaders`
 
 This defines at what stage what files should be loaded.
-By default, there are three stages: `preInit`, `init`, and `postInit`.
+There are three stages scripts can be loaded in: `preInit`, `init`, and `postInit`.
 
 ### `preInit`
 
@@ -166,7 +168,7 @@ executed. After that only `late_stuff.groovy` will be executed.
 ## `packmode`
 
 This contains various instructions for controls for the "packmode" feature.
-- The current packmode can be gotten via `getPackmode()`, and you can check if the given packmode is enabled via `isPackmode(String)`
+- The current packmode can be obtained via `getPackmode()`, and you can check if the given packmode is enabled via `isPackmode(String)`
 
 ### `values`
 
