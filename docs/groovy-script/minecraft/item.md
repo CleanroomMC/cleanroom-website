@@ -6,9 +6,9 @@ Item stacks can be obtained with the item bracket handler.
 def iron_ingot = item('minecraft:iron_ingot', 4) * 6
 ```
 
-The 4 inside the () is the metadata. Iron ingot doesn't have any sub items so it will result in an item that doesn't actually exist.
+The 4 inside the () is the metadata. Iron ingot doesn't have any sub items, so it will result in an item that doesn't actually exist.
 The `* 6` at the end marks the amount. The item id `'minecraft:iron_ingot'` is a string and can be replaced by anything that makes a string. <br>
-The following also returns a iron ingot.
+The following also returns an iron ingot.
 
 ```groovy:no-line-numbers
 def iron_ingot = 'iron_ingot'

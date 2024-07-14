@@ -38,7 +38,7 @@ mods.ticon.Melting
 
 Just like other recipe types, the Melting also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.tconstruct.melting.recipeBuilder() {open id="abstract"}
 - `int`. Required temperature for melting. Also determines the speed of the melt. Requires greater than or equal to 1. (Default `300`).

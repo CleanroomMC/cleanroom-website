@@ -1,5 +1,5 @@
 ---
-title: Strings
+order: 500
 ---
 
 # Strings
@@ -8,11 +8,41 @@ Strings are a sequence of characters.
 
 There are multiple ways to define a string and each does something different.
 
-The most simple way is by using `''`. In java these are used for chars. Here they create strings and don't do anything special.
+::: info Warning {id="warning"}
 
-A more advanced way is by using `""`. They allow you to use variables inside the literal.
+Strings in Java function differently that in Groovy!
+Read [here](./differences_from_java.md#strings) to see a direct comparison.
+
+:::
+
+## Single-Quoted String
+
+The most simple way is by using `''`.
+This creates a `String`, and nothing else.
+In most cases this is what you want.
+
+
+## Double-Quoted String
+
+A more advanced way is by using `""`.
+This creates a `GString` instead of a `String`, which allows you to use variables inside the literal via the dollar sign `$`.
+
+You can read more about `GString`s on the [official documentation](https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#_double_quoted_string)
+
+::: info Tip {id="tip"}
+
+Because `GString` can have unexpected results when containing a dollar sign `$`,
+you should use single quotes `''` unless you explicitly desire the features of a `GString`.
+
+:::
+
+
+## Slashy String
 
 The last way is by using `\\`. This is perfect for regex, because you don't need to escape any `\`.
+
+
+## Examples
 
 ```groovy
 def s = 'hello' // String

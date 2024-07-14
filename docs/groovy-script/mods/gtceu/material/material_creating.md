@@ -1,6 +1,3 @@
----
-title: Creating Materials
----
 
 # Creating Materials
 

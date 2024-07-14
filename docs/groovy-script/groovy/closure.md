@@ -1,6 +1,3 @@
----
-title: Closures
----
 
 # Closures
 
@@ -69,7 +66,7 @@ This will print `Hello World` since we pass that as an argument to the function.
 :::
 
 ## Variable Environments
-This is not a official name. Internally they are called delegates. Basically groovy allows you to attach objects to closures.
+This is not an official name. Internally they are called delegates. Basically groovy allows you to attach objects to closures.
 You can then use any property of that object in the closure directly.
 
 ::: info For example {id="example"}

@@ -42,7 +42,7 @@ mods.mekanism.chemical_infuser.add(gas('copper') * 10, gas('iron'), gas('gold') 
 
 Just like other recipe types, the Chemical Infuser also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.mekanism.chemical_infuser.recipeBuilder() {open id="abstract"}
 - `GasStackList`. Sets the gas inputs of the recipe. Requires exactly 2.

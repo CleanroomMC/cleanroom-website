@@ -1,5 +1,21 @@
+---
+# Required because otherwise it points to itself as the next page.
+next:
+  text: 'Getting Started'
+  link: '/groovy-script/getting_started/'
+---
 
 # GroovyScript
+
+::: info Work In Progress {id="warning"}
+
+This Wiki is WIP.
+Not all information is on it or located properly.
+We would appreciate any help to improve the wiki.
+
+*Thank you for using GroovyScript!*
+
+:::
 
 
 ## Welcome
@@ -26,27 +42,15 @@ GroovyScript can be downloaded on
     - Most if not all Forge Registry objects can be reloaded on the fly
     - Most mod registries are supported natively
 4. Events: Easily listen to Forge's EventBuses with Groovy Closures
-5. Familiarity: Bracket handlers for those that are familiar with CraftTweaker (currently implemented, may be removed in the near future)
-6. Informational: commands to display rich information for the item in your hand and more
-7. Optimized: Making sure no compromises are being made while delivering features with efficient code
-8. API: Great catalogue of code for other mod authors to make their mods compatible with GroovyScript such as package/class/method/field blacklists
+5. Informational: commands to display rich information for the item in your hand and more
+6. Optimized: Making sure no compromises are being made while delivering features with efficient code
+7. API: Great catalogue of code for other mod authors to make their mods compatible with GroovyScript such as package/class/method/field blacklists
 
 ## Wiki
 
-::: info Work In Progress {id="warning"}
-
-This Wiki is WIP.
-There is still a lot of info missing.
-We would appreciate any help to improve this place.
-
-*Thank you for using GroovyScript!*
-
-:::
-
-
-- Get started with [Getting Started](./getting_started.md)
+- Get started with [Getting Started](./getting_started/index.md)
 - Read about the basics of the [Groovy](./groovy/index.md) coding language.
 - Learn how to interact with [Vanilla Registries](./minecraft/index.md).
 - Create your own custom items, blocks, and fluids via the [Content](./content/index.md) compat.
 - Read the documentation for over 25 [Mods](./mods/index.md)
-- Create your own [External Compat](./external_compat.md) for GroovyScript!
+- Create your own [External Compat](./getting_started/external_compat.md) for GroovyScript!

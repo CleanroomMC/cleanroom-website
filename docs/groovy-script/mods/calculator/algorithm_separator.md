@@ -29,7 +29,7 @@ mods.calculator.AlgorithmSeparator
 
 Just like other recipe types, the Algorithm Separator also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.calculator.algorithm_separator.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

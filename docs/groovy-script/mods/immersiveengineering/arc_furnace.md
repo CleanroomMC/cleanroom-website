@@ -40,7 +40,7 @@ mods.immersiveengineering.ArcFurnace
 
 Just like other recipe types, the Arc Furnace also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.immersiveengineering.arc_furnace.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0 and less than or equal to 5.

@@ -33,7 +33,7 @@ mods.integrateddynamics.DryingBasin
 
 Just like other recipe types, the Drying Basin also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.integrateddynamics.drying_basin.recipeBuilder() {open id="abstract"}
 - `boolean`. Sets if the recipe is added to the basic (Drying Basin) machine. (Default `true`).

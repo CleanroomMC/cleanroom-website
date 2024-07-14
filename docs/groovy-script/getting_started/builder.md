@@ -1,6 +1,3 @@
----
-title: Builder
----
 
 # Builder
 
@@ -16,16 +13,16 @@ Let's see what a simple Builder class can look like:
 ```groovy
 class RecipeBuilder {
     private final List<IIngredient> inputs = new ArrayList()
-    private final List<ItemStack> outputs = new ArrayList() // (1)
+    private final List<ItemStack> outputs = new ArrayList() // We need to store our inputs and outputs somewhere
 
     RecipeBuilder input(IIngredient ingredient) {
         this.inputs.add(ingredient)
-        return this     // the method returns this builder (2)
+        return this     // the method returns this builder
     }
 
     RecipeBuilder output(ItemStack itemStack) {
         this.outputs.add(itemStack)
-        return this     // the method returns this builder (3)
+        return this     // the method returns this builder
     }
 
     Recipe build() {    // the build method usually returns the object that will be build
@@ -34,9 +31,12 @@ class RecipeBuilder {
 }
 ```
 
-1. We need to store our inputs and outputs somewhere
-2. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
-3. Usually the return keyword is not needed in groovy, but in this case it helps tounderstand the concept.
+::: info Note {id="note"}
+
+Usually the return keyword is not needed in Groovy, but in this case it helps to understand the concept.
+
+:::
+
 
 ::: info Usage {id="example"}
 Now let's create a new recipe using the builder
@@ -57,7 +57,7 @@ The same code as above can also be put in a single line:
 def recipe = new RecipeBuilder().input(item('minecraft:iron_ingot')).input(ite('minecraft:clay_ball') * 3).output(item('minecraft:nether_star')).build()
 ```
 
-This does exactly the same thing, but as you can see it is uglier and harder to read. Theline breaks are purely aesthetically, but are highly recommended.
+This does exactly the same thing, but as you can see it is uglier and harder to read. The line breaks are purely aesthetically, but are highly recommended.
 
 Now lets see what the recipe could look like without a builder:
 
@@ -65,7 +65,7 @@ Now lets see what the recipe could look like without a builder:
 def recipe = new Recipe([item('minecraft:iron_ingot'), item('minecraft:clay_ball') * 3], [ite('minecraft:nether_star')])
 ```
 
-That doesn't look too bad right? Now imagine the recipe requires 5 inputs. Or 10. Or 20. Andyou need to specify energy requirement, duration and maybe fluids.<br>
+That doesn't look too bad right? Now imagine the recipe requires 5 inputs. Or 10. Or 20. And you need to specify energy requirement, duration and maybe fluids.<br>
 This is where Builders shine.
 
 :::

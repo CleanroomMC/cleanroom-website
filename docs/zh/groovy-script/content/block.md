@@ -48,7 +48,7 @@ content.createBlock('dust_block')
 Let's assume that the pack id is `nomifactory` so that the item and block id will be `nomifactory:dust_block`.
 Insert this line into the lang file.
 
-```mclang:no-line-numbers
+```ini:no-line-numbers
 tile.nomifactory.dust_block.name=Heart of the universe
 ```
 

@@ -44,7 +44,7 @@ mods.thaum.InfusionCrafting
 
 Just like other recipe types, the Infusion Crafting also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thaumcraft.infusion_crafting.recipeBuilder() {open id="abstract"}
 - `AspectList`. Sets the Aspects and amounts required to complete the craft.

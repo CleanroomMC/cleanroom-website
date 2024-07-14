@@ -50,7 +50,7 @@ mods.thermalexpansion.transposer_extract.add(1000, item('minecraft:obsidian'), f
 
 Just like other recipe types, the Fluid Transposer - Empty also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thermalexpansion.transposer_extract.recipeBuilder() {open id="abstract"}
 - `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.

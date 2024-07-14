@@ -55,7 +55,7 @@ mods.botania.Entry
 
 Just like other recipe types, the Lexicon Entry also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.botania.entry.entryBuilder() {open id="abstract"}
 - `ItemStack`. Sets the default icon of the Entry. (Default `ItemStack.EMPTY`).

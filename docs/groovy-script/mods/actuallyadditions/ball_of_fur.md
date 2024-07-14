@@ -33,7 +33,7 @@ mods.actuallyadditions.BallOfFur
 
 Just like other recipe types, the Ball of Fur also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.actuallyadditions.ball_of_fur.recipeBuilder() {open id="abstract"}
 - `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.

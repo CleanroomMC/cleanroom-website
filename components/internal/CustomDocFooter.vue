@@ -22,13 +22,13 @@ function shouldOperateChangeTabKeybind() {
 onKeyStroke([",", "ArrowLeft"], (e) => {
     if (!shouldOperateChangeTabKeybind()) return
     e.preventDefault()
-    if (control.value.prev?.link) router.go(control.value.prev.link)
+    if (control.value.prev?.link) router.go(control.value.prev.link.replace(/\.md$/, ''))
 });
 
 onKeyStroke([".", "ArrowRight"], (e) => {
     if (!shouldOperateChangeTabKeybind()) return
     e.preventDefault()
-    if (control.value.next?.link) router.go(control.value.next?.link)
+    if (control.value.next?.link) router.go(control.value.next.link.replace(/\.md$/, ''))
 });
 
 </script>

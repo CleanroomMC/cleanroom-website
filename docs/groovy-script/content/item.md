@@ -1,3 +1,7 @@
+---
+order: 1000
+---
+
 # Creating items
 
 ## The simplest way
@@ -47,7 +51,7 @@ the lang file. GroovyScript generates a default lang file at `.minecraft/groovy/
   Let's assume that the pack id is `nomifactory` so that the item id will be `nomifactory:heart_of_the_universe`.
   Insert this line into the lang file.
 
-  ```mclang:no-line-numbers
+  ```ini:no-line-numbers
   item.nomifactory.heart_of_the_universe.name=Heart of the universe
   ```
 

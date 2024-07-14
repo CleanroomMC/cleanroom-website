@@ -55,7 +55,7 @@ mods.astralsorcery.research.moveNode('SOOTYMARBLE', 5, 6)
 
 Just like other recipe types, the Research Pages also uses a recipe builder.
 
-Don't know what a builder is? Check [the builder info page](../../groovy/builder.md) out.
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.astralsorcery.research.researchBuilder() {open id="abstract"}
 - `String`. Sets the unlocalized name of the node. Requires not null.

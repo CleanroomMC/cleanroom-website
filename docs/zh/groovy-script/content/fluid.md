@@ -60,7 +60,7 @@ The example above creates a simple fluid for you, but you can also create fluids
 Use the following methods to register custom fluids.
 
 ```groovy:no-line-numbers
-content.registerFluid(Fluis)
+content.registerFluid(Fluid)
 ```
 
 ::: info Warning {id="warning"}
@@ -77,6 +77,6 @@ If a fluid has a block the block state json is automatically generated,
 Add `fluid.[pack id].[fluid name]=Fluid Name` to your lang file
 
 Example for molten iron:
-```mclang:no-line-numbers
+```ini:no-line-numbers
 fluid.placeholdername.molten_iron=Molten Iron
 ```
