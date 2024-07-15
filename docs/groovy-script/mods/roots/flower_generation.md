@@ -1,7 +1,7 @@
 ---
 title: "Flower Generation"
 titleTemplate: "Roots 3 | CleanroomMC"
-description: "When running the Flower Growth Ritual, allowed flowers will generate in the area. Additionally, using the spell Growth Infusion's Floral Reproduction modifier will duplicate the flower."
+description: "When running the Flower Growth Ritual, allowed flowers will generate in the area if they can be placed on the given soil block. Additionally, using the spell Growth Infusion's Floral Reproduction modifier will duplicate the flower, regardless of the soil block."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/FlowerGeneration.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-When running the Flower Growth Ritual, allowed flowers will generate in the area. Additionally, using the spell Growth Infusion's Floral Reproduction modifier will duplicate the flower.
+When running the Flower Growth Ritual, allowed flowers will generate in the area if they can be placed on the given soil block. Additionally, using the spell Growth Infusion's Floral Reproduction modifier will duplicate the flower, regardless of the soil block.
 
 ## Identifier
 
@@ -46,6 +46,14 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     flower(IBlockState)
     ```
 
+- `List<Ingredient>`. Sets the list of allowed blocks beneath the flower, where an empty list allows any block, in the form of an IIngredient that is converted into a IBlockState.
+
+    ```groovy:no-line-numbers
+    allowedSoils(IIngredient)
+    allowedSoils(IIngredient...)
+    allowedSoils(Collection<IIngredient>)
+    ```
+
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `epicsquid.roots.recipe.FlowerRecipe`).
 
     ```groovy:no-line-numbers
@@ -57,6 +65,11 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 mods.roots.flower_generation.recipeBuilder()
     .name('clay_flower')
     .flower(blockstate('minecraft:clay'))
+    .register()
+
+mods.roots.flower_generation.recipeBuilder()
+    .flower(blockstate('minecraft:gold_block'))
+    .allowedSoils(item('minecraft:dirt'), item('minecraft:sandstone'))
     .register()
 ```
 
