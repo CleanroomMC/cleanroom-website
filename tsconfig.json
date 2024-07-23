@@ -3,8 +3,9 @@
   "compilerOptions": {
     "composite": true,
     "types": ["vitepress/client"],
-    "moduleResolution": "node",
     "resolveJsonModule": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   },
   "include": ["env.d.ts", "components/**/*.vue"],
 }

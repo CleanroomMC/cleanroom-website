@@ -11,17 +11,23 @@
   "author": "",
   "license": "All right reserved.",
   "devDependencies": {
-    "@typescript-eslint/parser": "^7.4.0",
+    "@nolebase/vitepress-plugin-enhanced-mark": "^2.2.2",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.2.2",
+    "@nolebase/vitepress-plugin-git-changelog": "^2.2.2",
+    "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.2.2",
+    "@nolebase/vitepress-plugin-inline-link-preview": "^2.2.2",
+    "@types/node": "^20.14.11",
+    "@typescript-eslint/parser": "^7.17.0",
     "@vue/tsconfig": "^0.5.1",
     "markdown-it-mathjax3": "^4.3.2",
     "prettier": "3.2.5",
     "vitepress": "1.0.0-rc.44",
-    "vitepress-sidebar": "^1.21.0",
-    "vue-eslint-parser": "^9.4.2"
+    "vitepress-sidebar": "^1.24.0",
+    "vue-eslint-parser": "^9.4.3"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^0.8.1",
-    "@vueuse/core": "^10.9.0",
-    "vue": "^3.4.21"
+    "@formkit/auto-animate": "^0.8.2",
+    "@vueuse/core": "^10.11.0",
+    "vue": "^3.4.33"
   }
 }

@@ -1,6 +1,11 @@
 import { fileURLToPath } from "url";
 import { defineConfigWithTheme } from "vitepress";
 import { CleanRoomConfig } from "./customConfig";
+import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from "@nolebase/vitepress-plugin-git-changelog/vite";
 
 export const shared = defineConfigWithTheme<CleanRoomConfig>({
   vite: {
@@ -17,6 +22,26 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
         },
       ],
     },
+    optimizeDeps: {
+      exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-inline-link-preview/markdown-it",
+      ],
+    },
+    ssr: {
+      noExternal: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading",
+        "@nolebase/vitepress-plugin-inline-link-preview",
+      ],
+    },
+    plugins: [
+      GitChangelog({
+        repoURL: () => "https://github.com/CleanroomMC/cleanroom-website",
+        maxGitLogCount: 20,
+      }),
+      GitChangelogMarkdownSection(),
+    ],
   },
   title: "CleanroomMC",
   cleanUrls: true,
@@ -27,6 +52,10 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       lazyLoading: true,
     },
     lineNumbers: true,
+    config(md) {
+      // 其他 markdown-it 配置...
+      md.use(InlineLinkPreviewElementTransform);
+    },
   },
   /* prettier-ignore */
   head: [
@@ -54,7 +83,8 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       },
     },
     editLink: {
-      pattern: "https://github.com/CleanroomMC/cleanroom-website/blob/main/docs/:path",
+      pattern:
+        "https://github.com/CleanroomMC/cleanroom-website/blob/main/docs/:path",
     },
     viewLink: true,
     sourceLink: true,
@@ -71,7 +101,7 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       month: "about a month",
       months: "%d months",
       year: "about a year",
-      years: "%d years"
+      years: "%d years",
     },
     search: { provider: "local" },
     socialLinks: [
