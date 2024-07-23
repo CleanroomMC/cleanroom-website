@@ -13,8 +13,10 @@ jobs:
         with: 
           fetch-depth: 0
 
-      - name: pnpm-setup
-        uses: pnpm/action-setup@v2
+      - name: Pnpm setup
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
 
       - name: Install Dependencies
         run: pnpm run build
