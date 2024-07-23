@@ -38,7 +38,9 @@ onKeyStroke([".", "ArrowRight"], (e) => {
         <slot name="doc-footer-before" />
 
         <div class="edit-info">
-            <FooterGitTimestamps />
+            <!-- <FooterGitTimestamps /> -->
+            <!-- reserved slot -->
+            <div></div>
             <CodeLinks />
         </div>
 

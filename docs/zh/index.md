@@ -1,6 +1,6 @@
 ---
 layout: home
-
+gitChangelog: false
 hero:
   name: CleanroomMC
   text: 模组、特性及相关工具链
