@@ -7,6 +7,10 @@ import "./style.css";
 
 import { handleDetailsAnimation } from "./composables/details";
 
+import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
+
+import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
+
 function addBackTotop() {
   render(
     h(BackToTop, {
@@ -17,7 +21,9 @@ function addBackTotop() {
 }
 
 function addDetailsAnimation() {
-  document.querySelectorAll('details').forEach((details) => handleDetailsAnimation(details))
+  document
+    .querySelectorAll("details")
+    .forEach((details) => handleDetailsAnimation(details));
 }
 
 export default {
@@ -31,13 +37,14 @@ export default {
     if (typeof window !== "undefined") {
       window.addEventListener("load", () => {
         addBackTotop();
-      })
+      });
 
       router.onAfterRouteChanged = () => {
         setTimeout(() => {
           addDetailsAnimation();
         }, 0);
-      }
+      };
     }
+    app.use(NolebaseGitChangelogPlugin);
   },
 } satisfies Theme;
