@@ -14,6 +14,12 @@ export default defineConfig({
     zh: { label: "简体中文", ...zh },
   },
   vite: {
+    optimizeDeps: {
+      exclude: ["@nolebase/vitepress-plugin-enhanced-readabilities/client"],
+    },
+    ssr: {
+      noExternal: ["@nolebase/vitepress-plugin-enhanced-readabilities"],
+    },
     plugins: [
       GitChangelog({
         repoURL: () => "https://github.com/CleanroomMC/cleanroom-website",
