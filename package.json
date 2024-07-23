@@ -11,6 +11,7 @@
   "author": "",
   "license": "All right reserved.",
   "devDependencies": {
+    "@nolebase/vitepress-plugin-enhanced-mark": "^2.2.2",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.2.2",
     "@nolebase/vitepress-plugin-git-changelog": "^2.2.2",
     "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.2.2",
