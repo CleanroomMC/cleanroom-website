@@ -1,6 +1,6 @@
 ---
 layout: home
-
+gitChangelog: false
 hero:
   name: CleanroomMC
   text: Mods, features, and related toolchains
