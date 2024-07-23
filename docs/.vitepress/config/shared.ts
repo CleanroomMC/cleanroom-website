@@ -23,12 +23,16 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       ],
     },
     optimizeDeps: {
-      exclude: ["@nolebase/vitepress-plugin-enhanced-readabilities/client"],
+      exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-inline-link-preview/markdown-it",
+      ],
     },
     ssr: {
       noExternal: [
         "@nolebase/vitepress-plugin-enhanced-readabilities",
         "@nolebase/vitepress-plugin-highlight-targeted-heading",
+        "@nolebase/vitepress-plugin-inline-link-preview",
       ],
     },
     plugins: [
