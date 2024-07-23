@@ -1,10 +1,12 @@
 import { DefaultTheme } from "vitepress";
 
 export interface CleanRoomConfig extends DefaultTheme.Config {
-  editLinkText?: string
-  viewLinkText?: string
-  sourceLinkText?: string
-  timeDict?: TimeDict
+  editLinkText?: string;
+  viewLinkText?: string;
+  sourceLinkText?: string;
+  timeDict?: TimeDict;
+  viewLink?: boolean;
+  sourceLink?: boolean;
 }
 
 export interface TimeDict extends Record<string, string> {
