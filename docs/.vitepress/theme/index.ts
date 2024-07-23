@@ -10,6 +10,7 @@ import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-chang
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 
 import {
+  LayoutMode,
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
@@ -67,6 +68,9 @@ export default {
     app.provide(InjectionKey, {
       spotlight: {
         defaultToggle: true,
+      },
+      layoutSwitch: {
+        defaultMode: LayoutMode.FullWidth,
       },
       locales: {
         "zh-CN": {
