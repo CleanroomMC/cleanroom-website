@@ -17,6 +17,13 @@ import type { Options } from "@nolebase/vitepress-plugin-enhanced-readabilities/
 import { InjectionKey } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 
+import { NolebaseInlineLinkPreviewPlugin } from "@nolebase/vitepress-plugin-inline-link-preview/client";
+import "@nolebase/vitepress-plugin-inline-link-preview/client/style.css";
+
+import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
+
+import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
+
 function addBackTotop() {
   render(
     h(BackToTop, {
@@ -41,6 +48,7 @@ export default {
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       "nav-screen-content-after": () =>
         h(NolebaseEnhancedReadabilitiesScreenMenu),
+      "layout-top": () => [h(NolebaseHighlightTargetedHeading)],
     });
   },
   enhanceApp({ app, router, siteData }) {
@@ -56,6 +64,7 @@ export default {
       };
     }
     app.use(NolebaseGitChangelogPlugin);
+    app.use(NolebaseInlineLinkPreviewPlugin);
     app.provide(InjectionKey, {
       spotlight: {
         defaultToggle: true,
