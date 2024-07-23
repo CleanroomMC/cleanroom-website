@@ -3,23 +3,6 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
-
-/**
- * Page Size
- *
- * Increases the page size so that there isn't large dead space on the sides
- * of larger monitors.
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-layout-max-width: 100%
-}
-
-.VPDoc.has-aside .content-container {
-  max-width: 95% !important;
-}
-
-
 /**
  * Colors
  *

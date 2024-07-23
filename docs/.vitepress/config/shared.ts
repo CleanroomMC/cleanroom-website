@@ -38,6 +38,7 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
     plugins: [
       GitChangelog({
         repoURL: () => "https://github.com/CleanroomMC/cleanroom-website",
+        maxGitLogCount: 20,
       }),
       GitChangelogMarkdownSection(),
     ],
