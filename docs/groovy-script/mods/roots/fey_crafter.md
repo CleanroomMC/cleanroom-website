@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 The Fey Crafter is a crafting mechanism that requires an activated Grove Stone nearby to take 5 item inputs and return an item output.
 
 :::::::::: info Danger {id="danger"}
- When reloading recipes with the Fey Crafter, you may encounter a `ConcurrentModificationException`!.
+ When reloading recipes with the Fey Crafter, you may encounter a `ConcurrentModificationException`!
 ::::::::::
 
 ## Identifier

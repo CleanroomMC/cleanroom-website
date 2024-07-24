@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Converts an input item into an output item, with a chance to fail and destroy the item.
 
 :::::::::: details Tip {open id="tip"}
-Consider using the inWorldCrafting Explosion compat instead!.
+Consider using the inWorldCrafting Explosion compat instead!
 ::::::::::
 
 ## Identifier
