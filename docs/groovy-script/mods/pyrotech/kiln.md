@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     failureChance(float)
     ```
 
-- `ItemStackList`. 
+- `ItemStackList`. Sets the output when the recipe failed.
 
     ```groovy:no-line-numbers
     failureOutput(ItemStack)
