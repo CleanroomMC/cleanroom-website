@@ -62,7 +62,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     ownerTag(boolean)
     ```
 
-- `Closure<Boolean>`. Sets the function used to determine if the recipe should run, with the Closure taking 3 paramenters, `TileEntity resonator`, `int frequency`, `ItemStack input` and returning a `boolean`.
+- `Closure<Boolean>`. Sets the function used to determine if the recipe should run, with the Closure taking 3 parameters, `TileEntity resonator`, `int frequency`, `ItemStack input` and returning a `boolean`.
 
     ```groovy:no-line-numbers
     rainbow()

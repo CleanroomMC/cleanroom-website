@@ -48,13 +48,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. Sets the power used by this recipe.. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the power used by this recipe. Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     power(int)
     ```
 
-- `int`. Sets the number of input items that can be converted with 1 reagent.. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the number of input items that can be converted with 1 reagent. Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     craftPerReagent(int)

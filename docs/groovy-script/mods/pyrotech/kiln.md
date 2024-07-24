@@ -1,7 +1,7 @@
 ---
 title: "Kiln"
 titleTemplate: "Pyrotech | CleanroomMC"
-description: "Converts an item into a new one by burning it. Has a chance to fail"
+description: "Converts an item into a new one by burning it. Has a chance to fail."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/Kiln.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Converts an item into a new one by burning it. Has a chance to fail
+Converts an item into a new one by burning it. Has a chance to fail.
 
 ## Identifier
 
@@ -78,7 +78,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     failureChance(float)
     ```
 
-- `ItemStackList`. .
+- `ItemStackList`. 
 
     ```groovy:no-line-numbers
     failureOutput(ItemStack)

@@ -28,13 +28,25 @@ mods.botania.ElvenTrade
 - Adds recipes in the format `output`, `inputs`:
 
     ```groovy:no-line-numbers
-    mods.botania.elven_trade.add(ItemStack, IIngredient[])
+    mods.botania.elven_trade.add(Collection<ItemStack>, Collection<IIngredient>)
     ```
 
 - Adds recipes in the format `output`, `inputs`:
 
     ```groovy:no-line-numbers
-    mods.botania.elven_trade.add(ItemStack[], IIngredient[])
+    mods.botania.elven_trade.add(ItemStack, Collection<IIngredient>)
+    ```
+
+- Adds recipes in the format `output`, `inputs`:
+
+    ```groovy:no-line-numbers
+    mods.botania.elven_trade.add(ItemStack, IIngredient...)
+    ```
+
+- Adds recipes in the format `output`, `inputs`:
+
+    ```groovy:no-line-numbers
+    mods.botania.elven_trade.add(ItemStack[], IIngredient...)
     ```
 
 

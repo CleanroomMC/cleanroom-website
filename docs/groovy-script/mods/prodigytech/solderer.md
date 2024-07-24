@@ -46,19 +46,19 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. Sets the number of Tiny Gold Dusts needed for the recipe (9 equals 1 ingot).. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the number of Tiny Gold Dusts needed for the recipe (9 equals 1 ingot). Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     gold(int)
     ```
 
-- `int`. Sets the time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C.. Requires greater than or equal to 1. (Default `0`).
+- `int`. Sets the time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C. Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     time(int)
     ```
 
-- `IIngredient`. The pattern used by the recipe, will not be consumed.. Requires exactly 1.
+- `IIngredient`. The pattern used by the recipe, will not be consumed. Requires exactly 1.
 
     ```groovy:no-line-numbers
     pattern(IIngredient)

@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Controls what entities can be farmed for what items via an entity blacklist, mod blacklist, item output blacklist, item output mod blacklist, and a mob whitelist.
 
 :::::::::: details Warning {open id="warning"}
-If the whitelist contains any entities, any entities not in the whitelist are banned (rendering EntityModBlacklist and EntityBlacklist superflous). GenerateOnlyList contains all entities which cannot be captured via shard, meaning the controller would need to be obtained a different way.
+If the whitelist contains any entities, any entities not in the whitelist are banned (rendering EntityModBlacklist and EntityBlacklist superfluous). GenerateOnlyList contains all entities which cannot be captured via shard, meaning the controller would need to be obtained a different way.
 ::::::::::
 
 ## Identifier

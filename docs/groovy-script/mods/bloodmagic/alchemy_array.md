@@ -32,19 +32,19 @@ mods.bloodmagic.AlchemyArray
 - Adds recipes in the format `input`, `catalyst`, `output`, `circleTexture`:
 
     ```groovy:no-line-numbers
-    mods.bloodmagic.alchemy_array.add(Ingredient, Ingredient, ItemStack)
+    mods.bloodmagic.alchemy_array.add(IIngredient, IIngredient, ItemStack)
     ```
 
 - Adds recipes in the format `input`, `catalyst`, `output`, optional `circleTexture`:
 
     ```groovy:no-line-numbers
-    mods.bloodmagic.alchemy_array.add(Ingredient, Ingredient, ItemStack, ResourceLocation)
+    mods.bloodmagic.alchemy_array.add(IIngredient, IIngredient, ItemStack, ResourceLocation)
     ```
 
 - Adds recipes in the format `input`, `catalyst`, `output`, optional `circleTexture`:
 
     ```groovy:no-line-numbers
-    mods.bloodmagic.alchemy_array.add(Ingredient, Ingredient, ItemStack, String)
+    mods.bloodmagic.alchemy_array.add(IIngredient, IIngredient, ItemStack, String)
     ```
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Chopping Block"
 titleTemplate: "Pyrotech | CleanroomMC"
-description: "When using a axe it can convert items"
+description: "When using a axe it can convert items."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/ChoppingBlock.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-When using a axe it can convert items
+When using a axe it can convert items.
 
 ## Identifier
 

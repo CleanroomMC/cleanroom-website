@@ -100,7 +100,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     levels(int)
     ```
 
-- `Boolean`. Sets if the cauldon must be boiling, requiring fire or another heat source beneath. (Default `false`).
+- `Boolean`. Sets if the cauldron must be boiling, requiring fire or another heat source beneath. (Default `false`).
 
     ```groovy:no-line-numbers
     boiling()
@@ -264,7 +264,7 @@ mods.inspirations.cauldron.recipeBuilderDye()
     sound(SoundEvent)
     ```
 
-- `Boolean`. Sets if the cauldon must be boiling, requiring fire or another heat source beneath. (Default `false`).
+- `Boolean`. Sets if the cauldron must be boiling, requiring fire or another heat source beneath. (Default `false`).
 
     ```groovy:no-line-numbers
     boiling()
@@ -349,7 +349,7 @@ mods.inspirations.cauldron.recipeBuilderMix()
     levels(int)
     ```
 
-- `Boolean`. Sets if the cauldon must be boiling, requiring fire or another heat source beneath. (Default `false`).
+- `Boolean`. Sets if the cauldron must be boiling, requiring fire or another heat source beneath. (Default `false`).
 
     ```groovy:no-line-numbers
     boiling()
@@ -420,7 +420,7 @@ mods.inspirations.cauldron.recipeBuilderPotion()
     levels(int)
     ```
 
-- `Boolean`. Sets if the cauldon must be boiling, requiring fire or another heat source beneath. (Default `false`).
+- `Boolean`. Sets if the cauldron must be boiling, requiring fire or another heat source beneath. (Default `false`).
 
     ```groovy:no-line-numbers
     boiling()
@@ -486,7 +486,7 @@ mods.inspirations.cauldron.recipeBuilderStandard()
     levels(int)
     ```
 
-- `Boolean`. Sets if the cauldon must be boiling, requiring fire or another heat source beneath. (Default `false`).
+- `Boolean`. Sets if the cauldron must be boiling, requiring fire or another heat source beneath. (Default `false`).
 
     ```groovy:no-line-numbers
     boiling()

@@ -44,8 +44,11 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 - `AspectList`. Sets the Aspects and amounts required to convert. Requires greater than 0.
 
     ```groovy:no-line-numbers
+    aspect(AspectList)
     aspect(AspectStack)
     aspect(String, int)
+    aspect(AspectStack...)
+    aspect(Collection<AspectStack>)
     ```
 
 - `IIngredient`. Sets the input item. Requires not null.

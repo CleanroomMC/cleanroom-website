@@ -52,6 +52,12 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
+- `Lens`. groovyscript.wiki.actuallyadditions.atomic_reconstructor.type.value. Requires not null. (Default `ActuallyAdditionsAPI.lensDefaultConversion`).
+
+    ```groovy:no-line-numbers
+    type(Lens)
+    ```
+
 - `int`. Sets the amount of power consumed by the recipe. Requires greater than 0. (Default `1`).
 
     ```groovy:no-line-numbers

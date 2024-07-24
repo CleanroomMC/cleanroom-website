@@ -58,7 +58,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     fluidInput(Collection<FluidStack>)
     ```
 
-- `Collection<PotionEffect>`. Sets what potion effects are given upon consuming the fluid.. Requires greater than or equal to 1.
+- `Collection<PotionEffect>`. Sets what potion effects are given upon consuming the fluid. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     effect(PotionEffect)

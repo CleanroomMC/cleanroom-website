@@ -1,7 +1,7 @@
 ---
 title: "Enchanter Fuel"
 titleTemplate: "Aether Legacy | CleanroomMC"
-description: "By default, the Enchantar (Altar) takes Ambrosium Shards as fuel. Using GroovyScript, custom fuels can be added."
+description: "By default, the Enchanter (Altar) takes Ambrosium Shards as fuel. Using GroovyScript, custom fuels can be added."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/aetherlegacy/EnchanterFuel.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-By default, the Enchantar (Altar) takes Ambrosium Shards as fuel. Using GroovyScript, custom fuels can be added.
+By default, the Enchanter (Altar) takes Ambrosium Shards as fuel. Using GroovyScript, custom fuels can be added.
 
 ## Identifier
 

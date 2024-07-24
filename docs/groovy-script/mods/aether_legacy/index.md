@@ -17,5 +17,5 @@ Has 5 subcategories.
 
 * [Freezer](./freezer.md)
 
-* [Freezer](./freezer_fuel.md)
+* [Freezer Fuel](./freezer_fuel.md)
 
