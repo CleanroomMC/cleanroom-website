@@ -55,7 +55,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. Sets the time the recipe takes to compelte. Requires greater than or equal to 0. (Default `0`).
+- `int`. Sets the time the recipe takes to complete. Requires greater than or equal to 0. (Default `0`).
 
     ```groovy:no-line-numbers
     time(int)

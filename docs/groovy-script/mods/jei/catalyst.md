@@ -1,7 +1,7 @@
 ---
 title: "Category Catalysts"
 titleTemplate: "Just Enough Items | CleanroomMC"
-description: "Modify the items shown on the left of JEI Categories which indicate where the recipe takes place"
+description: "Modify the items shown on the left of JEI Categories which indicate where the recipe takes place."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/jei/Catalyst.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Modify the items shown on the left of JEI Categories which indicate where the recipe takes place
+Modify the items shown on the left of JEI Categories which indicate where the recipe takes place.
 
 ## Identifier
 

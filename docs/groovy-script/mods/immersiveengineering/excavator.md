@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Adds a Mineral Mix with the given name, weight, fail chance, ores, and allowed dimensions. A Mineral Mix can be mined by an Excavator Multiblock and scanned via a Core Sample Drill.
 
 :::::::::: info Warning {id="warning"}
-Reloading will not change chunks already 'discovered'
+Reloading will not change chunks already 'discovered'.
 ::::::::::
 
 ## Identifier

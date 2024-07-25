@@ -1,7 +1,7 @@
 ---
 title: "Pyre"
 titleTemplate: "Roots 3 | CleanroomMC"
-description: "Converts 5 input items into the ouput after a period of time when the Pyre is lit on fire."
+description: "Converts 5 input items into the output after a period of time when the Pyre is lit on fire."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/roots/Pyre.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Converts 5 input items into the ouput after a period of time when the Pyre is lit on fire.
+Converts 5 input items into the output after a period of time when the Pyre is lit on fire.
 
 ## Identifier
 

@@ -74,7 +74,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     fluidInput(FluidStack, float)
     ```
 
-- `IntArrayList`. Sets the chance a given output will occur among all possible combinations of the fluid.. Requires greater than 0.
+- `IntArrayList`. Sets the chance a given output will occur among all possible combinations of the fluid. Requires greater than 0.
 
     ```groovy:no-line-numbers
     output(ItemStack)

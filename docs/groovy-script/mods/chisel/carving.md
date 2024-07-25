@@ -1,7 +1,7 @@
 ---
 title: "Carving"
 titleTemplate: "Chisel | CleanroomMC"
-description: "Sets a group of items any item can be converted between freely, in world and in a GUI"
+description: "Sets a group of items any item can be converted between freely, in world and in a GUI."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/chisel/Carving.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Sets a group of items any item can be converted between freely, in world and in a GUI
+Sets a group of items any item can be converted between freely, in world and in a GUI.
 
 :::::::::: details Warning {open id="warning"}
 This compat is not fully documented. Some or all of its features are not present on the wiki. View the source code to gain an accurate understanding of the compat.

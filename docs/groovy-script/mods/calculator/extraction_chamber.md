@@ -48,7 +48,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `boolean`. Sets if the Circuit is a Damaged Circuit or a Dirty Circuit.. (Default `false`).
+- `boolean`. Sets if the Circuit is a Damaged Circuit or a Dirty Circuit. (Default `false`).
 
     ```groovy:no-line-numbers
     isDamaged()

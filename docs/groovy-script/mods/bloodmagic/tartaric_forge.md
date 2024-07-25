@@ -32,7 +32,7 @@ mods.bloodmagic.TartaricForge
 - Adds recipes in the format `input`, `output`, `minimumSouls`, `soulDrain`:
 
     ```groovy:no-line-numbers
-    mods.bloodmagic.tartaric_forge.add(NonNullList<Ingredient>, ItemStack, double, double)
+    mods.bloodmagic.tartaric_forge.add(Collection<IIngredient>, ItemStack, double, double)
     ```
 
 

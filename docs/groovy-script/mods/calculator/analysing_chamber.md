@@ -58,7 +58,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     slot(int)
     ```
 
-- `int`. Specific number to be rolled to gain the output. Duplicate numbers are *not* validated, and will not be output.. Requires greater than or equal to 1 and less than or equal to 20000. (Default `0`).
+- `int`. Specific number to be rolled to gain the output. Duplicate numbers are *not* validated, and will not be output. Requires greater than or equal to 1 and less than or equal to 20000. (Default `0`).
 
     ```groovy:no-line-numbers
     location(int)

@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 A 5-slot processing machine using MRU. Can be upgraded with various plates to increase its speed.
 
 :::::::::: details Warning {open id="warning"}
-Certain OreDict entries might give unexpected results when used in the Magician Table as inputs. Known entries include: ingotGold, gemEnderPearl
+Certain OreDict entries might give unexpected results when used in the Magician Table as inputs. Known entries include: ingotGold, gemEnderPearl.
 ::::::::::
 
 ## Identifier

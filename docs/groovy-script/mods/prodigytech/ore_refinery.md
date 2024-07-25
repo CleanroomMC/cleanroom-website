@@ -48,13 +48,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C.. Requires greater than or equal to 1. (Default `0`).
+- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C. Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     time(int)
     ```
 
-- `float`. Sets the chance to get the 2nd output.. Requires less than or equal to 1. (Default `1.0f`).
+- `float`. Sets the chance to get the 2nd output. Requires less than or equal to 1. (Default `1.0f`).
 
     ```groovy:no-line-numbers
     secondaryChance(float)

@@ -48,7 +48,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C.. Requires greater than or equal to 1. (Default `(default time for this machine in the mod's config)`).
+- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 125 C. Requires greater than or equal to 1. (Default `(default time for this machine in the mod's config)`).
 
     ```groovy:no-line-numbers
     time(int)

@@ -1,7 +1,7 @@
 ---
 title: "World Transmutation"
 titleTemplate: "ProjectE | CleanroomMC"
-description: "Converts an input blockstate into an output blockstate when right-clicked with by a Philosopher's Stone, with the abity to be converted into a different output blockstate when holding shift."
+description: "Converts an input blockstate into an output blockstate when right-clicked with by a Philosopher's Stone, with the ability to be converted into a different output blockstate when holding shift."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/projecte/Transmutation.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Converts an input blockstate into an output blockstate when right-clicked with by a Philosopher's Stone, with the abity to be converted into a different output blockstate when holding shift.
+Converts an input blockstate into an output blockstate when right-clicked with by a Philosopher's Stone, with the ability to be converted into a different output blockstate when holding shift.
 
 ## Identifier
 

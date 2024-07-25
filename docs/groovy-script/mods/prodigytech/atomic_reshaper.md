@@ -46,13 +46,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(ItemStack, int)
     ```
 
-- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 250 C.. Requires greater than or equal to 1. (Default `Config.atomicReshaperProcessTime`).
+- `int`. The time needed to perform the recipe, in ticks. Will run faster than this number when heated over 250 C. Requires greater than or equal to 1. (Default `Config.atomicReshaperProcessTime`).
 
     ```groovy:no-line-numbers
     time(int)
     ```
 
-- `int`. The amount of Primordium units consumed by this recipe. 1 Primordium equals 100 Primordium units.. Requires greater than or equal to 1. (Default `0`).
+- `int`. The amount of Primordium units consumed by this recipe. 1 Primordium equals 100 Primordium units. Requires greater than or equal to 1. (Default `0`).
 
     ```groovy:no-line-numbers
     primordium(int)

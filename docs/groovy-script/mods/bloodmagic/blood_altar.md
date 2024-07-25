@@ -40,7 +40,7 @@ mods.bloodmagic.BloodAltar
 - Adds recipes in the format `input`, `output`, `minimumTier`, `syphon`, `consumeRate`, `drainRate`:
 
     ```groovy:no-line-numbers
-    mods.bloodmagic.blood_altar.add(Ingredient, ItemStack, int, int, int, int)
+    mods.bloodmagic.blood_altar.add(IIngredient, ItemStack, int, int, int, int)
     ```
 
 

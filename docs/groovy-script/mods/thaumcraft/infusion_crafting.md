@@ -50,8 +50,11 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 - `AspectList`. Sets the Aspects and amounts required to complete the craft.
 
     ```groovy:no-line-numbers
+    aspect(AspectList)
     aspect(AspectStack)
     aspect(String, int)
+    aspect(AspectStack...)
+    aspect(Collection<AspectStack>)
     ```
 
 - `IIngredient`. Sets the item on the center pedestal. Requires not null.

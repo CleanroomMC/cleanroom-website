@@ -1,7 +1,7 @@
 ---
 title: "Grid Power Generators"
 titleTemplate: "Extra Utilities 2 | CleanroomMC"
-description: "Passively produces Grid Power into the Owner's GP network"
+description: "Passively produces Grid Power into the Owner's GP network."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/extrautils2/GridPowerPassiveGenerator.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Passively produces Grid Power into the Owner's GP network
+Passively produces Grid Power into the Owner's GP network.
 
 ## Identifier
 

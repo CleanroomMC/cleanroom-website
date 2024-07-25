@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Adds a Reservoir Type with the given name, weight, minimum size, maximum size, replenishment rate, allowed dimensions, and allowed biomes. A Reservoir Type can be extracted by an Pumpjack Multiblock and scanned via a Core Sample Drill.
 
 :::::::::: info Warning {id="warning"}
-Reloading will not change chunks already 'discovered'
+Reloading will not change chunks already 'discovered'.
 ::::::::::
 
 ## Identifier

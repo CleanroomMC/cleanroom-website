@@ -1,7 +1,7 @@
 ---
 title: "Compost Bin"
 titleTemplate: "Pyrotech | CleanroomMC"
-description: "Can convert multiple items into a new one when its full"
+description: "Can convert multiple items into a new one when its full."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/CompostBin.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Can convert multiple items into a new one when its full
+Can convert multiple items into a new one when its full.
 
 ## Identifier
 

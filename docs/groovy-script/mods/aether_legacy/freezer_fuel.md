@@ -1,11 +1,11 @@
 ---
-title: "Freezer"
+title: "Freezer Fuel"
 titleTemplate: "Aether Legacy | CleanroomMC"
 description: " By default, the Freezer takes Icestone as fuel. Using GroovyScript, custom fuels can be added."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/aetherlegacy/FreezerFuel.java"
 ---
 
-# Freezer (Aether Legacy)
+# Freezer Fuel (Aether Legacy)
 
 ## Description
 

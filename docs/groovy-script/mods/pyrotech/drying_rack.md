@@ -1,7 +1,7 @@
 ---
 title: "Drying Rack"
 titleTemplate: "Pyrotech | CleanroomMC"
-description: "Converts an item over time into a new one"
+description: "Converts an item over time into a new one."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/pyrotech/DryingRack.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Converts an item over time into a new one
+Converts an item over time into a new one.
 
 ## Identifier
 

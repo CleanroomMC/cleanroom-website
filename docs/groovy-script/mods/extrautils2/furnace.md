@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Converts an input itemstack into an output itemstack, consuming energy.
 
 :::::::::: info Warning {id="warning"}
-When removing items, keep in mind that the default registry mostly contains INPUT items allowing any metadata. This means you cannot do `item('minecraft:emerald_ore')` and instead must do `item('minecraft:emerald_ore:*')`
+When removing items, keep in mind that the default registry mostly contains INPUT items allowing any metadata. This means you cannot do `item('minecraft:emerald_ore')` and instead must do `item('minecraft:emerald_ore:*')`.
 ::::::::::
 
 ## Identifier

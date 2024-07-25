@@ -12,7 +12,7 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 Converts an input itemstack into an output itemstack in a recipe exclusive to the Smelter. Overrides the default furnace recipe, if applicable.
 
 :::::::::: info Danger {id="danger"}
-Recipes exclusive to the Mekanism Smelter may not be displayed in JEI
+Recipes exclusive to the Mekanism Smelter may not be displayed in JEI.
 ::::::::::
 
 ## Identifier

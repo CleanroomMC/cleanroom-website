@@ -29,7 +29,7 @@ mods.thermalexpansion.Sawmill
 
 ## Adding Recipes
 
-- Adds recipes in the format `energy`, `input`, `outputItem`, `secondayOutput`, `chance`:
+- Adds recipes in the format `energy`, `input`, `outputItem`, `secondaryOutput`, `chance`:
 
     ```groovy:no-line-numbers
     mods.thermalexpansion.sawmill.add(int, IIngredient, ItemStack, ItemStack, int)
