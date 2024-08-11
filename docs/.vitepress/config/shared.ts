@@ -39,6 +39,42 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       GitChangelog({
         repoURL: () => "https://github.com/CleanroomMC/cleanroom-website",
         maxGitLogCount: 20,
+        mapAuthors: [
+          {
+            avatar: "https://avatars.githubusercontent.com/u/36119339?v=4",
+            name: "Nullpinter",
+            username: "baka-gourd",
+            mapByNameAliases: ["baka-gourd"],
+          },
+          {
+            avatar: "https://avatars.githubusercontent.com/u/25394029?v=4",
+            name: "Waiting Idly",
+            username: "WaitingIdly",
+            mapByNameAliases: ["WaitingIdly"],
+          },
+          {
+            avatar: "https://avatars.githubusercontent.com/u/3684700?v=4",
+            name: "Rongmario",
+            username: "Rongmario",
+          },
+          {
+            avatar: "https://avatars.githubusercontent.com/u/21279092?v=4",
+            name: "Clefal",
+            username: "TUsama",
+            mapByNameAliases: ["TUsama"],
+          },
+          {
+            avatar: "https://avatars.githubusercontent.com/u/75018198?v=4",
+            username: "ikexing-cn",
+            name: "ikexing",
+            mapByNameAliases: ["ikexing-cn"],
+          },
+          {
+            avatar: "https://avatars.githubusercontent.com/u/45517902?v=4",
+            username: "brachy84",
+            name: "brachy84",
+          },
+        ],
       }),
       GitChangelogMarkdownSection(),
     ],
@@ -54,6 +90,7 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
     lineNumbers: true,
     config(md) {
       // 其他 markdown-it 配置...
+      // @ts-expect-error
       md.use(InlineLinkPreviewElementTransform);
     },
   },
