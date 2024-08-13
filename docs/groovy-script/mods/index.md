@@ -23,6 +23,7 @@ search:
 * [Compact Machines 3](./compactmachines3/)
 * [Cyclic](./cyclicmagic/)
 * [Draconic Evolution](./draconicevolution/)
+* [Embers Unofficial Extended Life](./embers/)
 * [Ender IO](./enderio/)
 * [EssentialCraft 4](./essentialcraft/)
 * [EvilCraft](./evilcraft/)
