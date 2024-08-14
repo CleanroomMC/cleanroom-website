@@ -8,6 +8,7 @@ search:
 * [Actually Additions](./actuallyadditions/)
 * [Advanced Mortars](./advancedmortars/)
 * [Aether Legacy](./aether_legacy/)
+* [Aetherworks Unofficial Extended Life](./aetherworks/)
 * [Alchemistry](./alchemistry/)
 * [Applied Energistics 2](./appliedenergistics2/)
 * [Arcane Archives](./arcanearchives/)
