@@ -2,7 +2,7 @@
 title: "Metal Former"
 titleTemplate: "Aetherworks | CleanroomMC"
 description: "Converts an input item in addition of an input fluid into an output item using the Aetherium Forge Metal Former."
-source_code_link: "https://github.com/Ender-Development/Aetherworks-Extended-Lifeblob/master/src/main/java/v0id/aw/compat/groovyscript/MetalFormer.java"
+source_code_link: "https://github.com/Ender-Development/Aetherworks-Extended-Life/blob/master/src/main/java/v0id/aw/compat/groovyscript/MetalFormer.java"
 ---
 
 # Metal Former (Aetherworks)

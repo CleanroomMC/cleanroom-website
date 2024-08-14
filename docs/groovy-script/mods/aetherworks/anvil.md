@@ -2,7 +2,7 @@
 title: "Aetherium Anvil"
 titleTemplate: "Aetherworks | CleanroomMC"
 description: "Converts an input item into an output item using the Aetherium Forge Anvil. The anvil requires a specific temperature range and a number of hits to process the item. The anvil can fail up to 3 times before the item is destroyed."
-source_code_link: "https://github.com/Ender-Development/Aetherworks-Extended-Lifeblob/master/src/main/java/v0id/aw/compat/groovyscript/Anvil.java"
+source_code_link: "https://github.com/Ender-Development/Aetherworks-Extended-Life/blob/master/src/main/java/v0id/aw/compat/groovyscript/Anvil.java"
 ---
 
 # Aetherium Anvil (Aetherworks)
