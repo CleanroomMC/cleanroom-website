@@ -57,6 +57,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     { text: "Home", link: "/" },
     { text: "Wiki", link: "/wiki/" },
+    // { text: "Guide", link: "/guide/" },
     { text: "GroovyScript", link: "/groovy-script/" },
   ];
 }
