@@ -9,15 +9,15 @@ hero:
     src: /cleanroom.png
     alt: CleanroomMC Logo
 features:
-  - title: Cleanroom Loader
-    details: Embrace the modernized Minecraft 1.12.2, enjoy the cutting-edge toolchain.
-    icon: 🏃🏻‍♀️
-  - title: Template for 1.12.2
-    details: Blazing new trail for your development.
+  - title: CleanroomLoader
+    details: Embrace modern toolchains on Minecraft 1.12.2, aiming for modernization, longevity, expandibility and stabilization.
     icon: 📦
-  - title: Advanced API
-    details: Through modification of the Forge 1.12.2, we have implemented a number of useful and reliable APIs.
-    icon: 🔥
+  - title: Community Generated Mods
+    details: We host mods made by the community for Minecraft 1.12.2. The community is the foundation of CleanroomMC.
+    icon: 💡
+  - title: Documentation
+    details: With the modernization of Minecraft 1.12.2. We are in the process of creating extensive documentation for all facets of the game.
+    icon: 📜
 ---
 
 
