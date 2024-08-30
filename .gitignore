@@ -8,3 +8,4 @@ dist
 cache
 temp
 pnpm-global
+bun.lockb

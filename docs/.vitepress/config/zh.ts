@@ -51,7 +51,6 @@ export const zh = defineConfigWithTheme<CleanRoomConfig>({
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: "主页", link: "/zh/" },
-    { text: "指南", link: "/zh/guide/" },
     { text: "维基", link: "/zh/wiki/" },
     { text: "GroovyScript", link: "/groovy-script/" },
   ];

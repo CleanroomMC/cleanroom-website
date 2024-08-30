@@ -56,7 +56,6 @@ export const en = defineConfigWithTheme<CleanRoomConfig>({
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: "Home", link: "/" },
-    { text: "Guide", link: "/guide/" },
     { text: "Wiki", link: "/wiki/" },
     { text: "GroovyScript", link: "/groovy-script/" },
   ];
