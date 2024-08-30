@@ -3,20 +3,20 @@ layout: home
 gitChangelog: false
 hero:
   name: CleanroomMC
-  text: Mods, features, and related toolchains
-  tagline: Modern, Fast and High performance
+  text: Built on Minecraft 1.12.2.
+  tagline: Innovating along with maintaining mods, features, and related toolchains.
   image:
     src: /cleanroom.png
     alt: CleanroomMC Logo
 features:
-  - title: CleanroomLoader
-    details: Embrace modern toolchains on Minecraft 1.12.2, aiming for modernization, longevity, expandibility and stabilization.
+  - title: Cleanroom Loader
+    details: Modernization. Aiming for performance, longevity, expandibility and stabilization.
     icon: 📦
   - title: Community Generated Mods
-    details: We host mods made by the community for Minecraft 1.12.2. The community is the foundation of CleanroomMC.
+    details: We host mods made by the community for Forge and Cleanroom Loader. The community is the foundation of CleanroomMC.
     icon: 💡
   - title: Documentation
-    details: With the modernization of Minecraft 1.12.2. We are in the process of creating extensive documentation for all facets of the game.
+    details: We are in the process of creating extensive documentation for all facets of the game and its mods.
     icon: 📜
 ---
 
