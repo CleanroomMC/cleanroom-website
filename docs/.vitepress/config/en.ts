@@ -54,12 +54,12 @@ export const en = defineConfigWithTheme<CleanRoomConfig>({
 });
 
 function nav(): DefaultTheme.NavItem[] {
-  return [
-    { text: "Home", link: "/" },
-    { text: "Wiki", link: "/wiki/" },
-    // { text: "Guide", link: "/guide/" },
-    { text: "GroovyScript", link: "/groovy-script/" },
-  ];
+  let nav: DefaultTheme.NavItem[] = [];
+  nav.push({ text: "Home", link: "/" });
+  nav.push({ text: "Wiki", link: "/wiki/" });
+  if(process.env.ENVIRONMENT === 'development') nav.push({ text: "Guide", link: "/guide/" });
+  nav.push({ text: "GroovyScript", link: "/groovy-script/" });
+  return nav;
 }
 
 function wikiSidebar(): DefaultTheme.SidebarItem[] {

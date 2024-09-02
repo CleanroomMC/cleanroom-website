@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "dev": "cross-env ENVIRONMENT=development vitepress dev docs",
+    "build": "cross-env ENVIRONMENT=production vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "keywords": [],
@@ -29,6 +29,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@vueuse/core": "^10.11.1",
+    "cross-env": "^7.0.3",
     "vue": "^3.4.37"
   }
 }
