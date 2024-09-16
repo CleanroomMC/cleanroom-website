@@ -3,7 +3,7 @@ layout: home
 gitChangelog: false
 hero:
   name: CleanroomMC
-  text: 模组、特性及相关工具链
+  text: 模组 特性及相关工具链
   tagline: 现代、快速、高性能
   image:
     src: /cleanroom.png

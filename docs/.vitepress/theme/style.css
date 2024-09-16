@@ -298,6 +298,6 @@ details[open]>summary::after {
   transform: rotate(90deg);
 }
 
-#app .Layout #VPContent .VPHome .VPHero .container .main .text {
+/* #app .Layout #VPContent .VPHome .VPHero .container .main .text {
   font-size: 52px;
-}
+} */
