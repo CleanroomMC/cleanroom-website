@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "cross-env ENVIRONMENT=development vitepress dev docs",
-    "build": "cross-env ENVIRONMENT=production vitepress build docs",
+    "build": "cross-env ENVIRONMENT=production node --max_old_space_size=1024000 ./node_modules/vitepress/bin/vitepress.js build docs",
     "preview": "vitepress preview docs"
   },
   "keywords": [],
