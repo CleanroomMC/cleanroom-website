@@ -3,21 +3,21 @@ layout: home
 gitChangelog: false
 hero:
   name: CleanroomMC
-  text: 模组、特性及相关工具链
-  tagline: 现代、快速、高性能
+  text: 基于 Minecraft <br>1.12.2 构建
+  tagline: 模组、特性及相关工具链
   image:
     src: /cleanroom.png
     alt: CleanroomMC Logo
 features:
   - title: Cleanroom Loader
-    details: 拥抱 1.12.2，畅享现代化模组。
-    icon: 🏃🏻‍♀️
-  - title: 1.12.2 模组开发模板
-    details: 全新旅程，始于这里。
+    details: 现代化的加载器。致力于性能、长效、可扩展性和稳定性。
     icon: 📦
-  - title: 先进的 API
-    details: 精雕细琢，只为更方便、更自由。
-    icon: 🔥
+  - title: 社区驱动模组开发
+    details: 社区是 CleanroomMC 的基础，我们托管社区为 Forge 和 Cleanroom Loader 制作的模组。
+    icon: 💡
+  - title: 详尽的文档
+    details: 为游戏及其模组提供大量文档。
+    icon: 📜
 ---
 
 ## <div class="center">赞助者</div>
@@ -26,19 +26,15 @@ features:
 
 ### YourKit
 
-***专为免费授权的 Java 项目提供 YourKit Java Profiler。***
+***For providing the organization with free licenses for the YourKit Java Profiler for our JVM-based projects.***
 
 [![YourKit Logo](/yourkit.png)](https://www.yourkit.com/)
 
-YourKit 专为各类开源项目提供新颖便捷的工具，帮助它们更好地分析监控 Java 以及 .NET 应用。
-YourKit 是 [*YourKit Java Profiler*](https://www.yourkit.com/java/profiler/), [*YourKit .NET Profiler*](https://www.yourkit.com/dotnet-profiler/) 以及 [*YourKit YouMonitor*](https://www.yourkit.com/youmonitor/) 的作者。
+YourKit supports open source projects with innovative and intelligent tools
+for monitoring and profiling Java and .NET applications.
+YourKit is the creator of [*YourKit Java Profiler*](https://www.yourkit.com/java/profiler/), [*YourKit .NET Profiler*](https://www.yourkit.com/dotnet-profiler/) and [*YourKit YouMonitor*](https://www.yourkit.com/youmonitor/).
 
 <style>
-.feat-center {
-    display: flex;
-    justify-content: center;
-}
-
 :root {
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
