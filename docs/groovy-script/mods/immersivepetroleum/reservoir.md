@@ -62,13 +62,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     weight(int)
     ```
 
-- `int`. Sets the maximum size the reservoir can be, in mb. Requires greater than or equal to 1 and greater than or equal to minSize. (Default `0`).
+- `int`. Sets the maximum size the reservoir can be, in mb. Requires greater than or equal to 1 and less than or equal to the number of elements in `maxSize`. (Default `0`).
 
     ```groovy:no-line-numbers
     maxSize(int)
     ```
 
-- `int`. Sets the minimum size the reservoir can be, in mb. Requires greater than or equal to 1 and less than or equal to maxSize. (Default `0`).
+- `int`. Sets the minimum size the reservoir can be, in mb. Requires greater than or equal to 1 and greater than or equal to the number of elements in `minSize`. (Default `0`).
 
     ```groovy:no-line-numbers
     minSize(int)

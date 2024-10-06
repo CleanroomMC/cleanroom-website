@@ -23,6 +23,12 @@ mods.alchemistry.Liquifier
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.liquifier.add(LiquifierRecipe)
+    ```
+
 - Adds recipes in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -77,6 +83,12 @@ mods.alchemistry.liquifier.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.liquifier.remove(LiquifierRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

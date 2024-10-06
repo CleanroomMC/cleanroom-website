@@ -33,6 +33,12 @@ mods.bloodmagic.AlchemyTable
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.alchemy_table.add(RecipeAlchemyTable)
+    ```
+
 - Adds recipes in the format `input`, `output`, `syphon`, `ticks`, `minimumTier`:
 
     ```groovy:no-line-numbers
@@ -77,7 +83,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     syphon(int)
     ```
 
-- `int`. Sets the minimum tier the Blood Orb inside the table must be. Requires greater than or equal to 0 and less than AltarTier.MAXTIERS. (Default `0`).
+- `int`. Sets the minimum tier the Blood Orb inside the table must be. Requires greater than or equal to 0 and less than `AltarTier.MAXTIERS`, which is determined by the config option `enableTierSixEvenThoughThereIsNoContent`. (Default `0`).
 
     ```groovy:no-line-numbers
     tier(int)
@@ -114,6 +120,12 @@ mods.bloodmagic.alchemy_table.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.alchemy_table.remove(RecipeAlchemyTable)
+    ```
 
 - Removes all recipes that match the given input:
 

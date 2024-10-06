@@ -25,6 +25,12 @@ mods.immersiveengineering.Mixer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.mixer.add(MixerRecipe)
+    ```
+
 - Adds recipes in the format `fluidOutput`, `fluidInput`, `energy`, `itemInput`:
 
     ```groovy:no-line-numbers
@@ -39,7 +45,7 @@ Just like other recipe types, the Mixer also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.immersiveengineering.mixer.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -98,6 +104,12 @@ mods.immersiveengineering.mixer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.mixer.remove(MixerRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

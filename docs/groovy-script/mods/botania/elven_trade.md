@@ -25,6 +25,12 @@ mods.botania.ElvenTrade
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.elven_trade.add(RecipeElvenTrade)
+    ```
+
 - Adds recipes in the format `output`, `inputs`:
 
     ```groovy:no-line-numbers
@@ -92,6 +98,12 @@ mods.botania.elven_trade.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.elven_trade.remove(RecipeElvenTrade)
+    ```
 
 - Removes all recipes that match the given input:
 

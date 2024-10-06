@@ -27,6 +27,12 @@ mods.industrialforegoing.Washing
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_raw.add(OreFluidEntryRaw)
+    ```
+
 - Adds a Washing Factory recipe in the format `ore`, `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -48,6 +54,12 @@ mods.industrialforegoing.ore_raw.add(ore('stone'), fluid('water') * 1000, fluid(
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_raw.remove(OreFluidEntryRaw)
+    ```
 
 - Removes all recipes that match the given input:
 

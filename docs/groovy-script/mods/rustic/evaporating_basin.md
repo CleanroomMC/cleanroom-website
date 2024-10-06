@@ -29,6 +29,13 @@ mods.rustic.DryingBasin
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.evaporating_basin.add(IEvaporatingBasinRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Drying Basin also uses a recipe builder.
@@ -82,6 +89,12 @@ mods.rustic.evaporating_basin.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.evaporating_basin.remove(IEvaporatingBasinRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

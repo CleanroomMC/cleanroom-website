@@ -25,6 +25,13 @@ mods.calculator.StarchExtractor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.starch_extractor.add(DefaultSonarRecipe.Value)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Starch Extractor also uses a recipe builder.
@@ -65,6 +72,12 @@ mods.calculator.starch_extractor.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.starch_extractor.remove(DefaultSonarRecipe.Value)
+    ```
 
 - Removes all recipes that match the given input:
 

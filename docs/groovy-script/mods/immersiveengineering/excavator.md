@@ -55,7 +55,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     name(String)
     ```
 
-- `List<String>`. Sets the valid oredicts output. Requires exactly chances.
+- `List<String>`. Sets the valid oredicts output. Requires exactly equal to the number of elements in `ores`.
 
     ```groovy:no-line-numbers
     ore(String, float)
@@ -68,7 +68,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     weight(int)
     ```
 
-- `FloatArrayList`. Sets the chance a given block output will contain the corresponding entry in ores. Requires exactly ores.
+- `FloatArrayList`. Sets the chance a given block output will contain the corresponding entry in ores. Requires exactly equal to the number of elements in `chances`.
 
     ```groovy:no-line-numbers
     ore(String, float)

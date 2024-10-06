@@ -23,6 +23,13 @@ mods.pneumaticcraft.Refinery
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.refinery.add(RefineryRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Refinery also uses a recipe builder.
@@ -76,6 +83,12 @@ mods.pneumaticcraft.refinery.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.refinery.remove(RefineryRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

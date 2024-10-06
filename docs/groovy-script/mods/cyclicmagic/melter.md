@@ -25,6 +25,13 @@ mods.cyclic.Melter
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.melter.add(RecipeMelter)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Melter also uses a recipe builder.
@@ -72,6 +79,12 @@ mods.cyclicmagic.melter.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.melter.remove(RecipeMelter)
+    ```
 
 - Removes all recipes that match the given input:
 

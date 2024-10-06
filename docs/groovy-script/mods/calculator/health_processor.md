@@ -25,6 +25,13 @@ mods.calculator.HealthProcessor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.health_processor.add(DefaultSonarRecipe.Value)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Health Processor also uses a recipe builder.
@@ -65,6 +72,12 @@ mods.calculator.health_processor.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.health_processor.remove(DefaultSonarRecipe.Value)
+    ```
 
 - Removes all recipes that match the given input:
 

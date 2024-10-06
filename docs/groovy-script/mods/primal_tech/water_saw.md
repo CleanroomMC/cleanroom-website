@@ -29,6 +29,12 @@ mods.primaltech.WaterSaw
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.water_saw.add(WaterSawRecipes)
+    ```
+
 - Adds recipes in the format `output`, `input`, `choppingTime`:
 
     ```groovy:no-line-numbers
@@ -91,6 +97,12 @@ mods.primal_tech.water_saw.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.water_saw.remove(WaterSawRecipes)
+    ```
 
 - Removes all recipes that match the given input:
 

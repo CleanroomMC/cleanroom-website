@@ -25,7 +25,7 @@ mods.roots.LifeEssence
 
 ## Adding Entries
 
-- Adds entries in the format `entity`:
+- Add the given recipe to the recipe list:
 
     ```groovy:no-line-numbers
     mods.roots.life_essence.add(Class<? extends EntityLivingBase>)
@@ -52,7 +52,7 @@ mods.roots.life_essence.add(entity('minecraft:wither_skeleton'))
 
 ## Removing Entries
 
-- Removes the Life Essence entry for the given Entity:
+- Removes the given recipe from the recipe list:
 
     ```groovy:no-line-numbers
     mods.roots.life_essence.remove(Class<? extends EntityLivingBase>)

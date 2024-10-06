@@ -29,6 +29,13 @@ mods.betterwithmods.SoulforgedSteelAnvil
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.anvil_crafting.add(IRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Anvil Crafting also uses a recipe builder.
@@ -51,7 +58,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 16. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1, less than or equal to 16, and either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)
@@ -174,6 +181,12 @@ mods.betterwithmods.anvil_crafting.shapelessBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.anvil_crafting.remove(IRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -23,6 +23,12 @@ mods.extrabotany.Pedestal
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extrabotany.pedestal.add(RecipePedestal)
+    ```
+
 - Adds recipes in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -77,6 +83,12 @@ mods.extrabotany.pedestal.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extrabotany.pedestal.remove(RecipePedestal)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -25,6 +25,13 @@ mods.actuallyadditions.Crusher
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.crusher.add(CrusherRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Crusher also uses a recipe builder.
@@ -79,6 +86,12 @@ mods.actuallyadditions.crusher.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.crusher.remove(CrusherRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

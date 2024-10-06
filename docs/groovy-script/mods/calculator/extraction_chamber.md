@@ -25,6 +25,13 @@ mods.calculator.ExtractionChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.extraction_chamber.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Extraction Chamber also uses a recipe builder.
@@ -80,6 +87,12 @@ mods.calculator.extraction_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.extraction_chamber.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

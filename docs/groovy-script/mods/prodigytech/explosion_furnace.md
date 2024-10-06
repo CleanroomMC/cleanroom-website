@@ -25,6 +25,13 @@ mods.prodigytech.ExplosionFurnace
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.prodigytech.explosion_furnace.add(ExplosionFurnaceManager.ExplosionFurnaceRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Explosion Furnace also uses a recipe builder.
@@ -88,10 +95,10 @@ mods.prodigytech.explosion_furnace.recipeBuilder()
 
 ## Removing Recipes
 
-- Removes all registered recipes:
+- Removes the given recipe from the recipe list:
 
     ```groovy:no-line-numbers
-    mods.prodigytech.explosion_furnace.removeAll()
+    mods.prodigytech.explosion_furnace.remove(ExplosionFurnaceManager.ExplosionFurnaceRecipe)
     ```
 
 - Removes all recipes that match the given output:
@@ -100,10 +107,16 @@ mods.prodigytech.explosion_furnace.recipeBuilder()
     mods.prodigytech.explosion_furnace.removeByOutput(ItemStack)
     ```
 
+- Removes all registered recipes:
+
+    ```groovy:no-line-numbers
+    mods.prodigytech.explosion_furnace.removeAll()
+    ```
+
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.prodigytech.explosion_furnace.removeAll()
 mods.prodigytech.explosion_furnace.removeByOutput(item('prodigytech:ferramic_ingot'))
+mods.prodigytech.explosion_furnace.removeAll()
 ```
 
 ::::::::::

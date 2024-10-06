@@ -25,6 +25,12 @@ mods.immersiveengineering.Squeezer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.squeezer.add(SqueezerRecipe)
+    ```
+
 - Adds recipes in the format `fluidOutput`, `itemOutput`, `input`, `energy`:
 
     ```groovy:no-line-numbers
@@ -102,6 +108,12 @@ mods.immersiveengineering.squeezer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.squeezer.remove(SqueezerRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

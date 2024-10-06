@@ -25,16 +25,16 @@ mods.astral.Fountain
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.fountain.add(FluidRarityRegistry.FluidRarityEntry)
+    ```
+
 - Adds recipes in the format `fluid`, `rarity`, `guaranteedAmt`, `addRand`:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.fountain.add(Fluid, int, int, int)
-    ```
-
-- Adds an existing `FluidRarityEntry` to the registry:
-
-    ```groovy:no-line-numbers
-    mods.astralsorcery.fountain.add(FluidRarityRegistry.FluidRarityEntry)
     ```
 
 - Adds recipes in the format `fluid`, `rarity`, `guaranteedAmt`, `addRand`:
@@ -98,16 +98,16 @@ mods.astralsorcery.fountain.chanceHelper()
 
 ## Removing Recipes
 
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.fountain.remove(FluidRarityRegistry.FluidRarityEntry)
+    ```
+
 - Removes an entry matching the given `Fluid`:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.fountain.remove(Fluid)
-    ```
-
-- Removes an existing `FluidRarityEntry`:
-
-    ```groovy:no-line-numbers
-    mods.astralsorcery.fountain.remove(FluidRarityRegistry.FluidRarityEntry)
     ```
 
 - Removes an entry matching the given `FluidStack`:

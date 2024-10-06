@@ -25,6 +25,12 @@ mods.astral.Grindstone
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.grindstone.add(GrindstoneRecipe)
+    ```
+
 - Adds a recipe in the format of `input`, `output`, `weight`, with the `secondaryChance` being 0:
 
     ```groovy:no-line-numbers
@@ -100,6 +106,12 @@ mods.astralsorcery.grindstone.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.grindstone.remove(GrindstoneRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

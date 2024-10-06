@@ -29,6 +29,13 @@ mods.actuallyadditions.StoneMiningLens
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.stone_mining_lens.add(WeightedOre)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Stone Mining Lens also uses a recipe builder.
@@ -73,6 +80,12 @@ mods.actuallyadditions.stone_mining_lens.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.stone_mining_lens.remove(WeightedOre)
+    ```
 
 - Removes all recipes that match the given ore:
 

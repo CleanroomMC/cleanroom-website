@@ -23,6 +23,13 @@ mods.betterwithmods.Turntable
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.turntable.add(TurntableRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Turntable also uses a recipe builder.
@@ -89,6 +96,12 @@ mods.betterwithmods.turntable.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.turntable.remove(TurntableRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

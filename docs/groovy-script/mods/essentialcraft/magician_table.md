@@ -33,6 +33,13 @@ mods.essentialcraft.MagicianTable
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.magician_table.add(MagicianTableRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Magician Table also uses a recipe builder.
@@ -82,6 +89,12 @@ mods.essentialcraft.magician_table.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.magician_table.remove(MagicianTableRecipe)
+    ```
 
 - Removes all recipes that match the given output:
 

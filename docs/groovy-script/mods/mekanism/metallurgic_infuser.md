@@ -31,6 +31,12 @@ mods.mekanism.MetallurgicInfuser
     mods.mekanism.metallurgic_infuser.add(IIngredient, InfuseType, int, ItemStack)
     ```
 
+- Adds recipes in the format `ingredient`, `infuseType`, `infuseAmount`, `output`:
+
+    ```groovy:no-line-numbers
+    mods.mekanism.metallurgic_infuser.add(IIngredient, String, int, ItemStack)
+    ```
+
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mekanism.metallurgic_infuser.add(item('minecraft:nether_star'), infusionType('groovy_example'), 50, item('minecraft:clay'))
@@ -95,12 +101,6 @@ mods.mekanism.metallurgic_infuser.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
-
-- Adds recipes in the format `ingredient`, `infuseType`, `infuseAmount`, `output`:
-
-    ```groovy:no-line-numbers
-    mods.mekanism.metallurgic_infuser.add(IIngredient, String, int, ItemStack)
-    ```
 
 - Removes all recipes that match the given input:
 

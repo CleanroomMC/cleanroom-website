@@ -25,6 +25,12 @@ mods.industrialforegoing.SludgeRefiner
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.sludge_refiner.add(SludgeEntry)
+    ```
+
 - Adds a Protein Reactor recipe in the format `output`, `weight`:
 
     ```groovy:no-line-numbers
@@ -39,6 +45,12 @@ mods.industrialforegoing.sludge_refiner.add(item('minecraft:gold_ingot'), 5)
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.sludge_refiner.remove(SludgeEntry)
+    ```
 
 - Removes all recipes that match the given output:
 

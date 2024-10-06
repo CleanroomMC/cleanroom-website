@@ -25,6 +25,13 @@ mods.actuallyadditions.Empowerer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.empowerer.add(EmpowererRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Empowerer also uses a recipe builder.
@@ -144,6 +151,12 @@ mods.actuallyadditions.empowerer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.empowerer.remove(EmpowererRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

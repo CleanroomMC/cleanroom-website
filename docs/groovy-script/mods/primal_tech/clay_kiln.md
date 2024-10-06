@@ -29,6 +29,12 @@ mods.primaltech.ClayKiln
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.clay_kiln.add(ClayKilnRecipes)
+    ```
+
 - Adds recipes in the format `output`, `input`, `cookTime`:
 
     ```groovy:no-line-numbers
@@ -91,6 +97,12 @@ mods.primal_tech.clay_kiln.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.clay_kiln.remove(ClayKilnRecipes)
+    ```
 
 - Removes all recipes that match the given input:
 

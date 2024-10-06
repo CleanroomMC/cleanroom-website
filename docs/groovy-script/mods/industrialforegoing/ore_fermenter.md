@@ -27,6 +27,12 @@ mods.industrialforegoing.Fermentation
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_fermenter.add(OreFluidEntryFermenter)
+    ```
+
 - Adds a Fermentation Station recipe in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -41,6 +47,12 @@ mods.industrialforegoing.ore_fermenter.add(fluid('if.ore_fluid_raw').withNbt(['O
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_fermenter.remove(OreFluidEntryFermenter)
+    ```
 
 - Removes all recipes that match the given input:
 

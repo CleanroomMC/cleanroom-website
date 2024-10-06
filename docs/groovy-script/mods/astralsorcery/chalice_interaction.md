@@ -29,6 +29,12 @@ mods.astral.ChaliceInteraction
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.chalice_interaction.add(LiquidInteraction)
+    ```
+
 - Adds entries in the format `probability`, `component1`, `component2`, `action`:
 
     ```groovy:no-line-numbers
@@ -103,6 +109,12 @@ mods.astralsorcery.chalice_interaction.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.chalice_interaction.remove(LiquidInteraction)
+    ```
 
 - Removes all recipes that match the given input:
 

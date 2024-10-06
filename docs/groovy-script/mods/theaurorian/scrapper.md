@@ -25,6 +25,13 @@ mods.theaurorian.Scrapper
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.theaurorian.scrapper.add(ScrapperRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Scrapper also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.theaurorian.scrapper.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.theaurorian.scrapper.remove(ScrapperRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

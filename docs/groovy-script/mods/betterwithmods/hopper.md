@@ -23,6 +23,13 @@ mods.betterwithmods.Hopper
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.hopper.add(HopperInteractions.HopperRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Filtered Hopper also uses a recipe builder.
@@ -88,6 +95,12 @@ mods.betterwithmods.hopper.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.hopper.remove(HopperInteractions.HopperRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

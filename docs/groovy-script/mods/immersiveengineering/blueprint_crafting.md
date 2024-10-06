@@ -47,7 +47,7 @@ Just like other recipe types, the Blueprint Crafting also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.immersiveengineering.blueprint_crafting.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     input(IIngredient)

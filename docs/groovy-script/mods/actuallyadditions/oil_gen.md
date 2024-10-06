@@ -29,6 +29,13 @@ mods.actuallyadditions.OilGen
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.oil_gen.add(OilGenRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Oil Gen also uses a recipe builder.
@@ -54,7 +61,6 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 
     ```groovy:no-line-numbers
     amount(int)
-    fluidInput(FluidStack)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `de.ellpeck.actuallyadditions.api.recipe.OilGenRecipe`).
@@ -72,7 +78,8 @@ mods.actuallyadditions.oil_gen.recipeBuilder()
     .register()
 
 mods.actuallyadditions.oil_gen.recipeBuilder()
-    .fluidInput(fluid('lava') * 50)
+    .fluidInput(fluid('lava'))
+    .amount(50)
     .time(100)
     .register()
 ```
@@ -82,6 +89,12 @@ mods.actuallyadditions.oil_gen.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.oil_gen.remove(OilGenRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

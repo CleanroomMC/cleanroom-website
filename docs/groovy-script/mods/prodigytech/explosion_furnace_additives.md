@@ -47,18 +47,6 @@ mods.prodigytech.explosion_furnace_additives.addExplosive(item('minecraft:cobble
 
 ## Removing Entries
 
-- Removes all registered dampeners.:
-
-    ```groovy:no-line-numbers
-    mods.prodigytech.explosion_furnace_additives.removeAllDampeners()
-    ```
-
-- Removes all registered explosives.:
-
-    ```groovy:no-line-numbers
-    mods.prodigytech.explosion_furnace_additives.removeAllExplosives()
-    ```
-
 - Removes a dampener by the input item.:
 
     ```groovy:no-line-numbers
@@ -71,12 +59,24 @@ mods.prodigytech.explosion_furnace_additives.addExplosive(item('minecraft:cobble
     mods.prodigytech.explosion_furnace_additives.removeExplosive(IIngredient)
     ```
 
+- Removes all registered dampeners.:
+
+    ```groovy:no-line-numbers
+    mods.prodigytech.explosion_furnace_additives.removeAllDampeners()
+    ```
+
+- Removes all registered explosives.:
+
+    ```groovy:no-line-numbers
+    mods.prodigytech.explosion_furnace_additives.removeAllExplosives()
+    ```
+
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.prodigytech.explosion_furnace_additives.removeAllDampeners()
-mods.prodigytech.explosion_furnace_additives.removeAllExplosives()
 mods.prodigytech.explosion_furnace_additives.removeDampener(ore('dustAsh'))
 mods.prodigytech.explosion_furnace_additives.removeExplosive(ore('gunpowder'))
+mods.prodigytech.explosion_furnace_additives.removeAllDampeners()
+mods.prodigytech.explosion_furnace_additives.removeAllExplosives()
 ```
 
 ::::::::::

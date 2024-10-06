@@ -73,10 +73,10 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.jei.category.categoryBuilder()
-    .id(GenericRecipeCategory.UID)/* Note that `GenericRecipeCategory` must be defined elsewhere, and this example presumes certain fields and methods exist. */
-    .category(guiHelper -> new GenericRecipeCategory(guiHelper))
+    .id(classes.GenericRecipeCategory.UID)/* Note that `classes.GenericRecipeCategory` must be defined elsewhere, and this example presumes certain fields and methods exist. */
+    .category(guiHelper -> new classes.GenericRecipeCategory(guiHelper))
     .catalyst(item('minecraft:clay'))
-    .wrapper(GenericRecipeCategory.getRecipeWrappers())
+    .wrapper(classes.GenericRecipeCategory.getRecipeWrappers())
     .register()
 ```
 

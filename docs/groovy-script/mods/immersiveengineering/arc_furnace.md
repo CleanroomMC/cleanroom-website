@@ -29,6 +29,12 @@ mods.immersiveengineering.ArcFurnace
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.arc_furnace.add(ArcFurnaceRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `additives`, `slag`, `time`, `energyPerTick`:
 
     ```groovy:no-line-numbers
@@ -115,6 +121,12 @@ mods.immersiveengineering.arc_furnace.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.arc_furnace.remove(ArcFurnaceRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

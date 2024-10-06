@@ -25,6 +25,13 @@ mods.evilcraft.EnvironmentalAccumulator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.evilcraft.environmental_accumulator.add(IRecipe<EnvironmentalAccumulatorRecipeComponent, EnvironmentalAccumulatorRecipeComponent, EnvironmentalAccumulatorRecipeProperties>)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Environmental Accumulator also uses a recipe builder.
@@ -122,6 +129,12 @@ mods.evilcraft.environmental_accumulator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.evilcraft.environmental_accumulator.remove(IRecipe<EnvironmentalAccumulatorRecipeComponent, EnvironmentalAccumulatorRecipeComponent, EnvironmentalAccumulatorRecipeProperties>)
+    ```
 
 - Removes all recipes that match the given input:
 

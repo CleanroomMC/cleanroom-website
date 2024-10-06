@@ -25,6 +25,13 @@ mods.lazyae2.Etcher
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.etcher.add(EtchRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the ME Circuit Etching also uses a recipe builder.
@@ -87,6 +94,12 @@ mods.threng.etcher.recipeBuilder()
 
 ## Removing Recipes
 
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.etcher.remove(EtchRecipe)
+    ```
+
 - Removes all recipes that match the given input:
 
     ```groovy:no-line-numbers
@@ -113,3 +126,11 @@ mods.threng.etcher.removeAll()
 ```
 
 ::::::::::
+
+## Getting the value of recipes
+
+- Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
+
+    ```groovy:no-line-numbers
+    mods.threng.etcher.streamRecipes()
+    ```

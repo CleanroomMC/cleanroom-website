@@ -25,6 +25,13 @@ mods.evilcraft.BloodInfuser
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.evilcraft.blood_infuser.add(IRecipe<IngredientFluidStackAndTierRecipeComponent, IngredientRecipeComponent, DurationXpRecipeProperties>)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Blood Infuser also uses a recipe builder.
@@ -112,6 +119,12 @@ mods.evilcraft.blood_infuser.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.evilcraft.blood_infuser.remove(IRecipe<IngredientFluidStackAndTierRecipeComponent, IngredientRecipeComponent, DurationXpRecipeProperties>)
+    ```
 
 - Removes all recipes that match the given input:
 

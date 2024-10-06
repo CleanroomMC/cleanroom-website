@@ -37,6 +37,12 @@ mods.bloodmagic.BloodAltar
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.blood_altar.add(RecipeBloodAltar)
+    ```
+
 - Adds recipes in the format `input`, `output`, `minimumTier`, `syphon`, `consumeRate`, `drainRate`:
 
     ```groovy:no-line-numbers
@@ -85,7 +91,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     consumeRate(int)
     ```
 
-- `int`. Sets the minimum tier required from the altar. Requires greater than or equal to 0 and less than AltarTier.MAXTIERS. (Default `0`).
+- `int`. Sets the minimum tier required from the altar. Requires greater than or equal to 0 and less than `AltarTier.MAXTIERS`, which is determined by the config option `enableTierSixEvenThoughThereIsNoContent`. (Default `0`).
 
     ```groovy:no-line-numbers
     tier(int)
@@ -124,6 +130,12 @@ mods.bloodmagic.blood_altar.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.blood_altar.remove(RecipeBloodAltar)
+    ```
 
 - Removes all recipes that match the given input:
 

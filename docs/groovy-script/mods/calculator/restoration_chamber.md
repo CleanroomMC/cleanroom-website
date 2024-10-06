@@ -25,6 +25,13 @@ mods.calculator.RestorationChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.restoration_chamber.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Restoration Chamber also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.restoration_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.restoration_chamber.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -27,6 +27,12 @@ mods.ticon.Melting
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.melting.add(MeltingRecipe)
+    ```
+
 - Adds a new recipe in the format `input`, `output`, `time`:
 
     ```groovy:no-line-numbers
@@ -41,6 +47,14 @@ Just like other recipe types, the Melting also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.tconstruct.melting.recipeBuilder() {open id="abstract"}
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
+
 - `int`. Required temperature for melting. Also determines the speed of the melt. Requires greater than or equal to 1. (Default `300`).
 
     ```groovy:no-line-numbers
@@ -68,6 +82,12 @@ mods.tconstruct.melting.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.melting.remove(MeltingRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

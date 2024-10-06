@@ -25,6 +25,13 @@ mods.calculator.StoneSeparator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.stone_separator.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Stone Separator also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.stone_separator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.stone_separator.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

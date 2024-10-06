@@ -37,6 +37,13 @@ mods.calculator.AnalyzingChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.analysing_chamber.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Analysing Chamber also uses a recipe builder.
@@ -91,10 +98,16 @@ mods.calculator.analysing_chamber.recipeBuilder()
 
 ## Removing Recipes
 
-- Removes all recipes that match the given input:
+- Removes the given recipe from the recipe list:
 
     ```groovy:no-line-numbers
-    mods.calculator.analysing_chamber.removeByInput(IIngredient)
+    mods.calculator.analysing_chamber.remove(CalculatorRecipe)
+    ```
+
+- Removes all recipes that match the given output:
+
+    ```groovy:no-line-numbers
+    mods.calculator.analysing_chamber.removeByOutput(IIngredient)
     ```
 
 - Removes all registered recipes:
@@ -105,7 +118,7 @@ mods.calculator.analysing_chamber.recipeBuilder()
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.calculator.analysing_chamber.removeByInput(item('sonarcore:reinforceddirtblock'))
+mods.calculator.analysing_chamber.removeByOutput(item('sonarcore:reinforceddirtblock'))
 mods.calculator.analysing_chamber.removeAll()
 ```
 

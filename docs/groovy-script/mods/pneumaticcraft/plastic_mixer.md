@@ -33,6 +33,13 @@ mods.pneumaticcraft.PlasticMixer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.plastic_mixer.add(PlasticMixerRegistry.PlasticMixerRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Plastic Mixer also uses a recipe builder.
@@ -119,6 +126,12 @@ mods.pneumaticcraft.plastic_mixer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.plastic_mixer.remove(PlasticMixerRegistry.PlasticMixerRecipe)
+    ```
 
 - Removes all recipes with the given fluid input:
 

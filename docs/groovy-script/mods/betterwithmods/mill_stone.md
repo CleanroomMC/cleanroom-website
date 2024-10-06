@@ -27,6 +27,13 @@ mods.betterwithmods.Mill
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.mill_stone.add(MillRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Mill Stone also uses a recipe builder.
@@ -93,6 +100,12 @@ mods.betterwithmods.mill_stone.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.mill_stone.remove(MillRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

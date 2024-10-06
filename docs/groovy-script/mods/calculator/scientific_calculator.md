@@ -25,6 +25,13 @@ mods.calculator.ScientificCalculator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.scientific_calculator.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Scientific Calculator also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.scientific_calculator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.scientific_calculator.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

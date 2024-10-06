@@ -23,6 +23,13 @@ mods.betterwithmods.Crucible
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.crucible.add(CookingPotRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Crucible also uses a recipe builder.
@@ -91,6 +98,12 @@ mods.betterwithmods.crucible.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.crucible.remove(CookingPotRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

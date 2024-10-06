@@ -25,6 +25,12 @@ mods.industrialforegoing.BioReactor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.bio_reactor.add(IReactorEntry)
+    ```
+
 - Adds a Bioreactor recipe in the format `input`:
 
     ```groovy:no-line-numbers
@@ -45,6 +51,12 @@ mods.industrialforegoing.bio_reactor.add(item('minecraft:clay'))
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.bio_reactor.remove(IReactorEntry)
+    ```
 
 - Removes all recipes that match the given input:
 

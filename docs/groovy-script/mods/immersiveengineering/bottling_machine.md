@@ -33,6 +33,12 @@ mods.immersiveengineering.Bottling
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.bottling_machine.add(BottlingMachineRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `fluidInput`:
 
     ```groovy:no-line-numbers
@@ -91,6 +97,12 @@ mods.immersiveengineering.bottling_machine.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.bottling_machine.remove(BottlingMachineRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -25,6 +25,13 @@ mods.calculator.ReassemblyChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.reassembly_chamber.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Reassembly Chamber also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.reassembly_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.reassembly_chamber.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

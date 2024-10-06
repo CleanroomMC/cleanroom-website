@@ -27,6 +27,12 @@ mods.extendedcrafting.Compression
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extendedcrafting.compression_crafting.add(CompressorRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `inputCount`, `catalyst`, `consumeCatalyst`, `powerCost`:
 
     ```groovy:no-line-numbers
@@ -123,6 +129,12 @@ mods.extendedcrafting.compression_crafting.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extendedcrafting.compression_crafting.remove(CompressorRecipe)
+    ```
 
 - Removes all recipes that match the given catalyst:
 

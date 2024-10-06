@@ -25,6 +25,13 @@ mods.calculator.PrecisionChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.precision_chamber.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Precision Chamber also uses a recipe builder.
@@ -72,6 +79,12 @@ mods.calculator.precision_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.precision_chamber.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

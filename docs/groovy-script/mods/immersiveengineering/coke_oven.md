@@ -29,6 +29,12 @@ mods.immersiveengineering.CokeOven
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.coke_oven.add(CokeOvenRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `time`, `creosoteOutput`:
 
     ```groovy:no-line-numbers
@@ -92,6 +98,12 @@ mods.immersiveengineering.coke_oven.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.coke_oven.remove(CokeOvenRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

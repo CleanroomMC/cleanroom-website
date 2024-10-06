@@ -27,6 +27,13 @@ mods.calculator.Calculator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.basic_calculator.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Calculator also uses a recipe builder.
@@ -69,6 +76,12 @@ mods.calculator.basic_calculator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.basic_calculator.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

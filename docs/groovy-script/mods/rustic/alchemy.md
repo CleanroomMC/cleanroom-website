@@ -25,6 +25,13 @@ mods.rustic.Condenser
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.alchemy.add(ICondenserRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Alchemy Condenser also uses a recipe builder.
@@ -32,7 +39,7 @@ Just like other recipe types, the Alchemy Condenser also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.rustic.alchemy.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 2 or 3.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to 2 if advanced is false and less than or equal to 3 if advanced is true.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -124,6 +131,12 @@ mods.rustic.alchemy.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.alchemy.remove(ICondenserRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

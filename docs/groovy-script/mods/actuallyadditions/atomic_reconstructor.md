@@ -29,6 +29,13 @@ mods.actuallyadditions.AtomicReconstructor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.atomic_reconstructor.add(LensConversionRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Atomic Reconstructor also uses a recipe builder.
@@ -52,7 +59,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `Lens`. groovyscript.wiki.actuallyadditions.atomic_reconstructor.type.value. Requires not null. (Default `ActuallyAdditionsAPI.lensDefaultConversion`).
+- `Lens`. Sets the type of Lens used for the recipe. Requires not null. (Default `ActuallyAdditionsAPI.lensDefaultConversion`).
 
     ```groovy:no-line-numbers
     type(Lens)
@@ -96,6 +103,12 @@ mods.actuallyadditions.atomic_reconstructor.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.atomic_reconstructor.remove(LensConversionRecipe)
+    ```
 
 - Removes all recipes that match the given ore:
 

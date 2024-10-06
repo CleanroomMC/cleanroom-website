@@ -25,6 +25,12 @@ mods.immersiveengineering.Refinery
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.refinery.add(RefineryRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input0`, `input1`, `energy`:
 
     ```groovy:no-line-numbers
@@ -81,6 +87,12 @@ mods.immersiveengineering.refinery.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.refinery.remove(RefineryRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

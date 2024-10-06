@@ -37,6 +37,12 @@ mods.eio.SliceAndSplice
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.slice_n_splice.add(IManyToOneRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `energy`:
 
     ```groovy:no-line-numbers
@@ -101,6 +107,12 @@ mods.enderio.slice_n_splice.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.slice_n_splice.remove(IManyToOneRecipe)
+    ```
 
 - Removes all recipes that match the given output:
 

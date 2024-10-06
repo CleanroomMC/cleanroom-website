@@ -29,6 +29,13 @@ mods.theaurorian.MoonlightForge
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.theaurorian.moonlight_forge.add(MoonlightForgeRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Moonlight Forge also uses a recipe builder.
@@ -71,6 +78,12 @@ mods.theaurorian.moonlight_forge.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.theaurorian.moonlight_forge.remove(MoonlightForgeRecipe)
+    ```
 
 - Removes a recipe by the input item and the catalyst item:
 

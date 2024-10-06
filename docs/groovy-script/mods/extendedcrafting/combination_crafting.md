@@ -31,6 +31,12 @@ mods.extendedcrafting.Combination
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extendedcrafting.combination_crafting.add(CombinationRecipe)
+    ```
+
 - Adds recipes in the format `output`, `cost`, `input`, `pedestals`:
 
     ```groovy:no-line-numbers
@@ -118,6 +124,12 @@ mods.extendedcrafting.combination_crafting.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extendedcrafting.combination_crafting.remove(CombinationRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

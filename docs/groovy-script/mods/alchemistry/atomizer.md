@@ -23,6 +23,12 @@ mods.alchemistry.Atomizer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.atomizer.add(AtomizerRecipe)
+    ```
+
 - Adds recipes in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -85,6 +91,12 @@ mods.alchemistry.atomizer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.atomizer.remove(AtomizerRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

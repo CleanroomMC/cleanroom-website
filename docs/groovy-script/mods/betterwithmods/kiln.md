@@ -23,6 +23,13 @@ mods.betterwithmods.Kiln
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.kiln.add(KilnRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Kiln also uses a recipe builder.
@@ -89,6 +96,12 @@ mods.betterwithmods.kiln.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.kiln.remove(KilnRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

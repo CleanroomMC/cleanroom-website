@@ -11,6 +11,10 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Convert an input itemstack into up to 4 output itemstacks with chances, using energy. Output can be boosted by Grinding Balls based on set bonusType. Can be set to require at least SIMPLE, NORMAL, or ENHANCED tiers, or to IGNORE the tier. SIMPLE and IGNORE are effectively the same.
 
+:::::::::: details Warning {open id="warning"}
+EnderIO executes recipes using both its input and its grinding ball slot as inputs, which means it can consume grinding balls as input. This means an item that can be used as an input should not be able to also be used as a grinding ball.
+::::::::::
+
 ## Identifier
 
 Refer to this via any of the following:
@@ -34,6 +38,13 @@ mods.eio.SAGMill
 
 
 ## Adding Recipes
+
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.sag_mill.add(Recipe)
+    ```
+
 
 ### Recipe Builder
 
@@ -136,6 +147,12 @@ mods.enderio.sag_mill.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.sag_mill.remove(Recipe)
+    ```
 
 - Removes all recipes that match the given input:
 

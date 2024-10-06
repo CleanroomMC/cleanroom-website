@@ -29,6 +29,12 @@ mods.immersiveengineering.AlloyKiln
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.alloy_kiln.add(AlloyRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input0`, `input1`, `time`:
 
     ```groovy:no-line-numbers
@@ -84,6 +90,12 @@ mods.immersiveengineering.alloy_kiln.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.alloy_kiln.remove(AlloyRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

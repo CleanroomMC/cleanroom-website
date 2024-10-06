@@ -27,6 +27,13 @@ mods.mekanism.prc
 
 ## Adding Recipes
 
+- Adds recipes in the format `inputSolid`, `inputFluid`, `inputGas`, `outputSolid`, `outputGas`, `energy`, `duration`:
+
+    ```groovy:no-line-numbers
+    mods.mekanism.pressurized_reaction_chamber.add(IIngredient, FluidStack, GasStack, ItemStack, GasStack, double, int)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Pressurized Reaction Chamber also uses a recipe builder.
@@ -107,12 +114,6 @@ mods.mekanism.pressurized_reaction_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
-
-- Adds recipes in the format `inputSolid`, `inputFluid`, `inputGas`, `outputSolid`, `outputGas`, `energy`, `duration`:
-
-    ```groovy:no-line-numbers
-    mods.mekanism.pressurized_reaction_chamber.add(IIngredient, FluidStack, GasStack, ItemStack, GasStack, double, int)
-    ```
 
 - Removes all recipes that match the given input:
 

@@ -44,7 +44,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 9. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1, less than or equal to 9, and either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)
@@ -115,7 +115,7 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 13. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1, less than or equal to 13, and either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)
@@ -173,7 +173,7 @@ mods.astralsorcery.starlight_altar.discoveryRecipeBuilder()
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 21. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1, less than or equal to 21, and either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)
@@ -245,7 +245,7 @@ mods.astralsorcery.starlight_altar.constellationRecipeBuilder()
     matrix(String...)
     ```
 
-- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1 and less than or equal to 25. Requires either the key-based matrix or the ingredient-based matrix can be defined, not both.
+- `List<List<IIngredient>>`. Sets the items required in each slot in the grid as IIngredients. Requires greater than or equal to 1, less than or equal to 25, and either the key-based matrix or the ingredient-based matrix can be defined, not both.
 
     ```groovy:no-line-numbers
     shape(List<List<IIngredient>>)

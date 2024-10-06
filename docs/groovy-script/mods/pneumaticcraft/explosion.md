@@ -27,6 +27,13 @@ mods.pneumaticcraft.Explosion
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.explosion.add(ExplosionCraftingRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Explosion also uses a recipe builder.
@@ -81,6 +88,12 @@ mods.pneumaticcraft.explosion.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.explosion.remove(ExplosionCraftingRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

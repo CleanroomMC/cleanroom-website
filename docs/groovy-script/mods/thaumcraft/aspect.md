@@ -34,7 +34,7 @@ Just like other recipe types, the Aspect Creator also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.thaumcraft.aspect.aspectBuilder() {open id="abstract"}
-- `String`. Sets the name of the new Aspect. Requires not null. Requires the name must be a unique string.
+- `String`. Sets the name of the new Aspect. Requires not null and the name must be a unique string.
 
     ```groovy:no-line-numbers
     tag(String)
@@ -77,11 +77,17 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.thaumcraft.aspect.aspectBuilder()
-    .tag('humor')
-    .chatColor(14013676)
+    .tag('clay')
+    .chatColor(0xD5D4EC)
+    .image(resource('placeholdername:textures/items/clay_2.png'))
+    .register()
+
+mods.thaumcraft.aspect.aspectBuilder()
+    .tag('snack')
+    .chatColor(0xD5D4EC)
     .component(aspect('cognitio'))
-    .component('perditio')
-    .image(resource('thaumcraft:textures/aspects/humor.png'))
+    .component('clay')
+    .image(resource('placeholdername:textures/items/snack.png'))
     .register()
 ```
 

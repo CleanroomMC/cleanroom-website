@@ -27,7 +27,29 @@ mods.astral.LightTransmutation
 ```
 
 
+## Editing Values
+
+- Sets the IBlockState that Starmetal Ore is converted into when placed beneath a Celestial Crystal Cluster. Useful when the Light Transmutation recipe converting Iron Ore into Starmetal Ore has changed.:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.light_transmutation.setStarmetalReplacementState(IBlockState)
+    ```
+
+:::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.astralsorcery.light_transmutation.setStarmetalReplacementState(blockstate('minecraft:clay'))
+```
+
+::::::::::
+
 ## Adding Recipes
+
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.light_transmutation.add(LightOreTransmutations.Transmutation)
+    ```
+
 
 ### Recipe Builder
 
@@ -42,7 +64,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     cost(double)
     ```
 
-- `IBlockState`. Sets the input IBlockState, recipe will convert only the given blockstate. Requires not null and not inBlock.
+- `IBlockState`. Sets the input IBlockState, recipe will convert only the given blockstate. Requires not null or inBlock.
 
     ```groovy:no-line-numbers
     input(IBlockState)
@@ -55,7 +77,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(IBlockState)
     ```
 
-- `Block`. Sets the input Block, recipe will convert any blockstate of the provided block. Requires not null and not input.
+- `Block`. Sets the input Block, recipe will convert any blockstate of the provided block. Requires not null or input.
 
     ```groovy:no-line-numbers
     input(Block)
@@ -108,6 +130,12 @@ mods.astralsorcery.light_transmutation.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.astralsorcery.light_transmutation.remove(LightOreTransmutations.Transmutation)
+    ```
 
 - Removes all recipes that match the given input:
 

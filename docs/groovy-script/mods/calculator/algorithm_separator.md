@@ -25,6 +25,13 @@ mods.calculator.AlgorithmSeparator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.algorithm_separator.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Algorithm Separator also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.algorithm_separator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.algorithm_separator.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 
