@@ -25,6 +25,12 @@ mods.immersiveengineering.Fermenter
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.fermenter.add(FermenterRecipe)
+    ```
+
 - Adds recipes in the format `fluidOutput`, `itemOutput`, `input`, `energy`:
 
     ```groovy:no-line-numbers
@@ -90,6 +96,12 @@ mods.immersiveengineering.fermenter.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.fermenter.remove(FermenterRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

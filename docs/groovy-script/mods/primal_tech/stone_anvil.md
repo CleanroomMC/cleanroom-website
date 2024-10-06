@@ -29,6 +29,12 @@ mods.primaltech.StoneAnvil
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.stone_anvil.add(StoneAnvilRecipes)
+    ```
+
 - Adds recipes in the format `output`, `input`:
 
     ```groovy:no-line-numbers
@@ -83,6 +89,12 @@ mods.primal_tech.stone_anvil.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.stone_anvil.remove(StoneAnvilRecipes)
+    ```
 
 - Removes all recipes that match the given input:
 

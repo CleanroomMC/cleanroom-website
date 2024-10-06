@@ -25,6 +25,13 @@ mods.cyclic.Packager
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.packager.add(RecipePackager)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Packager also uses a recipe builder.
@@ -72,6 +79,12 @@ mods.cyclicmagic.packager.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.packager.remove(RecipePackager)
+    ```
 
 - Removes all recipes that match the given input:
 

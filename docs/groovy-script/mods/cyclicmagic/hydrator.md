@@ -25,6 +25,13 @@ mods.cyclic.Hydrator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.hydrator.add(RecipeHydrate)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Hydrator also uses a recipe builder.
@@ -79,6 +86,12 @@ mods.cyclicmagic.hydrator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.hydrator.remove(RecipeHydrate)
+    ```
 
 - Removes all recipes that match the given input:
 

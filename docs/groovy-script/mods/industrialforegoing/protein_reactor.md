@@ -25,6 +25,12 @@ mods.industrialforegoing.ProteinReactor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.protein_reactor.add(IReactorEntry)
+    ```
+
 - Adds a Protein Reactor recipe in the format `input`:
 
     ```groovy:no-line-numbers
@@ -45,6 +51,12 @@ mods.industrialforegoing.protein_reactor.add(item('minecraft:clay'))
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.protein_reactor.remove(IReactorEntry)
+    ```
 
 - Removes all recipes that match the given input:
 

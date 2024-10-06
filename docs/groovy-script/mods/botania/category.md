@@ -23,6 +23,12 @@ mods.botania.Category
 
 ## Adding Entries
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.category.add(LexiconCategory)
+    ```
+
 - Adds a Category to the Lexica Botania in the format `name`, `icon` and a priority of 5:
 
     ```groovy:no-line-numbers
@@ -44,6 +50,12 @@ mods.botania.category.add('first', resource('minecraft:textures/items/clay_ball.
 ::::::::::
 
 ## Removing Entries
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.category.remove(LexiconCategory)
+    ```
 
 - Removes a Category matching the given name:
 
@@ -78,4 +90,10 @@ mods.botania.category.removeAll()
 
     ```groovy:no-line-numbers
     mods.botania.category.streamCategories()
+    ```
+
+- Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
+
+    ```groovy:no-line-numbers
+    mods.botania.category.streamRecipes()
     ```

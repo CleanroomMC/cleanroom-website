@@ -27,6 +27,12 @@ mods.industrialforegoing.TreeFluidExtractor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.extractor.add(ExtractorEntry)
+    ```
+
 - Adds a Latex Extractor recipe in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -48,6 +54,12 @@ mods.industrialforegoing.extractor.add(item('minecraft:stone'), fluid('water') *
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.extractor.remove(ExtractorEntry)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -29,6 +29,12 @@ mods.industrialforegoing.FluidSieving
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_sieve.add(OreFluidEntrySieve)
+    ```
+
 - Adds a Fluid Sieving Machine recipe in the format `input`, `output`, `sieveItem`:
 
     ```groovy:no-line-numbers
@@ -44,6 +50,12 @@ mods.industrialforegoing.ore_sieve.add(fluid('lava') * 5, item('minecraft:gold_i
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.ore_sieve.remove(OreFluidEntrySieve)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -25,6 +25,13 @@ mods.extrautilities2.Resonator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extrautils2.resonator.add(IResonatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Resonator also uses a recipe builder.
@@ -110,6 +117,12 @@ mods.extrautils2.resonator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.extrautils2.resonator.remove(IResonatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

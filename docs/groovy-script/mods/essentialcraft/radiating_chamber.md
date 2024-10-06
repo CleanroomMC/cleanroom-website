@@ -29,6 +29,13 @@ mods.essentialcraft.RadiatingChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.radiating_chamber.add(RadiatingChamberRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Radiating Chamber also uses a recipe builder.
@@ -64,13 +71,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     mruPerTick(float)
     ```
 
-- `float`. Sets the minimum balance required for this recipe. Requires greater than or equal to 0.0f and less than or equal to 2.0f. (Default `0.0f`).
+- `float`. Sets the minimum balance required for this recipe. Requires greater than or equal to 0 and less than or equal to 2. (Default `0.0f`).
 
     ```groovy:no-line-numbers
     lowerBalance(float)
     ```
 
-- `float`. Sets the maximum balance required for this recipe. Requires greater than or equal to 0.0f and less than or equal to 2.0f. (Default `2.0f`).
+- `float`. Sets the maximum balance required for this recipe. Requires greater than or equal to 0 and less than or equal to 2. (Default `2.0f`).
 
     ```groovy:no-line-numbers
     upperBalance(float)
@@ -99,6 +106,12 @@ mods.essentialcraft.radiating_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.radiating_chamber.remove(RadiatingChamberRecipe)
+    ```
 
 - Removes all recipes that match the given output:
 

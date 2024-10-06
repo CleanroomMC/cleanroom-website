@@ -29,6 +29,13 @@ mods.integrateddynamics.DryingBasin
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.integrateddynamics.drying_basin.add(IRecipe<IngredientAndFluidStackRecipeComponent, IngredientAndFluidStackRecipeComponent, DurationRecipeProperties>)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Drying Basin also uses a recipe builder.
@@ -84,6 +91,12 @@ mods.integrateddynamics.drying_basin.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.integrateddynamics.drying_basin.remove(IRecipe<IngredientAndFluidStackRecipeComponent, IngredientAndFluidStackRecipeComponent, DurationRecipeProperties>)
+    ```
 
 - Removes all recipes that match the given input:
 

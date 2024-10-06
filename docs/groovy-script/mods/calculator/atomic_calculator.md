@@ -25,6 +25,13 @@ mods.calculator.AtomicCalculator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.atomic_calculator.add(CalculatorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Atomic Calculator also uses a recipe builder.
@@ -67,6 +74,12 @@ mods.calculator.atomic_calculator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.atomic_calculator.remove(CalculatorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

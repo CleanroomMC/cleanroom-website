@@ -25,6 +25,12 @@ mods.industrialforegoing.FluidDictionary
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.fluid_dictionary.add(FluidDictionaryEntry)
+    ```
+
 - Adds a Fluid Dictionary Converter recipe in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -54,6 +60,12 @@ mods.industrialforegoing.fluid_dictionary.add(fluid('latex'), fluid('essence'), 
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.industrialforegoing.fluid_dictionary.remove(FluidDictionaryEntry)
+    ```
 
 - Removes all recipes that match the given input:
 

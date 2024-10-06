@@ -23,6 +23,13 @@ mods.betterwithmods.Saw
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.saw.add(SawRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Saw also uses a recipe builder.
@@ -69,6 +76,12 @@ mods.betterwithmods.saw.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.saw.remove(SawRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

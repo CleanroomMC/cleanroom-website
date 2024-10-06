@@ -29,6 +29,12 @@ mods.bloodmagic.AlchemyArray
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.alchemy_array.add(RecipeAlchemyArray)
+    ```
+
 - Adds recipes in the format `input`, `catalyst`, `output`, `circleTexture`:
 
     ```groovy:no-line-numbers
@@ -111,6 +117,12 @@ mods.bloodmagic.alchemy_array.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.alchemy_array.remove(RecipeAlchemyArray)
+    ```
 
 - Removes all recipes that match the given catalyst:
 

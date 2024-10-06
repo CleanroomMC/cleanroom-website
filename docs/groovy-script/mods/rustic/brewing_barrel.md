@@ -25,6 +25,13 @@ mods.rustic.BrewingBarrel
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.brewing_barrel.add(IBrewingBarrelRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Brewing Barrel also uses a recipe builder.
@@ -72,6 +79,12 @@ mods.rustic.brewing_barrel.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.brewing_barrel.remove(IBrewingBarrelRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

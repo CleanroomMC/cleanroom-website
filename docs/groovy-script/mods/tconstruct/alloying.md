@@ -27,6 +27,12 @@ mods.ticon.Alloying
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.alloying.add(AlloyRecipe)
+    ```
+
 - Adds a new recipe in the format `output`, `inputs`:
 
     ```groovy:no-line-numbers
@@ -47,7 +53,7 @@ Just like other recipe types, the Alloying also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.tconstruct.alloying.recipeBuilder() {open id="abstract"}
-- `FluidStackList`. Sets the fluid inputs of the recipe. Requires greater than or equal to 2 and less than or equal to Integer.MAX_VALUE.
+- `FluidStackList`. Sets the fluid inputs of the recipe. Requires greater than or equal to 2.
 
     ```groovy:no-line-numbers
     fluidInput(FluidStack)
@@ -82,6 +88,12 @@ mods.tconstruct.alloying.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.alloying.remove(AlloyRecipe)
+    ```
 
 - Removes all recipes that match the given inputs:
 

@@ -25,6 +25,12 @@ mods.immersiveengineering.Crusher
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.crusher.add(CrusherRecipe)
+    ```
+
 - Adds recipes in the format `output`, `input`, `energy`:
 
     ```groovy:no-line-numbers
@@ -61,14 +67,14 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     energy(int)
     ```
 
-- `List<ItemStack>`. Sets the additional items output by the recipe, if any. Requires exactly secondaryOutputChances.
+- `List<ItemStack>`. Sets the additional items output by the recipe, if any. Requires exactly equal to the number of elements in `secondaryOutputChances`.
 
     ```groovy:no-line-numbers
     secondaryOutput(ItemStack)
     secondaryOutput(ItemStack, float)
     ```
 
-- `FloatArrayList`. Sets the chance of the respective additional items output by the recipe. Requires exactly secondaryOutputItems.
+- `FloatArrayList`. Sets the chance of the respective additional items output by the recipe. Requires exactly equal to the number of elements in `secondaryOutputItems`.
 
     ```groovy:no-line-numbers
     secondaryOutput(ItemStack)
@@ -103,6 +109,12 @@ mods.immersiveengineering.crusher.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.crusher.remove(CrusherRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

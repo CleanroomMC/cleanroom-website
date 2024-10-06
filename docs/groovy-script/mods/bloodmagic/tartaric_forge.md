@@ -11,6 +11,10 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Converts up to 4 input items into an output itemstack, requiring a Tartaric gem with a minimum amount of souls, and consuming some.
 
+:::::::::: details Warning {open id="warning"}
+Tartaric Forge can properly execute recipes that only have 1 input, but they're bugged in JEI. If a recipe only has 1 input, it will be duplicated in the bottom-right slot. This bug is purely visual, and the recipe still works as intended.
+::::::::::
+
 ## Identifier
 
 Refer to this via any of the following:
@@ -28,6 +32,12 @@ mods.bloodmagic.TartaricForge
 
 
 ## Adding Recipes
+
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.tartaric_forge.add(RecipeTartaricForge)
+    ```
 
 - Adds recipes in the format `input`, `output`, `minimumSouls`, `soulDrain`:
 
@@ -100,6 +110,12 @@ mods.bloodmagic.tartaric_forge.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.bloodmagic.tartaric_forge.remove(RecipeTartaricForge)
+    ```
 
 - Removes all recipes that match the given input:
 

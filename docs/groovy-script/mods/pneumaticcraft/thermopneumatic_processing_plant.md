@@ -25,6 +25,13 @@ mods.pneumaticcraft.ThermopneumaticProcessingPlant
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.thermopneumatic_processing_plant.add(IThermopneumaticProcessingPlantRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Thermopneumatic Processing Plant also uses a recipe builder.
@@ -97,6 +104,12 @@ mods.pneumaticcraft.thermopneumatic_processing_plant.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.thermopneumatic_processing_plant.remove(IThermopneumaticProcessingPlantRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

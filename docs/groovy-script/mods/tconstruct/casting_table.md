@@ -39,6 +39,13 @@ mods.ticon.Table
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.casting_table.add(ICastingRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Casting Table also uses a recipe builder.
@@ -103,6 +110,12 @@ mods.tconstruct.casting_table.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.casting_table.remove(ICastingRecipe)
+    ```
 
 - Removes all recipes that use the given item as a cast:
 

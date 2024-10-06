@@ -23,6 +23,13 @@ mods.mysticalagriculture.Reprocessor
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.mysticalagriculture.reprocessor.add(ReprocessorRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Seed Reprocessor also uses a recipe builder.
@@ -70,6 +77,12 @@ mods.mysticalagriculture.reprocessor.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.mysticalagriculture.reprocessor.remove(ReprocessorRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -23,6 +23,13 @@ mods.projecte.Transmutation
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.projecte.transmutation.add(WorldTransmutations.Entry)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the World Transmutation also uses a recipe builder.
@@ -85,6 +92,12 @@ mods.projecte.transmutation.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.projecte.transmutation.remove(WorldTransmutations.Entry)
+    ```
 
 - Removes all recipes that match the given input:
 

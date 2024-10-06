@@ -33,6 +33,12 @@ mods.primaltech.WoodenBasin
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.wooden_basin.add(WoodenBasinRecipes)
+    ```
+
 - Adds recipes in the format `output`, `fluid`, `inputs`:
 
     ```groovy:no-line-numbers
@@ -97,6 +103,12 @@ mods.primal_tech.wooden_basin.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.primal_tech.wooden_basin.remove(WoodenBasinRecipes)
+    ```
 
 - Removes all recipes that match the given input:
 

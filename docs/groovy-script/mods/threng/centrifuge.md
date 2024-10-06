@@ -25,6 +25,13 @@ mods.lazyae2.Centrifuge
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.centrifuge.add(PurifyRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Pulse Centrifuge also uses a recipe builder.
@@ -73,6 +80,12 @@ mods.threng.centrifuge.recipeBuilder()
 
 ## Removing Recipes
 
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.centrifuge.remove(PurifyRecipe)
+    ```
+
 - Removes all recipes that match the given input:
 
     ```groovy:no-line-numbers
@@ -99,3 +112,11 @@ mods.threng.centrifuge.removeAll()
 ```
 
 ::::::::::
+
+## Getting the value of recipes
+
+- Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
+
+    ```groovy:no-line-numbers
+    mods.threng.centrifuge.streamRecipes()
+    ```

@@ -29,6 +29,13 @@ mods.actuallyadditions.BallOfFur
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.ball_of_fur.add(BallOfFurReturn)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Ball of Fur also uses a recipe builder.
@@ -69,6 +76,12 @@ mods.actuallyadditions.ball_of_fur.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.ball_of_fur.remove(BallOfFurReturn)
+    ```
 
 - Removes all recipes that match the given output:
 

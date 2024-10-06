@@ -27,6 +27,12 @@ mods.botania.PetalApothecary
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.apothecary.add(RecipePetals)
+    ```
+
 - Adds recipes in the format `output`, `inputs`:
 
     ```groovy:no-line-numbers
@@ -76,6 +82,12 @@ mods.botania.apothecary.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.apothecary.remove(RecipePetals)
+    ```
 
 - Removes all recipes that match the given input:
 

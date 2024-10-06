@@ -25,6 +25,13 @@ mods.rustic.CrushingTub
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.crushing_tub.add(ICrushingTubRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Crushing Tub also uses a recipe builder.
@@ -79,6 +86,12 @@ mods.rustic.crushing_tub.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.rustic.crushing_tub.remove(ICrushingTubRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

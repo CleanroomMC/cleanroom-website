@@ -25,6 +25,13 @@ mods.cyclic.Dehydrator
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.dehydrator.add(RecipeDeHydrate)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the DeHydrator also uses a recipe builder.
@@ -86,6 +93,12 @@ mods.cyclicmagic.dehydrator.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.dehydrator.remove(RecipeDeHydrate)
+    ```
 
 - Removes all recipes that match the given input:
 

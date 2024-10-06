@@ -27,6 +27,13 @@ mods.inspirations.Cauldron
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.inspirations.cauldron.add(ICauldronRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Cauldron also uses a recipe builder.
@@ -94,7 +101,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     sound(SoundEvent)
     ```
 
-- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`. (Default `0`).
+- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`, which is determined by the config option `biggerCauldron`. (Default `0`).
 
     ```groovy:no-line-numbers
     levels(int)
@@ -206,7 +213,7 @@ mods.inspirations.cauldron.recipeBuilderBrewing()
     dye(EnumDyeColor)
     ```
 
-- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`. (Default `0`).
+- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`, which is determined by the config option `biggerCauldron`. (Default `0`).
 
     ```groovy:no-line-numbers
     levels(int)
@@ -343,7 +350,7 @@ mods.inspirations.cauldron.recipeBuilderMix()
     output(Collection<ItemStack>)
     ```
 
-- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`. (Default `0`).
+- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`, which is determined by the config option `biggerCauldron`. (Default `0`).
 
     ```groovy:no-line-numbers
     levels(int)
@@ -356,7 +363,7 @@ mods.inspirations.cauldron.recipeBuilderMix()
     boiling(Boolean)
     ```
 
-- `PotionType`. Sets the input potion type. Requires exactly 0 and exactly 1.
+- `PotionType`. Sets the input potion type. Requires greater than or equal to 0 and less than or equal to 1.
 
     ```groovy:no-line-numbers
     inputPotion(PotionType)
@@ -414,7 +421,7 @@ mods.inspirations.cauldron.recipeBuilderPotion()
     sound(SoundEvent)
     ```
 
-- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`. (Default `0`).
+- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`, which is determined by the config option `biggerCauldron`. (Default `0`).
 
     ```groovy:no-line-numbers
     levels(int)
@@ -480,7 +487,7 @@ mods.inspirations.cauldron.recipeBuilderStandard()
     sound(SoundEvent)
     ```
 
-- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`. (Default `0`).
+- `int`. Sets the level of fluid in the cauldron, where each bottle is a single level. Requires greater than or equal to 0 and less than or equal to `InspirationsRegistry.getCauldronMax()`, which is determined by the config option `biggerCauldron`. (Default `0`).
 
     ```groovy:no-line-numbers
     levels(int)
@@ -514,6 +521,12 @@ mods.inspirations.cauldron.recipeBuilderTransform()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.inspirations.cauldron.remove(ICauldronRecipe)
+    ```
 
 - Removes all recipes with the given fluid input:
 

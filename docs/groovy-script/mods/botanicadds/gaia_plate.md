@@ -25,6 +25,13 @@ mods.botanicadds.GaiaPlate
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botanicadds.gaia_plate.add(GaiaPlateRecipes.RecipeGaiaPlate)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Gaia Plate also uses a recipe builder.
@@ -40,7 +47,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     input(Collection<IIngredient>)
     ```
 
-- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     output(ItemStack)
@@ -80,6 +87,12 @@ mods.botanicadds.gaia_plate.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botanicadds.gaia_plate.remove(GaiaPlateRecipes.RecipeGaiaPlate)
+    ```
 
 - Removes all recipes that match the given input:
 

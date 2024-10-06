@@ -23,6 +23,13 @@ mods.alchemistry.Electrolyzer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.electrolyzer.add(ElectrolyzerRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Electrolyzer also uses a recipe builder.
@@ -92,6 +99,12 @@ mods.alchemistry.electrolyzer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.electrolyzer.remove(ElectrolyzerRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

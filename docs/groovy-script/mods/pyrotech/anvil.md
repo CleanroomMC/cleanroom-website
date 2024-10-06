@@ -31,7 +31,7 @@ mods.pyrotech.Anvil
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.pyrotech.anvil.add('iron_to_clay', ore('ingotIron') * 5, item('minecraft:clay_ball') * 20, 9, 'granite', 'hammer')
+mods.pyrotech.anvil.add('iron_to_clay', ore('ingotIron'), item('minecraft:clay_ball'), 9, 'granite', 'hammer')
 ```
 
 ::::::::::

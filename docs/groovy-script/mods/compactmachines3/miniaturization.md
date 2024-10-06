@@ -25,6 +25,13 @@ mods.compactmachines.Miniaturization
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.compactmachines3.miniaturization.add(MultiblockRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Miniaturization also uses a recipe builder.
@@ -210,6 +217,12 @@ mods.compactmachines3.miniaturization.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.compactmachines3.miniaturization.remove(MultiblockRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

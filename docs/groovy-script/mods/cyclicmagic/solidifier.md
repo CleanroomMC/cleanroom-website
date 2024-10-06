@@ -25,6 +25,13 @@ mods.cyclic.Solidifier
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.solidifier.add(RecipeSolidifier)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Solidifier also uses a recipe builder.
@@ -82,6 +89,12 @@ mods.cyclicmagic.solidifier.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.cyclicmagic.solidifier.remove(RecipeSolidifier)
+    ```
 
 - Removes all recipes that match the given input:
 

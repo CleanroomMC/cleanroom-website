@@ -27,6 +27,13 @@ mods.alchemistry.ChemicalDissolver
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.dissolver.add(DissolverRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Chemical Dissolver also uses a recipe builder.
@@ -110,6 +117,12 @@ mods.alchemistry.dissolver.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.alchemistry.dissolver.remove(DissolverRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

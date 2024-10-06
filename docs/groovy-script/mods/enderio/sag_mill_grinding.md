@@ -11,6 +11,10 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 Add a new Griding Ball for use in a Sag Mill with the given output multiplier, power multiplier, chance multiplier, and duration (in base power used).
 
+:::::::::: details Warning {open id="warning"}
+EnderIO executes recipes using both its input and its grinding ball slot as inputs, which means it can consume grinding balls as input. This means an item that can be used as an input should not be able to also be used as a grinding ball.
+::::::::::
+
 ## Identifier
 
 Refer to this via any of the following:
@@ -32,6 +36,13 @@ mods.eio.Grinding
 
 
 ## Adding Recipes
+
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.sag_mill_grinding.add(GrindingBall)
+    ```
+
 
 ### Recipe Builder
 
@@ -94,6 +105,12 @@ mods.enderio.sag_mill_grinding.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.enderio.sag_mill_grinding.remove(GrindingBall)
+    ```
 
 - Removes the Grinding Ball item:
 

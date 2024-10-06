@@ -25,6 +25,12 @@ mods.botania.RuneAltar
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.rune_altar.add(RecipeRuneAltar)
+    ```
+
 - Adds recipes in the format `output`, `mana`, `inputs`:
 
     ```groovy:no-line-numbers
@@ -39,7 +45,7 @@ Just like other recipe types, the Rune Altar also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.botania.rune_altar.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1. Requires that `input` IIngredients cannot contain Botania's Livingrock Item.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1 and that `input` IIngredients cannot contain Botania's Livingrock Item.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -81,6 +87,12 @@ mods.botania.rune_altar.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.rune_altar.remove(RecipeRuneAltar)
+    ```
 
 - Removes all recipes that match the given input:
 

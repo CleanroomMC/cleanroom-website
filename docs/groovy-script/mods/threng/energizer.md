@@ -25,6 +25,13 @@ mods.lazyae2.Energizer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.energizer.add(EnergizeRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Crystal Energization also uses a recipe builder.
@@ -81,6 +88,12 @@ mods.threng.energizer.recipeBuilder()
 
 ## Removing Recipes
 
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.threng.energizer.remove(EnergizeRecipe)
+    ```
+
 - Removes all recipes that match the given input:
 
     ```groovy:no-line-numbers
@@ -107,3 +120,11 @@ mods.threng.energizer.removeAll()
 ```
 
 ::::::::::
+
+## Getting the value of recipes
+
+- Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
+
+    ```groovy:no-line-numbers
+    mods.threng.energizer.streamRecipes()
+    ```

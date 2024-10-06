@@ -25,6 +25,12 @@ mods.botania.PureDaisy
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.pure_daisy.add(RecipePureDaisy)
+    ```
+
 - Adds recipes in the format `output`, `input`:
 
     ```groovy:no-line-numbers
@@ -51,7 +57,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     time(int)
     ```
 
-- `Object`. Sets the valid input states. Requires not null. Requires either an IBlockState or String.
+- `Object`. Sets the valid input states. Requires not null and either an IBlockState or String.
 
     ```groovy:no-line-numbers
     input(Block)
@@ -86,6 +92,12 @@ mods.botania.pure_daisy.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.pure_daisy.remove(RecipePureDaisy)
+    ```
 
 - Removes all recipes that match the given input:
 

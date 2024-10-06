@@ -23,6 +23,18 @@ mods.mekanism.Sawmill
 
 ## Adding Recipes
 
+- Adds recipes in the format `ingredient`, `output`:
+
+    ```groovy:no-line-numbers
+    mods.mekanism.sawmill.add(IIngredient, ItemStack)
+    ```
+
+- Adds recipes in the format `ingredient`, `output`, `secondary`:
+
+    ```groovy:no-line-numbers
+    mods.mekanism.sawmill.add(IIngredient, ItemStack, ItemStack)
+    ```
+
 - Adds recipes in the format `ingredient`, `output`, `secondary`, `chance`:
 
     ```groovy:no-line-numbers
@@ -91,18 +103,6 @@ mods.mekanism.sawmill.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
-
-- Adds recipes in the format `ingredient`, `output`:
-
-    ```groovy:no-line-numbers
-    mods.mekanism.sawmill.add(IIngredient, ItemStack)
-    ```
-
-- Adds recipes in the format `ingredient`, `output`, `secondary`:
-
-    ```groovy:no-line-numbers
-    mods.mekanism.sawmill.add(IIngredient, ItemStack, ItemStack)
-    ```
 
 - Removes all recipes that match the given input:
 

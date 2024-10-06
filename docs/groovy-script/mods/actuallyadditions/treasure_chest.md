@@ -29,6 +29,13 @@ mods.actuallyadditions.TreasureChest
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.treasure_chest.add(TreasureChestLoot)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Treasure Chest also uses a recipe builder.
@@ -44,13 +51,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `int`. Sets the maximum stack size given when rolled. Requires greater than or equal to 0 and greater than or equal to min. (Default `0`).
+- `int`. Sets the maximum stack size given when rolled. Requires greater than or equal to 0 and greater than or equal to the size of min. (Default `0`).
 
     ```groovy:no-line-numbers
     max(int)
     ```
 
-- `int`. Sets the minimum stack size given when rolled. Requires greater than or equal to 0 and less than or equal to max. (Default `0`).
+- `int`. Sets the minimum stack size given when rolled. Requires greater than or equal to 0 and less than or equal to the size of max. (Default `0`).
 
     ```groovy:no-line-numbers
     min(int)
@@ -83,6 +90,12 @@ mods.actuallyadditions.treasure_chest.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.treasure_chest.remove(TreasureChestLoot)
+    ```
 
 - Removes all recipes that match the given output:
 

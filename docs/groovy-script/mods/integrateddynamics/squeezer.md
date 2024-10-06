@@ -25,6 +25,13 @@ mods.integrateddynamics.Squeezer
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.integrateddynamics.squeezer.add(IRecipe<IngredientRecipeComponent, IngredientsAndFluidStackRecipeComponent, DummyPropertiesComponent>)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Squeezer also uses a recipe builder.
@@ -109,6 +116,12 @@ mods.integrateddynamics.squeezer.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.integrateddynamics.squeezer.remove(IRecipe<IngredientRecipeComponent, IngredientsAndFluidStackRecipeComponent, DummyPropertiesComponent>)
+    ```
 
 - Removes all recipes that match the given input:
 

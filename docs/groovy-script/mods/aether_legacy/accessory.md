@@ -47,11 +47,11 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     input(Collection<IIngredient>)
     ```
 
-- `the_aether.AccessoryType`. Sets the type of accessory the item is, which controls what slot it can go into.
+- `AccessoryType`. Sets the type of accessory the item is, which controls what slot it can go into.
 
     ```groovy:no-line-numbers
     accessoryType(String)
-    accessoryType(the_aether.AccessoryType)
+    accessoryType(AccessoryType)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.gildedgames.the_aether.api.accessories.AetherAccessory`).

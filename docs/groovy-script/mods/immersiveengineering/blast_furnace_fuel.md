@@ -29,6 +29,12 @@ mods.immersiveengineering.BlastFurnaceFuel
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.blast_furnace_fuel.add(BlastFurnaceRecipe.BlastFurnaceFuel)
+    ```
+
 - Adds recipes in the format `input`, `time`:
 
     ```groovy:no-line-numbers
@@ -76,6 +82,12 @@ mods.immersiveengineering.blast_furnace_fuel.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersiveengineering.blast_furnace_fuel.remove(BlastFurnaceRecipe.BlastFurnaceFuel)
+    ```
 
 - Removes all recipes that match the given input:
 

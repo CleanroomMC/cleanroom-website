@@ -29,6 +29,13 @@ mods.essentialcraft.WindRune
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.wind_rune.add(WindImbueRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Wind Rune also uses a recipe builder.
@@ -78,6 +85,12 @@ mods.essentialcraft.wind_rune.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.essentialcraft.wind_rune.remove(WindImbueRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

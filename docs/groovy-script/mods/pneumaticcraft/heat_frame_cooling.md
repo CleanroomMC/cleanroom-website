@@ -25,6 +25,13 @@ mods.pneumaticcraft.HeatFrameCooling
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.heat_frame_cooling.add(HeatFrameCoolingRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Heat Frame Cooling also uses a recipe builder.
@@ -72,6 +79,12 @@ mods.pneumaticcraft.heat_frame_cooling.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.pneumaticcraft.heat_frame_cooling.remove(HeatFrameCoolingRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

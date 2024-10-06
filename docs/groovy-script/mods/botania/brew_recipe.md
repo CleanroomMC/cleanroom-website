@@ -25,6 +25,13 @@ mods.botania.BrewRecipe
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.brew_recipe.add(RecipeBrew)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Brew Recipe also uses a recipe builder.
@@ -66,6 +73,12 @@ mods.botania.brew_recipe.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.brew_recipe.remove(RecipeBrew)
+    ```
 
 - Removes all recipes that match the given input:
 

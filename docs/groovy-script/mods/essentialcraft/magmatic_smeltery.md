@@ -40,7 +40,7 @@ Just like other recipe types, the Magmatic Smeltery also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.essentialcraft.magmatic_smeltery.recipeBuilder() {open id="abstract"}
-- `int`. Sets the overlay color for the Magmatic Alloy item of this ore. Requires greater than or equal to 0 and less than or equal to 0xffffff. (Default `0`).
+- `int`. Sets the overlay color for the Magmatic Alloy item of this ore. Requires greater than or equal to 0 and less than or equal to the hexadecimal number `0xffffff`. (Default `0`).
 
     ```groovy:no-line-numbers
     color(int)

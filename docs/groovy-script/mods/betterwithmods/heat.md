@@ -64,3 +64,41 @@ mods.betterwithmods.heat.add(3, 'torch')
 ```
 
 ::::::::::
+
+## Adding Entries
+
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.heat.add(BWMHeatRegistry.HeatSource)
+    ```
+
+
+## Removing Entries
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.heat.remove(BWMHeatRegistry.HeatSource)
+    ```
+
+- Removes all registered recipes:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.heat.removeAll()
+    ```
+
+:::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.betterwithmods.heat.removeAll()
+```
+
+::::::::::
+
+## Getting the value of entries
+
+- Iterates through every entry in the registry, with the ability to call remove on any element to remove it:
+
+    ```groovy:no-line-numbers
+    mods.betterwithmods.heat.streamRecipes()
+    ```

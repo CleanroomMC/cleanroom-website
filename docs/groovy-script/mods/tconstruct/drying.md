@@ -27,6 +27,12 @@ mods.ticon.Drying
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.drying.add(DryingRecipe)
+    ```
+
 - Adds a new recipe in the format `input`, `output`, `time`:
 
     ```groovy:no-line-numbers
@@ -83,6 +89,12 @@ mods.tconstruct.drying.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.tconstruct.drying.remove(DryingRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

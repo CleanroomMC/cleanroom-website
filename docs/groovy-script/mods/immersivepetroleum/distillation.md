@@ -23,6 +23,13 @@ mods.immersivepetroleum.Distillation
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersivepetroleum.distillation.add(DistillationRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Distillation Tower also uses a recipe builder.
@@ -38,7 +45,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     fluidInput(Collection<FluidStack>)
     ```
 
-- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0 and less than or equal to Integer.MAX_VALUE.
+- `ItemStackList`. Sets the item outputs of the recipe. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
     output(ItemStack)
@@ -47,7 +54,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `FluidStackList`. Sets the fluid outputs of the recipe. Requires greater than or equal to 0 and less than or equal to Integer.MAX_VALUE.
+- `FluidStackList`. Sets the fluid outputs of the recipe. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
     fluidOutput(FluidStack)
@@ -106,6 +113,12 @@ mods.immersivepetroleum.distillation.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.immersivepetroleum.distillation.remove(DistillationRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

@@ -25,6 +25,13 @@ mods.calculator.ConductorMast
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.conductor_mast.add(DefaultSonarRecipe.Value)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Conductor Mast also uses a recipe builder.
@@ -74,6 +81,12 @@ mods.calculator.conductor_mast.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.conductor_mast.remove(DefaultSonarRecipe.Value)
+    ```
 
 - Removes all recipes that match the given input:
 

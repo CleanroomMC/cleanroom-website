@@ -25,6 +25,13 @@ mods.actuallyadditions.Compost
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.compost.add(CompostRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Compost also uses a recipe builder.
@@ -81,6 +88,12 @@ mods.actuallyadditions.compost.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.actuallyadditions.compost.remove(CompostRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

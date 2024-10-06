@@ -25,6 +25,13 @@ mods.calculator.FabricationChamber
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.fabrication_chamber.add(FabricationSonarRecipe)
+    ```
+
+
 ### Recipe Builder
 
 Just like other recipe types, the Fabrication Chamber also uses a recipe builder.
@@ -32,7 +39,7 @@ Just like other recipe types, the Fabrication Chamber also uses a recipe builder
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.calculator.fabrication_chamber.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1 and less than or equal to Integer.MAX_VALUE.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -73,6 +80,12 @@ mods.calculator.fabrication_chamber.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.calculator.fabrication_chamber.remove(FabricationSonarRecipe)
+    ```
 
 - Removes all recipes that match the given input:
 

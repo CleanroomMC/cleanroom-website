@@ -29,6 +29,12 @@ mods.botania.ManaInfusion
 
 ## Adding Recipes
 
+- Add the given recipe to the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.mana_infusion.add(RecipeManaInfusion)
+    ```
+
 - Adds recipes in the format `output`, `input`, `mana`:
 
     ```groovy:no-line-numbers
@@ -94,6 +100,12 @@ mods.botania.mana_infusion.recipeBuilder()
 ::::::::::
 
 ## Removing Recipes
+
+- Removes the given recipe from the recipe list:
+
+    ```groovy:no-line-numbers
+    mods.botania.mana_infusion.remove(RecipeManaInfusion)
+    ```
 
 - Removes all recipes with the given IBlockState catalyst:
 
