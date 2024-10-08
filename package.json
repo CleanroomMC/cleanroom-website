@@ -16,6 +16,7 @@
     "@nolebase/vitepress-plugin-git-changelog": "^2.5.0",
     "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.5.0",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.5.0",
+    "@nolebase/vitepress-plugin-meta": "^2.5.0",
     "@nolebase/vitepress-plugin-page-properties": "^2.5.0",
     "@types/node": "^20.16.10",
     "@typescript-eslint/parser": "^7.18.0",

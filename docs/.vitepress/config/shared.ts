@@ -7,6 +7,8 @@ import {
   GitChangelogMarkdownSection,
 } from "@nolebase/vitepress-plugin-git-changelog/vite";
 
+import { transformHeadMeta } from "@nolebase/vitepress-plugin-meta";
+
 export const shared = defineConfigWithTheme<CleanRoomConfig>({
   vite: {
     resolve: {
@@ -100,7 +102,6 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
     ['meta', { name: 'theme-color', content: '#3c699c' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
-    ['meta', { property: 'og:title', content: 'CleanroomMC | Mods, features, and related toolchains' }],
     ['meta', { property: 'og:site_name', content: 'CleanroomMC' }],
     ['meta', { property: 'og:image', content: 'https://cleanroommc.com/cleanroom-og.png' }],
     ['meta', { property: 'og:url', content: 'https://cleanroommc.com/' }],
@@ -151,5 +152,11 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
       { icon: "discord", link: "https://discord.gg/sgQxDJdrnY" },
       { icon: "github", link: "https://github.com/CleanroomMC/" },
     ],
+  },
+  async transformHead(context) {
+    let head = [...context.head];
+    const returnedHead = await transformHeadMeta()(head, <any>context);
+    if (typeof returnedHead !== "undefined") head = returnedHead;
+    return head;
   },
 });
