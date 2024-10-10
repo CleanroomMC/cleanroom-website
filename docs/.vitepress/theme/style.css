@@ -298,6 +298,13 @@ summary::after {
   right: 0;
 }
 
+details > summary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100vw;
+}
+
 details[open] > summary::after {
   transform: rotate(90deg);
 }
