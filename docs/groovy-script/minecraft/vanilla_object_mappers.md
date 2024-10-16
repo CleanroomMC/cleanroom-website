@@ -7,7 +7,7 @@ order: 1000
 There are a number of [Object Mappers](../getting_started/object_mappers.md) that
 GroovyScript adds by default. They offer a shorthand way to get the object easily.
 
-Like most Object Mappers, the best way to obtain these is via a GroovyScript info command.
+Like most Object Mappers, the best way to obtain these is via a [GroovyScript info command](./commands/info.md).
 
 
 ## Resource
