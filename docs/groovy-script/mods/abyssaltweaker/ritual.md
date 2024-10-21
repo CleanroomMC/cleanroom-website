@@ -12,7 +12,15 @@ source_code_link: "https://github.com/TeamDimensional/AbyssalTweaker/blob/master
 Allows setting up rituals that can be executed with various tiers of Necronomicon.
 
 :::::::::: details Warning {open id="warning"}
-For technical reasons the Ritual compatibility will not validate whether the ritual is executed in a valid dimension. By default only Overworld and Abyssalcraft's dimensions are valid, and other dimensions have to be added through the config file.
+For technical reasons the Ritual compatibility will not validate whether the ritual is set to execute in a valid dimension when it's registered. By default only Overworld and Abyssalcraft's dimensions are valid, and other dimensions have to be added through the config file.
+::::::::::
+
+:::::::::: details Warning {open id="warning"}
+The mob summoning rituals do not display in JEI (but do display in the Necronomicon).
+::::::::::
+
+:::::::::: details Warning {open id="warning"}
+The rituals in Necronomicon use the localization keys ac.ritual.ritualName (for the name) and ac.ritual.ritualName.desc (for the description, default empty). It is recommended to fill those through a language file.
 ::::::::::
 
 ## Identifier
@@ -71,7 +79,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     bookTier(String)
     ```
 
-- `int`. Sets the particle ID that is emitted from pedestals while this recipe is being executed (see also: EnumRitualParticle). Requires greater than or equal to 0 and less than 8. (Default `3`).
+- `int`. Sets the particle ID that is emitted from pedestals while this recipe is being executed (see also: EnumRitualParticle). Requires greater than or equal to 0 and less than 8. (Default `0`).
 
     ```groovy:no-line-numbers
     particle(int)
@@ -90,7 +98,19 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     requiresSacrifice()
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.shinoow.abyssalcraft.api.ritual.NecronomiconInfusionRitual`).
+- `IIngredient`. Sets the center item needed for the recipe. Not applicable for Summoning rituals.
+
+    ```groovy:no-line-numbers
+    centerItem(IIngredient)
+    ```
+
+- `EntityEntry`. Sets the mob that will be summoned by the ritual.
+
+    ```groovy:no-line-numbers
+    summonedMob(EntityEntry)
+    ```
+
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.shinoow.abyssalcraft.api.ritual.NecronomiconRitual`).
 
     ```groovy:no-line-numbers
     register()
@@ -99,13 +119,36 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.abyssaltweaker.ritual.recipeBuilder()
+    .name('simpleRitual')
+    .centerItem(item('minecraft:diamond'))
+    .input(item('minecraft:diamond'))
+    .output(item('minecraft:diamond_block'))
+    .pe(100)
+    .register()
+
+mods.abyssaltweaker.ritual.recipeBuilder()
     .name('starInfusion')
-    .input(item('minecraft:clay'), item('minecraft:diamond'), ore('ingotGold'), ore('ingotIron'))
+    .centerItem(item('minecraft:clay'))
+    .input(item('minecraft:diamond'), ore('ingotGold'), ore('ingotIron'))
     .output(item('minecraft:nether_star'))
     .pe(500)
     .requiresSacrifice()
     .bookTier(3)
     .dimension(50)
+    .register()
+
+mods.abyssaltweaker.ritual.recipeBuilder()
+    .name('simpleCreation')
+    .input(item('minecraft:iron_ingot'), item('minecraft:iron_ingot'), item('minecraft:iron_ingot'), item('minecraft:iron_ingot'))
+    .output(item('minecraft:gold_ingot'))
+    .pe(100)
+    .register()
+
+mods.abyssaltweaker.ritual.recipeBuilder()
+    .name('zombieSummoning')
+    .input(item('minecraft:rotten_flesh'), item('minecraft:iron_ingot'), item('minecraft:carrot'), item('minecraft:potato'))
+    .summonedMob(entity('minecraft:zombie'))
+    .pe(100)
     .register()
 ```
 
@@ -133,6 +176,12 @@ mods.abyssaltweaker.ritual.recipeBuilder()
     mods.abyssaltweaker.ritual.removeByOutput(IIngredient)
     ```
 
+- Removes the ritual by the mob it summons:
+
+    ```groovy:no-line-numbers
+    mods.abyssaltweaker.ritual.removeBySummonedMob(EntityEntry)
+    ```
+
 - Removes all registered recipes:
 
     ```groovy:no-line-numbers
@@ -144,6 +193,7 @@ mods.abyssaltweaker.ritual.recipeBuilder()
 mods.abyssaltweaker.ritual.removeByCenter(item('abyssalcraft:lifecrystal'))
 mods.abyssaltweaker.ritual.removeByName('dreadInfusedGatewayKey')
 mods.abyssaltweaker.ritual.removeByOutput(item('abyssalcraft:oc'))
+mods.abyssaltweaker.ritual.removeBySummonedMob(entity('abyssalcraft:dragonboss'))
 mods.abyssaltweaker.ritual.removeAll()
 ```
 

@@ -2,7 +2,7 @@
 title: "Fuel"
 titleTemplate: "Abyssal Tweaker | CleanroomMC"
 description: "Allows configuring the items that can be used as Transmutator and/or Crystallizer fuels."
-source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/teamdimensional/abyssaltweaker/compat/groovyscript/Fuel.java"
+source_code_link: "https://github.com/TeamDimensional/AbyssalTweaker/blob/master/src/main/java/com/teamdimensional/abyssaltweaker/compat/groovyscript/Fuel.java"
 ---
 
 # Fuel (Abyssal Tweaker)

@@ -12,7 +12,7 @@ source_code_link: "https://github.com/TeamDimensional/AbyssalTweaker/blob/master
 Turns Crystals from a Crystal Bag into an output item.
 
 :::::::::: details Warning {open id="warning"}
-The Materializer compatibility will only take the first item that satisfies each ingredient into account. This is fine if ItemIngredients are used, but will not work with OrIngredients and the like.
+The Materializer compatibility requires that all input items are Abyssalcraft crystals. This is checked via looking at the first entry of getMatchingStacks, which is then used as the input item. This means the IIngredient used should be obtained via the item Object Mapper.
 ::::::::::
 
 ## Identifier
