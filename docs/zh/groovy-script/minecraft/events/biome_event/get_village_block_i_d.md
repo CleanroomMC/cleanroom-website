@@ -1,4 +1,4 @@
-# GetVillageBlockID
+# Get Village Block ID
 
 To use this event use the following import:
 ```groovy

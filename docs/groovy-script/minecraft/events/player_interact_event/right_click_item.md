@@ -1,4 +1,4 @@
-# RightClickItem
+# Right Click Item
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# ReplaceBiomeBlocks
+# Replace Biome Blocks
 
 To use this event use the following import:
 ```groovy

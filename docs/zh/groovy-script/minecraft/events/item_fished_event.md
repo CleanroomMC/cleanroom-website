@@ -1,4 +1,4 @@
-# ItemFishedEvent
+# Item Fished Event
 
 To use this event use the following import:
 ```groovy

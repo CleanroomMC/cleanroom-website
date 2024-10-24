@@ -1,4 +1,4 @@
-# ChunkWatchEvent
+# Chunk Watch Event
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ net.minecraft.entity.player.EntityPlayerMP getPlayer()
 ```groovy
 net.minecraft.util.math.ChunkPos getChunk()
 ```
-

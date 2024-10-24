@@ -1,4 +1,4 @@
-# GameRuleChangeEvent
+# Game Rule Change Event
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ java.lang.String getRuleName()
 ```groovy
 net.minecraft.server.MinecraftServer getServer()
 ```
-

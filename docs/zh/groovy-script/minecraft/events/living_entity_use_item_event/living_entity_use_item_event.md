@@ -1,4 +1,4 @@
-# LivingEntityUseItemEvent
+# Living Entity Use Item Event
 
 To use this event use the following import:
 ```groovy

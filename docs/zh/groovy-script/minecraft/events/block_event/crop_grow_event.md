@@ -1,4 +1,4 @@
-# CropGrowEvent
+# Crop Grow Event
 
 To use this event use the following import:
 ```groovy
@@ -10,7 +10,7 @@ This event extends the following events and can use all their methods and fields
 [BlockEvent](block_event.md)
 
 ## Methods
-# CropGrowEvent.Pre
+# Crop Grow Event.Pre
 
 To use this event use the following import:
 ```groovy
@@ -26,7 +26,7 @@ This event extends the following events and can use all their methods and fields
 boolean hasResult()
 ```
 
-# CropGrowEvent.Post
+# Crop Grow Event.Post
 
 To use this event use the following import:
 ```groovy

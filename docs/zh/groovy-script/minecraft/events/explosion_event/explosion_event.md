@@ -1,4 +1,4 @@
-# ExplosionEvent
+# Explosion Event
 
 To use this event use the following import:
 ```groovy
@@ -13,4 +13,3 @@ net.minecraft.world.World getWorld()
 ```groovy
 net.minecraft.world.Explosion getExplosion()
 ```
-

@@ -1,4 +1,4 @@
-# NameFormat
+# Name Format
 
 To use this event use the following import:
 ```groovy

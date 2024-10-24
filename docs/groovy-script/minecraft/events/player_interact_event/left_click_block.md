@@ -1,4 +1,4 @@
-# LeftClickBlock
+# Left Click Block
 
 To use this event use the following import:
 ```groovy

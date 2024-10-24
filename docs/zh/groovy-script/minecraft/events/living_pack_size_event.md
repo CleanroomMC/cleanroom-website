@@ -1,4 +1,4 @@
-# LivingPackSizeEvent
+# Living Pack Size Event
 
 To use this event use the following import:
 ```groovy

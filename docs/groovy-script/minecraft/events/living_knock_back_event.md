@@ -1,4 +1,4 @@
-# LivingKnockBackEvent
+# Living Knock Back Event
 
 To use this event use the following import:
 ```groovy

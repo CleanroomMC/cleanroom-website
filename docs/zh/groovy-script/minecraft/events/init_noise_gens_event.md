@@ -1,4 +1,4 @@
-# InitNoiseGensEvent
+# Init Noise Gens Event
 
 To use this event use the following import:
 ```groovy

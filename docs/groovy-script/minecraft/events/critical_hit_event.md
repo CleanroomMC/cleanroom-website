@@ -1,4 +1,4 @@
-# CriticalHitEvent
+# Critical Hit Event
 
 To use this event use the following import:
 ```groovy

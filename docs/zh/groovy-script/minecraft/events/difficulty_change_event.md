@@ -1,4 +1,4 @@
-# DifficultyChangeEvent
+# Difficulty Change Event
 
 To use this event use the following import:
 ```groovy
@@ -13,4 +13,3 @@ net.minecraft.world.EnumDifficulty getOldDifficulty()
 ```groovy
 net.minecraft.world.EnumDifficulty getDifficulty()
 ```
-

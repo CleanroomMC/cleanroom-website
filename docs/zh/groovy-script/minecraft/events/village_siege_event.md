@@ -1,4 +1,4 @@
-# VillageSiegeEvent
+# Village Siege Event
 
 To use this event use the following import:
 ```groovy
@@ -25,4 +25,3 @@ net.minecraft.entity.player.EntityPlayer getPlayer()
 ```groovy
 net.minecraft.world.World getWorld()
 ```
-

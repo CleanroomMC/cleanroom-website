@@ -1,4 +1,4 @@
-# PotionColorCalculationEvent
+# Potion Color Calculation Event
 
 To use this event use the following import:
 ```groovy

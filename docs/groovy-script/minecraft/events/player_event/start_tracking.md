@@ -1,4 +1,4 @@
-# StartTracking
+# Start Tracking
 
 To use this event use the following import:
 ```groovy

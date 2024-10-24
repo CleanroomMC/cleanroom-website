@@ -1,4 +1,4 @@
-# InitMapGenEvent
+# Init Map Gen Event
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ net.minecraft.world.gen.MapGenBase getOriginalGen()
 ```groovy
 net.minecraft.world.gen.MapGenBase getNewGen()
 ```
-

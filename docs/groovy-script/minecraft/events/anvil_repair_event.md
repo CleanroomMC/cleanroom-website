@@ -1,4 +1,4 @@
-# AnvilRepairEvent
+# Anvil Repair Event
 
 To use this event use the following import:
 ```groovy

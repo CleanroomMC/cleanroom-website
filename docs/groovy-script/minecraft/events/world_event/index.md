@@ -1,4 +1,4 @@
-# WorldEvent
+# World Event
 
 To use this event use the following import:
 ```groovy
@@ -9,4 +9,3 @@ import net.minecraftforge.event.world.WorldEvent
 ```groovy
 net.minecraft.world.World getWorld()
 ```
-

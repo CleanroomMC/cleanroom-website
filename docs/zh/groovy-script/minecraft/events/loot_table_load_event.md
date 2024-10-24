@@ -1,4 +1,4 @@
-# LootTableLoadEvent
+# Loot Table Load Event
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ net.minecraft.world.storage.loot.LootTableManager getLootTableManager()
 ```groovy
 void setTable(net.minecraft.world.storage.loot.LootTable arg0)
 ```
-

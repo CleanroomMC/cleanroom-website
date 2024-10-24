@@ -1,4 +1,4 @@
-# LivingFallEvent
+# Living Fall Event
 
 To use this event use the following import:
 ```groovy

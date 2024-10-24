@@ -1,4 +1,4 @@
-# CommandEvent
+# Command Event
 
 To use this event use the following import:
 ```groovy
@@ -29,4 +29,3 @@ void setException(java.lang.Throwable arg0)
 ```groovy
 net.minecraft.command.ICommandSender getSender()
 ```
-

@@ -1,4 +1,4 @@
-# MinecartCollisionEvent
+# Minecart Collision Event
 
 To use this event use the following import:
 ```groovy

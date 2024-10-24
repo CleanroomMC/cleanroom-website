@@ -1,4 +1,4 @@
-# ChunkGeneratorEvent
+# Chunk Generator Event
 
 To use this event use the following import:
 ```groovy
@@ -13,4 +13,3 @@ net.minecraft.world.gen.IChunkGenerator getGenerator()
 ```groovy
 net.minecraft.world.gen.IChunkGenerator getGen()
 ```
-

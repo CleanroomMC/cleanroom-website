@@ -1,4 +1,4 @@
-# BlockEvent
+# Block Event
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ net.minecraft.util.math.BlockPos getPos()
 ```groovy
 net.minecraft.world.World getWorld()
 ```
-

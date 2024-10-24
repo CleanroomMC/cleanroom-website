@@ -1,4 +1,4 @@
-# PortalSpawnEvent
+# Portal Spawn Event
 
 To use this event use the following import:
 ```groovy

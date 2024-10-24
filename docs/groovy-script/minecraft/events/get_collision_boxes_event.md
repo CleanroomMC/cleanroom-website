@@ -1,4 +1,4 @@
-# GetCollisionBoxesEvent
+# Get Collision Boxes Event
 
 To use this event use the following import:
 ```groovy

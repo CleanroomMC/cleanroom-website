@@ -1,4 +1,4 @@
-# MerchantTradeOffersEvent
+# Merchant Trade Offers Event
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ net.minecraft.entity.IMerchant getMerchant()
 ```groovy
 void setList(net.minecraft.village.MerchantRecipeList arg0)
 ```
-

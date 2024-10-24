@@ -1,4 +1,4 @@
-# EntityStruckByLightningEvent
+# Entity Struck By Lightning Event
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# InitBiomeGens
+# Init Biome Gens
 
 To use this event use the following import:
 ```groovy

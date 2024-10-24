@@ -1,4 +1,4 @@
-# EnchantmentLevelSetEvent
+# Enchantment Level Set Event
 
 To use this event use the following import:
 ```groovy
@@ -37,4 +37,3 @@ int getEnchantRow()
 ```groovy
 int getPower()
 ```
-

@@ -1,4 +1,4 @@
-# EntityConstructing
+# Entity Constructing
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# BabyEntitySpawnEvent
+# Baby Entity Spawn Event
 
 To use this event use the following import:
 
