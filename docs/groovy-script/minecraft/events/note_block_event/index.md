@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.NoteBlockEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BlockEvent](../block_event/block_event.md)
+[BlockEvent](../block_event/index.md)
 
 ## Methods
 ```groovy:no-line-numbers

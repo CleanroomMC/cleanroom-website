@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.BlockEvent.CreateFluidSourceEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BlockEvent](block_event.md)
+[BlockEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers

@@ -7,7 +7,7 @@ import net.minecraftforge.event.RegistryEvent.MissingMappings
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[RegistryEvent](registry_event.md), [GenericEvent](../generic_event.md)
+[RegistryEvent](registry_event.md)
 
 ## Methods
 ```groovy:no-line-numbers

@@ -7,7 +7,7 @@ import net.minecraftforge.event.terraingen.WorldTypeEvent.InitBiomeGens
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[WorldTypeEvent](world_type_event.md)
+[WorldTypeEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers

@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.GetCollisionBoxesEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[WorldEvent](world_event/world_event.md)
+[WorldEvent](./world_event/index.md)
 
 ## Methods
 ```groovy:no-line-numbers

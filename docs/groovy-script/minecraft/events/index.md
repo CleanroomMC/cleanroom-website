@@ -24,7 +24,7 @@ What is happening?
 - `event_manager` is a global variable where event listeners are registered (alternative name `eventManager`)
 - `listen` is a method which accepts a [closure](../../groovy/closure.md) with the event class as the first parameter
 - `BreakEvent event` is the event being listened to. The type must be specified and imported here. (
-  See [BreakEvent](block_event/break_event.md))
+  See [BreakEvent](./block_event/index.md))
 - Inside the closure you can do what you want. Here the broken block state is printed to the log.
 
 ## Other listen methods

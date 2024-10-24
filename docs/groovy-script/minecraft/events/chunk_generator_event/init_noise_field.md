@@ -7,7 +7,7 @@ import net.minecraftforge.event.terraingen.ChunkGeneratorEvent.InitNoiseField
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
+[ChunkGeneratorEvent](../chunk_generator_event/index.md)
 
 ## Methods
 ```groovy:no-line-numbers

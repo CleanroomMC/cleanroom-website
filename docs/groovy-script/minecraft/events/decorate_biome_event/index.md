@@ -31,7 +31,7 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Pre
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[DecorateBiomeEvent](decorate_biome_event.md)
+[DecorateBiomeEvent](index.md)
 
 ## Methods
 # Post
@@ -43,6 +43,6 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Post
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[DecorateBiomeEvent](decorate_biome_event.md)
+[DecorateBiomeEvent](index.md)
 
 ## Methods

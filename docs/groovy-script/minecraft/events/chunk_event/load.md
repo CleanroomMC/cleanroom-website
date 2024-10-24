@@ -7,6 +7,6 @@ import net.minecraftforge.event.world.ChunkEvent.Load
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[ChunkEvent](../chunk_event/chunk_event.md), [WorldEvent](../world_event/world_event.md)
+[ChunkEvent](../chunk_event/index.md), [WorldEvent](../world_event/index.md)
 
 ## Methods

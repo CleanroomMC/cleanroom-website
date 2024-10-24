@@ -7,7 +7,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
+[ChunkGeneratorEvent](../chunk_generator_event/index.md)
 
 ## Methods
 ```groovy:no-line-numbers
@@ -39,7 +39,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent.Pre
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PopulateChunkEvent](populate_chunk_event.md), [ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
+[PopulateChunkEvent](index.md), [ChunkGeneratorEvent](../chunk_generator_event/index.md)
 
 ## Methods
 # Post
@@ -51,6 +51,6 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent.Post
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PopulateChunkEvent](populate_chunk_event.md), [ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
+[PopulateChunkEvent](index.md), [ChunkGeneratorEvent](../chunk_generator_event/index.md)
 
 ## Methods

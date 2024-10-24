@@ -27,7 +27,7 @@ import net.minecraftforge.event.brewing.PotionBrewEvent.Pre
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PotionBrewEvent](potion_brew_event.md)
+[PotionBrewEvent](index.md)
 
 ## Methods
 # Post
@@ -39,6 +39,6 @@ import net.minecraftforge.event.brewing.PotionBrewEvent.Post
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PotionBrewEvent](potion_brew_event.md)
+[PotionBrewEvent](index.md)
 
 ## Methods

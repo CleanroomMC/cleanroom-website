@@ -7,6 +7,6 @@ import net.minecraftforge.event.entity.living.PotionEvent.PotionExpiryEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PotionEvent](potion_event.md), [LivingEvent](../living_event/living_event.md), [EntityEvent](../entity_event/entity_event.md)
+[PotionEvent](index.md), [LivingEvent](../living_event/index.md), [EntityEvent](../entity_event/index.md)
 
 ## Methods

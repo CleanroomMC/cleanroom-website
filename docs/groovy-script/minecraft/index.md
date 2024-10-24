@@ -18,7 +18,7 @@ You can use GroovyScript to modify a number of vanilla recipes and values.
 
 * Edit smelting recipes via [Furnace](./helpers/furnace.md).
 
-* Edit the Ore Dictionary via [Ore Dictionary](./helpers/ore_dictionary.md).
+* Edit the Ore Dictionary via [Ore Dictionary](./helpers/ore_dict.md).
 
 * Edit loottables via the [Loot](./loot.md) compat.
 

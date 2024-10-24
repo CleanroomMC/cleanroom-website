@@ -27,7 +27,7 @@ import net.minecraftforge.event.terraingen.OreGenEvent.Pre
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[OreGenEvent](ore_gen_event.md)
+[OreGenEvent](index.md)
 
 ## Methods
 # Post
@@ -39,6 +39,6 @@ import net.minecraftforge.event.terraingen.OreGenEvent.Post
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[OreGenEvent](ore_gen_event.md)
+[OreGenEvent](index.md)
 
 ## Methods

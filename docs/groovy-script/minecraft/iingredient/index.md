@@ -14,7 +14,7 @@ It has certain abilities that apply to all implementations.
 Any time you see `IIngredient` as a class, you can technically insert any of the [Implementations](#implementations),
 but some may not work as expected depending on the circumstance.
 
-As an example, in [Crafting Recipes](./helpers/crafting.md) a `FluidStack` `IIngredient` will be converted into a tank, bucket,
+As an example, in [Crafting Recipes](../helpers/crafting.md) a `FluidStack` `IIngredient` will be converted into a tank, bucket,
 or any other container of the given fluid. In other recipes, it might be converted into only a bucket.
 
 :::

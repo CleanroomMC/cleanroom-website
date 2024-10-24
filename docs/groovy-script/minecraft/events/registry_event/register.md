@@ -7,7 +7,7 @@ import net.minecraftforge.event.RegistryEvent.Register
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[RegistryEvent](registry_event.md), [GenericEvent](../generic_event.md)
+[RegistryEvent](./index.md)
 
 ## Methods
 ```groovy:no-line-numbers

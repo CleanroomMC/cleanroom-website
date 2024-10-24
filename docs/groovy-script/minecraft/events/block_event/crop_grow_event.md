@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.BlockEvent.CropGrowEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BlockEvent](block_event.md)
+[BlockEvent](index.md)
 
 ## Methods
 # Crop Grow Event.Pre
@@ -19,7 +19,7 @@ import net.minecraftforge.event.world.BlockEvent.CropGrowEvent.Pre
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[CropGrowEvent](crop_grow_event.md), [BlockEvent](block_event.md)
+[CropGrowEvent](index.md), [BlockEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers
@@ -35,7 +35,7 @@ import net.minecraftforge.event.world.BlockEvent.CropGrowEvent.Post
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[CropGrowEvent](crop_grow_event.md), [BlockEvent](block_event.md)
+[CropGrowEvent](index.md), [BlockEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers

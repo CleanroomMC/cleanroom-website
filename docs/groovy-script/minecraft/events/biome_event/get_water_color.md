@@ -7,6 +7,6 @@ import net.minecraftforge.event.terraingen.BiomeEvent.GetWaterColor
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BiomeColor](biome_color.md), [BiomeEvent](biome_event.md)
+[BiomeColor](index.md), [BiomeEvent](index.md)
 
 ## Methods

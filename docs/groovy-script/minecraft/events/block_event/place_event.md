@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.BlockEvent.PlaceEvent
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[EntityPlaceEvent](entity_place_event.md), [BlockEvent](block_event.md)
+[EntityPlaceEvent](index.md), [BlockEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers

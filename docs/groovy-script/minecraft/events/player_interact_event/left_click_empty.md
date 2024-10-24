@@ -7,6 +7,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickEmpty
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PlayerInteractEvent](player_interact_event.md), [PlayerEvent](../player_event/player_event.md), [LivingEvent](../living_event/living_event.md), [EntityEvent](../entity_event/entity_event.md)
+[PlayerInteractEvent](index.md), [PlayerEvent](../player_event/index.md), [LivingEvent](../living_event/index.md), [EntityEvent](../entity_event/index.md)
 
 ## Methods

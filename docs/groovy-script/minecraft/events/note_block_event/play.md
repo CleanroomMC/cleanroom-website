@@ -7,7 +7,7 @@ import net.minecraftforge.event.world.NoteBlockEvent.Play
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[NoteBlockEvent](note_block_event.md), [BlockEvent](../block_event/block_event.md)
+[NoteBlockEvent](index.md), [BlockEvent](../block_event/index.md)
 
 ## Methods
 ```groovy:no-line-numbers

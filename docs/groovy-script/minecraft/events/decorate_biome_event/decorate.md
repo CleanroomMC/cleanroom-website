@@ -7,7 +7,7 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[DecorateBiomeEvent](decorate_biome_event.md)
+[DecorateBiomeEvent](index.md)
 
 ## Methods
 ```groovy:no-line-numbers
