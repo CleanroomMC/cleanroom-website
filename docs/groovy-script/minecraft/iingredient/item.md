@@ -1,6 +1,12 @@
-# Items
 
-Item stacks can be obtained with the item bracket handler.
+# ItemStack
+
+ItemStacks, as by far the most used type of `IIngredient`, have additional features that
+most other `IIngredient`s do not have.
+
+## Obtaining
+
+ItemStacks can be obtained with the [item Object Mapper](../vanilla_object_mappers.md#itemstack).
 
 ```groovy:no-line-numbers
 def iron_ingot = item('minecraft:iron_ingot', 4) * 6
@@ -97,9 +103,9 @@ The count is ignored.
 ```groovy
 def wool0 = item('minecraft:wool', 0)
 def wool1 = item('minecraft:wool', 1)
-println wool0 in wool1                          // false, since different meta
-println item('minecraft:wool', 0) in wool0      // true, since same item and meta
-println item('minecraft:wool', 0) * 5 in wool0  // true, amount is ignored
+log.info wool0 in wool1                          // false, since different meta
+log.info item('minecraft:wool', 0) in wool0      // true, since same item and meta
+log.info item('minecraft:wool', 0) * 5 in wool0  // true, amount is ignored
 ```
 
 :::
@@ -111,9 +117,9 @@ If you want to check if two items are exactly equal with count you need to use `
 ```groovy
 def wool0 = item('minecraft:wool', 0)
 def wool1 = item('minecraft:wool', 1)
-println ItemStack.areItemsEqual(wool0, wool1)                       // false
-println ItemStack.areItemsEqual(item('minecraft:wool', 0), wool1)   // true
-println ItemStack.areItemsEqual(item('minecraft:wool', 0) * 5, wool1)   // false
+log.info ItemStack.areItemsEqual(wool0, wool1)                       // false
+log.info ItemStack.areItemsEqual(item('minecraft:wool', 0), wool1)   // true
+log.info ItemStack.areItemsEqual(item('minecraft:wool', 0) * 5, wool1)   // false
 ```
 
 :::
@@ -123,8 +129,8 @@ You can also use the `in` operator if it matches any `IIngredient`.
 ::: details Example {open id="example"}
 
 ```groovy
-println item('minecraft:iron_ingot') in ore('ingotIron') // true
-println ore('ingotIron') in item('minecraft:iron_ingot') // false, the iron ingot is in the ore dict and not vice versa.
+log.info item('minecraft:iron_ingot') in ore('ingotIron') // true
+log.info ore('ingotIron') in item('minecraft:iron_ingot') // false, the iron ingot is in the ore dict and not vice versa.
 ```
 
 :::
