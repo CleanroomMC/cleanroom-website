@@ -13,12 +13,12 @@ You can use GroovyScript to modify a number of vanilla recipes and values.
 
 * Learn what a [Resource Location](./resource_location.md) is, and how Minecraft uses it.
 
-* Edit vanilla crafting recipes via [Crafting](./crafting.md). Includes a fully featured Recipe Builder to make
+* Edit vanilla crafting recipes via [Crafting](./helpers/crafting.md). Includes a fully featured Recipe Builder to make
   editing recipes faster.
 
-* Edit smelting recipes via [Furnace](./furnace.md).
+* Edit smelting recipes via [Furnace](./helpers/furnace.md).
 
-* Edit the Ore Dictionary via [Ore Dictionary](./ore_dictionary.md).
+* Edit the Ore Dictionary via [Ore Dictionary](./helpers/ore_dictionary.md).
 
 * Edit loottables via the [Loot](./loot.md) compat.
 
