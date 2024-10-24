@@ -1,7 +1,7 @@
-# MinecartInteractEvent
+# Minecart Interact Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.minecart.MinecartInteractEvent
 ```
 
@@ -10,14 +10,14 @@ This event extends the following events and can use all their methods and fields
 [MinecartEvent](minecart_event.md), [EntityEvent](entity_event/entity_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getItem()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayer getPlayer()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.EnumHand getHand()
 ```

@@ -1,7 +1,7 @@
-# PlayerInteractEvent.RightClickItem
+# Right Click Item
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem
 ```
 

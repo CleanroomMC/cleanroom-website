@@ -1,51 +1,51 @@
-# PlaySoundAtEntityEvent
+# Play Sound At Entity Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[EntityEvent](entity_event/entity_event.md)
+[EntityEvent](./entity_event/index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 void setCategory(net.minecraft.util.SoundCategory arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.SoundCategory getCategory()
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getVolume()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.SoundEvent getSound()
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getPitch()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setPitch(float arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setVolume(float arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getDefaultPitch()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setSound(net.minecraft.util.SoundEvent arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getDefaultVolume()
 ```

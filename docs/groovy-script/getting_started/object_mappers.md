@@ -65,10 +65,4 @@ Currently, the best way to observe what Object Mappers will do is to use the Lan
 
 :::
 
-- [IIngredient](../minecraft/ingredient.md)
-
-- [ItemStack](../minecraft/item.md)
-
-- [OreDict](../minecraft/ore_dictionary.md)
-
-- [Resource Location](../minecraft/resource_location.md)
+- [All Vanilla Object Mappers](../minecraft/vanilla_object_mappers.md)

@@ -1,35 +1,35 @@
-# BonemealEvent
+# Bonemeal Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.player.BonemealEvent
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PlayerEvent](player_event/player_event.md), [LivingEvent](living_event/living_event.md), [EntityEvent](entity_event/entity_event.md)
+[PlayerEvent](./player_event/index.md), [LivingEvent](./living_event/index.md), [EntityEvent](./entity_event/index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getStack()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.block.state.IBlockState getBlock()
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean hasResult()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.EnumHand getHand()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.math.BlockPos getPos()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.world.World getWorld()
 ```

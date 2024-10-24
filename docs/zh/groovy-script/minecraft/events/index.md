@@ -9,7 +9,7 @@ Here are listed all minecraft and forge events there are.
 
 ::: info Let's see an example: {id="example"}
 
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.world.BlockEvent.BreakEvent
 
 event_manager.listen { BreakEvent event ->
@@ -29,7 +29,7 @@ What is happening?
 
 ## Other listen methods
 
-```groovy
+```groovy:no-line-numbers
 event_manager.listen(EventPriority eventPriority, EventBusType eventBusType, Closure<?> eventListener)
 event_manager.listen(EventBusType eventPriority, EventPriority eventBusType, Closure<?> eventListener)
 event_manager.listen(EventBusType eventPriority, Closure<?> eventListener)
@@ -57,7 +57,7 @@ Normally you don't need to chane any of those values. <br>
 
 ::: info Let's see an example using `EventPriority`: {id="example"}
 
-    ```groovy
+    ```groovy:no-line-numbers
     import net.minecraftforge.event.world.BlockEvent.BreakEvent
 
     event_manager.listen(EventPriority.HIGHEST) { BreakEvent event ->

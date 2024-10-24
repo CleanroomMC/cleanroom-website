@@ -19,4 +19,4 @@ You can get a creative tab by using
 creativeTab(String tabName)
 ```
 
-A list of existing creative tab names can be obtained by running the `/gs creativeTabs` command.
+A list of existing creative tab names can be obtained by running the [`/gs creativeTabs` command](../minecraft/commands/index.md#creative-tabs).

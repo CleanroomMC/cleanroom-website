@@ -37,7 +37,7 @@ There are two good ways to do this: the simple way and the not simple way.
 ### The Simple Way
 
 This method requires the Material to first exist. This method goes off of the material's **Unlocalized Name**, which is
-the name used before it is translated in a lang file. You can use the `/grs hand` command to retrieve the material of
+the name used before it is translated in a lang file. You can use the [`/gs hand` command](../../../minecraft/commands/info.md) to retrieve the material of
 items.
 
 ```groovy

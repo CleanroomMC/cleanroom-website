@@ -1,24 +1,23 @@
-# OreGenEvent.GenerateMinable
+# Generate Minable
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[OreGenEvent](ore_gen_event.md)
+[OreGenEvent](index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraftforge.event.terraingen.OreGenEvent$GenerateMinable$EventType getType()
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean hasResult()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.world.gen.feature.WorldGenerator getGenerator()
 ```
-

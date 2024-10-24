@@ -12,6 +12,7 @@
 GroovyScript 目前有两条下载渠道：
 
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/groovyscript)
+- [Modrinth](https://modrinth.com/mod/groovyscript)
 - [GitHub](https://github.com/CleanroomMC/GroovyScript/releases)
 
 ## 特性

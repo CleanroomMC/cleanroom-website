@@ -1,7 +1,7 @@
-# WorldEvent.PotentialSpawns
+# Potential Spawns
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.world.WorldEvent.PotentialSpawns
 ```
 
@@ -10,14 +10,14 @@ This event extends the following events and can use all their methods and fields
 [WorldEvent](../world_event/world_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.EnumCreatureType getType()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.math.BlockPos getPos()
 ```
 
-```groovy
+```groovy:no-line-numbers
 java.util.List getList()
 ```

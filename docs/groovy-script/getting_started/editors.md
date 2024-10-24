@@ -15,7 +15,7 @@ There are two ways to start the language server.
 
 1. Adding `-Dgroovyscript.run_ls=true` to the JVM arguments in your preferred launcher and start Minecraft with GroovyScript.
   You will be able to connect to the language server as soon as GroovyScript has been loaded in the `FMLInitializationEvent` load step.
-2. By starting Minecraft and GroovyScript and running the `/grs runLS` command.
+2. By starting Minecraft and GroovyScript and running the [`/grs runLS` command](../minecraft/commands/index.md#language-server).
   As commands can only be run in-game, you will obviously need to load into a world for that.
 
 You can check if the server started by checking for a `Starting Language server` message in the `groovy.log` file.

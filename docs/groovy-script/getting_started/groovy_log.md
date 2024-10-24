@@ -16,6 +16,14 @@ The file is always `[Minecraft instance path]/logs/groovy.log` for clients
 and `[Minecraft instance path]/logs/groovy_server.log` for servers.
 
 
+## Clean Reloading
+
+When the [`/gs reload` command](../minecraft/commands/index.md#reload) is run to [reload](./reloading.md)
+the `postInit` script files, you can pass `--clean` as an argument to remove the previously logged information.
+
+This can help improve readability of the log file, yet may hide errors that still have an impact on your game.
+
+
 ## Interacting
 
 
