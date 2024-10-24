@@ -1,7 +1,7 @@
 # Entity Travel To Dimension Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent
 ```
 
@@ -10,6 +10,6 @@ This event extends the following events and can use all their methods and fields
 [EntityEvent](entity_event/entity_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 int getDimension()
 ```

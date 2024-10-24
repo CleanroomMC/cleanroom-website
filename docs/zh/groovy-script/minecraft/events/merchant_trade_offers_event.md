@@ -1,23 +1,23 @@
 # Merchant Trade Offers Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.village.MerchantTradeOffersEvent
 ```
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayer getPlayer()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.village.MerchantRecipeList getList()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.IMerchant getMerchant()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setList(net.minecraft.village.MerchantRecipeList arg0)
 ```

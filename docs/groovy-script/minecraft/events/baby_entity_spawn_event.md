@@ -2,28 +2,28 @@
 
 To use this event use the following import:
 
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent
 ```
 
 ## Methods
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.EntityLiving getParentB()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.EntityLiving getParentA()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayer getCausedByPlayer()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setChild(net.minecraft.entity.EntityAgeable arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.EntityAgeable getChild()
 ```

@@ -1,7 +1,7 @@
 # Chunk Data Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.world.ChunkDataEvent
 ```
 
@@ -10,6 +10,6 @@ This event extends the following events and can use all their methods and fields
 [ChunkEvent](../chunk_event/chunk_event.md), [WorldEvent](../world_event/world_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.nbt.NBTTagCompound getData()
 ```

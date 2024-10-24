@@ -29,7 +29,7 @@ What is happening?
 
 ## Other listen methods
 
-```groovy
+```groovy:no-line-numbers
 event_manager.listen(EventPriority eventPriority, EventBusType eventBusType, Closure<?> eventListener)
 event_manager.listen(EventBusType eventPriority, EventPriority eventBusType, Closure<?> eventListener)
 event_manager.listen(EventBusType eventPriority, Closure<?> eventListener)

@@ -1,39 +1,39 @@
 # Enchantment Level Set Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.enchanting.EnchantmentLevelSetEvent
 ```
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 int getLevel()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setLevel(int arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getItem()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.math.BlockPos getPos()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.world.World getWorld()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getOriginalLevel()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getEnchantRow()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getPower()
 ```

@@ -1,7 +1,7 @@
 # Missing Mappings
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.RegistryEvent.MissingMappings
 ```
 
@@ -10,22 +10,22 @@ This event extends the following events and can use all their methods and fields
 [RegistryEvent](registry_event.md), [GenericEvent](../generic_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.ResourceLocation getName()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraftforge.registries.IForgeRegistry getRegistry()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setModContainer(net.minecraftforge.fml.common.ModContainer arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 com.google.common.collect.ImmutableList getAllMappings()
 ```
 
-```groovy
+```groovy:no-line-numbers
 com.google.common.collect.ImmutableList getMappings()
 ```
