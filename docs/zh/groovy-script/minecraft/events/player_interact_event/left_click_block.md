@@ -1,4 +1,4 @@
-# PlayerInteractEvent.LeftClickBlock
+# LeftClickBlock
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# WorldTypeEvent.BiomeSize
+# BiomeSize
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ void setNewSize(int arg0)
 ```groovy
 int getNewSize()
 ```
-

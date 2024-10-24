@@ -1,4 +1,4 @@
-# BlockEvent.HarvestDropsEvent
+# HarvestDropsEvent
 
 To use this event use the following import:
 ```groovy
@@ -33,4 +33,3 @@ boolean isSilkTouching()
 ```groovy
 net.minecraft.entity.player.EntityPlayer getHarvester()
 ```
-

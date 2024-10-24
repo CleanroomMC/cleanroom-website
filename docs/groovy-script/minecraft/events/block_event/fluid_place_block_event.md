@@ -1,4 +1,4 @@
-# BlockEvent.FluidPlaceBlockEvent
+# FluidPlaceBlockEvent
 
 To use this event use the following import:
 ```groovy
@@ -25,4 +25,3 @@ void setNewState(net.minecraft.block.state.IBlockState arg0)
 ```groovy
 net.minecraft.block.state.IBlockState getOriginalState()
 ```
-

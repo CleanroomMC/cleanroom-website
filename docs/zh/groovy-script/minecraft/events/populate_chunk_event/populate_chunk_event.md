@@ -30,7 +30,7 @@ int getChunkX()
 java.util.Random getRand()
 ```
 
-# PopulateChunkEvent.Pre
+# Pre
 
 To use this event use the following import:
 ```groovy
@@ -42,7 +42,7 @@ This event extends the following events and can use all their methods and fields
 [PopulateChunkEvent](populate_chunk_event.md), [ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
 
 ## Methods
-# PopulateChunkEvent.Post
+# Post
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# BiomeEvent.BiomeColor
+# BiomeColor
 
 To use this event use the following import:
 

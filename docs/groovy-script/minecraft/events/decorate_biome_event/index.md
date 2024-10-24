@@ -22,7 +22,7 @@ java.util.Random getRand()
 net.minecraft.util.math.ChunkPos getChunkPos()
 ```
 
-# DecorateBiomeEvent.Pre
+# Pre
 
 To use this event use the following import:
 ```groovy
@@ -34,7 +34,7 @@ This event extends the following events and can use all their methods and fields
 [DecorateBiomeEvent](decorate_biome_event.md)
 
 ## Methods
-# DecorateBiomeEvent.Post
+# Post
 
 To use this event use the following import:
 ```groovy

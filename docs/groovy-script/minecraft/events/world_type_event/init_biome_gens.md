@@ -1,4 +1,4 @@
-# WorldTypeEvent.InitBiomeGens
+# InitBiomeGens
 
 To use this event use the following import:
 ```groovy
@@ -25,4 +25,3 @@ void setNewBiomeGens([Lnet.minecraft.world.gen.layer.GenLayer; arg0)
 ```groovy
 [Lnet.minecraft.world.gen.layer.GenLayer; getOriginalBiomeGens()
 ```
-

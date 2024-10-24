@@ -1,4 +1,4 @@
-# PlayerInteractEvent.RightClickItem
+# RightClickItem
 
 To use this event use the following import:
 ```groovy

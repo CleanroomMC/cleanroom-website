@@ -1,4 +1,4 @@
-# BlockEvent.FarmlandTrampleEvent
+# FarmlandTrampleEvent
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ net.minecraft.entity.Entity getEntity()
 ```groovy
 float getFallDistance()
 ```
-

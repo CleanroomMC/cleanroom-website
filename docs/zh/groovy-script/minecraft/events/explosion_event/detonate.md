@@ -1,4 +1,4 @@
-# ExplosionEvent.Detonate
+# Detonate
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ java.util.List getAffectedBlocks()
 ```groovy
 java.util.List getAffectedEntities()
 ```
-

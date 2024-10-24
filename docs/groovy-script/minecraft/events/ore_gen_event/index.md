@@ -18,7 +18,7 @@ net.minecraft.world.World getWorld()
 java.util.Random getRand()
 ```
 
-# OreGenEvent.Pre
+# Pre
 
 To use this event use the following import:
 ```groovy
@@ -30,7 +30,7 @@ This event extends the following events and can use all their methods and fields
 [OreGenEvent](ore_gen_event.md)
 
 ## Methods
-# OreGenEvent.Post
+# Post
 
 To use this event use the following import:
 ```groovy

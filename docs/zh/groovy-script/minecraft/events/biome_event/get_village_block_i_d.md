@@ -1,4 +1,4 @@
-# BiomeEvent.GetVillageBlockID
+# GetVillageBlockID
 
 To use this event use the following import:
 ```groovy
@@ -25,4 +25,3 @@ boolean hasResult()
 ```groovy
 net.minecraft.block.state.IBlockState getOriginal()
 ```
-

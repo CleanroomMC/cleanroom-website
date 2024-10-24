@@ -18,7 +18,7 @@ net.minecraft.item.ItemStack getItem(int arg0)
 void setItem(int arg0, net.minecraft.item.ItemStack arg1)
 ```
 
-# PotionBrewEvent.Pre
+# Pre
 
 To use this event use the following import:
 ```groovy
@@ -30,7 +30,7 @@ This event extends the following events and can use all their methods and fields
 [PotionBrewEvent](potion_brew_event.md)
 
 ## Methods
-# PotionBrewEvent.Post
+# Post
 
 To use this event use the following import:
 ```groovy

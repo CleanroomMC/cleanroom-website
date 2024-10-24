@@ -1,4 +1,4 @@
-# BiomeEvent.CreateDecorator
+# CreateDecorator
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ net.minecraft.world.biome.BiomeDecorator getOriginalBiomeDecorator()
 ```groovy
 void setNewBiomeDecorator(net.minecraft.world.biome.BiomeDecorator arg0)
 ```
-

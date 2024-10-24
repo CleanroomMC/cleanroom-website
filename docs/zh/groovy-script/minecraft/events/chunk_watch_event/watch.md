@@ -1,4 +1,4 @@
-# ChunkWatchEvent.Watch
+# Watch
 
 To use this event use the following import:
 ```groovy

@@ -1,4 +1,4 @@
-# BlockEvent.EntityPlaceEvent
+# EntityPlaceEvent
 
 To use this event use the following import:
 ```groovy
@@ -25,4 +25,3 @@ net.minecraft.block.state.IBlockState getPlacedBlock()
 ```groovy
 net.minecraft.block.state.IBlockState getPlacedAgainst()
 ```
-

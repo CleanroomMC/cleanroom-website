@@ -1,4 +1,4 @@
-# BiomeEvent.GetWaterColor
+# GetWaterColor
 
 To use this event use the following import:
 ```groovy

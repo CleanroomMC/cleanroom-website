@@ -1,4 +1,4 @@
-# DecorateBiomeEvent.Decorate
+# Decorate
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ net.minecraft.util.math.BlockPos getPlacementPos()
 ```groovy
 boolean hasResult()
 ```
-

@@ -1,4 +1,4 @@
-# BlockEvent.CreateFluidSourceEvent
+# CreateFluidSourceEvent
 
 To use this event use the following import:
 ```groovy
@@ -13,4 +13,3 @@ This event extends the following events and can use all their methods and fields
 ```groovy
 boolean hasResult()
 ```
-

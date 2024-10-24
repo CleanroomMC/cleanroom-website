@@ -1,4 +1,4 @@
-# NoteBlockEvent.Play
+# Play
 
 To use this event use the following import:
 ```groovy

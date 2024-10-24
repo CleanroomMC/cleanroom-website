@@ -1,4 +1,4 @@
-# BlockEvent.NeighborNotifyEvent
+# NeighborNotifyEvent
 
 To use this event use the following import:
 ```groovy
@@ -17,4 +17,3 @@ boolean getForceRedstoneUpdate()
 ```groovy
 java.util.EnumSet getNotifiedSides()
 ```
-

@@ -1,4 +1,4 @@
-# OreGenEvent.GenerateMinable
+# GenerateMinable
 
 To use this event use the following import:
 ```groovy
@@ -21,4 +21,3 @@ boolean hasResult()
 ```groovy
 net.minecraft.world.gen.feature.WorldGenerator getGenerator()
 ```
-
