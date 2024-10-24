@@ -6,7 +6,7 @@ most other `IIngredient`s do not have.
 
 ## Obtaining
 
-ItemStacks can be obtained with the [item Object Mapper](../vanilla_object_mappers.md#itemstack).
+ItemStacks can be obtained with the [`item` Object Mapper](../vanilla_object_mappers.md#itemstack).
 
 ```groovy:no-line-numbers
 def iron_ingot = item('minecraft:iron_ingot', 4) * 6
