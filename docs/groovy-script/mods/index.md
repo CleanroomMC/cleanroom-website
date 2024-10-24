@@ -5,6 +5,7 @@ search:
 
 # Mods
 
+* [Abyssalcraft 2 (with Abyssal Tweaker)](./abyssaltweaker/)
 * [Actually Additions](./actuallyadditions/)
 * [Advanced Mortars](./advancedmortars/)
 * [Advanced Rocketry](./advancedrocketry/)
