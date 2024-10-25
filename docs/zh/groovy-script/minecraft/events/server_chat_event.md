@@ -1,28 +1,27 @@
-# ServerChatEvent
+# Server Chat Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.ServerChatEvent
 ```
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 java.lang.String getMessage()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.util.text.ITextComponent getComponent()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayerMP getPlayer()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setComponent(net.minecraft.util.text.ITextComponent arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 java.lang.String getUsername()
 ```
-

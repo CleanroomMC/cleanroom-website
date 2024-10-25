@@ -1,7 +1,7 @@
-# LivingSpawnEvent.CheckSpawn
+# Check Spawn
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.living.LivingSpawnEvent.CheckSpawn
 ```
 
@@ -10,14 +10,14 @@ This event extends the following events and can use all their methods and fields
 [LivingSpawnEvent](living_spawn_event.md), [LivingEvent](../living_event/living_event.md), [EntityEvent](../entity_event/entity_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 boolean hasResult()
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean isSpawner()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.tileentity.MobSpawnerBaseLogic getSpawner()
 ```

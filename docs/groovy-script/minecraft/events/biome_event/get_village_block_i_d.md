@@ -1,28 +1,27 @@
-# BiomeEvent.GetVillageBlockID
+# Get Village Block ID
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.terraingen.BiomeEvent.GetVillageBlockID
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BiomeEvent](biome_event.md)
+[BiomeEvent](index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.block.state.IBlockState getReplacement()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setReplacement(net.minecraft.block.state.IBlockState arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean hasResult()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.block.state.IBlockState getOriginal()
 ```
-

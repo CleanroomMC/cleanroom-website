@@ -28,6 +28,7 @@ Are you not seeing what other see on this wiki? Try reloading it.
 
 GroovyScript can be downloaded on
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/groovyscript)
+- [Modrinth](https://modrinth.com/mod/groovyscript)
 - [GitHub](https://github.com/CleanroomMC/GroovyScript/releases)
 
 ## Features

@@ -1,35 +1,35 @@
-# AnvilUpdateEvent
+# Anvil Update Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.AnvilUpdateEvent
 ```
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 java.lang.String getName()
 ```
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getOutput()
 ```
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getRight()
 ```
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getLeft()
 ```
-```groovy
+```groovy:no-line-numbers
 void setOutput(net.minecraft.item.ItemStack arg0)
 ```
-```groovy
+```groovy:no-line-numbers
 void setCost(int arg0)
 ```
-```groovy
+```groovy:no-line-numbers
 void setMaterialCost(int arg0)
 ```
-```groovy
+```groovy:no-line-numbers
 int getCost()
 ```
-```groovy
+```groovy:no-line-numbers
 int getMaterialCost()
 ```

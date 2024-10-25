@@ -1,20 +1,19 @@
-# BlockEvent.NeighborNotifyEvent
+# Neighbor Notify Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.world.BlockEvent.NeighborNotifyEvent
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BlockEvent](block_event.md)
+[BlockEvent](index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 boolean getForceRedstoneUpdate()
 ```
 
-```groovy
+```groovy:no-line-numbers
 java.util.EnumSet getNotifiedSides()
 ```
-

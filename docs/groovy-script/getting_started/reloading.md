@@ -16,8 +16,14 @@ Some compat may not properly implement reloading, and will not be reloaded prope
 
 To reload GroovyScript, either:
 
-- Run the `/gs reload` command
+- Run the [`/gs reload` command](../minecraft/commands/index.md#reload)
 - Use the keybind, by default bound to `CTRL+R`
+
+
+## Command
+
+The [`/gs reload` command](../minecraft/commands/index.md#reload) can also be passed the argument `--clean`.
+This will delete the existing text in the [`groovy.log`](./groovy_log.md)
 
 
 ## Class Caching

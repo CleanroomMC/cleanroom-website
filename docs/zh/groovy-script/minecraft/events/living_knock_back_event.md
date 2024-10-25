@@ -1,7 +1,7 @@
-# LivingKnockBackEvent
+# Living Knock Back Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.living.LivingKnockBackEvent
 ```
 
@@ -10,50 +10,50 @@ This event extends the following events and can use all their methods and fields
 [LivingEvent](living_event/living_event.md), [EntityEvent](entity_event/entity_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.Entity getOriginalAttacker()
 ```
 
-```groovy
+```groovy:no-line-numbers
 double getOriginalRatioX()
 ```
 
-```groovy
+```groovy:no-line-numbers
 double getOriginalRatioZ()
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getOriginalStrength()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.Entity getAttacker()
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getStrength()
 ```
 
-```groovy
+```groovy:no-line-numbers
 double getRatioX()
 ```
 
-```groovy
+```groovy:no-line-numbers
 double getRatioZ()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setStrength(float arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setAttacker(net.minecraft.entity.Entity arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setRatioZ(double arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setRatioX(double arg0)
 ```

@@ -1,47 +1,47 @@
-# ChunkGeneratorEvent.InitNoiseField
+# Init Noise Field
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.terraingen.ChunkGeneratorEvent.InitNoiseField
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[ChunkGeneratorEvent](../chunk_generator_event/chunk_generator_event.md)
+[ChunkGeneratorEvent](../chunk_generator_event/index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 int getPosZ()
 ```
 
-```groovy
+```groovy:no-line-numbers
 [D getNoisefield()
 ```
 
-```groovy
+```groovy:no-line-numbers
 void setNoisefield([D arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getSizeX()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getSizeZ()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getSizeY()
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean hasResult()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getPosY()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getPosX()
 ```

@@ -1,7 +1,7 @@
-# ItemTooltipEvent
+# Item Tooltip Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.player.ItemTooltipEvent
 ```
 
@@ -10,18 +10,18 @@ This event extends the following events and can use all their methods and fields
 [PlayerEvent](player_event/player_event.md), [LivingEvent](living_event/living_event.md), [EntityEvent](entity_event/entity_event.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 net.minecraft.client.util.ITooltipFlag getFlags()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayer getEntityPlayer()
 ```
 
-```groovy
+```groovy:no-line-numbers
 java.util.List getToolTip()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.item.ItemStack getItemStack()
 ```

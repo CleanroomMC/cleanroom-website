@@ -1,36 +1,35 @@
-# BlockEvent.HarvestDropsEvent
+# Harvest Drops Event
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[BlockEvent](block_event.md)
+[BlockEvent](index.md)
 
 ## Methods
-```groovy
+```groovy:no-line-numbers
 void setDropChance(float arg0)
 ```
 
-```groovy
+```groovy:no-line-numbers
 java.util.List getDrops()
 ```
 
-```groovy
+```groovy:no-line-numbers
 float getDropChance()
 ```
 
-```groovy
+```groovy:no-line-numbers
 int getFortuneLevel()
 ```
 
-```groovy
+```groovy:no-line-numbers
 boolean isSilkTouching()
 ```
 
-```groovy
+```groovy:no-line-numbers
 net.minecraft.entity.player.EntityPlayer getHarvester()
 ```
-

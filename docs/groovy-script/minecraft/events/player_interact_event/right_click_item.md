@@ -1,12 +1,12 @@
-# PlayerInteractEvent.RightClickItem
+# Right Click Item
 
 To use this event use the following import:
-```groovy
+```groovy:no-line-numbers
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem
 ```
 
 ## Sub-Classes
 This event extends the following events and can use all their methods and fields: <br>
-[PlayerInteractEvent](player_interact_event.md), [PlayerEvent](../player_event/player_event.md), [LivingEvent](../living_event/living_event.md), [EntityEvent](../entity_event/entity_event.md)
+[PlayerInteractEvent](index.md), [PlayerEvent](../player_event/index.md), [LivingEvent](../living_event/index.md), [EntityEvent](../entity_event/index.md)
 
 ## Methods
