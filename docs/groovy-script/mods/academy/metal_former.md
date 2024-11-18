@@ -66,7 +66,31 @@ Just like other recipe types, the Metal Former also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.academy.metal_former.recipeBuilder() {open id="abstract"}
-- `TileMetalFormer.Mode`. groovyscript.wiki.academy.metal_former.MODE.value. Requires not null. (Default `ETCH`).
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
+
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
+
+- `TileMetalFormer.Mode`. Working mode of Metal former required for this recipe. Requires not null. (Default `ETCH`).
+
+    ```groovy:no-line-numbers
+    etch()
+    mode(TileMetalFormer.Mode)
+    plate()
+    incise()
+    refine()
+    ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `cn.academy.crafting.MetalFormerRecipes$RecipeObject`).
 

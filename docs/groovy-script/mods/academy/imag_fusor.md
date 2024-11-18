@@ -51,7 +51,23 @@ Just like other recipe types, the Imag Fusor also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.academy.imag_fusor.recipeBuilder() {open id="abstract"}
-- `int`. groovyscript.wiki.academy.imag_fusor.fluidAmount.value. Requires greater than 0. (Default `1000`).
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires exactly 1.
+
+    ```groovy:no-line-numbers
+    input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
+    ```
+
+- `ItemStackList`. Sets the item outputs of the recipe. Requires exactly 1.
+
+    ```groovy:no-line-numbers
+    output(ItemStack)
+    output(ItemStack...)
+    output(Collection<ItemStack>)
+    ```
+
+- `int`. Amount of Imag Phase Liquid consumed for this recipe. Requires greater than 0. (Default `1000`).
 
     ```groovy:no-line-numbers
     fluid(int)
