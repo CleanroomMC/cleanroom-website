@@ -25,12 +25,6 @@ mods.academy.MetalFormer
 
 ## Adding Recipes
 
-- Add the given recipe to the recipe list:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.add(MetalFormerRecipes.RecipeObject)
-    ```
-
 - Adds etching recipes in the format `input`, `output`:
 
     ```groovy:no-line-numbers
@@ -55,6 +49,15 @@ mods.academy.MetalFormer
     mods.academy.metal_former.addRefineRecipe(IIngredient, ItemStack)
     ```
 
+:::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.academy.metal_former.addEtchRecipe(item('minecraft:stonebrick'), item('minecraft:stonebrick', 3))
+mods.academy.metal_former.addInciseRecipe(block('minecraft:cobblestone'), item('minecraft:stone_slab', 3))
+mods.academy.metal_former.addPlateRecipe(ore('ingotIron'), item('academy:reinforced_iron_plate'))
+mods.academy.metal_former.addRefineRecipe(ore('oreDiamond'), item('minecraft:diamond') * 64)
+```
+
+::::::::::
 
 ## Removing Recipes
 
@@ -82,12 +85,6 @@ mods.academy.MetalFormer
     mods.academy.metal_former.clearPlate()
     ```
 
-- Removes all entry of metal former:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.clearRecipe()
-    ```
-
 - Removes all etching entry of metal former:
 
     ```groovy:no-line-numbers
@@ -97,25 +94,25 @@ mods.academy.MetalFormer
 - Removes an entry matching the given `ItemStack` from etching recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeEtchbyInput(ItemStack)
+    mods.academy.metal_former.removeEtchByInput(ItemStack)
     ```
 
 - Removes an entry matching the given `ItemStack` from incise recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeIncisebyInput(ItemStack)
+    mods.academy.metal_former.removeInciseByInput(ItemStack)
     ```
 
 - Removes an entry matching the given `ItemStack` from plate recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removePlatebyInput(ItemStack)
+    mods.academy.metal_former.removePlateByInput(ItemStack)
     ```
 
 - Removes an entry matching the given `ItemStack` from refine recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeRefinebyInput(ItemStack)
+    mods.academy.metal_former.removeRefineByInput(ItemStack)
     ```
 
 - Removes all registered recipes:
@@ -129,8 +126,11 @@ mods.academy.MetalFormer
 mods.academy.metal_former.clearEtch()
 mods.academy.metal_former.clearIncise()
 mods.academy.metal_former.clearPlate()
-mods.academy.metal_former.clearRecipe()
 mods.academy.metal_former.clearRefine()
+mods.academy.metal_former.removeEtchByInput(ore('oreDiamond'))
+mods.academy.metal_former.removeInciseByInput(ore('oreDiamond'))
+mods.academy.metal_former.removePlateByInput(ore('oreDiamond'))
+mods.academy.metal_former.removeRefineByInput(ore('oreDiamond'))
 mods.academy.metal_former.removeAll()
 ```
 
