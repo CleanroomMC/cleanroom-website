@@ -52,10 +52,49 @@ mods.academy.MetalFormer
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.academy.metal_former.addEtchRecipe(item('minecraft:stonebrick'), item('minecraft:stonebrick', 3))
-mods.academy.metal_former.addInciseRecipe(block('minecraft:cobblestone'), item('minecraft:stone_slab', 3))
+mods.academy.metal_former.addInciseRecipe(item('minecraft:cobblestone'), item('minecraft:stone_slab', 3))
 mods.academy.metal_former.addPlateRecipe(ore('ingotIron'), item('academy:reinforced_iron_plate'))
 mods.academy.metal_former.addRefineRecipe(ore('oreDiamond'), item('minecraft:diamond') * 64)
 ```
+
+::::::::::
+
+### Recipe Builder
+
+Just like other recipe types, the Metal Former also uses a recipe builder.
+
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
+
+:::::::::: details mods.academy.metal_former.recipeBuilder() {open id="abstract"}
+- `TileMetalFormer.Mode`. groovyscript.wiki.academy.metal_former.MODE.value. Requires not null. (Default `ETCH`).
+
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `cn.academy.crafting.MetalFormerRecipes$RecipeObject`).
+
+    ```groovy:no-line-numbers
+    register()
+    ```
+
+::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.academy.metal_former.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .refine()
+    .register()
+
+mods.academy.metal_former.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .incise()
+    .register()
+
+mods.academy.metal_former.recipeBuilder()
+    .input(item('minecraft:gold_ingot'))
+    .output(item('minecraft:clay') * 2)
+    .register()
+```
+
+:::::::::
 
 ::::::::::
 
@@ -70,49 +109,49 @@ mods.academy.metal_former.addRefineRecipe(ore('oreDiamond'), item('minecraft:dia
 - Removes all etching entry of metal former:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.clearEtch()
+    mods.academy.metal_former.removeAllEtch()
     ```
 
-- Removes all etching entry of metal former:
+- Removes all incising entry of metal former:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.clearIncise()
+    mods.academy.metal_former.removeAllIncise()
     ```
 
-- Removes all etching entry of metal former:
+- Removes all plating entry of metal former:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.clearPlate()
+    mods.academy.metal_former.removeAllPlate()
     ```
 
-- Removes all etching entry of metal former:
+- Removes all refining entry of metal former:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.clearRefine()
+    mods.academy.metal_former.removeAllRefine()
     ```
 
 - Removes an entry matching the given `ItemStack` from etching recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeEtchByInput(ItemStack)
+    mods.academy.metal_former.removeEtchByInput(IIngredient)
     ```
 
 - Removes an entry matching the given `ItemStack` from incise recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeInciseByInput(ItemStack)
+    mods.academy.metal_former.removeInciseByInput(IIngredient)
     ```
 
 - Removes an entry matching the given `ItemStack` from plate recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removePlateByInput(ItemStack)
+    mods.academy.metal_former.removePlateByInput(IIngredient)
     ```
 
 - Removes an entry matching the given `ItemStack` from refine recipes:
 
     ```groovy:no-line-numbers
-    mods.academy.metal_former.removeRefineByInput(ItemStack)
+    mods.academy.metal_former.removeRefineByInput(IIngredient)
     ```
 
 - Removes all registered recipes:
@@ -123,10 +162,10 @@ mods.academy.metal_former.addRefineRecipe(ore('oreDiamond'), item('minecraft:dia
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.academy.metal_former.clearEtch()
-mods.academy.metal_former.clearIncise()
-mods.academy.metal_former.clearPlate()
-mods.academy.metal_former.clearRefine()
+mods.academy.metal_former.removeAllEtch()
+mods.academy.metal_former.removeAllIncise()
+mods.academy.metal_former.removeAllPlate()
+mods.academy.metal_former.removeAllRefine()
 mods.academy.metal_former.removeEtchByInput(ore('oreDiamond'))
 mods.academy.metal_former.removeInciseByInput(ore('oreDiamond'))
 mods.academy.metal_former.removePlateByInput(ore('oreDiamond'))

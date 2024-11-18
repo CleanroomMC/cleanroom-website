@@ -44,6 +44,49 @@ mods.academy.imag_fusor.addRecipe(item('academy:crystal_normal'), item('academy:
 
 ::::::::::
 
+### Recipe Builder
+
+Just like other recipe types, the Imag Fusor also uses a recipe builder.
+
+Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
+
+:::::::::: details mods.academy.imag_fusor.recipeBuilder() {open id="abstract"}
+- `int`. groovyscript.wiki.academy.imag_fusor.fluidAmount.value. Requires greater than 0. (Default `1000`).
+
+    ```groovy:no-line-numbers
+    fluid(int)
+    ```
+
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `cn.academy.crafting.ImagFusorRecipes$IFRecipe`).
+
+    ```groovy:no-line-numbers
+    register()
+    ```
+
+::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.academy.imag_fusor.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .fluid(1000)
+    .register()
+
+mods.academy.imag_fusor.recipeBuilder()
+    .input(item('minecraft:clay'))
+    .output(item('minecraft:diamond'))
+    .fluid(3000)
+    .register()
+
+mods.academy.imag_fusor.recipeBuilder()
+    .input(item('minecraft:gold_ingot'))
+    .output(item('minecraft:clay') * 2)
+    .register()
+```
+
+:::::::::
+
+::::::::::
+
 ## Removing Recipes
 
 - Removes the given recipe from the recipe list:
