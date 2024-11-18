@@ -6,7 +6,7 @@ search:
 # Mods
 
 * [Abyssalcraft 2 (with Abyssal Tweaker)](./abyssaltweaker/)
-* [AcademyCraft-Unofficial Extended Support](./academy/)
+* [AcademyCraft Unofficial Extended Support](./academy/)
 * [Actually Additions](./actuallyadditions/)
 * [Advanced Mortars](./advancedmortars/)
 * [Advanced Rocketry](./advancedrocketry/)

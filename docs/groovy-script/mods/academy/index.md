@@ -3,7 +3,7 @@ aside: false
 ---
 
 
-# AcademyCraft-Unofficial Extended Support
+# AcademyCraft
 
 ## Categories
 
