@@ -86,10 +86,10 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 
     ```groovy:no-line-numbers
     etch()
-    mode(TileMetalFormer.Mode)
     plate()
     incise()
     refine()
+    mode(TileMetalFormer.Mode)
     ```
 
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `cn.academy.crafting.MetalFormerRecipes$RecipeObject`).
@@ -130,30 +130,6 @@ mods.academy.metal_former.recipeBuilder()
     mods.academy.metal_former.remove(MetalFormerRecipes.RecipeObject)
     ```
 
-- Removes all etching entry of metal former:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.removeAllEtch()
-    ```
-
-- Removes all incising entry of metal former:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.removeAllIncise()
-    ```
-
-- Removes all plating entry of metal former:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.removeAllPlate()
-    ```
-
-- Removes all refining entry of metal former:
-
-    ```groovy:no-line-numbers
-    mods.academy.metal_former.removeAllRefine()
-    ```
-
 - Removes an entry matching the given `ItemStack` from etching recipes:
 
     ```groovy:no-line-numbers
@@ -184,17 +160,41 @@ mods.academy.metal_former.recipeBuilder()
     mods.academy.metal_former.removeAll()
     ```
 
+- Removes all etching entry of metal former:
+
+    ```groovy:no-line-numbers
+    mods.academy.metal_former.removeAllEtch()
+    ```
+
+- Removes all incising entry of metal former:
+
+    ```groovy:no-line-numbers
+    mods.academy.metal_former.removeAllIncise()
+    ```
+
+- Removes all plating entry of metal former:
+
+    ```groovy:no-line-numbers
+    mods.academy.metal_former.removeAllPlate()
+    ```
+
+- Removes all refining entry of metal former:
+
+    ```groovy:no-line-numbers
+    mods.academy.metal_former.removeAllRefine()
+    ```
+
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
-mods.academy.metal_former.removeAllEtch()
-mods.academy.metal_former.removeAllIncise()
-mods.academy.metal_former.removeAllPlate()
-mods.academy.metal_former.removeAllRefine()
 mods.academy.metal_former.removeEtchByInput(ore('oreDiamond'))
 mods.academy.metal_former.removeInciseByInput(ore('oreDiamond'))
 mods.academy.metal_former.removePlateByInput(ore('oreDiamond'))
 mods.academy.metal_former.removeRefineByInput(ore('oreDiamond'))
 mods.academy.metal_former.removeAll()
+mods.academy.metal_former.removeAllEtch()
+mods.academy.metal_former.removeAllIncise()
+mods.academy.metal_former.removeAllPlate()
+mods.academy.metal_former.removeAllRefine()
 ```
 
 ::::::::::
