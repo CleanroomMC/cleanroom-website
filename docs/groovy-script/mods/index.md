@@ -48,6 +48,7 @@ search:
 * [LazyAE2](./threng/)
 * [Magneticraft](./magneticraft/)
 * [Mekanism](./mekanism/)
+* [Modern Warfare:Cubed](./mwc/)
 * [Mystical Agriculture](./mysticalagriculture/)
 * [Nature's Aura](./naturesaura/)
 * [PneumaticCraft: Repressurized](./pneumaticcraft/)
