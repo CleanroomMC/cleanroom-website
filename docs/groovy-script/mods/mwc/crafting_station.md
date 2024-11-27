@@ -201,7 +201,7 @@ mods.mwc.crafting_station.removeGunByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeMagazineByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeModificationAttachmentByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeNormalAttachmentByOutput(ore('oreDiamond'))
-mods.mwc.crafting_station.remove(ore('oreDiamond'))
+mods.mwc.crafting_station.removeAllCategoryByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeAll()
 ```
 
