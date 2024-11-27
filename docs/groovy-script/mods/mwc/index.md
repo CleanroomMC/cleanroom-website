@@ -9,5 +9,5 @@ aside: false
 
 Has 1 subcategories.
 
-* [Crafting Station/Ammo Press](./crafting_station.md)
+* [MWC Crafting](./crafting_station.md)
 
