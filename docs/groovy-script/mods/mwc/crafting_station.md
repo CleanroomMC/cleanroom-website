@@ -182,7 +182,7 @@ mods.mwc.crafting_station.recipeBuilder()
 - Removes all recipes of given VALID categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE":
 
     ```groovy:no-line-numbers
-    mods.mwc.crafting_station.removeAllinGroup(CraftingGroup)
+    mods.mwc.crafting_station.removeAllInGroup(CraftingGroup)
     ```
 
 - Removes all registered recipes:
