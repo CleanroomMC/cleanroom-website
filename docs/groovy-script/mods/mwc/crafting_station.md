@@ -172,7 +172,7 @@ mods.mwc.crafting_station.recipeBuilder()
 - Removes recipe that outputs given `ingredient` from all categories:
 
     ```groovy:no-line-numbers
-    mods.mwc.crafting_station.remove(IIngredient)
+    mods.mwc.crafting_station.removeAllCategoryByOutput(IIngredient)
     ```
 
 - groovyscript.wiki.mwc.crafting_station.removeAllInGroup:
