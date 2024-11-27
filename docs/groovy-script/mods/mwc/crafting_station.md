@@ -44,7 +44,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `CraftingGroup`. Category of crafting recipe. Requires not null.
+- `CraftingGroup`. Category of crafting recipe. Requires not null. (Default `GUN`).
 
     ```groovy:no-line-numbers
     setGroupGun()
