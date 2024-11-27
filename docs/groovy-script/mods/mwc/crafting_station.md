@@ -40,6 +40,8 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 
     ```groovy:no-line-numbers
     input(IIngredient...)
+    input(IIngredient, double)
+    input(double, IIngredient...)
     input(Collection<IIngredient>)
     ```
 
@@ -63,12 +65,6 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     setGroup(CraftingGroup)
     ```
 
-- `double`. Recover ratio of ingredient when dismantling item. Requires greater than or equal to 0. (Default `1.0`).
-
-    ```groovy:no-line-numbers
-    setYield(double)
-    ```
-
 - First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.paneedah.mwc.groovyscript.recipes.GSCrafting`).
 
     ```groovy:no-line-numbers
@@ -78,13 +74,12 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.mwc.crafting_station.recipeBuilder()
-    .input(item('minecraft:clay'))
+    .input(item('minecraft:clay'), 1)
     .output(item('minecraft:diamond'))
     .register()
 
 mods.mwc.crafting_station.recipeBuilder()
-    .setYield(0.5)
-    .input(item('minecraft:gold_ingot'))
+    .input(item('minecraft:gold_ingot', 0.5))
     .output(item('minecraft:clay') * 2)
     .register()
 ```
@@ -179,7 +174,7 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.remove(IIngredient)
     ```
 
-- Removes all recipes of given VALID categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE":
+- groovyscript.wiki.mwc.crafting_station.removeAllInGroup:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeAllInGroup(CraftingGroup)
