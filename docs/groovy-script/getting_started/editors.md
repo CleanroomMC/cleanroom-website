@@ -31,6 +31,8 @@ This extension will work with any fork of VS Code, but will presume you are usin
 GroovyScript has created an extension, called [`GroovyScript`](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview), distributed by `CleanroomMC`.
 This extension adds syntax validation, auto-completion for all installed mods, and hover information.
 
+The source code can be viewed [here](https://github.com/CleanroomMC/GroovyScript/tree/master/editors/vscode).
+
 
 ### Installation
 
@@ -50,6 +52,8 @@ The plugin will work with either Community Edition or Ultimate.
 [`Integer Limit`](https://github.com/IntegerLimit) has created a plugin, called [`GroovyScript`](https://plugins.jetbrains.com/plugin/25915-groovyscript),
 distributed by `IntegerLimit`.
 This plugin adds syntax validation, auto-completion for all installed mods, and hover information.
+
+The source code can be viewed [here](https://github.com/IntegerLimit/GroovyScriptPlugin).
 
 
 ### Installation
