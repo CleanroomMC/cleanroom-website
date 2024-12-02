@@ -42,6 +42,26 @@ This extension adds syntax validation, auto-completion for all installed mods, a
 6. Done
 
 
+## IntelliJ IDEA
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is an Integrated Development Environment created and distributed by JetBrains.
+The plugin will work with either Community Edition or Ultimate.
+
+[`Integer Limit`](https://github.com/IntegerLimit) has created a plugin, called [`GroovyScript`](https://plugins.jetbrains.com/plugin/25915-groovyscript),
+distributed by `IntegerLimit`.
+This plugin adds syntax validation, auto-completion for all installed mods, and hover information.
+
+
+### Installation
+
+1. Open IntelliJ IDEA and install the [LSP4IJ](https://plugins.jetbrains.com/plugin/23257-lsp4ij) plugin and the [`GroovyScript`](https://plugins.jetbrains.com/plugin/25915-groovyscript) plugin
+2. Open the instance folder (typically `minecraft`) or the `groovy` folder of a modpack in IntelliJ IDEA.
+3. [Start the Language Server](#start-the-language-server) via the instructions above
+4. The port in the `groovyscript.cfg` config file must match the port setting in the IntelliJ IDEA plugin.
+5. The server will now automatically connect.
+6. Done
+
+
 ## Emacs
 
 [Emacs](https://www.gnu.org/software/emacs/) is a group of open source editors, with the largest edition being distributed by GNU.
