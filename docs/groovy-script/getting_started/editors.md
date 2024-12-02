@@ -26,7 +26,7 @@ By default, the language server is started with a port of `25564`. This is confi
 ## Visual Studio Code
 
 [VS Code](https://code.visualstudio.com/) is an editor built on open source software and distributed by Microsoft.
-This extension will work with any fork of VS Code, but will presume you are using VS Code.
+This extension will work with any fork of VS Code, but for the purposes of this page the wording presumes you are using VS Code.
 
 GroovyScript has created an extension, called [`GroovyScript`](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview), distributed by `CleanroomMC`.
 This extension adds syntax validation, auto-completion for all installed mods, and hover information.
