@@ -47,6 +47,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 - `CraftingGroup`. Category of crafting recipe. Requires not null. (Default `GUN`).
 
     ```groovy:no-line-numbers
+    setGroup(String)
     setGroupGun()
     setGroupBullet()
     setGroupGrenade()
@@ -66,7 +67,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     input(Collection<IIngredient>)
     ```
 
-- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.paneedah.mwc.groovyscript.recipes.GSCrafting`).
+- First validates the builder, returning `null` and outputting errors to the log file if the validation failed, then registers the builder and returns the registered object. (returns `null` or `com.paneedah.mwc.groovyscript.recipes.GSCraftingRecipe`).
 
     ```groovy:no-line-numbers
     register()
@@ -169,10 +170,10 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeNormalAttachmentByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs given `ingredient` from all categories:
+- Removes all recipes that match the given output:
 
     ```groovy:no-line-numbers
-    mods.mwc.crafting_station.removeAllCategoryByOutput(IIngredient)
+    mods.mwc.crafting_station.removeByOutput(IIngredient)
     ```
 
 - groovyscript.wiki.mwc.crafting_station.removeAllInGroup:
@@ -201,7 +202,7 @@ mods.mwc.crafting_station.removeGunByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeMagazineByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeModificationAttachmentByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeNormalAttachmentByOutput(ore('oreDiamond'))
-mods.mwc.crafting_station.removeAllCategoryByOutput(ore('oreDiamond'))
+mods.mwc.crafting_station.removeByOutput(ore('oreDiamond'))
 mods.mwc.crafting_station.removeAll()
 ```
 
