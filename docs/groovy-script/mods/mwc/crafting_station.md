@@ -47,13 +47,13 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 - `CraftingGroup`. Category of crafting recipe. Requires not null. (Default `GUN`).
 
     ```groovy:no-line-numbers
-    setGroup(String)
+    setGroupGun()
     setGroupBullet()
     setGroupGrenade()
     setGroupMagazine()
     setGroupNormalAttachment()
     setGroupModificationAttachment()
-    setGroupGun()
+    setGroup(String)
     setGroup(CraftingGroup)
     ```
 
@@ -128,37 +128,37 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeAllNormalAttachment()
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from bullet category:
+- Removes all recipes that match the given output `ingredient` and are in the category Bullet:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeBulletByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from grenade category:
+- Removes all recipes that match the given output `ingredient` and are in the category Grenade:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeGrenadeByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from gun category:
+- Removes all recipes that match the given output `ingredient` and are in the category Gun:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeGunByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from magazine category:
+- Removes all recipes that match the given output `ingredient` and are in the category Magazine:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeMagazineByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from modification attachment category:
+- Removes all recipes that match the given output `ingredient` and are in the category Modification attachment:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeModificationAttachmentByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs matching item of given `ingredient` from normal attachment category:
+- Removes all recipes that match the given output `ingredient` and are in the category Normal attachment:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeNormalAttachmentByOutput(IIngredient)
