@@ -152,7 +152,7 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeMagazineByOutput(IIngredient)
     ```
 
-- Removes all recipes that match the given output `ingredient` and are in the category Modification attachment:
+- Removes all recipes that match the given output `ingredient` and are in the category Modification Attachment:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeModificationAttachmentByOutput(IIngredient)
