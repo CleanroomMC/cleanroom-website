@@ -1,7 +1,7 @@
 ---
 title: "MWC Crafting"
 titleTemplate: "Modern Warfare Cubed | CleanroomMC"
-description: "Converts multiple items into another item, with a way to recover some of original resources when dismantled. recipe with group `BULLET, MAGAZINE, GRENADE` can be only crafted via Ammo Press, while recipe with `GUN, ATTACHMENT_NORMAL, ATTACHMENT_MODIFICATION` categories can only be crafted with Crafting Station."
+description: "Converts multiple items into another item, with a way to recover some of original resources when dismantled. Recipes with group `BULLET, MAGAZINE, GRENADE` can be only crafted via Ammo Press, while recipes with `GUN, ATTACHMENT_NORMAL, ATTACHMENT_MODIFICATION` categories can only be crafted with Crafting Station."
 source_code_link: "https://github.com/Cubed-Development/Modern-Warfare-Cubed/blob/next/src/main/java/com/paneedah/mwc/groovyscript/script/CraftingStation.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/Cubed-Development/Modern-Warfare-Cubed/blo
 
 ## Description
 
-Converts multiple items into another item, with a way to recover some of original resources when dismantled. recipe with group `BULLET, MAGAZINE, GRENADE` can be only crafted via Ammo Press, while recipe with `GUN, ATTACHMENT_NORMAL, ATTACHMENT_MODIFICATION` categories can only be crafted with Crafting Station.
+Converts multiple items into another item, with a way to recover some of original resources when dismantled. Recipes with group `BULLET, MAGAZINE, GRENADE` can be only crafted via Ammo Press, while recipes with `GUN, ATTACHMENT_NORMAL, ATTACHMENT_MODIFICATION` categories can only be crafted with Crafting Station.
 
 ## Identifier
 
@@ -116,7 +116,7 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeAllMagazine()
     ```
 
-- Remove all with the category recipes of Modification Attachment:
+- Remove all recipes with the category of Modification Attachment:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeAllModificationAttachment()
@@ -158,7 +158,7 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeModificationAttachmentByOutput(IIngredient)
     ```
 
-- Removes all recipes that match the given output `ingredient` and are in the category Normal attachment:
+- Removes all recipes that match the given output `ingredient` and are in the category Normal Attachment:
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeNormalAttachmentByOutput(IIngredient)
@@ -170,25 +170,25 @@ mods.mwc.crafting_station.recipeBuilder()
     mods.mwc.crafting_station.removeByOutput(IIngredient)
     ```
 
-- Removes recipe that outputs given `ingredient` from given category. Valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE", "GRENADE":
+- Removes all recipes that output the given `ingredient` and given category. Valid categories are "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE", and "GRENADE":
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeInGroupByOutput(IIngredient, CraftingGroup)
     ```
 
-- Removes recipe that outputs given `ingredient` from given category. Valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE", "GRENADE":
+- Removes all recipes that output the given `ingredient` and given category. Valid categories are "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE", and "GRENADE":
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeInGroupByOutput(IIngredient, String)
     ```
 
-- Removes all recipes of given valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE":
+- Removes all recipes that match the given category. Valid categories are "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", and "MAGAZINE":
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeByGroup(CraftingGroup)
     ```
 
-- Removes all recipes of given valid categories = "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", "MAGAZINE":
+- Removes all recipes that match the given category. Valid categories are "GUN", "ATTACHMENT_NORMAL", "ATTACHMENT_MODIFICATION", "BULLET", and "MAGAZINE":
 
     ```groovy:no-line-numbers
     mods.mwc.crafting_station.removeByGroup(String)
