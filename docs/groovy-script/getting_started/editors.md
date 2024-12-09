@@ -26,10 +26,20 @@ By default, the language server is started with a port of `25564`. This is confi
 ## Visual Studio Code
 
 [VS Code](https://code.visualstudio.com/) is an editor built on open source software and distributed by Microsoft.
-This extension will work with any fork of VS Code, but will presume you are using VS Code.
+This extension will work with any fork of VS Code, but for the purposes of this page the wording presumes you are using VS Code.
 
-GroovyScript has created an extension, called [`GroovyScript`](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview), distributed by `CleanroomMC`.
-This extension adds syntax validation, auto-completion for all installed mods, and hover information.
+The extension is released under the name [`GroovyScript`](https://marketplace.visualstudio.com/items?itemName=CleanroomMC.groovyscript&ssr=false#overview)
+and distributed by the publisher [`CleanroomMC`](https://marketplace.visualstudio.com/publishers/CleanroomMC).
+It adds syntax validation, auto-completion for all installed mods, and hover information.
+For more information, check the readme of the project.
+
+::: info Contributors {id="tip"}
+
+This extension was created by [`zznty`](https://github.com/zznty) and [`brachy`](https://github.com/brachy84).
+
+:::
+
+The source code can be viewed [here](https://github.com/CleanroomMC/GroovyScript/tree/master/editors/vscode).
 
 
 ### Installation
@@ -39,6 +49,35 @@ This extension adds syntax validation, auto-completion for all installed mods, a
 3. [Start the Language Server](#start-the-language-server) via the instructions above
 4. The port in the `groovyscript.cfg` config file must match the port setting in the VS Code extension.
 5. If you just opened VS Code, it should auto connect. Otherwise, run the GroovyScript: Reconnect command.
+6. Done
+
+
+## IntelliJ IDEA
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is an Integrated Development Environment created and distributed by JetBrains.
+The plugin will work with either Community Edition or Ultimate.
+
+The plugin is released under the name [`GroovyScript`](https://plugins.jetbrains.com/plugin/25915-groovyscript)
+and distributed by the vendor [`IntegerLimit`](https://plugins.jetbrains.com/vendor/integerlimit).
+It adds syntax validation, auto-completion for all installed mods, and hover information.
+For more information, check the readme of the project.
+
+::: info Contributors {id="tip"}
+
+This plugin was created by [`Integer Limit`](https://github.com/IntegerLimit).
+
+:::
+
+The source code can be viewed [here](https://github.com/IntegerLimit/GroovyScriptPlugin).
+
+
+### Installation
+
+1. Open IntelliJ IDEA and install the [`GroovyScript`](https://plugins.jetbrains.com/plugin/25915-groovyscript) plugin
+2. Open the instance folder (typically `minecraft`) or the `groovy` folder of a modpack in IntelliJ IDEA.
+3. [Start the Language Server](#start-the-language-server) via the instructions above
+4. The port in the `groovyscript.cfg` config file must match the port setting in the IntelliJ IDEA plugin.
+5. The server will try to connect automatically. If it cannot connect, restart it by accessing the Language Servers Tab and then right clicking on the GroovyScript LSP entry.
 6. Done
 
 
