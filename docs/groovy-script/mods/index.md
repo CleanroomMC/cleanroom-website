@@ -51,6 +51,7 @@ search:
 * [Modern Warfare Cubed](./mwc/)
 * [Mystical Agriculture](./mysticalagriculture/)
 * [Nature's Aura](./naturesaura/)
+* [Pedestal Crafting - Patched](./pedestalcrafting/)
 * [PneumaticCraft: Repressurized](./pneumaticcraft/)
 * [Primal Tech](./primal_tech/)
 * [Prodigy Tech](./prodigytech/)
