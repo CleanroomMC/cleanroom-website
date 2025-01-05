@@ -1,7 +1,7 @@
 ---
 title: "Pedestal Crafting"
 titleTemplate: "Pedestal Crafting | CleanroomMC"
-description: "Converts a number of 2+ inputs into a single output item. The recipe can be customized with various particles."
+description: "Converts a center item and one or more surrounding inputs into a single output item. The recipe can be customized with various particles."
 source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched/blob/master/src/main/java/me/axieum/mcmod/pedestalcrafting/compat/groovyscript/PedestalCrafting.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched
 
 ## Description
 
-Converts a number of 2+ inputs into a single output item. The recipe can be customized with various particles.
+Converts a center item and one or more surrounding inputs into a single output item. The recipe can be customized with various particles.
 
 ## Identifier
 
@@ -54,7 +54,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     ticks(Integer)
     ```
 
-- `IIngredient`. The center item that is used in the crafting process.
+- `IIngredient`. The center item that is used in the crafting process. Requires not null.
 
     ```groovy:no-line-numbers
     center(IIngredient)
@@ -130,6 +130,12 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
 
 ## Removing Recipes
 
+- Removes all recipes where the center item matches the given input:
+
+    ```groovy:no-line-numbers
+    mods.pedestalcrafting.pedestal_crafting.removeByCenter(IIngredient)
+    ```
+
 - Removes all recipes that match the given input:
 
     ```groovy:no-line-numbers
@@ -150,6 +156,7 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
+mods.pedestalcrafting.pedestal_crafting.removeByCenter(item('minecraft:wool'))
 mods.pedestalcrafting.pedestal_crafting.removeByInput(item('minecraft:redstone_block'))
 mods.pedestalcrafting.pedestal_crafting.removeByOutput(item('minecraft:stick'))
 mods.pedestalcrafting.pedestal_crafting.removeAll()
