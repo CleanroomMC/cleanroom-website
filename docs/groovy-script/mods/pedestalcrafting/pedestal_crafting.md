@@ -1,7 +1,7 @@
 ---
 title: "Pedestal Crafting"
 titleTemplate: "Pedestal Crafting | CleanroomMC"
-description: "Converts a variable number of input items into a single output item. The recipe can be customized with various particles."
+description: "Converts a number of 2+ inputs into a single output item. The recipe can be customized with various particles."
 source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched/blob/master/src/main/java/me/axieum/mcmod/pedestalcrafting/compat/groovyscript/PedestalCrafting.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched
 
 ## Description
 
-Converts a variable number of input items into a single output item. The recipe can be customized with various particles.
+Converts a number of 2+ inputs into a single output item. The recipe can be customized with various particles.
 
 ## Identifier
 
@@ -32,7 +32,7 @@ Just like other recipe types, the Pedestal Crafting also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.pedestalcrafting.pedestal_crafting.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 2.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -48,27 +48,33 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     output(Collection<ItemStack>)
     ```
 
-- `Integer`. The number of ticks the recipe takes to complete. Requires greater than or equal to 5. (Default `5`).
+- `int`. The number of ticks the recipe takes to complete. Requires greater than or equal to 0. (Default `0`).
 
     ```groovy:no-line-numbers
     ticks(Integer)
     ```
 
-- `HashMap<EnumParticleTypes, Integer>`. Adds a particle effect to the crafting process. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the Minecraft Wiki.
+- `IIngredient`. The center item that is used in the crafting process.
+
+    ```groovy:no-line-numbers
+    center(IIngredient)
+    ```
+
+- `Map<EnumParticleTypes, Integer>`. Adds a particle effect to the crafting process. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the [Minecraft Wiki](https://minecraft.wiki/w/Java_Edition_Flattening#Particle_IDs) or [DigMinecraft](https://www.digminecraft.com/lists/particle_list_pc_1_12.php).
 
     ```groovy:no-line-numbers
     addCraftingParticle(String, int)
     addCraftingParticle(EnumParticleTypes, int)
     ```
 
-- `HashMap<EnumParticleTypes, Integer>`. Adds a particle effect that appears above the core after the crafting process is completed. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the Minecraft Wiki.
+- `Map<EnumParticleTypes, Integer>`. Adds a particle effect that appears above the core after the crafting process is completed. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the [Minecraft Wiki](https://minecraft.wiki/w/Java_Edition_Flattening#Particle_IDs) or [DigMinecraft](https://www.digminecraft.com/lists/particle_list_pc_1_12.php).
 
     ```groovy:no-line-numbers
     addPostCraftCoreParticle(String, int)
     addPostCraftCoreParticle(EnumParticleTypes, int)
     ```
 
-- `HashMap<EnumParticleTypes, Integer>`. Adds a particle effect that appears above each pedestal after the crafting process is completed. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the Minecraft Wiki.
+- `Map<EnumParticleTypes, Integer>`. Adds a particle effect that appears above each pedestal after the crafting process is completed. The first argument is the particle name, the second argument is the amount of the particles appearing. Names can be referenced from the [Minecraft Wiki](https://minecraft.wiki/w/Java_Edition_Flattening#Particle_IDs) or [DigMinecraft](https://www.digminecraft.com/lists/particle_list_pc_1_12.php).
 
     ```groovy:no-line-numbers
     addPostCraftPedestalParticle(String, int)
@@ -84,12 +90,14 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
+    .center(ore('oreIron'))
     .input(ore('stickWood'),ore('plankWood'),ore('logWood'),item('minecraft:stick'))
     .output(item('minecraft:diamond'))
     .ticks(100)
     .register()
 
 mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
+    .center(ore('oreGold'))
     .input(item('minecraft:chest'),item('minecraft:piston'))
     .output(item('minecraft:emerald'))
     .ticks(100)
@@ -97,6 +105,7 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
     .register()
 
 mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
+    .center(ore('oreDiamond'))
     .input(item('minecraft:hopper'),item('minecraft:chest'))
     .output(item('minecraft:stone'))
     .ticks(100)
@@ -105,6 +114,7 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
     .register()
 
 mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
+    .center(ore('oreRedstone'))
     .input(item('minecraft:cobblestone'), ore('ingotGold'))
     .output(item('minecraft:redstone'))
     .ticks(100)
@@ -120,6 +130,12 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
 
 ## Removing Recipes
 
+- Removes all recipes that match the given input:
+
+    ```groovy:no-line-numbers
+    mods.pedestalcrafting.pedestal_crafting.removeByInput(IIngredient)
+    ```
+
 - Removes all recipes that match the given output:
 
     ```groovy:no-line-numbers
@@ -134,6 +150,7 @@ mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
 
 :::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
+mods.pedestalcrafting.pedestal_crafting.removeByInput(item('minecraft:redstone_block'))
 mods.pedestalcrafting.pedestal_crafting.removeByOutput(item('minecraft:stick'))
 mods.pedestalcrafting.pedestal_crafting.removeAll()
 ```
