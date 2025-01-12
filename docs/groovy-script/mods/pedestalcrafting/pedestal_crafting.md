@@ -1,7 +1,7 @@
 ---
 title: "Pedestal Crafting"
 titleTemplate: "Pedestal Crafting | CleanroomMC"
-description: "Converts a center item and one or more surrounding inputs into a single output item. The recipe can be customized with various particles."
+description: "Converts a center item into a single output item. Additional inputs can be placed on pedestals around the core. The crafting time as well as the particles that show during or after finishing a recipe can be customized."
 source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched/blob/master/src/main/java/me/axieum/mcmod/pedestalcrafting/compat/groovyscript/PedestalCrafting.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/Ender-Development/PedestalCrafting-Patched
 
 ## Description
 
-Converts a center item and one or more surrounding inputs into a single output item. The recipe can be customized with various particles.
+Converts a center item into a single output item. Additional inputs can be placed on pedestals around the core. The crafting time as well as the particles that show during or after finishing a recipe can be customized.
 
 ## Identifier
 
@@ -32,7 +32,7 @@ Just like other recipe types, the Pedestal Crafting also uses a recipe builder.
 Don't know what a builder is? Check [the builder info page](../../getting_started/builder.md) out.
 
 :::::::::: details mods.pedestalcrafting.pedestal_crafting.recipeBuilder() {open id="abstract"}
-- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 1.
+- `IngredientList<IIngredient>`. Sets the item inputs of the recipe. Requires greater than or equal to 0.
 
     ```groovy:no-line-numbers
     input(IIngredient)
@@ -51,7 +51,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 - `int`. The number of ticks the recipe takes to complete. Requires greater than or equal to 0. (Default `0`).
 
     ```groovy:no-line-numbers
-    ticks(Integer)
+    ticks(int)
     ```
 
 - `IIngredient`. The center item that is used in the crafting process. Requires not null.
@@ -90,8 +90,14 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 ::::::::: details Example {open id="example"}
 ```groovy:no-line-numbers
 mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
-    .center(ore('oreIron'))
-    .input(ore('stickWood'),ore('plankWood'),ore('logWood'),item('minecraft:stick'))
+    .center(item('minecraft:lava_bucket'))
+    .output(item('minecraft:obsidian'))
+    .ticks(100)
+    .register()
+
+mods.pedestalcrafting.pedestal_crafting.recipeBuilder()
+    .center(ore('plankWood'))
+    .input(ore('stickWood'),item('minecraft:water_bucket'),ore('logWood'))
     .output(item('minecraft:diamond'))
     .ticks(100)
     .register()
