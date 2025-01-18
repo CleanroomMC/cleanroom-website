@@ -108,6 +108,10 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
               text: "Colouring Blocks and Items",
               link: "colouring-blocks-and-items",
             },
+            {
+                text: "Render Documentation",
+                link: "render-documentation",
+            }
           ],
         },
         { text: "Behaviour", link: "behaviour" },
