@@ -9,7 +9,7 @@ aside: false
 
 Has 2 subcategories.
 
-* [Crafting Category](./sgc_category.md)
+* [Crafting Category](./category.md)
 
-* [Crafting Recipe](./sgc_recipe.md)
+* [Crafting Recipe](./recipe.md)
 
