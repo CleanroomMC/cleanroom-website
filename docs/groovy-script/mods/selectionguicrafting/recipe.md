@@ -1,7 +1,7 @@
 ---
 title: "Crafting Recipe"
 titleTemplate: "Selection GUI Crafting | CleanroomMC"
-description: "Creates a recipe that is shown in the specified category. Each recipe requires at least an input (placed in the offhand), tool (placed in the mainhand), and output. There can also be an optional catalyst (placed in the inventory). The recipe can have its own frame, sounds, particles, and progress bar. It also allows to specify how the sounds are played, if the recipe can be added to the crafting queue, how the output items are handed to the player, and how much durability is consumed, if the tool is a damageable item. The crafting time as well as a possible XP reward can be set as well."
+description: "Creates a recipe that is shown in the specified category. Each recipe requires at least an input (placed in the offhand), tool (placed in the mainhand), and output. There can also be an optional catalyst (placed in the inventory). The recipe can have its own frame, sounds, particles, progress bar, can specify how the sounds are played, if the recipe can be added to the crafting queue, how the output items are handed to the player, how much durability is consumed if the tool is a damageable item, the crafting time, and how much XP is rewarded. Most of these have a fallback to the category settings."
 source_code_link: "https://github.com/Ender-Development/selection-gui-crafting-continued/blob/master/src/main/java/io/enderdev/selectionguicrafting/integration/groovyscript/Recipe.java"
 ---
 
@@ -9,7 +9,7 @@ source_code_link: "https://github.com/Ender-Development/selection-gui-crafting-c
 
 ## Description
 
-Creates a recipe that is shown in the specified category. Each recipe requires at least an input (placed in the offhand), tool (placed in the mainhand), and output. There can also be an optional catalyst (placed in the inventory). The recipe can have its own frame, sounds, particles, and progress bar. It also allows to specify how the sounds are played, if the recipe can be added to the crafting queue, how the output items are handed to the player, and how much durability is consumed, if the tool is a damageable item. The crafting time as well as a possible XP reward can be set as well.
+Creates a recipe that is shown in the specified category. Each recipe requires at least an input (placed in the offhand), tool (placed in the mainhand), and output. There can also be an optional catalyst (placed in the inventory). The recipe can have its own frame, sounds, particles, progress bar, can specify how the sounds are played, if the recipe can be added to the crafting queue, how the output items are handed to the player, how much durability is consumed if the tool is a damageable item, the crafting time, and how much XP is rewarded. Most of these have a fallback to the category settings.
 
 ## Identifier
 
@@ -61,18 +61,25 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
 
     ```groovy:no-line-numbers
     input(IIngredient)
+    input(IIngredient...)
+    input(Collection<IIngredient>)
     ```
 
 - `ArrayList<GsOutput>`. The output items that will be given to the player. You can add multiple outputs each with a different chance. The `float` value is the chance of the item being dropped. Requires greater than or equal to 1.
 
     ```groovy:no-line-numbers
+    output(GsOutput)
     output(ItemStack)
+    output(GsOutput...)
+    output(ItemStack...)
     output(ItemStack, float)
+    output(Collection<output>)
     ```
 
 - `ArrayList<GsSound>`. The sounds that will be played when the recipe is crafted. Overrides the category sounds. The first `float` value is the volume, the second `float` value is the pitch of the sound.
 
     ```groovy:no-line-numbers
+    sound(GsSound)
     sound(String, float, float)
     sound(SoundEvent, float, float)
     sound(ResourceLocation, float, float)
@@ -85,20 +92,21 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     catalyst(IIngredient, float)
     ```
 
-- `String`. The category that the recipe belongs to. If the category doesn't exist, it will throw an error. Requires not null.
+- `String`. The category that the recipe belongs to. If the category doesn't exist, it will throw an error. Requires not null and the category must exist.
 
     ```groovy:no-line-numbers
     category(String)
     ```
 
-- `ArrayList<GsParticle>`. The particles that will be spawned when the recipe is crafted. Overrides the category particles. The first `int` value is the amount of particles, the second `float` value is the speed of the particles.
+- `ArrayList<GsParticle>`. The particles that will be spawned when the recipe is crafted. Overrides the category particles. The `int` value is the amount of particles, the `float` value is the speed of the particles.
 
     ```groovy:no-line-numbers
+    particle(GsParticle)
     particle(String, int, float)
     particle(EnumParticleTypes, int, float)
     ```
 
-- `GsEnum.QueueType`. If the recipe can be queued. Overrides the category queueable. Allowed values are either: `true`, `false` or `'YES'`, `'NO'`.
+- `GsEnum.QueueType`. If the recipe can be queued. Overrides the category queueable. Allowed values are either: `true`, `false` or `YES`, `NO`.
 
     ```groovy:no-line-numbers
     queueable(String)
@@ -106,7 +114,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     queueType(boolean)
     ```
 
-- `GsEnum.SoundType`. How the sounds will be played. Overrides the category soundType. Allowed values are: `'RANDOM'` or `'COMBINED'`.
+- `GsEnum.SoundType`. How the sounds will be played. Overrides the category soundType. Allowed values are: `RANDOM` or `COMBINED`.
 
     ```groovy:no-line-numbers
     soundType(String)
@@ -119,7 +127,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     durability(int)
     ```
 
-- `GsEnum.OutputType`. How the output will be handed to the player. Overrides the category outputType. Allowed values are: `'DROP'` or `'INVENTORY'`.
+- `GsEnum.OutputType`. How the output will be handed to the player. Overrides the category outputType. Allowed values are: `DROP` or `INVENTORY`.
 
     ```groovy:no-line-numbers
     outputType(String)
