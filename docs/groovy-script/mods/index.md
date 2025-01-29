@@ -59,6 +59,7 @@ search:
 * [Pyrotech](./pyrotech/)
 * [Roots 3](./roots/)
 * [Rustic](./rustic/)
+* [SelectionGUI Crafting](./selectionguicrafting/)
 * [Tech Reborn](./techreborn/)
 * [Thaumcraft](./thaumcraft/)
 * [The Aurorian](./theaurorian/)
