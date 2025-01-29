@@ -92,7 +92,7 @@ Don't know what a builder is? Check [the builder info page](../../getting_starte
     catalyst(IIngredient, float)
     ```
 
-- `String`. The category that the recipe belongs to. If the category doesn't exist, it will throw an error. Requires not null and the category must exist.
+- `String`. The category that the recipe belongs to. Requires not null and the category must exist.
 
     ```groovy:no-line-numbers
     category(String)
