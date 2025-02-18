@@ -38,6 +38,7 @@ search:
 * [Forestry](./forestry/)
 * [Future MC](./futuremc/)
 * [GregTech](./gtceu/)
+* [Harken Scythe: Resharpened](./harkenscythe/)
 * [Immersive Engineering](./immersiveengineering/)
 * [Immersive Petroleum](./immersivepetroleum/)
 * [Immersive Technology](./immersivetech/)
