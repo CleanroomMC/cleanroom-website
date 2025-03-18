@@ -29,7 +29,7 @@ mods.aether.EnchanterFuel
 
 ## Adding Recipes
 
-- Adds an Enchanting fuel in the format `item`, `timeGiven`.:
+- Adds an Enchanting fuel in the format `item`, `timeGiven`:
 
     ```groovy:no-line-numbers
     mods.aether_legacy.enchanter_fuel.add(ItemStack, int)

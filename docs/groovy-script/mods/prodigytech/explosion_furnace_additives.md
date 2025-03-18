@@ -25,13 +25,13 @@ mods.prodigytech.ExplosionFurnaceAdditives
 
 ## Adding Entries
 
-- Adds a dampener.:
+- Adds a dampener:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.addDampener(IIngredient, int)
     ```
 
-- Adds an explosive.:
+- Adds an explosive:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.addExplosive(IIngredient, int)
@@ -47,25 +47,25 @@ mods.prodigytech.explosion_furnace_additives.addExplosive(item('minecraft:cobble
 
 ## Removing Entries
 
-- Removes a dampener by the input item.:
+- Removes a dampener by the input item:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.removeDampener(IIngredient)
     ```
 
-- Removes an explosive by the input item.:
+- Removes an explosive by the input item:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.removeExplosive(IIngredient)
     ```
 
-- Removes all registered dampeners.:
+- Removes all registered dampeners:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.removeAllDampeners()
     ```
 
-- Removes all registered explosives.:
+- Removes all registered explosives:
 
     ```groovy:no-line-numbers
     mods.prodigytech.explosion_furnace_additives.removeAllExplosives()

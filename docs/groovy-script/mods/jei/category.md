@@ -33,13 +33,13 @@ mods.jei.Category
 
 ## Editing Values
 
-- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order.:
+- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order:
 
     ```groovy:no-line-numbers
     mods.jei.category.setOrder(List<String>)
     ```
 
-- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order.:
+- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order:
 
     ```groovy:no-line-numbers
     mods.jei.category.setOrder(String...)

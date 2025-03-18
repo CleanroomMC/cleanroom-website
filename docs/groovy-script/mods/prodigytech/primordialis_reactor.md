@@ -25,7 +25,7 @@ mods.prodigytech.PrimordialisReactor
 
 ## Adding Entries
 
-- Adds an item that can be converted.:
+- Adds an item that can be converted:
 
     ```groovy:no-line-numbers
     mods.prodigytech.primordialis_reactor.add(IIngredient)
@@ -40,7 +40,7 @@ mods.prodigytech.primordialis_reactor.add(item('minecraft:diamond'))
 
 ## Removing Entries
 
-- Removes an item that can be converted.:
+- Removes an item that can be converted:
 
     ```groovy:no-line-numbers
     mods.prodigytech.primordialis_reactor.remove(IIngredient)

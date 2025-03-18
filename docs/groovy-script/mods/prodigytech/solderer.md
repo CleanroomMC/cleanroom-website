@@ -93,7 +93,7 @@ mods.prodigytech.solderer.recipeBuilder()
 
 ## Removing Recipes
 
-- Removes the recipes using the given additive.:
+- Removes the recipes using the given additive:
 
     ```groovy:no-line-numbers
     mods.prodigytech.solderer.removeByAdditive(IIngredient)
@@ -105,7 +105,7 @@ mods.prodigytech.solderer.recipeBuilder()
     mods.prodigytech.solderer.removeByOutput(IIngredient)
     ```
 
-- Removes the recipes using the given pattern.:
+- Removes the recipes using the given pattern:
 
     ```groovy:no-line-numbers
     mods.prodigytech.solderer.removeByPattern(IIngredient)
@@ -117,7 +117,7 @@ mods.prodigytech.solderer.recipeBuilder()
     mods.prodigytech.solderer.removeAll()
     ```
 
-- Removes all recipes not using additives.:
+- Removes all recipes not using additives:
 
     ```groovy:no-line-numbers
     mods.prodigytech.solderer.removeWithoutAdditive()

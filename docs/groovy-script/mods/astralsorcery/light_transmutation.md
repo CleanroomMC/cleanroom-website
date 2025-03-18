@@ -29,7 +29,7 @@ mods.astral.LightTransmutation
 
 ## Editing Values
 
-- Sets the IBlockState that Starmetal Ore is converted into when placed beneath a Celestial Crystal Cluster. Useful when the Light Transmutation recipe converting Iron Ore into Starmetal Ore has changed.:
+- Sets the IBlockState that Starmetal Ore is converted into when placed beneath a Celestial Crystal Cluster. Useful when the Light Transmutation recipe converting Iron Ore into Starmetal Ore has changed:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.light_transmutation.setStarmetalReplacementState(IBlockState)
