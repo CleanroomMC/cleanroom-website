@@ -21,6 +21,7 @@ search:
 * [Avaritia](./avaritia/)
 * [Better With Addons](./betterwithaddons/)
 * [Better With Mods](./betterwithmods/)
+* [Bewitchment](./thebetweenlands/)
 * [Blood Arsenal](./bloodarsenal/)
 * [Blood Magic: Alchemical Wizardry](./bloodmagic/)
 * [Botania Tweaks](./botania_tweaks/)
