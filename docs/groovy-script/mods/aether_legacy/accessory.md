@@ -25,7 +25,7 @@ mods.aether.Accessory
 
 ## Adding Recipes
 
-- Adds an Accessory in the format `item`, `type`, where type is one of the following: "Ring", "Pendant", "Cape", "Shield", "Glove", or "Misc".:
+- Adds an Accessory in the format `item`, `type`, where type is one of the following: "Ring", "Pendant", "Cape", "Shield", "Glove", or "Misc":
 
     ```groovy:no-line-numbers
     mods.aether_legacy.accessory.add(ItemStack, String)

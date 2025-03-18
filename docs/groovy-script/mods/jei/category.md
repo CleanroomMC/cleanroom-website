@@ -1,7 +1,7 @@
 ---
 title: "Categories"
 titleTemplate: "Just Enough Items | CleanroomMC"
-description: "Modify the Categories visible in JEI, each of which contain recipes and are associated with specific blocks, typically machines."
+description: "Modify the Categories visible in JEI, each of which contain recipes and are associated with specific blocks, typically machines. Can also set the order of Categories."
 source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/main/java/com/cleanroommc/groovyscript/compat/mods/jei/Category.java"
 ---
 
@@ -9,10 +9,14 @@ source_code_link: "https://github.com/CleanroomMC/GroovyScript/blob/master/src/m
 
 ## Description
 
-Modify the Categories visible in JEI, each of which contain recipes and are associated with specific blocks, typically machines.
+Modify the Categories visible in JEI, each of which contain recipes and are associated with specific blocks, typically machines. Can also set the order of Categories.
 
 :::::::::: details Note {open id="note"}
 Hidden Categories will still take up load time, and recipes contained within can still be processed. This only prevents seeing Categories.
+::::::::::
+
+:::::::::: details Tip {open id="tip"}
+Use the command `/gs jeiCategories` to log the UIDs of all JEI Categories to the `groovy.log` file!
 ::::::::::
 
 ## Identifier
@@ -26,6 +30,27 @@ mods.jei.category/* Used as page default */ // [!code focus]
 mods.jei.Category
 ```
 
+
+## Editing Values
+
+- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order:
+
+    ```groovy:no-line-numbers
+    mods.jei.category.setOrder(List<String>)
+    ```
+
+- Sets the order of categories in JEI. Categories not included in the list will be placed at the end according to their normal order:
+
+    ```groovy:no-line-numbers
+    mods.jei.category.setOrder(String...)
+    ```
+
+:::::::::: details Example {open id="example"}
+```groovy:no-line-numbers
+mods.jei.category.setOrder('minecraft.crafting', 'jei.information', 'minecraft.smelting', 'groovyscript:burning', 'groovyscript:explosion', 'groovyscript:fluid_recipe', 'groovyscript:piston_push', 'minecraft.anvil')
+```
+
+::::::::::
 
 ## Adding Entries
 

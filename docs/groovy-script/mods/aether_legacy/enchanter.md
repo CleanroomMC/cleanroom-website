@@ -25,7 +25,7 @@ mods.aether.Enchanter
 
 ## Adding Recipes
 
-- Adds an Enchanting recipe in the format `input`, `output`, `time`.:
+- Adds an Enchanting recipe in the format `input`, `output`, `time`:
 
     ```groovy:no-line-numbers
     mods.aether_legacy.enchanter.add(ItemStack, ItemStack, int)

@@ -71,13 +71,13 @@ mods.extrautilities2.GridPowerPassiveGenerator
     mods.extrautils2.grid_power_passive_generator.setPowerMultiplier(String, IWorldPowerMultiplier)
     ```
 
-- Sets the function used to determine what the Grid Power produced by the given generator is reduced by in the format `generator`, `scaling`. Scaling consists of floats controlling first how much GP the effect will activate at followed by the multiplier.:
+- Sets the function used to determine what the Grid Power produced by the given generator is reduced by in the format `generator`, `scaling`. Scaling consists of floats controlling first how much GP the effect will activate at followed by the multiplier:
 
     ```groovy:no-line-numbers
     mods.extrautils2.grid_power_passive_generator.setScaling(ResourceLocation, float...)
     ```
 
-- Sets the function used to determine what the Grid Power produced by the given generator is reduced by in the format `generator`, `scaling`. Scaling consists of floats controlling first how much GP the effect will activate at followed by the multiplier.:
+- Sets the function used to determine what the Grid Power produced by the given generator is reduced by in the format `generator`, `scaling`. Scaling consists of floats controlling first how much GP the effect will activate at followed by the multiplier:
 
     ```groovy:no-line-numbers
     mods.extrautils2.grid_power_passive_generator.setScaling(String, float...)

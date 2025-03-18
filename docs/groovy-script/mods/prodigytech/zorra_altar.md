@@ -25,13 +25,13 @@ mods.prodigytech.ZorraAltar
 
 ## Removing Recipes
 
-- Adds an enchantment that can be applied in the Altar.:
+- Adds an enchantment that can be applied in the Altar:
 
     ```groovy:no-line-numbers
     mods.prodigytech.zorra_altar.addEnchantment(String, Enchantment, int)
     ```
 
-- Removes an enchantment that can be applied in the Altar.:
+- Removes an enchantment that can be applied in the Altar:
 
     ```groovy:no-line-numbers
     mods.prodigytech.zorra_altar.removeEnchantment(String, Enchantment)

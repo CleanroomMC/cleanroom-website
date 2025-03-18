@@ -25,19 +25,19 @@ mods.astral.Constellation
 
 ## Adding Entries
 
-- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
+- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, Collection<IIngredient>)
     ```
 
-- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
+- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, IIngredient)
     ```
 
-- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used.:
+- Adds to the constellations signature items, which control the Constellation Paper and Mantle of Stars recipes. Only the first 4 will be used:
 
     ```groovy:no-line-numbers
     mods.astralsorcery.constellation.addSignatureItem(IConstellation, IIngredient...)

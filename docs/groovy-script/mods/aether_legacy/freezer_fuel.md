@@ -29,7 +29,7 @@ mods.aether.FreezerFuel
 
 ## Adding Recipes
 
-- Adds a Freezer fuel in the format `item`, `timeGiven`.:
+- Adds a Freezer fuel in the format `item`, `timeGiven`:
 
     ```groovy:no-line-numbers
     mods.aether_legacy.freezer_fuel.add(ItemStack, int)

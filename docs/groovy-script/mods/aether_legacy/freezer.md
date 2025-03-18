@@ -25,7 +25,7 @@ mods.aether.Freezer
 
 ## Adding Recipes
 
-- Adds a Freezer recipe in the format `input`, `output`, `time`.:
+- Adds a Freezer recipe in the format `input`, `output`, `time`:
 
     ```groovy:no-line-numbers
     mods.aether_legacy.freezer.add(ItemStack, ItemStack, int)
