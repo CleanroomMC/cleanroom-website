@@ -9,5 +9,5 @@ aside: false
 
 Has 1 subcategories.
 
-* [Work bench](./work_bench_plus.md)
+* [Workbench Plus](./workbench_plus.md)
 
