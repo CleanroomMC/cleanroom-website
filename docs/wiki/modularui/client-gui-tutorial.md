@@ -22,6 +22,11 @@ public class TutorialGUI {
 }
 ```
 
+:::info {id="info"}
+Alternatively you can make your class extend `CustomModularScreen` and override `buildUI(ModularGuiContext context)` where you will create the panel.
+In that case you will not have `createGUI/()` method, and you would instantiate the class when opening it.
+:::
+
 This creates the most basic GUI with a 176 x 166 centered panel. Take a look at the constructor and method used
 including their javadoc. The GUI's theme defines widgets backgrounds. By default, this gives panels the default vanilla
 background. You can call `.background()` to set your own background. However, creating a new theme is recommended if
@@ -29,7 +34,7 @@ applicable.
 
 For now lets put a title at the top of the panel. For that we'll use `.child()` and pass a widget to it. To create a
 text widget we can use `IKey.str().asWidget`. (Note: You can create a translated string with `IKey.lang()`). We also
-want to set the postion, for that we chain `.top()` and `.left()` on ANY widegt which implements `IPositioned`. We don't
+want to set the postion, for that we chain `.top()` and `.left()` on ANY widget which implements `IPositioned`. We don't
 need to set a size since `TextWidget` calculates it on its own. But you can limit the width for example and the text
 will automatically wrap, if necessary.
 
@@ -47,6 +52,10 @@ public static ModularScreen createGUI() {
 We want to open the screen when the player right clicks with a diamond. We use a forge event for that and simply check
 for client side and a diamond. Then we open the screen with `ClientGUI.open()`. Pass in a new screen instance with the
 method we just created. Now let's boot up minecraft and test it.
+
+:::info {id="info"}
+There are some overloads of `ClientGUI.open()` which allow you to pass in a `JeiSettings` or `UISettings` instance.
+:::
 
 ```java
 @Mod.EventBusSubscriber

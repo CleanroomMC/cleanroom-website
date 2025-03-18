@@ -14,7 +14,7 @@ In this tutorial we will open a GUI on right clicking a block.
 At the top we subscribe to some events to register the block and the item form.
 Whats interesting for us is the method at the bottom `onBlockActivated()`. This is called when the block is right clicked.
 Inside we first check if the method is called on server side. This is important. **Synced GUI's MUST be opened ONLY from
-server side!**. Then we simply call `GuiInfos.TILE_ENTITY.open(playerIn, worldIn, pos);`. This will find the tile entity
+server side!**. Then we simply call `GuiFactories.tileEntity().open(playerIn, pos);`. This will find the tile entity
 at the blocks position and tries to open the GUI on client and server side.
 
 ```java
@@ -55,7 +55,7 @@ public class TutorialBlock extends Block implements ITileEntityProvider {
     @Override
     public boolean onBlockActivated(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (!worldIn.isRemote) {
-            GuiInfos.TILE_ENTITY.open(playerIn, worldIn, pos);
+            GuiFactories.tileEntity().open(playerIn, pos);
         }
         return true;
     }
@@ -64,18 +64,22 @@ public class TutorialBlock extends Block implements ITileEntityProvider {
 
 ## Creating the TileEntity
 
-This is fairly simple. Extend `TileEntity` and implement `IGuiHolder`. Then override `buildUI()`. You can also override
+This is fairly simple. Extend `TileEntity` and implement `IGuiHolder<PosGuiData>`. Then override `buildUI()`. You can also override
 `createScreen()` to create a custom screen, but most of the time you won't need that.
+
+:::info {id="info"}
+The generic type of `IGuiHolder` must be of type `GuiData`. See [here](./getting-started.md#synced-gui) for details.
+:::
 
 Inside the `buildUI()` is where the fun stuff happens. The method is called on both client and server side, but only on
 client side the widgets are kept. But on both sides the syncing information is kept.
 Here we currently only create a panel and attach the player inventory. **The GUI must be synced for ANY slots to work!**
 
 ```java
-public class TutorialTile extends TileEntity implements IGuiHolder {
+public class TutorialTile extends TileEntity implements IGuiHolder<PosGuiData> {
 
     @Override
-    public ModularPanel buildUI(GuiCreationContext guiCreationContext, GuiSyncManager guiSyncManager, boolean isClient) {
+    public ModularPanel buildUI(PosGuiData guiData, PanelSyncManager syncManager, UISettings settings) {
         ModularPanel panel = ModularPanel.defaultPanel("tutorial_gui");
         panel.bindPlayerInventory();
         return panel;
@@ -107,7 +111,7 @@ Now add a progress widget to the panel.
 
 ```java
 @Override
-public ModularPanel buildUI(GuiCreationContext creationContext, GuiSyncManager syncManager, boolean isClient) {
+public ModularPanel buildUI(PosGuiData guiData, PanelSyncManager syncManager, UISettings settings) {
     ModularPanel panel = ModularPanel.defaultPanel("tutorial_gui");
     panel.bindPlayerInventory()
             .child(new ProgressWidget()
@@ -127,15 +131,16 @@ The whole syncing information is in this line:
 
 `value()` accepts an instance of `IDoubleValue`. If we want the value to be synced we need to use `DoubleSyncValue`. The
 constructor needs to arguments. A getter as `DoubleSupplier` and a setter as `DoubleConsumer`. The progress widget wants
-a double value between 0 and 1 so we need to divide by the maximum value (100). The getter is called on server side on
+a double value between 0 and 1 so we need to divide by the maximum value (100). The getter is called on server side and
 compared by a cached value to figure out if it needs to be synced. On client side the setter is called to update our
 progress field on client side. But since only the widget needs that value and nothing else we could also pass in `null`
 for the second argument (the DoubleSyncValue caches it's own progress value based on the passed getter).
+Most sync handlers work the same way, but can implement almost any custom behaviour.
 
 You can disable JEI in your synced GUI by adding this line into your `buildUI()` method
 
 ```java
-creationContext.getJeiSettings().disableJei();
+settings.getJeiSettings().disableJei();
 ```
 
 ## Result
@@ -150,9 +155,9 @@ public class TutorialTile extends TileEntity implements IGuiHolder, ITickable {
     private int progress = 0;
 
     @Override
-    public ModularPanel buildUI(GuiCreationContext creationContext, GuiSyncManager syncManager, boolean isClient) {
+    public ModularPanel buildUI(PosGuiData guiData, PanelSyncManager syncManager, UISettings settings) {
         // disables jei
-        creationContext.getJeiSettings().disableJei();
+        settings.getJeiSettings().disableJei();
 
         ModularPanel panel = ModularPanel.defaultPanel("tutorial_gui");
         panel.bindPlayerInventory()
