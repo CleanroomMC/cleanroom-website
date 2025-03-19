@@ -11,13 +11,13 @@ There are many different way to define color in JSON
 The simplest way is by using hexadecimal numbers. You can do that be prefixing your number string with `0x`, `0X` or `#`.
 The format is `AARRGGBB`. If `A` (alpha) is not set, it defaults to full opacity
 
-> [!TIP] Example
->
-> ```json
-> {
->   "color": "#FFFFFF"
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "color": "#FFFFFF"
+}
+```
+:::
 
 The following formats can all have the `alpha` or `a` property, with a value from either 0.0 to 1.0 or from 0 to 255.
 If you want to use the 0.0 to 1.0 range you need use a `.`. `1` will use the
@@ -29,18 +29,18 @@ If you want to use the 0.0 to 1.0 range you need use a `.`. `1` will use the
 - `green` or `g`: The green value from 0 to 255
 - `blue` or `b`: The blue value from 0 to 255
 
-> [!TIP] Example
->
-> ```json
-> {
->   "color": {
->     "r": 200,
->     "g": 0,
->     "b": 44,
->     "alpha": 1.0
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "color": {
+    "r": 200,
+    "g": 0,
+    "b": 44,
+    "alpha": 1.0
+  }
+}
+```
+:::
 
 Here you can see how alpha can be added.
 
@@ -52,17 +52,17 @@ Here you can see how alpha can be added.
 
 If `value` is not defined, [HSL](#hsl) will be used.
 
-> [!TIP] Example
->
-> ```json
-> {
->   "color": {
->     "hue": 120,
->     "saturation": 0.5,
->     "value": 0.75
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "color": {
+    "hue": 120,
+    "saturation": 0.5,
+    "value": 0.75
+  }
+}
+```
+:::
 
 ## HSL
 
@@ -70,20 +70,21 @@ If `value` is not defined, [HSL](#hsl) will be used.
 - `saturation` or `s`: The saturation from 0.0 to 1.0 (default is 0.0)
 - `lightness` or `l`: The value from 0.0 to 1.0 (default is 0.5)
 
-> [!TIP] Example
->
-> ```json
-> {
->   "color": {
->     "hue": 120,
->     "saturation": 0.5,
->     "lightness": 0.75
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "color": {
+    "hue": 120,
+    "saturation": 0.5,
+    "lightness": 0.75
+  }
+}
+```
+:::
 
-> [!NOTE]
-> The saturation is not the same from [HSV](#hsv) as from [HSL](#hsl) (they are calculated slightly different), but the hue is.
+::: note {id="note"}
+The saturation is not the same from [HSV](#hsv) as from [HSL](#hsl) (they are calculated slightly different), but the hue is.
+:::
 
 ## CMYK
 
@@ -92,18 +93,19 @@ If `value` is not defined, [HSL](#hsl) will be used.
 - `yellow` or `y`: The cyan value from 0.0 to 1.0 (default is 1.0)
 - `black` or `k`: The cyan value from 0.0 to 1.0 (default is 1.0)
 
-> [!TIP] Example
->
-> ```json
-> {
->   "color": {
->     "c": 1.0,
->     "m": 0.5,
->     "y": 0.75,
->     "k": 0.2
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "color": {
+    "c": 1.0,
+    "m": 0.5,
+    "y": 0.75,
+    "k": 0.2
+  }
+}
+```
+:::
 
-> [!WARNING]
-> You can NOT mix any of those formats! (except of course alpha)
+::: warning {id="warning"}
+You can NOT mix any of those formats! (except of course alpha)
+:::

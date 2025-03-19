@@ -20,23 +20,23 @@ ModularUI has 9 default alignments.
 - `bottom_center` or `bc`
 - `bottom_right` or `br`
 
-> [!TIP] Example
->
-> ```json
-> {
->   "alignment": "top_center"
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "alignment": "top_center"
+}
+```
+:::
 
 You can also create a new alignment.
 
-> [!TIP] Example
->
-> ```json
-> {
->   "alignment": {
->     "x": 0.3,
->     "y": 0.6666666
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "alignment": {
+    "x": 0.3,
+    "y": 0.6666666
+  }
+}
+```
+:::
