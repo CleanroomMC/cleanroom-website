@@ -97,7 +97,6 @@ export const shared = defineConfigWithTheme<CleanRoomConfig>({
     lineNumbers: true,
     config(md) {
       // 其他 markdown-it 配置...
-      // @ts-expect-error
       md.use(InlineLinkPreviewElementTransform);
     },
   },

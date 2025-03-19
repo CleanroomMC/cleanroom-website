@@ -57,13 +57,16 @@ export default {
         addBackTotop();
       });
 
-      router.onAfterRouteChanged = () => {
+      router.onAfterRouteChange = () => {
         setTimeout(() => {
           addDetailsAnimation();
         }, 0);
       };
     }
-    app.use(NolebaseGitChangelogPlugin);
+    app.use(NolebaseGitChangelogPlugin, {
+      hideContributorsHeader: false,
+      hideChangelogHeader: true,
+    });
     app.use(NolebaseInlineLinkPreviewPlugin);
     app.provide(InjectionKey, {
       spotlight: {
