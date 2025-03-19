@@ -19,7 +19,7 @@ Useful methods are:
 - `getPanelManager()` returns the `PanelManager` (mostly an internal class which handles multiple panels)
 - `getSyncManager()` returns the `ModularSyncManager`
 - `isClientOnly()` returns if the screen is only open on client side
-- `registerGuiActionListener()` register an interaction listener
+- `registerGuiActionListener()` registers an interaction listener
 - `registerFrameUpdateListener()` registers a listener which is called approximately 60 times per second
 - `getCurrentTheme()` returns the active theme for the screen
 - `useTheme()` tries to set the new theme (does nothing if theme is overridden by resource packs)
