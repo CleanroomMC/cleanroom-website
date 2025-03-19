@@ -14,7 +14,6 @@ To begin, either create a class with a static method to create a `ModularScreen`
 or create a class extending `CustomModularScreen` and implementing `buildUI(ModularGuiContext)`.
 
 ::: code-group
-
 ```java
 public class TutorialGUI {
     public static ModularScreen createGUI() {
@@ -33,7 +32,6 @@ public class TutorialGUI extends CustomModularScreen {
     }
 }
 ```
-
 :::
 
 This creates the most basic GUI with a 176 x 166 centered panel. Take a look at the constructor and method used
@@ -47,14 +45,30 @@ want to set the position, for that we chain `.top()` and `.left()` on ANY widget
 need to set a size since `TextWidget` calculates it on its own. But you can limit the width for example and the text
 will automatically wrap, if necessary.
 
+::: code-group
 ```java
-public static ModularScreen createGUI() {
-    ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
-    panel.child(IKey.str("My first screen").asWidget()
-                .top(7).left(7));
-    return new ModularScreen(panel);
+public class TutorialGUI {
+    public static ModularScreen createGUI() {
+        ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
+        panel.child(IKey.str("My first screen").asWidget()
+                        .top(7).left(7));
+        return new ModularScreen(panel);
+    }
 }
 ```
+
+```java
+public class TutorialGUI extends CustomModularScreen {
+    @Override
+    public ModularPanel buildUI(ModularGuiContext context) {
+        ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
+        panel.child(IKey.str("My first screen").asWidget()
+                        .top(7).left(7));
+        return panel;
+    }
+}
+```
+:::
 
 ## 2. Opening the screen
 
@@ -66,6 +80,7 @@ method we just created. Now let's boot up minecraft and test it.
 There are some overloads of `ClientGUI.open()` which allow you to pass in a `JeiSettings` or `UISettings` instance.
 :::
 
+::: code-group
 ```java
 @Mod.EventBusSubscriber
 public class TutorialGUI {
@@ -83,6 +98,25 @@ public class TutorialGUI {
 }
 ```
 
+```java
+@Mod.EventBusSubscriber
+public class TutorialGUI extends CustomModularScreen {
+
+    @SubscribeEvent
+    public static void onItemUse(PlayerInteractEvent.RightClickItem event) {
+        if (event.getEntityPlayer().getEntityWorld().isRemote && event.getItemStack().getItem() == Items.DIAMOND) {
+            ClientGUI.open(new TutorialGUI());
+        }
+    }
+
+    @Override
+    public ModularPanel buildUI(ModularGuiContext context) {
+        ...
+    }
+}
+```
+:::
+
 Your screen should look like this, when you take a diamond and right click. The blurry background comes from the Blur
 mod. It is not required, but it makes things look nicer in my opinion. You may notice the purple text in the bottom left
 corner or a border on widgets when you hover them. That's the debug mode. Its enabled by default in a dev environment
@@ -97,23 +131,44 @@ size of its widget. We don't need to set a background since its set by the curre
 panel using `.align(Alignment.Center)` and set a size with `.size(60, 16)`. We could also use `.width(60).height(16)`.
 It's the same thing.
 
+::: code-group
 ```java
-public static ModularScreen createGui() {
-        ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
-        panel.child(IKey.str("My first screen").asWidget()
+public static ModularScreen createGUI() {
+    ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
+    panel.child(IKey.str("My first screen").asWidget()
                     .top(7).left(7))
-            .child(new ButtonWidget<>()
-                    .align(Alignment.Center)
-                    .size(60, 16)
-                    .overlay(IKey.str("Say Hello"))
-                    .onMousePressed(button -> {
-                        EntityPlayer player = Minecraft.getMinecraft().player;
-                        player.sendMessage(new TextComponentString("Hello " + player.getName()));
-                        return true;
-                    }));
-        return new ModularScreen(panel);
+         .child(new ButtonWidget<>()
+                        .align(Alignment.Center)
+                        .size(60, 16)
+                        .overlay(IKey.str("Say Hello"))
+                        .onMousePressed(button -> {
+                            EntityPlayer player = Minecraft.getMinecraft().player;
+                            player.sendMessage(new TextComponentString("Hello " + player.getName()));
+                            return true;
+                        }));
+    return new ModularScreen(panel);
 }
 ```
+
+```java
+@Override
+public ModularPanel buildUI(ModularGuiContext context) {
+    ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
+    panel.child(IKey.str("My first screen").asWidget()
+                    .top(7).left(7))
+         .child(new ButtonWidget<>()
+                        .align(Alignment.Center)
+                        .size(60, 16)
+                        .overlay(IKey.str("Say Hello"))
+                        .onMousePressed(button -> {
+                            EntityPlayer player = Minecraft.getMinecraft().player;
+                            player.sendMessage(new TextComponentString("Hello " + player.getName()));
+                            return true;
+                        }));
+    return panel;
+}
+```
+:::
 
 Let's see what it looks like.
 ![grafik](https://user-images.githubusercontent.com/45517902/228590064-108ae148-acc8-45ca-9d96-e91cbe0f2e4a.png)
