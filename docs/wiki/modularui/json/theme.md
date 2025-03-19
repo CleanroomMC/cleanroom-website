@@ -95,7 +95,7 @@ The `itemSlot` and `fluidSlot` also have the `slotHoverColor`, which is just the
 hovered.
 Don't use full opacity here. Otherwise, you won't be able to see the item.
 
-The `textField` theme has the `markedColor` property which is the marked text background and the `hintColor` which is
+The `textField` theme has the `markedColor` property which is the marked text background and the `hintColor` property which is
 the color of the text that is shown when the field is empty.
 
 The `toggleButton` has `selectedBackground`, `selectedHoverBackground` and `selectedColor` which are all

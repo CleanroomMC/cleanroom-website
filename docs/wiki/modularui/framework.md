@@ -83,4 +83,4 @@ used.
 
 ## ModularContainer
 
-This is the minecraft `Container` class. It can be overriden by setting a new supplier in `UISettings`.
+This is the minecraft `Container` class. It can be overridden by setting a new supplier in `UISettings`.

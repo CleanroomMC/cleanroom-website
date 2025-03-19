@@ -1,5 +1,5 @@
 ---
-title: Synced gui tutorial
+title: Synced GUI Tutorial
 ---
 
 # Synced gui tutorial
@@ -93,7 +93,7 @@ Our GUI now looks like this. We have a correctly positioned player inventory at 
 ## Syncing custom values
 
 Now let's add a progress bar to the GUI. For that we first make the tile ticking by implementing `ITickable` into the
-`TutorialTile`. Inside `update()` we upadte the progress variable, but only on server side to simulate a working machine
+`TutorialTile`. Inside `update()` we update the progress variable, but only on server side to simulate a working machine
 (and to showcase syncing). Once the progress reaches 100 ticks it's reset to 0. 100 ticks equals 5 seconds.
 
 ```java

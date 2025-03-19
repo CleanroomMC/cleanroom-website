@@ -39,17 +39,18 @@ First you need to decide if you want a client only screen or a client-server syn
 
 Client only GUIs are easier to work with, but they can't communicate with the server.
 You can open one by calling `ClientGUI.open(ModularScreen)`. You can additionally pass in a `UISettings` or
-`JeiSettings` instance. Client only GUIs don't display jei on the side by default. This can be changed in the
-JeiSettings. The options in`UISettings` are mostly for synced GUI's. The `ModularScreen` should be a new instance.
+`JeiSettings` instance. Client only GUIs don't display JEI on the side by default. This can be changed in the
+JeiSettings. The options in `UISettings` are mostly for synced GUIs. The `ModularScreen` should be a new instance.
 
 Go [here](./client-gui-tutorial.md) to get started on creating a client GUI. Even if you are looking into making a
 synced GUI, I still recommend checking it out as it contains some information which is useful for both cases.
 
-Some Examples:
+#### Examples
+Here are some examples for some Client only GUIs made with ModularUI:
 
-- [A sortable list which allows adding options via a popup panel](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TestGui.java)
-- [Various tests](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TestGuis.java)
-- [A custom screen with a custom panel and custom transformation](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TransformationTestGui.java)
+- [A sortable list which allows adding options via a popup panel](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestGui.java)
+- [Various tests](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestGuis.java)
+- [A custom screen with a custom panel and custom transformation](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TransformationTestGui.java)
 
 ### Synced GUI
 
@@ -59,16 +60,17 @@ here. A `UIFactory` is what finds the exact same `IGuiHolder` on client and serv
 `IGuiHolder` is then responsible for creating the UI. ModularUI has build-in factories for:
 
 - Standard tile entities (`GuiFactories.tileEntity()`, `PosGuiData`)
-- Items in players hand (`GuiFactories.item()`, `HandGuiData`)
-- Sided tile entities (usefull for GregTech covers) (`GuiFactories.sidedTileEntity()`, `SidedPosGuiData`)
+- Items in a players hand (`GuiFactories.item()`, `HandGuiData`)
+- Sided tile entities (useful for GregTech covers) (`GuiFactories.sidedTileEntity()`, `SidedPosGuiData`)
 - Simple factories (these always point to the same `IGuiHolder`) (`GuiFactories.createSimple()`, gui data irrelevant)
 
 Each factory may have its own custom method for opening a GUI. The factories then call `GuiManager.open(...)`.
 
 Go [here](./synced-gui-tutorial.md) to get started on creating a synced GUI.
 
-Some Examples:
-- [Tile entity with very large widget tree with several tabs and all sorts of syncing](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TestTile.java)
-- [Backpack item](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TestItem.java)
-- [Tile entity with large amount of slots for testing](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/TestTile2.java)
-- [Item editor allows editing meta, amount and nbt opened by command](https://github.com/CleanroomMC/ModularUI/blob/master/src/main/java/com/cleanroommc/modularui/test/ItemEditorGui.java)
+#### Examples
+Here are some examples for some synced GUIs made with ModularUI:
+- [Tile entity with very large widget tree with several tabs and all sorts of syncing](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestTile.java)
+- [Backpack item](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestItem.java)
+- [Tile entity with large amount of slots for testing](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestTile2.java)
+- [Item editor allows editing meta, amount and nbt opened by command](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/ItemEditorGui.java)

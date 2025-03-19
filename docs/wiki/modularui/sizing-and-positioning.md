@@ -54,7 +54,8 @@ Additionally, there is
 
 - `pos(int x, int y)` combines `left(int x)` and `top(int y)`
 - `posRel(float x, float y)` combines `leftRel(float x)` and `topRel(float y)`
-- `alignX(float x)` short for `leftRelAnchor(x, x)` (same for y)
+- `alignX(float x)` short for `leftRelAnchor(x, x)`
+- `alignY(float y)` short for `topRelAnchor(y, y)`
 - `align(Alignment a)` combines `alignX(float x)` and `alignY(float y)`
 - `center()` short for `align(Alignment.Center)`
 - various setters for margin and padding (margin puts space inside itself, padding puts space outside itself)

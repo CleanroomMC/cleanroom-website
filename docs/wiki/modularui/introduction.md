@@ -10,7 +10,7 @@ ModularUI is a library for Minecraft aiming to make GUI's much easier.
 
 ## Why ModularUI?
 
-Minecrafts (and Forges) gui code is not very good and the code gets really messy really fast. With ModularUI you can
+Minecraft's (and Forge's) GUI code is not very good and the code gets really messy really fast. With ModularUI you can
 build
 GUIs fast by adding Widgets to panels with layout widgets, so you don't have to calculate positions and sizes yourself.
 ModularUI is very dynamic and allows for very complicated client only or even client-server synced GUIs.
