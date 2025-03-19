@@ -13,11 +13,12 @@ For each type each property will be listed and explained.
 
 ## Empty Drawable
 
-Type name: `empty` or `null`
+Type name: `empty` or `null` (`null` does not have to be in quotation marks)
 
-Empty Drawables are special since they don't need to be an object. The can juts be `null`.
-
-Empty Drawables don't have any properties.
+Empty Drawables are special since they don't need to be an object. Empty Drawables don't have 
+any properties. Note that `none` will also result in an invisible drawable, however this one is different when it's used
+for hover backgrounds. If `empty` or `null` is used, then the widgets background will suddenly disappear as soon as you
+hover it. With `none` the widget will act like it doesn't have a hover background, and it will use its normal background.
 
 Example:
 

@@ -15,7 +15,7 @@ Let's look at an example. This is what the default vanilla theme as a json file 
 {
   "parent": "DEFAULT",
   "background": null,
-  "hoverBackground": null,
+  "hoverBackground": "none",
   "color": "#FFFFFFFF",
   "textColor": "#FF404040",
   "textShadow": false,
@@ -28,7 +28,11 @@ Let's look at an example. This is what the default vanilla theme as a json file 
   "button": {
     "background": {
       "type": "texture",
-      "id": "vanilla_button"
+      "id": "mc_button"
+    },
+    "hoverBackground": {
+      "type": "texture",
+      "id": "mc_button_hovered"
     },
     "textColor": "#FFFFFFFF",
     "textShadow": true
@@ -48,6 +52,10 @@ Let's look at an example. This is what the default vanilla theme as a json file 
     "slotHoverColor": "#60FFFFFF"
   },
   "textField": {
+    "background": {
+      "type": "texture",
+      "id": "display_small"
+    },
     "textColor": "#FFFFFFFF",
     "markedColor": "#FF2F72A8",
     "hintColor": "#FF5F5F5F"
@@ -55,16 +63,22 @@ Let's look at an example. This is what the default vanilla theme as a json file 
   "toggleButton": {
     "background": {
       "type": "texture",
-      "id": "vanilla_button"
+      "id": "mc_button"
+    },
+    "hoverBackground": {
+      "type": "texture",
+      "id": "mc_button_hovered"
     },
     "textColor": "#FFFFFFFF",
     "textShadow": true,
     "selectedBackground": {
       "type": "texture",
-      "id": "slot_item"
+      "id": "mc_button_disabled"
     },
-    "selectedHoverBackground": null,
-    "selectedColor": "0xFFBBBBBB"
+    "selectedHoverBackground": "none",
+    "selectedColor": "#FFFFFFFF",
+    "selectedTextColor": "#FFFFFFFF",
+    "selectedTextShadow": true
   }
 }
 ```
@@ -76,6 +90,8 @@ theme.
 After that we have the `color`, `background`, `hoverBackground`, `textColor` and `textShadow` properties. These are
 fallback properties of [widget themes](#widget-themes). You can put any properties that any widget theme can have here.
 If a widget theme does not have said property it will fall back to the top level property if defined.
+Note that `"none"` is used for `hoverBackground` so it will be ignored and the widget doesn't suddenly turn invisible.
+Read more about the difference between `"none"` and `null` [here](./drawable.md#empty-drawable)
 
 For `color` and `textColor` see [color](./color.md). For `background` and `hoverBackground`
 see [drawables](./drawable.md).
@@ -98,8 +114,8 @@ Don't use full opacity here. Otherwise, you won't be able to see the item.
 The `textField` theme has the `markedColor` property which is the marked text background and the `hintColor` property which is
 the color of the text that is shown when the field is empty.
 
-The `toggleButton` has `selectedBackground`, `selectedHoverBackground` and `selectedColor` which are all
-self-explanatory.
+The `toggleButton` has `selectedBackground`, `selectedHoverBackground`, `selectedColor`, `selectedTextColor` and 
+`selectedTextShadow` which are all self-explanatory. Note that 
 
 :::info Note {id="note"}
 All widget themes are optional. You can define as many as you like. Not defined widget themes will be taken from the
