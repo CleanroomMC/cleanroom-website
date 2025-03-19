@@ -14,7 +14,7 @@ To begin, either create a class with a static method to create a `ModularScreen`
 or create a class extending `CustomModularScreen` and implementing `buildUI(ModularGuiContext)`.
 
 ::: code-group
-```java
+```java [Static method]
 public class TutorialGUI {
     public static ModularScreen createGUI() {
         ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
@@ -23,7 +23,7 @@ public class TutorialGUI {
 }
 ```
 
-```java
+```java [CustomModularScreen]
 public class TutorialGUI extends CustomModularScreen {
     @Override
     public ModularPanel buildUI(ModularGuiContext context) {
@@ -46,7 +46,7 @@ need to set a size since `TextWidget` calculates it on its own. But you can limi
 will automatically wrap, if necessary.
 
 ::: code-group
-```java
+```java [Static method]
 public class TutorialGUI {
     public static ModularScreen createGUI() {
         ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
@@ -57,7 +57,7 @@ public class TutorialGUI {
 }
 ```
 
-```java
+```java [CustomModularScreen]
 public class TutorialGUI extends CustomModularScreen {
     @Override
     public ModularPanel buildUI(ModularGuiContext context) {
@@ -81,7 +81,7 @@ There are some overloads of `ClientGUI.open()` which allow you to pass in a `Jei
 :::
 
 ::: code-group
-```java
+```java [Static method]
 @Mod.EventBusSubscriber
 public class TutorialGUI {
 
@@ -98,7 +98,7 @@ public class TutorialGUI {
 }
 ```
 
-```java
+```java [CustomModularScreen]
 @Mod.EventBusSubscriber
 public class TutorialGUI extends CustomModularScreen {
 
@@ -132,7 +132,7 @@ panel using `.center()` and set a size with `.size(60, 16)`. We could also use `
 It's the same thing.
 
 ::: code-group
-```java
+```java [Static method]
 public static ModularScreen createGUI() {
     ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
     panel.child(IKey.str("My first screen").asWidget()
@@ -150,7 +150,7 @@ public static ModularScreen createGUI() {
 }
 ```
 
-```java
+```java [CustomModularScreen]
 @Override
 public ModularPanel buildUI(ModularGuiContext context) {
     ModularPanel panel = ModularPanel.defaultPanel("tutorial_panel");
