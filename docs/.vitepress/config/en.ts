@@ -132,9 +132,10 @@ function wikiSidebar(): DefaultTheme.SidebarItem[] {
         },
         { text: "Getting started", link: "getting-started" },
         { text: "Framework", link: "framework" },
-        { text: "Client gui tutorial", link: "client-gui-tutorial" },
-        { text: "Synced gui tutorial", link: "synced-gui-tutorial" },
-        { text: "Sizing and positioning", link: "sizing-and-positioning" },
+        { text: "Client GUI Tutorial", link: "client-gui-tutorial" },
+        { text: "Synced GUI Tutorial", link: "synced-gui-tutorial" },
+        { text: "Sizing and Positioning", link: "sizing-and-positioning" },
+        { text: "Advanced GUI Features", link: "advanced-features" },
         { text: "Themes", link: "themes" },
         {
           text: "Json",

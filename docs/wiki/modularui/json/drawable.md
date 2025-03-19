@@ -13,16 +13,18 @@ For each type each property will be listed and explained.
 
 ## Empty Drawable
 
-Type name: `empty` or `null`
+Type name: `empty` or `null` (`null` does not have to be in quotation marks)
 
-Empty Drawables are special since they don't need to be an object. The can juts be `null`.
-
-Empty Drawables don't have any properties.
+Empty Drawables are special since they don't need to be an object. Empty Drawables don't have 
+any properties. Note that `none` will also result in an invisible drawable, however this one is different when it's used
+for hover backgrounds. If `empty` or `null` is used, then the widgets background will suddenly disappear as soon as you
+hover it. With `none` the widget will act like it doesn't have a hover background, and it will use its normal background.
 
 Example:
 
 Both definitions are equivalent.
 
+::: details Example {open id="example"}
 ```json
 {
   "background1": null,
@@ -31,6 +33,7 @@ Both definitions are equivalent.
   }
 }
 ```
+:::
 
 ## Images
 
@@ -38,6 +41,7 @@ Type name: `texture`
 
 You can get an existing image with `name` or `id`. In this case all other properties will be ignored.
 
+::: details Example {open id="example"}
 ```json
 {
   "background": {
@@ -46,6 +50,7 @@ You can get an existing image with `name` or `id`. In this case all other proper
   }
 }
 ```
+:::
 
 Or you can define a new image. An image has multiple subtypes.
 
@@ -57,10 +62,8 @@ Or you can define a new image. An image has multiple subtypes.
    be combined with adaptable image.
 
 For all image types you need the `location` property. It defines where the image file is. The value is a resource
-location.
-Check out
-the [GroovyScript docs](https://groovyscript-docs.readthedocs.io/en/latest/groovyscript/rl/#converting-to-file-path) to
-find out more.
+location. Check out the [GroovyScript docs](../../../groovy-script/minecraft/resource_location.md#converting-to-file-path) 
+to find out more.
 
 ### Full image
 
@@ -75,8 +78,9 @@ also `imageHeight`.
 Or you can define a rectangle with `u0`, `v0`, `u1` and `v1`. These are relative values from 0.0 to 1.0. `u` is the
 x-axis and `v` the y-axis. 0 means start and 1 means end.
 
-!!! Warning
+::: warning {id="warning"}
 You can NOT mix both types!
+:::
 
 ### Adaptable image
 
@@ -89,10 +93,8 @@ sets both axis).
 Can be a full image or a sub image. Can also have border properties for adaptable image.
 For tiled images you need `"tiled": true` and `imageWidth` (or `iw`) and `imageHeigth` (or `ih`).
 
-### Example
-
+::: details Example {open id="example"}
 This is an example for an adaptable sub image (we set the values to still be the full image).
-
 ```json
 {
   "background": {
@@ -108,6 +110,7 @@ This is an example for an adaptable sub image (we set the values to still be the
   }
 }
 ```
+:::
 
 ## Colored rectangle
 
@@ -159,35 +162,35 @@ Properties:
 - `align` or `alignment`: The alignment of the text in the render size. (see [alignment](./alignment.md)) (Default is center)
 - `scale`: The scale to draw text at. (Default is 1.0)
 
-> [!TIP] Example
->
-> ```json
-> {
->   "type": "text",
->   "text": "Hello World",
->   "lang": false
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "type": "text",
+  "text": "Hello World",
+  "lang": false
+}
+```
+:::
 
 The text can also be an array. In this case the `lang` property is ignored.
 Each of the elements in the array can either be a string or an object with the `text` and `lang` property. Those objects
 can also have any style property like `color` and `shadow`.
 
-> [!TIP] Example
->
-> ```json
-> {
->   "type": "text",
->   "text": [
->     "Hello ",
->     {
->       "text": "this.part.is.translated",
->       "lang": true
->     },
->     "I18n:this.part.is.also.translated"
->   ]
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "type": "text",
+  "text": [
+    "Hello ", 
+    {
+      "text": "this.part.is.translated",
+      "lang": true
+    },
+    "I18n:this.part.is.also.translated"
+  ]
+}
+```
+:::
 
 As you can see in the example above you can also start a string with `I18n:` to make it translated.
 
@@ -198,16 +201,16 @@ Type name: `item`
 - `item`: The format is `mod:item_id:meta` where meta is optional
 - `nbt`: nbt data (untested)
 
-> [!TIP] Example
->
-> ```json
-> {
->   "background": {
->     "type": "item",
->     "item": "minecraft:diamond"
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "background": {
+    "type": "item",
+    "item": "minecraft:diamond"
+  }
+}
+```
+:::
 
 ## Icon
 
@@ -231,44 +234,44 @@ Multiple margins can be combined.
 - `marginHorizontal` and `marginVertical`: The margin on horizontal (left and right) or vertical (top and bottom) edges
 - `marginTop`, `marginBottom`, `marginLeft`, `marginRight`; The margin of each edge
 
-> [!TIP] Example
->
-> ```json
-> {
->   "background": {
->     "type": "icon",
->     "drawable": {
->       "type": "...",
->       "...": "..."
->     },
->     "width": 18,
->     "height": 18
->   }
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "background": {
+    "type": "icon",
+    "drawable": {
+      "type": "...",
+      "...": "..."
+    },
+    "width": 18,
+    "height": 18
+  }
+}
+```
+:::
 
 ## Drawable array
 
 A drawable can also be multiple drawable. You can do that by using square brackets `[]` instead of curly brackets `{}`.
 And inside there you just define multiple drawable objects
 
-> [!TIP] Example
->
-> ```json
-> {
->   "background": [
->     {
->       "type": "...",
->       "...": "..."
->     },
->     {
->       "type": "...",
->       "...": "..."
->     },
->     {
->       "type": "...",
->       "...": "..."
->     }
->   ]
-> }
-> ```
+::: details Example {open id="example"}
+```json
+{
+  "background": [
+    {
+      "type": "...",
+      "...": "..."
+    },
+    {
+      "type": "...",
+      "...": "..."
+    },
+    {
+      "type": "...",
+      "...": "..."
+    }
+  ]
+}
+```
+:::

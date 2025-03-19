@@ -11,7 +11,7 @@ Each widget has several builder setter methods for position and size. They all c
 - `width(int)` sets the widget width in pixels
 - `widthRel(float)` sets the widget width relative to its parent (f.e. if the parent is 120 wide and we
   call`widthRel(0.5f)` then our widget will be 60 wide
-- `heigth(int)` and `heightRel(float)` work analogue
+- `height(int)` and `heightRel(float)` work analogue
 - `size(int width, int height)` is equivalent to `.width(width).height(height)`
 - `size(int val)` is equivalent to `.width(val).height(val)`
 - `sizeRel(float width, float height)` and `sizeRel(float val)` work analogue
@@ -53,7 +53,12 @@ All the above variants also exist for `right()`, `top()` and `bottom()`.
 Additionally, there is
 
 - `pos(int x, int y)` combines `left(int x)` and `top(int y)`
-- `posRel(float x, floaty)` combines `leftRel(float x)` and `topRel(float y)`
+- `posRel(float x, float y)` combines `leftRel(float x)` and `topRel(float y)`
+- `alignX(float x)` is short for `leftRelAnchor(x, x)`
+- `alignY(float y)` is short for `topRelAnchor(y, y)`
+- `align(Alignment a)` combines `alignX(float x)` and `alignY(float y)`
+- `center()` is short for `align(Alignment.Center)`
+- various setters for margin and padding (margin puts space inside itself, padding puts space outside itself)
 
 ### Anchor
 
@@ -76,14 +81,16 @@ Of course, you can call multiple position and size methods, but you should be aw
 Each axis (x and y) has 3 setters (x has `left()`, `right()` and `width()`, y has `top()`, `bottom()` and `height()`)
 without including all the variations.
 
-!!! Note
+:::info Note {id="note"}
 You can call at most 2 setters for each axis, since with two properties set the last one can always be calculated!
+:::
 
 For example of you call `left()` and `right()` then the width can be calculated with `right - left`.
-Setting all three properties for an axis will cause a crash (?).
+Setting all three properties for an axis will remove one of the other properties and log an info message.
 
-!!! Note
+:::info Note {id="note"}
 You don't need to call any setters. The position defaults to (0|0) and the size defaults to 18 by 18 (for most widgets).
+:::
 
 ## Changing the relative Parent
 
@@ -91,6 +98,7 @@ By default, the size and position are calculated relative to the direct widgets 
 `relative(Area)`, `relative(IGuiElement)` and `relativeToScreen()`.
 The parent of all panels is by default the screen.
 
-!!! Warning
+:::warning {id="warning"}
 Changing the relative widget might cause some unexpected results in some edge cases. Please notify me if you run
 into one of those.
+:::

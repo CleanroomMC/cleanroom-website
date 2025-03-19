@@ -6,31 +6,22 @@ title: Getting Started
 
 ## Adding ModularUI to your mod
 
-Add the maven to the repositories (if not already present)
+Add the CleanroomMC maven to the repositories (if not already present)
 
 ```groovy
 maven {
-    name 'CurseMaven'
-    url 'https://cursemaven.com'
-    content {
-        includeGroup 'curse.maven'
-    }
+    name 'Cleanroom Maven'
+    url 'https://maven.cleanroommc.com'
 }
 ```
 
 and the dependency declaration to dependencies
 
 ```groovy
-implementation 'curse.maven:modularui-624243:4786372-sources-4786373'
+api 'com.cleanroommc:modularui:2.5.0' { transitive false }
 ```
 
-- `624243` is the Curseforge project id of ModularUI
-- `4779301` is the `dev` file id (for version 2.2.3)
-- `4779302` is the `sources` file id (for version 2.2.3)
-
-By including the sources in your dependency declaration you'll get access to the real uncompiled code with javadocs.
-
-Make sure to use the latest version!
+Check the latest version on [Github releases](https://github.com/CleanroomMC/ModularUI/releases).
 
 ## Development Tools
 
@@ -47,26 +38,39 @@ First you need to decide if you want a client only screen or a client-server syn
 ### Client only GUI
 
 Client only GUIs are easier to work with, but they can't communicate with the server.
-You can open one by calling `ClientGUI.open(ModularScreen, JeiSettings)`.
-`JeiSettings` can be omitted by an overloaded method. Client only GUIs don't display jei on the side by default.
-You can change that by creating your own `JeiSettings` instance. The `ModularScreen` should be a new instance.
+You can open one by calling `ClientGUI.open(ModularScreen)`. You can additionally pass in a `UISettings` or
+`JeiSettings` instance. Client only GUIs don't display JEI on the side by default. This can be changed in the
+JeiSettings. The options in `UISettings` are mostly for synced GUIs. The `ModularScreen` should be a new instance.
 
-Go [here](./client-gui-tutorial.md) to get started on creating a client GUI. Even if you are looking into making a synced
-GUI, I still recommend
-checking it out as it contains some information which is useful for both cases.
+Go [here](./client-gui-tutorial.md) to get started on creating a client GUI. Even if you are looking into making a
+synced GUI, I still recommend checking it out as it contains some information which is useful for both cases.
+
+#### Examples
+Here are some examples for some Client only GUIs made with ModularUI:
+
+- [A sortable list which allows adding options via a popup panel](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestGui.java)
+- [Various tests](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestGuis.java)
+- [A custom screen with a custom panel and custom transformation](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TransformationTestGui.java)
 
 ### Synced GUI
 
 Synced GUIs are much more complicated to open. The most important thing is that you must only open synced GUIs
-on server side. ModularUI (via Forge) automatically syncs to client. This means you need to supply enough information on
-server side to find the GUI on client side. For example if the GUI is bound to a `TileEntity`, then you need to supply
-at least a world instance and a block position. `GuiInfo`s take care of that information.
-Not that Forge only syncs `EntityPlayer`, `World` and a `BlockPos`. For more specific data you need multiple `GuiInfo`s.
-For example if a GUI is opened on right click with an item. The `GuiInfo` does not know with wich hand the GUI was
-opened.
-That's why ModularUI provides two `GuiInfo`s for that. One for main hand and one for the off hand.
-ModularUI provides some default `GuiInfo`s at `GuiInfos`. If you want to create your own `GuiInfo`, take a look at
-`GuiInfo.builder()`.
-Now that you have your `GuiInfo`, simply call `open()` with your needed parameters.
+on server side. ModularUI automatically syncs to client. Choosing the correct `UIFactory` and `GuiData` is important
+here. A `UIFactory` is what finds the exact same `IGuiHolder` on client and server with the provided `GuiData`. The
+`IGuiHolder` is then responsible for creating the UI. ModularUI has build-in factories for:
+
+- Standard tile entities (`GuiFactories.tileEntity()`, `PosGuiData`)
+- Items in a players hand (`GuiFactories.item()`, `HandGuiData`)
+- Sided tile entities (useful for GregTech covers) (`GuiFactories.sidedTileEntity()`, `SidedPosGuiData`)
+- Simple factories (these always point to the same `IGuiHolder`) (`GuiFactories.createSimple()`, gui data irrelevant)
+
+Each factory may have its own custom method for opening a GUI. The factories then call `GuiManager.open(...)`.
 
 Go [here](./synced-gui-tutorial.md) to get started on creating a synced GUI.
+
+#### Examples
+Here are some examples for some synced GUIs made with ModularUI:
+- [Tile entity with very large widget tree with several tabs and all sorts of syncing](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestTile.java)
+- [Backpack item](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestItem.java)
+- [Tile entity with large amount of slots for testing](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/TestTile2.java)
+- [Item editor allows editing meta, amount and nbt opened by command](https://github.com/CleanroomMC/ModularUI/blob/048394a5894f76612d090dd771d9d9f10f800589/src/main/java/com/cleanroommc/modularui/test/ItemEditorGui.java)
