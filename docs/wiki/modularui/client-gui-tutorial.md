@@ -128,7 +128,7 @@ and can be disabled via the config file or by pressing `CTRL + SHIFT + ALT + C` 
 Now let's add a button, that greets the player with a message. For that we will use the `ButtonWidget`. Here we do need
 to set a size since the text on the button is not a widget, but a `IDrawable`, which doesnt size itself. It uses the
 size of its widget. We don't need to set a background since its set by the current Theme. We center the button in the
-panel using `.align(Alignment.Center)` and set a size with `.size(60, 16)`. We could also use `.width(60).height(16)`.
+panel using `.center()` and set a size with `.size(60, 16)`. We could also use `.width(60).height(16)`.
 It's the same thing.
 
 ::: code-group
@@ -138,7 +138,7 @@ public static ModularScreen createGUI() {
     panel.child(IKey.str("My first screen").asWidget()
                     .top(7).left(7))
          .child(new ButtonWidget<>()
-                        .align(Alignment.Center)
+                        .center()
                         .size(60, 16)
                         .overlay(IKey.str("Say Hello"))
                         .onMousePressed(button -> {
@@ -157,7 +157,7 @@ public ModularPanel buildUI(ModularGuiContext context) {
     panel.child(IKey.str("My first screen").asWidget()
                     .top(7).left(7))
          .child(new ButtonWidget<>()
-                        .align(Alignment.Center)
+                        .center()
                         .size(60, 16)
                         .overlay(IKey.str("Say Hello"))
                         .onMousePressed(button -> {
@@ -177,3 +177,5 @@ Pressing the button greets the player in the chat.
 ![grafik](https://user-images.githubusercontent.com/45517902/228590312-24f6bd17-dd05-44ee-96bd-6ae7d00e59cc.png)
 
 Simple, right?
+
+For more information on how to position and size widget, go [here](./sizing-and-positioning.md).

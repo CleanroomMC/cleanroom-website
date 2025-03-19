@@ -137,7 +137,8 @@ progress field on client side. But since only the widget needs that value and no
 for the second argument (the DoubleSyncValue caches it's own progress value based on the passed getter).
 Most sync handlers work the same way, but can implement almost any custom behaviour.
 
-You can disable JEI in your synced GUI by adding this line into your `buildUI()` method
+You can disable JEI in your synced GUI by adding this line into your `buildUI()` method. If JEI is currently not 
+installed, nothing will happen. The game won't crash.
 
 ```java
 settings.getJeiSettings().disableJei();
@@ -150,7 +151,7 @@ The progress bar takes 5 seconds to fill up and then restarts as expected.
 The full tile entity:
 
 ```java
-public class TutorialTile extends TileEntity implements IGuiHolder, ITickable {
+public class TutorialTile extends TileEntity implements IGuiHolder<PosGuiData>, ITickable {
 
     private int progress = 0;
 
